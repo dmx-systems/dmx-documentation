@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DMX User Documentation &mdash; DMX  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DMX Developer Documentation" href="devel.html" />
+    <link rel="prev" title="Installation" href="install.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> DMX
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DMX User Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started-with-dmx">Getting started with DMX</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction-to-the-web-interface">Introduction to the web interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-your-first-topic">Adding your first topic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-your-first-association">Adding your first association</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moving-the-map-and-the-items">Moving the map and the items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dmx-s-default-topic-types">DMX’s default topic types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-to-know-the-data-model">Getting to know the data model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exploring-your-first-topic">Exploring your first topic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-your-first-topic-type">Create your first topic type</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="devel.html">DMX Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">DMX Admin Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">DMX Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DMX</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>DMX User Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/user.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dmx-user-documentation">
+<h1>DMX User Documentation<a class="headerlink" href="#dmx-user-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Please note we have a <a class="reference internal" href="glossary.html#glossary-label"><span class="std std-ref">DMX Glossary</span></a> for the terms used in this documentation.</p>
+<div class="section" id="getting-started-with-dmx">
+<h2>Getting started with DMX<a class="headerlink" href="#getting-started-with-dmx" title="Permalink to this headline">¶</a></h2>
+<p>To get started with DMX you can</p>
+<ul class="simple">
+<li>visit our <a class="reference external" href="https://demo.dmx.systems">public demo site</a> and play with DMX. Do not enter any private or sensitive information on the demo site!</li>
+<li>run DMX on your computer by choosing one of the following ways:<ul>
+<li><a class="reference internal" href="install.html#installation-zip-label"><span class="std std-ref">Install DMX from a zip archive</span></a> (Windows, Mac, Linux)</li>
+<li><a class="reference internal" href="install.html#installation-apt-label"><span class="std std-ref">Install DMX from our APT repository</span></a> (Linux only)</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="introduction-to-the-web-interface">
+<h3>Introduction to the web interface<a class="headerlink" href="#introduction-to-the-web-interface" title="Permalink to this headline">¶</a></h3>
+<p>When you first look at a blank DMX interface, there is not much there, yet. Here is what you see in the upper toolbar:</p>
+<ul class="simple">
+<li>In the upper right corner there is a “Login” button. Log in with the username “admin” and no password.</li>
+<li>In the upper left corner there is a drop-down menu called “Workspace”. The only existing workspace is called “DMX”. This is your general context everything you are about to do is going to be in (for the moment). Later you will be able to select one of all your worskspaces here.</li>
+<li>Next to it there is another drop-down menu called “Topicmap”. There is only one topic map, it’s called “untitled”.</li>
+<li>Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. The first default workspace is in SharingMode “public” that is: world-readable. The default topic map has a similar information: It is not private.</li>
+</ul>
+</div>
+<div class="section" id="adding-your-first-topic">
+<h3>Adding your first topic<a class="headerlink" href="#adding-your-first-topic" title="Permalink to this headline">¶</a></h3>
+<p>Click anywhere into the empty space. You will notice that there are two items somewhere in your topic map: “DMX” and “untitled” with two different icons. Where do they come from? You uncovered your workspace and your topic map by retrieving their extra information. Do you want to know more about them? Yes, but not now. Let’s hide (not delete!) them! Long-click one of them and hold the mouse button until a dark circle with four buttons appears. Pull the mouse onto “Hide”. Hide the other one as well.</p>
+<p>Right-click into the emptiness. A window appears that offers you to search something or to create something. Let’s create something!</p>
+<img alt="_images/search-create.jpg" src="_images/search-create.jpg" />
+<p>DMX wants to make sure that you do not create something that already exists. That’s why you enter whatever you want to create into the search field. Enter your favourite author’s name. DMX will answer “No match”. Click “create”. DMX now tells you ti is ready to create the author, but you have to specify the topic type: Open the drop-drop menu and select “Person” from the prefined topic types. Click “Create”. You will see a square on your topic map. It contains the name you entered and it states that this is thr person’s first name. Oh no! You entered the given name and the surname? Let’s correct this: Long-press the square and select “edit” from the context menu. On the right-hand side there is a detail panel now. It contains many fields you might need to edit any topic you categorized as a person. Correct the name and click the save button at the very bottom. Add a second topic of any topic type.</p>
+</div>
+<div class="section" id="adding-your-first-association">
+<h3>Adding your first association<a class="headerlink" href="#adding-your-first-association" title="Permalink to this headline">¶</a></h3>
+<p>You probably chose your second topic because it is somehow related to the author you entered. We will now establish a connection between the two topics by drawing one onto the other. You can click onto the association between them to see more information about it in the detail panel. Don’t bother if it looks weird, you will learn how to qualify the association later on.</p>
+</div>
+<div class="section" id="moving-the-map-and-the-items">
+<h3>Moving the map and the items<a class="headerlink" href="#moving-the-map-and-the-items" title="Permalink to this headline">¶</a></h3>
+<p>Note that you can drag the whole topic map into any direction. You can also grab every item and drag it where you want it to be.</p>
+</div>
+<div class="section" id="dmx-s-default-topic-types">
+<h3>DMX’s default topic types<a class="headerlink" href="#dmx-s-default-topic-types" title="Permalink to this headline">¶</a></h3>
+<p>As you have seen, DMX comes with a few predefined topic types: Event, institution, note, web resource, and person. Each topic type brings certain fields you can fill in: While events have dates and locations, persons can have numbers and web resources have a URL. As you probably need more to map what you have in mind you will now learn how to create your own topic types.</p>
+</div>
+</div>
+<div class="section" id="getting-to-know-the-data-model">
+<h2>Getting to know the data model<a class="headerlink" href="#getting-to-know-the-data-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exploring-your-first-topic">
+<h3>Exploring your first topic<a class="headerlink" href="#exploring-your-first-topic" title="Permalink to this headline">¶</a></h3>
+<p>After your edit the detail panel is still open. It has four tabs. The first one (“person”) shows all the content you entered. Go to the second tab (“Related”). Do be confused by what you see now: It displays four topics that you can sort. Why four? Well, there is the concrete person, the topic type “person”… ZU KOPMLIZIERT; DAS MUSS SPÄTER KOMMEN.</p>
+</div>
+<div class="section" id="create-your-first-topic-type">
+<h3>Create your first topic type<a class="headerlink" href="#create-your-first-topic-type" title="Permalink to this headline">¶</a></h3>
+<p>You just added your favourite author so next you need a topic type called “book” with certain properties all books have, e.g. a publisher, a year etc.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="devel.html" class="btn btn-neutral float-right" title="DMX Developer Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Silke Meyer.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

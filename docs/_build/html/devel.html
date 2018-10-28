@@ -1,0 +1,1089 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DMX Developer Documentation &mdash; DMX  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DMX Admin Documentation" href="admin.html" />
+    <link rel="prev" title="DMX User Documentation" href="user.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> DMX
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">DMX User Documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DMX Developer Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-format-of-the-dmx-core-objects">Data Format of the DMX core objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-dmx-rest-api">The DMX REST API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#topics">Topics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#get-topic-by-id">Get topic by ID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-topics-by-type">Get topics by type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-topic">Create topic</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#associations">Associations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#topic-types">Topic Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#get-all-topic-type-uris">Get all topic type URIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-a-topic-type">Get a topic type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-topic-type">Create a topic type</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#association-types">Association Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#get-all-association-type-uris">Get all association type URIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-an-association-type">Get an association type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-an-association-type">Create an association type</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#commands">Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plugins">Plugins</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">DMX Admin Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">DMX Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DMX</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>DMX Developer Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/devel.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dmx-developer-documentation">
+<h1>DMX Developer Documentation<a class="headerlink" href="#dmx-developer-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="data-format-of-the-dmx-core-objects">
+<h2>Data Format of the DMX core objects<a class="headerlink" href="#data-format-of-the-dmx-core-objects" title="Permalink to this headline">¶</a></h2>
+<p>see <a class="reference external" href="https://trac.deepamehta.de/wiki/DataFormat">https://trac.deepamehta.de/wiki/DataFormat</a></p>
+</div>
+<div class="section" id="the-dmx-rest-api">
+<h2>The DMX REST API<a class="headerlink" href="#the-dmx-rest-api" title="Permalink to this headline">¶</a></h2>
+<p>The DMX application service is accessible via a REST API.</p>
+<p>All requests return application/json data.</p>
+<p>For requests that take data in the request body: The data is expected to be of type application/json as well. So, don’t forget to set the request’s Content-Type header accordingly. Otherwise an error is returned (as application/x-www-form-urlencoded is used as the default).</p>
+<p>About the curl examples:</p>
+<p>The curl examples are ready for being pasted into a terminal. However, the IDs must be adjusted to your actual DB content. Hint: to determine a topic’s or association’s ID click it in the webclient and read the console log.</p>
+<p>In order to make the responses more readable the curl examples make use of the jsonpretty tool. <a class="reference external" href="https://github.com/nicksieger/jsonpretty">Jsonpretty</a> is installable as a Ruby gem.</p>
+<div class="section" id="topics">
+<h3>Topics<a class="headerlink" href="#topics" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="get-topic-by-id">
+<h4>Get topic by ID<a class="headerlink" href="#get-topic-by-id" title="Permalink to this headline">¶</a></h4>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>``GET /core/topic/&lt;topic ID&gt;[?include_childs=true/false]``
+</pre></div>
+</div>
+<p>The default for include_childs is true.</p>
+<div class="section" id="example-1-getting-a-topic-with-its-composite-value">
+<h5>Example 1: Getting a topic with its composite value<a class="headerlink" href="#example-1-getting-a-topic-with-its-composite-value" title="Permalink to this headline">¶</a></h5>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topic</span><span class="o">/</span><span class="mi">2676</span> <span class="o">|</span> <span class="n">jsonpretty</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2676</span><span class="p">,</span>
+  <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.notes.note&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;What is DeepaMehta?&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;dm4.notes.title&quot;</span><span class="p">:</span> <span class="s2">&quot;What is DeepaMehta?&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dm4.notes.text&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;p&gt;DeepaMehta is a think tool.&lt;/p&gt;&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For details about the topic format see DataFormat#Topic.</p>
+</div>
+<div class="section" id="example-2-getting-a-topic-without-its-composite-value">
+<h5>Example 2: Getting a topic without its composite value<a class="headerlink" href="#example-2-getting-a-topic-without-its-composite-value" title="Permalink to this headline">¶</a></h5>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>curl localhost:8080/core/topic/55?include_childs=false | jsonpretty
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2676</span><span class="p">,</span>
+  <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.notes.note&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;What is DeepaMehta?&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If the topic doesn’t exist an error 500 Retrieving topic xy failed is returned. (The error response might become more HTTP/REST conform in the furure.)</p>
+</div>
+</div>
+<div class="section" id="get-topics-by-type">
+<h4>Get topics by type<a class="headerlink" href="#get-topics-by-type" title="Permalink to this headline">¶</a></h4>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span> GET /core/topic/by_type/&lt;Type URI&gt;[?include_childs=true/false]
+
+The default for include_childs is false.
+</pre></div>
+</div>
+<div class="section" id="example-getting-all-web-resource-topics-without-their-composites">
+<h5>Example: Getting all “Web Resource” topics without their composites<a class="headerlink" href="#example-getting-all-web-resource-topics-without-their-composites" title="Permalink to this headline">¶</a></h5>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topic</span><span class="o">/</span><span class="n">by_type</span><span class="o">/</span><span class="n">dm4</span><span class="o">.</span><span class="n">webbrowser</span><span class="o">.</span><span class="n">web_resource</span> <span class="o">|</span> <span class="n">jsonpretty</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;total_count&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2436</span><span class="p">,</span>
+      <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.webbrowser.web_resource&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON Format - your online JSON Formatter&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2259</span><span class="p">,</span>
+      <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.webbrowser.web_resource&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;DeepaMehta 4.0.5&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="create-topic">
+<h4>Create topic<a class="headerlink" href="#create-topic" title="Permalink to this headline">¶</a></h4>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topic</span>
+
+<span class="o">&lt;</span><span class="n">the</span> <span class="n">topic</span> <span class="n">to</span> <span class="n">create</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>For details about the topic format see DataFormat#Topic.</p>
+<p>For a create operation not all of the topic’s properties are involved:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Mandatory / Optional</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>uri</td>
+<td>Optional. Default URI is an empty string.</td>
+</tr>
+<tr class="row-odd"><td>type_uri</td>
+<td>Mandatory.</td>
+</tr>
+<tr class="row-even"><td>value</td>
+<td><div class="first last line-block">
+<div class="line">For a <strong>simple</strong> topic: Optional. Default value is an empty string.</div>
+<div class="line">You can change the value later on through an update operation.</div>
+<div class="line">For a <strong>complex</strong> topic: Do not specify a value. The value will be system-generated.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>composite</td>
+<td><div class="first last line-block">
+<div class="line">For a <strong>complex</strong> topic: Optional. Default composite is an empty object.</div>
+<div class="line">You can change the composite later on through an update operation.</div>
+<div class="line">For a <strong>simple</strong> topic: Do not specify a composite.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="example-1-creating-a-simple-topic">
+<h5>Example 1: Creating a simple topic<a class="headerlink" href="#example-1-creating-a-simple-topic" title="Permalink to this headline">¶</a></h5>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topic</span> <span class="o">-</span><span class="n">i</span> \
+<span class="o">-</span><span class="n">X</span> <span class="n">POST</span> \
+<span class="o">-</span><span class="n">H</span> <span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span><span class="n">application</span><span class="o">/</span><span class="n">json</span> \
+<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{type_uri: &quot;dm4.contacts.city&quot;,</span>
+     <span class="n">value</span><span class="p">:</span> <span class="s2">&quot;Port-au-Prince&quot;</span><span class="p">}</span><span class="s1">&#39; </span><span class="se">\</span>
+<span class="s1">| jsonpretty</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3448</span><span class="p">,</span>
+  <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.contacts.city&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Port-au-Prince&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2-creating-a-complex-topic">
+<h5>Example 2: Creating a complex topic<a class="headerlink" href="#example-2-creating-a-complex-topic" title="Permalink to this headline">¶</a></h5>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topic</span> <span class="o">-</span><span class="n">i</span> \
+<span class="o">-</span><span class="n">X</span> <span class="n">POST</span> \
+<span class="o">-</span><span class="n">H</span> <span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span><span class="n">application</span><span class="o">/</span><span class="n">json</span> \
+<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{type_uri: &quot;dm4.notes.note&quot;,</span>
+     <span class="n">composite</span><span class="p">:</span> <span class="p">{</span>
+       <span class="n">dm4</span><span class="o">.</span><span class="n">notes</span><span class="o">.</span><span class="n">title</span><span class="p">:</span> <span class="s2">&quot;My title&quot;</span><span class="p">,</span>
+       <span class="n">dm4</span><span class="o">.</span><span class="n">notes</span><span class="o">.</span><span class="n">text</span><span class="p">:</span> <span class="s2">&quot;&lt;p&gt;My test text here&lt;p&gt;&quot;</span><span class="p">}}</span><span class="s1">&#39; </span><span class="se">\</span>
+<span class="s1">| jsonpretty</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topic</span> <span class="o">-</span><span class="n">i</span> \
+<span class="o">-</span><span class="n">X</span> <span class="n">POST</span> \
+<span class="o">-</span><span class="n">H</span> <span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span><span class="n">application</span><span class="o">/</span><span class="n">json</span> \
+<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{type_uri: &quot;dm4.notes.note&quot;,</span>
+     <span class="n">composite</span><span class="p">:</span> <span class="p">{</span>
+       <span class="n">dm4</span><span class="o">.</span><span class="n">notes</span><span class="o">.</span><span class="n">title</span><span class="p">:</span> <span class="s2">&quot;My title&quot;</span><span class="p">,</span>
+       <span class="n">dm4</span><span class="o">.</span><span class="n">notes</span><span class="o">.</span><span class="n">text</span><span class="p">:</span> <span class="s2">&quot;&lt;p&gt;My test text here&lt;p&gt;&quot;</span><span class="p">}}</span><span class="s1">&#39; </span><span class="se">\</span>
+<span class="s1">| jsonpretty</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="associations">
+<h3>Associations<a class="headerlink" href="#associations" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="topic-types">
+<h3>Topic Types<a class="headerlink" href="#topic-types" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="get-all-topic-type-uris">
+<h4>Get all topic type URIs<a class="headerlink" href="#get-all-topic-type-uris" title="Permalink to this headline">¶</a></h4>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GET</span> <span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topictype</span>
+</pre></div>
+</div>
+<div class="section" id="example">
+<h5>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h5>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topictype</span> <span class="o">-</span><span class="n">i</span> <span class="o">|</span> <span class="n">jsonpretty</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+
+<span class="p">[</span>
+  <span class="s2">&quot;dm4.contacts.address&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.address_entry&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.address_label&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.city&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.country&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.email_address&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.first_name&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.institution&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.institution_name&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.last_name&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.person&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.person_name&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.phone_entry&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.phone_label&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.phone_number&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.postal_code&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.contacts.street&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.assoc_type&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.cardinality&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.data_type&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.index_mode&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.meta_meta_type&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.meta_type&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.plugin&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.plugin_migration_nr&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.plugin_name&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.plugin_symbolic_name&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.role_type&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.topic_type&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.files.content&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.files.file&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.files.file_name&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.files.folder&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.files.folder_name&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.files.media_type&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.files.path&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.files.size&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.notes.note&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.notes.text&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.notes.title&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.topicmaps.description&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.topicmaps.name&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.topicmaps.topicmap&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.topicmaps.visibility&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.topicmaps.x&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.topicmaps.y&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webbrowser.url&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webbrowser.web_resource&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webbrowser.web_resource_description&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webbrowser.webpage&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.add_to_create_menu&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.color&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.editable&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.icon&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.is_searchable_unit&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.js_field_renderer_class&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.js_page_renderer_class&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.rows&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.search&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.search_result&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.search_term&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.view_config&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.viewable&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.workspaces.description&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.workspaces.name&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.workspaces.workspace&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="get-a-topic-type">
+<h4>Get a topic type<a class="headerlink" href="#get-a-topic-type" title="Permalink to this headline">¶</a></h4>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GET</span> <span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topictype</span><span class="o">/&lt;</span><span class="n">Topic</span> <span class="n">Type</span> <span class="n">URI</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h5>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topictype</span><span class="o">/</span><span class="n">dm4</span><span class="o">.</span><span class="n">webbrowser</span><span class="o">.</span><span class="n">webpage</span> <span class="o">-</span><span class="n">i</span> <span class="o">|</span> <span class="n">jsonpretty</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1008</span><span class="p">,</span>
+  <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.webbrowser.webpage&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.topic_type&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Webpage&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;data_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.composite&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;index_mode_uris&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;assoc_defs&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1013</span><span class="p">,</span>
+      <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.webbrowser.url&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;assoc_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.aggregation_def&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;whole_topic_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.webbrowser.webpage&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;whole_role_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.whole&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;whole_cardinality_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.one&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;part_topic_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.webbrowser.url&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;part_role_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.part&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;part_cardinality_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.one&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;view_config_topics&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;view_config_topics&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1025</span><span class="p">,</span>
+      <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.webclient.view_config&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;WebpageRenderer&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;dm4.webclient.js_page_renderer_class&quot;</span><span class="p">:</span> <span class="s2">&quot;WebpageRenderer&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For details about the topic type format see DataFormat#TopicType.</p>
+</div>
+</div>
+<div class="section" id="create-a-topic-type">
+<h4>Create a topic type<a class="headerlink" href="#create-a-topic-type" title="Permalink to this headline">¶</a></h4>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topictype</span>
+
+<span class="o">&lt;</span><span class="n">the</span> <span class="n">topic</span> <span class="nb">type</span> <span class="n">to</span> <span class="n">create</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>For details about the topic type format see DataFormat#TopicType.</p>
+<p>For a create operation not all of the topic type’s properties are involved:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Mandatory / Optional</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>uri</td>
+<td><div class="first last line-block">
+<div class="line">Optional. Default URI is domain.project.topic_type_&lt;ID&gt;.</div>
+<div class="line">You can change the URI later on through an update operation.</div>
+<div class="line">However, the URI is typically specified at creation time.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>value</td>
+<td><div class="first last line-block">
+<div class="line">Optional. Default topic type name is an empty string.</div>
+<div class="line">You can change the name later on through an update operation.</div>
+<div class="line">However, the name is typically specified at creation time.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>data_type_uri</td>
+<td>Mandatory.</td>
+</tr>
+<tr class="row-odd"><td>index_mode_uris</td>
+<td>Optional. Default is no indexing.</td>
+</tr>
+<tr class="row-even"><td>assoc_defs</td>
+<td><div class="first last line-block">
+<div class="line">For <strong>complex</strong> topic types: Optional. Default is no child types.</div>
+<div class="line">You can add child types later on through an update operation.</div>
+<div class="line">However, the child types are typically specified at creation time.</div>
+<div class="line">For <strong>simple</strong> topic types: Do not specify child types.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>view_config_topics</td>
+<td>Optional. Default is no view models.</td>
+</tr>
+</tbody>
+</table>
+<p>When creating a complex topic type: For details about the association definition format see DataFormat#AssociationDefinition.</p>
+<p>For a create operation not all of the association definition’s properties are involved:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Mandatory / Optional</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>assoc_type_uri</td>
+<td>Mandatory.</td>
+</tr>
+<tr class="row-odd"><td>whole_cardinality_uri</td>
+<td><div class="first last line-block">
+<div class="line">For a <strong>“composition”</strong>: Do not specify the parent cardinality (“one” is assumed).</div>
+<div class="line">For an <strong>“aggregation”</strong>: Mandatory.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>part_topic_type_uri</td>
+<td>Mandatory.</td>
+</tr>
+<tr class="row-odd"><td>part_cardinality_uri</td>
+<td>Mandatory.</td>
+</tr>
+<tr class="row-even"><td>view_config_topics</td>
+<td>Optional. Default is no view models.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id2">
+<h5>Example 1: Creating a simple topic<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topictype</span> <span class="o">-</span><span class="n">i</span> \
+<span class="o">-</span><span class="n">X</span> <span class="n">POST</span> \
+<span class="o">-</span><span class="n">H</span> <span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span><span class="n">application</span><span class="o">/</span><span class="n">json</span> \
+<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{uri: &quot;spaceorg.planetarium.planet&quot;,</span>
+     <span class="n">value</span><span class="p">:</span> <span class="s2">&quot;Planet&quot;</span><span class="p">,</span>
+     <span class="n">data_type_uri</span><span class="p">:</span> <span class="s2">&quot;dm4.core.text&quot;</span><span class="p">}</span><span class="s1">&#39; </span><span class="se">\</span>
+<span class="s1">| jsonpretty</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3505</span><span class="p">,</span>
+  <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.planet&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.topic_type&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Planet&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;data_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.text&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;index_mode_uris&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;assoc_defs&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;view_config_topics&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2-creating-a-complex-topic-type">
+<h5>Example 2: Creating a complex topic type<a class="headerlink" href="#example-2-creating-a-complex-topic-type" title="Permalink to this headline">¶</a></h5>
+<p>Before creating the complex topic type we create its (simple) child types:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topictype</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span><span class="n">application</span><span class="o">/</span><span class="n">json</span> \
+<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{uri: &quot;spaceorg.planetarium.planet_name&quot;,</span>
+     <span class="n">value</span><span class="p">:</span> <span class="s2">&quot;Name&quot;</span><span class="p">,</span>
+     <span class="n">data_type_uri</span><span class="p">:</span> <span class="s2">&quot;dm4.core.text&quot;</span><span class="p">}</span><span class="s1">&#39;</span>
+
+<span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topictype</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span><span class="n">application</span><span class="o">/</span><span class="n">json</span> \
+<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{uri: &quot;spaceorg.planetarium.mass&quot;,</span>
+     <span class="n">value</span><span class="p">:</span> <span class="s2">&quot;Mass&quot;</span><span class="p">,</span>
+     <span class="n">data_type_uri</span><span class="p">:</span> <span class="s2">&quot;dm4.core.number&quot;</span><span class="p">}</span><span class="s1">&#39;</span>
+
+<span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topictype</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span><span class="n">application</span><span class="o">/</span><span class="n">json</span> \
+<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{uri: &quot;spaceorg.planetarium.distance_to_earth&quot;,</span>
+     <span class="n">value</span><span class="p">:</span> <span class="s2">&quot;Distance to Earth&quot;</span><span class="p">,</span>
+     <span class="n">data_type_uri</span><span class="p">:</span> <span class="s2">&quot;dm4.core.number&quot;</span><span class="p">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>Then we create the complex topic type:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">topictype</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span><span class="n">application</span><span class="o">/</span><span class="n">json</span> \
+<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{uri: &quot;spaceorg.planetarium.planet&quot;,</span>
+     <span class="n">value</span><span class="p">:</span> <span class="s2">&quot;Planet&quot;</span><span class="p">,</span>
+     <span class="n">data_type_uri</span><span class="p">:</span> <span class="s2">&quot;dm4.core.composite&quot;</span><span class="p">,</span>
+     <span class="n">assoc_defs</span><span class="p">:</span> <span class="p">[</span>
+       <span class="p">{</span>
+         <span class="n">assoc_type_uri</span><span class="p">:</span> <span class="s2">&quot;dm4.core.composition_def&quot;</span><span class="p">,</span>
+         <span class="n">part_topic_type_uri</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.planet_name&quot;</span><span class="p">,</span>
+         <span class="n">part_cardinality_uri</span><span class="p">:</span> <span class="s2">&quot;dm4.core.one&quot;</span>
+       <span class="p">},</span> <span class="p">{</span>
+         <span class="n">assoc_type_uri</span><span class="p">:</span> <span class="s2">&quot;dm4.core.composition_def&quot;</span><span class="p">,</span>
+         <span class="n">part_topic_type_uri</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.mass&quot;</span><span class="p">,</span>
+         <span class="n">part_cardinality_uri</span><span class="p">:</span> <span class="s2">&quot;dm4.core.one&quot;</span>
+       <span class="p">},</span> <span class="p">{</span>
+         <span class="n">assoc_type_uri</span><span class="p">:</span> <span class="s2">&quot;dm4.core.composition_def&quot;</span><span class="p">,</span>
+         <span class="n">part_topic_type_uri</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.distance_to_earth&quot;</span><span class="p">,</span>
+         <span class="n">part_cardinality_uri</span><span class="p">:</span> <span class="s2">&quot;dm4.core.one&quot;</span>
+       <span class="p">}]}</span><span class="s1">&#39; </span><span class="se">\</span>
+<span class="s1">| jsonpretty</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3697</span><span class="p">,</span>
+  <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.planet&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.topic_type&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Planet&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;data_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.composite&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;assoc_defs&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3702</span><span class="p">,</span>
+      <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.planet_name&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;assoc_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.composition_def&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;whole_topic_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.planet&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;whole_role_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.whole&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;whole_cardinality_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.one&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;part_topic_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.planet_name&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;part_role_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.part&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;part_cardinality_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.one&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;view_config_topics&quot;</span><span class="p">:</span> <span class="p">[</span>
+
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3712</span><span class="p">,</span>
+      <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.mass&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;assoc_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.composition_def&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;whole_topic_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.planet&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;whole_role_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.whole&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;whole_cardinality_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.one&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;part_topic_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.mass&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;part_role_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.part&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;part_cardinality_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.one&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;view_config_topics&quot;</span><span class="p">:</span> <span class="p">[</span>
+
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3722</span><span class="p">,</span>
+      <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.distance_to_earth&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;assoc_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.composition_def&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;whole_topic_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.planet&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;whole_role_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.whole&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;whole_cardinality_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.one&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;part_topic_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.distance_to_earth&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;part_role_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.part&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;part_cardinality_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.one&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;view_config_topics&quot;</span><span class="p">:</span> <span class="p">[</span>
+
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;index_mode_uris&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;view_config_topics&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="association-types">
+<h3>Association Types<a class="headerlink" href="#association-types" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="get-all-association-type-uris">
+<h4>Get all association type URIs<a class="headerlink" href="#get-all-association-type-uris" title="Permalink to this headline">¶</a></h4>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GET</span> <span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">assoctype</span>
+</pre></div>
+</div>
+<div class="section" id="id3">
+<h5>Example<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">assoctype</span> <span class="o">-</span><span class="n">i</span> <span class="o">|</span> <span class="n">jsonpretty</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+
+<span class="p">[</span>
+  <span class="s2">&quot;dm4.core.aggregation&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.aggregation_def&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.association&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.composition&quot;</span>
+  <span class="s2">&quot;dm4.core.composition_def&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.instantiation&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.core.sequence&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.topicmaps.association_mapcontext&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.topicmaps.topic_mapcontext&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.webclient.search_result_item&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dm4.workspaces.workspace_context&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="get-an-association-type">
+<h4>Get an association type<a class="headerlink" href="#get-an-association-type" title="Permalink to this headline">¶</a></h4>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GET</span> <span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">assoctype</span><span class="o">/&lt;</span><span class="n">Association</span> <span class="n">Type</span> <span class="n">URI</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="id4">
+<h5>Example<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">assoctype</span><span class="o">/</span><span class="n">dm4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">instantiation</span> <span class="o">-</span><span class="n">i</span> <span class="o">|</span> <span class="n">jsonpretty</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.instantiation&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.assoc_type&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Instantiation&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;data_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.text&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;index_mode_uris&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;assoc_defs&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;label_config&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;view_config_topics&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">792</span><span class="p">,</span>
+      <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.webclient.view_config&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;dm4.webclient.color&quot;</span><span class="p">:</span> <span class="s2">&quot;rgb(41, 194, 225)&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For details about the association type format see DataFormat#AssociationType.</p>
+</div>
+</div>
+<div class="section" id="create-an-association-type">
+<h4>Create an association type<a class="headerlink" href="#create-an-association-type" title="Permalink to this headline">¶</a></h4>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">assoctype</span>
+
+<span class="o">&lt;</span><span class="n">the</span> <span class="n">association</span> <span class="nb">type</span> <span class="n">to</span> <span class="n">create</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>For details about the association type format see DataFormat#AssociationType.</p>
+<p>For a create operation not all of the association type’s properties are involved:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Mandatory / Optional</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>uri</td>
+<td><div class="first last line-block">
+<div class="line">Optional. Default URI is domain.project.assoc_type_&lt;ID&gt;.</div>
+<div class="line">You can change the URI later on through an update operation.</div>
+<div class="line">However, the URI is typically specified at creation time.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>value</td>
+<td><div class="first last line-block">
+<div class="line">Optional. Default association type name is an empty string.</div>
+<div class="line">You can change the name later on through an update operation.</div>
+<div class="line">However, the name is typically specified at creation time.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>data_type_uri</td>
+<td>Mandatory.</td>
+</tr>
+<tr class="row-odd"><td>index_mode_uris</td>
+<td>Optional. Default is no indexing.</td>
+</tr>
+<tr class="row-even"><td>assoc_defs</td>
+<td><div class="first last line-block">
+<div class="line">For <strong>complex</strong> association types: Optional. Default is no child types.</div>
+<div class="line">You can add child types later on through an update operation.</div>
+<div class="line">However, the child types are typically specified at creation time.</div>
+<div class="line">For <strong>simple</strong> association types: Do not specify child types.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>view_config_topics</td>
+<td>Optional. Default is no view models.</td>
+</tr>
+</tbody>
+</table>
+<p>When creating a complex topic type: For details about the association definition format see DataFormat#AssociationDefinition.</p>
+<p>For a create operation not all of the association definition’s properties are involved:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Mandatory / Optional</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>assoc_type_uri</td>
+<td>Mandatory.</td>
+</tr>
+<tr class="row-odd"><td>whole_cardinality_uri</td>
+<td><div class="first last line-block">
+<div class="line">For a <strong>“composition”</strong>: Do not specify the parent cardinality (“one” is assumed).</div>
+<div class="line">For an <strong>“aggregation”</strong>: Mandatory.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>part_topic_type_uri</td>
+<td>Mandatory.</td>
+</tr>
+<tr class="row-odd"><td>part_cardinality_uri</td>
+<td>Mandatory.</td>
+</tr>
+<tr class="row-even"><td>view_config_topics</td>
+<td>Optional. Default is no view models.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="example-1-creating-a-simple-association-type">
+<h5>Example 1: Creating a simple association type<a class="headerlink" href="#example-1-creating-a-simple-association-type" title="Permalink to this headline">¶</a></h5>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">assoctype</span> <span class="o">-</span><span class="n">i</span> \
+<span class="o">-</span><span class="n">X</span> <span class="n">POST</span> \
+<span class="o">-</span><span class="n">H</span> <span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span><span class="n">application</span><span class="o">/</span><span class="n">json</span> \
+<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{uri: &quot;spaceorg.planetarium.discoverer&quot;,</span>
+     <span class="n">value</span><span class="p">:</span> <span class="s2">&quot;Discoverer&quot;</span><span class="p">,</span>
+     <span class="n">data_type_uri</span><span class="p">:</span> <span class="s2">&quot;dm4.core.text&quot;</span><span class="p">}</span><span class="s1">&#39; </span><span class="se">\</span>
+<span class="s1">| jsonpretty</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2784</span><span class="p">,</span>
+  <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.discoverer&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.assoc_type&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Discoverer&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;data_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.text&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;index_mode_uris&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;assoc_defs&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;label_config&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;view_config_topics&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2-creating-a-simple-association-type-with-a-custom-color">
+<h5>Example 2: Creating a simple association type with a custom color<a class="headerlink" href="#example-2-creating-a-simple-association-type-with-a-custom-color" title="Permalink to this headline">¶</a></h5>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">assoctype</span> <span class="o">-</span><span class="n">i</span> \
+<span class="o">-</span><span class="n">X</span> <span class="n">POST</span> \
+<span class="o">-</span><span class="n">H</span> <span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span><span class="n">application</span><span class="o">/</span><span class="n">json</span> \
+<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{uri: &quot;spaceorg.planetarium.satellite&quot;,</span>
+     <span class="n">value</span><span class="p">:</span> <span class="s2">&quot;Satellite&quot;</span><span class="p">,</span>
+     <span class="n">data_type_uri</span><span class="p">:</span> <span class="s2">&quot;dm4.core.text&quot;</span><span class="p">,</span>
+     <span class="n">view_config_topics</span><span class="p">:</span> <span class="p">[{</span>
+       <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.webclient.view_config&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="s2">&quot;dm4.webclient.color&quot;</span><span class="p">:</span> <span class="s2">&quot;rgb(12, 70, 164)&quot;</span>
+     <span class="p">}}]}</span><span class="s1">&#39; </span><span class="se">\</span>
+<span class="s1">| jsonpretty</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2804</span><span class="p">,</span>
+  <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;spaceorg.planetarium.satellite&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.assoc_type&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Satellite&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;data_type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.core.text&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;index_mode_uris&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;assoc_defs&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;label_config&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;view_config_topics&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2809</span><span class="p">,</span>
+      <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;dm4.webclient.view_config&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;dm4.webclient.color&quot;</span><span class="p">:</span> <span class="s2">&quot;rgb(12, 70, 164)&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="commands">
+<h3>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="plugins">
+<h3>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="admin.html" class="btn btn-neutral float-right" title="DMX Admin Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="user.html" class="btn btn-neutral" title="DMX User Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Silke Meyer.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
