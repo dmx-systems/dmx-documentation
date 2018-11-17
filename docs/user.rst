@@ -34,8 +34,6 @@ When you first look at a blank DMX interface, there is not much there, yet. Here
 Adding your first topic
 =======================
 
-Right-click anywhere into the empty space. You will notice that there are two items somewhere in your topic map: "DMX" and "untitled" with two different icons. Where do they come from? You uncovered your workspace and your topic map by retrieving their extra information. Do you want to know more about them? Yes, but not now. Let's hide (not delete!) them! Long-click one of them and hold the mouse button until a dark circle with four buttons appears. Pull the mouse onto "Hide". Hide the other one as well.
-
 Right-click into the emptiness. A window appears that offers you to search something or to create something. Let's create something!
 
 .. image:: _static/search-create.jpg
@@ -80,6 +78,7 @@ Exploring your first topic
 ==========================
 
 .. image:: _static/context-menu.png
+    :width: 80
 
 To look at the data model of a person, click onto the person you created and select "What's related". The detail panel on the right side will open. It has four tabs. The first one ("person") shows all the content you entered. You are now looking at the second one, called "Related". It displays a list of all items that are logically related to this concrete person:
 
@@ -103,7 +102,7 @@ To create your own topic type with a few properties here is how to procede. Let'
 - Open the search field. Enter "Publication", select "Topic Type" and press "create".
 - Go into editing mode via the context menu. Change the data type from "Text" to "Identity" and hit "Save". Click somewhere into your map to close the detail panel.
 - Open the search field and enter "Title". You will find that two entries already exist. They comes from the default topics types "Event" and "Note" which also have titles. Create a new topic type "Title".
-- Grab the title item and pull it on the publication item. DMX will display what you just created: You created an association of the type "Composition Definition". Composition Definition means that you defining a more complex context between item on your map: The relationship between a publication, a title and a year. "Cardinality: One" means that each publication has exactly one title, not more. The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.
+- Grab the title item and pull it on the publication item. DMX will display what you just created: You created an association of the type "Composition Definition". Composition Definition means that you are defining a more complex context between item on your map: The relationship between a publication, a title and a year. "Cardinality: One" means that each publication has exactly one title, not more. The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.
 
 .. image:: _static/composition-definition.jpg
 
@@ -133,4 +132,4 @@ You can assign an icon to a topic type.
 Access Control
 **************
 
-
+tbd...
