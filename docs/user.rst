@@ -78,7 +78,7 @@ Exploring your first topic
 ==========================
 
 .. image:: _static/context-menu.png
-    :width: 80
+    :width: 220
 
 To look at the data model of a person, click onto the person you created and select "What's related". The detail panel on the right side will open. It has four tabs. The first one ("person") shows all the content you entered. You are now looking at the second one, called "Related". It displays a list of all items that are logically related to this concrete person:
 
