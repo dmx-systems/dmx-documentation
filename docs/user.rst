@@ -29,7 +29,7 @@ When you first look at a blank DMX interface, there is not much there, yet. Here
 .. figure:: _static/upper-toolbar.jpg
     :alt: Tool bar with workspace and topic map selection
 
-* Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. **The first default workspace is in SharingMode "public" that is: world-readable.** The default topic map has a similar information: It is not private.
+* Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. **The first default workspace and the default topic map are in SharingMode "public" that is: They are not private, but world-readable.**
 
 Adding your first topic
 =======================
@@ -40,7 +40,13 @@ Right-click into the emptiness. A window appears that offers you to search somet
 
 .. image:: _static/search-create.jpg
 
-DMX wants to make sure that you do not create something that already exists. That's why you enter whatever you want to create into the search field. Enter your favourite author's name. DMX will answer "No match". Click "create". DMX now tells you ti is ready to create the author, but you have to specify the topic type: Open the drop-drop menu and select "Person" from the prefined topic types. Click "Create". You will see a square on your topic map. It contains the name you entered and it states that this is thr person's first name. Oh no! You entered the given name and the surname? Let's correct this: Long-press the square and select "edit" from the context menu. On the right-hand side there is a detail panel now. It contains many fields you might need to edit any topic you categorized as a person. Correct the name and click the save button at the very bottom. Add a second topic of any topic type.
+DMX wants to make sure that you do not create something that already exists. That's why you enter whatever you want to create into the search field. Let's assume you want to enter all persons and organizations involved in a project. Start by entering a name. DMX will answer "No match". Select "Person" from the prefined topic types and click "Create".
+
+.. image:: _static/create-person.jpg
+
+You will see a square on your topic map. It contains the name you entered and it states that this is the person's first name. Oh no! You entered the given name and the surname? Let's correct this: Long-press the square and select "edit" from the context menu. On the right-hand side there is a detail panel now. It contains many fields you might need to edit any topic you categorized as a person. Correct the name and click the save button at the very bottom. Add a second topic, e.g. "Organization No. 1". Select the topic type "institution" this time.
+
+.. image:: _static/person-organization.jpg
 
 Adding your first association
 =============================
@@ -50,6 +56,11 @@ You probably chose your second topic because it is somehow related to the author
 Moving the map and the items
 ==============================
 Note that you can drag the whole topic map into any direction. You can also grab every item and drag it where you want it to be.
+
+Hiding items
+============
+
+You can hide items from the topic map by long-clicking onto them and using the "Hide" button in the context menu. If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
 
 
 DMX's default topic types
