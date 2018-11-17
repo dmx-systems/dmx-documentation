@@ -104,6 +104,9 @@ To create your own topic type with a few properties here is how to procede. Let'
 - Go into editing mode via the context menu. Change the data type from "Text" to "Identity" and hit "Save". Click somewhere into your map to close the detail panel.
 - Open the search field and enter "Title". You will find that two entries already exist. They comes from the default topics types "Event" and "Note" which also have titles. Create a new topic type "Title".
 - Grab the title item and pull it on the publication item. DMX will display what you just created: You created an association of the type "Composition Definition". Composition Definition means that you defining a more complex context between item on your map: The relationship between a publication, a title and a year. "Cardinality: One" means that each publication has exactly one title, not more. The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.
+
+.. image:: _static/composition-definition.jpg
+
 - Again, click somewhere onto the map and reopen the search field. Search for the year and open the existing topic type. Pull it onto the publication.
 
 You are now ready to use this data model you just built to add content.
