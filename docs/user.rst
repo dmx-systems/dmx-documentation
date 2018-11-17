@@ -79,6 +79,8 @@ One of the core characteristics of DMX is that you can look at the underlying da
 Exploring your first topic
 ==========================
 
+.. image:: _static/context-menu.jpg
+
 To look at the data model of a person, click onto the person you created and select "What's related". The detail panel on the right side will open. It has four tabs. The first one ("person") shows all the content you entered. You are now looking at the second one, called "Related". It displays a list of all items that are logically related to this concrete person:
 
 - the institution you linked the person to
