@@ -20,17 +20,21 @@ To get started with DMX you can
 
 Introduction to the web interface
 =================================
-When you first look at a blank DMX interface, there is not much there, yet. Here is what you see in the upper toolbar:
+When you first look at a blank DMX interface, there is not much there, yet. Here is what you see in the upper tool bar:
 
 * In the upper right corner there is a "Login" button. Log in with the username "admin" and no password.
-* In the upper left corner there is a drop-down menu called "Workspace". The only existing workspace is called "DMX". This is your general context everything you are about to do is going to be in (for the moment). Later you will be able to select one of all your worskspaces here.
+* In the upper left corner there is a drop-down menu called "Workspace". The only existing workspace is called "DMX". This is your general context everything you are about to do is going to be in (for the moment). Later you will be able to select one of all your workspaces here.
 * Next to it there is another drop-down menu called "Topicmap". There is only one topic map, it's called "untitled".
-* Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. The first default workspace is in SharingMode "public" that is: world-readable. The default topic map has a similar information: It is not private.
+
+.. figure:: _static/upper-toolbar.jpg
+    :alt: Tool bar with workspace and topic map selection
+
+* Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. **The first default workspace is in SharingMode "public" that is: world-readable.** The default topic map has a similar information: It is not private.
 
 Adding your first topic
 =======================
 
-Click anywhere into the empty space. You will notice that there are two items somewhere in your topic map: "DMX" and "untitled" with two different icons. Where do they come from? You uncovered your workspace and your topic map by retrieving their extra information. Do you want to know more about them? Yes, but not now. Let's hide (not delete!) them! Long-click one of them and hold the mouse button until a dark circle with four buttons appears. Pull the mouse onto "Hide". Hide the other one as well.
+Right-click anywhere into the empty space. You will notice that there are two items somewhere in your topic map: "DMX" and "untitled" with two different icons. Where do they come from? You uncovered your workspace and your topic map by retrieving their extra information. Do you want to know more about them? Yes, but not now. Let's hide (not delete!) them! Long-click one of them and hold the mouse button until a dark circle with four buttons appears. Pull the mouse onto "Hide". Hide the other one as well.
 
 Right-click into the emptiness. A window appears that offers you to search something or to create something. Let's create something!
 
@@ -68,6 +72,8 @@ Create your first topic type
 
 You just added your favourite author so next you need a topic type called "book" with certain properties all books have, e.g. a publisher, a year etc.
 
-
+**************
+Access Control
+**************
 
 
