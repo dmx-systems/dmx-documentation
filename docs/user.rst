@@ -124,7 +124,7 @@ You can assign an icon to a topic type.
 .. image:: _static/edit-view-configuration.jpg
 
 - The icon is selected by clicking into the empty little box and by chosing an appropriated icon from the icon pool.
-- Hit save, the publication you created now has a new icon.
+- Hit save, the publication you created now has a new icon and every publication you will create will have it, too.
 
 .. image:: _static/new-icon.jpg
 
