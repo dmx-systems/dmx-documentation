@@ -6,8 +6,8 @@
 Welcome to DMX's documentation!
 =======================================
 
-WORK IN PROGRESS!
-#################
+WORK IN PROGRESS!!!
+###################
 
 .. toctree::
    :maxdepth: 2
