@@ -13,7 +13,7 @@ You first need to install a Java Runtime Environment on your computer.
 Java 6 to 8
 ===========
 
- Any version from **Java 6 to 8** will work out of the box with the DMX distribution provided on our `download site <https://download.dmx.systems/ci/>`_. You can procede directly with :ref:`the installation from a zip file <installation-zip-label>`.
+Any version from **Java 6 to 8** will work out of the box with the DMX distribution provided on our `download site <https://download.dmx.systems/ci/>`_. You can procede directly with :ref:`the installation from a zip file <installation-zip-label>`.
 
 Java 10
 =======
