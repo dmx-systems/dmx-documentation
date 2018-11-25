@@ -13,9 +13,7 @@ You first need to install a Java Runtime Environment on your computer.
 Java 6 to 8
 ===========
 
- Any version from **Java 6 to 8** will work out of the box with the DMX distribution provided on our `download site_`.
-
-.. _download site: https://download.dmx.systems/ci/
+ Any version from **Java 6 to 8** will work out of the box with the DMX distribution provided on our `download site <https://download.dmx.systems/ci/>`_. You can procede directly with `installation-zip-label`_.
 
 Java 10
 =======
@@ -86,13 +84,13 @@ If you are running Java 11 you have to procede as follows:
 
 On a Linux system, the bundle folder is located in ``/usr/share/deepamehta/bundle``.
 
-2. On Linux, change the java call in deepamehta-linux.sh:
+2. On Linux, change the java call in ``deepamehta-linux.sh``:
 
 .. code:: bash
 
   exec java -Dfile.encoding=UTF-8 -Dfelix.system.properties=file:conf/config.properties --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.security=ALL-UNNAMED -jar bin/felix.jar
 
-On MacOS, change the java call in deepamehta-macosx.command:
+On MacOS, change the java call in ``deepamehta-macosx.command``:
 
 .. code:: bash
 
