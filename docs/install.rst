@@ -14,7 +14,7 @@ You first need to install a Java Runtime Environment on your computer. Any versi
 
 .. code:: bash
 
-exec java -Dfile.encoding=UTF-8 -Dfelix.system.properties=file:conf/config.properties --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.security=ALL-UNNAMED --add-modules java.xml.bind -jar bin/felix.jar
+  exec java -Dfile.encoding=UTF-8 -Dfelix.system.properties=file:conf/config.properties --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.security=ALL-UNNAMED --add-modules java.xml.bind -jar bin/felix.jar
 
 If you are running MacOS, edit the command in ``deepamehta-macosx.command`` like this:
 
