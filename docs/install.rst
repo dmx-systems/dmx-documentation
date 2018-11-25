@@ -8,7 +8,9 @@ Installation
 Requirements
 ************
 
-You first need to install a Java Runtime Environment on your computer. Any version from 6 to 8 will work out of the box with the DMX distribution provided on our `download site_`. If you have installed Java 10 you have to change two things:
+You first need to install a Java Runtime Environment on your computer. Any version from **Java 6 to 8** will work out of the box with the DMX distribution provided on our `download site_`. If you have installed **Java 10** you have to change two things:
+
+.. _download site: https://download.dmx.systems/ci/
 
 1. In the zip archive you downloaded there is a Linux install script called deepamehta-linux.sh. To run DMX with Java, please modify the java call in the script like this:
 
@@ -63,7 +65,8 @@ If you are running MacOS, edit the command in ``deepamehta-macosx.command`` like
 	    org.xml.sax,\
 	    org.xml.sax.helpers
 
-.. _download site: https://download.dmx.systems/ci/
+.. warning:: Java 9 is currently untested, but probably works the same way as Java 10.
+
 
 .. _installation-zip-label:
 
