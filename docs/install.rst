@@ -8,9 +8,58 @@ Installation
 Requirements
 ************
 
-You first need to install a Java Runtime Environment on your computer. Any version from 6 to 9 will work.
+You first need to install a Java Runtime Environment on your computer. Any version from 6 to 8 will work out of the box with the DMX distribution provided on our `download site_`. If you have installed Java 10 you have to change two things:
 
-.. warning:: Java 10 is not supported, yet.
+1. In the zip archive you downloaded there is a Linux install script called deepamehta-linux.sh. To run DMX with Java, please modify the java call in the script like this:
+
+``exec java -Dfile.encoding=UTF-8 -Dfelix.system.properties=file:conf/config.properties --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.security=ALL-UNNAMED --add-modules java.xml.bind -jar bin/felix.jar``
+
+If you are running MacOS, edit the command in ``deepamehta-macosx.command`` like this:
+
+``java -Dfile.encoding=UTF-8 -Dfelix.system.properties=file:conf/config.properties --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.security=ALL-UNNAMED --add-modules java.xml.bind -jar bin/felix.jar``
+
+2. Append the following lines to the file ``./conf/properties``:
+
+``
+org.osgi.framework.system.capabilities.extra = osgi.ee;\
+    osgi.ee="JavaSE";\
+    version:List<Version>="1.0,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8"
+org.osgi.framework.system.packages.extra = \
+    javax.activation,\
+    javax.annotation.processing,\
+    javax.imageio,\
+    javax.imageio.spi,\
+    javax.imageio.stream,\
+    javax.lang.model,\
+    javax.lang.model.element,\
+    javax.lang.model.type,\
+    javax.lang.model.util,\
+    javax.management,\
+    javax.management.modelmbean,\
+    javax.management.remote,\
+    javax.naming,\
+    javax.net.ssl,\
+    javax.security.auth,\
+    javax.security.cert,\
+    javax.tools,\
+    javax.xml.bind,\
+    javax.xml.bind.annotation,\
+    javax.xml.namespace,\
+    javax.xml.parsers,\
+    javax.xml.stream,\
+    javax.xml.stream.events,\
+    javax.xml.stream.util,\
+    javax.xml.transform,\
+    javax.xml.transform.dom,\
+    javax.xml.transform.sax,\
+    javax.xml.transform.stream,\
+    javax.xml.validation,\
+    org.w3c.dom,\
+    org.xml.sax,\
+    org.xml.sax.helpers
+``
+
+.. _download site: https://download.dmx.systems/ci/
 
 .. _installation-zip-label:
 
