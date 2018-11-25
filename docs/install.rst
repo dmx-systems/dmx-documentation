@@ -8,9 +8,19 @@ Installation
 Requirements
 ************
 
-You first need to install a Java Runtime Environment on your computer. Any version from **Java 6 to 8** will work out of the box with the DMX distribution provided on our `download site_`. If you have installed **Java 10** you have to change two things:
+You first need to install a Java Runtime Environment on your computer.
+
+Java 6 to 8
+===========
+
+ Any version from **Java 6 to 8** will work out of the box with the DMX distribution provided on our `download site_`.
 
 .. _download site: https://download.dmx.systems/ci/
+
+Java 10
+=======
+
+If you have installed **Java 10** you have to change two things:
 
 1. In the zip archive you downloaded there is a Linux install script called deepamehta-linux.sh. To run DMX with Java, please modify the java call in the script like this:
 
@@ -66,6 +76,68 @@ If you are running MacOS, edit the command in ``deepamehta-macosx.command`` like
 	    org.xml.sax.helpers
 
 .. warning:: Java 9 is currently untested, but probably works the same way as Java 10.
+
+Java 11
+=======
+
+If you are running Java 11 you have to procede as follows:
+
+1. Download this additional jar file and put it into DM's bundle folder: https://repo1.maven.org/maven2/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar
+
+On a Linux system, the bundle folder is located in ``/usr/share/deepamehta/bundle``.
+
+2. On Linux, change the java call in deepamehta-linux.sh:
+
+.. code:: bash
+
+  exec java -Dfile.encoding=UTF-8 -Dfelix.system.properties=file:conf/config.properties --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.security=ALL-UNNAMED -jar bin/felix.jar
+
+On MacOS, change the java call in deepamehta-macosx.command:
+
+.. code:: bash
+
+  java -Dfile.encoding=UTF-8 -Dfelix.system.properties=file:conf/config.properties --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.security=ALL-UNNAMED -jar bin/felix.jar
+
+3. In ``./conf/config.properties`` add these lines at the end:
+
+.. code:: bash
+
+  org.osgi.framework.system.capabilities.extra = osgi.ee;\
+    osgi.ee="JavaSE";\
+    version:List<Version>="1.0,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8"
+  org.osgi.framework.system.packages.extra = \
+    javax.activation,\
+    javax.annotation.processing,\
+    javax.imageio,\
+    javax.imageio.spi,\
+    javax.imageio.stream,\
+    javax.lang.model,\
+    javax.lang.model.element,\
+    javax.lang.model.type,\
+    javax.lang.model.util,\
+    javax.management,\
+    javax.management.modelmbean,\
+    javax.management.remote,\
+    javax.naming,\
+    javax.net.ssl,\
+    javax.security.auth,\
+    javax.security.cert,\
+    javax.tools,\
+    javax.xml.datatype,\
+    javax.xml.namespace,\
+    javax.xml.parsers,\
+    javax.xml.stream,\
+    javax.xml.stream.events,\
+    javax.xml.stream.util,\
+    javax.xml.transform,\
+    javax.xml.transform.dom,\
+    javax.xml.transform.sax,\
+    javax.xml.transform.stream,\
+    javax.xml.validation,\
+    org.w3c.dom,\
+    org.xml.sax,\
+    org.xml.sax.ext,\
+    org.xml.sax.helpers
 
 
 .. _installation-zip-label:
