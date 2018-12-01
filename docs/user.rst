@@ -30,6 +30,7 @@ When you first look at a blank DMX interface, there is not much there, yet. Here
     :alt: Tool bar with workspace and topic map selection
 
 * Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. **The first default workspace and the default topic map are in SharingMode "public" that is: They are not private, but world-readable.**
+* In the upper right corner there is a button with an arrow. It is greyed out if nothing is selected. Later you can open the detail panel by pressing it.
 
 Adding your first topic
 =======================
@@ -53,15 +54,31 @@ Next you want to enter how the person is related to the organization. You can es
 
 .. image:: _static/diff-roles-in-organization.jpg
 
+Inline editing
+==============
+
+*******************
+Organizing your map
+*******************
+
 Moving the map and the items
 ==============================
 Note that you can drag the whole topic map into any direction. You can also grab every item and drag it where you want it to be. Zooming in or out is done by scrolling up or down.
+
+Bulk selection
+==============
+To move more than one item at a time you can bulk select several items by keeping the CTRL key pressed and clicking them. The selected topics now have a blue border. Drag the whole selection where you want to place it.
+
+.. image:: _static/bulk-select.jpg
+    :width: 600
+
+.. image:: _static/bulk-move.jpg
+    :width: 600
 
 Hiding items
 ============
 
 You can hide items from the topic map by long-clicking onto them and using the "Hide" button in the context menu. If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
-
 
 DMX's default topic types
 ====================================
