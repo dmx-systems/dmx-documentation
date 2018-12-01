@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = u'DMX'
-copyright = u'2018, Silke Meyer'
-author = u'silke'
+copyright = u'Copyright (C) 2018 DMX Systems, https://dmx.systems, Author: Silke Meyer <silke@dmx.berlin>'
+author = u'Silke Meyer <silke@dmx.berlin>'
 
 # The short X.Y version
 version = u''
