@@ -47,12 +47,16 @@ You will see a square on your topic map. It contains the name you entered and it
 
 .. image:: _static/person-organization.jpg
 
-Adding your first association
-=============================
+Adding your first associations
+==============================
 
-Next you want to enter how the person is related to the organization. You can establish a connection between the two topics by drawing the person onto the organization. A square will appear that tell you this is an "Organization Association". You can view and edit details of associations the same way you can with topics. If you do so you will notice that an "Organization Association" has a specific drop-down menu called "organizational role". It lets you choose the person's role from a predefined set of common roles people have in organizations. Later you will learn how to create custom relationships ("associations") and how to predefine their properties.
+Next you want to enter how the person is related to the organization. You can establish a connection between the two topics by draging the person onto the organization. A square will appear that tell you this is an "Organization Association". You can view and edit details of associations the same way you can with topics. If you do so you will notice that an "Organization Association" has a specific drop-down menu called "organizational role". It lets you choose the person's role from a predefined set of common roles people have in organizations. Later you will learn how to create custom relationships ("associations") and how to predefine their properties.
 
 .. image:: _static/diff-roles-in-organization.jpg
+
+Thinking of real-world social networks, you will find that often people have more than one role. DMX can represent this: Simply drag the person onto the organization again and specify their second role.
+
+.. image:: _static/multiple-assocs.jpg
 
 Inline editing
 ==============
