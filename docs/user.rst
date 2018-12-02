@@ -43,7 +43,11 @@ DMX wants to make sure that you do not create something that already exists. Tha
 
 .. image:: _static/create-person.jpg
 
-You will see a square on your topic map. It contains the name you entered and it states that this is the person's first name. Oh no! You entered the given name and the surname? Let's correct this: Long-press the square and select "edit" from the context menu. On the right-hand side there is a detail panel now. It contains many fields you might need to edit any topic you categorized as a person. Correct the name and click the save button at the very bottom. Add a second topic, e.g. "Organization No. 1". Select the topic type "institution" this time.
+You will see a square on your topic map. It contains the name you entered and it states that this is the person's first name. Oh no! You entered the given name and the surname? Let's correct this: Long-press the square and select "edit" from the context menu.
+
+.. image:: _static/context-menu-edit.jpg
+
+On the right-hand side there is a detail panel now. It contains many fields you might need to edit any topic you categorized as a person. Correct the name and click the save button at the very bottom. Add a second topic, e.g. "Organization No. 1". Select the topic type "institution" this time.
 
 .. image:: _static/person-organization.jpg
 
@@ -59,8 +63,16 @@ Thinking of real-world social networks, you will find that often people have mor
 .. image:: _static/multiple-assocs.jpg
     :width: 300
 
-Inline editing
+Editing topics
 ==============
+
+The detail panel
+----------------
+
+To fill in more details to a topic you open the detail panel on the right side. You can open it by selecting a topic
+
+Inline editing
+--------------
 
 ******************************
 Getting to know the data model
