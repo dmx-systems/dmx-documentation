@@ -173,12 +173,12 @@ tbd...
 
 Geodata
 =======
-DMX comes with built-in support for geodata. The feature is still under construction. Right now every topic with an address can be shown on a map. The so-called geomaps are a special type of topic map in DMX. Geomaps are based on openstreetmap.org. Here is an example fo how to create and populate them: Edit a person or an institution and add an address.
+DMX comes with built-in support for geodata. The feature is still under construction. Right now every topic with an address can be shown on a map. The so-called geomaps are a special type of topic map in DMX. Geomaps are based on openstreetmap.org. Here is an example of how to create and populate them: Edit a person or an institution and add an address.
 
 .. image:: _static/add-address.jpg
-    width: 800
+    :width: 800
 
-Open the search and create dialogue. Enter a name for the new topic map, e.g. OurGeomap. In the topic type selection choose "Topicmap". Underneath it you can now choose the type of topic map you want to add. Select "Geomap" and press "Create".
+Open the search and create dialogue. Enter a name for the new topic map, e.g. "Our Geomap". In the topic type selection choose "Topicmap". Underneath it you can now choose the type of topic map you want to add. Select "Geomap" and press "Create".
 
 .. image:: _static/add-geomap.jpg
 
@@ -190,4 +190,4 @@ If you click onto an item the in-map details show you what is there.
 
 .. image:: _static/display-map-item.jpg
 
-You return to the normal topic map via the same "Topcimap" drop-down menu.
+You return to the normal topic map via the same "Topicmap" drop-down menu.
