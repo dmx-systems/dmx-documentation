@@ -144,13 +144,13 @@ Hiding items
 
 You can hide items from the topic map by long-clicking onto them and using the "Hide" button in the context menu. If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
 
-How to assign icons to topic types
-==================================
+Assigning icons to topic types
+==============================
 
 You can assign icons from the Font Awesome collection to your topic types. Let's say you have a topic type "Publication" and you want all publications in your map to have a book icon.
 
-- Click onto the topic type "Publication" (not onto an individual publication you already added!). You are about to modify the general topic type, not an instance of it.
-- You the little arrow in the upper right corner to open the detail panel.
+- Click onto the topic type "Publication", //not// onto an individual publication you already added. You are about to modify the general concept of all your publications, not an existing instance of it.
+- Use the little arrow in the upper right corner to open the detail panel.
 - Go to the fourth tab called "View". Here you can view and edit the configuration of the topic type. Click "Edit".
 - Click into the white field labeled "Icon".
 
@@ -161,8 +161,8 @@ You can assign icons from the Font Awesome collection to your topic types. Let's
 
 .. image:: _static/new-icon.jpg
 
-How to assign colours to association types
-==========================================
+Assigning colours to association types
+======================================
 
 
 **************
