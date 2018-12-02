@@ -57,7 +57,7 @@ Next you want to enter how the person is related to the organization. You can es
 Thinking of real-world social networks, you will find that often people have more than one role. DMX can represent this: Simply drag the person onto the organization again and specify their second role.
 
 .. image:: _static/multiple-assocs.jpg
-    width: 300
+    :width: 300
 
 Inline editing
 ==============
@@ -182,7 +182,7 @@ Open the search and create dialogue. Enter a name for the new topic map, e.g. "O
 
 .. image:: _static/add-geomap.jpg
 
-Open the topic map selection in the upper toolbar and select your newly created geomap. The map is displayed with all items you assigned an address to.
+Open the topic map selection in the upper toolbar and select your newly created geomap. The map is displayed with all items you assigned an address to. Reload the map in your browser after any changes to address data to have them updated.
 
 .. image:: _static/topic-map-selection.jpg
 
