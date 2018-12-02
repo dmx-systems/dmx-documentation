@@ -57,6 +57,7 @@ Next you want to enter how the person is related to the organization. You can es
 Thinking of real-world social networks, you will find that often people have more than one role. DMX can represent this: Simply drag the person onto the organization again and specify their second role.
 
 .. image:: _static/multiple-assocs.jpg
+    width: 300
 
 Inline editing
 ==============
@@ -84,14 +85,23 @@ Hiding items
 
 You can hide items from the topic map by long-clicking onto them and using the "Hide" button in the context menu. If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
 
-DMX's default topic types
-====================================
 
-As you have seen, DMX comes with a few predefined topic types: Event, institution, note, web resource, and person. Each topic type brings certain fields you can fill in: While events have dates and locations, persons can have numbers and web resources have a URL. As you probably need more to map what you have in mind you will now learn how to create your own topic types.
 
 ******************************
 Getting to know the data model
 ******************************
+
+DMX's default topic types
+====================================
+
+As you have seen, DMX comes with a few predefined topic types:
+- event,
+- institution,
+- note,
+- web resource,
+- person.
+
+Each topic type brings certain fields you can fill in: While events have dates and locations, persons can have telephone numbers and web resources have a URL. As you probably need more than these presets to map what you have in mind you will now learn how to create your own topic types.
 
 One of the core characteristics of DMX is that you can look at the underlying data model and modify it in the same interface.
 
