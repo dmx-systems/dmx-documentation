@@ -47,7 +47,7 @@ You will see a square on your topic map. It contains the name you entered and it
 
 .. image:: _static/context-menu-edit.jpg
 
-On the right-hand side there is a detail panel now. It contains many fields you might need to edit any topic you categorized as a person. Correct the name and click the save button at the very bottom. Add a second topic, e.g. "Organization No. 1". Select the topic type "institution" this time.
+On the right-hand side there is a detail panel now. It contains many fields you might need for all persons. Correct the name and click the save button at the very bottom. Add a second topic, e.g. "Organization No. 1". Select the topic type "institution" this time.
 
 .. image:: _static/person-organization.jpg
 
@@ -69,10 +69,18 @@ Editing topics
 The detail panel
 ----------------
 
-To fill in more details to a topic you open the detail panel on the right side. You can open it by selecting a topic
+To add more details to a topic you use the detail panel on the right side. There are two ways to open it: You can use the edit button from the context menu (see above). You can also select the item with a click and use the arrow button in the upper right corner to open the detail panel.
+
+.. image:: _static/button-detail-panel.jpg
 
 Inline editing
 --------------
+
+For quick changes of fields you already filled in you can use the inline editing mode. Click to select the topic and move your mouse to the upper right corner of the displayed square. A little closed lock appears. Click to unlock it.
+
+.. image:: _static/inline-editing-unlock.jpg
+
+Double-click onto the content you want to change, do your edit and save the change.
 
 ******************************
 Getting to know the data model
