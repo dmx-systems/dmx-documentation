@@ -62,31 +62,6 @@ Thinking of real-world social networks, you will find that often people have mor
 Inline editing
 ==============
 
-*******************
-Organizing your map
-*******************
-
-Moving the map and the items
-==============================
-Note that you can drag the whole topic map into any direction. You can also grab every item and drag it where you want it to be. Zooming in or out is done by scrolling up or down.
-
-Bulk selection
-==============
-To move more than one item at a time you can bulk select several items by keeping the CTRL key pressed and clicking them. The selected topics now have a blue border. Drag the whole selection where you want to place it.
-
-.. image:: _static/bulk-select.jpg
-    :width: 600
-
-.. image:: _static/bulk-move.jpg
-    :width: 600
-
-Hiding items
-============
-
-You can hide items from the topic map by long-clicking onto them and using the "Hide" button in the context menu. If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
-
-
-
 ******************************
 Getting to know the data model
 ******************************
@@ -95,6 +70,7 @@ DMX's default topic types
 ====================================
 
 As you have seen, DMX comes with a few predefined topic types:
+
 - event,
 - institution,
 - note,
@@ -132,7 +108,7 @@ To create your own topic type with a few properties here is how to procede. Let'
 
 - Open the search field. Enter "Publication", select "Topic Type" and press "create".
 - Go into editing mode via the context menu. Change the data type from "Text" to "Identity" and hit "Save". Click somewhere into your map to close the detail panel.
-- Open the search field and enter "Title". You will find that two entries already exist. They comes from the default topics types "Event" and "Note" which also have titles. Create a new topic type "Title".
+- Open the search field and enter "Title". You will find that two entries already exist. They come from the default topics types "Event" and "Note" which also have titles. Create a new topic type "Title".
 - Grab the title item and pull it on the publication item. DMX will display what you just created: You created an association of the type "Composition Definition". Composition Definition means that you are defining a more complex context between item on your map: The relationship between a publication, a title and a year. "Cardinality: One" means that each publication has exactly one title, not more. The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.
 
 .. image:: _static/composition-definition.jpg
@@ -145,19 +121,49 @@ You are now ready to use this data model you just built to add content.
 - As the title was the first property you added to the composition, it is automatically filled in from the search field.
 - Edit your new publication and add a year.
 
-You can assign an icon to a topic type.
+*******************
+Organizing your map
+*******************
 
-- Show the "What's related" of the topic type "publication" (not the individual book!).
-- Scroll down in the detail panel and open "View Configuration". It opens on the topic map. Like before you can edit it via the context menu.
+Moving the map and the items
+==============================
+Note that you can drag the whole topic map into any direction. You can also grab every item and drag it where you want it to be. Zooming in or out is done by scrolling up or down.
 
-.. image:: _static/view-configuration.jpg
+Bulk selection
+==============
+To move more than one item at a time you can bulk select several items by keeping the CTRL key pressed and clicking them. The selected topics now have a blue border. Drag the whole selection where you want to place it.
 
-.. image:: _static/edit-view-configuration.jpg
+.. image:: _static/bulk-select.jpg
+    :width: 600
 
-- The icon is selected by clicking into the empty little box and by chosing an appropriated icon from the icon pool.
-- Hit save, the publication you created now has a new icon and every publication you will create will have it, too.
+.. image:: _static/bulk-move.jpg
+    :width: 600
+
+Hiding items
+============
+
+You can hide items from the topic map by long-clicking onto them and using the "Hide" button in the context menu. If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
+
+How to assign icons to topic types
+==================================
+
+You can assign icons from the Font Awesome collection to your topic types. Let's say you have a topic type "Publication" and you want all publications in your map to have a book icon.
+
+- Click onto the topic type "Publication" (not onto an individual publication you already added!). You are about to modify the general topic type, not an instance of it.
+- You the little arrow in the upper right corner to open the detail panel.
+- Go to the fourth tab called "View". Here you can view and edit the configuration of the topic type. Click "Edit".
+- Click into the white field labeled "Icon".
+
+.. image:: _static/open-icon-selection.jpg
+
+- You can either select an icon directly or use the search box.
+- Hit save to apply the icon to all topics that are publications.
 
 .. image:: _static/new-icon.jpg
+
+How to assign colours to association types
+==========================================
+
 
 **************
 Access Control
