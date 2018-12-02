@@ -82,6 +82,8 @@ For quick changes of fields you already filled in you can use the inline editing
 
 Double-click onto the content you want to change, do your edit and save the change.
 
+.. image:: _static/inline-editing.jpg
+
 ******************************
 Getting to know the data model
 ******************************
