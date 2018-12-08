@@ -192,11 +192,66 @@ Assigning colours to association types
 
 tbd...
 
-**************
-Access Control
-**************
+**********************
+Creating user accounts
+**********************
+
+.. note:: Try the OpenLDAP plugin if you already have your user accounts in there!
 
 tbd...
+
+********************************************
+Workspaces: Collaboration and Access Control
+********************************************
+
+Introduction to workspaces and sharing modes
+============================================
+
+In DMX workspaces are the highest level content is organized in. Read and write permissions are tied to workspaces. That is why workspaces are the key to the configuration of access control. There are five sharing modes:
+
+* **private**: In a private workspace just the owner of the workspace can read and write.
+* **confidential**: In a confidential workspace the owner can read and write. Group members can read, but not change anything.
+* **collaborative**: A collaborative workspace can be read and edited by the owner and by all group members.
+* **public**: A public workspace is world-readable. The default "DMX" workspace is an example of a public workspace.
+* **common**: In a common workspace everyone can read and write. No login is required.
+
+Every workspace has an owner, usually the creator, and optional members. When you are logged in you can access the different workspaces via the drop-down menu in the upper left corner. Once you log out DMX will switch back to a public (world-readable) workspace like the default workspace called "DMX".
+
+.. image:: _static/workspace-selection.jpg
+
+DMX comes with four default workspaces with the following sharing modes:
+
+* **DMX**: This workspace a public, it is the one that is displayed publicly when people come to the site.
+* **Private Workspace**: This is the private workspace of the respective logged in user. Only this user can see and and edit their map as it is private.
+* **Administration**: Only admins can view and edit this workspace. Unprivileged user accounts do not have this entry in the menu.
+* **System**: The System Workspace is readable by everyone who is logged in. It contains all user names that exist in this DMX installation. The user names are readable to all users. This is needed for sharing content with others as you will see below.
+
+.. image:: _static/system-workspace.jpg
+
+Sharing a workspace
+===================
+
+Here is how creating a shared workspace works:
+
+* Log in as an unprivileged user and go to your private workspace where you can edit.
+* Open the search field and create a workspace. Make it a collaborative workspace to give all members write permission.
+
+.. image:: _static/workspace-creation.jpg
+
+* The new workspace automatically opens. Click onto the blue information icon next to the workspace selection to reveal the workspace topic itself on the topic map.
+* To add members to the workspace you can just enter user names and click them to reveal them on the map. As mentioned above, all user names are visible to all other logged in users via the system workspace. In DMX, membership is tied to user names that is why you need read permission on the user names.
+* If you don't know their user names you can go to the System workspace and investigate.
+* Now that you have the workspace itself and a user name on your topic map you can just drag the user name onto the workspace to create an association between them.
+* Next you have to qualify this association as a membership: Edit the association.
+
+.. image:: _static/edit-ws-assoc.jpg
+    :width: 300
+
+* In the detail panel you can now select the association type "Membership". You are done!
+
+.. image:: _static/edit-ws-assoc2.png
+
+* The user you shared your workspace with can now log in, select your collaborative workspace and add something, e.g. a note. It will automatically appear in the workspace, visible to all workspace members.
 
 **********
 Topic maps
