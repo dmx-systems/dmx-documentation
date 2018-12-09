@@ -207,7 +207,7 @@ Workspaces: Collaboration and Access Control
 Introduction to workspaces and sharing modes
 ============================================
 
-In DMX workspaces are the highest level content is organized in. Read and write permissions are tied to workspaces. That is why workspaces are the key to the configuration of access control. There are five sharing modes:
+In DMX workspaces are the highest level content is organized in. Read and write permissions are tied to workspaces. Every topic or association is assigned to exactly *one* workspace. That is why workspaces are the key to the configuration of access control. There are five sharing modes:
 
 * **private**: In a private workspace just the owner of the workspace can read and write.
 * **confidential**: In a confidential workspace the owner can read and write. Group members can read, but not change anything.
@@ -234,14 +234,14 @@ Sharing a workspace
 Here is how creating a shared workspace works:
 
 * Log in as an unprivileged user and go to your private workspace where you can edit.
-* Open the search field and create a workspace. Make it a collaborative workspace to give all members write permission.
+* Open the search field and **create a workspace**. Make it a collaborative workspace to give others write permission.
 
 .. image:: _static/workspace-creation.jpg
 
 * The new workspace automatically opens. Click onto the blue information icon next to the workspace selection to reveal the workspace topic itself on the topic map.
 * To add members to the workspace you can just enter user names and click them to reveal them on the map. As mentioned above, all user names are visible to all other logged in users via the system workspace. In DMX, membership is tied to user names that is why you need read permission on the user names.
 * If you don't know their user names you can go to the System workspace and investigate.
-* Now that you have the workspace itself and a user name on your topic map you can just drag the user name onto the workspace to create an association between them.
+* Now that you have the workspace itself and a user name on your topic map you can just **drag the user name onto the workspace** to create an association between them.
 * Next you have to qualify this association as a membership: Edit the association.
 
 .. image:: _static/edit-ws-assoc.jpg
@@ -252,6 +252,8 @@ Here is how creating a shared workspace works:
 .. image:: _static/edit-ws-assoc2.png
 
 * The user you shared your workspace with can now log in, select your collaborative workspace and add something, e.g. a note. It will automatically appear in the workspace, visible to all workspace members.
+
+.. note:: You can create memberships in every workspace that you have write permission in.
 
 **********
 Topic maps
