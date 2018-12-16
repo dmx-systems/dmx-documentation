@@ -1,94 +1,175 @@
 .. _glossary-label:
 
-===============
+############
 DMX Glossary
-===============
+############
 
-The glossary entries are in alphabetical order. You might want to start to read about Topics, Associations, and Topic Types though.
+**********************
+The DMX user interface
+**********************
 
-Aggregation Definition
-----------------------
-
-DO WE NEED THIS? loose dependency of the Child Type to its Parent Type
-
-Association
------------
-
-Associations represent the relationships between your Topics. The most important characteristics of associations in DMX is that you can qualify them so that they get the meaning you need (see Association Types).
-
-Association Type
-----------------
-
-Just like Topics Associations have specific types, too. With Association Types you can tell more about the links between your Topics. Timelines or authorship information are examples of Association Types.
-
-Composite
----------
-
-A composite is a data type that allows you to store complex types of data. FIXME
-a type which composes or aggregates other types in a cardinality of one or many
-
-Composition Definition
-------------------------
-
-DO WE NEED THIS? strong, direct dependency of the Child Type to the Parent Type
-
-Data model
-----------
-
-
-Data type
-----------
-
-Topic Types can be of different data types which means they can have different characteristics. They can be numbers, text, Boolean (yes/no), or composites. With composites you can model more complex contexts (see above).
-
-Detail panel
-------------
-The detail panel is located the right side of the screen. It shows details about a selected item (Topic, Topic Type or association). It has an edit button at the very bottom.
-
-Graph database
----------------
-
-the storage layer structuring your data as nodes and edges
-
-Instance
---------
-
-In DMX instance is a very technical term. The idea is that you have a Topic Type, e.g. "colour" and many individual Topics, e.g. "red", "green", "black". We call each of these Topics an instance of the Topic Type "colour". Technically this means that all instances are connected to their Topic Type. When you create your Data Model, and you add more colours, DMX actually creates Associations in the underlying DAta Model: It links "yellow" to the Topic Type "colour". This also means you can build a Data Model without knowing about Instances but it helps to understand DMX.
-
-
-Sharing Mode
-------------
-
-The Sharing Mode is the access control setting for Workspaces. Each Workspace can be defined as private, confidential, collaborative, public or common.
-
-Toolbar
--------
-The toolbar is the top bar in the DMX user interface. It has menus for workspace selection, topic map selection, a search field, a help button and the login/logout buttons.
-
-
-Topic
------
-In the DMX data model, the whole world consists of topics and associations. You can think of them as things and how they are related to each other. Thus, a *topic* can be anything, a contact, a location, a file, a website, a thought etc. *Topics* are grouped into *Topic Types* and they can be shown on a *Topic Map*.
-
-
-Topic Map
----------
-A Topic Map is a visual context you work in. You place all your Topics and Associations into Topic Maps to display them.
+.. _glossary-topic-map-panel-label:
 
 Topic Map Panel
----------------
+===============
 
-The topic map panel is the main area of the DMX user interface. It displays the currently chosen topic map with all its Topics, Topic Types, and associations.
+The topic map panel is the main area of the DMX user interface.
+It displays the currently chosen topic map.
 
-Topic Type
-----------
-*Topic Types* are the categories you choose to put your *Topics* into. DMX comes with a few predefined *Topic Types*, e.g. person, institution, or note. You can add you own Topic Types and by doing so you define your own data model.
+.. image:: _static/topic-map-panel.jpg
 
+.. _glossary-toolbar-label:
+
+Toolbar
+=======
+The toolbar is the top bar in the DMX user interface.
+It has menus for workspace selection, topic map selection, a search field, a help button and the login/logout buttons.
+
+.. image:: _static/complete-toolbar.jpg
+
+.. _glossary-detail-panel-label:
+
+Detail panel
+============
+
+The detail panel is located the right side of the screen.
+It has four different tabs: 
+The first one shows details about the selected item and offers an edit and save button at the very bottom.
+The second one, called "Related", lets you explore every that is related to this item.
+*Number 3 and 4 are to be completed....*
+
+.. image:: _static/detail-panel.jpg
+
+.. _glossary-in-map-details-label:
+
+In-map Details
+==============
+
+Whenever you select an item on a topic map, a rectangle opens up displaying details about the selected item.
+This box is called the in-map details.
+
+.. image:: _static/in-map-details.jpg
+
+**************************
+Structuring your knowledge
+**************************
+
+.. _glossary-topics-and-topic-types-label:
+
+Topics and Topic Types
+======================
+In the DMX data model, the whole world consists of topics and associations.
+You can think of them as things and how they are related to each other.
+Thus, a topic can be anything, a contact, a location, a file, a website, a thought etc.
+
+In contrast to topics, topic types are more general:
+A topic type is the idea of a topic without its concrete shape.
+On the level of types you describe models of what you want to create.
+
+As an example, think of mapping your music collection:
+The topic type could be called "album".
+An album could have an author, a title, a year, a genre etc.
+In DMX you create a topic type with these fields (which are also topic types).
+Each concrete album you create then has a form with these fields to fill in.
+
+DMX comes with a few predefined topic types, e.g. person, institution, or note.
+You can add your own topic types and by doing so you define your own data model.
+
+.. _glossary-associations-and-association-types-label:
+
+Associations and Association Types
+==================================
+
+Associations represent the relationships between items.
+They represent real-world semantics.
+These can be relationships between topics or between associations or even between a topic and an association.
+The most important characteristic of associations in DMX is that you can qualify them to give them the meaning *you* need.
+They are not just drawn lines between two dots, but they can have association types.
+While a line between two items is human-readable, an association that has an association type is machine-readable, too.
+
+Just like topics associations have specific types, too.
+With association types you can tell more about the links between your Topics.
+Timelines, roles in an organization or authorship information are examples of Association Types.
+
+To stick with the example of the music collection, authorship would be the association type you define.
+
+
+.. _glossary-types-versus-instances-label:
+
+Types versus Instances
+======================
+
+As seen, types are the ideas or abstract descriptions of the things you want to map.
+Instances, as opposed to types, are the concrete things, your content.
+If you have a topic type "colour", all individual topics like "red", "green", "blue" are instances of the topic type colour.
+Instances are the concrete occurences of the type:
+Topics are always instances of their topic type.
+Associations are instances of their association type.
+
+In DMX, this difference is important to understand as you *can* visualize both layers in the same topic map!
+
+.. _glossary-data-model-label:
+
+**************
+The Data model
+**************
+
+.. _glossary-simple-data-types-label:
+
+Simple Data types
+=================
+
+Every topic or association has a data type.
+They are six different data types in DMX.
+Four of them are so-called **simple** types:
+
+* **text:** This is the default data type and it contains a text string.
+* **number:** An example is "year".
+* **boolean:** yes/no resp. true/false
+* **html:**
+
+.. _glossary-composites-and-composition-definitions-label:
+
+Composites and Composition Definitions
+======================================
+
+The two other data types are **composites**.
+
+tbd...
+
+.. _glossary-sharing-mode-label:
+
+Sharing Mode
+============
+
+The Sharing Mode is the access control setting for workspaces.
+Each workspace can be defined as private, confidential, collaborative, public or common.
+Read more about the implications of the five sharing modes in the :ref:`User Guide <workspaces-collaboration-acl-label>`.
+
+.. _glossary-organization-of-data-label:
+
+********************
+Organization of Data
+********************
+
+.. _glossary-database-label:
+
+Database
+========
+The database contains your knowledge at large. Everything you enter is saved in the database until you delete it. The predefined data structures DMX comes with are in there as well.
+
+.. _glossary-topic-map-label:
+
+Topic Map
+=========
+A topic map represents an individual working situation.
+The user chooses what is relevant to the current context and visualizes it by revealing the relevant topics and associations from the database in a topic map.
+Thus it shows a situation-based selection of the whole database content.
+
+.. _glossary-workspace-label:
 
 Workspace
----------
-
-A Workspace is the larger context you are working in: All you content belongs to one (and only one) Workspace. A Workspace can have one or many members who contribute content, it has one or more Topic Maps and a specific SharingMode.
-
-
-
+=========
+Workspaces are the highest level of content organization as each topic and association is part of *one* workspace.
+A workspace can have one or many members who have access to its content.
+This feature makes workspaces the basis of collaboration.

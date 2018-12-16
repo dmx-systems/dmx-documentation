@@ -20,11 +20,13 @@ To get started with DMX you can
 
 Introduction to the web interface
 =================================
-When you first look at a blank DMX interface, there is not much there, yet. Here is what you see in the upper tool bar:
+
+When you first look at a blank DMX interface, there is not much there, yet.
+Here is what you see in the upper tool bar:
 
 * In the upper right corner there is a "Login" button. Log in with the username "admin" and no password.
-* In the upper left corner there is a drop-down menu called "Workspace". The only existing workspace is called "DMX". This is your general context everything you are about to do is going to be in (for the moment). Later you will be able to select one of all your workspaces here.
-* Next to it there is another drop-down menu called "Topicmap". There is only one topic map, it's called "untitled".
+* In the upper left corner there is a drop-down menu called :ref:`"Workspace"<glossary-workspace-label>`. The only existing workspace is called "DMX". This is your general context everything you are about to do is going to be in (for the moment). Later you will be able to select one of all your workspaces here.
+* Next to it there is another drop-down menu called :ref:`"Topicmap"<glossary-topic-map-label>`. There is only one topic map, it's called "untitled".
 
 .. figure:: _static/upper-toolbar.jpg
     :alt: Tool bar with workspace and topic map selection
@@ -39,26 +41,48 @@ Right-click into the emptiness. A window appears that offers you to search somet
 
 .. image:: _static/search-create.jpg
 
-DMX wants to make sure that you do not create something that already exists. That's why you enter whatever you want to create into the search field. Let's assume you want to enter all persons and organizations involved in a project. Start by entering a name. DMX will answer "No match". Select "Person" from the prefined topic types and click "Create".
+DMX wants to make sure that you do not create something that already exists.
+That's why you enter whatever you want to create into the search field.
+Let's assume you want to enter all persons and organizations involved in a project.
+Start by entering a name.
+DMX will answer "No match".
+Select "Person" from the predefined :ref:`topic types<glossary-topics-and-topic-types-label>` and click "Create".
 
 .. image:: _static/create-person.jpg
 
-You will see a square on your topic map. It contains the name you entered and it states that this is the person's first name. Oh no! You entered the given name and the surname? Let's correct this: Long-press the square and select "edit" from the context menu.
+You will see a rectangle on your topic map.
+It contains the name you entered and it states that this is the person's first name.
+Oh no!
+You entered the given name and the surname?
+Let's correct this:
+Long-press the rectangle and select "edit" from the context menu.
 
 .. image:: _static/context-menu-edit.jpg
 
-On the right-hand side there is a detail panel now. It contains many fields you might need for all persons. Correct the name and click the save button at the very bottom. Add a second topic, e.g. "Organization No. 1". Select the topic type "institution" this time.
+On the right-hand side there is a :ref:`detail panel<glossary-detail-panel-label>` now.
+It contains many fields you might need for all persons.
+Correct the name and click the save button at the very bottom.
+Add a second topic, e.g. "Organization No. 1".
+Select the topic type "institution" this time.
 
 .. image:: _static/person-organization.jpg
 
 Adding your first associations
 ==============================
 
-Next you want to enter how the person is related to the organization. You can establish a connection between the two topics by draging the person onto the organization. A square will appear that tell you this is an "Organization Association". You can view and edit details of associations the same way you can with topics. If you do so you will notice that an "Organization Association" has a specific drop-down menu called "organizational role". It lets you choose the person's role from a predefined set of common roles people have in organizations. Later you will learn how to create custom relationships ("associations") and how to predefine their properties.
+Next you want to enter how the person is related to the organization.
+You can establish a connection between the two topics by draging the person onto the organization.
+A square will appear that tell you this is an "Organization Association".
+You can view and edit details of associations the same way you can with topics.
+If you do so you will notice that an "Organization Association" has a specific drop-down menu called "organizational role".
+It lets you choose the person's role from a predefined set of common roles people have in organizations.
+Later you will learn how to create custom relationships ("associations") and how to predefine their properties.
 
 .. image:: _static/diff-roles-in-organization.jpg
 
-Thinking of real-world social networks, you will find that often people have more than one role. DMX can represent this: Simply drag the person onto the organization again and specify their second role.
+Thinking of real-world social networks, you will find that often people have more than one role.
+DMX can represent this:
+Simply drag the person onto the organization again and specify their second role.
 
 .. image:: _static/multiple-assocs.jpg
     :width: 300
@@ -69,14 +93,19 @@ Editing topics
 The detail panel
 ----------------
 
-To add more details to a topic you use the detail panel on the right side. There are two ways to open it: You can use the edit button from the context menu (see above). You can also select the item with a click and use the arrow button in the upper right corner to open the detail panel.
+To add more details to a topic you use the detail panel on the right side.
+There are two ways to open it:
+You can use the edit button from the context menu (see above).
+You can also select the item with a click and use the arrow button in the upper right corner to open the detail panel.
 
 .. image:: _static/button-detail-panel.jpg
 
 Inline editing
 --------------
 
-For quick changes of fields you already filled in you can use the inline editing mode. Click to select the topic and move your mouse to the upper right corner of the displayed square. A little closed lock appears. Click to unlock it.
+For quick changes of fields you already filled in you can use the inline editing mode.
+Click to select the topic and move your mouse to the upper right corner of the displayed square.
+A little closed lock appears. Click to unlock it.
 
 .. image:: _static/inline-editing-unlock.jpg
 
@@ -99,7 +128,9 @@ As you have seen, DMX comes with a few predefined topic types:
 - web resource,
 - person.
 
-Each topic type brings certain fields you can fill in: While events have dates and locations, persons can have telephone numbers and web resources have a URL. As you probably need more than these presets to map what you have in mind you will now learn how to create your own topic types.
+Each topic type brings certain fields you can fill in:
+While events have dates and locations, persons can have telephone numbers and web resources have a URL.
+As you probably need more than these presets to map what you have in mind you will now learn how to create your own topic types.
 
 One of the core characteristics of DMX is that you can look at the underlying data model and modify it in the same interface.
 
@@ -109,7 +140,12 @@ Exploring your first topic
 .. image:: _static/context-menu.png
     :width: 220
 
-To look at the data model of a person, click onto the person you created and select "What's related". The detail panel on the right side will open. It has four tabs. The first one ("person") shows all the content you entered. You are now looking at the second one, called "Related". It displays a list of all items that are logically related to this concrete person:
+To look at the data model of a person, click onto the person you created and select "What's related".
+The detail panel on the right side will open.
+It has four tabs.
+The first one ("person") shows all the content you entered.
+You are now looking at the second one, called "Related".
+It displays a list of all items that are logically related to this concrete person:
 
 - the institution you linked the person to
 - the name of the person (because so far this is the only information you added to the person)
@@ -117,16 +153,25 @@ To look at the data model of a person, click onto the person you created and sel
 - the topic map this topic is associated with
 - the workspace the topic is in
 
-You can now click on each of the list items and they will appear on the topic map. Click onto the topic type "person". The topic type "person" is displayed with an association to the instance "Cathy Jones". The link between both has a different colour and you can again click onto the link, show "What's related" and you can see that this association is an "instantiation": The topic is one instance of the topic type. To see if there are more instances (more persons), show the "What's related" of the topic type "person". Among other information about how the topic type is integrated into the rest of the context you can see all existing persons you entered so far.
+You can now click on each of the list items and they will appear on the topic map.
+Click onto the topic type "person".
+The topic type "person" is displayed with an association to the instance "Cathy Jones".
+The link between both has a different colour and you can again click onto the link, show "What's related" and you can see that this association is an "instantiation":
+The topic is one instance of the topic type.
+To see if there are more instances (more persons), show the "What's related" of the topic type "person".
+Among other information about how the topic type is integrated into the rest of the context you can see all existing persons you entered so far.
 
-Here you are looking at your data and at a part of the data model it is based upon. Again, you can hide what you do not want to see in your map when you are done exploring.
+Here you are looking at your data and at a part of the data model it is based upon.
+Again, you can hide what you do not want to see in your map when you are done exploring.
 
 .. image:: _static/intro-data-model.jpg
 
 Create your first topic type
 ===================================
 
-To create your own topic type with a few properties here is how to procede. Let's say you want to add a topic type "publication". Each publication shall have a title and a year.
+To create your own topic type with a few properties here is how to procede.
+Let's say you want to add a topic type "publication".
+Each publication shall have a title and a year.
 
 - Open the search field. Enter "Publication", select "Topic Type" and press "create".
 - Go into editing mode via the context menu. Change the data type from "Text" to "Identity" and hit "Save". Click somewhere into your map to close the detail panel.
@@ -153,11 +198,15 @@ Organizing your map
 
 Moving the map and the items
 ==============================
-Note that you can drag the whole topic map into any direction. You can also grab every item and drag it where you want it to be. Zooming in or out is done by scrolling up or down.
+Note that you can drag the whole topic map into any direction.
+You can also grab every item and drag it where you want it to be.
+Zooming in or out is done by scrolling up or down.
 
 Bulk selection
 ==============
-To move more than one item at a time you can bulk select several items by keeping the CTRL key pressed and clicking them. The selected topics now have a blue border. Drag the whole selection where you want to place it.
+To move more than one item at a time you can bulk select several items by keeping the CTRL key pressed and clicking them.
+The selected topics now have a blue border.
+Drag the whole selection where you want to place it.
 
 .. image:: _static/bulk-select.jpg
     :width: 600
@@ -168,12 +217,14 @@ To move more than one item at a time you can bulk select several items by keepin
 Hiding items
 ============
 
-You can hide items from the topic map by long-clicking onto them and using the "Hide" button in the context menu. If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
+You can hide items from the topic map by long-clicking onto them and using the "Hide" button in the context menu.
+If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
 
 Assigning icons to topic types
 ==============================
 
-You can assign icons from the Font Awesome collection to your topic types. Let's say you have a topic type "Publication" and you want all publications in your map to have a book icon.
+You can assign icons from the Font Awesome collection to your topic types.
+Let's say you have a topic type "Publication" and you want all publications in your map to have a book icon.
 
 - Click onto the topic type "Publication", //not// onto an individual publication you already added. You are about to modify the general concept of all your publications, not an existing instance of it.
 - Use the little arrow in the upper right corner to open the detail panel.
@@ -200,6 +251,8 @@ Creating user accounts
 
 tbd...
 
+.. _workspaces-collaboration-acl-label:
+
 ********************************************
 Workspaces: Collaboration and Access Control
 ********************************************
@@ -207,7 +260,11 @@ Workspaces: Collaboration and Access Control
 Introduction to workspaces and sharing modes
 ============================================
 
-In DMX workspaces are the highest level content is organized in. Read and write permissions are tied to workspaces. Every topic or association is assigned to exactly *one* workspace. That is why workspaces are the key to the configuration of access control. There are five sharing modes:
+In DMX workspaces are the highest level content is organized in.
+Read and write permissions are tied to workspaces.
+Every topic or association is assigned to exactly *one* workspace.
+That is why workspaces are the key to the configuration of access control.
+There are five sharing modes:
 
 * **private**: In a private workspace just the owner of the workspace can read and write.
 * **confidential**: In a confidential workspace the owner can read and write. Group members can read, but not change anything.
@@ -215,7 +272,9 @@ In DMX workspaces are the highest level content is organized in. Read and write 
 * **public**: A public workspace is world-readable. The default "DMX" workspace is an example of a public workspace.
 * **common**: In a common workspace everyone can read and write. No login is required.
 
-Every workspace has an owner, usually the creator, and optional members. When you are logged in you can access the different workspaces via the drop-down menu in the upper left corner. Once you log out DMX will switch back to a public (world-readable) workspace like the default workspace called "DMX".
+Every workspace has an owner, usually the creator, and optional members.
+When you are logged in you can access the different workspaces via the drop-down menu in the upper left corner.
+Once you log out DMX will switch back to a public (world-readable) workspace like the default workspace called "DMX".
 
 .. image:: _static/workspace-selection.jpg
 
@@ -263,16 +322,28 @@ tbd...
 
 Geodata
 =======
-DMX comes with built-in support for geodata. The feature is still under construction. Right now every topic with an address can be shown on a map. The so-called geomaps are a special type of topic map in DMX. Geomaps are based on openstreetmap.org. Here is an example of how to create and populate them: Edit a person or an institution and add an address.
+DMX comes with built-in support for geodata.
+The feature is still under construction.
+Right now every topic with an address can be shown on a map.
+The so-called geomaps are a special type of topic map in DMX.
+Geomaps are based on openstreetmap.org.
+Here is an example of how to create and populate them:
+Edit a person or an institution and add an address.
 
 .. image:: _static/add-address.jpg
     :width: 800
 
-Open the search and create dialogue. Enter a name for the new topic map, e.g. "Our Geomap". In the topic type selection choose "Topicmap". Underneath it you can now choose the type of topic map you want to add. Select "Geomap" and press "Create".
+Open the search and create dialogue.
+Enter a name for the new topic map, e.g. "Our Geomap".
+In the topic type selection choose "Topicmap".
+Underneath it you can now choose the type of topic map you want to add.
+Select "Geomap" and press "Create".
 
 .. image:: _static/add-geomap.jpg
 
-Open the topic map selection in the upper toolbar and select your newly created geomap. The map is displayed with all items you assigned an address to. Reload the map in your browser after any changes to address data to have them updated.
+Open the topic map selection in the upper toolbar and select your newly created geomap.
+The map is displayed with all items you assigned an address to.
+Reload the map in your browser after any changes to address data to have them updated.
 
 .. image:: _static/topic-map-selection.jpg
 

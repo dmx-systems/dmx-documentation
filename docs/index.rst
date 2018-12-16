@@ -9,6 +9,9 @@ Welcome to DMX's documentation!
 WORK IN PROGRESS!!!
 ###################
 
+When editing, please write a sentence per line.
+This makes viewing diffs much easier.
+
 .. toctree::
    :maxdepth: 2
 
