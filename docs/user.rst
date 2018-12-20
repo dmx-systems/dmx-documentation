@@ -192,6 +192,43 @@ You are now ready to use this data model you just built to add content.
 - As the title was the first property you added to the composition, it is automatically filled in from the search field.
 - Edit your new publication and add a year.
 
+Create your first custom association type
+=========================================
+
+One of the strengths of DMX is that you can build your own association types that are machine-readable.
+Here is how to build such an association:
+Let's say we want to express the relationship between persons and publications.
+A person can be the author, the publisher, the reader, or even the subject of a publication.
+
+* Create a topic type "Publication" if you haven't done so above.
+* Create an association type and give it a name, e.g. "Relationship person - publication".
+* Select "Composite" as a data type.
+
+.. image:: _static/custom-assoc.jpg
+
+* Create a topic type, name it "Role referring to publication" or anything that suits you. The data type is "Text".
+* Drag the topic type onto the association type and edit the newly created association between them. Click onto the "View" tab and click "Edit" to edit its configuration.
+* Open the "Widget" setting and select "Select". This will allow you to select roles from a predefined list when adding content later.
+
+.. image:: _static/selectable-role.jpg
+
+* Create a topic "Author" the has the topic type "Role referring to publication" which is selectable from the create menu. If you want to have more roles, add them likewise.
+* Create a person.
+* Create a publication.
+* Drag the person onto the publication and edit the association. Open the drop-down menu under "Association Type" and select "Relationship person - publication". Hit the save button and the edit button again. There is a new drop-down menu that lets you select the role the person shall have related to the publication.
+
+.. image:: _static/select-role.jpg
+
+You now have a map like this.
+On the left side you see the data model.
+There is your topic type "Publication" with a title and a year.
+And there is the association type you built with a few selectable roles.
+
+On the right side you see the actual content, the instances.
+To continue working, you might want to :ref:`bulk select<user-bulk-selection-label>` and :ref:`hide<user-hide-items-label>` the data model.
+
+.. image:: _static/topic-map-with-custom-assoc-and-instances.jpg
+
 *******************
 Organizing your map
 *******************
@@ -202,9 +239,11 @@ Note that you can drag the whole topic map into any direction.
 You can also grab every item and drag it where you want it to be.
 Zooming in or out is done by scrolling up or down.
 
+.. _user-bulk-selection-label:
+
 Bulk selection
 ==============
-To move more than one item at a time you can bulk select several items by keeping the CTRL key pressed and clicking them.
+To move more than one item at a time you can bulk select several items by keeping the CTRL key pressed and drawing a rectangle around the items you want to select.
 The selected topics now have a blue border.
 Drag the whole selection where you want to place it.
 
@@ -213,6 +252,8 @@ Drag the whole selection where you want to place it.
 
 .. image:: _static/bulk-move.jpg
     :width: 600
+
+.. _user-hide-items-label:
 
 Hiding items
 ============
