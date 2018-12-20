@@ -244,6 +244,7 @@ Zooming in or out is done by scrolling up or down.
 Bulk selection
 ==============
 To move more than one item at a time you can bulk select several items by keeping the CTRL key pressed and drawing a rectangle around the items you want to select.
+You can also click them with the CTRL key pressed.
 The selected topics now have a blue border.
 Drag the whole selection where you want to place it.
 
