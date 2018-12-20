@@ -384,7 +384,6 @@ Select "Geomap" and press "Create".
 
 Open the topic map selection in the upper toolbar and select your newly created geomap.
 The map is displayed with all items you assigned an address to.
-Reload the map in your browser after any changes to address data to have them updated.
 
 .. image:: _static/topic-map-selection.jpg
 
