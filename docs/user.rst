@@ -262,6 +262,8 @@ Hiding items
 You can hide items from the topic map by long-clicking onto them and using the "Hide" button in the context menu.
 If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
 
+.. _user-topic-type-icons-label:
+
 Assigning icons to topic types
 ==============================
 
@@ -280,6 +282,8 @@ Let's say you have a topic type "Publication" and you want all publications in y
 
 .. image:: _static/new-icon.jpg
 
+.. _user-assoc-type-colour-label:
+
 Assigning colours to association types
 ======================================
 
@@ -289,19 +293,42 @@ Choose a colour for your association type and save it.
 
 .. image:: _static/new-assoc-colour.jpg
 
-**********************
-Creating user accounts
-**********************
-
-.. note:: Try the OpenLDAP plugin if you already have your user accounts in there!
-
-tbd...
+.. _user-creating-user-accounts-label:
 
 .. _workspaces-collaboration-acl-label:
 
-********************************************
-Workspaces: Collaboration and Access Control
-********************************************
+***********************************************
+User Accounts, Collaboration and Access Control
+***********************************************
+
+Creating user accounts
+======================
+
+.. note:: Try the OpenLDAP plugin if you already have your user accounts in there!
+
+In DMX, you create user accounts just the way you create everything else, too:
+Enter a user name into the search field.
+If the name does not exist yet you create it by selecting the topic type "User Account".
+After that, a password field appears. 
+Only privileged accounts (like admin) can create user accounts.
+
+.. image:: _static/user-account-creation.jpg
+
+.. image:: _static/user-account-password.jpg
+
+What is displayed after account creation is just the *user name*.
+The *user account* consists of the user name and the password.
+Investigate the newly created user name by revealing "What's related".
+The user name is associated with some information:
+
+* disk quota: how much space the user can use on the computer
+* if the account owner can share workspaces with others
+* if the account owner is allowed to log in at all
+
+It is important that every user account is tied to the "System" workspace (see below). In short, this allows others to read their user name (only the name) to share content.
+
+.. image:: _static/user-name-related.jpg
+    :width: 400
 
 Introduction to workspaces and sharing modes
 ============================================
