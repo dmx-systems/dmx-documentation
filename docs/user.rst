@@ -283,7 +283,11 @@ Let's say you have a topic type "Publication" and you want all publications in y
 Assigning colours to association types
 ======================================
 
-tbd...
+You can assign colours to association types just as you can assign icons to topic types.
+Select the association type on your map, open the details panel and open the fourth tab "View".
+Choose a colour for your association type and save it.
+
+.. image:: _static/new-assoc-colour.jpg
 
 **********************
 Creating user accounts
