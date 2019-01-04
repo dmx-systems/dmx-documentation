@@ -4,6 +4,8 @@ DMX User Documentation
 
 Please note we have a :ref:`glossary-label` for the terms used in this documentation.
 
+.. _user-getting-started-with-dmx-label:
+
 ************************
 Getting started with DMX
 ************************
@@ -17,6 +19,8 @@ To get started with DMX you can
   * :ref:`installation-apt-label` (Linux only)
 
 .. _public demo site: https://demo.dmx.systems
+
+.. _user-introduction-to-web-interface-label:
 
 Introduction to the web interface
 =================================
@@ -33,6 +37,8 @@ Here is what you see in the upper tool bar:
 
 * Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. **The first default workspace and the default topic map are in SharingMode "public" that is: They are not private, but world-readable.**
 * In the upper right corner there is a button with an arrow. It is greyed out if nothing is selected. Later you can open the detail panel by pressing it.
+
+.. _user-adding-your-first-topic-label:
 
 Adding your first topic
 =======================
@@ -67,6 +73,8 @@ Select the topic type "institution" this time.
 
 .. image:: _static/person-organization.jpg
 
+.. _user-adding-your-first-association-label:
+
 Adding your first associations
 ==============================
 
@@ -87,8 +95,12 @@ Simply drag the person onto the organization again and specify their second role
 .. image:: _static/multiple-assocs.jpg
     :width: 300
 
+.. _user-editing-topics-label:
+
 Editing topics
 ==============
+
+.. _user-editing-via-detail-panel-label:
 
 The detail panel
 ----------------
@@ -99,6 +111,8 @@ You can use the edit button from the context menu (see above).
 You can also select the item with a click and use the arrow button in the upper right corner to open the detail panel.
 
 .. image:: _static/button-detail-panel.jpg
+
+.. _user-inline-editing-label:
 
 Inline editing
 --------------
@@ -113,9 +127,18 @@ Double-click onto the content you want to change, do your edit and save the chan
 
 .. image:: _static/inline-editing.jpg
 
+.. _user-introduction-to-detail-panel-label:
+
+In-depth introduction to the detail panel
+=========================================
+
+.. _user-getting-to-know-the-data-model-label:
+
 ******************************
 Getting to know the data model
 ******************************
+
+.. _user-dmx-default-topic-types-label:
 
 DMX's default topic types
 ====================================
@@ -133,6 +156,8 @@ While events have dates and locations, persons can have telephone numbers and we
 As you probably need more than these presets to map what you have in mind you will now learn how to create your own topic types.
 
 One of the core characteristics of DMX is that you can look at the underlying data model and modify it in the same interface.
+
+.. _user-exploring-your-first-topic-label:
 
 Exploring your first topic
 ==========================
@@ -166,6 +191,8 @@ Again, you can hide what you do not want to see in your map when you are done ex
 
 .. image:: _static/intro-data-model.jpg
 
+.. _user-create-your-first-topic-type-label:
+
 Create your first topic type
 ===================================
 
@@ -191,6 +218,8 @@ You are now ready to use this data model you just built to add content.
 - Open the search field and enter the title of a publication. From the Topic Type menu you can now select "Publication".
 - As the title was the first property you added to the composition, it is automatically filled in from the search field.
 - Edit your new publication and add a year.
+
+.. _user-create-your-first-custom-association-type-label:
 
 Create your first custom association type
 =========================================
@@ -229,9 +258,13 @@ To continue working, you might want to :ref:`bulk select<user-bulk-selection-lab
 
 .. image:: _static/topic-map-with-custom-assoc-and-instances.jpg
 
+.. _user-organizing-your-map-label:
+
 *******************
 Organizing your map
 *******************
+
+.. _user-moving-the-map-and-the-items-label:
 
 Moving the map and the items
 ==============================
@@ -301,6 +334,8 @@ Choose a colour for your association type and save it.
 User Accounts, Collaboration and Access Control
 ***********************************************
 
+.. _user-creating-user-accounts-label:
+
 Creating user accounts
 ======================
 
@@ -329,6 +364,8 @@ It is important that every user account is tied to the "System" workspace (see b
 
 .. image:: _static/user-name-related.jpg
     :width: 400
+
+.. _user-introduction-to-workspaces-and-sharing-modes-label:
 
 Introduction to workspaces and sharing modes
 ============================================
@@ -360,6 +397,8 @@ DMX comes with four default workspaces with the following sharing modes:
 
 .. image:: _static/system-workspace.jpg
 
+.. _user-sharing-a-workspace-label:
+
 Sharing a workspace
 ===================
 
@@ -387,11 +426,15 @@ Here is how creating a shared workspace works:
 
 .. note:: You can create memberships in every workspace that you have write permission in.
 
+.. _user-topic-maps-label:
+
 **********
 Topic maps
 **********
 
 tbd...
+
+.. _user-geodata-label:
 
 Geodata
 =======
