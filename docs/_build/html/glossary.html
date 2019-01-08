@@ -84,23 +84,31 @@
 <li class="toctree-l1"><a class="reference internal" href="devel.html">DMX Developer Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="admin.html">DMX Admin Documentation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">DMX Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#aggregation-definition">Aggregation Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#association">Association</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#association-type">Association Type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#composite">Composite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#composition-definition">Composition Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#data-model">Data model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#data-type">Data type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#detail-panel">Detail panel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#graph-database">Graph database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#instance">Instance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sharing-mode">Sharing Mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#toolbar">Toolbar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#topic">Topic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#topic-map">Topic Map</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#topic-map-panel">Topic Map Panel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#topic-type">Topic Type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#workspace">Workspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-dmx-user-interface">The DMX user interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#topic-map-panel">Topic Map Panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#toolbar">Toolbar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detail-panel">Detail panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#in-map-details">In-map Details</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#structuring-your-knowledge">Structuring your knowledge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#topics-and-topic-types">Topics and Topic Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#associations-and-association-types">Associations and Association Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#types-versus-instances">Types versus Instances</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-data-model">The Data model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simple-data-types">Simple Data types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#composites-and-composition-definitions">Composites and Composition Definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharing-mode">Sharing Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#organization-of-data">Organization of Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#topic-map">Topic Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workspace">Workspace</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
@@ -170,74 +178,122 @@
             
   <div class="section" id="dmx-glossary">
 <span id="glossary-label"></span><h1>DMX Glossary<a class="headerlink" href="#dmx-glossary" title="Permalink to this headline">¶</a></h1>
-<p>The glossary entries are in alphabetical order. You might want to start to read about Topics, Associations, and Topic Types though.</p>
-<div class="section" id="aggregation-definition">
-<h2>Aggregation Definition<a class="headerlink" href="#aggregation-definition" title="Permalink to this headline">¶</a></h2>
-<p>DO WE NEED THIS? loose dependency of the Child Type to its Parent Type</p>
-</div>
-<div class="section" id="association">
-<h2>Association<a class="headerlink" href="#association" title="Permalink to this headline">¶</a></h2>
-<p>Associations represent the relationships between your Topics. The most important characteristics of associations in DMX is that you can qualify them so that they get the meaning you need (see Association Types).</p>
-</div>
-<div class="section" id="association-type">
-<h2>Association Type<a class="headerlink" href="#association-type" title="Permalink to this headline">¶</a></h2>
-<p>Just like Topics Associations have specific types, too. With Association Types you can tell more about the links between your Topics. Timelines or authorship information are examples of Association Types.</p>
-</div>
-<div class="section" id="composite">
-<h2>Composite<a class="headerlink" href="#composite" title="Permalink to this headline">¶</a></h2>
-<p>A composite is a data type that allows you to store complex types of data. FIXME
-a type which composes or aggregates other types in a cardinality of one or many</p>
-</div>
-<div class="section" id="composition-definition">
-<h2>Composition Definition<a class="headerlink" href="#composition-definition" title="Permalink to this headline">¶</a></h2>
-<p>DO WE NEED THIS? strong, direct dependency of the Child Type to the Parent Type</p>
-</div>
-<div class="section" id="data-model">
-<h2>Data model<a class="headerlink" href="#data-model" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="data-type">
-<h2>Data type<a class="headerlink" href="#data-type" title="Permalink to this headline">¶</a></h2>
-<p>Topic Types can be of different data types which means they can have different characteristics. They can be numbers, text, Boolean (yes/no), or composites. With composites you can model more complex contexts (see above).</p>
-</div>
-<div class="section" id="detail-panel">
-<h2>Detail panel<a class="headerlink" href="#detail-panel" title="Permalink to this headline">¶</a></h2>
-<p>The detail panel is located the right side of the screen. It shows details about a selected item (Topic, Topic Type or association). It has an edit button at the very bottom.</p>
-</div>
-<div class="section" id="graph-database">
-<h2>Graph database<a class="headerlink" href="#graph-database" title="Permalink to this headline">¶</a></h2>
-<p>the storage layer structuring your data as nodes and edges</p>
-</div>
-<div class="section" id="instance">
-<h2>Instance<a class="headerlink" href="#instance" title="Permalink to this headline">¶</a></h2>
-<p>In DMX instance is a very technical term. The idea is that you have a Topic Type, e.g. “colour” and many individual Topics, e.g. “red”, “green”, “black”. We call each of these Topics an instance of the Topic Type “colour”. Technically this means that all instances are connected to their Topic Type. When you create your Data Model, and you add more colours, DMX actually creates Associations in the underlying DAta Model: It links “yellow” to the Topic Type “colour”. This also means you can build a Data Model without knowing about Instances but it helps to understand DMX.</p>
-</div>
-<div class="section" id="sharing-mode">
-<h2>Sharing Mode<a class="headerlink" href="#sharing-mode" title="Permalink to this headline">¶</a></h2>
-<p>The Sharing Mode is the access control setting for Workspaces. Each Workspace can be defined as private, confidential, collaborative, public or common.</p>
+<div class="section" id="the-dmx-user-interface">
+<h2>The DMX user interface<a class="headerlink" href="#the-dmx-user-interface" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="topic-map-panel">
+<span id="glossary-topic-map-panel-label"></span><h3>Topic Map Panel<a class="headerlink" href="#topic-map-panel" title="Permalink to this headline">¶</a></h3>
+<p>The topic map panel is the main area of the DMX user interface.
+It displays the currently chosen topic map.</p>
+<img alt="_images/topic-map-panel.jpg" src="_images/topic-map-panel.jpg" />
 </div>
 <div class="section" id="toolbar">
-<h2>Toolbar<a class="headerlink" href="#toolbar" title="Permalink to this headline">¶</a></h2>
-<p>The toolbar is the top bar in the DMX user interface. It has menus for workspace selection, topic map selection, a search field, a help button and the login/logout buttons.</p>
+<span id="glossary-toolbar-label"></span><h3>Toolbar<a class="headerlink" href="#toolbar" title="Permalink to this headline">¶</a></h3>
+<p>The toolbar is the top bar in the DMX user interface.
+It has menus for workspace selection, topic map selection, a search field, a help button and the login/logout buttons.</p>
+<img alt="_images/complete-toolbar.jpg" src="_images/complete-toolbar.jpg" />
 </div>
-<div class="section" id="topic">
-<h2>Topic<a class="headerlink" href="#topic" title="Permalink to this headline">¶</a></h2>
-<p>In the DMX data model, the whole world consists of topics and associations. You can think of them as things and how they are related to each other. Thus, a <em>topic</em> can be anything, a contact, a location, a file, a website, a thought etc. <em>Topics</em> are grouped into <em>Topic Types</em> and they can be shown on a <em>Topic Map</em>.</p>
+<div class="section" id="detail-panel">
+<span id="glossary-detail-panel-label"></span><h3>Detail panel<a class="headerlink" href="#detail-panel" title="Permalink to this headline">¶</a></h3>
+<p>The detail panel is located the right side of the screen.
+It has four different tabs:
+The first one shows details about the selected item and offers an edit and save button at the very bottom.
+The second one, called “Related”, lets you explore every that is related to this item.
+<em>Number 3 and 4 are to be completed….</em></p>
+<img alt="_images/detail-panel.jpg" src="_images/detail-panel.jpg" />
+</div>
+<div class="section" id="in-map-details">
+<span id="glossary-in-map-details-label"></span><h3>In-map Details<a class="headerlink" href="#in-map-details" title="Permalink to this headline">¶</a></h3>
+<p>Whenever you select an item on a topic map, a rectangle opens up displaying details about the selected item.
+This box is called the in-map details.</p>
+<img alt="_images/in-map-details.jpg" src="_images/in-map-details.jpg" />
+</div>
+</div>
+<div class="section" id="structuring-your-knowledge">
+<h2>Structuring your knowledge<a class="headerlink" href="#structuring-your-knowledge" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="topics-and-topic-types">
+<span id="glossary-topics-and-topic-types-label"></span><h3>Topics and Topic Types<a class="headerlink" href="#topics-and-topic-types" title="Permalink to this headline">¶</a></h3>
+<p>In the DMX data model, the whole world consists of topics and associations.
+You can think of them as things and how they are related to each other.
+Thus, a topic can be anything, a contact, a location, a file, a website, a thought etc.</p>
+<p>In contrast to topics, topic types are more general:
+A topic type is the idea of a topic without its concrete shape.
+On the level of types you describe models of what you want to create.</p>
+<p>As an example, think of mapping your music collection:
+The topic type could be called “album”.
+An album could have an author, a title, a year, a genre etc.
+In DMX you create a topic type with these fields (which are also topic types).
+Each concrete album you create then has a form with these fields to fill in.</p>
+<p>DMX comes with a few predefined topic types, e.g. person, institution, or note.
+You can add your own topic types and by doing so you define your own data model.</p>
+</div>
+<div class="section" id="associations-and-association-types">
+<span id="glossary-associations-and-association-types-label"></span><h3>Associations and Association Types<a class="headerlink" href="#associations-and-association-types" title="Permalink to this headline">¶</a></h3>
+<p>Associations represent the relationships between items.
+They represent real-world semantics.
+These can be relationships between topics or between associations or even between a topic and an association.
+The most important characteristic of associations in DMX is that you can qualify them to give them the meaning <em>you</em> need.
+They are not just drawn lines between two dots, but they can have association types.
+While a line between two items is human-readable, an association that has an association type is machine-readable, too.</p>
+<p>Just like topics associations have specific types, too.
+With association types you can tell more about the links between your Topics.
+Timelines, roles in an organization or authorship information are examples of Association Types.</p>
+<p>To stick with the example of the music collection, authorship would be the association type you define.</p>
+</div>
+<div class="section" id="types-versus-instances">
+<span id="glossary-types-versus-instances-label"></span><h3>Types versus Instances<a class="headerlink" href="#types-versus-instances" title="Permalink to this headline">¶</a></h3>
+<p>As seen, types are the ideas or abstract descriptions of the things you want to map.
+Instances, as opposed to types, are the concrete things, your content.
+If you have a topic type “colour”, all individual topics like “red”, “green”, “blue” are instances of the topic type colour.
+Instances are the concrete occurences of the type:
+Topics are always instances of their topic type.
+Associations are instances of their association type.</p>
+<p>In DMX, this difference is important to understand as you <em>can</em> visualize both layers in the same topic map!</p>
+</div>
+</div>
+<div class="section" id="the-data-model">
+<span id="glossary-data-model-label"></span><h2>The Data model<a class="headerlink" href="#the-data-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="simple-data-types">
+<span id="glossary-simple-data-types-label"></span><h3>Simple Data types<a class="headerlink" href="#simple-data-types" title="Permalink to this headline">¶</a></h3>
+<p>Every topic or association has a data type.
+They are six different data types in DMX.
+Four of them are so-called <strong>simple</strong> types:</p>
+<ul class="simple">
+<li><strong>text:</strong> This is the default data type and it contains a text string.</li>
+<li><strong>number:</strong> An example is “year”.</li>
+<li><strong>boolean:</strong> yes/no resp. true/false</li>
+<li><strong>html:</strong></li>
+</ul>
+</div>
+<div class="section" id="composites-and-composition-definitions">
+<span id="glossary-composites-and-composition-definitions-label"></span><h3>Composites and Composition Definitions<a class="headerlink" href="#composites-and-composition-definitions" title="Permalink to this headline">¶</a></h3>
+<p>The two other data types are <strong>composites</strong>.</p>
+<p>tbd…</p>
+</div>
+<div class="section" id="sharing-mode">
+<span id="glossary-sharing-mode-label"></span><h3>Sharing Mode<a class="headerlink" href="#sharing-mode" title="Permalink to this headline">¶</a></h3>
+<p>The Sharing Mode is the access control setting for workspaces.
+Each workspace can be defined as private, confidential, collaborative, public or common.
+Read more about the implications of the five sharing modes in the <a class="reference internal" href="user.html#workspaces-collaboration-acl-label"><span class="std std-ref">User Guide</span></a>.</p>
+</div>
+</div>
+<div class="section" id="organization-of-data">
+<span id="glossary-organization-of-data-label"></span><h2>Organization of Data<a class="headerlink" href="#organization-of-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="database">
+<span id="glossary-database-label"></span><h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<p>The database contains your knowledge at large. Everything you enter is saved in the database until you delete it. The predefined data structures DMX comes with are in there as well.</p>
 </div>
 <div class="section" id="topic-map">
-<h2>Topic Map<a class="headerlink" href="#topic-map" title="Permalink to this headline">¶</a></h2>
-<p>A Topic Map is a visual context you work in. You place all your Topics and Associations into Topic Maps to display them.</p>
-</div>
-<div class="section" id="topic-map-panel">
-<h2>Topic Map Panel<a class="headerlink" href="#topic-map-panel" title="Permalink to this headline">¶</a></h2>
-<p>The topic map panel is the main area of the DMX user interface. It displays the currently chosen topic map with all its Topics, Topic Types, and associations.</p>
-</div>
-<div class="section" id="topic-type">
-<h2>Topic Type<a class="headerlink" href="#topic-type" title="Permalink to this headline">¶</a></h2>
-<p><em>Topic Types</em> are the categories you choose to put your <em>Topics</em> into. DMX comes with a few predefined <em>Topic Types</em>, e.g. person, institution, or note. You can add you own Topic Types and by doing so you define your own data model.</p>
+<span id="glossary-topic-map-label"></span><h3>Topic Map<a class="headerlink" href="#topic-map" title="Permalink to this headline">¶</a></h3>
+<p>A topic map represents an individual working situation.
+The user chooses what is relevant to the current context and visualizes it by revealing the relevant topics and associations from the database in a topic map.
+Thus it shows a situation-based selection of the whole database content.</p>
 </div>
 <div class="section" id="workspace">
-<h2>Workspace<a class="headerlink" href="#workspace" title="Permalink to this headline">¶</a></h2>
-<p>A Workspace is the larger context you are working in: All you content belongs to one (and only one) Workspace. A Workspace can have one or many members who contribute content, it has one or more Topic Maps and a specific SharingMode.</p>
+<span id="glossary-workspace-label"></span><h3>Workspace<a class="headerlink" href="#workspace" title="Permalink to this headline">¶</a></h3>
+<p>Workspaces are the highest level of content organization as each topic and association is part of <em>one</em> workspace.
+A workspace can have one or many members who have access to its content.
+This feature makes workspaces the basis of collaboration.</p>
+</div>
 </div>
 </div>
 
@@ -261,7 +317,7 @@ a type which composes or aggregates other types in a cardinality of one or many<
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Silke Meyer.
+        &copy; Copyright 2018 DMX Systems, https://dmx.berlin, Author: Silke Meyer &lt;silke@dmx.berlin&gt;, License: Creative Commons Attribution-ShareAlike 4.0 International (https://creativecommons.org/licenses/by-sa/4.0/).
 
     </p>
   </div>
@@ -304,7 +360,19 @@ a type which composes or aggregates other types in a cardinality of one or many<
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+  <div class="footer">
+   <span class="creativecommons">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" >
+      <img src="_static/creativecommons-88x31.png"
+           border-width="0" alt="Creative Commons License"/>
+     </a>
+    This work is licensed under a
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+     Creative Commons Attribution-ShareAlike 4.0 International License.
+    </a>
+   </span>
+  </div>
 
 </body>
 </html>

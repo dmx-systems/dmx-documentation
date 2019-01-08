@@ -129,8 +129,50 @@ Double-click onto the content you want to change, do your edit and save the chan
 
 .. _user-introduction-to-detail-panel-label:
 
-In-depth introduction to the detail panel
-=========================================
+Navigating topic maps via the detail panel
+==========================================
+
+The detail panel offers lots of features to explore your data so here is an in-depth introduction to the detail panel.
+
+The detail panel can only be opened if you have selected an item on the map and it will stay open as long as you have a selected item.
+
+The "Info" tab
+--------------
+
+The first tab is a general info tab. It is always named after the type of the selected item, e.g. "Person" or "Event". In its display mode it shows only those fields containing data. You can click "Reveal" on details to reveal them on the current topic map.
+
+.. image:: _static/detail-panel-reveal-button.png
+
+The first tab also has an edit button at the bottom. If you enter the editing mode, you get all fields that you can fill in for the respective topic type or association type. These fields come from your type definitions (see below).
+
+.. image:: _static/detail-panel-editing-mode.jpg
+
+The "Related" tab
+-----------------
+
+The second tab is called "Related". It lists *all* topics related to your selection: 
+
+* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topic map you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
+* Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.
+
+.. image:: _static/detail-panel-related-tab.jpg
+
+* Depending on what are searching you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
+
+.. image:: _static/detail-panel-related-tab-sort-order.jpg
+
+* The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
+* Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.
+
+The "Meta" tab
+--------------
+
+The third tab "Meta" is still under development, so right now you don't see any thing there.
+
+The "View" tab
+--------------
+
+The fourth tab "View" allows you to view and edit the *configuration of types*. Thus, the tab is greyed out if the selected item is not a topic type or an association type but an individual topic or an association. (This is treated in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
 
 .. _user-getting-to-know-the-data-model-label:
 
@@ -325,8 +367,6 @@ Select the association type on your map, open the details panel and open the fou
 Choose a colour for your association type and save it.
 
 .. image:: _static/new-assoc-colour.jpg
-
-.. _user-creating-user-accounts-label:
 
 .. _workspaces-collaboration-acl-label:
 

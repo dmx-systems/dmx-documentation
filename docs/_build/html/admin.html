@@ -83,8 +83,13 @@
 <li class="toctree-l1"><a class="reference internal" href="user.html">DMX User Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devel.html">DMX Developer Documentation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">DMX Admin Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-close-public-ports-with-iptables">How to close public ports with iptables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configuring-apache2-as-ssl-proxy">Configuring Apache2 as SSL Proxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dmx-plugin-installation">DMX Plugin Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-ldap-plugin">Configuring the LDAP Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#misc">Misc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-close-public-ports-with-iptables">How to close public ports with iptables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-apache2-as-ssl-proxy">Configuring Apache2 as SSL Proxy</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">DMX Glossary</a></li>
@@ -155,8 +160,18 @@
             
   <div class="section" id="dmx-admin-documentation">
 <h1>DMX Admin Documentation<a class="headerlink" href="#dmx-admin-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dmx-plugin-installation">
+<h2>DMX Plugin Installation<a class="headerlink" href="#dmx-plugin-installation" title="Permalink to this headline">¶</a></h2>
+<p>tbd.</p>
+</div>
+<div class="section" id="configuring-the-ldap-plugin">
+<h2>Configuring the LDAP Plugin<a class="headerlink" href="#configuring-the-ldap-plugin" title="Permalink to this headline">¶</a></h2>
+<p>tbd.</p>
+</div>
+<div class="section" id="misc">
+<h2>Misc<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="how-to-close-public-ports-with-iptables">
-<h2>How to close public ports with iptables<a class="headerlink" href="#how-to-close-public-ports-with-iptables" title="Permalink to this headline">¶</a></h2>
+<h3>How to close public ports with iptables<a class="headerlink" href="#how-to-close-public-ports-with-iptables" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Drop incoming requests on the port your DMX instances is listening on (e.g. port 8080) on all interfaces but localhost:</li>
 </ol>
@@ -181,7 +196,7 @@ PORT     STATE    SERVICE
 </div>
 </div>
 <div class="section" id="configuring-apache2-as-ssl-proxy">
-<h2>Configuring Apache2 as SSL Proxy<a class="headerlink" href="#configuring-apache2-as-ssl-proxy" title="Permalink to this headline">¶</a></h2>
+<h3>Configuring Apache2 as SSL Proxy<a class="headerlink" href="#configuring-apache2-as-ssl-proxy" title="Permalink to this headline">¶</a></h3>
 <p>If you want to secure your DeepaMehta server e.g. on a public webserver, you should secure it via SSL/TLS. Even though DeepaMehta does support this features natively, you can also use an Apache2 webserver and run it as an SSL proxy. Just follow these steps:</p>
 <ol class="arabic simple">
 <li>Install apache2 webserver</li>
@@ -248,6 +263,7 @@ PORT     STATE    SERVICE
 <p>That’s it! You can now securely connect to <a class="reference external" href="https://deepamehta.your.domain.tld">https://deepamehta.your.domain.tld</a>.</p>
 </div>
 </div>
+</div>
 
 
            </div>
@@ -269,7 +285,7 @@ PORT     STATE    SERVICE
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Silke Meyer.
+        &copy; Copyright 2018 DMX Systems, https://dmx.berlin, Author: Silke Meyer &lt;silke@dmx.berlin&gt;, License: Creative Commons Attribution-ShareAlike 4.0 International (https://creativecommons.org/licenses/by-sa/4.0/).
 
     </p>
   </div>
@@ -312,7 +328,19 @@ PORT     STATE    SERVICE
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+  <div class="footer">
+   <span class="creativecommons">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" >
+      <img src="_static/creativecommons-88x31.png"
+           border-width="0" alt="Creative Commons License"/>
+     </a>
+    This work is licensed under a
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+     Creative Commons Attribution-ShareAlike 4.0 International License.
+    </a>
+   </span>
+  </div>
 
 </body>
 </html>

@@ -150,15 +150,23 @@
             
   <div class="section" id="welcome-to-dmx-s-documentation">
 <h1>Welcome to DMX’s documentation!<a class="headerlink" href="#welcome-to-dmx-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="work-in-progress">
+<h2>WORK IN PROGRESS!!!<a class="headerlink" href="#work-in-progress" title="Permalink to this headline">¶</a></h2>
+<p>When editing, please write a sentence per line.
+This makes viewing diffs much easier.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="install.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-dmx-from-a-zip-archive">Install DMX from a zip archive</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="user.html">DMX User Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="user.html#getting-started-with-dmx">Getting started with DMX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user.html#getting-to-know-the-data-model">Getting to know the data model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#organizing-your-map">Organizing your map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#user-accounts-collaboration-and-access-control">User Accounts, Collaboration and Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#topic-maps">Topic maps</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="devel.html">DMX Developer Documentation</a><ul>
@@ -167,32 +175,21 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="admin.html">DMX Admin Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="admin.html#how-to-close-public-ports-with-iptables">How to close public ports with iptables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="admin.html#configuring-apache2-as-ssl-proxy">Configuring Apache2 as SSL Proxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin.html#dmx-plugin-installation">DMX Plugin Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin.html#configuring-the-ldap-plugin">Configuring the LDAP Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin.html#misc">Misc</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">DMX Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#aggregation-definition">Aggregation Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#association">Association</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#association-type">Association Type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#composite">Composite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#composition-definition">Composition Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#data-model">Data model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#data-type">Data type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#detail-panel">Detail panel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#graph-database">Graph database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#instance">Instance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#sharing-mode">Sharing Mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#toolbar">Toolbar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#topic">Topic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#topic-map">Topic Map</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#topic-map-panel">Topic Map Panel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#topic-type">Topic Type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#workspace">Workspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#the-dmx-user-interface">The DMX user interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#structuring-your-knowledge">Structuring your knowledge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#the-data-model">The Data model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#organization-of-data">Organization of Data</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
+</div>
 </div>
 </div>
 <div class="section" id="indices-and-tables">
@@ -222,7 +219,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Silke Meyer.
+        &copy; Copyright 2018 DMX Systems, https://dmx.berlin, Author: Silke Meyer &lt;silke@dmx.berlin&gt;, License: Creative Commons Attribution-ShareAlike 4.0 International (https://creativecommons.org/licenses/by-sa/4.0/).
 
     </p>
   </div>
@@ -265,7 +262,19 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+  <div class="footer">
+   <span class="creativecommons">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" >
+      <img src="_static/creativecommons-88x31.png"
+           border-width="0" alt="Creative Commons License"/>
+     </a>
+    This work is licensed under a
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+     Creative Commons Attribution-ShareAlike 4.0 International License.
+    </a>
+   </span>
+  </div>
 
 </body>
 </html>

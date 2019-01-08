@@ -1,8 +1,25 @@
+#######################
 DMX Admin Documentation
-=======================
+#######################
+
+***********************
+DMX Plugin Installation
+***********************
+
+tbd.
+
+***************************
+Configuring the LDAP Plugin
+***************************
+
+tbd.
+
+****
+Misc
+****
 
 How to close public ports with iptables
----------------------------------------
+=======================================
 
 1. Drop incoming requests on the port your DMX instances is listening on (e.g. port 8080) on all interfaces but localhost:
 
@@ -29,7 +46,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.53 seconds
 
 
 Configuring Apache2 as SSL Proxy
------------------------------------------
+================================
 
 If you want to secure your DeepaMehta server e.g. on a public webserver, you should secure it via SSL/TLS. Even though DeepaMehta does support this features natively, you can also use an Apache2 webserver and run it as an SSL proxy. Just follow these steps:
 

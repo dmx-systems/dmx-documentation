@@ -84,14 +84,44 @@
 <li class="toctree-l2"><a class="reference internal" href="#getting-started-with-dmx">Getting started with DMX</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction-to-the-web-interface">Introduction to the web interface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#adding-your-first-topic">Adding your first topic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adding-your-first-association">Adding your first association</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#moving-the-map-and-the-items">Moving the map and the items</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dmx-s-default-topic-types">DMX’s default topic types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-your-first-associations">Adding your first associations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#editing-topics">Editing topics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-detail-panel">The detail panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inline-editing">Inline editing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#navigating-topic-maps-via-the-detail-panel">Navigating topic maps via the detail panel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-info-tab">The “Info” tab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-related-tab">The “Related” tab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-meta-tab">The “Meta” tab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-view-tab">The “View” tab</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#getting-to-know-the-data-model">Getting to know the data model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dmx-s-default-topic-types">DMX’s default topic types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#exploring-your-first-topic">Exploring your first topic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#create-your-first-topic-type">Create your first topic type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-your-first-custom-association-type">Create your first custom association type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#organizing-your-map">Organizing your map</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#moving-the-map-and-the-items">Moving the map and the items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bulk-selection">Bulk selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hiding-items">Hiding items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assigning-icons-to-topic-types">Assigning icons to topic types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assigning-colours-to-association-types">Assigning colours to association types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#user-accounts-collaboration-and-access-control">User Accounts, Collaboration and Access Control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-user-accounts">Creating user accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#introduction-to-workspaces-and-sharing-modes">Introduction to workspaces and sharing modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharing-a-workspace">Sharing a workspace</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#topic-maps">Topic maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#geodata">Geodata</a></li>
 </ul>
 </li>
 </ul>
@@ -168,7 +198,7 @@
 <h1>DMX User Documentation<a class="headerlink" href="#dmx-user-documentation" title="Permalink to this headline">¶</a></h1>
 <p>Please note we have a <a class="reference internal" href="glossary.html#glossary-label"><span class="std std-ref">DMX Glossary</span></a> for the terms used in this documentation.</p>
 <div class="section" id="getting-started-with-dmx">
-<h2>Getting started with DMX<a class="headerlink" href="#getting-started-with-dmx" title="Permalink to this headline">¶</a></h2>
+<span id="user-getting-started-with-dmx-label"></span><h2>Getting started with DMX<a class="headerlink" href="#getting-started-with-dmx" title="Permalink to this headline">¶</a></h2>
 <p>To get started with DMX you can</p>
 <ul class="simple">
 <li>visit our <a class="reference external" href="https://demo.dmx.systems">public demo site</a> and play with DMX. Do not enter any private or sensitive information on the demo site!</li>
@@ -179,44 +209,378 @@
 </li>
 </ul>
 <div class="section" id="introduction-to-the-web-interface">
-<h3>Introduction to the web interface<a class="headerlink" href="#introduction-to-the-web-interface" title="Permalink to this headline">¶</a></h3>
-<p>When you first look at a blank DMX interface, there is not much there, yet. Here is what you see in the upper toolbar:</p>
+<span id="user-introduction-to-web-interface-label"></span><h3>Introduction to the web interface<a class="headerlink" href="#introduction-to-the-web-interface" title="Permalink to this headline">¶</a></h3>
+<p>When you first look at a blank DMX interface, there is not much there, yet.
+Here is what you see in the upper tool bar:</p>
 <ul class="simple">
 <li>In the upper right corner there is a “Login” button. Log in with the username “admin” and no password.</li>
-<li>In the upper left corner there is a drop-down menu called “Workspace”. The only existing workspace is called “DMX”. This is your general context everything you are about to do is going to be in (for the moment). Later you will be able to select one of all your worskspaces here.</li>
-<li>Next to it there is another drop-down menu called “Topicmap”. There is only one topic map, it’s called “untitled”.</li>
-<li>Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. The first default workspace is in SharingMode “public” that is: world-readable. The default topic map has a similar information: It is not private.</li>
+<li>In the upper left corner there is a drop-down menu called <a class="reference internal" href="glossary.html#glossary-workspace-label"><span class="std std-ref">“Workspace”</span></a>. The only existing workspace is called “DMX”. This is your general context everything you are about to do is going to be in (for the moment). Later you will be able to select one of all your workspaces here.</li>
+<li>Next to it there is another drop-down menu called <a class="reference internal" href="glossary.html#glossary-topic-map-label"><span class="std std-ref">“Topicmap”</span></a>. There is only one topic map, it’s called “untitled”.</li>
+</ul>
+<div class="figure">
+<img alt="Tool bar with workspace and topic map selection" src="_images/upper-toolbar.jpg" />
+</div>
+<ul class="simple">
+<li>Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. <strong>The first default workspace and the default topic map are in SharingMode “public” that is: They are not private, but world-readable.</strong></li>
+<li>In the upper right corner there is a button with an arrow. It is greyed out if nothing is selected. Later you can open the detail panel by pressing it.</li>
 </ul>
 </div>
 <div class="section" id="adding-your-first-topic">
-<h3>Adding your first topic<a class="headerlink" href="#adding-your-first-topic" title="Permalink to this headline">¶</a></h3>
-<p>Click anywhere into the empty space. You will notice that there are two items somewhere in your topic map: “DMX” and “untitled” with two different icons. Where do they come from? You uncovered your workspace and your topic map by retrieving their extra information. Do you want to know more about them? Yes, but not now. Let’s hide (not delete!) them! Long-click one of them and hold the mouse button until a dark circle with four buttons appears. Pull the mouse onto “Hide”. Hide the other one as well.</p>
+<span id="user-adding-your-first-topic-label"></span><h3>Adding your first topic<a class="headerlink" href="#adding-your-first-topic" title="Permalink to this headline">¶</a></h3>
 <p>Right-click into the emptiness. A window appears that offers you to search something or to create something. Let’s create something!</p>
 <img alt="_images/search-create.jpg" src="_images/search-create.jpg" />
-<p>DMX wants to make sure that you do not create something that already exists. That’s why you enter whatever you want to create into the search field. Enter your favourite author’s name. DMX will answer “No match”. Click “create”. DMX now tells you ti is ready to create the author, but you have to specify the topic type: Open the drop-drop menu and select “Person” from the prefined topic types. Click “Create”. You will see a square on your topic map. It contains the name you entered and it states that this is thr person’s first name. Oh no! You entered the given name and the surname? Let’s correct this: Long-press the square and select “edit” from the context menu. On the right-hand side there is a detail panel now. It contains many fields you might need to edit any topic you categorized as a person. Correct the name and click the save button at the very bottom. Add a second topic of any topic type.</p>
+<p>DMX wants to make sure that you do not create something that already exists.
+That’s why you enter whatever you want to create into the search field.
+Let’s assume you want to enter all persons and organizations involved in a project.
+Start by entering a name.
+DMX will answer “No match”.
+Select “Person” from the predefined <a class="reference internal" href="glossary.html#glossary-topics-and-topic-types-label"><span class="std std-ref">topic types</span></a> and click “Create”.</p>
+<img alt="_images/create-person.jpg" src="_images/create-person.jpg" />
+<p>You will see a rectangle on your topic map.
+It contains the name you entered and it states that this is the person’s first name.
+Oh no!
+You entered the given name and the surname?
+Let’s correct this:
+Long-press the rectangle and select “edit” from the context menu.</p>
+<img alt="_images/context-menu-edit.jpg" src="_images/context-menu-edit.jpg" />
+<p>On the right-hand side there is a <a class="reference internal" href="glossary.html#glossary-detail-panel-label"><span class="std std-ref">detail panel</span></a> now.
+It contains many fields you might need for all persons.
+Correct the name and click the save button at the very bottom.
+Add a second topic, e.g. “Organization No. 1”.
+Select the topic type “institution” this time.</p>
+<img alt="_images/person-organization.jpg" src="_images/person-organization.jpg" />
 </div>
-<div class="section" id="adding-your-first-association">
-<h3>Adding your first association<a class="headerlink" href="#adding-your-first-association" title="Permalink to this headline">¶</a></h3>
-<p>You probably chose your second topic because it is somehow related to the author you entered. We will now establish a connection between the two topics by drawing one onto the other. You can click onto the association between them to see more information about it in the detail panel. Don’t bother if it looks weird, you will learn how to qualify the association later on.</p>
+<div class="section" id="adding-your-first-associations">
+<span id="user-adding-your-first-association-label"></span><h3>Adding your first associations<a class="headerlink" href="#adding-your-first-associations" title="Permalink to this headline">¶</a></h3>
+<p>Next you want to enter how the person is related to the organization.
+You can establish a connection between the two topics by draging the person onto the organization.
+A square will appear that tell you this is an “Organization Association”.
+You can view and edit details of associations the same way you can with topics.
+If you do so you will notice that an “Organization Association” has a specific drop-down menu called “organizational role”.
+It lets you choose the person’s role from a predefined set of common roles people have in organizations.
+Later you will learn how to create custom relationships (“associations”) and how to predefine their properties.</p>
+<img alt="_images/diff-roles-in-organization.jpg" src="_images/diff-roles-in-organization.jpg" />
+<p>Thinking of real-world social networks, you will find that often people have more than one role.
+DMX can represent this:
+Simply drag the person onto the organization again and specify their second role.</p>
+<a class="reference internal image-reference" href="_images/multiple-assocs.jpg"><img alt="_images/multiple-assocs.jpg" src="_images/multiple-assocs.jpg" style="width: 300px;" /></a>
 </div>
-<div class="section" id="moving-the-map-and-the-items">
-<h3>Moving the map and the items<a class="headerlink" href="#moving-the-map-and-the-items" title="Permalink to this headline">¶</a></h3>
-<p>Note that you can drag the whole topic map into any direction. You can also grab every item and drag it where you want it to be.</p>
+<div class="section" id="editing-topics">
+<span id="user-editing-topics-label"></span><h3>Editing topics<a class="headerlink" href="#editing-topics" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="the-detail-panel">
+<span id="user-editing-via-detail-panel-label"></span><h4>The detail panel<a class="headerlink" href="#the-detail-panel" title="Permalink to this headline">¶</a></h4>
+<p>To add more details to a topic you use the detail panel on the right side.
+There are two ways to open it:
+You can use the edit button from the context menu (see above).
+You can also select the item with a click and use the arrow button in the upper right corner to open the detail panel.</p>
+<img alt="_images/button-detail-panel.jpg" src="_images/button-detail-panel.jpg" />
 </div>
-<div class="section" id="dmx-s-default-topic-types">
-<h3>DMX’s default topic types<a class="headerlink" href="#dmx-s-default-topic-types" title="Permalink to this headline">¶</a></h3>
-<p>As you have seen, DMX comes with a few predefined topic types: Event, institution, note, web resource, and person. Each topic type brings certain fields you can fill in: While events have dates and locations, persons can have numbers and web resources have a URL. As you probably need more to map what you have in mind you will now learn how to create your own topic types.</p>
+<div class="section" id="inline-editing">
+<span id="user-inline-editing-label"></span><h4>Inline editing<a class="headerlink" href="#inline-editing" title="Permalink to this headline">¶</a></h4>
+<p>For quick changes of fields you already filled in you can use the inline editing mode.
+Click to select the topic and move your mouse to the upper right corner of the displayed square.
+A little closed lock appears. Click to unlock it.</p>
+<img alt="_images/inline-editing-unlock.jpg" src="_images/inline-editing-unlock.jpg" />
+<p>Double-click onto the content you want to change, do your edit and save the change.</p>
+<img alt="_images/inline-editing.jpg" src="_images/inline-editing.jpg" />
+</div>
+</div>
+<div class="section" id="navigating-topic-maps-via-the-detail-panel">
+<span id="user-introduction-to-detail-panel-label"></span><h3>Navigating topic maps via the detail panel<a class="headerlink" href="#navigating-topic-maps-via-the-detail-panel" title="Permalink to this headline">¶</a></h3>
+<p>The detail panel offers lots of features to explore your data so here is an in-depth introduction to the detail panel.</p>
+<p>The detail panel can only be opened if you have selected an item on the map and it will stay open as long as you have a selected item.</p>
+<div class="section" id="the-info-tab">
+<h4>The “Info” tab<a class="headerlink" href="#the-info-tab" title="Permalink to this headline">¶</a></h4>
+<p>The first tab is a general info tab. It is always named after the type of the selected item, e.g. “Person” or “Event”. In its display mode it shows only those fields containing data. You can click “Reveal” on details to reveal them on the current topic map.</p>
+<img alt="_images/detail-panel-reveal-button.png" src="_images/detail-panel-reveal-button.png" />
+<p>The first tab also has an edit button at the bottom. If you enter the editing mode, you get all fields that you can fill in for the respective topic type or association type. These fields come from your type definitions (see below).</p>
+<img alt="_images/detail-panel-editing-mode.jpg" src="_images/detail-panel-editing-mode.jpg" />
+</div>
+<div class="section" id="the-related-tab">
+<h4>The “Related” tab<a class="headerlink" href="#the-related-tab" title="Permalink to this headline">¶</a></h4>
+<p>The second tab is called “Related”. It lists <em>all</em> topics related to your selection:</p>
+<ul class="simple">
+<li>On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person’s name, to a publication, to the topic type “Person”, to the topic map you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about the <a class="reference internal" href="#user-getting-to-know-the-data-model-label"><span class="std std-ref">DMX data model</span></a>.)</li>
+<li>Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.</li>
+</ul>
+<img alt="_images/detail-panel-related-tab.jpg" src="_images/detail-panel-related-tab.jpg" />
+<ul class="simple">
+<li>Depending on what are searching you might want to change the sort order. If you select “Association Type” in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order “Association Type” as shown here:</li>
+</ul>
+<img alt="_images/detail-panel-related-tab-sort-order.jpg" src="_images/detail-panel-related-tab-sort-order.jpg" />
+<ul class="simple">
+<li>The third sorting mechanism is called “Topic”. It displays the same information in alphabetical order of the labels (that is the “display names” of the items).</li>
+<li>Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.</li>
+</ul>
+</div>
+<div class="section" id="the-meta-tab">
+<h4>The “Meta” tab<a class="headerlink" href="#the-meta-tab" title="Permalink to this headline">¶</a></h4>
+<p>The third tab “Meta” is still under development, so right now you don’t see any thing there.</p>
+</div>
+<div class="section" id="the-view-tab">
+<h4>The “View” tab<a class="headerlink" href="#the-view-tab" title="Permalink to this headline">¶</a></h4>
+<p>The fourth tab “View” allows you to view and edit the <em>configuration of types</em>. Thus, the tab is greyed out if the selected item is not a topic type or an association type but an individual topic or an association. (This is treated in the section about the <a class="reference internal" href="#user-getting-to-know-the-data-model-label"><span class="std std-ref">DMX data model</span></a>.)</p>
+</div>
 </div>
 </div>
 <div class="section" id="getting-to-know-the-data-model">
-<h2>Getting to know the data model<a class="headerlink" href="#getting-to-know-the-data-model" title="Permalink to this headline">¶</a></h2>
+<span id="user-getting-to-know-the-data-model-label"></span><h2>Getting to know the data model<a class="headerlink" href="#getting-to-know-the-data-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dmx-s-default-topic-types">
+<span id="user-dmx-default-topic-types-label"></span><h3>DMX’s default topic types<a class="headerlink" href="#dmx-s-default-topic-types" title="Permalink to this headline">¶</a></h3>
+<p>As you have seen, DMX comes with a few predefined topic types:</p>
+<ul class="simple">
+<li>event,</li>
+<li>institution,</li>
+<li>note,</li>
+<li>web resource,</li>
+<li>person.</li>
+</ul>
+<p>Each topic type brings certain fields you can fill in:
+While events have dates and locations, persons can have telephone numbers and web resources have a URL.
+As you probably need more than these presets to map what you have in mind you will now learn how to create your own topic types.</p>
+<p>One of the core characteristics of DMX is that you can look at the underlying data model and modify it in the same interface.</p>
+</div>
 <div class="section" id="exploring-your-first-topic">
-<h3>Exploring your first topic<a class="headerlink" href="#exploring-your-first-topic" title="Permalink to this headline">¶</a></h3>
-<p>After your edit the detail panel is still open. It has four tabs. The first one (“person”) shows all the content you entered. Go to the second tab (“Related”). Do be confused by what you see now: It displays four topics that you can sort. Why four? Well, there is the concrete person, the topic type “person”… ZU KOPMLIZIERT; DAS MUSS SPÄTER KOMMEN.</p>
+<span id="user-exploring-your-first-topic-label"></span><h3>Exploring your first topic<a class="headerlink" href="#exploring-your-first-topic" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="_images/context-menu.png"><img alt="_images/context-menu.png" src="_images/context-menu.png" style="width: 220px;" /></a>
+<p>To look at the data model of a person, click onto the person you created and select “What’s related”.
+The detail panel on the right side will open.
+It has four tabs.
+The first one (“person”) shows all the content you entered.
+You are now looking at the second one, called “Related”.
+It displays a list of all items that are logically related to this concrete person:</p>
+<ul class="simple">
+<li>the institution you linked the person to</li>
+<li>the name of the person (because so far this is the only information you added to the person)</li>
+<li>the topic type “person”. Your concrete person is an instance of the general idea of persons, so it is linked to this general idea, the topic type. You can think of the topic type as the definition of what a person is.</li>
+<li>the topic map this topic is associated with</li>
+<li>the workspace the topic is in</li>
+</ul>
+<p>You can now click on each of the list items and they will appear on the topic map.
+Click onto the topic type “person”.
+The topic type “person” is displayed with an association to the instance “Cathy Jones”.
+The link between both has a different colour and you can again click onto the link, show “What’s related” and you can see that this association is an “instantiation”:
+The topic is one instance of the topic type.
+To see if there are more instances (more persons), show the “What’s related” of the topic type “person”.
+Among other information about how the topic type is integrated into the rest of the context you can see all existing persons you entered so far.</p>
+<p>Here you are looking at your data and at a part of the data model it is based upon.
+Again, you can hide what you do not want to see in your map when you are done exploring.</p>
+<img alt="_images/intro-data-model.jpg" src="_images/intro-data-model.jpg" />
 </div>
 <div class="section" id="create-your-first-topic-type">
-<h3>Create your first topic type<a class="headerlink" href="#create-your-first-topic-type" title="Permalink to this headline">¶</a></h3>
-<p>You just added your favourite author so next you need a topic type called “book” with certain properties all books have, e.g. a publisher, a year etc.</p>
+<span id="user-create-your-first-topic-type-label"></span><h3>Create your first topic type<a class="headerlink" href="#create-your-first-topic-type" title="Permalink to this headline">¶</a></h3>
+<p>To create your own topic type with a few properties here is how to procede.
+Let’s say you want to add a topic type “publication”.
+Each publication shall have a title and a year.</p>
+<ul class="simple">
+<li>Open the search field. Enter “Publication”, select “Topic Type” and press “create”.</li>
+<li>Go into editing mode via the context menu. Change the data type from “Text” to “Identity” and hit “Save”. Click somewhere into your map to close the detail panel.</li>
+<li>Open the search field and enter “Title”. You will find that two entries already exist. They come from the default topics types “Event” and “Note” which also have titles. Create a new topic type “Title”.</li>
+<li>Grab the title item and pull it on the publication item. DMX will display what you just created:
+* You created an association of the type “Composition Definition”. Composition Definition means that you are defining a more complex context between item on your map: The relationship between a publication, a title and a year.
+* “Cardinality: One” means that each publication has exactly one title, not more.
+* The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.</li>
+</ul>
+<a class="reference internal image-reference" href="_images/composition-definition.jpg"><img alt="_images/composition-definition.jpg" src="_images/composition-definition.jpg" style="width: 300px;" /></a>
+<ul class="simple">
+<li>Again, click somewhere onto the map and reopen the search field. Search for the year and open the existing topic type. Pull it onto the publication.</li>
+</ul>
+<p>You are now ready to use this data model you just built to add content.</p>
+<ul class="simple">
+<li>Open the search field and enter the title of a publication. From the Topic Type menu you can now select “Publication”.</li>
+<li>As the title was the first property you added to the composition, it is automatically filled in from the search field.</li>
+<li>Edit your new publication and add a year.</li>
+</ul>
+</div>
+<div class="section" id="create-your-first-custom-association-type">
+<span id="user-create-your-first-custom-association-type-label"></span><h3>Create your first custom association type<a class="headerlink" href="#create-your-first-custom-association-type" title="Permalink to this headline">¶</a></h3>
+<p>One of the strengths of DMX is that you can build your own association types that are machine-readable.
+Here is how to build such an association:
+Let’s say we want to express the relationship between persons and publications.
+A person can be the author, the publisher, the reader, or even the subject of a publication.</p>
+<ul class="simple">
+<li>Create a topic type “Publication” if you haven’t done so above.</li>
+<li>Create an association type and give it a name, e.g. “Relationship person - publication”.</li>
+<li>Select “Composite” as a data type.</li>
+</ul>
+<img alt="_images/custom-assoc.jpg" src="_images/custom-assoc.jpg" />
+<ul class="simple">
+<li>Create a topic type, name it “Role referring to publication” or anything that suits you. The data type is “Text”.</li>
+<li>Drag the topic type onto the association type and edit the newly created association between them. Click onto the “View” tab and click “Edit” to edit its configuration.</li>
+<li>Open the “Widget” setting and select “Select”. This will allow you to select roles from a predefined list when adding content later.</li>
+</ul>
+<img alt="_images/selectable-role.jpg" src="_images/selectable-role.jpg" />
+<ul class="simple">
+<li>Create a topic “Author” the has the topic type “Role referring to publication” which is selectable from the create menu. If you want to have more roles, add them likewise.</li>
+<li>Create a person.</li>
+<li>Create a publication.</li>
+<li>Drag the person onto the publication and edit the association. Open the drop-down menu under “Association Type” and select “Relationship person - publication”. Hit the save button and the edit button again. There is a new drop-down menu that lets you select the role the person shall have related to the publication.</li>
+</ul>
+<img alt="_images/select-role.jpg" src="_images/select-role.jpg" />
+<p>You now have a map like this.
+On the left side you see the data model.
+There is your topic type “Publication” with a title and a year.
+And there is the association type you built with a few selectable roles.</p>
+<p>On the right side you see the actual content, the instances.
+To continue working, you might want to <a class="reference internal" href="#user-bulk-selection-label"><span class="std std-ref">bulk select</span></a> and <a class="reference internal" href="#user-hide-items-label"><span class="std std-ref">hide</span></a> the data model.</p>
+<img alt="_images/topic-map-with-custom-assoc-and-instances.jpg" src="_images/topic-map-with-custom-assoc-and-instances.jpg" />
+</div>
+</div>
+<div class="section" id="organizing-your-map">
+<span id="user-organizing-your-map-label"></span><h2>Organizing your map<a class="headerlink" href="#organizing-your-map" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="moving-the-map-and-the-items">
+<span id="user-moving-the-map-and-the-items-label"></span><h3>Moving the map and the items<a class="headerlink" href="#moving-the-map-and-the-items" title="Permalink to this headline">¶</a></h3>
+<p>Note that you can drag the whole topic map into any direction.
+You can also grab every item and drag it where you want it to be.
+Zooming in or out is done by scrolling up or down.</p>
+</div>
+<div class="section" id="bulk-selection">
+<span id="user-bulk-selection-label"></span><h3>Bulk selection<a class="headerlink" href="#bulk-selection" title="Permalink to this headline">¶</a></h3>
+<p>To move more than one item at a time you can bulk select several items by keeping the CTRL key pressed and drawing a rectangle around the items you want to select.
+You can also click them with the CTRL key pressed.
+The selected topics now have a blue border.
+Drag the whole selection where you want to place it.</p>
+<a class="reference internal image-reference" href="_images/bulk-select.jpg"><img alt="_images/bulk-select.jpg" src="_images/bulk-select.jpg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/bulk-move.jpg"><img alt="_images/bulk-move.jpg" src="_images/bulk-move.jpg" style="width: 600px;" /></a>
+</div>
+<div class="section" id="hiding-items">
+<span id="user-hide-items-label"></span><h3>Hiding items<a class="headerlink" href="#hiding-items" title="Permalink to this headline">¶</a></h3>
+<p>You can hide items from the topic map by long-clicking onto them and using the “Hide” button in the context menu.
+If you bring them back to the map later by searching them, they will reappear in the same spot in your map.</p>
+</div>
+<div class="section" id="assigning-icons-to-topic-types">
+<span id="user-topic-type-icons-label"></span><h3>Assigning icons to topic types<a class="headerlink" href="#assigning-icons-to-topic-types" title="Permalink to this headline">¶</a></h3>
+<p>You can assign icons from the Font Awesome collection to your topic types.
+Let’s say you have a topic type “Publication” and you want all publications in your map to have a book icon.</p>
+<ul class="simple">
+<li>Click onto the topic type “Publication”, //not// onto an individual publication you already added. You are about to modify the general concept of all your publications, not an existing instance of it.</li>
+<li>Use the little arrow in the upper right corner to open the detail panel.</li>
+<li>Go to the fourth tab called “View”. Here you can view and edit the configuration of the topic type. Click “Edit”.</li>
+<li>Click into the white field labeled “Icon”.</li>
+</ul>
+<img alt="_images/open-icon-selection.jpg" src="_images/open-icon-selection.jpg" />
+<ul class="simple">
+<li>You can either select an icon directly or use the search box.</li>
+<li>Hit save to apply the icon to all topics that are publications.</li>
+</ul>
+<img alt="_images/new-icon.jpg" src="_images/new-icon.jpg" />
+</div>
+<div class="section" id="assigning-colours-to-association-types">
+<span id="user-assoc-type-colour-label"></span><h3>Assigning colours to association types<a class="headerlink" href="#assigning-colours-to-association-types" title="Permalink to this headline">¶</a></h3>
+<p>You can assign colours to association types just as you can assign icons to topic types.
+Select the association type on your map, open the details panel and open the fourth tab “View”.
+Choose a colour for your association type and save it.</p>
+<img alt="_images/new-assoc-colour.jpg" src="_images/new-assoc-colour.jpg" />
+</div>
+</div>
+<div class="section" id="user-accounts-collaboration-and-access-control">
+<span id="workspaces-collaboration-acl-label"></span><h2>User Accounts, Collaboration and Access Control<a class="headerlink" href="#user-accounts-collaboration-and-access-control" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-user-accounts">
+<span id="user-creating-user-accounts-label"></span><h3>Creating user accounts<a class="headerlink" href="#creating-user-accounts" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Try the OpenLDAP plugin if you already have your user accounts in there!</p>
+</div>
+<p>In DMX, you create user accounts just the way you create everything else, too:
+Enter a user name into the search field.
+If the name does not exist yet you create it by selecting the topic type “User Account”.
+After that, a password field appears.
+Only privileged accounts (like admin) can create user accounts.</p>
+<img alt="_images/user-account-creation.jpg" src="_images/user-account-creation.jpg" />
+<img alt="_images/user-account-password.jpg" src="_images/user-account-password.jpg" />
+<p>What is displayed after account creation is just the <em>user name</em>.
+The <em>user account</em> consists of the user name and the password.
+Investigate the newly created user name by revealing “What’s related”.
+The user name is associated with some information:</p>
+<ul class="simple">
+<li>disk quota: how much space the user can use on the computer</li>
+<li>if the account owner can share workspaces with others</li>
+<li>if the account owner is allowed to log in at all</li>
+</ul>
+<p>It is important that every user account is tied to the “System” workspace (see below). In short, this allows others to read their user name (only the name) to share content.</p>
+<a class="reference internal image-reference" href="_images/user-name-related.jpg"><img alt="_images/user-name-related.jpg" src="_images/user-name-related.jpg" style="width: 400px;" /></a>
+</div>
+<div class="section" id="introduction-to-workspaces-and-sharing-modes">
+<span id="user-introduction-to-workspaces-and-sharing-modes-label"></span><h3>Introduction to workspaces and sharing modes<a class="headerlink" href="#introduction-to-workspaces-and-sharing-modes" title="Permalink to this headline">¶</a></h3>
+<p>In DMX workspaces are the highest level content is organized in.
+Read and write permissions are tied to workspaces.
+Every topic or association is assigned to exactly <em>one</em> workspace.
+That is why workspaces are the key to the configuration of access control.
+There are five sharing modes:</p>
+<ul class="simple">
+<li><strong>private</strong>: In a private workspace just the owner of the workspace can read and write.</li>
+<li><strong>confidential</strong>: In a confidential workspace the owner can read and write. Group members can read, but not change anything.</li>
+<li><strong>collaborative</strong>: A collaborative workspace can be read and edited by the owner and by all group members.</li>
+<li><strong>public</strong>: A public workspace is world-readable. The default “DMX” workspace is an example of a public workspace.</li>
+<li><strong>common</strong>: In a common workspace everyone can read and write. No login is required.</li>
+</ul>
+<p>Every workspace has an owner, usually the creator, and optional members.
+When you are logged in you can access the different workspaces via the drop-down menu in the upper left corner.
+Once you log out DMX will switch back to a public (world-readable) workspace like the default workspace called “DMX”.</p>
+<img alt="_images/workspace-selection.jpg" src="_images/workspace-selection.jpg" />
+<p>DMX comes with four default workspaces with the following sharing modes:</p>
+<ul class="simple">
+<li><strong>DMX</strong>: This workspace a public, it is the one that is displayed publicly when people come to the site.</li>
+<li><strong>Private Workspace</strong>: This is the private workspace of the respective logged in user. Only this user can see and and edit their map as it is private.</li>
+<li><strong>Administration</strong>: Only admins can view and edit this workspace. Unprivileged user accounts do not have this entry in the menu.</li>
+<li><strong>System</strong>: The System Workspace is readable by everyone who is logged in. It contains all user names that exist in this DMX installation. The user names are readable to all users. This is needed for sharing content with others as you will see below.</li>
+</ul>
+<img alt="_images/system-workspace.jpg" src="_images/system-workspace.jpg" />
+</div>
+<div class="section" id="sharing-a-workspace">
+<span id="user-sharing-a-workspace-label"></span><h3>Sharing a workspace<a class="headerlink" href="#sharing-a-workspace" title="Permalink to this headline">¶</a></h3>
+<p>Here is how creating a shared workspace works:</p>
+<ul class="simple">
+<li>Log in as an unprivileged user and go to your private workspace where you can edit.</li>
+<li>Open the search field and <strong>create a workspace</strong>. Make it a collaborative workspace to give others write permission.</li>
+</ul>
+<img alt="_images/workspace-creation.jpg" src="_images/workspace-creation.jpg" />
+<ul class="simple">
+<li>The new workspace automatically opens. Click onto the blue information icon next to the workspace selection to reveal the workspace topic itself on the topic map.</li>
+<li>To add members to the workspace you can just enter user names and click them to reveal them on the map. As mentioned above, all user names are visible to all other logged in users via the system workspace. In DMX, membership is tied to user names that is why you need read permission on the user names.</li>
+<li>If you don’t know their user names you can go to the System workspace and investigate.</li>
+<li>Now that you have the workspace itself and a user name on your topic map you can just <strong>drag the user name onto the workspace</strong> to create an association between them.</li>
+<li>Next you have to qualify this association as a membership: Edit the association.</li>
+</ul>
+<a class="reference internal image-reference" href="_images/edit-ws-assoc.jpg"><img alt="_images/edit-ws-assoc.jpg" src="_images/edit-ws-assoc.jpg" style="width: 300px;" /></a>
+<ul class="simple">
+<li>In the detail panel you can now select the association type “Membership”. You are done!</li>
+</ul>
+<img alt="_images/edit-ws-assoc2.png" src="_images/edit-ws-assoc2.png" />
+<ul class="simple">
+<li>The user you shared your workspace with can now log in, select your collaborative workspace and add something, e.g. a note. It will automatically appear in the workspace, visible to all workspace members.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can create memberships in every workspace that you have write permission in.</p>
+</div>
+</div>
+</div>
+<div class="section" id="topic-maps">
+<span id="user-topic-maps-label"></span><h2>Topic maps<a class="headerlink" href="#topic-maps" title="Permalink to this headline">¶</a></h2>
+<p>tbd…</p>
+<div class="section" id="geodata">
+<span id="user-geodata-label"></span><h3>Geodata<a class="headerlink" href="#geodata" title="Permalink to this headline">¶</a></h3>
+<p>DMX comes with built-in support for geodata.
+The feature is still under construction.
+Right now every topic with an address can be shown on a map.
+The so-called geomaps are a special type of topic map in DMX.
+Geomaps are based on openstreetmap.org.
+Here is an example of how to create and populate them:
+Edit a person or an institution and add an address.</p>
+<a class="reference internal image-reference" href="_images/add-address.jpg"><img alt="_images/add-address.jpg" src="_images/add-address.jpg" style="width: 800px;" /></a>
+<p>Open the search and create dialogue.
+Enter a name for the new topic map, e.g. “Our Geomap”.
+In the topic type selection choose “Topicmap”.
+Underneath it you can now choose the type of topic map you want to add.
+Select “Geomap” and press “Create”.</p>
+<img alt="_images/add-geomap.jpg" src="_images/add-geomap.jpg" />
+<p>Open the topic map selection in the upper toolbar and select your newly created geomap.
+The map is displayed with all items you assigned an address to.</p>
+<img alt="_images/topic-map-selection.jpg" src="_images/topic-map-selection.jpg" />
+<p>If you click onto an item the in-map details show you what is there.</p>
+<a class="reference internal image-reference" href="_images/display-map-item.jpg"><img alt="_images/display-map-item.jpg" src="_images/display-map-item.jpg" style="width: 400px;" /></a>
+<p>You return to the normal topic map via the same “Topicmap” drop-down menu.</p>
 </div>
 </div>
 </div>
@@ -241,7 +605,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Silke Meyer.
+        &copy; Copyright 2018 DMX Systems, https://dmx.berlin, Author: Silke Meyer &lt;silke@dmx.berlin&gt;, License: Creative Commons Attribution-ShareAlike 4.0 International (https://creativecommons.org/licenses/by-sa/4.0/).
 
     </p>
   </div>
@@ -284,7 +648,19 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+  <div class="footer">
+   <span class="creativecommons">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" >
+      <img src="_static/creativecommons-88x31.png"
+           border-width="0" alt="Creative Commons License"/>
+     </a>
+    This work is licensed under a
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+     Creative Commons Attribution-ShareAlike 4.0 International License.
+    </a>
+   </span>
+  </div>
 
 </body>
 </html>
