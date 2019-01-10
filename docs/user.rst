@@ -233,6 +233,7 @@ A person can be the author, the publisher, the reader, or even the subject of a 
 * Create a topic type, name it "Role referring to publication" or anything that suits you. The data type is "Text".
 * Drag the topic type onto the association type and edit the newly created association between them. Click onto the "View" tab and click "Edit" to edit its configuration.
 * Open the "Widget" setting and select "Select". This will allow you to select roles from a predefined list when adding content later.
+* There are two more checkboxes called "clearable" and "customizable". It only makes sense to use them in connection with  "Widget: Select". Both have an effect on editing association types later on. Here is what they do: "Clearable" decides whether you allow instances of this association type to *only* have the values you explicitly defined or whether it shall be possible to clear the field to leave it empty. In this case, there will be a little cross icon for clearing it. "Customizable" decides whether you allow to enter values on the fly by just typing in something different that was not predefined by you. If both checkboxes are left empty, one of your predefined values *has* to be selected. The value cannot be empty and there will be no possibility of typing into the field.
 
 .. image:: _static/selectable-role.jpg
 
