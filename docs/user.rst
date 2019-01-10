@@ -521,7 +521,7 @@ The state of the detail panel can be addressed directly, too:
 .. image:: _static/deep-link-topic-map-with-topic-in-edit-mode.jpg
 
 This means that ou can use the back and forward buttons of your browser to navigate.
-Going back brings you back to the situation you wer looking at before.
+Going back brings you back to the situation you were looking at before.
 It is not an "undo" though:
 Going back does not revert you latest change.
 
