@@ -127,53 +127,6 @@ Double-click onto the content you want to change, do your edit and save the chan
 
 .. image:: _static/inline-editing.jpg
 
-.. _user-introduction-to-detail-panel-label:
-
-Navigating topic maps via the detail panel
-==========================================
-
-The detail panel offers lots of features to explore your data so here is an in-depth introduction to the detail panel.
-
-The detail panel can only be opened if you have selected an item on the map and it will stay open as long as you have a selected item.
-
-The "Info" tab
---------------
-
-The first tab is a general info tab. It is always named after the type of the selected item, e.g. "Person" or "Event". In its display mode it shows only those fields containing data. You can click "Reveal" on details to reveal them on the current topic map.
-
-.. image:: _static/detail-panel-reveal-button.png
-
-The first tab also has an edit button at the bottom. If you enter the editing mode, you get all fields that you can fill in for the respective topic type or association type. These fields come from your type definitions (see below).
-
-.. image:: _static/detail-panel-editing-mode.jpg
-
-The "Related" tab
------------------
-
-The second tab is called "Related". It lists *all* topics related to your selection: 
-
-* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topic map you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
-* Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.
-
-.. image:: _static/detail-panel-related-tab.jpg
-
-* Depending on what are searching you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
-
-.. image:: _static/detail-panel-related-tab-sort-order.jpg
-
-* The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
-* Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.
-
-The "Meta" tab
---------------
-
-The third tab "Meta" is still under development, so right now you don't see any thing there.
-
-The "View" tab
---------------
-
-The fourth tab "View" allows you to view and edit the *configuration of types*. Thus, the tab is greyed out if the selected item is not a topic type or an association type but an individual topic or an association. (This is treated in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
-
 .. _user-getting-to-know-the-data-model-label:
 
 ******************************
@@ -299,6 +252,22 @@ On the right side you see the actual content, the instances.
 To continue working, you might want to :ref:`bulk select<user-bulk-selection-label>` and :ref:`hide<user-hide-items-label>` the data model.
 
 .. image:: _static/topic-map-with-custom-assoc-and-instances.jpg
+
+.. _user-edge-connections-label:
+
+Visualizing edge connections
+============================
+
+In the examples above you have seen nodes that are connected by edges, e.g. two topics (or topic types) that are connected by associations.
+This is not sufficient in a data model that is supposed to show real-world relationships.
+The associations themselves can be very complex and can have many properties.
+DMX can visualize this as edges connecting to other edges.
+
+Let's return to the example of a publication and its author:
+The authorship is a qualified description of the association between a person and a publication.
+If you reveal the "What's related" of such a qualified association you can see the connection between the association and and the association type: 
+
+.. image:: _static/edge-connection.jpg
 
 .. _user-organizing-your-map-label:
 
@@ -472,7 +441,89 @@ Here is how creating a shared workspace works:
 Topic maps
 **********
 
-tbd...
+.. _user-introduction-to-detail-panel-label:
+
+Navigating topic maps via the detail panel
+==========================================
+
+The detail panel offers lots of features to explore your data so here is an in-depth introduction to the detail panel.
+
+The detail panel can only be opened if you have selected an item on the map and it will stay open as long as you have a selected item.
+
+The "Info" tab
+--------------
+
+The first tab is a general info tab.
+It is always named after the type of the selected item, e.g. "Person" or "Event".
+In its display mode it shows only those fields containing data.
+You can click "Reveal" on details to reveal them on the current topic map.
+
+.. image:: _static/detail-panel-reveal-button.png
+
+The first tab also has an edit button at the bottom.
+If you enter the editing mode, you get all fields that you can fill in for the respective topic type or association type.
+These fields come from your type definitions (see below).
+
+.. image:: _static/detail-panel-editing-mode.jpg
+
+The "Related" tab
+-----------------
+
+The second tab is called "Related".
+It lists *all* topics related to your selection: 
+
+* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topic map you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
+* Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.
+
+.. image:: _static/detail-panel-related-tab.jpg
+
+* Depending on what are searching you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
+
+.. image:: _static/detail-panel-related-tab-sort-order.jpg
+
+* The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
+* Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.
+
+The "Meta" tab
+--------------
+
+The third tab "Meta" is still under development, so right now you don't see any thing there.
+
+The "View" tab
+--------------
+
+The fourth tab "View" allows you to view and edit the *configuration of types*.
+Thus, the tab is greyed out if the selected item is not a topic type or an association type but an individual topic or an association.
+(This is treated in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
+
+.. _user-navigating-topic-maps-via-deep-links-label:
+
+Navigating topic maps via deep links
+====================================
+
+Every view onto an item has a stable deep link that you can use for navigating in your browser:
+If you have nothing selected the URL, that is the address in your browser, shows the exact link to this topic map.
+
+.. image:: _static/deep-link-topic-map.jpg
+
+If you select something the URL changes:
+The ID of the currently selected item is appended to the URL.
+You can use this link you return to the same item over and over again.
+
+.. image:: _static/deep-link-topic-map-with-topic.jpg
+
+The state of the detail panel can be addressed directly, too:
+
+* Append "/info" to the URL and the detail panel's "Info" tab will open.
+* Append "/edit" to enter the editing mode directly.
+* Append "/related" to open the "Related" tab directly.
+
+.. image:: _static/deep-link-topic-map-with-topic-in-edit-mode.jpg
+
+This means that ou can use the back and forward buttons of your browser to navigate.
+Going back brings you back to the situation you wer looking at before.
+It is not an "undo" though:
+Going back does not revert you latest change.
 
 .. _user-geodata-label:
 
