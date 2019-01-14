@@ -514,6 +514,8 @@ There are five sharing modes:
 Every workspace has an owner, usually the creator, and optional members.
 When you are logged in you can access the different workspaces via the drop-down menu in the upper left corner.
 Once you log out DMX will switch back to a public (world-readable) workspace like the default workspace called "DMX".
+All items that are publicly readable stay visible, the rest disappears from the view.
+You are no longer able to edit but you still have a customizable view of the topic map, which means that you can move item and reveal other world-readable items.
 
 .. image:: _static/workspace-selection.jpg
 
