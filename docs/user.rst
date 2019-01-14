@@ -270,16 +270,135 @@ If you reveal the "What's related" of such a qualified association you can see t
 
 .. image:: _static/edge-connection.jpg
 
-.. _user-organizing-your-map-label:
+.. _user-topic-maps-label:
 
-*******************
-Organizing your map
-*******************
+************************************
+Organizing and navigating Topic Maps
+************************************
+
+.. _user-introduction-to-detail-panel-label:
+
+Navigating via the detail panel
+===============================
+
+The detail panel offers lots of features to explore your data so here is an in-depth introduction to the detail panel.
+
+The detail panel can only be opened if you have selected an item on the map and it will stay open as long as you have a selected item.
+
+The "Info" tab
+--------------
+
+The first tab is a general info tab.
+It is always named after the type of the selected item, e.g. "Person" or "Event".
+In its display mode it shows only those fields containing data.
+You can click "Reveal" on details to reveal them on the current topic map.
+
+.. image:: _static/detail-panel-reveal-button.png
+
+The first tab also has an edit button at the bottom.
+If you enter the editing mode, you get all fields that you can fill in for the respective topic type or association type.
+These fields come from your type definitions (see below).
+
+.. image:: _static/detail-panel-editing-mode.jpg
+
+The "Related" tab
+-----------------
+
+The second tab is called "Related".
+It lists *all* topics related to your selection: 
+
+* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topic map you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
+* Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.
+
+.. image:: _static/detail-panel-related-tab.jpg
+
+* Depending on what are searching you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
+
+.. image:: _static/detail-panel-related-tab-sort-order.jpg
+
+* The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
+* Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.
+
+The "Meta" tab
+--------------
+
+The third tab "Meta" is still under development, so right now you don't see any thing there.
+
+The "View" tab
+--------------
+
+The fourth tab "View" allows you to view and edit the *configuration of types*.
+Thus, the tab is greyed out if the selected item is not a topic type or an association type but an individual topic or an association.
+(This is treated in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
+
+.. _user-navigating-topic-maps-via-deep-links-label:
+
+Navigating via deep links
+=========================
+
+Every view onto an item has a stable deep link that you can use for navigating in your browser:
+If you have nothing selected the URL, that is the address in your browser, shows the exact link to this topic map.
+
+.. image:: _static/deep-link-topic-map.jpg
+
+If you select something the URL changes:
+The ID of the currently selected item is appended to the URL.
+You can use this link you return to the same item over and over again.
+
+.. image:: _static/deep-link-topic-map-with-topic.jpg
+
+The state of the detail panel can be addressed directly, too:
+
+* Append "/info" to the URL and the detail panel's "Info" tab will open.
+* Append "/edit" to enter the editing mode directly.
+* Append "/related" to open the "Related" tab directly.
+
+.. image:: _static/deep-link-topic-map-with-topic-in-edit-mode.jpg
+
+This means that ou can use the back and forward buttons of your browser to navigate.
+Going back brings you back to the situation you were looking at before.
+It is not an "undo" though:
+Going back does not revert you latest change.
+
+.. _user-geodata-label:
+
+Displaying Geodata
+==================
+DMX comes with built-in support for geodata.
+The feature is still under construction.
+Right now every topic with an address can be shown on a map.
+The so-called geomaps are a special type of topic map in DMX.
+Geomaps are based on openstreetmap.org.
+Here is an example of how to create and populate them:
+Edit a person or an institution and add an address.
+
+.. image:: _static/add-address.jpg
+    :width: 800
+
+Open the search and create dialogue.
+Enter a name for the new topic map, e.g. "Our Geomap".
+In the topic type selection choose "Topicmap".
+Underneath it you can now choose the type of topic map you want to add.
+Select "Geomap" and press "Create".
+
+.. image:: _static/add-geomap.jpg
+
+Open the topic map selection in the upper toolbar and select your newly created geomap.
+The map is displayed with all items you assigned an address to.
+
+.. image:: _static/topic-map-selection.jpg
+
+If you click onto an item the in-map details show you what is there.
+
+.. image:: _static/display-map-item.jpg
+    :width: 400
+
+You return to the normal topic map via the same "Topicmap" drop-down menu.
 
 .. _user-moving-the-map-and-the-items-label:
 
 Moving the map and the items
-==============================
+============================
 Note that you can drag the whole topic map into any direction.
 You can also grab every item and drag it where you want it to be.
 Zooming in or out is done by scrolling up or down.
@@ -436,127 +555,3 @@ Here is how creating a shared workspace works:
 
 .. note:: You can create memberships in every workspace that you have write permission in.
 
-.. _user-topic-maps-label:
-
-**********
-Topic maps
-**********
-
-.. _user-introduction-to-detail-panel-label:
-
-Navigating topic maps via the detail panel
-==========================================
-
-The detail panel offers lots of features to explore your data so here is an in-depth introduction to the detail panel.
-
-The detail panel can only be opened if you have selected an item on the map and it will stay open as long as you have a selected item.
-
-The "Info" tab
---------------
-
-The first tab is a general info tab.
-It is always named after the type of the selected item, e.g. "Person" or "Event".
-In its display mode it shows only those fields containing data.
-You can click "Reveal" on details to reveal them on the current topic map.
-
-.. image:: _static/detail-panel-reveal-button.png
-
-The first tab also has an edit button at the bottom.
-If you enter the editing mode, you get all fields that you can fill in for the respective topic type or association type.
-These fields come from your type definitions (see below).
-
-.. image:: _static/detail-panel-editing-mode.jpg
-
-The "Related" tab
------------------
-
-The second tab is called "Related".
-It lists *all* topics related to your selection: 
-
-* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topic map you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
-* Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.
-
-.. image:: _static/detail-panel-related-tab.jpg
-
-* Depending on what are searching you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
-
-.. image:: _static/detail-panel-related-tab-sort-order.jpg
-
-* The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
-* Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.
-
-The "Meta" tab
---------------
-
-The third tab "Meta" is still under development, so right now you don't see any thing there.
-
-The "View" tab
---------------
-
-The fourth tab "View" allows you to view and edit the *configuration of types*.
-Thus, the tab is greyed out if the selected item is not a topic type or an association type but an individual topic or an association.
-(This is treated in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
-
-.. _user-navigating-topic-maps-via-deep-links-label:
-
-Navigating topic maps via deep links
-====================================
-
-Every view onto an item has a stable deep link that you can use for navigating in your browser:
-If you have nothing selected the URL, that is the address in your browser, shows the exact link to this topic map.
-
-.. image:: _static/deep-link-topic-map.jpg
-
-If you select something the URL changes:
-The ID of the currently selected item is appended to the URL.
-You can use this link you return to the same item over and over again.
-
-.. image:: _static/deep-link-topic-map-with-topic.jpg
-
-The state of the detail panel can be addressed directly, too:
-
-* Append "/info" to the URL and the detail panel's "Info" tab will open.
-* Append "/edit" to enter the editing mode directly.
-* Append "/related" to open the "Related" tab directly.
-
-.. image:: _static/deep-link-topic-map-with-topic-in-edit-mode.jpg
-
-This means that ou can use the back and forward buttons of your browser to navigate.
-Going back brings you back to the situation you were looking at before.
-It is not an "undo" though:
-Going back does not revert you latest change.
-
-.. _user-geodata-label:
-
-Geodata
-=======
-DMX comes with built-in support for geodata.
-The feature is still under construction.
-Right now every topic with an address can be shown on a map.
-The so-called geomaps are a special type of topic map in DMX.
-Geomaps are based on openstreetmap.org.
-Here is an example of how to create and populate them:
-Edit a person or an institution and add an address.
-
-.. image:: _static/add-address.jpg
-    :width: 800
-
-Open the search and create dialogue.
-Enter a name for the new topic map, e.g. "Our Geomap".
-In the topic type selection choose "Topicmap".
-Underneath it you can now choose the type of topic map you want to add.
-Select "Geomap" and press "Create".
-
-.. image:: _static/add-geomap.jpg
-
-Open the topic map selection in the upper toolbar and select your newly created geomap.
-The map is displayed with all items you assigned an address to.
-
-.. image:: _static/topic-map-selection.jpg
-
-If you click onto an item the in-map details show you what is there.
-
-.. image:: _static/display-map-item.jpg
-    :width: 400
-
-You return to the normal topic map via the same "Topicmap" drop-down menu.
