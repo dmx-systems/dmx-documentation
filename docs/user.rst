@@ -189,7 +189,7 @@ Again, you can hide what you do not want to see in your map when you are done ex
 .. _user-create-your-first-topic-type-label:
 
 Create your first topic type
-===================================
+============================
 
 To create your own topic type with a few properties here is how to procede.
 Let's say you want to add a topic type "publication".
@@ -329,7 +329,11 @@ The "View" tab
 
 The fourth tab "View" allows you to view and edit the *configuration of types*.
 Thus, the tab is greyed out if the selected item is not a topic type or an association type but an individual topic or an association.
-(This is treated in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
+(Read more about the background of the data model in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
+What you can configure in this "View config" has nothing to do with editing the actual data model.
+These changes just have an impact on how items are rendered on your topic map:
+You can assign custom icons to topic types, or colours to association types.
+(This is covered below in the sections about :ref:`Assigning icons to topic types<user-topic-type-icons-label>` and :ref:`Assigning colours to association types<user-assoc-type-colour-label>`.)
 
 .. _user-navigating-topic-maps-via-deep-links-label:
 
