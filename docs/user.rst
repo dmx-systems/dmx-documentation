@@ -112,6 +112,12 @@ You can also select the item with a click and use the arrow button in the upper 
 
 .. image:: _static/button-detail-panel.jpg
 
+The detail panel opens so that so have the topic map on the left side of your screen and the detail panel on the right side.
+There is an in-depth explanation of the detail panel's features :ref:`further down<user-introduction-to-detail-panel-label>`.
+Here is what is looks like:
+
+.. image:: _static/detail-panel-edit-intro.jpg
+
 .. _user-inline-editing-label:
 
 Inline editing
