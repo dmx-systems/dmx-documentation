@@ -154,8 +154,8 @@ One of the core characteristics of DMX is that you can look at the underlying da
 
 .. _user-exploring-your-first-topic-label:
 
-Exploring your first topic
-==========================
+Exploring a topic
+=================
 
 .. image:: _static/context-menu.png
     :width: 220
@@ -176,7 +176,7 @@ It displays a list of all items that are logically related to this concrete pers
 You can now click on each of the list items and they will appear on the topic map.
 Click onto the topic type "person".
 The topic type "person" is displayed with an association to the instance "Cathy Jones".
-The link between both has a different colour and you can again click onto the link, show "What's related" and you can see that this association is an "instantiation":
+The link between both has a different color and you can again click onto the link, show "What's related" and you can see that this association is an "instantiation":
 The topic is one instance of the topic type.
 To see if there are more instances (more persons), show the "What's related" of the topic type "person".
 Among other information about how the topic type is integrated into the rest of the context you can see all existing persons you entered so far.
@@ -216,8 +216,8 @@ You are now ready to use this data model you just built to add content.
 
 .. _user-create-your-first-custom-association-type-label:
 
-Create your first custom association type
-=========================================
+Create your first association type
+==================================
 
 One of the strengths of DMX is that you can build your own association types that are machine-readable.
 Here is how to build such an association:
@@ -332,8 +332,8 @@ Thus, the tab is greyed out if the selected item is not a topic type or an assoc
 (Read more about the background of the data model in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
 What you can configure in this "View config" has nothing to do with editing the actual data model.
 These changes just have an impact on how items are rendered on your topic map:
-You can assign custom icons to topic types, or colours to association types.
-(This is covered below in the sections about :ref:`Assigning icons to topic types<user-topic-type-icons-label>` and :ref:`Assigning colours to association types<user-assoc-type-colour-label>`.)
+You can assign custom icons to topic types, or colors to association types.
+(This is covered below in the sections about :ref:`Assigning icons to topic types<user-topic-type-icons-label>` and :ref:`Assigning colors to association types<user-assoc-type-color-label>`.)
 
 .. _user-navigating-topic-maps-via-deep-links-label:
 
@@ -450,16 +450,16 @@ Let's say you have a topic type "Publication" and you want all publications in y
 
 .. image:: _static/new-icon.jpg
 
-.. _user-assoc-type-colour-label:
+.. _user-assoc-type-color-label:
 
-Assigning colours to association types
+Assigning colors to association types
 ======================================
 
-You can assign colours to association types just as you can assign icons to topic types.
+You can assign colors to association types just as you can assign icons to topic types.
 Select the association type on your map, open the details panel and open the fourth tab "View".
-Choose a colour for your association type and save it.
+Choose a color for your association type and save it.
 
-.. image:: _static/new-assoc-colour.jpg
+.. image:: _static/new-assoc-color.jpg
 
 .. _workspaces-collaboration-acl-label:
 
@@ -471,8 +471,6 @@ User Accounts, Collaboration and Access Control
 
 Creating user accounts
 ======================
-
-.. note:: Try the OpenLDAP plugin if you already have your user accounts in there!
 
 In DMX, you create user accounts just the way you create everything else, too:
 Enter a user name into the search field.
