@@ -1,6 +1,6 @@
-######################
-DMX User Documentation
-######################
+##############
+DMX User Guide
+##############
 
 Please note we have a :ref:`glossary-label` for the terms used in this documentation.
 
@@ -95,15 +95,81 @@ Simply drag the person onto the organization again and specify their second role
 .. image:: _static/multiple-assocs.jpg
     :width: 300
 
-.. _user-editing-topics-label:
 
-Editing topics
-==============
 
-.. _user-editing-via-detail-panel-label:
+*****************
+Content Authoring
+*****************
 
-The detail panel
-----------------
+.._user-creating-a-topic-label:
+
+Creating a topic
+================
+
+Right-click onto the topic map.
+The search/create dialogue appears.
+
+.. image:: _static/search-create.jpg
+
+DMX wants to make sure that you do not create something that already exists.
+That's why you enter whatever you want to create into the search field.
+Enter a term, e.g. a person's given name..
+DMX will answer "No match".
+Select "Person" from the predefined :ref:`topic types<glossary-topics-and-topic-types-label>` and click "Create".
+
+.. image:: _static/create-person.jpg
+
+You will see a rectangle on your topic map.
+It contains the name you entered and it states that this is the person's first name.
+
+Whenever you create a new topic the dialogue proposes you to create something of the same topic type as last time.
+You can change this by seleting a different topic type from the drop-down menu.
+
+.. _user-dmx-default-topic-types-label:
+
+DMX's default topic types
+-------------------------
+
+DMX comes with a few predefined topic types that you can select from:
+
+- person,
+- institution,
+- note,
+- event,
+- bookmark.
+
+Each topic type brings certain fields you can fill in:
+While events have dates and locations, persons can have telephone numbers and web resources have a URL.
+
+These topic types all come from classical PIM applications (Personal Information Management).
+The special feature here is that you have different types of information in one interface and not spread out in address books, calendars, browsers and files.
+Using DMX for PIM is just *one* proposal for a use case.
+
+.. _user-creating-an-association-label:
+
+Creating an association
+=======================
+
+To create an association between two topics you grab the little grey dot at the upper border of one of the topics.
+
+.. image:: _static/create-association-1.png
+
+Drag it onto the other topic until that topic is highlighted by a blue border.
+
+.. image:: _static/create-association-2.png
+
+Then let go and a rectangle will open that shows you the in-map details of the newly created association.
+Click somewhere into the map to hide the in-map details.
+
+.. _user-editing-content-label:
+
+Editing content
+===============
+
+.. _user-editing-in-the-detail-panel-label:
+
+Editing in the detail panel
+---------------------------
 
 To add more details to a topic you use the detail panel on the right side.
 There are two ways to open it:
@@ -133,154 +199,148 @@ Double-click onto the content you want to change, do your edit and save the chan
 
 .. image:: _static/inline-editing.jpg
 
-.. _user-getting-to-know-the-data-model-label:
+Deleting things
+===============
+
+.. warning:: There is an important difference between hiding items and deleting them. If you delete items they are immediately removed from the database. If you hide them, they are just no longer visible on the topic map but you can bring them back by revealing them.
+
+You delete things via the context menu on the topic map.
+Left-click onto the item and drag your mouse onto the delete button.
+
+.. image:: _static/delete-item.png
+
+Bulk deletion
+-------------
+
+To delete several items in one go select all of them by clicking them with the Ctrl key pressed.
+
+.. image:: _static/bulk-delete-1.jpg
+
+Then procede as above:
+Left-click onto the item and drag your mouse onto the delete button.
+
+.. image:: _static/bulk-delete-2.jpg
 
 ******************************
-Getting to know the data model
+Organizing the working context
 ******************************
 
-.. _user-dmx-default-topic-types-label:
+    The Topicmap <-> Database illustration is a good introduction
 
-DMX's default topic types
-====================================
+Creating a topic map
+====================
 
-As you have seen, DMX comes with a few predefined topic types:
+Moving things around
+====================
 
-- event,
-- institution,
-- note,
-- web resource,
-- person.
+.. _user-moving-the-map-and-the-items-label:
 
-Each topic type brings certain fields you can fill in:
-While events have dates and locations, persons can have telephone numbers and web resources have a URL.
-As you probably need more than these presets to map what you have in mind you will now learn how to create your own topic types.
+Note that you can drag the whole topic map into any direction.
+Just hold the right mouse button pressed somewhere on the topic map and drag.
 
-One of the core characteristics of DMX is that you can look at the underlying data model and modify it in the same interface.
+Moving topics
+-------------
+
+Grab individual items with your mouse and drag them where you want them to be.
+
+Panning/zooming the topic map
+-----------------------------
+
+Zooming in or out is done by scrolling up or down.
+
+.. _user-hide-items-label:
+
+Hiding things
+=============
+
+The difference between Hide and Delete
+--------------------------------------
+
+.. note:: There is an important difference between hiding items and deleting them. If you delete items they are immediately removed from the database. If you hide them, they are just no longer visible on the topic map but you can bring them back by revealing them.
+
+You can hide items from the topic map by long-clicking onto them and using the "Hide" button in the context menu.
+If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
+
+Bulk operations
+===============
+
+.. _user-bulk-selection-label:
+
+Bulk selection
+--------------
+
+You can bulk select several items by keeping the CTRL key pressed and drawing a rectangle around the items you want to select.
+You can also click them with the CTRL key pressed.
+The selected topics now have a blue border.
+
+Moving topic clusters
+---------------------
+
+Once you have bulk selected a few items, you can drag the whole selection where you want to place it.
+
+.. image:: _static/bulk-select.jpg
+    :width: 600
+
+.. image:: _static/bulk-move.jpg
+    :width: 600
+
+
+Hiding multiple items
+---------------------
+
+To hide several items at once select them by keeping the CTRL key pressed and drawing a rectangle around them or by clicking them with the CTRL key pressed.
+
+.. image:: _static/bulk-hide.png
+    :width: 600
 
 .. _user-exploring-your-first-topic-label:
 
-Exploring a topic
-=================
 
-.. image:: _static/context-menu.png
-    :width: 220
-
-To look at the data model of a person, click onto the person you created and select "What's related".
-The detail panel on the right side will open.
-It has four tabs.
-The first one ("person") shows all the content you entered.
-You are now looking at the second one, called "Related".
-It displays a list of all items that are logically related to this concrete person:
-
-- the institution you linked the person to
-- the name of the person (because so far this is the only information you added to the person)
-- the topic type "person". Your concrete person is an instance of the general idea of persons, so it is linked to this general idea, the topic type. You can think of the topic type as the definition of what a person is.
-- the topic map this topic is associated with
-- the workspace the topic is in
-
-You can now click on each of the list items and they will appear on the topic map.
-Click onto the topic type "person".
-The topic type "person" is displayed with an association to the instance "Cathy Jones".
-The link between both has a different color and you can again click onto the link, show "What's related" and you can see that this association is an "instantiation":
-The topic is one instance of the topic type.
-To see if there are more instances (more persons), show the "What's related" of the topic type "person".
-Among other information about how the topic type is integrated into the rest of the context you can see all existing persons you entered so far.
-
-Here you are looking at your data and at a part of the data model it is based upon.
-Again, you can hide what you do not want to see in your map when you are done exploring.
-
-.. image:: _static/intro-data-model.jpg
-
-.. _user-create-your-first-topic-type-label:
-
-Create your first topic type
-============================
-
-To create your own topic type with a few properties here is how to procede.
-Let's say you want to add a topic type "publication".
-Each publication shall have a title and a year.
-
-- Open the search field. Enter "Publication", select "Topic Type" and press "create".
-- Go into editing mode via the context menu. Change the data type from "Text" to "Identity" and hit "Save". Click somewhere into your map to close the detail panel.
-- Open the search field and enter "Title". You will find that two entries already exist. They come from the default topics types "Event" and "Note" which also have titles. Create a new topic type "Title".
-- Grab the title item and pull it on the publication item. DMX will display what you just created:
-  * You created an association of the type "Composition Definition". Composition Definition means that you are defining a more complex context between item on your map: The relationship between a publication, a title and a year. 
-  * "Cardinality: One" means that each publication has exactly one title, not more. 
-  * The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.
-
-.. image:: _static/composition-definition.jpg
-    :width: 300
-
-- Again, click somewhere onto the map and reopen the search field. Search for the year and open the existing topic type. Pull it onto the publication.
-
-You are now ready to use this data model you just built to add content.
-
-- Open the search field and enter the title of a publication. From the Topic Type menu you can now select "Publication".
-- As the title was the first property you added to the composition, it is automatically filled in from the search field.
-- Edit your new publication and add a year.
-
-.. _user-create-your-first-custom-association-type-label:
-
-Create your first association type
-==================================
-
-One of the strengths of DMX is that you can build your own association types that are machine-readable.
-Here is how to build such an association:
-Let's say we want to express the relationship between persons and publications.
-A person can be the author, the publisher, the reader, or even the subject of a publication.
-
-* Create a topic type "Publication" if you haven't done so above.
-* Create an association type and give it a name, e.g. "Relationship person - publication".
-* Select "Composite" as a data type.
-
-.. image:: _static/custom-assoc.jpg
-
-* Create a topic type, name it "Role referring to publication" or anything that suits you. The data type is "Text".
-* Drag the topic type onto the association type and edit the newly created association between them. Click onto the "View" tab and click "Edit" to edit its configuration.
-* Open the "Widget" setting and select "Select". This will allow you to select roles from a predefined list when adding content later.
-* There are two more checkboxes called "clearable" and "customizable". It only makes sense to use them in connection with  "Widget: Select". Both have an effect on editing association types later on. Here is what they do: "Clearable" decides whether you allow instances of this association type to *only* have the values you explicitly defined or whether it shall be possible to clear the field to leave it empty. In this case, there will be a little cross icon for clearing it. "Customizable" decides whether you allow to enter values on the fly by just typing in something different that was not predefined by you. If both checkboxes are left empty, one of your predefined values *has* to be selected. The value cannot be empty and there will be no possibility of typing into the field.
-
-.. image:: _static/selectable-role.jpg
-
-* Create a topic "Author" the has the topic type "Role referring to publication" which is selectable from the create menu. If you want to have more roles, add them likewise.
-* Create a person.
-* Create a publication.
-* Drag the person onto the publication and edit the association. Open the drop-down menu under "Association Type" and select "Relationship person - publication". Hit the save button and the edit button again. There is a new drop-down menu that lets you select the role the person shall have related to the publication.
-
-.. image:: _static/select-role.jpg
-
-You now have a map like this.
-On the left side you see the data model.
-There is your topic type "Publication" with a title and a year.
-And there is the association type you built with a few selectable roles.
-
-On the right side you see the actual content, the instances.
-To continue working, you might want to :ref:`bulk select<user-bulk-selection-label>` and :ref:`hide<user-hide-items-label>` the data model.
-
-.. image:: _static/topic-map-with-custom-assoc-and-instances.jpg
-
-.. _user-edge-connections-label:
-
-Visualizing edge connections
-============================
-
-In the examples above you have seen nodes that are connected by edges, e.g. two topics (or topic types) that are connected by associations.
-This is not sufficient in a data model that is supposed to show real-world relationships.
-The associations themselves can be very complex and can have many properties.
-DMX can visualize this as edges connecting to other edges.
-
-Let's return to the example of a publication and its author:
-The authorship is a qualified description of the association between a person and a publication.
-If you reveal the "What's related" of such a qualified association you can see the connection between the association and and the association type: 
-
-.. image:: _static/edge-connection.jpg
 
 .. _user-topic-maps-label:
 
-************************************
-Organizing and navigating Topic Maps
-************************************
+**********
+Navigation
+**********
+
+Searching the database
+======================
+
+Associative navigation
+======================
+
+Switching between topic maps
+============================
+
+Switching between workspaces
+============================
+
+Using the browser history
+=========================
+
+Every view onto an item has a stable deep link that you can use for navigating back and forth in your browser:
+If you have nothing selected the URL, that is the address in your browser, shows the exact link to this topic map.
+
+.. image:: _static/deep-link-topic-map.jpg
+
+If you select something the URL changes:
+The ID of the currently selected item is appended to the URL.
+You can use this link you return to the same item over and over again.
+
+.. image:: _static/deep-link-topic-map-with-topic.jpg
+
+The state of the detail panel can be addressed directly, too:
+
+* Append "/info" to the URL and the detail panel's "Info" tab will open.
+* Append "/edit" to enter the editing mode directly.
+* Append "/related" to open the "Related" tab directly.
+
+.. image:: _static/deep-link-topic-map-with-topic-in-edit-mode.jpg
+
+This means that ou can use the back and forward buttons of your browser.
+Going back brings you back to the situation you were looking at before.
+It is not an "undo" though:
+Going back does not revert you latest change.
 
 .. _user-introduction-to-detail-panel-label:
 
@@ -313,7 +373,7 @@ The "Related" tab
 The second tab is called "Related".
 It lists *all* topics related to your selection: 
 
-* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topic map you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
+* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topic map you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about MODELLING.)
 * Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.
 
 .. image:: _static/detail-panel-related-tab.jpg
@@ -335,7 +395,7 @@ The "View" tab
 
 The fourth tab "View" allows you to view and edit the *configuration of types*.
 Thus, the tab is greyed out if the selected item is not a topic type or an association type but an individual topic or an association.
-(Read more about the background of the data model in the section about the :ref:`DMX data model<user-getting-to-know-the-data-model-label>`.)
+(Read more about the background of the data model in the section about MODELLING.
 What you can configure in this "View config" has nothing to do with editing the actual data model.
 These changes just have an impact on how items are rendered on your topic map:
 You can assign custom icons to topic types, or colors to association types.
@@ -343,32 +403,7 @@ You can assign custom icons to topic types, or colors to association types.
 
 .. _user-navigating-topic-maps-via-deep-links-label:
 
-Navigating via deep links
-=========================
 
-Every view onto an item has a stable deep link that you can use for navigating in your browser:
-If you have nothing selected the URL, that is the address in your browser, shows the exact link to this topic map.
-
-.. image:: _static/deep-link-topic-map.jpg
-
-If you select something the URL changes:
-The ID of the currently selected item is appended to the URL.
-You can use this link you return to the same item over and over again.
-
-.. image:: _static/deep-link-topic-map-with-topic.jpg
-
-The state of the detail panel can be addressed directly, too:
-
-* Append "/info" to the URL and the detail panel's "Info" tab will open.
-* Append "/edit" to enter the editing mode directly.
-* Append "/related" to open the "Related" tab directly.
-
-.. image:: _static/deep-link-topic-map-with-topic-in-edit-mode.jpg
-
-This means that ou can use the back and forward buttons of your browser to navigate.
-Going back brings you back to the situation you were looking at before.
-It is not an "undo" though:
-Going back does not revert you latest change.
 
 .. _user-geodata-label:
 
@@ -405,36 +440,9 @@ If you click onto an item the in-map details show you what is there.
 
 You return to the normal topic map via the same "Topicmap" drop-down menu.
 
-.. _user-moving-the-map-and-the-items-label:
 
-Moving the map and the items
-============================
-Note that you can drag the whole topic map into any direction.
-You can also grab every item and drag it where you want it to be.
-Zooming in or out is done by scrolling up or down.
 
-.. _user-bulk-selection-label:
 
-Bulk selection
-==============
-To move more than one item at a time you can bulk select several items by keeping the CTRL key pressed and drawing a rectangle around the items you want to select.
-You can also click them with the CTRL key pressed.
-The selected topics now have a blue border.
-Drag the whole selection where you want to place it.
-
-.. image:: _static/bulk-select.jpg
-    :width: 600
-
-.. image:: _static/bulk-move.jpg
-    :width: 600
-
-.. _user-hide-items-label:
-
-Hiding items
-============
-
-You can hide items from the topic map by long-clicking onto them and using the "Hide" button in the context menu.
-If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
 
 .. _user-topic-type-icons-label:
 
@@ -469,9 +477,9 @@ Choose a color for your association type and save it.
 
 .. _workspaces-collaboration-acl-label:
 
-***********************************************
-User Accounts, Collaboration and Access Control
-***********************************************
+*************************
+Collaboration and Sharing
+*************************
 
 .. _user-creating-user-accounts-label:
 
@@ -565,3 +573,127 @@ Here is how creating a shared workspace works:
 
 .. note:: You can create memberships in every workspace that you have write permission in.
 
+.. user-getting-to-know-the-data-model-label:
+
+*********
+Modelling
+*********
+
+
+Exploring a topic
+=================
+
+.. image:: _static/context-menu.png
+    :width: 220
+
+To look at the data model of a person, click onto the person you created and select "What's related".
+The detail panel on the right side will open.
+It has four tabs.
+The first one ("person") shows all the content you entered.
+You are now looking at the second one, called "Related".
+It displays a list of all items that are logically related to this concrete person:
+
+- the institution you linked the person to
+- the name of the person (because so far this is the only information you added to the person)
+- the topic type "person". Your concrete person is an instance of the general idea of persons, so it is linked to this general idea, the topic type. You can think of the topic type as the definition of what a person is.
+- the topic map this topic is associated with
+- the workspace the topic is in
+
+You can now click on each of the list items and they will appear on the topic map.
+Click onto the topic type "person".
+The topic type "person" is displayed with an association to the instance "Cathy Jones".
+The link between both has a different color and you can again click onto the link, show "What's related" and you can see that this association is an "instantiation":
+The topic is one instance of the topic type.
+To see if there are more instances (more persons), show the "What's related" of the topic type "person".
+Among other information about how the topic type is integrated into the rest of the context you can see all existing persons you entered so far.
+
+Here you are looking at your data and at a part of the data model it is based upon.
+Again, you can hide what you do not want to see in your map when you are done exploring.
+
+.. image:: _static/intro-data-model.jpg
+
+.. _user-create-your-first-topic-type-label:
+
+
+
+Create your first topic type
+============================
+
+To create your own topic type with a few properties here is how to procede.
+Let's say you want to add a topic type "publication".
+Each publication shall have a title and a year.
+
+- Open the search field. Enter "Publication", select "Topic Type" and press "create".
+- Go into editing mode via the context menu. Change the data type from "Text" to "Identity" and hit "Save". Click somewhere into your map to close the detail panel.
+- Open the search field and enter "Title". You will find that two entries already exist. They come from the default topics types "Event" and "Note" which also have titles. Create a new topic type "Title".
+- Grab the title item and pull it on the publication item. DMX will display what you just created:
+  * You created an association of the type "Composition Definition". Composition Definition means that you are defining a more complex context between item on your map: The relationship between a publication, a title and a year. 
+  * "Cardinality: One" means that each publication has exactly one title, not more. 
+  * The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.
+
+.. image:: _static/composition-definition.jpg
+    :width: 300
+
+- Again, click somewhere onto the map and reopen the search field. Search for the year and open the existing topic type. Pull it onto the publication.
+
+You are now ready to use this data model you just built to add content.
+
+- Open the search field and enter the title of a publication. From the Topic Type menu you can now select "Publication".
+- As the title was the first property you added to the composition, it is automatically filled in from the search field.
+- Edit your new publication and add a year.
+
+.. _user-create-your-first-custom-association-type-label:
+
+Create your first association type
+==================================
+
+One of the strengths of DMX is that you can build your own association types that are machine-readable.
+Here is how to build such an association:
+Let's say we want to express the relationship between persons and publications.
+A person can be the author, the publisher, the reader, or even the subject of a publication.
+
+* Create a topic type "Publication" if you haven't done so above.
+* Create an association type and give it a name, e.g. "Relationship person - publication".
+* Select "Composite" as a data type.
+
+.. image:: _static/custom-assoc.jpg
+
+* Create a topic type, name it "Role referring to publication" or anything that suits you. The data type is "Text".
+* Drag the topic type onto the association type and edit the newly created association between them. Click onto the "View" tab and click "Edit" to edit its configuration.
+* Open the "Widget" setting and select "Select". This will allow you to select roles from a predefined list when adding content later.
+* There are two more checkboxes called "clearable" and "customizable". It only makes sense to use them in connection with  "Widget: Select". Both have an effect on editing association types later on. Here is what they do: "Clearable" decides whether you allow instances of this association type to *only* have the values you explicitly defined or whether it shall be possible to clear the field to leave it empty. In this case, there will be a little cross icon for clearing it. "Customizable" decides whether you allow to enter values on the fly by just typing in something different that was not predefined by you. If both checkboxes are left empty, one of your predefined values *has* to be selected. The value cannot be empty and there will be no possibility of typing into the field.
+
+.. image:: _static/selectable-role.jpg
+
+* Create a topic "Author" the has the topic type "Role referring to publication" which is selectable from the create menu. If you want to have more roles, add them likewise.
+* Create a person.
+* Create a publication.
+* Drag the person onto the publication and edit the association. Open the drop-down menu under "Association Type" and select "Relationship person - publication". Hit the save button and the edit button again. There is a new drop-down menu that lets you select the role the person shall have related to the publication.
+
+.. image:: _static/select-role.jpg
+
+You now have a map like this.
+On the left side you see the data model.
+There is your topic type "Publication" with a title and a year.
+And there is the association type you built with a few selectable roles.
+
+On the right side you see the actual content, the instances.
+To continue working, you might want to :ref:`bulk select<user-bulk-selection-label>` and :ref:`hide<user-hide-items-label>` the data model.
+
+.. image:: _static/topic-map-with-custom-assoc-and-instances.jpg
+
+.. _user-edge-connections-label:
+
+Visualizing edge connections
+============================
+
+In the examples above you have seen nodes that are connected by edges, e.g. two topics (or topic types) that are connected by associations.
+This is not sufficient in a data model that is supposed to show real-world relationships.
+The associations themselves can be very complex and can have many properties.
+DMX can visualize this as edges connecting to other edges.
+
+Let's return to the example of a publication and its author:
+The authorship is a qualified description of the association between a person and a publication.
+If you reveal the "What's related" of such a qualified association you can see the connection between the association and and the association type: 
+
+.. image:: _static/edge-connection.jpg
