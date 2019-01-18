@@ -202,7 +202,7 @@ Double-click onto the content you want to change, do your edit and save the chan
 Deleting things
 ===============
 
-.. warning:: There is an important difference between hiding items and deleting them. If you delete items they are immediately removed from the database. If you hide them, they are just no longer visible on the topic map but you can bring them back by revealing them.
+.. warning:: There is an important difference between hiding items and deleting them. **If you delete items they are immediately removed from the database without any further questions!** If you hide them, they are just no longer visible on the topic map but you can bring them back by revealing them.
 
 You delete things via the context menu on the topic map.
 Left-click onto the item and drag your mouse onto the delete button.
