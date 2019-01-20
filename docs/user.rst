@@ -88,12 +88,6 @@ Later you will learn how to create relationships ("associations") and how to pre
 
 .. image:: _static/diff-roles-in-organization.jpg
 
-Thinking of real-world social networks, you will find that often people have more than one role.
-DMX can represent this:
-Simply drag the person onto the organization again and specify their second role.
-
-.. image:: _static/multiple-assocs.jpg
-    :width: 300
 
 **********************
 The DMX User Interface
@@ -236,9 +230,17 @@ Its association type is just "association".
 You can use these associations to visualize your associations but they are *not* machine-readable.
 
 .. image:: _static/generic-association.jpg
+    :width: 600
 
 If you need machine-readable associations you have to give your associations a meaning.
 This is explained step-by-step in the section about :ref:`Modelling<user-modelling-label>`.
+
+Thinking of real-world social networks, you will find that there is often more than one association between two things.
+DMX can represent this:
+You can simply create another association between them.
+
+.. image:: _static/multiple-assocs.jpg
+    :width: 600
 
 .. _user-editing-content-label:
 
