@@ -84,7 +84,7 @@ A square will appear that tell you this is an "Organization Association".
 You can view and edit details of associations the same way you can with topics.
 If you do so you will notice that an "Organization Association" has a specific drop-down menu called "organizational role".
 It lets you choose the person's role from a predefined set of common roles people have in organizations.
-Later you will learn how to create custom relationships ("associations") and how to predefine their properties.
+Later you will learn how to create relationships ("associations") and how to predefine their properties.
 
 .. image:: _static/diff-roles-in-organization.jpg
 
@@ -95,19 +95,88 @@ Simply drag the person onto the organization again and specify their second role
 .. image:: _static/multiple-assocs.jpg
     :width: 300
 
+**********************
+The DMX User Interface
+**********************
 
+.. _user-the-detail-panel-label:
+
+The detail panel
+================
+
+The detail panel offers lots of features to explore your data so here is an in-depth introduction to the detail panel.
+
+The detail panel can only be opened if you have selected an item on the map and it will stay open as long as you have a selected item.
+
+.. _user-detail-panel-the-info-tab-label:
+
+The "Info" tab
+--------------
+
+The first tab is a general info tab.
+It is always named after the type of the selected item, e.g. "Person" or "Event".
+In its display mode it shows only those fields containing data.
+You can click "Reveal" on details to reveal them on the current topic map.
+
+.. image:: _static/detail-panel-reveal-button.png
+
+The first tab also has an edit button at the bottom.
+If you enter the editing mode, you get all fields that you can fill in for the respective topic type or association type.
+These fields come from your type definitions (see below).
+
+.. image:: _static/detail-panel-editing-mode.jpg
+
+.. _user-detail-panel-the-related-tab-label:
+
+The "Related" tab
+-----------------
+
+The second tab is called "Related".
+It lists *all* topics related to your selection: 
+
+* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topic map you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about MODELLING.)
+* Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.
+
+.. image:: _static/detail-panel-related-tab.jpg
+
+* Depending on what are searching you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
+
+.. image:: _static/detail-panel-related-tab-sort-order.jpg
+
+* The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
+* Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.
+
+.. _user-detail-panel-the-meta-tab-label:
+
+The "Meta" tab
+--------------
+
+The third tab "Meta" is still under development, so right now you don't see anything there.
+
+.. _user-detail-panel-the-view-tab-label:
+
+The "View" tab
+--------------
+
+The fourth tab "View" allows you to view and edit the *configuration of types*.
+Thus, the tab is greyed out if the selected item is not a topic type or an association type but an individual topic or an association.
+(Read more about the background of the data model in the section about MODELLING.
+What you can configure in this "View config" has nothing to do with editing the actual data model.
+These changes just have an impact on how items are rendered on your topic map:
+You can assign custom icons to topic types, or colors to association types.
+(This is covered below in the sections about :ref:`Assigning icons to topic types<user-topic-type-icons-label>` and :ref:`Assigning colors to association types<user-assoc-type-color-label>`.)
 
 *****************
 Content Authoring
 *****************
 
-.._user-creating-a-topic-label:
+.. _user-creating-a-topic-label:
 
 Creating a topic
 ================
 
 Right-click onto the topic map.
-The search/create dialogue appears.
+The search/create dialog appears.
 
 .. image:: _static/search-create.jpg
 
@@ -122,7 +191,7 @@ Select "Person" from the predefined :ref:`topic types<glossary-topics-and-topic-
 You will see a rectangle on your topic map.
 It contains the name you entered and it states that this is the person's first name.
 
-Whenever you create a new topic the dialogue proposes you to create something of the same topic type as last time.
+Whenever you create a new topic the dialog proposes you to create something of the same topic type as last time.
 You can change this by seleting a different topic type from the drop-down menu.
 
 .. _user-dmx-default-topic-types-label:
@@ -161,6 +230,16 @@ Drag it onto the other topic until that topic is highlighted by a blue border.
 Then let go and a rectangle will open that shows you the in-map details of the newly created association.
 Click somewhere into the map to hide the in-map details.
 
+Now what is important is that there are different association types.
+If you just draw a line between two things to create an association you will see a grey line.
+Its association type is just "association".
+You can use these associations to visualize your associations but they are *not* machine-readable.
+
+.. image:: _static/generic-association.jpg
+
+If you need machine-readable associations you have to give your associations a meaning.
+This is explained step-by-step in the section about :ref:`Modelling<user-modelling-label>`.
+
 .. _user-editing-content-label:
 
 Editing content
@@ -179,7 +258,7 @@ You can also select the item with a click and use the arrow button in the upper 
 .. image:: _static/button-detail-panel.jpg
 
 The detail panel opens so that so have the topic map on the left side of your screen and the detail panel on the right side.
-There is an in-depth explanation of the detail panel's features :ref:`further down<user-introduction-to-detail-panel-label>`.
+There is an in-depth explanation of the detail panel's features :ref:`further down<user-the-detail-panel-label>`.
 Here is what is looks like:
 
 .. image:: _static/detail-panel-edit-intro.jpg
@@ -229,6 +308,45 @@ Organizing the working context
 
 Creating a topic map
 ====================
+
+
+.. _user-geodata-label:
+
+Displaying Geodata
+------------------
+
+DMX comes with built-in support for geodata.
+The feature is still under construction.
+Right now every topic with an address can be shown on a map.
+The so-called geomaps are a special type of topic map in DMX.
+Geomaps are based on openstreetmap.org.
+Here is an example of how to create and populate them:
+Edit a person or an institution and add an address.
+
+.. image:: _static/add-address.jpg
+    :width: 800
+
+Open the search and create dialog.
+Enter a name for the new topic map, e.g. "Our Geomap".
+In the topic type selection choose "Topicmap".
+Underneath it you can now choose the type of topic map you want to add.
+Select "Geomap" and press "Create".
+
+.. image:: _static/add-geomap.jpg
+
+Open the topic map selection in the upper toolbar and select your newly created geomap.
+The map is displayed with all items you assigned an address to.
+
+.. image:: _static/topic-map-selection.jpg
+
+If you click onto an item the in-map details show you what is there.
+
+.. image:: _static/display-map-item.jpg
+    :width: 400
+
+You return to the normal topic map via the same "Topicmap" drop-down menu.
+
+
 
 Moving things around
 ====================
@@ -284,6 +402,7 @@ Once you have bulk selected a few items, you can drag the whole selection where 
 .. image:: _static/bulk-move.jpg
     :width: 600
 
+.. _user-hiding-multiple-items-label:
 
 Hiding multiple items
 ---------------------
@@ -293,161 +412,13 @@ To hide several items at once select them by keeping the CTRL key pressed and dr
 .. image:: _static/bulk-hide.png
     :width: 600
 
-.. _user-exploring-your-first-topic-label:
-
-
-
-.. _user-topic-maps-label:
-
-**********
-Navigation
-**********
-
-Searching the database
-======================
-
-Associative navigation
-======================
-
-Switching between topic maps
-============================
-
-Switching between workspaces
-============================
-
-Using the browser history
-=========================
-
-Every view onto an item has a stable deep link that you can use for navigating back and forth in your browser:
-If you have nothing selected the URL, that is the address in your browser, shows the exact link to this topic map.
-
-.. image:: _static/deep-link-topic-map.jpg
-
-If you select something the URL changes:
-The ID of the currently selected item is appended to the URL.
-You can use this link you return to the same item over and over again.
-
-.. image:: _static/deep-link-topic-map-with-topic.jpg
-
-The state of the detail panel can be addressed directly, too:
-
-* Append "/info" to the URL and the detail panel's "Info" tab will open.
-* Append "/edit" to enter the editing mode directly.
-* Append "/related" to open the "Related" tab directly.
-
-.. image:: _static/deep-link-topic-map-with-topic-in-edit-mode.jpg
-
-This means that ou can use the back and forward buttons of your browser.
-Going back brings you back to the situation you were looking at before.
-It is not an "undo" though:
-Going back does not revert you latest change.
-
-.. _user-introduction-to-detail-panel-label:
-
-Navigating via the detail panel
-===============================
-
-The detail panel offers lots of features to explore your data so here is an in-depth introduction to the detail panel.
-
-The detail panel can only be opened if you have selected an item on the map and it will stay open as long as you have a selected item.
-
-The "Info" tab
---------------
-
-The first tab is a general info tab.
-It is always named after the type of the selected item, e.g. "Person" or "Event".
-In its display mode it shows only those fields containing data.
-You can click "Reveal" on details to reveal them on the current topic map.
-
-.. image:: _static/detail-panel-reveal-button.png
-
-The first tab also has an edit button at the bottom.
-If you enter the editing mode, you get all fields that you can fill in for the respective topic type or association type.
-These fields come from your type definitions (see below).
-
-.. image:: _static/detail-panel-editing-mode.jpg
-
-The "Related" tab
------------------
-
-The second tab is called "Related".
-It lists *all* topics related to your selection: 
-
-* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topic map you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about MODELLING.)
-* Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.
-
-.. image:: _static/detail-panel-related-tab.jpg
-
-* Depending on what are searching you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
-
-.. image:: _static/detail-panel-related-tab-sort-order.jpg
-
-* The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
-* Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.
-
-The "Meta" tab
---------------
-
-The third tab "Meta" is still under development, so right now you don't see any thing there.
-
-The "View" tab
---------------
-
-The fourth tab "View" allows you to view and edit the *configuration of types*.
-Thus, the tab is greyed out if the selected item is not a topic type or an association type but an individual topic or an association.
-(Read more about the background of the data model in the section about MODELLING.
-What you can configure in this "View config" has nothing to do with editing the actual data model.
-These changes just have an impact on how items are rendered on your topic map:
-You can assign custom icons to topic types, or colors to association types.
-(This is covered below in the sections about :ref:`Assigning icons to topic types<user-topic-type-icons-label>` and :ref:`Assigning colors to association types<user-assoc-type-color-label>`.)
-
-.. _user-navigating-topic-maps-via-deep-links-label:
-
-
-
-.. _user-geodata-label:
-
-Displaying Geodata
-==================
-DMX comes with built-in support for geodata.
-The feature is still under construction.
-Right now every topic with an address can be shown on a map.
-The so-called geomaps are a special type of topic map in DMX.
-Geomaps are based on openstreetmap.org.
-Here is an example of how to create and populate them:
-Edit a person or an institution and add an address.
-
-.. image:: _static/add-address.jpg
-    :width: 800
-
-Open the search and create dialogue.
-Enter a name for the new topic map, e.g. "Our Geomap".
-In the topic type selection choose "Topicmap".
-Underneath it you can now choose the type of topic map you want to add.
-Select "Geomap" and press "Create".
-
-.. image:: _static/add-geomap.jpg
-
-Open the topic map selection in the upper toolbar and select your newly created geomap.
-The map is displayed with all items you assigned an address to.
-
-.. image:: _static/topic-map-selection.jpg
-
-If you click onto an item the in-map details show you what is there.
-
-.. image:: _static/display-map-item.jpg
-    :width: 400
-
-You return to the normal topic map via the same "Topicmap" drop-down menu.
-
-
-
-
+Customizing the Look & Feel
+===========================
 
 .. _user-topic-type-icons-label:
 
 Assigning icons to topic types
-==============================
+------------------------------
 
 You can assign icons from the Font Awesome collection to your topic types.
 Let's say you have a topic type "Publication" and you want all publications in your map to have a book icon.
@@ -467,13 +438,82 @@ Let's say you have a topic type "Publication" and you want all publications in y
 .. _user-assoc-type-color-label:
 
 Assigning colors to association types
-======================================
+-------------------------------------
 
 You can assign colors to association types just as you can assign icons to topic types.
 Select the association type on your map, open the details panel and open the fourth tab "View".
 Choose a color for your association type and save it.
 
 .. image:: _static/new-assoc-color.jpg
+
+.. _user-topic-maps-label:
+
+**********
+Navigation
+**********
+
+Searching the database
+======================
+
+To search the DMX database open the Search/Create dialog with a left-click in the topic map.
+Start typing what you are looking for.
+DMX immediately displays all results that you have read access to.
+You refine the search by typing in more letters.
+
+.. image:: _static/search-results.jpg
+
+Note that the search results include everything:
+Your actual content, e.g. persons you entered, is displayed as well as topic types, topic maps association types etc.
+
+.. _user-associative-navigation-label:
+
+Associative navigation
+======================
+
+As DMX is made to work like a human brain you can navigate in an associative way.
+The "What's related" tab of the :ref:`detail panel<user-the-detail-panel-label>` detail panel permits you to navigate the database by listing all associated items.
+
+Open the "What's related" of an item to get there.
+
+.. image:: _static/whats-related.png
+
+Read more about the possible sort orders in the section about the :ref:`"Related" tab<user-detail-panel-the-related-tab-label>` of the detail panel.
+
+Switching between topic maps
+============================
+
+You can switch between your topic maps by using the topic map selector in the tool bar.
+
+.. image:: _static/topic-map-selector.jpg
+
+Switching between workspaces
+============================
+
+Use the workspace selector to switch between workspaces.
+
+.. image:: _static/workspace-selection.jpg
+
+Using the browser history
+=========================
+
+Every view onto an item has a stable deep link that you can use for navigating back and forth in your browser:
+If you have nothing selected the URL, that is the address in your browser, shows the exact link to this topic map.
+
+.. image:: _static/deep-link-topic-map.jpg
+
+If you select something the URL changes:
+The ID of the currently selected item is appended to the URL.
+
+.. image:: _static/deep-link-topic-map-with-topic.jpg
+
+The state of the detail panel is reflected in the URL, too:
+It changes depending on the tab you have opened.
+
+.. image:: _static/deep-link-topic-map-with-topic-in-edit-mode.jpg
+
+Using the back button of your browser brings you back to the situation you were looking at before.
+It is not an "undo" though:
+Going back does not revert you latest change.
 
 .. _workspaces-collaboration-acl-label:
 
@@ -573,11 +613,76 @@ Here is how creating a shared workspace works:
 
 .. note:: You can create memberships in every workspace that you have write permission in.
 
-.. user-getting-to-know-the-data-model-label:
+.. _user-modelling-label:
 
 *********
 Modelling
 *********
+
+.. _user-creating-a-topic-type-label:
+
+Creating a topic type
+=====================
+
+To create your own topic type with a few properties here is how to procede.
+Let's say you want to add a topic type "publication".
+Each publication shall have a title and a year.
+
+- Open the search field. Enter "Publication", select "Topic Type" and press "create".
+- Go into editing mode via the context menu. Change the data type from "Text" to "Identity" and hit "Save". Click somewhere into your map to close the detail panel.
+- Open the search field and enter "Title". You will find that two entries already exist. They come from the default topics types "Event" and "Note" which also have titles. Create a new topic type "Title".
+- Grab the title item and pull it on the publication item. DMX will display what you just created:
+  * You created an association of the type "Composition Definition". Composition Definition means that you are defining a more complex context between item on your map: The relationship between a publication, a title and a year. 
+  * "Cardinality: One" means that each publication has exactly one title, not more. 
+  * The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.
+
+.. image:: _static/composition-definition.jpg
+    :width: 300
+
+- Again, click somewhere onto the map and reopen the search field. Search for the year and open the existing topic type. Pull it onto the publication.
+
+You are now ready to use this data model you just built to add content.
+
+- Open the search field and enter the title of a publication. From the Topic Type menu you can now select "Publication".
+- As the title was the first property you added to the composition, it is automatically filled in from the search field.
+- Edit your new publication and add a year.
+
+Creating an association type
+============================
+
+One of the strengths of DMX is that you can build your own association types in the same user interface.
+Let's say you want to express the relationship between persons and publications.
+A person can be the author, the publisher, the reader, or even the subject of a publication.
+
+* Create a topic type "Publication".
+* Create an association type and give it a name, e.g. "Relationship publication - person".
+* Select "Composite" as a data type.
+
+.. image:: _static/create-machine-readable-association.jpg
+
+* Create a topic type, name it "Role referring to publication" or anything that suits you. Its data type is "Text".
+* Create an association between the topic type and the association type and edit the newly created association between them. Click onto the "View" tab and then "Edit" to edit its configuration.
+* Open the "Widget" setting and select "Select". This will allow you to select roles from a predefined list when adding content later.
+* There are two more checkboxes called "clearable" and "customizable". It only makes sense to use them in connection with  "Widget: Select". Both have an effect on editing association types later on. Here is what they do: "Clearable" decides whether you allow instances of this association type to *only* have the values you explicitly defined or whether it shall be possible to clear the field to leave it empty. In this case, there will be a little cross icon for clearing it. "Customizable" decides whether you allow to enter values on the fly by just typing in something different that was not predefined by you. If both checkboxes are left empty, one of your predefined values *has* to be selected. The value cannot be empty and there will be no possibility of typing into the field.
+
+.. image:: _static/selectable-role.jpg
+
+* Create a topic "Author" that has the topic type "Role referring to publication" which is selectable from the create menu. If you want to have more roles, add them likewise.
+* Create a person.
+* Create a publication.
+* Create an association between the person and the publication and edit the association. Open the drop-down menu under "Association Type" and select "Relationship publication - person". Hit the save button and the edit button again. There is a new drop-down menu that lets you select the role the person shall have related to the publication.
+
+.. image:: _static/select-role.jpg
+
+You now have a map like this.
+On the left side you see the data model.
+There is your topic type "Publication" with a title and a year.
+And there is the association type you built with a few selectable roles.
+
+On the right side you see the actual content, the instances.
+To continue working with a less crowded map, you might want to :ref:`bulk select and hide<user-hiding-multiple-items-label>` the data model.
+
+.. image:: _static/topic-map-with-own-assoc-and-instances.jpg
 
 
 Exploring a topic
@@ -612,75 +717,7 @@ Again, you can hide what you do not want to see in your map when you are done ex
 
 .. image:: _static/intro-data-model.jpg
 
-.. _user-create-your-first-topic-type-label:
 
-
-
-Create your first topic type
-============================
-
-To create your own topic type with a few properties here is how to procede.
-Let's say you want to add a topic type "publication".
-Each publication shall have a title and a year.
-
-- Open the search field. Enter "Publication", select "Topic Type" and press "create".
-- Go into editing mode via the context menu. Change the data type from "Text" to "Identity" and hit "Save". Click somewhere into your map to close the detail panel.
-- Open the search field and enter "Title". You will find that two entries already exist. They come from the default topics types "Event" and "Note" which also have titles. Create a new topic type "Title".
-- Grab the title item and pull it on the publication item. DMX will display what you just created:
-  * You created an association of the type "Composition Definition". Composition Definition means that you are defining a more complex context between item on your map: The relationship between a publication, a title and a year. 
-  * "Cardinality: One" means that each publication has exactly one title, not more. 
-  * The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.
-
-.. image:: _static/composition-definition.jpg
-    :width: 300
-
-- Again, click somewhere onto the map and reopen the search field. Search for the year and open the existing topic type. Pull it onto the publication.
-
-You are now ready to use this data model you just built to add content.
-
-- Open the search field and enter the title of a publication. From the Topic Type menu you can now select "Publication".
-- As the title was the first property you added to the composition, it is automatically filled in from the search field.
-- Edit your new publication and add a year.
-
-.. _user-create-your-first-custom-association-type-label:
-
-Create your first association type
-==================================
-
-One of the strengths of DMX is that you can build your own association types that are machine-readable.
-Here is how to build such an association:
-Let's say we want to express the relationship between persons and publications.
-A person can be the author, the publisher, the reader, or even the subject of a publication.
-
-* Create a topic type "Publication" if you haven't done so above.
-* Create an association type and give it a name, e.g. "Relationship person - publication".
-* Select "Composite" as a data type.
-
-.. image:: _static/custom-assoc.jpg
-
-* Create a topic type, name it "Role referring to publication" or anything that suits you. The data type is "Text".
-* Drag the topic type onto the association type and edit the newly created association between them. Click onto the "View" tab and click "Edit" to edit its configuration.
-* Open the "Widget" setting and select "Select". This will allow you to select roles from a predefined list when adding content later.
-* There are two more checkboxes called "clearable" and "customizable". It only makes sense to use them in connection with  "Widget: Select". Both have an effect on editing association types later on. Here is what they do: "Clearable" decides whether you allow instances of this association type to *only* have the values you explicitly defined or whether it shall be possible to clear the field to leave it empty. In this case, there will be a little cross icon for clearing it. "Customizable" decides whether you allow to enter values on the fly by just typing in something different that was not predefined by you. If both checkboxes are left empty, one of your predefined values *has* to be selected. The value cannot be empty and there will be no possibility of typing into the field.
-
-.. image:: _static/selectable-role.jpg
-
-* Create a topic "Author" the has the topic type "Role referring to publication" which is selectable from the create menu. If you want to have more roles, add them likewise.
-* Create a person.
-* Create a publication.
-* Drag the person onto the publication and edit the association. Open the drop-down menu under "Association Type" and select "Relationship person - publication". Hit the save button and the edit button again. There is a new drop-down menu that lets you select the role the person shall have related to the publication.
-
-.. image:: _static/select-role.jpg
-
-You now have a map like this.
-On the left side you see the data model.
-There is your topic type "Publication" with a title and a year.
-And there is the association type you built with a few selectable roles.
-
-On the right side you see the actual content, the instances.
-To continue working, you might want to :ref:`bulk select<user-bulk-selection-label>` and :ref:`hide<user-hide-items-label>` the data model.
-
-.. image:: _static/topic-map-with-custom-assoc-and-instances.jpg
 
 .. _user-edge-connections-label:
 
