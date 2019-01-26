@@ -13,7 +13,6 @@ Welcome to DMX's documentation!
    user
    devel
    admin
-   glossary
    support
 
 

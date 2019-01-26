@@ -2,7 +2,7 @@
 DMX User Guide
 ##############
 
-.. _user-beginners-tutorial-label:
+.. _user-beginners-tutorial:
 
 *******************
 Beginners' Tutorial
@@ -13,12 +13,12 @@ To get started with DMX you can
 * visit our `public demo site`_ and play with DMX. Do not enter any private or sensitive information on the demo site!
 * run DMX on your computer by choosing one of the following ways:
 
-  * :ref:`installation-zip-label` (Windows, Mac, Linux)
-  * :ref:`installation-apt-label` (Linux only)
+  * :ref:`installation-zip` (Windows, Mac, Linux)
+  * :ref:`installation-apt` (Linux only)
 
 .. _public demo site: https://demo.dmx.systems
 
-.. _user-a-first-look-at-dmx-label:
+.. _user-a-first-look-at-dmx:
 
 A first look at DMX
 ===================
@@ -33,13 +33,16 @@ We have a detailed guide to the :ref:`user interface<user-the-dmx-user-interface
 .. figure:: _static/upper-toolbar.jpg
     :alt: Tool bar with workspace and topic map selection
 
-* Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. **The first default workspace and the default topic map are in SharingMode "public" that is: They are not private, but world-readable.** This is important to keep in mind if you are trying DMX on our public demo site or if you installed it on a server that is connected to the internet. You can find out more about access control in the section about :ref:`Collaboration and Sharing<user-collaboration-and-sharing-label>`.
+* Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. **The first default workspace and the default topic map are in SharingMode "public" that is: They are not private, but world-readable.** This is important to keep in mind if you are trying DMX on our public demo site or if you installed it on a server that is connected to the internet. You can find out more about access control in the section about :ref:`Collaboration and Sharing<user-collaboration-and-sharing>`.
 * In the upper right corner there is a button with an arrow. It is greyed out right now.
 
-.. _user-adding-your-first-topic-label:
+.. _user-adding-your-first-topic:
 
 Adding your first topic
 =======================
+
+:ref:`Content Authoring<user-content-authoring>` is described in-depth below.
+This is just a short walkthrough to help you create your first items in DMX.
 
 Right-click into the emptiness.
 A window appears that offers you to search something.
@@ -79,7 +82,7 @@ Select the topic type "Organization" this time.
 
 .. image:: _static/person-note-organization.png
 
-.. _user-adding-your-first-association-label:
+.. _user-adding-your-first-association:
 
 Adding your first association
 =============================
@@ -147,13 +150,15 @@ Scroll down in the detail panel to see all persons and their respective roles in
 .. image:: _static/organizational-roles.png
 
 In DMX you are free to define your own topic types and association types.
-Find out more about it in the section about :ref:`Modelling<user-modelling-label>`.
+Find out more about it in the section about :ref:`Modelling<user-modelling>`.
 
 .. _user-the-dmx-user-interface:
 
 **********************
 The DMX User Interface
 **********************
+
+.. _user-the-toolbar:
 
 The Toolbar
 ===========
@@ -163,6 +168,7 @@ The upper toolbar contains some of the crucial steering tools for DMX.
 .. figure:: _static/upper-toolbar.jpg
     :alt: Tool bar with workspace and topic map selector
 
+.. _user-the-workspace-selector:
 
 The Workspace Selector
 ----------------------
@@ -172,12 +178,12 @@ This is the workspace selector.
 Workspaces are the highest level of content organization in DMX.
 You can think of workspaces as the folders you put your different projects into.
 When you start to work on a blank DMX installation, the only existing workspace is called "DMX".
-Read more about workspaces in the section :ref:`user-introduction-to-workspaces-and-sharing-modes-label`.
+Read more about workspaces in the section :ref:`user-introduction-to-workspaces-and-sharing-modes`.
 
-.. _user-topic-map-selector:
+.. _user-the-topic-map-selector:
 
-Topic Map Selector
-------------------
+The Topic Map Selector
+----------------------
 
 Next to the workspace selector there is another drop-down menu called "Topicmap".
 This is the topic map selector.
@@ -194,16 +200,16 @@ The "Login" button is located in the upper right corner of the toolbar.
 The Detail Panel Switch
 -----------------------
 
-The button with the little arrow in the very corner is the switch to open the :ref:`detail panel<user-the-detail-panel-label>`.
+The button with the little arrow in the very corner is the switch to open the :ref:`detail panel<user-the-detail-panel>`.
 
-.. _user-the-topic-map-panel-label:
+.. _user-the-topic-map-panel:
 
 The Topic Map Panel
 ===================
 
 The topic map panel is the main area of the DMX user interface.
 It displays the currently chosen topic map.
-The topic map panel is as big as your browser window unless you open the :ref:`detail panel<user-the-detail-panel-label>`.
+The topic map panel is as big as your browser window unless you open the :ref:`detail panel<user-the-detail-panel>`.
 
 .. image:: _static/topic-map-panel.png
 
@@ -225,7 +231,7 @@ To close the context menu *without* any action, click into its middle.
 .. image:: _static/context-menu.png
     :width: 250
 
-.. _user-in-map-details-label:
+.. _user-in-map-details:
 
 In-map Details
 --------------
@@ -240,11 +246,11 @@ The Search/Create Dialog
 
 The search for existing items and the creation of new one is done in the same dialog box.
 The search/create dialog is opened with a right-click into the topic map.
-Read more how to create content in the section about :ref:`Content Authoring<user-content-authoring-label>`.
+Read more how to create content in the section about :ref:`Content Authoring<user-content-authoring>`.
 
 .. image:: _static/search-create.jpg
 
-.. _user-the-detail-panel-label:
+.. _user-the-detail-panel:
 
 The Detail Panel
 ================
@@ -253,7 +259,7 @@ The detail panel offers lots of features to explore your data so here is an in-d
 
 The detail panel can only be opened if you have selected an item on the map and it will stay open as long as you have a selected item.
 
-.. _user-detail-panel-the-info-tab-label:
+.. _user-detail-panel-the-info-tab:
 
 The "Info" tab
 --------------
@@ -271,7 +277,7 @@ These fields come from your type definitions (see below).
 
 .. image:: _static/detail-panel-editing-mode.jpg
 
-.. _user-detail-panel-the-related-tab-label:
+.. _user-detail-panel-the-related-tab:
 
 The "Related" tab
 -----------------
@@ -291,14 +297,14 @@ It lists *all* topics related to your selection:
 * The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
 * Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.
 
-.. _user-detail-panel-the-meta-tab-label:
+.. _user-detail-panel-the-meta-tab:
 
 The "Meta" tab
 --------------
 
 The third tab "Meta" is still under development, so right now you don't see anything there.
 
-.. _user-detail-panel-the-view-tab-label:
+.. _user-detail-panel-the-view-tab:
 
 The "View" tab
 --------------
@@ -309,15 +315,15 @@ Thus, the tab is greyed out if the selected item is not a topic type or an assoc
 What you can configure in this "View config" has nothing to do with editing the actual data model.
 These changes just have an impact on how items are rendered on your topic map:
 You can assign custom icons to topic types, or colors to association types.
-(This is covered below in the sections about :ref:`Assigning icons to topic types<user-topic-type-icons-label>` and :ref:`Assigning colors to association types<user-assoc-type-color-label>`.)
+(This is covered below in the sections about :ref:`Assigning icons to topic types<user-topic-type-icons>` and :ref:`Assigning colors to association types<user-assigning-colors-to-association-types>`.)
 
-.. _user-content-authoring-label:
+.. _user-content-authoring:
 
 *****************
 Content Authoring
 *****************
 
-.. _user-creating-a-topic-label:
+.. _user-creating-a-topic:
 
 Creating a topic
 ================
@@ -331,7 +337,7 @@ DMX wants to make sure that you do not create something that already exists.
 That's why you enter whatever you want to create into the search field.
 Enter a term, e.g. a person's given name..
 DMX will answer "No match".
-Select "Person" from the predefined :ref:`topic types<glossary-topics-and-topic-types-label>` and click "Create".
+Select "Person" from the predefined :ref:`topic types<glossary-topics-and-topic-types>` and click "Create".
 
 .. image:: _static/create-person.jpg
 
@@ -341,7 +347,7 @@ It contains the name you entered and it states that this is the person's first n
 Whenever you create a new topic the dialog proposes you to create something of the same topic type as last time.
 You can change this by seleting a different topic type from the drop-down menu.
 
-.. _user-dmx-default-topic-types-label:
+.. _user-dmx-default-topic-types:
 
 DMX's default topic types
 -------------------------
@@ -361,7 +367,7 @@ These topic types all come from classical PIM applications (Personal Information
 The special feature here is that you have different types of information in one interface and not spread out in address books, calendars, browsers and files.
 Using DMX for PIM is just *one* proposal for a use case.
 
-.. _user-creating-an-association-label:
+.. _user-creating-an-association:
 
 Creating an association
 =======================
@@ -386,7 +392,7 @@ You can use these associations to visualize your associations but they are *not*
     :width: 600
 
 If you need machine-readable associations you have to give your associations a meaning.
-This is explained step-by-step in the section about :ref:`Modelling<user-modelling-label>`.
+This is explained step-by-step in the section about :ref:`Modelling<user-modelling>`.
 
 Thinking of real-world social networks, you will find that there is often more than one association between two things.
 DMX can represent this:
@@ -395,12 +401,12 @@ You can simply create another association between them.
 .. image:: _static/multiple-assocs.jpg
     :width: 600
 
-.. _user-editing-content-label:
+.. _user-editing-content:
 
 Editing content
 ===============
 
-.. _user-editing-in-the-detail-panel-label:
+.. _user-editing-in-the-detail-panel:
 
 Editing in the detail panel
 ---------------------------
@@ -413,12 +419,12 @@ You can also select the item with a click and use the arrow button in the upper 
 .. image:: _static/button-detail-panel.jpg
 
 The detail panel opens so that so have the topic map on the left side of your screen and the detail panel on the right side.
-There is an in-depth explanation of the detail panel's features :ref:`further down<user-the-detail-panel-label>`.
+There is an in-depth explanation of the detail panel's features :ref:`further down<user-the-detail-panel>`.
 Here is what is looks like:
 
 .. image:: _static/detail-panel-edit-intro.jpg
 
-.. _user-inline-editing-label:
+.. _user-inline-editing:
 
 Inline editing
 --------------
@@ -507,9 +513,9 @@ Choose a name for the topic map, search if it already exists, and create it by s
 
 For topic maps, the creation dialog has an additional choice between (usual) topic maps and geo maps (see below).
 Once created, the new empty topic map is opened.
-You can see its name in the :ref:`Topic Map Selector<user-topic-map-selector>` and use it to switch between topic maps.
+You can see its name in the :ref:`Topic Map Selector<user-the-topic-map-selector>` and use it to switch between topic maps.
 
-.. _user-geodata-label:
+.. _user-geodata:
 
 Displaying Geodata
 ------------------
@@ -542,12 +548,12 @@ If you click onto an item the in-map details show you what is there.
 .. image:: _static/display-map-item.jpg
     :width: 400
 
-Again, you return to the other topic maps via the :ref:`Topic Map Selector<user-topic-map-selector>`.
+Again, you return to the other topic maps via the :ref:`Topic Map Selector<user-the-topic-map-selector>`.
+
+.. _user-moving-things-around:
 
 Moving things around
 ====================
-
-.. _user-moving-the-map-and-the-items-label:
 
 Note that you can drag the whole topic map into any direction.
 Just hold the right mouse button pressed somewhere on the topic map and drag.
@@ -562,7 +568,7 @@ Panning/zooming the topic map
 
 Zooming in or out is done by scrolling up or down.
 
-.. _user-hide-items-label:
+.. _user-hiding-items:
 
 Hiding things
 =============
@@ -588,7 +594,7 @@ That is why you can prepare a topic map with pinned in-map details, knowing that
 Bulk operations
 ===============
 
-.. _user-bulk-selection-label:
+.. _user-bulk-selection:
 
 Bulk selection
 --------------
@@ -608,7 +614,7 @@ Once you have bulk selected a few items, you can drag the whole selection where 
 .. image:: _static/bulk-move.jpg
     :width: 600
 
-.. _user-hiding-multiple-items-label:
+.. _user-hiding-multiple-items:
 
 Hiding multiple items
 ---------------------
@@ -621,7 +627,7 @@ To hide several items at once select them by keeping the CTRL key pressed and dr
 Customizing the Look & Feel
 ===========================
 
-.. _user-topic-type-icons-label:
+.. _user-topic-type-icons:
 
 Assigning icons to topic types
 ------------------------------
@@ -641,7 +647,7 @@ Let's say you have a topic type "Publication" and you want all publications in y
 
 .. image:: _static/new-icon.jpg
 
-.. _user-assoc-type-color-label:
+.. _user-assigning-colors-to-association-types:
 
 Assigning colors to association types
 -------------------------------------
@@ -652,7 +658,7 @@ Choose a color for your association type and save it.
 
 .. image:: _static/new-assoc-color.jpg
 
-.. _user-topic-maps-label:
+.. _user-navigation:
 
 **********
 Navigation
@@ -671,19 +677,19 @@ You refine the search by typing in more letters.
 Note that the search results include everything:
 Your actual content, e.g. persons you entered, is displayed as well as topic types, topic maps association types etc.
 
-.. _user-associative-navigation-label:
+.. _user-associative-navigation:
 
 Associative navigation
 ======================
 
 As DMX is made to work like a human brain you can navigate in an associative way.
-The "What's related" tab of the :ref:`detail panel<user-the-detail-panel-label>` detail panel permits you to navigate the database by listing all associated items.
+The "What's related" tab of the :ref:`detail panel<user-the-detail-panel>` detail panel permits you to navigate the database by listing all associated items.
 
 Open the "What's related" of an item to get there.
 
 .. image:: _static/whats-related.png
 
-Read more about the possible sort orders in the section about the :ref:`"Related" tab<user-detail-panel-the-related-tab-label>` of the detail panel.
+Read more about the possible sort orders in the section about the :ref:`"Related" tab<user-detail-panel-the-related-tab>` of the detail panel.
 
 Switching between topic maps
 ============================
@@ -721,13 +727,13 @@ Using the back button of your browser brings you back to the situation you were 
 It is not an "undo" though:
 Going back does not revert you latest change.
 
-.. _user-collaboration-and-sharing-label:
+.. _user-collaboration-and-sharing:
 
 *************************
 Collaboration and Sharing
 *************************
 
-.. _user-creating-user-accounts-label:
+.. _user-creating-user-accounts:
 
 Creating user accounts
 ======================
@@ -756,16 +762,19 @@ It is important that every user account is tied to the "System" workspace (see b
 .. image:: _static/user-name-related.jpg
     :width: 400
 
-.. _user-introduction-to-workspaces-and-sharing-modes-label:
+.. _user-introduction-to-workspaces-and-sharing-modes:
 
 Introduction to workspaces and sharing modes
 ============================================
 
 In DMX workspaces are the highest level content is organized in.
+Workspaces can be compared to folders containing everything related to a working area, a project, or an area of life.
+Each topic and association is tied to exactly *one* workspace but you can display them in many topic maps.
+A workspace can have one or many members who have access to its content.
 Read and write permissions are tied to workspaces.
-Every topic or association is assigned to exactly *one* workspace.
-That is why workspaces are the key to the configuration of access control.
-There are five sharing modes:
+This feature makes workspaces the basis of collaboration and the key to the configuration of access control:
+
+DMX has five sharing modes:
 
 * **private**: In a private workspace just the owner of the workspace can read and write.
 * **confidential**: In a confidential workspace the owner can read and write. Group members can read, but not change anything.
@@ -774,10 +783,10 @@ There are five sharing modes:
 * **common**: In a common workspace everyone can read and write. No login is required.
 
 Every workspace has an owner, usually the creator, and optional members.
-When you are logged in you can access the different workspaces via the drop-down menu in the upper left corner.
+When you are logged in you can access the different workspaces via the :ref:`workspace selector<user-the-workspace-selector>` in the upper left corner.
 Once you log out DMX will switch back to a public (world-readable) workspace like the default workspace called "DMX".
 All items that are publicly readable stay visible, the rest disappears from the view.
-You are no longer able to edit but you still have a customizable view of the topic map, which means that you can move item and reveal other world-readable items.
+You are no longer able to edit but you still have a customizable view of the topic map, which means that you can move items and reveal other world-readable items.
 
 .. image:: _static/workspace-selection.jpg
 
@@ -790,7 +799,7 @@ DMX comes with four default workspaces with the following sharing modes:
 
 .. image:: _static/system-workspace.jpg
 
-.. _user-sharing-a-workspace-label:
+.. _user-sharing-a-workspace:
 
 Sharing a workspace
 ===================
@@ -805,7 +814,7 @@ Here is how creating a shared workspace works:
 * The new workspace automatically opens. Click onto the blue information icon next to the workspace selection to reveal the workspace topic itself on the topic map.
 * To add members to the workspace you can just enter user names and click them to reveal them on the map. As mentioned above, all user names are visible to all other logged in users via the system workspace. In DMX, membership is tied to user names that is why you need read permission on the user names.
 * If you don't know their user names you can go to the System workspace and investigate.
-* Now that you have the workspace itself and a user name on your topic map you can just **drag the user name onto the workspace** to create an association between them.
+* Now that you have the workspace itself and a user name on your topic map you can just **create an association between the user name and the workspace**.
 * Next you have to qualify this association as a membership: Edit the association.
 
 .. image:: _static/edit-ws-assoc.jpg
@@ -819,13 +828,92 @@ Here is how creating a shared workspace works:
 
 .. note:: You can create memberships in every workspace that you have write permission in.
 
-.. _user-modelling-label:
+.. _user-modelling:
 
 *********
 Modelling
 *********
 
-.. _user-creating-a-topic-type-label:
+.. _user-introduction-to-data-modelling:
+
+Introduction to Data Modelling
+==============================
+
+.. _user-topics-and-topic-types:
+
+Topics and Topic Types
+----------------------
+In the DMX data model, the whole world consists of topics and associations.
+You can think of them as things and how they are related to each other.
+Thus, a topic can be anything, a contact, a location, a file, a website, a thought etc.
+
+In contrast to topics, topic types are more general:
+A topic type is the idea of a topic without its concrete shape.
+On the level of types you describe models of what you want to create.
+
+As an example, think of mapping your music collection:
+The topic type could be called "album".
+An album could have an author, a title, a year, a genre etc.
+In DMX you create a topic type with these fields (which are also topic types).
+Each concrete album you create then has a form with these fields to fill in.
+
+DMX comes with a few predefined topic types, e.g. person, institution, or note.
+You can add your own topic types and by doing so you define your own data model.
+
+.. _user-associations-and-association-types:
+
+Associations and Association Types
+----------------------------------
+
+Associations represent the relationships between items.
+They represent real-world semantics.
+These can be relationships between topics or between associations or even between a topic and an association.
+The most important characteristic of associations in DMX is that you can qualify them to give them the meaning *you* need.
+They are not just drawn lines between two dots, but they can have association types.
+While a line between two items is human-readable, an association that has an association type is machine-readable, too.
+With association types you can tell more about the links between your Topics.
+Timelines, roles in an organization or authorship information are examples of association types.
+
+To stick with the example of the music collection, authorship would be the association type you define.
+
+.. _user-types-versus-instances:
+
+Types versus Instances
+----------------------
+
+As seen, types are the ideas or abstract descriptions of the things you want to map.
+Instances, as opposed to types, are the concrete things, your content.
+If you have a topic type "colour", all individual topics like "red", "green", "blue" are instances of the topic type colour.
+Instances are the concrete occurences of the type:
+Topics are always instances of their topic type.
+Associations are instances of their association type.
+
+In DMX, this difference is important to understand as you *can* visualize both layers, even in the same topic map!
+
+.. _user-simple-data-types:
+
+Simple Data types
+-----------------
+
+Every topic or association has a data type.
+They are six different data types in DMX.
+Four of them are so-called **simple** types:
+
+* **text:** This is the default data type and it contains a text string.
+* **number:** An example is "year".
+* **boolean:** yes/no resp. true/false
+* **html:** HTML
+
+.. _user-composites-and-composition-definitions:
+
+Composites and Composition Definitions
+--------------------------------------
+
+The two other data types are **composites**.
+
+tbd...
+
+.. _user-creating-a-topic-type:
 
 Creating a topic type
 =====================
@@ -886,7 +974,7 @@ There is your topic type "Publication" with a title and a year.
 And there is the association type you built with a few selectable roles.
 
 On the right side you see the actual content, the instances.
-To continue working with a less crowded map, you might want to :ref:`bulk select and hide<user-hiding-multiple-items-label>` the data model.
+To continue working with a less crowded map, you might want to :ref:`bulk select and hide<user-hiding-multiple-items>` the data model.
 
 .. image:: _static/topic-map-with-own-assoc-and-instances.jpg
 
@@ -925,7 +1013,7 @@ Again, you can hide what you do not want to see in your map when you are done ex
 
 
 
-.. _user-edge-connections-label:
+.. _user-edge-connections:
 
 Visualizing edge connections
 ============================

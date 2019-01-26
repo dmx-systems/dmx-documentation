@@ -2,7 +2,7 @@
 Installation
 ############
 
-.. _installation-label:
+.. _installation:
 
 ************
 Requirements
@@ -13,7 +13,7 @@ You first need to install a Java Runtime Environment on your computer.
 Java 6 to 8
 ===========
 
-Any version from **Java 6 to 8** will work out of the box with the DMX distribution provided on our `download site <https://download.dmx.systems/ci/>`_. You can procede directly with :ref:`the installation from a zip file <installation-zip-label>`.
+Any version from **Java 6 to 8** will work out of the box with the DMX distribution provided on our `download site <https://download.dmx.systems/ci/>`_. You can procede directly with :ref:`the installation from a zip file <installation-zip>`.
 
 Java 10
 =======
@@ -138,7 +138,7 @@ On MacOS, change the java call in ``deepamehta-macosx.command``:
     org.xml.sax.helpers
 
 
-.. _installation-zip-label:
+.. _installation-zip:
 
 ******************************
 Install DMX from a zip archive
@@ -170,7 +170,7 @@ Open your browser and go to http://localhost:8080/de.deepamehta.webclient/. Ther
 
 .. hint:: Log in as "admin" without a password.
 
-.. _installation-apt-label:
+.. _installation-apt:
 
 Install DMX from our APT repository
 ===================================
