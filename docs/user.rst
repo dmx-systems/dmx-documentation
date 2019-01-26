@@ -490,13 +490,23 @@ Zooming in or out is done by scrolling up or down.
 Hiding things
 =============
 
-The difference between Hide and Delete
---------------------------------------
-
 .. note:: There is an important difference between hiding items and deleting them. If you delete items they are immediately removed from the database. If you hide them, they are just no longer visible on the topic map but you can bring them back by revealing them.
 
 You can hide items from the topic map by long-clicking onto them and using the "Hide" button in the context menu.
 If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
+
+Pinning things
+==============
+
+You can "open" more than one item at the same time by pinning the in-map details.
+This is very useful for comparisons.
+Select a topic or an association so that its in-map details open.
+Click the little pin to keep them open.
+
+.. image:: _static/in-map-details-pinning.png
+
+Note that the pinnings are stored in the database along with the topic maps.
+That is why you can prepare a topic map with pinned in-map details, knowing that everyone who opens the topic map will see it in that very state.
 
 Bulk operations
 ===============
