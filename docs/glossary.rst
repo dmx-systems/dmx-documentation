@@ -4,52 +4,6 @@
 DMX Glossary
 ############
 
-**********************
-The DMX user interface
-**********************
-
-.. _glossary-topic-map-panel-label:
-
-Topic Map Panel
-===============
-
-The topic map panel is the main area of the DMX user interface.
-It displays the currently chosen topic map.
-
-.. image:: _static/topic-map-panel.jpg
-
-.. _glossary-toolbar-label:
-
-Toolbar
-=======
-The toolbar is the top bar in the DMX user interface.
-It has menus for workspace selection, topic map selection, a search field, a help button and the login/logout buttons.
-
-.. image:: _static/complete-toolbar.jpg
-
-.. _glossary-detail-panel-label:
-
-Detail panel
-============
-
-The detail panel is located the right side of the screen.
-It has four different tabs: 
-The first one shows details about the selected item and offers an edit and save button at the very bottom.
-The second one, called "Related", lets you explore every that is related to this item.
-*Number 3 and 4 are to be completed....*
-
-.. image:: _static/detail-panel.jpg
-
-.. _glossary-in-map-details-label:
-
-In-map Details
-==============
-
-Whenever you select an item on a topic map, a rectangle opens up displaying details about the selected item.
-This box is called the in-map details.
-
-.. image:: _static/in-map-details.jpg
-
 **************************
 Structuring your knowledge
 **************************
@@ -158,18 +112,12 @@ Database
 ========
 The database contains your knowledge at large. Everything you enter is saved in the database until you delete it. The predefined data structures DMX comes with are in there as well.
 
-.. _glossary-topic-map-label:
 
-Topic Map
-=========
-A topic map represents an individual working situation.
-The user chooses what is relevant to the current context and visualizes it by revealing the relevant topics and associations from the database in a topic map.
-Thus it shows a situation-based selection of the whole database content.
 
 .. _glossary-workspace-label:
 
 Workspace
 =========
-Workspaces are the highest level of content organization as each topic and association is part of *one* workspace.
+Although each topic and association is part of exactly *one* workspace you can display them in many topic maps.
 A workspace can have one or many members who have access to its content.
 This feature makes workspaces the basis of collaboration.

@@ -2,8 +2,6 @@
 DMX User Guide
 ##############
 
-Please note we have a :ref:`glossary-label` for the terms used in this documentation.
-
 .. _user-getting-started-with-dmx-label:
 
 ************************
@@ -30,7 +28,7 @@ Here is what you see in the upper tool bar:
 
 * In the upper right corner there is a "Login" button. Log in with the username "admin" and no password.
 * In the upper left corner there is a drop-down menu called :ref:`"Workspace"<glossary-workspace-label>`. The only existing workspace is called "DMX". This is your general context everything you are about to do is going to be in (for the moment). Later you will be able to select one of all your workspaces here.
-* Next to it there is another drop-down menu called :ref:`"Topicmap"<glossary-topic-map-label>`. There is only one topic map, it's called "untitled".
+* Next to it there is another drop-down menu called "Topicmap". There is only one topic map, it's called "untitled".
 
 .. figure:: _static/upper-toolbar.jpg
     :alt: Tool bar with workspace and topic map selection
@@ -65,7 +63,7 @@ Long-press the rectangle and select "edit" from the context menu.
 
 .. image:: _static/context-menu-edit.jpg
 
-On the right-hand side there is a :ref:`detail panel<glossary-detail-panel-label>` now.
+On the right-hand side there is a detail panel now.
 It contains many fields you might need for all persons.
 Correct the name and click the save button at the very bottom.
 Add a second topic, e.g. "Organization No. 1".
@@ -93,9 +91,98 @@ Later you will learn how to create relationships ("associations") and how to pre
 The DMX User Interface
 **********************
 
+The Toolbar
+===========
+
+The upper toolbar contains some of the crucial steering tools for DMX.
+
+.. figure:: _static/upper-toolbar.jpg
+    :alt: Tool bar with workspace and topic map selector
+
+
+The Workspace Selector
+----------------------
+
+In the upper left corner there is a drop-down menu called "Workspace".
+This is the workspace selector.
+Workspaces are the highest level of content organization in DMX.
+You can think of workspaces as the folders you put your different projects into.
+When you start to work on a blank DMX installation, the only existing workspace is called "DMX".
+Read more about workspaces in the section :ref:`user-introduction-to-workspaces-and-sharing-modes-label`.
+
+.. _user-topic-map-selector:
+
+Topic Map Selector
+------------------
+
+Next to the workspace selector there is another drop-down menu called "Topicmap".
+This is the topic map selector.
+A topic map represents an individual working situation.
+The user chooses what is relevant to the current context and visualizes it by revealing the relevant topics and associations from the database in a topic map.
+Thus it shows a situation-based selection of the whole database content.
+In the beginning, there is only one topic map, it's called "untitled".
+
+The Login Button
+----------------
+
+The "Login" button is located in the upper right corner of the toolbar.
+
+The Detail Panel Switch
+-----------------------
+
+The button with the little arrow in the very corner is the switch to open the :ref:`detail panel<user-the-detail-panel-label>`.
+
+.. _user-the-topic-map-panel-label:
+
+The Topic Map Panel
+===================
+
+The topic map panel is the main area of the DMX user interface.
+It displays the currently chosen topic map.
+The topic map panel is as big as your browser window unless you open the :ref:`detail panel<user-the-detail-panel-label>`.
+
+.. image:: _static/topic-map-panel.png
+
+.. _user-the-context-menu:
+
+The Context Menu
+----------------
+
+The context menu is opened with a right-click on items.
+It has four buttons to interact with the item:
+
+* You can edit it.
+* You can hide it from the current topic map
+* You can delete it. **Be careful! The item is deleted at once!**
+* You can show what is related to this item.
+
+To close the context menu *without* any action, click into its middle.
+
+.. image:: _static/context-menu.png
+    :width: 250
+
+.. _user-in-map-details-label:
+
+In-map Details
+--------------
+
+Whenever you select an item on a topic map, a rectangle opens up displaying details about the selected item.
+This box is called the in-map details.
+
+.. image:: _static/in-map-details.jpg
+
+The Search/Create Dialog
+========================
+
+The search for existing items and the creation of new one is done in the same dialog box.
+The search/create dialog is opened with a right-click into the topic map.
+Read more how to create content in the section about :ref:`Content Authoring<user-content-authoring-label>`.
+
+.. image:: _static/search-create.jpg
+
 .. _user-the-detail-panel-label:
 
-The detail panel
+The Detail Panel
 ================
 
 The detail panel offers lots of features to explore your data so here is an in-depth introduction to the detail panel.
@@ -159,6 +246,8 @@ What you can configure in this "View config" has nothing to do with editing the 
 These changes just have an impact on how items are rendered on your topic map:
 You can assign custom icons to topic types, or colors to association types.
 (This is covered below in the sections about :ref:`Assigning icons to topic types<user-topic-type-icons-label>` and :ref:`Assigning colors to association types<user-assoc-type-color-label>`.)
+
+.. _user-content-authoring-label:
 
 *****************
 Content Authoring
@@ -311,6 +400,16 @@ Organizing the working context
 Creating a topic map
 ====================
 
+To start working in a new context or on a different part of your larger project you can create a new topic map.
+This is done just like always:
+Open the search/create dialog.
+Choose a name for the topic map, search if it already exists, and create it by selecting the topic type "Topicmap".
+
+.. image:: _static/create-topic-map.png
+
+For topic maps, the creation dialog has an additional choice between (usual) topic maps and geo maps (see below).
+Once created, the new empty topic map is opened.
+You can see its name in the :ref:`Topic Map Selector<user-topic-map-selector>` and use it to switch between topic maps.
 
 .. _user-geodata-label:
 
@@ -318,14 +417,13 @@ Displaying Geodata
 ------------------
 
 DMX comes with built-in support for geodata.
-The feature is still under construction.
-Right now every topic with an address can be shown on a map.
+Every topic with an address can be shown on a map.
 The so-called geomaps are a special type of topic map in DMX.
 Geomaps are based on openstreetmap.org.
 Here is an example of how to create and populate them:
 Edit a person or an institution and add an address.
 
-.. image:: _static/add-address.jpg
+.. image:: _static/add-address.png
     :width: 800
 
 Open the search and create dialog.
@@ -346,9 +444,7 @@ If you click onto an item the in-map details show you what is there.
 .. image:: _static/display-map-item.jpg
     :width: 400
 
-You return to the normal topic map via the same "Topicmap" drop-down menu.
-
-
+Again, you return to the other topic maps via the :ref:`Topic Map Selector<user-topic-map-selector>`.
 
 Moving things around
 ====================
