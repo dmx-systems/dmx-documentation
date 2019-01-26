@@ -106,14 +106,6 @@ Read more about the implications of the five sharing modes in the :ref:`User Gui
 Organization of Data
 ********************
 
-.. _glossary-database-label:
-
-Database
-========
-The database contains your knowledge at large. Everything you enter is saved in the database until you delete it. The predefined data structures DMX comes with are in there as well.
-
-
-
 .. _glossary-workspace-label:
 
 Workspace

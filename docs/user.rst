@@ -395,7 +395,28 @@ Left-click onto the item and drag your mouse onto the delete button.
 Organizing the working context
 ******************************
 
-    The Topicmap <-> Database illustration is a good introduction
+The DMX database contains your knowledge at large.
+Everything you enter is saved in the database until you delete it.
+What is important:
+Every item is saved in the database *once* only, even if you use it in many different contexts.
+
+To make use of your knowledge base in different working situations you can use topic maps.
+On each topic map you can reveal what is relevant from the same underlying database.
+The rest stays hidden.
+Thus, every topic map represents *one* view, perspective, or working situation.
+
+The following figure shows the relationship between content and its use in different working situations.
+In the lower half you see a representation of a DMX database.
+It contains lots of topic and associations.
+(Note that it also contains topic *types* and association *types* which are not visualized here for clarity.)
+
+In the upper half there are two different working contexts respectively topic maps.
+On each of them there is a selection of topics and associations revealed depending on what the topic is about.
+There can be much more content in the database than what you actually display but everything that is visible in topic maps is stored in the database.
+
+.. figure:: _static/illustration-database-topic-maps.png
+    :alt: Illustration of DMX topic maps each with a set of data revealed from the same underlying database.
+
 
 Creating a topic map
 ====================
