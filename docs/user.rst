@@ -369,6 +369,19 @@ Double-click onto the content you want to change, do your edit and save the chan
 
 .. image:: _static/inline-editing.jpg
 
+Inline Topic Links
+------------------
+
+When editing the text field of an item you can embed links to other topics into the text.
+These inline topic links are clickable so that the referred topics are revealed on the topic map.
+Link creation utilizes the search/create dialog.
+So you can link to existing topics or create new ones on-the-fly.
+Select the term you want to embed the link into and use the editor's "T" icon to create the link.
+
+.. image:: _static/editor-t-icon.png
+
+.. image:: _static/clickable-inline-topic-links.png
+
 Deleting things
 ===============
 
@@ -411,7 +424,7 @@ It contains lots of topic and associations.
 (Note that it also contains topic *types* and association *types* which are not visualized here for clarity.)
 
 In the upper half there are two different working contexts respectively topic maps.
-On each of them there is a selection of topics and associations revealed depending on what the topic is about.
+On each of them there is a selection of topics and associations revealed depending on what the topic map is about.
 There can be much more content in the database than what you actually display but everything that is visible in topic maps is stored in the database.
 
 .. figure:: _static/illustration-database-topic-maps.png
