@@ -4,12 +4,13 @@
    contain the root `toctree` directive.
 
 Welcome to DMX's documentation!
-=======================================
+===============================
 
 .. toctree::
    :maxdepth: 2
 
    install
+   tutorial
    user
    devel
    admin
