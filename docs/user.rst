@@ -525,7 +525,7 @@ Every topic with an address can be shown on a map.
 The so-called geomaps are a special type of topic map in DMX.
 Geomaps are based on openstreetmap.org.
 Here is an example of how to create and populate them:
-Edit a person or an institution and add an address.
+Edit a person or an organization and add an address.
 
 .. image:: _static/add-address.png
     :width: 800
@@ -861,7 +861,7 @@ An album could have an author, a title, a year, a genre etc.
 In DMX you create a topic type with these fields (which are also topic types).
 Each concrete album you create then has a form with these fields to fill in.
 
-DMX comes with a few predefined topic types, e.g. person, institution, or note.
+DMX comes with a few predefined topic types, e.g. person, organization, or note.
 You can add your own topic types and by doing so you define your own data model.
 
 .. _user-associations-and-association-types:
@@ -981,7 +981,7 @@ Each publication shall have a title and a year.
 - Open the search field. Enter "Publication", select "Topic Type" and press "create".
 - Go into editing mode via the context menu. Change the data type from "Text" to "Identity" and hit "Save". Click somewhere into your map to close the detail panel.
 - Open the search field and enter "Title". You will find that two entries already exist. They come from the default topics types "Event" and "Note" which also have titles. Create a new topic type "Title".
-- Grab the title item and pull it on the publication item. DMX will display what you just created:
+- Create an association between the title item and the publication item. DMX will display what you just created:
   * You created an association of the type "Composition Definition". Composition Definition means that you are defining a more complex context between item on your map: The relationship between a publication, a title and a year. 
   * "Cardinality: One" means that each publication has exactly one title, not more. 
   * The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.
@@ -1035,22 +1035,26 @@ To continue working with a less crowded map, you might want to :ref:`bulk select
 .. image:: _static/topic-map-with-own-assoc-and-instances.jpg
 
 
-Exploring a topic
-=================
+Exploring the data model
+========================
+
+You can explore the data model by revealing its parts in topic maps.
+The topic types with all their properties (that is associations to other topic types) are saved in the database just like all your content.
+To understand how topic types and association types are built you can thus just navigate them.
+
+To explore an example, we can once more refer to the built-in topic type "Person".
+To look at the data model of a person, click onto an instance, e.g. a person you created and select "What's related".
 
 .. image:: _static/context-menu.png
     :width: 220
 
-To look at the data model of a person, click onto the person you created and select "What's related".
-The detail panel on the right side will open.
-It has four tabs.
-The first one ("person") shows all the content you entered.
-You are now looking at the second one, called "Related".
+The :ref:`detail panel<user-the-detail-panel>` on the right side will open.
+You are now looking at the :ref:`Related tab<user-detail-panel-the-related-tab>`.
 It displays a list of all items that are logically related to this concrete person:
 
-- the institution you linked the person to
+- the organization you linked the person to
 - the name of the person (because so far this is the only information you added to the person)
-- the topic type "person". Your concrete person is an instance of the general idea of persons, so it is linked to this general idea, the topic type. You can think of the topic type as the definition of what a person is.
+- the topic type "person". Your concrete person is an instance of the general idea of persons, so it is linked to this general idea, the topic type.
 - the topic map this topic is associated with
 - the workspace the topic is in
 
@@ -1065,9 +1069,7 @@ Among other information about how the topic type is integrated into the rest of 
 Here you are looking at your data and at a part of the data model it is based upon.
 Again, you can hide what you do not want to see in your map when you are done exploring.
 
-.. image:: _static/intro-data-model.jpg
-
-
+.. image:: _static/intro-data-model.png
 
 .. _user-edge-connections:
 
