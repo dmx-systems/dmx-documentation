@@ -30,11 +30,11 @@ We have a detailed guide to the :ref:`user interface<user-the-dmx-user-interface
 * In the upper left corner there is a workspace selector. The only existing workspace is called "DMX". This is your general context everything you are about to do is going to be in (for the moment). Later you will be able to select one of all your workspaces here.
 * Next to it there is another drop-down menu. This is the topic map selector. Right now, there is only one topic map, it's called "untitled".
 
-.. figure:: _static/upper-toolbar.jpg
+.. figure:: _static/upper-toolbar.png
     :alt: Tool bar with workspace and topic map selection
 
 * Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. **The first default workspace and the default topic map are in SharingMode "public" that is: They are not private, but world-readable.** This is important to keep in mind if you are trying DMX on our public demo site or if you installed it on a server that is connected to the internet. You can find out more about access control in the section about :ref:`Collaboration and Sharing<user-collaboration-and-sharing>`.
-* In the upper right corner there is a button with an arrow. It is greyed out right now.
+* In the upper right corner there is a button with an arrow. It is grayed out right now.
 
 .. _user-adding-your-first-topic:
 
@@ -117,7 +117,7 @@ DMX comes with a few predefined topic types that you just selected from:
 - event,
 - bookmark.
 
-These topic types all come from classical Personal Information Management.
+These topic types all come from classical Personal Information Management (PIM).
 As using DMX for PIM is a popular use case, there are also some predefined association types.
 One of those association types describes the role a person has in an organization.
 
@@ -145,7 +145,7 @@ Click "Save".
 
 This is a machine-readable association:
 You can open the context menu of the organization with a right-click and select "What's related".
-Scroll down in the detail panel to see all persons and their respective roles in the organization.
+If you have entered more than one person, you can scroll down in the detail panel to see all persons and their respective roles in the organization.
 
 .. image:: _static/organizational-roles.png
 
@@ -165,7 +165,7 @@ The Toolbar
 
 The upper toolbar contains some of the crucial steering tools for DMX.
 
-.. figure:: _static/upper-toolbar.jpg
+.. figure:: _static/upper-toolbar.png
     :alt: Tool bar with workspace and topic map selector
 
 .. _user-the-workspace-selector:
@@ -180,6 +180,8 @@ You can think of workspaces as the folders you put your different projects into.
 When you start to work on a blank DMX installation, the only existing workspace is called "DMX".
 Read more about workspaces in the section :ref:`user-introduction-to-workspaces-and-sharing-modes`.
 
+.. image:: _static/workspace-selector.png
+
 .. _user-the-topic-map-selector:
 
 The Topic Map Selector
@@ -191,6 +193,8 @@ A topic map represents an individual working situation.
 The user chooses what is relevant to the current context and visualizes it by revealing the relevant topics and associations from the database in a topic map.
 Thus it shows a situation-based selection of the whole database content.
 In the beginning, there is only one topic map, it's called "untitled".
+
+.. image:: _static/topic-map-selector.png
 
 The Login Button
 ----------------
@@ -273,7 +277,7 @@ You can click "Reveal" on details to reveal them on the current topic map.
 
 The first tab also has an edit button at the bottom.
 If you enter the editing mode, you get all fields that you can fill in for the respective topic type or association type.
-These fields come from your type definitions (see below).
+These fields come from the type definitions. (Please see the section about :ref:`Modelling<user-modelling>`.)
 
 .. image:: _static/detail-panel-editing-mode.jpg
 
@@ -283,14 +287,14 @@ The "Related" tab
 -----------------
 
 The second tab is called "Related".
-It lists *all* topics related to your selection: 
+It lists *all* items related to your selection: 
 
 * On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topic map you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about :ref:`Modelling<user-modelling>`.)
 * Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.
 
 .. image:: _static/detail-panel-related-tab.jpg
 
-* Depending on what are searching you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
+* Depending on what are searching for you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
 
 .. image:: _static/detail-panel-related-tab-sort-order.jpg
 
@@ -310,7 +314,7 @@ The "View" tab
 --------------
 
 The fourth tab "View" allows you to view and edit the *configuration of types*.
-Thus, the tab is greyed out if the selected item is not a topic type or an association type but an individual topic or an association.
+Thus, the tab is grayed out if the selected item is not a topic type or an association type but an individual topic or an association.
 (Read more about the background of the data model in the section about MODELLING.
 What you can configure in this "View config" has nothing to do with editing the actual data model.
 These changes just have an impact on how items are rendered on your topic map:
@@ -372,7 +376,7 @@ Using DMX for PIM is just *one* proposal for a use case.
 Creating an association
 =======================
 
-To create an association between two topics you grab the little grey dot at the upper border of one of the topics.
+To create an association between two topics you grab the little gray dot at the upper border of one of the topics.
 
 .. image:: _static/create-association-1.png
 
@@ -384,7 +388,7 @@ Then let go and a rectangle will open that shows you the in-map details of the n
 Click somewhere into the map to hide the in-map details.
 
 Now what is important is that there are different association types.
-If you just draw a line between two things to create an association you will see a grey line.
+If you just draw a line between two things to create an association you will see a gray line.
 Its association type is just "association".
 You can use these associations to visualize your associations but they are *not* machine-readable.
 
@@ -696,7 +700,7 @@ Switching between topic maps
 
 You can switch between your topic maps by using the topic map selector in the tool bar.
 
-.. image:: _static/topic-map-selector.jpg
+.. image:: _static/topic-map-selector.png
 
 If you reveal the topic maps themselves in a topic map you can jump to different topic maps with a double-click.
 
@@ -707,7 +711,7 @@ Switching between workspaces
 
 Use the workspace selector to switch between workspaces.
 
-.. image:: _static/workspace-selection.jpg
+.. image:: _static/workspace-selector.png
 
 Using the browser history
 =========================
@@ -792,7 +796,7 @@ Once you log out DMX will switch back to a public (world-readable) workspace lik
 All items that are publicly readable stay visible, the rest disappears from the view.
 You are no longer able to edit but you still have a customizable view of the topic map, which means that you can move items and reveal other world-readable items.
 
-.. image:: _static/workspace-selection.jpg
+.. image:: _static/workspace-selector.png
 
 DMX comes with four default workspaces with the following sharing modes:
 
