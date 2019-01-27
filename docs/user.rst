@@ -880,6 +880,18 @@ Timelines, roles in an organization or authorship information are examples of as
 
 To stick with the example of the music collection, authorship would be the association type you define.
 
+The Associative Model Of Data
+-----------------------------
+
+DMX is built upon the so-called Associative Model of Data.
+It uses a suitable database model which can be considered opposed to the widely used Relational Database Management Systems.
+
+If you want to dive deeper into this concept, we recommend the following sources:
+
+* Joseph V. Homan, Paul J. Kovacs: `A Comparison Of The Relational Database Model And The Associative Database Model <http://iacis.org/iis/2009/P2009_1301.pdf>`_, in: Issues in Information Systems, Volume X, No. 1, 2009 (6 page article)
+* Simon Williams: `The Associative Model Of Data <https://link.springer.com/content/pdf/10.1057/palgrave.jdm.3240049.pdf>`_, in: Journal of Database Marketing, Volume 8, 4, 2001 (24 page article)
+* Simon Williams: The `Associative Model Of Data <http://www.sentences.com/docs/other_docs/AMD.pdf>`_, Lazy Software, 2nd edition, 2002 (book, 284 pages)
+
 .. _user-types-versus-instances:
 
 Types versus instances
@@ -1079,7 +1091,9 @@ Visualizing edge connections
 In the examples above you have seen nodes that are connected by edges, e.g. two topics (or topic types) that are connected by associations.
 This is not sufficient in a data model that is supposed to show real-world relationships.
 The associations themselves can be very complex and can have many properties.
-DMX can visualize this as edges connecting to other edges.
+
+With DMX's associative data model, these complex associations can be modelled and they can even be visualized on topic maps:
+They show as associations connected to other associations.
 
 Let's return to the example of a publication and its author:
 The authorship is a qualified description of the association between a person and a publication.
