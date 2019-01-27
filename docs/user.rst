@@ -285,7 +285,7 @@ The "Related" tab
 The second tab is called "Related".
 It lists *all* topics related to your selection: 
 
-* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topic map you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about MODELLING.)
+* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topic map you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about :ref:`Modelling<user-modelling>`.)
 * Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.
 
 .. image:: _static/detail-panel-related-tab.jpg
@@ -337,7 +337,7 @@ DMX wants to make sure that you do not create something that already exists.
 That's why you enter whatever you want to create into the search field.
 Enter a term, e.g. a person's given name..
 DMX will answer "No match".
-Select "Person" from the predefined :ref:`topic types<glossary-topics-and-topic-types>` and click "Create".
+Select "Person" from the predefined topic types and click "Create".
 
 .. image:: _static/create-person.jpg
 
@@ -418,7 +418,7 @@ You can also select the item with a click and use the arrow button in the upper 
 
 .. image:: _static/button-detail-panel.jpg
 
-The detail panel opens so that so have the topic map on the left side of your screen and the detail panel on the right side.
+The detail panel opens so that you have the topic map on the left side of your screen and the detail panel on the right side.
 There is an in-depth explanation of the detail panel's features :ref:`further down<user-the-detail-panel>`.
 Here is what is looks like:
 
@@ -698,6 +698,10 @@ You can switch between your topic maps by using the topic map selector in the to
 
 .. image:: _static/topic-map-selector.jpg
 
+If you reveal the topic maps themselves in a topic map you can jump to different topic maps with a double-click.
+
+.. image:: _static/revealed-topic-maps.png
+
 Switching between workspaces
 ============================
 
@@ -725,7 +729,7 @@ It changes depending on the tab you have opened.
 
 Using the back button of your browser brings you back to the situation you were looking at before.
 It is not an "undo" though:
-Going back does not revert you latest change.
+Going back does not revert your latest change.
 
 .. _user-collaboration-and-sharing:
 
@@ -841,7 +845,7 @@ Introduction to Data Modelling
 
 .. _user-topics-and-topic-types:
 
-Topics and Topic Types
+Topics and topic types
 ----------------------
 In the DMX data model, the whole world consists of topics and associations.
 You can think of them as things and how they are related to each other.
@@ -862,7 +866,7 @@ You can add your own topic types and by doing so you define your own data model.
 
 .. _user-associations-and-association-types:
 
-Associations and Association Types
+Associations and association types
 ----------------------------------
 
 Associations represent the relationships between items.
@@ -878,7 +882,7 @@ To stick with the example of the music collection, authorship would be the assoc
 
 .. _user-types-versus-instances:
 
-Types versus Instances
+Types versus instances
 ----------------------
 
 As seen, types are the ideas or abstract descriptions of the things you want to map.
@@ -892,7 +896,7 @@ In DMX, this difference is important to understand as you *can* visualize both l
 
 .. _user-simple-data-types:
 
-Simple Data types
+Simple data types
 -----------------
 
 Every topic or association has a data type.
@@ -906,12 +910,64 @@ Four of them are so-called **simple** types:
 
 .. _user-composites-and-composition-definitions:
 
-Composites and Composition Definitions
+Composites and composition definitions
 --------------------------------------
 
 The two other data types are **composites**.
+First of all, "composite" means that this data type is put together from several simple data types.
+The name of a person mostly consists of at least a first name and a last name.
+An address entry is put together from a street name, a number, a postal code, a city.
 
-tbd...
+For associations there is just *one* composite data type which is obviously called composite.
+For topic types DMX has both composite types: **value** and **identity**.
+
+These terms exist to clarify what you are referring to when changes occur.
+Think of real-world contexts and how people are able to understand what changed.
+If a person has a new address this could mean they moved, but it could also mean the street was renamed.
+You can model these two different case by using the data types "identity" and "value".
+
+The composite type "identity"
+-----------------------------
+
+In DMX, identity is used when you want to refer to the same thing as before even if something changes.
+If an address changes because the street is renamed you would still mean the same house at the same geolocation.
+If you save a bookmark to refer to an article and the URL of that article changes, the article and its description would be the same as before.
+If you edit a person's details in your address book the person itself stays the same, even if their phone number changes.
+
+.. image:: _static/composite-identity.png
+
+The composite type "value"
+--------------------------
+
+The composite data type "value" is used whenever you want to refer to something different upon a change.
+While the topic type *person* is a composite of the data type "identity", topic type *person name* is a composite of the data type "value":
+
+.. image:: _static/composite-value.png
+
+If a person changes their name the change is done by deleting the *association* to the old name and by creating an association to the new name.
+
+The background to this is the following:
+In DMX, every item is saved in the database only *once*.
+For example, there is one last name called "Jones" in the database.
+All persons who share this name are associated to it.
+Technically, this means that many parents share the same child.
+Upon a change of name, the old name stays in the database because it may be associated to other items:
+Many people are called Cathy or Jones so the database entries can be considered to be a dictionary of names.
+The persons are just associated to immutable names but the *associations* between them can be deleted and redone.
+
+Here is what this change looks like:
+Before, the person Cathy Jones is related to the person name, a composite of first name and last name.
+This is shown by the red associations.
+
+.. image:: _static/changing-a-persons-name1.png
+
+To assign a different name to the person, you just edit the person's entry and change the name.
+The association between the person and the person name is deleted.
+A new association is created.
+The old person name stays in the database, disconnected from this instance of a person.
+If you are sure do not need it, you can explicitly delete it.
+
+.. image:: _static/changing-a-persons-name2.png
 
 .. _user-creating-a-topic-type:
 
