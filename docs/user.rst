@@ -352,7 +352,7 @@ In the upper half there are two different working contexts respectively topicmap
 On each of them there is a selection of topics and associations revealed depending on what the topicmap is about.
 There can be much more content in the database than what you actually display but everything that is visible in topicmaps is stored in the database.
 
-.. figure:: _static/illustration-database-topic-maps.png
+.. figure:: _static/illustration-database-topicmaps.png
     :alt: Illustration of DMX topicmaps each with a set of data revealed from the same underlying database.
 
 
