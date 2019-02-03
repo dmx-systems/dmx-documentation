@@ -127,7 +127,7 @@ You can click "Reveal" on details to reveal them on the current topicmap.
 
 The first tab also has an edit button at the bottom.
 If you enter the editing mode, you get all fields that you can fill in for the respective topic type or association type.
-These fields come from the type definitions. (Please see the section about :ref:`Modelling<user-modelling>`.)
+These fields come from the type definitions. (Please see the section about :ref:`Modeling<user-modeling>`.)
 
 .. image:: _static/detail-panel-editing-mode.jpg
 
@@ -139,7 +139,7 @@ The "Related" tab
 The second tab is called "Related".
 It lists *all* items related to your selection: 
 
-* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topicmap you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about :ref:`Modelling<user-modelling>`.)
+* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topicmap you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about :ref:`Modeling<user-modeling>`.)
 * Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.
 
 .. image:: _static/detail-panel-related-tab.jpg
@@ -165,7 +165,7 @@ The "View" tab
 
 The fourth tab "View" allows you to view and edit the *configuration of types*.
 Thus, the tab is grayed out if the selected item is not a topic type or an association type but an individual topic or an association.
-(Read more about the background of the data model in the section about :ref:`Modelling<user-modelling>`.
+(Read more about the background of the data model in the section about :ref:`Modeling<user-modeling>`.
 What you can configure in this "View config" has nothing to do with editing the actual data model.
 These changes just have an impact on how items are rendered on your topicmap:
 You can assign custom icons to topic types, or colors to association types.
@@ -248,7 +248,7 @@ You can use these associations to visualize that two items are somehow related t
     :width: 600
 
 If you need qualified associations you have to give your associations a meaning.
-This is explained step-by-step in the section about :ref:`Modelling<user-modelling>`.
+This is explained step-by-step in the section about :ref:`Modeling<user-modeling>`.
 
 Thinking of real-world examples, you will find that there is often more than one association between two things.
 DMX can represent this:
@@ -693,56 +693,19 @@ Here is how creating a shared workspace works:
 
 .. note:: You can create membership associations to every workspace that you have write permission in.
 
-.. _user-modelling:
+.. _user-modeling:
 
 *********
-Modelling
+Modeling
 *********
 
-.. _user-introduction-to-data-modelling:
+A data model is an abstract model that defines all elements needed to represent items, their properties and their relationships.
+DMX enables users to create their own data models.
 
-Introduction to Data Modelling
+.. _user-introduction-to-data-modeling:
+
+Introduction to Data Modeling
 ==============================
-
-.. _user-topics-and-topic-types:
-
-Topics and topic types
-----------------------
-In the DMX data model, the whole world consists of topics and associations.
-You can think of them as things and how they are related to each other.
-Thus, a topic can be anything, a contact, a location, a file, a website, a thought etc.
-
-In contrast to topics, topic types are more general:
-A topic type is the idea of a topic without its concrete shape.
-On the level of types you describe models of what you want to create.
-
-As an example, think of mapping your music collection:
-The topic type could be called "album".
-An album could have an author, a title, a year, a genre etc.
-In DMX you create a topic type with these fields (which are also topic types).
-Each concrete album you create then has a form with these fields to fill in.
-
-DMX comes with a few predefined topic types, e.g. person, organization, or note.
-You can add your own topic types and by doing so you define your own data model.
-
-.. _user-associations-and-association-types:
-
-Associations and association types
-----------------------------------
-
-Associations represent the relationships between items.
-They represent real-world semantics.
-These can be relationships between topics or between associations or even between a topic and an association.
-The most important characteristic of associations in DMX is that you can qualify them to give them the meaning *you* need.
-They are not just drawn lines between two dots, but they can have association types.
-While a line between two items is human-readable, an association that has an association type is machine-readable, too.
-With association types you can tell more about the links between your Topics.
-Timelines, roles in an organization or authorship information are examples of association types.
-
-To stick with the example of the music collection, authorship would be the association type you define.
-
-The Associative Model Of Data
------------------------------
 
 DMX is built upon the so-called Associative Model of Data.
 It uses a suitable database model which can be considered opposed to the widely used Relational Database Management Systems.
@@ -758,14 +721,54 @@ If you want to dive deeper into this concept, we recommend the following sources
 Types versus instances
 ----------------------
 
-As seen, types are the ideas or abstract descriptions of the things you want to map.
-Instances, as opposed to types, are the concrete things, your content.
-If you have a topic type "colour", all individual topics like "red", "green", "blue" are instances of the topic type colour.
-Instances are the concrete occurences of the type:
-Topics are always instances of their topic type.
-Associations are instances of their association type.
+To understand the fundamental concepts of DMX it is very important to understand the distinction between topics and topic types, respectively between associations and association types.
+This distinction separates an abstract concept (types) from the particular occurences (instances) of the concept.
 
-In DMX, this difference is important to understand as you *can* visualize both layers, even in the same topicmap!
+For example, the particular bicycle in your garage is an instance of the type of thing known as "The bicycle".
+Types are the ideas or abstract descriptions of the things you want to represent.
+They can be sets, collections, object classes or kinds of things.
+
+Instances of a type are the concrete items, the content (topics and associations).
+In DMX you can visualize both, types and instances, even in the same topicmap.
+
+.. _user-topics-and-topic-types:
+
+Topics and topic types
+----------------------
+
+On the level of topic types you describe models of the topics you want to create.
+You can add your own topic types.
+
+==========  ==================
+Topic Type  Instances / Topics
+==========  ==================
+Fruit       banana, apple, cherry
+First name  Cathy, Alice, Robin
+Color       red, yellow, blue, green
+==========  ==================
+
+.. note:: In DMX every topic is an in instance of a specific topic type.
+
+.. _user-associations-and-association-types:
+
+Associations and association types
+----------------------------------
+
+Associations represent the relationships between items.
+They represent real-world semantics.
+These can be relationships between topics or between associations or between a topic and an association.
+The most important characteristic of associations in DMX is that you can qualify them to give them the meaning *you* need.
+You do this by creating association types.
+
+===================  =======================  ========================
+Association type     Related items            Instances / Associations
+===================  =======================  ========================
+Organizational role  person and organization  founder, member, employee
+Involvement          person and publication   author, editor, reader, subject
+Relationship         person and person        friend, enemy, lover, mentor
+===================  =======================  ========================
+
+.. note:: Every association is an instance of a specific association type.
 
 .. _user-simple-data-types:
 
@@ -953,7 +956,7 @@ In the examples above you have seen nodes that are connected by edges, e.g. two 
 This is not sufficient in a data model that is supposed to show real-world relationships.
 The associations themselves can be very complex and can have many properties.
 
-With DMX's associative data model, these complex associations can be modelled and they can even be visualized on topicmaps:
+With DMX's associative data model, these complex associations can be modeled and they can even be visualized on topicmaps:
 They show as associations connected to other associations.
 
 Let's return to the example of a publication and its author:
