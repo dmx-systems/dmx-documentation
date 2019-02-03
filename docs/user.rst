@@ -27,7 +27,7 @@ In the upper left corner there is a drop-down menu called "Workspace".
 This is the workspace selector.
 Workspaces are the highest level of content organization in DMX.
 You can think of workspaces as the folders you put your different projects into.
-When you start to work on a blank DMX installation, the only existing workspace is called "DMX".
+When you start to work on a blank DMX installation and you are not logged in, the only visible workspace is called "DMX".
 Read more about workspaces in the section :ref:`user-introduction-to-workspaces-and-sharing-modes`.
 
 .. image:: _static/workspace-selector.png
@@ -54,7 +54,7 @@ The "Login" button is located in the upper right corner of the toolbar.
 The Detail Panel Switch
 -----------------------
 
-The button with the little arrow in the very corner is the switch to open the :ref:`detail panel<user-the-detail-panel>`.
+The button with the little arrow in the top right corner is the switch to open the :ref:`detail panel<user-the-detail-panel>`.
 
 .. _user-the-topic-map-panel:
 
@@ -100,7 +100,7 @@ The Search/Create Dialog
 
 The search for existing items and the creation of new one is done in the same dialog box.
 The search/create dialog is opened with a right-click into the topicmap.
-Read more how to create content in the section about :ref:`Content Authoring<user-content-authoring>`.
+Read more on how to create content in the section about :ref:`Content Authoring<user-content-authoring>`.
 
 .. image:: _static/search-create.jpg
 
@@ -198,6 +198,8 @@ Select "Person" from the predefined topic types and click "Create".
 You will see a rectangle on your topicmap.
 It contains the name you entered and it states that this is the person's first name.
 
+.. image:: _static/person-created.png
+
 Whenever you create a new topic the dialog proposes you to create something of the same topic type as last time.
 You can change this by seleting a different topic type from the drop-down menu.
 
@@ -240,15 +242,15 @@ Click somewhere into the map to hide the in-map details.
 Now what is important is that there are different association types.
 If you just draw a line between two things to create an association you will see a gray line.
 Its association type is just "association".
-You can use these associations to visualize your associations but they are *not* machine-readable.
+You can use these associations to visualize that two items are somehow related to each other without being specific about the meaning of the association.
 
 .. image:: _static/generic-association.jpg
     :width: 600
 
-If you need machine-readable associations you have to give your associations a meaning.
+If you need qualified associations you have to give your associations a meaning.
 This is explained step-by-step in the section about :ref:`Modelling<user-modelling>`.
 
-Thinking of real-world social networks, you will find that there is often more than one association between two things.
+Thinking of real-world examples, you will find that there is often more than one association between two things.
 DMX can represent this:
 You can simply create another association between them.
 
@@ -376,7 +378,7 @@ Displaying Geodata
 ------------------
 
 DMX comes with built-in support for geodata.
-Every topic with an address can be shown on a map.
+Every topic with an address can be shown on a geographical map.
 The so-called geomaps are a special type of topicmap in DMX.
 Geomaps are based on `openstreetmap.org <https://www.openstreetmap.org>`_.
 Here is an example of how to create and populate them:
@@ -387,13 +389,13 @@ Edit a person or an organization and add an address.
 
 Open the search and create dialog.
 Enter a name for the new topicmap, e.g. "Our Geomap".
-In the topic type selection choose "Topicmap".
+In the topic type selector choose "Topicmap".
 Underneath it you can now choose the type of topicmap you want to add.
 Select "Geomap" and press "Create".
 
 .. image:: _static/add-geomap.jpg
 
-Open the topicmap selection in the upper toolbar and select your newly created geomap.
+Open the topicmap selector in the upper toolbar and select your newly created geomap.
 The map is displayed with all items you assigned an address to.
 
 .. image:: _static/topic-map-selection.jpg
@@ -422,6 +424,7 @@ Panning/zooming the topicmap
 ----------------------------
 
 Zooming in or out is done by scrolling up or down.
+Your cursor is the focus for panning.
 
 .. _user-hiding-items:
 
@@ -443,7 +446,7 @@ Click the little pin to keep them open.
 
 .. image:: _static/in-map-details-pinning.png
 
-Note that the pinnings are stored in the database along with the topicmaps.
+Note that the pinnings are persisted in the database along with the topicmaps.
 That is why you can prepare a topicmap with pinned in-map details, knowing that everyone who opens the topicmap will see it in that very state.
 
 Bulk operations
@@ -490,7 +493,7 @@ Assigning icons to topic types
 You can assign icons from the Font Awesome collection to your topic types.
 Let's say you have a topic type "Publication" and you want all publications in your map to have a book icon.
 
-- Click onto the topic type "Publication", //not// onto an individual publication you already added. You are about to modify the general concept of all your publications, not an existing instance of it.
+- Click onto the topic type "Publication", *not* onto an individual publication you already added. You are about to modify the general concept of all your publications, not an existing instance of it.
 - Use the little arrow in the upper right corner to open the detail panel.
 - Go to the fourth tab called "View". Here you can view and edit the configuration of the topic type. Click "Edit".
 - Click into the white field labeled "Icon".
@@ -498,6 +501,9 @@ Let's say you have a topic type "Publication" and you want all publications in y
 .. image:: _static/open-icon-selection.jpg
 
 - You can either select an icon directly or use the search box.
+
+.. image:: _static/icon-picker.png
+
 - Hit save to apply the icon to all topics that are publications.
 
 .. image:: _static/new-icon.jpg
@@ -613,7 +619,7 @@ Investigate the newly created user name by revealing "What's related".
 The user name is associated with some information:
 
 * disk quota: how much space the user can use on the computer
-* if the account owner can share workspaces with others
+* what type of sharing modes the account owner can select when creating new workspaces
 * if the account owner is allowed to log in at all
 
 It is important that every user account is tied to the "System" workspace (see below). In short, this allows others to read their user name (only the name) to share content.
@@ -636,25 +642,25 @@ This feature makes workspaces the basis of collaboration and the key to the conf
 DMX has five sharing modes:
 
 * **private**: In a private workspace just the owner of the workspace can read and write.
-* **confidential**: In a confidential workspace the owner can read and write. Group members can read, but not change anything.
-* **collaborative**: A collaborative workspace can be read and edited by the owner and by all group members.
+* **confidential**: In a confidential workspace the owner can read and write. Workspace members can read, but not change anything.
+* **collaborative**: A collaborative workspace can be read and edited by the owner and by all workspace members.
 * **public**: A public workspace is world-readable. The default "DMX" workspace is an example of a public workspace.
-* **common**: In a common workspace everyone can read and write. No login is required.
+* **common**: In a common workspace everyone can read and write.
 
 Every workspace has an owner, usually the creator, and optional members.
 When you are logged in you can access the different workspaces via the :ref:`workspace selector<user-the-workspace-selector>` in the upper left corner.
 Once you log out DMX will switch back to a public (world-readable) workspace like the default workspace called "DMX".
 All items that are publicly readable stay visible, the rest disappears from the view.
-You are no longer able to edit but you still have a customizable view of the topicmap, which means that you can move items and reveal other world-readable items.
+In a public workspace you are no longer able to edit but you still have a customizable view of the topicmap, which means that you can move items and reveal other world-readable items.
 
 .. image:: _static/workspace-selector.png
 
 DMX comes with four default workspaces with the following sharing modes:
 
 * **DMX**: This workspace a public, it is the one that is displayed publicly when people come to the site.
-* **Private Workspace**: This is the private workspace of the respective logged in user. Only this user can see and and edit their map as it is private.
-* **Administration**: Only admins can view and edit this workspace. Unprivileged user accounts do not have this entry in the menu.
-* **System**: The System Workspace is readable by everyone who is logged in. It contains all user names that exist in this DMX installation. The user names are readable to all users. This is needed for sharing content with others as you will see below.
+* **Private Workspace**: This is the private workspace of the respective logged in user. Only this user can see and and edit their items as the workspace is private.
+* **Administration**: Only the admin or members can view and edit items in this workspace. Unprivileged user accounts do not have this entry in the menu.
+* **System**: The System workspace is readable by everyone who is logged in. It contains all user names that exist in this DMX installation. The user names are readable to all users. This is needed for sharing content with others as you will see below.
 
 .. image:: _static/system-workspace.jpg
 
@@ -670,9 +676,9 @@ Here is how creating a shared workspace works:
 
 .. image:: _static/workspace-creation.jpg
 
-* The new workspace automatically opens. Click onto the blue information icon next to the workspace selection to reveal the workspace topic itself on the topicmap.
-* To add members to the workspace you can just enter user names and click them to reveal them on the map. As mentioned above, all user names are visible to all other logged in users via the system workspace. In DMX, membership is tied to user names that is why you need read permission on the user names.
-* If you don't know their user names you can go to the System workspace and investigate.
+* The new workspace automatically opens. Click onto the blue information icon next to the workspace selector to reveal the workspace topic itself on the topicmap.
+* To add members to the workspace you can just search for their user names and click them to reveal them on the map. As mentioned above, all user names are visible to all other logged in users. In DMX, membership is tied to user names.
+* If you don't know their user names you search for the topic type "Username" and open its "What's related" to see the existing user names in the detail panel. Reveal those you want to give access.
 * Now that you have the workspace itself and a user name on your topicmap you can just **create an association between the user name and the workspace**.
 * Next you have to qualify this association as a membership: Edit the association.
 
@@ -683,9 +689,9 @@ Here is how creating a shared workspace works:
 
 .. image:: _static/edit-ws-assoc2.png
 
-* The user you shared your workspace with can now log in, select your collaborative workspace and add something, e.g. a note. It will automatically appear in the workspace, visible to all workspace members.
+* The user you shared your workspace with can now log in, select your collaborative workspace and add something, e.g. a note. This note is now accessible to all members of the workspace. It will appear on the selected topicmap, visible to all workspace members looking at the same topicmap.
 
-.. note:: You can create memberships in every workspace that you have write permission in.
+.. note:: You can create membership associations to every workspace that you have write permission in.
 
 .. _user-modelling:
 
