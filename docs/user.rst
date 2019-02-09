@@ -239,6 +239,12 @@ Drag it onto the other topic until that topic is highlighted by a blue border.
 Then let go and a rectangle will open that shows you the in-map details of the newly created association.
 Click somewhere into the map to hide the in-map details.
 
+Note that an association does not necessarily connect two topics:
+You can also create associations between a topic and an association or between two associations.
+To do so, attach an association to the little dot in the middle of the assocation.
+
+.. image:: _static/create-assoc-with-assoc.png
+
 Now what is important is that there are different association types.
 If you just draw a line between two things to create an association you will see a gray line.
 Its association type is just "association".
