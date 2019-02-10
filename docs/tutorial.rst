@@ -38,8 +38,8 @@ Adding your first topic
 This is just a short walkthrough to help you create your first items in DMX.
 
 Right-click into the emptiness.
-A window appears that offers you to search something.
-This is the search/create dialog.
+A window appears that lets you search for something.
+This is the :ref:`Search/Create Dialog<user-the-search-create-dialog>`.
 Let's create something!
 
 .. image:: _static/search-create.jpg
@@ -55,14 +55,21 @@ Select "Person" from the predefined topic types and click "Create".
 
 You will see a rectangle on your topicmap.
 It contains the name you entered and it states that this is the person's first name.
-Oh no!
-You entered the given name and the surname?
+
+.. image:: _static/person-in-map-details.png
+
+But what if you entered a person's given name and surname into the search/create dialog?
+The result would look like this:
+
+.. image:: _static/person-wrong-first-name.png
+
+DMX interpreted both as given name.
 Let's correct this:
-Long-press the rectangle and select "edit" from the context menu.
+Long-press the rectangle and select "edit" from the :ref:`context menu <user-the-context-menu>`.
 
 .. image:: _static/context-menu-edit.jpg
 
-On the right-hand side the detail panel opens.
+On the right-hand side the :ref:`detail panel <user-the-detail-panel>` opens.
 It contains many fields you might need for all persons.
 Correct the name and click the save button at the very bottom.
 Add a second topic, e.g. "Notes for the interview".
@@ -92,7 +99,7 @@ Drag it onto the other topic until that topic is highlighted by a blue border.
 .. image:: _static/create-simple-association-2.png
 
 A rectangle appears.
-These are the in-map details.
+These are the :ref:`in-map details <user-in-map-details>`.
 They tell you that this is an "Association", that the association type is "Association".
 You can think of it as a very simple association:
 You just drew a line between two topics.
@@ -119,6 +126,8 @@ One of those association types describes the role a person has in an organizatio
 We will now give the person an organizational role to see that this is a different association type:
 Grab the little dot of the person's rectangle and create an association to the organization.
 The in-map details show at once that the association type is "Organization Association".
+The "Role Type" mentioned in there is not to be confused with the organizational roles.
+This concept is explained in the full DMX User guide, see :ref:`Modeling <user-modeling>`.
 
 .. image:: _static/create-organization-association.png
 

@@ -96,6 +96,8 @@ This box is called the in-map details.
 
 .. image:: _static/in-map-details.jpg
 
+.. _user-the-search-create-dialog:
+
 The Search/Create Dialog
 ========================
 
