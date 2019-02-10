@@ -1,208 +1,226 @@
+.. _installation:
+
 ############
 Installation
 ############
 
-.. _installation:
+.. _installation-windows:
 
-************
-Requirements
-************
+**********************
+Running DMX on Windows
+**********************
 
-You first need to install a Java Runtime Environment on your computer.
+Install a Java Runtime Environment
+==================================
 
-Java 6 to 8
-===========
+Go to `Oracle's website <https://java.com/en/download/>`_ and download the recommended Java version.
+Currently, this is Java 8.
+Any version from Java 6 to 8 will work out of the box with DMX.
+Execute the JavaSetup*.exe with a double-click and click through the installer.
 
-Any version from **Java 6 to 8** will work out of the box with the DMX distribution provided on our `download site <https://download.dmx.systems/ci/>`_. You can procede directly with :ref:`the installation from a zip file <installation-zip>`.
+Download DMX
+============
 
-Java 10
-=======
+Currently we recommend you to download the `beta-1 release <https://download.dmx.systems/dmx-5.0-beta-1.zip>`_.
+To try out the latest state of development you can download the `latest snapshot <https://download.dmx.systems/ci/dmx-latest.zip>`_ instead.
+All previous snapshots are available for download on https://download.dmx.systems/ci/.
 
-If you have installed **Java 10** you have to change two things:
+Save the according file to a location of your choice.
+Extract the zip archive.
 
-1. In the zip archive you downloaded there is a Linux install script called deepamehta-linux.sh. To run DMX with Java, please modify the java call in the script like this:
+.. image:: _static/windows-extract-zip.png
 
-.. code:: bash
+.. image:: _static/windows-choose-destination.png
 
-  exec java -Dfile.encoding=UTF-8 -Dfelix.system.properties=file:conf/config.properties --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.security=ALL-UNNAMED --add-modules java.xml.bind -jar bin/felix.jar
-
-If you are running MacOS, edit the command in ``deepamehta-macosx.command`` like this:
-
-.. code:: bash
-
-  java -Dfile.encoding=UTF-8 -Dfelix.system.properties=file:conf/config.properties --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.security=ALL-UNNAMED --add-modules java.xml.bind -jar bin/felix.jar
-
-2. Append the following lines to the file ``./conf/config.properties``:
-
-.. code:: bash
-
-	org.osgi.framework.system.capabilities.extra = osgi.ee;\
-	    osgi.ee="JavaSE";\
-	    version:List<Version>="1.0,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8"
-	org.osgi.framework.system.packages.extra = \
-	    javax.activation,\
-	    javax.annotation.processing,\
-	    javax.imageio,\
-	    javax.imageio.spi,\
-	    javax.imageio.stream,\
-	    javax.lang.model,\
-	    javax.lang.model.element,\
-	    javax.lang.model.type,\
-	    javax.lang.model.util,\
-	    javax.management,\
-	    javax.management.modelmbean,\
-	    javax.management.remote,\
-	    javax.naming,\
-	    javax.net.ssl,\
-	    javax.security.auth,\
-	    javax.security.cert,\
-	    javax.tools,\
-	    javax.xml.bind,\
-	    javax.xml.bind.annotation,\
-	    javax.xml.namespace,\
-	    javax.xml.parsers,\
-	    javax.xml.stream,\
-	    javax.xml.stream.events,\
-	    javax.xml.stream.util,\
-	    javax.xml.transform,\
-	    javax.xml.transform.dom,\
-	    javax.xml.transform.sax,\
-	    javax.xml.transform.stream,\
-	    javax.xml.validation,\
-	    org.w3c.dom,\
-	    org.xml.sax,\
-	    org.xml.sax.helpers
-
-.. warning:: Java 9 is currently untested, but probably works the same way as Java 10.
-
-Java 11
-=======
-
-If you are running Java 11 you have to procede as follows:
-
-1. Download this additional jar file and put it into DM's bundle folder: https://repo1.maven.org/maven2/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar
-
-On a Linux system, the bundle folder is located in ``/usr/share/deepamehta/bundle``.
-
-2. On Linux, change the java call in ``deepamehta-linux.sh``:
-
-.. code:: bash
-
-  exec java -Dfile.encoding=UTF-8 -Dfelix.system.properties=file:conf/config.properties --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.security=ALL-UNNAMED -jar bin/felix.jar
-
-On MacOS, change the java call in ``deepamehta-macosx.command``:
-
-.. code:: bash
-
-  java -Dfile.encoding=UTF-8 -Dfelix.system.properties=file:conf/config.properties --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.security=ALL-UNNAMED -jar bin/felix.jar
-
-3. In ``./conf/config.properties`` add these lines at the end:
-
-.. code:: bash
-
-  org.osgi.framework.system.capabilities.extra = osgi.ee;\
-    osgi.ee="JavaSE";\
-    version:List<Version>="1.0,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8"
-  org.osgi.framework.system.packages.extra = \
-    javax.activation,\
-    javax.annotation.processing,\
-    javax.imageio,\
-    javax.imageio.spi,\
-    javax.imageio.stream,\
-    javax.lang.model,\
-    javax.lang.model.element,\
-    javax.lang.model.type,\
-    javax.lang.model.util,\
-    javax.management,\
-    javax.management.modelmbean,\
-    javax.management.remote,\
-    javax.naming,\
-    javax.net.ssl,\
-    javax.security.auth,\
-    javax.security.cert,\
-    javax.tools,\
-    javax.xml.datatype,\
-    javax.xml.namespace,\
-    javax.xml.parsers,\
-    javax.xml.stream,\
-    javax.xml.stream.events,\
-    javax.xml.stream.util,\
-    javax.xml.transform,\
-    javax.xml.transform.dom,\
-    javax.xml.transform.sax,\
-    javax.xml.transform.stream,\
-    javax.xml.validation,\
-    org.w3c.dom,\
-    org.xml.sax,\
-    org.xml.sax.ext,\
-    org.xml.sax.helpers
-
-
-.. _installation-zip:
-
-**************************
-Run DMX from a zip archive
-**************************
-
-Download
-========
-
-You can download DMX in a zip file, unzip it and start the software manually. This is suitable for installations on laptops and desktops, or on servers that do not have an apt-based package system.
-
-Go to our `website <https://download.dmx.systems>`_ and download our latest stable release or our unstable (!) development version. Save the .zip file to a location of your choice and unpack it. A new folder is created. 
+A new folder is created.
+It has the name of the zip file.
 
 Start DMX
 =========
 
-Enter the newly created folder.
-Run DMX's start script depending on your operating system.
-If you start DMX on your local machine, the webclient opens automatically at http://localhost:8080/systems.dmx.webclient/.
+Enter the folder that was created when you unpacked the zip archive.
+Double-click the file ``deepamehta-windows.bat``.
 
-Windows
--------
-Double-click the ``deepamehta-windows.bat`` file.
+A black terminal window opens to display what is happening.
+Just leave it there.
+The Windows Defender Firewall might ask you to allow Java access.
+Choose "Private networks, such as my home or work network".
 
-Mac
----
-Double-click the ``deepamehta-macosx.command`` file.
-
-Linux
------
-Execute the ``deepamehta-linux.sh`` file.
+Your default browser opens the DMX webclient at http://localhost:8080/systems.dmx.webclient/.
+You are ready to go.
 
 .. hint:: Log in as "admin" without a password.
 
-.. _installation-apt:
+Stop DMX
+========
 
-***********************************
+To stop DMX, bring the black terminal windows to the foreground.
+Press CTRL + C.
+In the window you will now see the question "Terminate batch job (Y/N)?"
+Answer with a "Y" for yes.
+DMX is now stopped.
+
+Remove DMX
+==========
+
+You can get rid of DMX by deleting the whole folder that got created when you unpacked the zip file, e.g. dmx-5.0-beta-1.
+The Java Runtime Environment has to be uninstalled separately.
+
+.. _installation-macos:
+
+*********************
+Running DMX on Mac OS
+*********************
+
+Download DMX
+============
+
+Currently we recommend you to download the `beta-1 release <https://download.dmx.systems/dmx-5.0-beta-1.zip>`_.
+To try out the latest state of development you can download the `latest snapshot <https://download.dmx.systems/ci/dmx-latest.zip>`_ instead.
+All previous snapshots are available for download on https://download.dmx.systems/ci/.
+
+Save the according file to a location of your choice.
+Extract the zip archive.
+A new folder is created.
+It has the name of the zip file.
+
+Start DMX
+=========
+
+Enter the folder that was created when you unpacked the zip archive.
+Double-click the file ``deepamehta-macosx.command``.
+A terminal window opens to display what is happening.
+Just leave it there.
+
+Your default browser opens the DMX webclient at http://localhost:8080/systems.dmx.webclient/.
+You are ready to go.
+
+.. hint:: Log in as "admin" without a password.
+
+Stop DMX
+========
+
+To stop DMX, press CTRL + C in the terminal window.
+
+Remove DMX
+==========
+
+You can get rid of DMX by deleting the whole folder that got created when you unpacked the zip file, e.g. dmx-5.0-beta-1.
+The Java Runtime Environment has to be uninstalled separately.
+
+.. _installation-linux:
+
+********************
+Running DMX on Linux
+********************
+
+On a Linux machine, you have two options to run DMX:
+You can start it from an unpacked zip file *or* you can install it from our APT repository.
+
+Install a Java Runtime Environment
+==================================
+
+Use your package manager to install the default Java Runtime Environment for your Linux distribution.
+
+For example, on Debian / Ubuntu, you would run the command
+
+.. code:: bash
+
+    sudo apt install default-jre
+
+to install OpenJDK/JRE. On CentOS / Fedora, this would be
+
+.. code:: bash
+
+    sudo yum install java-<version>-openjdk
+
+.. _installation-linux-zip:
+
+Run DMX from a zip archive
+==========================
+
+If you choose to run DMX from a zip archive you do not install any other packages on your computer.
+The binaries and your database are all right in the DMX folder.
+
+Download DMX
+------------
+
+Currently we recommend you to download the `beta-1 release <https://download.dmx.systems/dmx-5.0-beta-1.zip>`_.
+To try out the latest state of development you can download the `latest snapshot <https://download.dmx.systems/ci/dmx-latest.zip>`_ instead.
+All previous snapshots are available for download on https://download.dmx.systems/ci/.
+
+Save the according file to a location of your choice, e.g. your "Downloads" folder.
+Open a terminal and go to that location.
+Extract the zip archive.
+
+.. code:: bash
+
+    ~ $ cd Downloads
+    # to get the beta-1 release:
+    ~/Downloads $ wget https://download.dmx.systems/dmx-5.0-beta-1.zip
+    ~/Downloads $ unzip dmx-5.0-beta-1.zip
+    # to get the latest nightly build:
+    ~/Downloads $ wget https://download.dmx.systems/ci/dmx-latest.zip
+    ~/Downloads $ unzip dmx-latest.zip
+
+Start DMX
+---------
+
+Go into the newly created folder (in this example "dmx-5.0-beta-1") and run the start script ``./deepamehta-linux.sh``.
+
+.. code:: bash
+
+    ~/Downloads $ cd dmx-5.0-beta-1
+    ~/Downloads/cd dmx-5.0-beta-1 $ ./deepamehta-linux.sh
+
+.. hint:: Log in as "admin" without a password.
+
+Stop DMX
+--------
+
+To stop DMX, press CTRL + C in the terminal you started it in.
+
+Remove DMX
+----------
+
+You can get rid of DMX by deleting the whole folder that got created when you unpacked the zip file, e.g. dmx-5.0-beta-1.
+The Java Runtime Environment has to be uninstalled separately.
+
+.. _installation-linux-apt:
+
 Install DMX from our APT repository
-***********************************
+===================================
 
-For apt-based Linux distributions we provide a repository.
+For apt-based Linux distributions (like Debian / Ubuntu) we provide a repository.
 It is intended for installations on servers but can obviously be used on Debian/Ubuntu laptops as well.
 The package has a built-in dependency to default-jre.
-If the default Java Runtime Environment of your distribution is newer than Java 9 (like in Ubuntu 18.04), you cannot use the repository for the moment.
+
+.. warning:: If your Java Runtime Environment is newer than Java 9, you cannot use the repository for the moment. Check your version by running the command ``java -version``.
+
 Here is how to add the repository:
 
 .. code:: bash
 
-    # add-apt-repository "deb https://download.dmx.systems/repos/ubuntu/ xenial/"
-    # apt update
-    # apt install deepamehta
+    $ sudo add-apt-repository "deb https://download.dmx.systems/repos/ubuntu/ xenial/"
+    $ sudo apt update
+    $ sudo apt install deepamehta
+
+.. note:: The package will be renamed to DMX. DeepaMehta is DMX's predecessor's name.
 
 Configure DMX
-=============
+-------------
 
-By default, DeepaMehta will listen on port 8080. To change this setting, edit ``/etc/deepamehta/deepamehta.conf``. Adjust the settings in /etc/deepamehta/deepamehta.conf and make sure your computer is protected by a firewall.
+For server installations and advanced configuration we will soon provide instructions in the :ref:`Admin Documentation <admin>`.
+By default, DMX will listen on port 8080.
+You can set the admin passphrase in ``/etc/deepamehta/deepamehta.conf``.
 
-To configure the webserver, please see ``/usr/share/doc/deepamehta/examples/deepamehta.apache`` for a sample Apache2 configuration file. For advanced configuration see the `Admin Documentation`_.
-
-.. _Admin Documentation: LINK zu proxy
+.. hint:: Log in as "admin" with the default passphrase "YOUR_SECRET_PASSWORD_HERE".
 
 Start DMX
-=========
+---------
 
-DMX is not started automatically after installation. Enable it by changing the following line in the file ``/etc/default/deepamehta``:
+When installed from the repo, DMX is not started automatically after installation.
+Enable it by changing the following line in the file ``/etc/default/deepamehta``:
 
 .. code::
 
@@ -215,25 +233,10 @@ Invoke this command to start the daemon:
     /etc/init.d/deepamehta start
 
 Stop DMX
-========
+--------
 
 Stop the daemon by running
 
 .. code::
 
     /etc/init.d/deepamehta stop
-
-*************
-Uninstall DMX
-*************
-
-When installed from a zip file
-------------------------------
-
-If you started DMX from a zip file nothing is installed on your computer (except the Java Runtime Enviroment that you installed separately). The DMX database is located in the folder where you started it. You can get rid of it by deleting the whole folder.
-
-When installed from the repo
-----------------------------
-
-``dpkg -P deepamehta`` will remove all installed files but not delete your database.
-

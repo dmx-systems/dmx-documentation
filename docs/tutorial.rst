@@ -6,13 +6,8 @@ Beginners' Tutorial
 
 To get started with DMX you can
 
-* visit our `public demo site`_ and play with DMX. Do not enter any private or sensitive information on the demo site!
-* run DMX on your computer by choosing one of the following ways:
-
-  * :ref:`installation-zip` (Windows, Mac, Linux)
-  * :ref:`installation-apt` (Linux only)
-
-.. _public demo site: https://demo.dmx.systems
+* visit our `public demo site <https://demo.dmx.systems>`_ and play with DMX. Do not enter any private or sensitive information on the demo site!
+* run DMX on your computer. Visit our :ref:`installation guide <installation>` to learn how.
 
 .. _tutorial-a-first-look-at-dmx:
 
