@@ -4,6 +4,9 @@
 Installation
 ############
 
+DMX runs on several different operating systems.
+Below you can find how to get started on :ref:`Windows <installation-windows>`, :ref:`Mac OS <installation-macos>` and :ref:`Linux <installation-linux>`.
+
 .. _installation-windows:
 
 **********************
@@ -40,6 +43,8 @@ Start DMX
 
 Enter the folder that was created when you unpacked the zip archive.
 Double-click the file ``deepamehta-windows.bat``.
+If your Explorer does not display file extensions, you only see ``deepamehta-windows`` as a file name.
+That is the same file.
 
 A black terminal window opens to display what is happening.
 Just leave it there.

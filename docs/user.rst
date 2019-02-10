@@ -114,7 +114,7 @@ The Detail Panel
 
 The detail panel offers lots of features to explore your data so here is an in-depth introduction to the detail panel.
 
-The detail panel can only be opened if you have selected an item on the map and it will stay open as long as you have a selected item.
+The detail panel can only be opened if you have selected an item on the map and it will stay open as long as you have selected an item.
 
 .. _user-detail-panel-the-info-tab:
 
@@ -122,7 +122,7 @@ The "Info" tab
 --------------
 
 The first tab is a general info tab.
-It is always named after the type of the selected item, e.g. "Person" or "Event".
+It is always labelled with the type of the selected item, e.g. "Person" or "Event".
 In its display mode it shows only those fields containing data.
 You can click "Reveal" on details to reveal them on the current topicmap.
 
@@ -147,7 +147,7 @@ It lists *all* items related to your selection:
 
 .. image:: _static/detail-panel-related-tab.jpg
 
-* Depending on what are searching for you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
+* Depending on what you are searching for you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
 
 .. image:: _static/detail-panel-related-tab-sort-order.jpg
 
@@ -425,7 +425,7 @@ Moving things around
 ====================
 
 Note that you can drag the whole topicmap into any direction.
-Just hold the right mouse button pressed somewhere on the topicmap and drag.
+Just hold the left mouse button pressed somewhere on the topicmap and drag.
 
 Moving topics
 -------------
@@ -503,6 +503,8 @@ Assigning icons to topic types
 ------------------------------
 
 You can assign icons from the Font Awesome collection to your topic types.
+Editing the view configuration is explained with the topic type "Publication".
+In the section about :ref:`Modeling <user-modeling>` you will learn how to create such a topic type.
 Let's say you have a topic type "Publication" and you want all publications in your map to have a book icon.
 
 - Click onto the topic type "Publication", *not* onto an individual publication you already added. You are about to modify the general concept of all your publications, not an existing instance of it.
