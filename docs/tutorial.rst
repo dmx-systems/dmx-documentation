@@ -24,7 +24,7 @@ When you first look at a new installation of DMX, there is not much there, yet.
 We have a detailed guide to the :ref:`user interface<user-the-dmx-user-interface>` below but here are some essentials:
 
 * In the upper right corner there is a "Login" button. Log in with the user name "admin" and no password.
-* In the upper left corner there is a workspace selector. The only existing workspace is called "DMX". This is your general context everything you are about to do is going to be in (for the moment). Later you will be able to select one of all your workspaces here.
+* In the upper left corner there is a workspace selector. The only existing workspace is called "DMX". This is your general context in which everything you are about to do is going (for the moment). Later you will be able to select one of all your workspaces here.
 * Next to it there is another drop-down menu. This is the topicmap selector. Right now, there is only one topicmap, it's called "untitled".
 
 .. figure:: _static/upper-toolbar.png
@@ -101,7 +101,7 @@ These are the in-map details.
 They tell you that this is an "Association", that the association type is "Association".
 You can think of it as a very simple association:
 You just drew a line between two topics.
-Neither does the line have a dedicated meaning nor is it machine-readable.
+The line neither does not have a dedicated meaning.
 Click somewhere onto the topicmap to close the in-map-details.
 
 **********************************
@@ -150,4 +150,4 @@ If you have entered more than one person, you can scroll down in the detail pane
 .. image:: _static/organizational-roles.png
 
 In DMX you are free to define your own topic types and association types.
-Find out more about it in the section about :ref:`Modelling<user-modelling>`.
+Find out more about it in the section about :ref:`Modeling<user-modeling>`.

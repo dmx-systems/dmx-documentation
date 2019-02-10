@@ -43,6 +43,7 @@ A topicmap represents an individual working situation.
 The user chooses what is relevant to the current context and visualizes it by revealing the relevant topics and associations from the database in a topicmap.
 Thus it shows a situation-based selection of the whole database content.
 In the beginning, there is only one topicmap, it's called "untitled".
+Find out how to add topicmaps in the section :ref:`user-organizing-the-working-context`.
 
 .. image:: _static/topic-map-selector.png
 
@@ -98,7 +99,7 @@ This box is called the in-map details.
 The Search/Create Dialog
 ========================
 
-The search for existing items and the creation of new one is done in the same dialog box.
+The search for existing items and the creation of new ones is done in the same dialog box.
 The search/create dialog is opened with a right-click into the topicmap.
 Read more on how to create content in the section about :ref:`Content Authoring<user-content-authoring>`.
 
@@ -165,7 +166,7 @@ The "View" tab
 
 The fourth tab "View" allows you to view and edit the *configuration of types*.
 Thus, the tab is grayed out if the selected item is not a topic type or an association type but an individual topic or an association.
-(Read more about the background of the data model in the section about :ref:`Modeling<user-modeling>`.
+(Read more about the background of the data model in the section about :ref:`Modeling<user-modeling>`.)
 What you can configure in this "View config" has nothing to do with editing the actual data model.
 These changes just have an impact on how items are rendered on your topicmap:
 You can assign custom icons to topic types, or colors to association types.
@@ -331,10 +332,12 @@ To delete several items in one go select all of them by clicking them with the C
 
 .. image:: _static/bulk-delete-1.jpg
 
-Then procede as above:
+Then proceed as above:
 Left-click onto the item and drag your mouse onto the delete button.
 
 .. image:: _static/bulk-delete-2.jpg
+
+.. _user-organizing-the-working-context:
 
 ******************************
 Organizing the working context
@@ -363,6 +366,7 @@ There can be much more content in the database than what you actually display bu
 .. figure:: _static/illustration-database-topicmaps.png
     :alt: Illustration of DMX topicmaps each with a set of data revealed from the same underlying database.
 
+.. _user-creating-a-topicmap:
 
 Creating a topicmap
 ===================
@@ -651,7 +655,7 @@ DMX has five sharing modes:
 * **confidential**: In a confidential workspace the owner can read and write. Workspace members can read, but not change anything.
 * **collaborative**: A collaborative workspace can be read and edited by the owner and by all workspace members.
 * **public**: A public workspace is world-readable. The default "DMX" workspace is an example of a public workspace.
-* **common**: In a common workspace everyone can read and write.
+* **common**: In a common workspace everyone can read and write even without signing in with DMX. That is, if the DMX instance is connected to the internet, a common workspace is readable and writable to *everyone* on the internet.
 
 Every workspace has an owner, usually the creator, and optional members.
 When you are logged in you can access the different workspaces via the :ref:`workspace selector<user-the-workspace-selector>` in the upper left corner.
@@ -847,7 +851,7 @@ To assign a different name to the person, you just edit the person's entry and c
 The association between the person and the person name is deleted.
 A new association is created.
 The old person name stays in the database, disconnected from this instance of a person.
-If you are sure do not need it, you can explicitly delete it.
+If you are sure you do not need it, you can explicitly delete it.
 
 .. image:: _static/changing-a-persons-name2.png
 
@@ -856,7 +860,7 @@ If you are sure do not need it, you can explicitly delete it.
 Creating a topic type
 =====================
 
-To create your own topic type with a few properties here is how to procede.
+To create your own topic type with a few properties here is how to proceed.
 Let's say you want to add a topic type "publication".
 Each publication shall have a title and a year.
 
@@ -864,7 +868,7 @@ Each publication shall have a title and a year.
 - Go into editing mode via the context menu. Change the data type from "Text" to "Identity" and hit "Save". Click somewhere into your map to close the detail panel.
 - Open the search field and enter "Title". You will find that two entries already exist. They come from the default topics types "Event" and "Note" which also have titles. Create a new topic type "Title".
 - Create an association between the title item and the publication item. DMX will display what you just created:
-  * You created an association of the type "Composition Definition". Composition Definition means that you are defining a more complex context between item on your map: The relationship between a publication, a title and a year. 
+  * You created an association of the type "Composition Definition". Composition Definition means that you are defining a more complex context between items on your map: The relationship between a publication, a title and a year. 
   * "Cardinality: One" means that each publication has exactly one title, not more. 
   * The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.
 
