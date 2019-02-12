@@ -21,12 +21,6 @@ Currently, this is Java 8.
 Any version from Java 6 to 8 will work out of the box with DMX.
 Execute the JavaSetup*.exe with a double-click and click through the installer.
 
-Use a suitable web browser
-==========================
-
-The browser Microsoft Edge is *not* able to run Java applications like DMX.
-Thus you have to use a different browser, e.g. Firefox, or Google Chrome.
-
 Download DMX
 ============
 
