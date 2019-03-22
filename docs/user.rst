@@ -52,11 +52,6 @@ The Login Button
 
 The "Login" button is located in the upper right corner of the toolbar.
 
-The Detail Panel Switch
------------------------
-
-The button with the little arrow in the top right corner is the switch to open the :ref:`detail panel<user-the-detail-panel>`.
-
 .. _user-the-topic-map-panel:
 
 The Topicmap Panel
@@ -76,9 +71,9 @@ The Context Menu
 The context menu is opened with a right-click on items.
 It has four buttons to interact with the item:
 
+* You can display its details.
 * You can edit it.
 * You can hide it from the current topicmap
-* You can delete it. **Be careful! The item is deleted at once!**
 * You can show what is related to this item.
 
 To close the context menu *without* any action, click into its middle.
@@ -277,17 +272,14 @@ Editing in the detail panel
 ---------------------------
 
 To add more details to a topic you use the detail panel on the right side.
-There are two ways to open it:
-You can use the edit button from the context menu (see above).
-You can also select the item with a click and use the arrow button in the upper right corner to open the detail panel.
-
-.. image:: _static/button-detail-panel.jpg
+Use the edit button from the context menu to open it (see above).
 
 The detail panel opens so that you have the topicmap on the left side of your screen and the detail panel on the right side.
-There is an in-depth explanation of the detail panel's features :ref:`further down<user-the-detail-panel>`.
-Here is what is looks like:
+There is an in-depth explanation of the detail panel's features :ref:`further up<user-the-detail-panel>`.
+Here is what is looks like.
+There is a "Save" button at the very bottom of the form.
 
-.. image:: _static/detail-panel-edit-intro.jpg
+.. image:: _static/detail-panel-edit-intro.png
 
 .. _user-inline-editing:
 
@@ -323,7 +315,9 @@ Deleting things
 .. warning:: There is an important difference between hiding items and deleting them. **If you delete items they are immediately removed from the database without any further questions!** If you hide them, they are just no longer visible on the topicmap but you can bring them back by revealing them.
 
 You delete things via the context menu on the topicmap.
-Left-click onto the item and drag your mouse onto the delete button.
+Keep the "Alt" key pressed and left-click onto the item you want to delete.
+To delete drag your mouse anywhere into the red area.
+To abort let go of both the "Alt" key and the mouse button *while the cursor is in the middle of the circle*.
 
 .. image:: _static/delete-item.png
 
@@ -337,7 +331,7 @@ To delete several items in one go select all of them by clicking them with the C
 Then proceed as above:
 Left-click onto the item and drag your mouse onto the delete button.
 
-.. image:: _static/bulk-delete-2.jpg
+.. image:: _static/bulk-delete-2.png
 
 .. _user-organizing-the-working-context:
 
@@ -562,7 +556,7 @@ The "What's related" tab of the :ref:`detail panel<user-the-detail-panel>` detai
 
 Open the "What's related" of an item to get there.
 
-.. image:: _static/whats-related.png
+.. image:: _static/related.png
 
 Read more about the possible sort orders in the section about the :ref:`"Related" tab<user-detail-panel-the-related-tab>` of the detail panel.
 
