@@ -128,13 +128,15 @@ The "Info" tab
 --------------
 
 The first tab is a general info tab.
-It is always labelled with the type of the selected item, e.g. "Person" or "Event".
+You get there by selecting "Details" from the :ref:`context menu<user-the-context-menu>`.
+The "Info" tab is always labelled with the type of the selected item, e.g. "Person" or "Event".
 In its display mode it shows only those fields containing data.
 You can click "Reveal" on details to reveal them on the current topicmap.
 
 .. image:: _static/detail-panel-reveal-button.png
 
 The first tab also has an edit button at the bottom.
+From a topicmap you can enter the editing mode directly by clicking "Edit" in the context menu.
 If you enter the editing mode, you get all fields that you can fill in for the respective topic type or association type.
 These fields come from the type definitions. (Please see the section about :ref:`Modeling<user-modeling>`.)
 
@@ -146,7 +148,8 @@ The "Related" tab
 -----------------
 
 The second tab is called "Related".
-It lists *all* items related to your selection: 
+Again, you can directly open the detail panel with this tab by choosing "Related" from the context menu.
+This tab lists *all* items related to your selection: 
 
 * On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topicmap you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about :ref:`Modeling<user-modeling>`.)
 * Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.
@@ -527,11 +530,11 @@ In the section about :ref:`Modeling <user-modeling>` you will learn how to creat
 Let's say you have a topic type "Publication" and you want all publications in your map to have a book icon.
 
 - Click onto the topic type "Publication", *not* onto an individual publication you already added. You are about to modify the general concept of all your publications, not an existing instance of it.
-- Use the little arrow in the upper right corner to open the detail panel.
+- Open the detail panel by selecting "Details" from the context menu.
 - Go to the fourth tab called "View". Here you can view and edit the configuration of the topic type. Click "Edit".
 - Click into the white field labeled "Icon".
 
-.. image:: _static/open-icon-selection.jpg
+.. image:: _static/open-icon-selection.png
 
 - You can either select an icon directly or use the search box.
 
@@ -733,11 +736,11 @@ Here is how creating a shared workspace works:
 
 * The new workspace automatically opens. Click onto the blue information icon next to the workspace selector to reveal the workspace topic itself on the topicmap.
 * To add members to the workspace you can just search for their user names and click them to reveal them on the map. As mentioned above, all user names are visible to all other logged in users. In DMX, membership is tied to user names.
-* If you don't know their user names you search for the topic type "Username" and open its "What's related" to see the existing user names in the detail panel. Reveal those you want to give access.
+* If you don't know their user names you search for the topic type "Username" and navigate its "Related" tab to see the existing user names in the detail panel. Reveal those you want to give access.
 * Now that you have the workspace itself and a user name on your topicmap you can just **create an association between the user name and the workspace**.
 * Next you have to qualify this association as a membership: Edit the association.
 
-.. image:: _static/edit-ws-assoc.jpg
+.. image:: _static/edit-ws-assoc.png
     :width: 300
 
 * In the detail panel you can now select the association type "Membership". You are done!
@@ -974,9 +977,9 @@ The topic types with all their properties (that is associations to other topic t
 To understand how topic types and association types are built you can thus just navigate them.
 
 To explore an example, we can once more refer to the built-in topic type "Person".
-To look at the data model of a person, click onto an instance, e.g. a person you created and select "What's related".
+To look at the data model of a person, click onto an instance, e.g. a person you created and select "Related".
 
-.. image:: _static/context-menu.png
+.. image:: _static/person-related.png
     :width: 220
 
 The :ref:`detail panel<user-the-detail-panel>` on the right side will open.
@@ -992,9 +995,9 @@ It displays a list of all items that are logically related to this concrete pers
 You can now click on each of the list items and they will appear on the topicmap.
 Click onto the topic type "person".
 The topic type "person" is displayed with an association to the instance "Cathy Jones".
-The link between both has a different color and you can again click onto the link, show "What's related" and you can see that this association is an "instantiation":
+The link between both has a different color and you can again click onto the link, show what is related and you can see that this association is an "instantiation":
 The topic is one instance of the topic type.
-To see if there are more instances (more persons), show the "What's related" of the topic type "person".
+To see if there are more instances (more persons), show the "Related" tab of the topic type "person".
 Among other information about how the topic type is integrated into the rest of the context you can see all existing persons you entered so far.
 
 Here you are looking at your data and at a part of the data model it is based upon.
@@ -1016,6 +1019,6 @@ They show as associations connected to other associations.
 
 Let's return to the example of a publication and its author:
 The authorship is a qualified description of the association between a person and a publication.
-If you reveal the "What's related" of such a qualified association you can see the connection between the association and and the association type: 
+If you look at the "Related" tab of such a qualified association you can see the connection between the association and and the association type: 
 
 .. image:: _static/edge-connection.jpg
