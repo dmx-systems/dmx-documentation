@@ -177,7 +177,19 @@ This tab lists *all* items related to your selection:
 The "Meta" tab
 --------------
 
-The third tab "Meta" is still under development, so right now you don't see anything there.
+The third tab "Meta" displays a summary of metadata about the selected item:
+
+* the item's unique identifier (ID)
+* the URI
+* the creation date and the author's user name
+* the date of the last modification and the respective author's user name
+* the workspace this item is in as well as the workspace owner's name
+* the topic type
+* all topicmaps the item is *currently* revealed on
+
+Note that in contrast to the Meta tab the "Related tab" lists *all* related database content, e.g. also topicmaps the item was revealed on at some point in time.
+
+.. image:: _static/detail-panel-meta-tab.png
 
 .. _user-detail-panel-the-view-tab:
 
