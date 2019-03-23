@@ -67,7 +67,7 @@ DMX interpreted both as given name.
 Let's correct this:
 Long-press the rectangle and select "edit" from the :ref:`context menu <user-the-context-menu>`.
 
-.. image:: _static/context-menu-edit.jpg
+.. image:: _static/context-menu-edit.png
 
 On the right-hand side the :ref:`detail panel <user-the-detail-panel>` opens.
 It contains many fields you might need for all persons.
@@ -147,8 +147,8 @@ Click "Save".
 
 .. image:: _static/organization-association.png
 
-This is a machine-readable association:
-You can open the context menu of the organization with a right-click and select "What's related".
+This is a meaningful association:
+You can open the context menu of the organization with a right-click and select "Related".
 If you have entered more than one person, you can scroll down in the detail panel to see all persons and their respective roles in the organization.
 
 .. image:: _static/organizational-roles.png
