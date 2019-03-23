@@ -107,9 +107,20 @@ Read more on how to create content in the section about :ref:`Content Authoring<
 The Detail Panel
 ================
 
-The detail panel offers lots of features to explore your data so here is an in-depth introduction to the detail panel.
+The detail panel is located at the right side of the screen when it is open.
+You open it by clicking "Details", "Edit", or "Related" in the :ref:`context menu<user-the-context-menu>`.
+
+.. image:: _static/detail-panel.png
+
+The detail panel offers much more features to explore and edit your data than the :ref:`in-map details<user-in-map-details>` shown above.
+Depending on what you want to do you can choose where you want to display details - in-map or in the detail panel.
+DMX avoids to display redundant information by not opening both at the same time (*unless* you explicitly :ref:`pin<user-pinning-things>` the in-map details to your map to leave them open).
 
 The detail panel can only be opened if you have selected an item on the map and it will stay open as long as you have selected an item.
+Once you close the detail panel the selection is cleared.
+When you unselect an item the detail panel closes.
+
+Note that the detail panel can only display details of a single selected item, not when you :ref:`bulk select<user-bulk-selection>` several items.
 
 .. _user-detail-panel-the-info-tab:
 
@@ -148,6 +159,15 @@ It lists *all* items related to your selection:
 
 * The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
 * Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.
+* **When revealing listed items on the topicmap you can control whether the focus should stay with the current item or switch to the next one:** When you click anywhere onto a list item, it is revealed and the focus switches (figure 1). To keep the focus where it is click *the icon* of a different item to just reveal it (figure 2). This is how can quickly bring all relevant related items up on your topicmap.
+
+.. figure:: _static/related-tab-reveal-and-select.png
+
+    Figure 1: Reveal and select.
+
+.. figure:: _static/related-tab-reveal.png
+
+    Figure 2: Reveal without selecting.
 
 .. _user-detail-panel-the-meta-tab:
 
@@ -321,6 +341,8 @@ To abort let go of both the "Alt" key and the mouse button *while the cursor is 
 
 .. image:: _static/delete-item.png
 
+.. _user-bulk-deletion:
+
 Bulk deletion
 -------------
 
@@ -441,6 +463,9 @@ Hiding things
 
 You can hide items from the topicmap by long-clicking onto them and using the "Hide" button in the context menu.
 If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
+All previously revealed associations do so as well (see :ref:`Automatic Revelation of Associations<user-automatic-relevation of associations>`).
+
+.. _user-pinning-things:
 
 Pinning things
 ==============
@@ -552,9 +577,9 @@ Associative navigation
 ======================
 
 As DMX is made to work like a human brain you can navigate in an associative way.
-The "What's related" tab of the :ref:`detail panel<user-the-detail-panel>` detail panel permits you to navigate the database by listing all associated items.
+The "Related" tab of the :ref:`detail panel<user-the-detail-panel>` detail panel permits you to navigate the database by listing all associated items.
 
-Open the "What's related" of an item to get there.
+Use the "Related" button in the context menu to get there.
 
 .. image:: _static/related.png
 
@@ -600,6 +625,28 @@ Using the back button of your browser brings you back to the situation you were 
 It is not an "undo" though:
 Going back does not revert your latest change.
 
+.. _user-automatic-relevation of associations:
+
+Automatic revelation of associations
+====================================
+
+Whenever you hide items, all visible associations connected to this item are hidden, too, as illustrated by the following example.
+This is because associations cannot lack the player at the other end.
+
+This is the original state of your topicmap:
+
+.. image:: _static/automatic-association-revelation1.png
+
+Here, the person is hidden as well as all associations that were revealed before:
+
+.. image:: _static/automatic-association-revelation2.png
+
+If you want to restore the view you had earlier you can just reveal the person and all associations *that were not explicitly hidden* before are brought back onto the topicmap.
+Note that if you hide one of the person's associations manually, this association stays hidden when you hide and reveal the person.
+In this case the topicmap would look like this before and after revealing the person:
+
+.. image:: _static/automatic-association-revelation3.png
+
 .. _user-collaboration-and-sharing:
 
 *************************
@@ -621,9 +668,9 @@ Only privileged accounts (like admin) can create user accounts.
 
 .. image:: _static/user-account-password.jpg
 
-What is displayed after account creation is just the *user name*.
+What is displayed after account creation is just the *user name*?
 The *user account* consists of the user name and the password.
-Investigate the newly created user name by revealing "What's related".
+Investigate the newly created user name via the "Related" button.
 The user name is associated with some information:
 
 * disk quota: how much space the user can use on the computer
