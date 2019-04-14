@@ -13,11 +13,11 @@ Below you can find how to get started on :ref:`Windows <installation-windows>`, 
 Running DMX on Windows
 **********************
 
-Install a Java Runtime Environment
-==================================
+Install a Java Runtime Environment version 8
+============================================
 
 Go to `Oracle's website <https://java.com/en/download/>`_ and download the recommended Java version.
-Currently, this is Java 8.
+Currently, this is **Java 8**.
 Any version from Java 6 to 8 will work out of the box with DMX.
 Execute the JavaSetup*.exe with a double-click and click through the installer.
 
@@ -125,19 +125,21 @@ You can start it from an unpacked zip file *or* you can install it from our APT 
 Install a Java Runtime Environment
 ==================================
 
-Use your package manager to install the default Java Runtime Environment for your Linux distribution.
+Use your package manager to install the Java 8 for your Linux distribution.
 
 For example, on Debian / Ubuntu, you would run the command
 
 .. code:: bash
 
-    sudo apt install default-jre
+    sudo apt install openjdk-8-jre
 
-to install OpenJDK/JRE. On CentOS / Fedora, this would be
+to install OpenJDK/JRE. Make sure that Java 8 (not 11) is used by running
 
 .. code:: bash
 
-    sudo yum install java-<version>-openjdk
+    sudo update-alternatives --config java
+
+and selecting the right version interactively.
 
 .. _installation-linux-zip:
 
@@ -200,7 +202,7 @@ For apt-based Linux distributions (like Debian / Ubuntu) we provide a repository
 It is intended for installations on servers but can obviously be used on Debian/Ubuntu laptops as well.
 The package has a built-in dependency to default-jre.
 
-.. warning:: If your Java Runtime Environment is newer than Java 9, you cannot use the repository for the moment. Check your version by running the command ``java -version``.
+.. warning:: If your Java Runtime Environment is newer than Java 8, you cannot use the repository for the moment. Check your version by running the command ``java -version``.
 
 Here is how to add the repository:
 
