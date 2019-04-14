@@ -9,6 +9,7 @@ Welcome to DMX's documentation!
 .. toctree::
    :maxdepth: 2
 
+   intro
    install
    tutorial
    user
