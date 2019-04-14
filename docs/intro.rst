@@ -47,3 +47,9 @@ DMX as a service hosted by us
 If you use DMX on one of our demo sites or if you have a hosting contract with DMX Systems UG your data is stored on our server.
 In this case you also need an internet connection to work with it.
 
+*****************************
+About this documentation site
+*****************************
+
+This documentation is hosted by `Read the Docs <https://readthedocs.org/>`_.
+As Read the Docs offers free hosting of documentation they kindly ask users to allow ads to be displayed at the bottom of the left sidebar. You can read more about it `here <https://docs.readthedocs.io/en/latest/advertising/ethical-advertising.html>`_.
