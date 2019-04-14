@@ -47,6 +47,30 @@ Find out how to add topicmaps in the section :ref:`user-organizing-the-working-c
 
 .. image:: _static/topic-map-selector.png
 
+.. _user-the-fit-button:
+
+The Fit Button
+--------------
+
+Next to Topicmap Selector you can find the fit button.
+It has for arrows pointing from the center to the corners of a square.
+This button adjusts the zoom level of a topicmap to make it fit into the browser window.
+
+.. figure:: _static/upper-toolbar-fit-button.png
+    :alt: Tool bar with highlighted fit button
+
+.. _user-the-reset-zoom-button:
+
+The Reset Zoom Button
+---------------------
+
+Next, there is the reset zoom button.
+It has two arrows pointing from the corners to the center of a square.
+It resets the zoom level to "1" and centers the topicmap in its original position.
+
+.. figure:: _static/upper-toolbar-reset-zoom-button.png
+    :alt: Tool bar with highlighted reset zoom button
+
 The Login Button
 ----------------
 
@@ -79,6 +103,12 @@ It has four buttons to interact with the item:
 To close the context menu *without* any action, click into its middle.
 
 .. image:: _static/context-menu.png
+    :width: 250
+
+Note that the context menu shows whether you have write permission to an item or not.
+If the terms "edit" or :ref:`"delete"<user_deleting-things>` are grayed out, you cannot edit the content.
+
+.. image:: _static/context-menu-no-permission.png
     :width: 250
 
 .. _user-in-map-details:
@@ -344,6 +374,8 @@ Select the term you want to embed the link into and use the editor's "T" icon to
 
 .. image:: _static/clickable-inline-topic-links.png
 
+.. _user_deleting-things:
+
 Deleting things
 ===============
 
@@ -468,6 +500,7 @@ Panning/zooming the topicmap
 
 Zooming in or out is done by scrolling up or down.
 Your cursor is the focus for panning.
+The :ref:`fit<user-the-fit-button>` and :ref:`reset zoom<user-the-reset-zoom-button>` buttons in the upper toolbar help you to readjust a topicmap to your screen respectively to its original position.
 
 .. _user-hiding-items:
 
