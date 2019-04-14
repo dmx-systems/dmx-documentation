@@ -9,7 +9,6 @@ The Settings File
 *****************
 
 The DMX settings file is located in ``conf/config.properties``.
-If you are using the Debian/Ubuntu package, it is in ``/etc/deepamehta/deepamehta.conf``.
 The settings are basically explained inline in the comments, too.
 
 The Webserver
@@ -187,8 +186,6 @@ Line breaks must be escaped with backslash (\\).
 
    felix.fileinstall.dir = bundle-deploy
 
-   LInux: /usr/share/deepamehta/bundle-deploy
-
 
 Host
 ====
@@ -225,7 +222,6 @@ The path to the DMX Database
 
 Your DMX database will be created in a directory that you can configure.
 In the self-contained default distribution, it is created in a folder called ``dmx-db`` in the working directory.
-In the Debian/Ubuntu package the default path to the database is ``/var/lib/deepamehta/deepamehta-db``.
 
 .. code:: bash
 
