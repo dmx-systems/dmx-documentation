@@ -269,3 +269,92 @@ OSGi Runtime
 
    org.osgi.framework.storage = bundle-cache
    felix.auto.deploy.action = install,start
+
+
+******************************************
+Running DMX behind an Apache Reverse Proxy
+******************************************
+
+Enable a few Apache modules before you start:
+
+.. code:: bash
+
+   a2enmod ssl
+   a2enmod rewrite
+   a2enmod proxy
+   a2enmod proxy_http
+   a2enmod proxy_wstunnel
+
+This is an example configuration for Apache 2.4.
+The web server handles SSL.
+
+.. code:: bash
+
+   <VirtualHost *:80>
+       ServerName dmx.example.org
+       # This docroot is not used by DMX but for the Letsencrypt webroot challenge:
+       DocumentRoot /var/www/dmx.example.org
+
+       # Rewrite everything to https except for the URI required by Letsencrypt on port 80:
+       RewriteEngine On
+       RewriteCond %{HTTPS} off
+       RewriteCond %{REQUEST_URI} !^/\.well-known/acme\-challenge/
+       RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+       LogLevel error
+       ErrorLog /var/log/apache2/dmx.example.org_error.log
+       CustomLog /var/log/apache2/dmx.example.org_access.log combined
+   </VirtualHost>
+
+   <VirtualHost *:443>
+       ServerName dmx.example.org
+       DefaultType text/html
+       SSLEngine On
+       SSLCertificateFile /etc/letsencrypt/live/dmx.example.org/cert.pem
+       SSLCertificateKeyFile /etc/letsencrypt/live/dmx.example.org/privkey.pem
+       SSLCertificateChainFile /etc/letsencrypt/live/dmx.example.org/chain.pem
+
+       ErrorLog /var/log/apache2/dmx.example.org-ssl-error.log
+       CustomLog /var/log/apache2/dmx.example.org-ssl-access.log combined
+
+       ProxyStatus On
+       ProxyPreserveHost Off
+       AllowEncodedSlashes NoDecode
+
+       <Proxy *>
+           Order deny,allow
+           Allow from all
+       </Proxy>
+
+       # This is the forwarding for the websockets. Always keep it the first rule.
+       # Do not forget to enable module proxy_wstunnel
+
+       RewriteEngine On
+       RewriteCond %{HTTP:Upgrade} =websocket
+       # the internal IP address
+       RewriteRule /(.*)           ws://10.0.1.2:8081/$1 [NE,P,L]
+       RewriteRule "." "-" [END]
+       # This is the default rewrite for the webclient
+       RewriteRule ^/$ https://%{HTTP_HOST}/systems.dmx.webclient/ [R,L]
+   
+       <Location />
+           ProxyPass http://10.0.1.2:8080/ nocanon
+           ProxyPassReverse http://10.0.1.2:8080/
+       </Location>
+   </VirtualHost>
+
+Your ``conf/config.properties`` file would then look like this:
+
+.. code:: bash
+
+   # the port you are proxying traffic to:
+   org.osgi.service.http.port = 8080
+   org.apache.felix.http.enable = true
+   # HTTPS is handled by Apache2 beforehand:
+   org.apache.felix.https.enable = false
+   dmx.websockets.port = 8081
+   dmx.websockets.url = wss://dmx.example.org
+   # the IP address your internal traffic comes from via Apache2:
+   dmx.security.subnet_filter = 10.0.1.1/32
+   dmx.host.url = https://dmx.example.org/
+
