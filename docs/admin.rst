@@ -354,3 +354,16 @@ Your ``conf/config.properties`` file would then look like this:
    dmx.security.subnet_filter = 10.0.1.1/32
    dmx.host.url = https://dmx.example.org/
 
+************
+Securing DMX
+************
+
+Drop incoming requests on port 8080
+===================================
+
+On a server installation port 8080 should only be reachable from localhost.
+Drop all incoming requests on port 8080 like so:
+
+.. code:: bash
+
+    iptables -A INPUT ! -s 127.0.0.1 -p tcp --destination-port 8080 -j REJECT
