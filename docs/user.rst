@@ -1068,8 +1068,12 @@ If you look at the "Related" tab of such a qualified association you can see the
 
 .. image:: _static/edge-connection.jpg
 
+.. _user-modeling-patterns-and-pitfalls:
+
 Modeling patterns and pitfalls
 ==============================
+
+.. _user-model-dates-or-time-spans:
 
 How to model topic types with dates or time spans?
 --------------------------------------------------
