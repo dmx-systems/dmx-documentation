@@ -948,10 +948,20 @@ If you are sure you do not need it, you can explicitly delete it.
 
 .. image:: _static/changing-a-persons-name2.png
 
-.. _user-creating-a-topic-type:
+.. _user-creating-a-simple-topic-type:
 
-Creating a topic type
-=====================
+Creating a simple topic type
+============================
+
+You can add a topic type via the Search & Create Dialog.
+Search for what you want to add.
+If it does not exist in the DMX database, yet, select the topic type "Topic Type" and click "Create".
+By default, a new topic type has the simple data type "Text".
+
+.. _user-creating-a-composite-topic-type:
+
+Creating a composite topic type
+===============================
 
 To create your own topic type with a few properties here is how to proceed.
 Let's say you want to add a topic type "publication".
@@ -961,6 +971,7 @@ Each publication shall have a title and a year.
 - Go into editing mode via the context menu. Change the data type from "Text" to "Identity" and hit "Save". Click somewhere into your map to close the detail panel.
 - Open the search field and enter "Title". You will find that two entries already exist. They come from the default topics types "Event" and "Note" which also have titles. Create a new topic type "Title".
 - Create an association between the title item and the publication item. DMX will display what you just created:
+
   * You created an association of the type "Composition Definition". Composition Definition means that you are defining a more complex context between items on your map: The relationship between a publication, a title and a year. 
   * "Cardinality: One" means that each publication has exactly one title, not more. 
   * The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.
@@ -968,12 +979,22 @@ Each publication shall have a title and a year.
 .. image:: _static/composition-definition.jpg
     :width: 300
 
-- Again, click somewhere onto the map and reopen the search field. Search for the year and open the existing topic type. Pull it onto the publication.
+.. _user-identity-attributes:
+
+.. note:: **Identity Attributes**
+
+    For a composite with the data type "identity" you should define at least one identity attribute. The identity attribute is the item's unique identifier - the information that makes it unique. If needed, you can define more than one identity attribute.
+
+- Add an identity attribute. In our example the title shall be the unique identifier of the publication. You thus edit the association you just created between the title and the publication. Tick the checkbox "Identity Attribute". (In real life, you would maybe use the ISBN number as the identity attribute or as one of several identity attributes.)
+
+.. image:: _static/select-identity-attribute.png
+
+- Again, click somewhere onto the map and reopen the search field. Search for the year and open the existing topic type "Year". Pull it onto the publication.
 
 You are now ready to use this data model you just built to add content.
 
 - Open the search field and enter the title of a publication. From the Topic Type menu you can now select "Publication".
-- As the title was the first property you added to the composition, it is automatically filled in from the search field.
+- As the identity attribute the title is automatically filled in from the search field.
 - Edit your new publication and add a year.
 
 Creating an association type
@@ -1136,3 +1157,24 @@ Your data model now looks like this:
 To check, create an instance, a tree, click edit, you now have a form for dates.
 
 .. image:: _static/time-span-form.png
+
+.. _user-change-order-of-fields:
+
+How to change the order of fields in a form?
+--------------------------------------------
+
+You modeled a composite and when you created your first instance you saw that the fields are in the wrong order?
+You can fix it.
+DMX creates the form in the order you created the associations in when modeling.
+In this example we will change the order of the "To" and "From" fields:
+
+.. image:: _static/change-field-order1.jpg
+
+Both fields are associated to a composite "Blooming period".
+Edit that composite.
+
+.. image:: _static/change-field-order2.png
+
+In the detail panel you can now drag the child types into the right order with your mouse.
+
+.. image:: _static/change-field-order3.png
