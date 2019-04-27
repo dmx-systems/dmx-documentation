@@ -1178,3 +1178,19 @@ Edit that composite.
 In the detail panel you can now drag the child types into the right order with your mouse.
 
 .. image:: _static/change-field-order3.png
+
+.. _user-unclutter-choice-of-topic-types:
+
+How to unclutter the choice of Topic Types
+------------------------------------------
+
+When you have created many topic types for building composites you will notice that the drop-down menu for topic type creation fills up with topic types you might not need there.
+
+.. image:: _static/cluttered-create-menu.png
+
+To clean up, reveal a topic type you want to hide from the create menu on your topicmap.
+Open the detail panel by selecting "Details" from the context menu.
+In the detail panel switch to the fourth tab, the "View" tab and edit the View Configuration.
+Untick the "Add to Create Menu" checkbox and save the change.
+
+.. image:: _static/remove-from-create-menu.png
