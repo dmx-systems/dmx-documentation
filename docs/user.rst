@@ -968,7 +968,7 @@ Let's say you want to add a topic type "publication".
 Each publication shall have a title and a year.
 
 - Open the search field. Enter "Publication", select "Topic Type" and press "create".
-- Go into editing mode via the context menu. Change the data type from "Text" to "Identity" and hit "Save". Click somewhere into your map to close the detail panel.
+- Go into editing mode via the context menu. **Change the data type from "Text" to "Identity"** and hit "Save". Click somewhere into your map to close the detail panel.
 - Open the search field and enter "Title". You will find that two entries already exist. They come from the default topics types "Event" and "Note" which also have titles. Create a new topic type "Title".
 - Create an association between the title item and the publication item. DMX will display what you just created:
 
@@ -989,12 +989,16 @@ Each publication shall have a title and a year.
 
 .. image:: _static/select-identity-attribute.png
 
+- Right below that checkbox there is another one called "Include in Label". Tick it for the information that should be used in the item's name. It determines which attribute is shown on the topicmap and on top in the detail panel. In this example we want the book title to appear there.
+
+.. image:: _static/include-in-label.png
+
 - Again, click somewhere onto the map and reopen the search field. Search for the year and open the existing topic type "Year". Pull it onto the publication.
 
 You are now ready to use this data model you just built to add content.
 
 - Open the search field and enter the title of a publication. From the Topic Type menu you can now select "Publication".
-- As the identity attribute the title is automatically filled in from the search field.
+- The title is automatically filled in from the search field.
 - Edit your new publication and add a year.
 
 Creating an association type
@@ -1181,7 +1185,7 @@ In the detail panel you can now drag the child types into the right order with y
 
 .. _user-unclutter-choice-of-topic-types:
 
-How to unclutter the choice of Topic Types
+How to unclutter the choice of topic types
 ------------------------------------------
 
 When you have created many topic types for building composites you will notice that the drop-down menu for topic type creation fills up with topic types you might not need there.
