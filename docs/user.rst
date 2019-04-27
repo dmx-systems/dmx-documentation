@@ -1136,3 +1136,24 @@ Your data model now looks like this:
 To check, create an instance, a tree, click edit, you now have a form for dates.
 
 .. image:: _static/time-span-form.png
+
+.. _user-change-order-of-fields:
+
+How to change the order of fields in a form?
+--------------------------------------------
+
+You modeled a composite and when you created your first instance you saw that the fields are in the wrong order?
+You can fix it.
+DMX creates the form in the order you created the associations in when modeling.
+In this example we will change the order of the "To" and "From" fields:
+
+.. image:: _static/change-field-order1.jpg
+
+Both fields are associated to a composite "Blooming period".
+Edit that composite.
+
+.. image:: _static/change-field-order2.png
+
+In the detail panel you can now drag the child types into the right order with your mouse.
+
+.. image:: _static/change-field-order3.png
