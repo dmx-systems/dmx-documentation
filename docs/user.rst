@@ -1067,3 +1067,68 @@ The authorship is a qualified description of the association between a person an
 If you look at the "Related" tab of such a qualified association you can see the connection between the association and and the association type: 
 
 .. image:: _static/edge-connection.jpg
+
+Modeling patterns and pitfalls
+==============================
+
+How to model topic types with dates or time spans?
+--------------------------------------------------
+
+Let's say you want to model plants.
+Among other properties, they shall have a blooming period.
+Here is how to proceed:
+
+Create a topic type "Tree".
+Edit it and change its data type to "identity".
+
+.. note:: **The data type "identity"**
+
+    #. Your tree is more complex than just a text field or a number: You want to add properties to it. You thus do not need a simple but a :ref:`composite data type<user-composites-and-composition-definitions>`.
+    #. You choose "identity" (not "value") because upon a change of properties you still mean the same tree. You want to add, remove, or change properties, the number of properties might grow over time. By choosing the data type "identity" you tell DMX that regardless of those changes you will mean the same thing.
+
+Create a topic type "Tree name".
+It can keep the default data type "text". 
+Create an association between the "Tree name" and the "Tree".
+By dragging from the child type ("Tree name") to the parent type ("Tree") you assign the right order on the fly.
+
+Create a topic type "Blooming period".
+Edit it and change its data type to "value".
+Create an association between the topic type "Blooming period" and the topic type "Tree".
+
+.. note:: **The data type "value"**
+
+    #. Your blooming period is also more complex than a number. Even a single date (instead of a period with a beginning and an end) consists of more than a number, e.g. a day, a month, and a year. So you need a :ref:`composite data type<user-composites-and-composition-definitions>` here, too.
+    #. You choose "value" (not "identity") because your data will just *not* stay identical when you change it. The blooming periods "April to June" and "June to July" are different blooming periods (even if they change for the same plant).
+
+To add dates to your topic type "Blooming period", just use the predefined date topic type:
+Search for it and reveal it on the topicmap.
+
+.. image:: _static/search-results-date.png
+
+Investigate it by looking at the in-map details.
+
+.. image:: _static/details-date.png
+
+In the next step you assign *two* dates to the topic type "Blooming period":
+The start date and the end date.
+
+.. note:: **Custom Association Types**
+
+    You cannot create two or more associations of the same association type between two items. Use "Custom Association Types" to avoid errors.
+
+Create the first association between the topic type "Date" and the topic type "Blooming period".
+Edit the association and open the drop-down menu called "Custom Association Type".
+Select "From".
+
+.. image:: _static/custom-association-type-from.png
+
+For the end date create another association between the topic type "Date" and the topic type "Blooming period".
+Edit it, too, and select the Custom Association Type "To" this time.
+
+Your data model now looks like this:
+
+.. image:: _static/modeling-time-span.png
+
+To check, create an instance, a tree, click edit, you now have a form for dates.
+
+.. image:: _static/time-span-form.png
