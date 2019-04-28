@@ -747,7 +747,7 @@ DMX has five sharing modes:
 * **private**: In a private workspace just the owner of the workspace can read and write.
 * **confidential**: In a confidential workspace the owner can read and write. Workspace members can read, but not change anything.
 * **collaborative**: A collaborative workspace can be read and edited by the owner and by all workspace members.
-* **public**: A public workspace is world-readable. The default "DMX" workspace is an example of a public workspace.
+* **public**: A public workspace is world-readable. It can be read and edited by the owner and by all workspace members. The default "DMX" workspace is an example of a public workspace.
 * **common**: In a common workspace everyone can read and write even without signing in with DMX. That is, if the DMX instance is connected to the internet, a common workspace is readable and writable to *everyone* on the internet.
 
 Every workspace has an owner, usually the creator, and optional members.
