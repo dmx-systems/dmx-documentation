@@ -39,7 +39,7 @@ DMX as a self-hosted service
 ============================
 
 If you are running DMX on your own server or if someone shares their self-hosted instance with you, your data are on that person's server.
-To with DMX on a remote server you need an internet connection to communicate with the server.
+To work with DMX on a remote server you need an internet connection to communicate with the server.
 
 DMX as a service hosted by us
 =============================
