@@ -13,7 +13,8 @@ It is developed by `DMX Systems <https://dmx.berlin>`_.
 DMX is Free Software
 ********************
 
-DMX is licensed under the `GPLv3 <https://www.gnu.org/licenses/gpl.html>`_ or later. Visit `git.dmx.systems <https://git.dmx.systems/explore>`_ to explore the code.
+DMX is licensed under the `GPLv3 <https://www.gnu.org/licenses/gpl.html>`_ or later.
+Visit `git.dmx.systems <https://git.dmx.systems/explore>`_ to explore the code.
 
 .. _intro-data-sovereignty:
 
