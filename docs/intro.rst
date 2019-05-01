@@ -5,7 +5,7 @@ Introduction
 ############
 
 DMX is a platform for knowledge management and collaboration.
-It is developed by `DMX Systems UG <https://dmx.berlin>`_.
+It is developed by `DMX Systems <https://dmx.berlin>`_.
 
 .. _intro-license:
 
