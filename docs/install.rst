@@ -146,9 +146,6 @@ and selecting the right version interactively.
 Run DMX from a zip archive
 ==========================
 
-If you choose to run DMX from a zip archive you do not install any other packages on your computer.
-The binaries and your database are all right in the DMX folder.
-
 Download DMX
 ------------
 
@@ -219,7 +216,7 @@ Configure DMX
 
 For server installations and advanced configuration we will soon provide instructions in the :ref:`Admin Documentation <admin>`.
 By default, DMX will listen on port 8080.
-You can set the admin passphrase in ``/etc/deepamehta/deepamehta.conf``.
+Before starting DMX you can set the initial admin passphrase in ``/etc/deepamehta/deepamehta.conf``.
 
 .. hint:: Log in as "admin" with the default passphrase "YOUR_SECRET_PASSWORD_HERE".
 
