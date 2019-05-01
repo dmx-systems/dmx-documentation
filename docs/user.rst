@@ -374,6 +374,21 @@ Select the term you want to embed the link into and use the editor's "T" icon to
 
 .. image:: _static/clickable-inline-topic-links.png
 
+.. _user_uploading-or-embedding-images:
+
+Uploading or embedding images
+-----------------------------
+
+To upload or embed an image, you have to go via the richtext editor right now.
+The richtext editor is accessible in all HTML fields, e.g. in a Note.
+Write text into the HTML field and select some of it.
+The richtext editor opens.
+
+.. image:: _static/richtext-editor-upload-embed.png
+
+The image icon lets you upload an image from your computer into the DMX database.
+The film icon lets you embed an image from a website. (For the detailed use, please see the respective :ref:`modeling example<user-model-composite-with-composite>` below.)
+
 .. _user_deleting-things:
 
 Deleting things
@@ -1161,6 +1176,62 @@ Your data model now looks like this:
 To check, create an instance, a tree, click edit, you now have a form for dates.
 
 .. image:: _static/time-span-form.png
+
+.. _user-model-composite-with-composite:
+
+How to model a composite with a related composite?
+--------------------------------------------------
+
+Let's stick with the example of modeling plants.
+For each plant you want to have the possibility to add images.
+The form in the detail panel of a plant shall include all necessary details about an image:
+You want each image to have a title, an attribution, and the image itself (whether embedded or uploaded).
+
+Create a topic type "Tree".
+Edit it and change its data type to "identity".
+
+Create a topic type "Tree Image".
+Change its data type to "value".
+
+.. note:: **The data type "value"**
+
+    In this example, we want the "Tree Image" to represent the following: If we change any of its properties, it would no longer be the same image. If we change the title, the attribution or the link to the actual image file, it shall be a different image.
+
+Add three more topic types:
+
+* Image Title (data type text)
+* Attribution (data type text)
+* Link to image (data type HTML)
+
+Create associations between the topic types:
+
+* Pull the "Tree Image" onto the "Tree". Edit the association. Change the cardinality to "Many" so that you can add several images to each tree.
+* Create associations from each of the other three topic types to the "Tree Image".
+
+You now have this view:
+
+.. image:: _static/data-model-tree-image.png
+
+Investigate your composite "Tree Image":
+
+.. image:: _static/in-map-details-composite-tree-image.png
+
+Next, we have to edit an association inside the composite "Tree Image":
+Edit the first association (Tree Image -> Image Title). The "Image Title" shall be the **unique identifier of our composite** "Tree Image". Set the "Identity Attribute" and the "Include in Label" button to *true*.
+
+.. image:: _static/detail-panel-identity-and-label.png
+
+The model is ready to use: Create an instance of "Tree". Your edit form now has fields to enter all properties of your image. You have an "add" button (with a "+") to add more than one image, as you stated that a tree can have many images (cardinality "Many").
+
+.. image:: _static/detail-panel-with-included-composite-edit-mode.png
+
+When you save the details, the detail panel hides the empty fields.
+
+.. image:: _static/detail-panel-with-included-composite.png
+
+The in-map details also just display the information you entered while empty fields are hidden. 
+
+.. image:: _static/data-model-with-details-of-instance.png
 
 .. _user-change-order-of-fields:
 
