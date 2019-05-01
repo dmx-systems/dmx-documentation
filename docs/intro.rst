@@ -44,7 +44,7 @@ To with DMX on a remote server you need an internet connection to communicate wi
 DMX as a service hosted by us
 =============================
 
-If you use DMX on one of our demo sites or if you have a hosting contract with DMX Systems UG your data is stored on our server.
+If you use DMX on one of our demo sites or if you have a hosting contract with DMX Systems your data is stored on our server.
 In this case you also need an internet connection to work with it.
 
 *****************************
