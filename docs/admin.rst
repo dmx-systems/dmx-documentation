@@ -44,6 +44,7 @@ Here you configure the ports DMX will be listening on.
    # The URL the WebSocket clients use to connect to the WebSocket server
    dmx.websockets.url = ws://localhost:8081
    
+.. _admin-request-filters:
    
 Request Filters
 ===============
@@ -123,6 +124,7 @@ In future releases you will be able to use it.
    dmx.ldap.user_attribute = 
    dmx.ldap.filter = 
 
+.. _admin-workspace-sharing-modes:
 
 Workspace Sharing Modes
 =======================
