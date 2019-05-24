@@ -752,9 +752,9 @@ Introduction to workspaces and sharing modes
 
 In DMX workspaces are the highest level content is organized in.
 Workspaces can be compared to folders containing everything related to a working area, a project, or an area of life.
-Each topic and association is tied to exactly *one* workspace but you can display them in many topicmaps.
+**Each topic and association is tied to exactly *one* workspace but you can display them in many topicmaps.**
 A workspace can have one or many members who have access to its content.
-Read and write permissions are tied to workspaces.
+**Read and write permissions are tied to workspaces.**
 This feature makes workspaces the basis of collaboration and the key to the configuration of access control:
 
 DMX has five sharing modes:
@@ -763,13 +763,14 @@ DMX has five sharing modes:
 * **confidential**: In a confidential workspace the owner can read and write. Workspace members can read, but not change anything.
 * **collaborative**: A collaborative workspace can be read and edited by the owner and by all workspace members.
 * **public**: A public workspace is world-readable. It can be read and edited by the owner and by all workspace members. The default "DMX" workspace is an example of a public workspace.
-* **common**: In a common workspace everyone can read and write even without signing in with DMX. That is, if the DMX instance is connected to the internet, a common workspace is readable and writable to *everyone* on the internet.
+* **common**: For common workspaces, you can configure the behaviour in the configuration file ``config.properties``. You can decide whether you want to allow reading and/or writing for non-logged in users. If configured accordingly, a common workspace on a DMX instance connected to the internet can be readable and writable to *everyone* on the internet. See our :ref:`Admin Documentation<admin-request-filters>` for more details.
 
 Every workspace has an owner, usually the creator, and optional members.
 When you are logged in you can access the different workspaces via the :ref:`workspace selector<user-the-workspace-selector>` in the upper left corner.
 Once you log out DMX will switch back to a public (world-readable) workspace like the default workspace called "DMX".
 All items that are publicly readable stay visible, the rest disappears from the view.
 In a public workspace you are no longer able to edit but you still have a customizable view of the topicmap, which means that you can move items and reveal other world-readable items.
+If you explicitly do not want or need any of the five sharing modes, you can disable them via :ref:`configuration<admin-workspace-sharing-modes>`.
 
 .. image:: _static/workspace-selector.png
 
