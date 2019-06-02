@@ -207,16 +207,14 @@ Here is how to add the repository:
 
     $ sudo add-apt-repository "deb https://download.dmx.systems/repos/ubuntu/ xenial/"
     $ sudo apt update
-    $ sudo apt install deepamehta
-
-.. note:: The package will be renamed to DMX. DeepaMehta is DMX's predecessor's name.
+    $ sudo apt install dmx
 
 Configure DMX
 -------------
 
 For server installations and advanced configuration we will soon provide instructions in the :ref:`Admin Documentation <admin>`.
 By default, DMX will listen on port 8080.
-Before starting DMX you can set the initial admin passphrase in ``/etc/deepamehta/deepamehta.conf``.
+Before starting DMX you can set the initial admin passphrase in ``/etc/dmx/config.properties``.
 
 .. hint:: Log in as "admin" with the default passphrase "YOUR_SECRET_PASSWORD_HERE".
 
@@ -243,4 +241,4 @@ Stop the daemon by running
 
 .. code::
 
-    /etc/init.d/deepamehta stop
+    systemctl stop dmx
