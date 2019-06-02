@@ -330,14 +330,14 @@ The web server handles SSL.
        RewriteEngine On
        RewriteCond %{HTTP:Upgrade} =websocket
        # the internal IP address
-       RewriteRule /(.*)           ws://10.0.1.2:8081/$1 [NE,P,L]
-       RewriteRule "." "-" [END]
+       RewriteRule /(.*)           ws://127.0.0.1:8081/$1 [NE,P,L]
+       
        # This is the default rewrite for the webclient
        RewriteRule ^/$ https://%{HTTP_HOST}/systems.dmx.webclient/ [R,L]
    
        <Location />
-           ProxyPass http://10.0.1.2:8080/ nocanon
-           ProxyPassReverse http://10.0.1.2:8080/
+           ProxyPass http://127.0.0.1:8080/ nocanon
+           ProxyPassReverse http://127.0.0.1:8080/
        </Location>
    </VirtualHost>
 
@@ -351,9 +351,10 @@ Your ``conf/config.properties`` file would then look like this:
    # HTTPS is handled by Apache2 beforehand:
    org.apache.felix.https.enable = false
    dmx.websockets.port = 8081
+   # the external websocket url must be 'wss' for ssl encrypted connections
    dmx.websockets.url = wss://dmx.example.org
    # the IP address your internal traffic comes from via Apache2:
-   dmx.security.subnet_filter = 10.0.1.1/32
+   dmx.security.subnet_filter = 127.0.0.1/32
    dmx.host.url = https://dmx.example.org/
 
 ************
