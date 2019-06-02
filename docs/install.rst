@@ -201,23 +201,19 @@ The package has a built-in dependency to default-jre.
 
 .. warning:: If your Java Runtime Environment is newer than Java 8, you cannot use the repository for the moment. Check your version by running the command ``java -version``.
 
-Here is how to add the repository:
+Here is how to download and execute our install script.
+It adds the repository, installs DMX from it, prompts the user for the DMX admin passphrase and starts DMX as a daemon.
 
 .. code:: bash
 
-    $ sudo add-apt-repository "deb https://download.dmx.systems/repos/ubuntu/ xenial/"
-    $ sudo apt update
-    $ sudo apt install dmx
-
-During installation you are prompted for the DMX admin passphrase.
-It is saved in ``/etc/dmx/config.properties``.
+    $ curl -sS https://download.dmx.systems/repos/dmx-install.sh | sudo bash
 
 Configure DMX
 -------------
 
-For server installations and advanced configuration we will soon provide instructions in the :ref:`Admin Documentation <admin>`.
-By default, DMX will listen on port 8080.
-
+For server installations and advanced configuration we will soon provide more instructions in the :ref:`Admin Documentation <admin>`.
+By default, DMX listens on port 8080.
+The main configuration file is located in ``/etc/dmx/config.properties``.
 
 Start DMX
 ---------
