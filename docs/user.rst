@@ -581,8 +581,8 @@ Customizing the Look & Feel
 
 .. _user-topic-type-icons:
 
-Assigning icons to topic types
-------------------------------
+Assigning icons and colors to topic types
+-----------------------------------------
 
 You can assign icons from the Font Awesome collection to your topic types.
 Editing the view configuration is explained with the topic type "Publication".
@@ -603,6 +603,18 @@ Let's say you have a topic type "Publication" and you want all publications in y
 - Hit save to apply the icon to all topics that are publications.
 
 .. image:: _static/new-icon.jpg
+
+Adding colors to different topic types can help you to keep track of your content on a populated topic map.
+You can customize both the icon color and the background of a topic type.
+The settings are in the "View" tab of a topic type as well.
+Each of them lets you open a color picker or enter a 6 digit color hexcode.
+
+.. image:: _static/color-picker.png
+    :width: 300
+
+After saving, all instances of that topic type are recolored to match your setting.
+
+.. image:: _static/topic-type-icon-bg-color.png
 
 .. _user-assigning-colors-to-association-types:
 
@@ -992,7 +1004,7 @@ Each publication shall have a title and a year.
   * "Cardinality: One" means that each publication has exactly one title, not more. 
   * The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.
 
-.. image:: _static/composition-definition.jpg
+.. image:: _static/composition-definition.png
     :width: 300
 
 .. _user-identity-attributes:
