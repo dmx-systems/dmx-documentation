@@ -42,8 +42,8 @@ Start DMX
 =========
 
 Enter the folder that was created when you unpacked the zip archive.
-Double-click the file ``deepamehta-windows.bat``.
-If your Explorer does not display file extensions, you only see ``deepamehta-windows`` as a file name.
+Double-click the file ``dmx-windows.bat``.
+If your Explorer does not display file extensions, you only see ``dmx-windows`` as a file name.
 That is the same file.
 
 A black terminal window opens to display what is happening.
@@ -93,7 +93,7 @@ Start DMX
 =========
 
 Enter the folder that was created when you unpacked the zip archive.
-Double-click the file ``deepamehta-macosx.command``.
+Double-click the file ``dmx-macosx.command``.
 A terminal window opens to display what is happening.
 Just leave it there.
 
@@ -170,12 +170,12 @@ Extract the zip archive.
 Start DMX
 ---------
 
-Go into the newly created folder (in this example "dmx-5.0-beta-2") and run the start script ``./deepamehta-linux.sh``.
+Go into the newly created folder (in this example "dmx-5.0-beta-2") and run the start script ``./dmx-linux.sh``.
 
 .. code:: bash
 
     ~/Downloads $ cd dmx-5.0-beta-2
-    ~/Downloads/cd dmx-5.0-beta-2 $ ./deepamehta-linux.sh
+    ~/Downloads/cd dmx-5.0-beta-2 $ ./dmx-linux.sh
 
 .. hint:: Log in as "admin" without a password.
 
@@ -209,30 +209,24 @@ Here is how to add the repository:
     $ sudo apt update
     $ sudo apt install dmx
 
+During installation you are prompted for the DMX admin passphrase.
+It is saved in ``/etc/dmx/config.properties``.
+
 Configure DMX
 -------------
 
 For server installations and advanced configuration we will soon provide instructions in the :ref:`Admin Documentation <admin>`.
 By default, DMX will listen on port 8080.
-Before starting DMX you can set the initial admin passphrase in ``/etc/dmx/config.properties``.
 
-.. hint:: Log in as "admin" with the default passphrase "YOUR_SECRET_PASSWORD_HERE".
 
 Start DMX
 ---------
-
-When installed from the repo, DMX is not started automatically after installation.
-Enable it by changing the following line in the file ``/etc/default/deepamehta``:
-
-.. code::
-
-    START_DEEPAMEHTA=yes
 
 Invoke this command to start the daemon:
 
 .. code::
 
-    /etc/init.d/deepamehta start
+    systemctl start dmx
 
 Stop DMX
 --------
