@@ -96,7 +96,7 @@ In the section about user accounts you can set the initial password for the admi
 .. code:: bash
 
    # The initial password for the "admin" user account.
-   # Note: this setting is only evaluated while the first DeepaMehta start.
+   # Note: this setting is only evaluated while the first DMX start.
    # Once started the admin password can be changed interactively (using the web client).
    dmx.security.initial_admin_password = 
 
