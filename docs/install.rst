@@ -24,7 +24,7 @@ Execute the JavaSetup*.exe with a double-click and click through the installer.
 Download DMX
 ============
 
-Currently we recommend you to download the `beta-2 release <https://download.dmx.systems/dmx-5.0-beta-2.zip>`_.
+Currently we recommend you to download the `beta-3 release <https://download.dmx.systems/dmx-5.0-beta-3.zip>`_.
 To try out the latest state of development you can download the `latest snapshot <https://download.dmx.systems/ci/dmx-latest.zip>`_ instead.
 All previous snapshots are available for download on https://download.dmx.systems/ci/.
 
@@ -68,7 +68,7 @@ DMX is now stopped.
 Remove DMX
 ==========
 
-You can get rid of DMX by deleting the whole folder that got created when you unpacked the zip file, e.g. dmx-5.0-beta-2.
+You can get rid of DMX by deleting the whole folder that got created when you unpacked the zip file, e.g. dmx-5.0-beta-3.
 The Java Runtime Environment has to be uninstalled separately.
 
 .. _installation-macos:
@@ -80,7 +80,7 @@ Running DMX on Mac OS
 Download DMX
 ============
 
-Currently we recommend you to download the `beta-2 release <https://download.dmx.systems/dmx-5.0-beta-2.zip>`_.
+Currently we recommend you to download the `beta-3 release <https://download.dmx.systems/dmx-5.0-beta-3.zip>`_.
 To try out the latest state of development you can download the `latest snapshot <https://download.dmx.systems/ci/dmx-latest.zip>`_ instead.
 All previous snapshots are available for download on https://download.dmx.systems/ci/.
 
@@ -110,7 +110,7 @@ To stop DMX, press CTRL + C in the terminal window.
 Remove DMX
 ==========
 
-You can get rid of DMX by deleting the whole folder that got created when you unpacked the zip file, e.g. dmx-5.0-beta-2.
+You can get rid of DMX by deleting the whole folder that got created when you unpacked the zip file, e.g. dmx-5.0-beta-3.
 The Java Runtime Environment has to be uninstalled separately.
 
 .. _installation-linux:
@@ -149,7 +149,7 @@ Run DMX from a zip archive
 Download DMX
 ------------
 
-Currently we recommend you to download the `beta-2 release <https://download.dmx.systems/dmx-5.0-beta-2.zip>`_.
+Currently we recommend you to download the `beta-3 release <https://download.dmx.systems/dmx-5.0-beta-3.zip>`_.
 To try out the latest state of development you can download the `latest snapshot <https://download.dmx.systems/ci/dmx-latest.zip>`_ instead.
 All previous snapshots are available for download on https://download.dmx.systems/ci/.
 
@@ -160,9 +160,9 @@ Extract the zip archive.
 .. code:: bash
 
     ~ $ cd Downloads
-    # to get the beta-2 release:
-    ~/Downloads $ wget https://download.dmx.systems/dmx-5.0-beta-2.zip
-    ~/Downloads $ unzip dmx-5.0-beta-2.zip
+    # to get the beta-3 release:
+    ~/Downloads $ wget https://download.dmx.systems/dmx-5.0-beta-3.zip
+    ~/Downloads $ unzip dmx-5.0-beta-3.zip
     # to get the latest nightly build:
     ~/Downloads $ wget https://download.dmx.systems/ci/dmx-latest.zip
     ~/Downloads $ unzip dmx-latest.zip
@@ -170,12 +170,12 @@ Extract the zip archive.
 Start DMX
 ---------
 
-Go into the newly created folder (in this example "dmx-5.0-beta-2") and run the start script ``./dmx-linux.sh``.
+Go into the newly created folder (in this example "dmx-5.0-beta-3") and run the start script ``./dmx-linux.sh``.
 
 .. code:: bash
 
-    ~/Downloads $ cd dmx-5.0-beta-2
-    ~/Downloads/cd dmx-5.0-beta-2 $ ./dmx-linux.sh
+    ~/Downloads $ cd dmx-5.0-beta-3
+    ~/Downloads/cd dmx-5.0-beta-3 $ ./dmx-linux.sh
 
 .. hint:: Log in as "admin" without a password.
 
@@ -187,7 +187,7 @@ To stop DMX, press CTRL + C in the terminal you started it in.
 Remove DMX
 ----------
 
-You can get rid of DMX by deleting the whole folder that got created when you unpacked the zip file, e.g. dmx-5.0-beta-2.
+You can get rid of DMX by deleting the whole folder that got created when you unpacked the zip file, e.g. dmx-5.0-beta-3.
 The Java Runtime Environment has to be uninstalled separately.
 
 .. _installation-linux-apt:
