@@ -1011,7 +1011,7 @@ Each publication shall have a title and a year.
 
 .. note:: **Identity Attributes**
 
-    For a composite with the data type "identity" you should define at least one identity attribute. The identity attribute is the item's unique identifier - the information that makes it unique. If needed, you can define more than one identity attribute.
+    For a composite with the data type "identity" you should define at least one identity attribute. The identity attribute is the item's unique identifier - the information that makes it unique. If needed, you can define more than one identity attribute. When modeling a composite it is important that you **add the identity attribute as the first child to the parent**. This is how you tell DMX to fill in *this* field with what you enter into the Search/Create Dialog.
 
 - Add an identity attribute. In our example the title shall be the unique identifier of the publication. You thus edit the association you just created between the title and the publication. Tick the checkbox "Identity Attribute". (In real life, you would maybe use the ISBN number as the identity attribute or as one of several identity attributes.)
 
