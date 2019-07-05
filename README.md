@@ -13,4 +13,4 @@ git clone https://git.dmx.systems/dmx-platform/dmx-documentation.git
 cd dmx-documentation/docs
 make html
 ```
-The HTML paches then are in _build/html.
+The HTML files then are in _build/html.
