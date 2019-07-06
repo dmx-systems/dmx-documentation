@@ -625,7 +625,8 @@ You can assign colors to association types just as you can assign icons to topic
 Select the association type on your map, open the details panel and open the fourth tab "View".
 Choose a color for your association type and save it.
 
-.. image:: _static/new-assoc-color.jpg
+.. image:: _static/new-assoc-color.png
+    :width: 500
 
 .. _user-navigation:
 
