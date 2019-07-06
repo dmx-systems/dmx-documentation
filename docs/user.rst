@@ -1002,7 +1002,7 @@ Each publication shall have a title and a year.
 
   * You created an association of the type "Composition Definition". Composition Definition means that you are defining a more complex context between items on your map: The relationship between a publication, a title and a year. 
   * "Cardinality: One" means that each publication has exactly one title, not more. 
-  * The rest of the information refers to the role types: The publication is called the parent, the title is the child. These are technical terms to define that a publication has a title, but a title does not have a publication.
+  * The rest of the information refers to the role types: The publication is called the parent type, the title is the child type. These are technical terms to define that a publication has a title, but a title does not have a publication.
 
 .. image:: _static/composition-definition.png
     :width: 300
