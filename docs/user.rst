@@ -1066,6 +1066,38 @@ To continue working with a less crowded map, you might want to :ref:`bulk select
 
 .. image:: _static/topic-map-with-own-assoc-and-instances.jpg
 
+Creating a role type
+====================
+
+Oftentimes when you create associations it is clear which of the two connected players is in which role:
+In the example above, the publication is the parent type and the title is the child type.
+There are cases though where you want to define your own role types because without them the relationship (or its "direction") is not clear:
+This is likely needed when two players of the same type are associated.
+An example could be a hierarchical relationship between two persons like an employment relation.
+You would model the employment relation as an association type.
+But when you create instances of this association you would not see which player is in which role:
+Which person is the manager and which person is the employee?
+Here is how to deal with this use case:
+
+* Create the association type "Employment relation".
+* Create two new role types called "Manager" and "Employee".
+
+.. image:: _static/create-role-type.png
+
+Create your content, the instances:
+
+* Create two persons.
+* Create an assocation between them, edit it and select the association type "Employment relation". Look at the in-map details: Both persons have the default role type. You cannot tell who is in which role.
+
+.. image:: _static/without-custom-role-type.png
+
+* Edit the association again and edit the roles of both players. The role types you created are selectable from the drop-down menu.
+
+.. image:: _static/with-custom-role-type.png
+
+This is what your result looks like:
+
+.. image:: _static/custom-role-type.png
 
 Exploring the data model
 ========================
