@@ -248,6 +248,22 @@ These changes just have an impact on how items are rendered on your topicmap:
 You can assign custom icons to topic types, or colors to association types.
 (This is covered below in the sections about :ref:`Assigning icons to topic types<user-topic-type-icons>` and :ref:`Assigning colors to association types<user-assigning-colors-to-association-types>`.)
 
+The Login Dialog
+================
+
+In a standard DMX installation, once you click "Login" in the upper toolbar you get this login dialog that prompts you for a user name and a password:
+
+.. image:: _static/simple-login-dialog.png
+
+In some cases this dialog looks different.
+This can be the case when the DMX installation you are working with is run by your organization and you were told to use your normal credentials you have with the organization.
+In that case you can select the authentication method from the drop-down menu in the login dialog.
+To use the user name and password from your organization select the "LDAP" method and enter your credentials.
+
+.. image:: _static/basic-login.png
+
+.. image:: _static/ldap-login.png
+
 .. _user-content-authoring:
 
 *****************
