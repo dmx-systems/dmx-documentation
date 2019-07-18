@@ -76,6 +76,16 @@ The Login Button
 
 The "Login" button is located in the upper right corner of the toolbar.
 
+The Help Button
+---------------
+
+In the very corner there is the Help button.
+The menu that you can open here contains links to this documentation and to the `DMX Forum <https://forum.dmx.systems>`_.
+"About DMX" displays information about the software version you are currently running.
+
+.. figure:: _static/upper-toolbar-help-button.png
+    :alt: Tool bar with highlighted help button
+
 .. _user-the-topic-map-panel:
 
 The Topicmap Panel
@@ -152,7 +162,7 @@ Once you unselect an item by clicking somewhere onto your topicmap the detail pa
 You can control whether the detail panel shall stay opened by pinning it with the little pin icon in its upper right corner.
 You close the detail panel by unpinning it with the same button.
 
-.. image:: _static/detail-panel.png
+.. image:: _static/pin-detail-panel.png
 
 Note that the detail panel can only display details of a single selected item, not when you :ref:`bulk select<user-bulk-selection>` several items.
 
