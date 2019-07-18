@@ -146,9 +146,13 @@ The detail panel offers much more features to explore and edit your data than th
 Depending on what you want to do you can choose where you want to display details - in-map or in the detail panel.
 DMX avoids to display redundant information by not opening both at the same time (*unless* you explicitly :ref:`pin<user-pinning-things>` the in-map details to your map to leave them open).
 
-The detail panel can only be opened if you have selected an item on the map and it will stay open as long as you have selected an item.
-Once you close the detail panel the selection is cleared.
-When you unselect an item the detail panel closes.
+The detail panel can only be opened if you have selected an item on the map.
+The default behavior is that it stays open as long as you have selected an item.
+Once you unselect an item by clicking somewhere onto your topicmap the detail panel closes.
+You can control whether the detail panel shall stay opened by pinning it with the little pin icon in its upper right corner.
+You close the detail panel by unpinning it with the same button.
+
+.. image:: _static/detail-panel.png
 
 Note that the detail panel can only display details of a single selected item, not when you :ref:`bulk select<user-bulk-selection>` several items.
 
