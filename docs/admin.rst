@@ -370,3 +370,103 @@ Drop all incoming requests on port 8080 like so:
 .. code:: bash
 
     iptables -A INPUT ! -s 127.0.0.1 -p tcp --destination-port 8080 -j REJECT
+
+.. _admin-plugin-installation:
+
+*******
+Plugins
+*******
+
+DMX is extendable via plugins some of which are available for download.
+You can find plugin releases in the `plugin directory of our download server <https://download.dmx.systems/plugins/>`_.
+Development versions of the plugins are in the according plugin directory underneath the `ci directory <https://download.dmx.systems/ci/>`_.
+
+Plugin compatibility
+====================
+
+Some plugins are only compatible with DM5 or with its predecessor DM4.
+You can tell if a plugin suits your version by looking at its file name:
+
+===========  =======================  ========================
+Plugin name  DM version               Example
+===========  =======================  ========================
+``dmx-*``    DM5 a.k.a. DMX           dmx-ldap-0.4.0.jar
+``dm4*-*``   DM4.x a.k.a. DeepaMehta  dm49-thymeleaf-0.6.2.jar
+===========  =======================  ========================
+
+Plugin Installation
+===================
+
+You install a plugin by dropping the according ``.jar`` file into the ``bundle-deploy`` folder of a DMX installation.
+Doing so will hot deploy the plugin: Restarting any services is not necessary.
+Watch the DMX log file to see it happening:
+
+.. code:: bash
+
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.osgi.PluginActivator start
+    INFO: ========== Starting plugin "DMX LDAP" ==========
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl readConfigFile
+    INFO: Reading config file "/plugin.properties" for plugin "DMX LDAP" SKIPPED -- file does not exist
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl pluginDependencies
+    INFO: Tracking plugins for plugin "DMX LDAP" SKIPPED -- no plugin dependencies declared
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl createInjectedServiceTrackers
+    INFO: Tracking 1 services for plugin "DMX LDAP" [systems.dmx.accesscontrol.AccessControlService]
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl addService
+    INFO: Adding DMX core service to plugin "DMX LDAP"
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl publishWebResources
+    INFO: Publishing web resources of plugin "DMX LDAP" SKIPPED -- no web resources provided
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl publishRestResources
+    INFO: Publishing REST resources of plugin "DMX LDAP" SKIPPED -- no REST resources provided
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl publishRestResources
+    INFO: Registering provider classes of plugin "DMX LDAP" SKIPPED -- no provider classes found
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl addService
+    INFO: Adding Event Admin service to plugin "DMX LDAP"
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl addService
+    INFO: Adding systems.dmx.accesscontrol.AccessControlService to plugin "DMX LDAP"
+    Jul 19, 2019 1:47:32 PM systems.dmx.accesscontrol.AccessControlPlugin registerAuthorizationMethod
+    INFO: Registering authorization method "LDAP"
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl activate
+    INFO: ----- Activating plugin "DMX LDAP" -----
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl createPluginTopicIfNotExists
+    INFO: Installing plugin "DMX LDAP" in the database SKIPPED -- already installed
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.MigrationManager runPluginMigrations
+    INFO: Running migrations for plugin "DMX LDAP" SKIPPED -- installed model is up-to-date (version 0)
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl registerListeners
+    INFO: Registering event listeners of plugin "DMX LDAP" SKIPPED -- no event listeners implemented
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl registerProvidedService
+    INFO: Registering service "systems.dmx.ldap.service.LDAPPluginService" at OSGi framework
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginImpl activate
+    INFO: ----- Activation of plugin "DMX LDAP" complete -----
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginManager checkAllPluginsActivated
+    INFO: ### Bundles total: 36, DMX plugins: 19, Activated: 19
+    Jul 19, 2019 1:47:32 PM systems.dmx.core.impl.PluginManager activatePlugin
+    INFO: ########## All DMX plugins active ##########
+    Jul 19, 2019 1:47:32 PM systems.dmx.webclient.WebclientPlugin allPluginsActive
+    INFO: DMX platform started in 67420.76 sec
+    Jul 19, 2019 1:47:32 PM systems.dmx.webclient.WebclientPlugin allPluginsActive
+    INFO: ### Launching DMX Webclient: http://localhost:8080/systems.dmx.webclient/
+    Jul 19, 2019 1:47:32 PM systems.dmx.webclient.WebclientPlugin allPluginsActive
+    WARNING: ### Launching DMX Webclient failed: java.awt.HeadlessException:
+    No X11 DISPLAY variable was set, but this program performed an operation which requires it.
+    Jul 19, 2019 1:47:32 PM systems.dmx.webclient.WebclientPlugin allPluginsActive
+    WARNING: ### To launch it manually: http://localhost:8080/systems.dmx.webclient/
+
+Plugin Deinstallation
+=====================
+
+To uninstall a plugin just remove the ``.jar`` file from the ``bundle-deploy`` directory.
+Here is what the log tells you when you do so:
+
+.. code:: bash
+
+    Jul 19, 2019 1:47:12 PM systems.dmx.core.osgi.PluginActivator stop
+    INFO: ========== Stopping plugin "DMX LDAP" ==========
+    Jul 19, 2019 1:47:12 PM systems.dmx.core.impl.PluginImpl removeService
+    INFO: Removing DMX core service from plugin "DMX LDAP"
+    Jul 19, 2019 1:47:12 PM systems.dmx.core.impl.PluginImpl removeService
+    INFO: Removing Event Admin service from plugin "DMX LDAP"
+    Jul 19, 2019 1:47:12 PM systems.dmx.core.impl.PluginImpl removeService
+    INFO: Removing systems.dmx.accesscontrol.AccessControlService from plugin "DMX LDAP"
+    Jul 19, 2019 1:47:12 PM systems.dmx.accesscontrol.AccessControlPlugin unregisterAuthorizationMethod
+    INFO: Unregistering authorization method "LDAP"
+

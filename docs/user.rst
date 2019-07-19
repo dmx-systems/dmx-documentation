@@ -264,6 +264,8 @@ To use the user name and password from your organization select the "LDAP" metho
 
 .. image:: _static/ldap-login.png
 
+.. note:: Learn how to install plugins in our :ref:`Admin Documentation <admin-plugin-installation>`.
+
 .. _user-content-authoring:
 
 *****************
@@ -763,6 +765,8 @@ Collaboration and Sharing
 
 Creating user accounts
 ======================
+
+.. note:: If you have existing users in an LDAP directory we recommend you to use our `LDAP plugin <https://download.dmx.systems/plugins/dmx-ldap/>`_. Learn how to install it in our :ref:`Admin Documentation<admin-plugin-installation>`.
 
 In DMX, you create user accounts just the way you create everything else, too:
 Enter a user name into the search field.
