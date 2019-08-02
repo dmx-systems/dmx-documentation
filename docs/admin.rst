@@ -377,9 +377,9 @@ Drop all incoming requests on port 8080 like so:
 Plugins
 *******
 
-DMX is extendable via plugins some of which are available for download.
+DMX is extensible through plugins some of which are available for download.
+For a list of all our plugins please see the :ref:`Overview of Plugins <intro-overview-of-plugins>` section in the Introduction.
 You can find plugin releases in the `plugin directory of our download server <https://download.dmx.systems/plugins/>`_.
-Development versions of the plugins are in the according plugin directory underneath the `ci directory <https://download.dmx.systems/ci/>`_.
 
 Plugin compatibility
 ====================
