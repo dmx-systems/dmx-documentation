@@ -142,14 +142,46 @@ Read more on how to create content in the section about :ref:`Content Authoring<
 
 .. image:: _static/search-create.jpg
 
-The search supports complex queries but
+.. _user-advanced-search:
 
-If you enter more than one search term into the Search/Create Dialog the search engine interprets a logical OR connection between them.
+Advanced Search
+---------------
 
-"hello dolly" phrase surrounded by double quotes.
-
+The search in DMX is run by the powerful Lucene search engine.
+You can run simple queries by just entering a search term.
+If this brings up too many results from your database, you can narrow down your search with more complex queries.
 DMX supports the `Lucene Query Parser Syntax <https://lucene.apache.org/core/3_5_0/queryparsersyntax.html>`_.
-You can thus run complex queries with special symbols like wildcards, too. 
+Let's look at a few examples:
+
+.. note:: Enter more than one character to start searching.
+
+When your search term consists of letters, you will only get results *starting* with this string.
+You won't see results containing the search term *in the middle* of a word.
+In the following example with the search term "cd" you see that "cde" is displayed in the results, while "bcd" or "abcdef" are not.
+
+.. image:: _static/search-first-letter.png
+
+If you add a wildcard symbol in the beginning you ask for items beginning with one or multiple other characters and ending with the search term.
+Add another wildcard at the end of the search term to query for items *containing* it somewhere in the middle.
+There are two wildcard symbols:
+
+*  ``?`` The question mark represents *one* character.
+*  ``*`` The asterisk represents zero, one or multiple characters.
+
+.. image:: _static/search-wildcard.png
+
+If you enter more than one search term into the Search/Create Dialog the search engine interprets a logical AND connection between them.
+In this example we search for everything containing "abc" AND "def" but not the standalone "abc".
+
+.. image:: _static/search-phrase-unquoted.png
+
+If you want to find all items that contain either "abc" OR "def" OR even both you replace the logical AND with a logical OR like so:
+
+.. image:: _static/search-phrase-OR.png
+
+To get the *exact* search phrase consisting of multiple words enter it surrounded by double quotes.
+
+.. image:: _static/search-phrase-quoted.png
 
 .. _user-the-detail-panel:
 
