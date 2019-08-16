@@ -15,11 +15,8 @@ DMX is Free Software
 
 DMX is dual licensed:
 
-#.  The Community Edition is licensed under the `GNU Affero General Public License (GNU AGPLv3) <https://www.gnu.org/licenses/agpl-3.0.en.html>`_ . In short, this means that you are allowed to run the software of any purpose, to study and modify the source code, to distribute copies or modified copies of it, and This license gives you all freedoms of  Visit `git.dmx.systems <https://git.dmx.systems/explore>`_ to get the source code. 
-#.  The Enterprise Edition is licensed under a proprietary license.
-
-
-
+#.  The Community Edition is licensed under the `GNU Affero General Public License (GNU AGPLv3) <https://www.gnu.org/licenses/agpl-3.0.en.html>`_ . In short, this means that you are allowed to run the software of any purpose, to study and modify the source code, and to distribute copies or modified copies of the code. Note that you have to publish all modifications you make under the same license. Visit `git.dmx.systems <https://git.dmx.systems/explore>`_ to get the source code. 
+#.  The Enterprise Edition is licensed under a proprietary license. With the Enterprise Edition you are entitled to develop or use proprietary plugins or other modifications of the software.
 
 .. _intro-data-sovereignty:
 
