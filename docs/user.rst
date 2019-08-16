@@ -142,6 +142,15 @@ Read more on how to create content in the section about :ref:`Content Authoring<
 
 .. image:: _static/search-create.jpg
 
+The search supports complex queries but
+
+If you enter more than one search term into the Search/Create Dialog the search engine interprets a logical OR connection between them.
+
+"hello dolly" phrase surrounded by double quotes.
+
+DMX supports the `Lucene Query Parser Syntax <https://lucene.apache.org/core/3_5_0/queryparsersyntax.html>`_.
+You can thus run complex queries with special symbols like wildcards, too. 
+
 .. _user-the-detail-panel:
 
 The Detail Panel
