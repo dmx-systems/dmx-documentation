@@ -378,7 +378,7 @@ Plugins
 *******
 
 DMX is extensible through plugins some of which are available for download.
-For a list of all our plugins please see the :ref:`Overview of Plugins <intro-overview-of-plugins>` section in the Introduction.
+For a list of all our plugins please see the :ref:`Overview of Plugins <plugins-overview-of-plugins>` section in the Introduction.
 You can find plugin releases in the `plugin directory of our download server <https://download.dmx.systems/plugins/>`_.
 
 Plugin compatibility

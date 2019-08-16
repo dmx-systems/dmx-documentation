@@ -3,6 +3,7 @@ DMX Plugins
 ###########
 
 The functionalities of DMX can be extended through plugins.
+Below you find an overview.
 
 .. _plugins-overview-of-plugins:
 
@@ -12,7 +13,7 @@ Overview of Plugins
 
 There is a variety of existing plugins.
 Some of them are Free Software (see the table below).
-All freely available plugins can be found in our `download section <https://download.dmx.systems/plugins/>`_.
+Some freely available plugins can already be found in our `download section <https://download.dmx.systems/plugins/>`_, the others will follow soon.
 Their source code is available in our the `plugin repositories <https://git.dmx.systems/dmx-plugins>`_.
 The installation of plugins is explained in our :ref:`Admin Documentation <admin-plugin-installation>`.
 
