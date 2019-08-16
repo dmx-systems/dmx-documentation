@@ -15,6 +15,7 @@ Welcome to DMX's documentation!
    user
    devel
    admin
+   plugins
    support
 
 

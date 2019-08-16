@@ -13,8 +13,13 @@ It is developed by `DMX Systems <https://dmx.berlin>`_.
 DMX is Free Software
 ********************
 
-DMX is licensed under the `GPLv3 <https://www.gnu.org/licenses/gpl.html>`_ or later.
-Visit `git.dmx.systems <https://git.dmx.systems/explore>`_ to explore the code.
+DMX is dual licensed:
+
+#.  The Community Edition is licensed under the `GNU Affero General Public License (GNU AGPLv3) <https://www.gnu.org/licenses/agpl-3.0.en.html>`_ . In short, this means that you are allowed to run the software of any purpose, to study and modify the source code, to distribute copies or modified copies of it, and This license gives you all freedoms of  Visit `git.dmx.systems <https://git.dmx.systems/explore>`_ to get the source code. 
+#.  The Enterprise Edition is licensed under a proprietary license.
+
+
+
 
 .. _intro-data-sovereignty:
 
@@ -61,41 +66,11 @@ That can happen in different ways:
 #. A plugin can add new functionalities to the DMX web client that is to the web interface you see.
 #. A plugin can also add functionalities to the DMX core part.
 
-For more detail on this, please check back our Developer Documentation in a little while.
-You are free to develop your own DMX plugins. To get started we recommend you to start with our `Plugin Template <https://git.dmx.systems/dmx-plugins/dmx-plugin-template>`_.
+Find out more about our existing plugins in the :ref:`Plugin section <plugins-overview-of-plugins>`.
 
-.. _intro-overview-of-plugins:
-
-Overview of Plugins
-===================
-
-There is a variety of existing plugins.
-Some of them are Free Software (see the table below).
-All freely available plugins can be found in our `download section <https://download.dmx.systems/plugins/>`_.
-Their source code is available in our the `plugin repositories <https://git.dmx.systems/dmx-plugins>`_.
-The installation of plugins is explained in our :ref:`Admin Documentation <admin-plugin-installation>`.
-
-Some plugins are licensed under a proprietary license and can be purchased from us.
-
-==========================  ===========================================================================================  ==========
-Plugin Name                 Functionality                                                                                License
-==========================  ===========================================================================================  ==========
-``dmx-plugin-template``     A starter project for writing a DMX plugin
-``dmx-littlehelpers``       Utilities for DMX plugin developers                                                          GNU AGPLv3
-``dmx-performance``         Creates a dummy topicmap with 150 topics/associations for performance testing
-``dmx-tableview``           A standalone table view for DMX based on VueJS and ElementUI                                 GNU AGPLv3
-``dmx-tableview-command``   Provides an "Open Tableview" topic command                                                   GNU AGPLv3
-``dmx-ldap``                LDAP Authentication for DMX
-``dmx-sendmail``            A service to send mails using either SMTP or the HTTP Web API v3 of sendgrid.com             GNU AGPLv3
-``dmx-geospatial``          Spatial database capabilities for DMX                                                        GNU AGPLv3
-``dmx-thymeleaf``           A DMX plugin to enable server-side HTML generation based on the Thymeleaf template engine    GNU AGPLv3
-``dmx-tags``                Tagging of topics or associations
-``dmx-entity-mapper``       Mapping database fields related to concepts across IT systems
-``dm4-sign-up``             DeepaMehta4 plugin providing a simple, template based, registration dialog for users
-``dm4-mail``                DeepaMehta4 mail plugin                                                                      GNU GPLv3
-``dm4-notifications``       DeepaMehta4 plugin providing persistent notifications for users across sessions and screens
-``dm4-typedef``
-==========================  ===========================================================================================  ==========
+Of course, you are free to develop your own DMX plugins.
+For more details on this, please check back our Developer Documentation in a little while.
+To get started we recommend you to start with our `Plugin Template <https://git.dmx.systems/dmx-plugins/dmx-plugin-template>`_.
 
 *****************************
 About this documentation site
@@ -103,3 +78,6 @@ About this documentation site
 
 This documentation is hosted by `Read the Docs <https://readthedocs.org/>`_.
 As Read the Docs offers free hosting of documentation they kindly ask users to allow ads to be displayed at the bottom of the left sidebar. You can read more about it `here <https://docs.readthedocs.io/en/latest/advertising/ethical-advertising.html>`_.
+
+
+
