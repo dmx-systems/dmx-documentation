@@ -1052,6 +1052,31 @@ If you are sure you do not need it, you can explicitly delete it.
 
 .. image:: _static/changing-a-persons-name2.png
 
+.. _user-defining-your-own-type-uris:
+
+Defining your own Type URIs
+---------------------------
+
+Upon creation every type gets an automatically generated Type URI.
+It looks like this:
+
+.. image:: _static/generated-type-uri.png
+
+URIs (Uniform Resource Identifiers) identify resources unambiguously.
+For global uniqueness they follow a specific syntax.
+
+When you dive into modeling or development with DMX you should adapt these Type URIs to your own projects with meaningful names.
+Developers working with the types in a specific project can then address them easily without unintended duplicates or changes.
+
+There is a best practice for choosing your Type URIs:
+Namespaces shall follow the pattern ``domain.project.typename``.
+You can use DNS domains for the first part, or just think of an unambiguous abbreviation.
+An example for the URI of a topic type "publication" on our own demo server could be ``systems.dmx.demo.publication`` or just ``dmx.demo.publication``.
+
+You can edit the Type URIs via the edit button.
+
+.. note:: You have adapt the TypeURIs before adding any instances!
+
 .. _user-creating-a-simple-topic-type:
 
 Creating a simple topic type
