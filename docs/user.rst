@@ -215,8 +215,9 @@ The "Info" tab
 The first tab is a general info tab.
 You get there by selecting "Details" from the :ref:`context menu<user-the-context-menu>`.
 The "Info" tab is always labelled with the type of the selected item, e.g. "Person" or "Event".
+It shows the direct child topics of what is currently selected as this is the most commonly wanted information.
 In its display mode it shows only those fields containing data.
-You can click "Reveal" on details to reveal them on the current topicmap.
+You can reveal the listed child topics on the current topicmap by clicking the little eye symbol.
 
 .. image:: _static/detail-panel-reveal-button.png
 
@@ -233,17 +234,19 @@ The "Related" tab
 -----------------
 
 The second tab is called "Related".
-Again, you can directly open the detail panel with this tab by choosing "Related" from the context menu.
-This tab lists *all* items related to your selection: 
+You can jump directly to this tab by choosing "Related" from the context menu or - if the detail panel is already open - by selecting the tab.
+This tab lists items related to your selection on the topicmap.
+It does *not* list the direct child topics, though, to avoid redundancy between the "Info" tab and the "Related" tab.
+(You can find the direct child topics in the "Info" tab and in the in-map details.)
 
 * On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topicmap you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about :ref:`Modeling<user-modeling>`.)
-* Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their role in the organization, or that this person is an instance of the topic type person.
+* Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their involvement with the organization, or that this person is an instance of the topic type person.
 
-.. image:: _static/detail-panel-related-tab.jpg
+.. image:: _static/detail-panel-related-tab.png
 
 * Depending on what you are searching for you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
 
-.. image:: _static/detail-panel-related-tab-sort-order.jpg
+.. image:: _static/detail-panel-related-tab-sort-order.png
 
 * The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
 * Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.
@@ -726,7 +729,7 @@ Associative navigation
 ======================
 
 As DMX is made to work like a human brain you can navigate in an associative way.
-The "Related" tab of the :ref:`detail panel<user-the-detail-panel>` detail panel permits you to navigate the database by listing all associated items.
+The "Related" tab of the :ref:`detail panel<user-the-detail-panel>` detail panel permits you to navigate the database by listing associated items.
 
 Use the "Related" button in the context menu to get there.
 
