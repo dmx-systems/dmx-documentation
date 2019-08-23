@@ -470,14 +470,20 @@ The film icon lets you embed an image from a website. (For the detailed use, ple
 Deleting things
 ===============
 
-.. warning:: There is an important difference between hiding items and deleting them. **If you delete items they are immediately removed from the database without any further questions!** If you hide them, they are just no longer visible on the topicmap but you can bring them back by revealing them.
+.. warning:: There is an important difference between hiding items and deleting them. **If you delete items they are removed from the database forever.** If you hide them, they are just no longer visible on the topicmap but you can bring them back by revealing them.
 
 You delete things via the context menu on the topicmap.
 Keep the "Alt" key pressed and left-click onto the item you want to delete.
 To delete drag your mouse anywhere into the red area.
-To abort let go of both the "Alt" key and the mouse button *while the cursor is in the middle of the circle*.
+To abort let go of both the "Alt" key and the mouse button while the cursor is in the middle of the circle.
 
 .. image:: _static/delete-item.png
+
+When you select "Delete" a dialog window opens.
+It informs you about the number of items you are about to delete.
+You can confirm or cancel the deletion.
+
+.. image:: _static/confirmation-dialog-delete.png
 
 .. _user-bulk-deletion:
 
@@ -486,12 +492,16 @@ Bulk deletion
 
 To delete several items in one go select all of them by clicking them with the CTRL key pressed.
 
-.. image:: _static/bulk-delete-1.jpg
+.. image:: _static/bulk-delete-1.png
 
 Then proceed as above:
 Left-click onto the item and drag your mouse onto the delete button.
 
 .. image:: _static/bulk-delete-2.png
+
+When you select "Delete" the same confirmation dialog window opens:
+It informs you about the number of items you are about to delete.
+You can confirm or cancel the deletion.
 
 .. _user-organizing-the-working-context:
 
