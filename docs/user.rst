@@ -996,7 +996,7 @@ Simple data types
 -----------------
 
 Every topic or association has a data type.
-They are six different data types in DMX.
+There are six different data types in DMX.
 Four of them are so-called **simple** types:
 
 * **text:** This is the default data type and it contains a text string.
