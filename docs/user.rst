@@ -1365,7 +1365,7 @@ The start date and the end date.
 
 .. note:: **Custom Association Types**
 
-    You cannot create two or more associations of the same association type between two items. Use "Custom Association Types" to avoid errors.
+    You cannot create two or more associations of the same association type between two items. Use :ref:`Custom Association Types<user-custom-association-types>` to avoid errors.
 
 Create the first association between the topic type "Date" and the topic type "Blooming period".
 Edit the association and open the drop-down menu called "Custom Association Type".
