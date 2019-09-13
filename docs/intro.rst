@@ -6,6 +6,9 @@ Introduction
 
 DMX is a platform for knowledge management and collaboration.
 It is developed by `DMX Systems <https://dmx.berlin>`_.
+DMX is a web application.
+It comes with a built-in Jetty web server and a default web client that brings the application to your browser.
+
 
 .. _intro-license:
 
