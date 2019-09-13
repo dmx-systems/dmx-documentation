@@ -1014,6 +1014,11 @@ First of all, "composite" means that this data type is put together from several
 The name of a person mostly consists of at least a first name and a last name.
 An address entry is put together from a street name, a number, a postal code, a city.
 
+A **composition definition** is an association type within a composite:
+As you will see below you define a composite by creating associations between topic types and/or association types.
+By doing so you define the parent-child relations, the cardinality of properties, and the identity attributes (unique identifiers) for your data model.
+This kind of association type is called a composition definition.
+
 For associations there is just *one* composite data type which is obviously called composite.
 For topic types DMX has both composite types: **value** and **identity**.
 
