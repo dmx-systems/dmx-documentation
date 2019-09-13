@@ -7,6 +7,11 @@ Installation
 DMX is built on the Java Platform which can be installed on many operating systems.
 On this page we have covered how to run DMX on :ref:`Windows <installation-windows>`, :ref:`Mac OS <installation-macos>` and :ref:`Linux <installation-linux>`.
 
+DMX is a web application.
+It runs on a server and you access it with a browser.
+If you run DMX locally on your computer a local webserver is started on your machine.
+This server runs independently from your browser.
+
 .. _installation-windows:
 
 **********************
@@ -37,8 +42,8 @@ Extract the ``.zip`` archive.
 A new folder is created and the folder has the name of the ``.zip`` file.
 This is your *DMX Home* folder and you can now start DMX.
 
-Start DMX
-=========
+Starting DMX
+============
 
 Enter the folder that was created when you unpacked the zip archive.
 Double-click the file ``dmx-windows.bat``.
@@ -50,22 +55,27 @@ Just leave it there.
 The Windows Defender Firewall might ask you to allow Java access.
 Choose "Private networks, such as my home or work network".
 
-Your default browser opens the DMX webclient at ``http://localhost:8080/systems.dmx.webclient/``.
-The path to the web client ``systems.dmx.webclient/`` is mandatory.
-Without it your browser cannot find the DMX web client.
+Your default browser opens the DMX web client at ``http://localhost:8080/systems.dmx.webclient/``.
 You are ready to go.
 
 .. hint:: Log in as "admin" without a password.
 
-Stop DMX
-========
+Opening the Web Client
+======================
 
-To stop DMX, bring the black terminal windows to the foreground.
-Type `stop 0` into the terminal and press ENTER.
-DMX is shut down.
+When you close your browser the DMX server is still running.
+To get back to the DMX web client point your browser to the full address ``http://localhost:8080/systems.dmx.webclient/`` again.
+Without the path (``systems.dmx.webclient/``) your browser cannot find the DMX web client.
 
-Remove DMX
-==========
+Stopping DMX
+============
+
+To stop the DMX server, bring the black terminal windows to the foreground.
+Type ``stop 0`` into the terminal and press ENTER.
+The DMX server is shut down.
+
+Removing DMX
+============
 
 You can get rid of DMX by deleting the whole folder that got created when you unpacked the zip file, e.g. dmx-5.0-beta-5.
 The Java Runtime Environment has to be uninstalled separately.
@@ -100,16 +110,21 @@ Double-click the file ``dmx-macosx.command``.
 A terminal window opens to display what is happening.
 Just leave it there.
 
-Your default browser opens the DMX webclient at ``http://localhost:8080/systems.dmx.webclient/``.
-The path to the web client ``systems.dmx.webclient/`` is mandatory.
-Without it your browser cannot find the DMX web client.
+Your default browser opens the DMX web client at ``http://localhost:8080/systems.dmx.webclient/``.
 You are ready to go.
 
 .. hint:: Log in as "admin" without a password.
 
+Opening the Web Client
+======================
+
+When you close your browser the DMX server is still running.
+To get back to the DMX web client point your browser to the full address ``http://localhost:8080/systems.dmx.webclient/`` again.
+Without the path (``systems.dmx.webclient/``) your browser cannot find the DMX web client.
+
 Stop DMX
 ========
-To stop DMX, type `stop 0` into the terminal window and press ENTER.
+To stop the DMX server, type ``stop 0`` into the terminal window and press ENTER.
 DMX is shut down.
 
 Remove DMX
@@ -179,17 +194,24 @@ Go into the newly created folder (in this example "dmx-5.0-beta-5") and run the 
     ~/Downloads $ cd dmx-5.0-beta-5
     ~/Downloads/cd dmx-5.0-beta-5 $ ./dmx-linux.sh
 
-Your default browser opens the DMX webclient at ``http://localhost:8080/systems.dmx.webclient/``.
+Your default browser opens the DMX web client at ``http://localhost:8080/systems.dmx.webclient/``.
 The path to the web client ``systems.dmx.webclient/`` is mandatory.
 Without it your browser cannot find the DMX web client.
 You are ready to go.
 
 .. hint:: Log in as "admin" without a password.
 
+Opening the Web Client
+======================
+
+When you close your browser the DMX server is still running.
+To get back to the DMX web client point your browser to the full address ``http://localhost:8080/systems.dmx.webclient/`` again.
+Without the path (``systems.dmx.webclient/``) your browser cannot find the DMX web client.
+
 Stop DMX
 --------
 
-To stop DMX, press CTRL + C in the terminal you started it in.
+To stop the DMX server, press ``CTRL + C`` in the terminal you started it in.
 DMX is shut down.
 
 Remove DMX
