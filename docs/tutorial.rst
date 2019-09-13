@@ -16,7 +16,7 @@ A first look at DMX
 *******************
 
 When you first look at a new installation of DMX, there is not much there, yet.
-We have a detailed guide to the :ref:`user interface<user-the-dmx-user-interface>` below but here are some essentials:
+We have a detailed guide to the :ref:`user interface<user-the-dmx-user-interface>` in the User Guide but here are some essentials:
 
 * In the upper right corner there is a "Login" button. Log in with the user name "admin" and no password.
 * In the upper left corner there is a workspace selector. The only existing workspace is called "DMX". This is your general context in which everything you are about to do is going (for the moment). Later you will be able to select one of all your workspaces here.
@@ -26,7 +26,6 @@ We have a detailed guide to the :ref:`user interface<user-the-dmx-user-interface
     :alt: Tool bar with workspace and topicmap selection
 
 * Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. **The first default workspace and the default topicmap are in SharingMode "public" that is: They are not private, but world-readable.** This is important to keep in mind if you are trying DMX on our public demo site or if you installed it on a server that is connected to the internet. You can find out more about access control in the section about :ref:`Collaboration and Sharing<user-collaboration-and-sharing>`.
-* In the upper right corner there is a button with an arrow. It is grayed out right now.
 
 .. _tutorial-adding-your-first-topic:
 
@@ -34,7 +33,7 @@ We have a detailed guide to the :ref:`user interface<user-the-dmx-user-interface
 Adding your first topic
 ***********************
 
-:ref:`Content Authoring<user-content-authoring>` is described in-depth below.
+:ref:`Content Authoring<user-content-authoring>` is described in-depth in the User Guide.
 This is just a short walkthrough to help you create your first items in DMX.
 
 Right-click into the emptiness.
