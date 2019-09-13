@@ -4,8 +4,8 @@
 Installation
 ############
 
-DMX runs on several different operating systems.
-Below you can find how to get started on :ref:`Windows <installation-windows>`, :ref:`Mac OS <installation-macos>` and :ref:`Linux <installation-linux>`.
+DMX is built on the Java Platform which can be installed on many operating systems.
+On this page we have covered how to run DMX on :ref:`Windows <installation-windows>`, :ref:`Mac OS <installation-macos>` and :ref:`Linux <installation-linux>`.
 
 .. _installation-windows:
 
@@ -13,30 +13,29 @@ Below you can find how to get started on :ref:`Windows <installation-windows>`, 
 Running DMX on Windows
 **********************
 
-Install a Java Runtime Environment version 8
-============================================
+Install Java
+============
 
-Go to `Oracle's website <https://java.com/en/download/>`_ and download the recommended Java version.
-Currently, this is **Java 8**.
-Any version from Java 6 to 8 will work out of the box with DMX.
-Execute the JavaSetup*.exe with a double-click and click through the installer.
+DMX runs out of the box with Java versions 6 to 8.
+To run DMX we recommend you to download **Java 8**.
+If Java 8 is not already installed you can download it from the `AdoptOpenJDK <https://adoptopenjdk.net/>`_ or `Oracle's Java <https://java.com/en/download/>`_ website.
+Double-click the downloaded file and click through the installer.
 
 Download DMX
 ============
 
-Currently we recommend you to download the `beta-5 release <https://download.dmx.systems/dmx-5.0-beta-5.zip>`_.
-To try out the latest state of development you can download the `latest snapshot <https://download.dmx.systems/ci/dmx-latest.zip>`_ instead.
-All previous snapshots are available for download on https://download.dmx.systems/ci/.
+The latest stable release is the `DMX 5.0-beta-5 release <https://download.dmx.systems/dmx-5.0-beta-5.zip>`_.
+Previous versions of DMX are available for download on https://download.dmx.systems/.
 
 Save the according file to a location of your choice.
-Extract the zip archive.
+Extract the ``.zip`` archive.
 
 .. image:: _static/windows-extract-zip.png
 
 .. image:: _static/windows-choose-destination.png
 
-A new folder is created.
-It has the name of the zip file.
+A new folder is created and the folder has the name of the ``.zip`` file.
+This is your *DMX Home* folder and you can now start DMX.
 
 Start DMX
 =========
@@ -62,10 +61,8 @@ Stop DMX
 ========
 
 To stop DMX, bring the black terminal windows to the foreground.
-Press CTRL + C.
-In the window you will now see the question "Terminate batch job (Y/N)?"
-Answer with a "Y" for yes.
-DMX is now stopped.
+Type `stop 0` into the terminal and press ENTER.
+DMX is shut down.
 
 Remove DMX
 ==========
@@ -79,17 +76,21 @@ The Java Runtime Environment has to be uninstalled separately.
 Running DMX on Mac OS
 *********************
 
+On most current Mac OS versions Java 8 is already installed.
+If Java 8 is not installed you can download it from the `AdoptOpenJDK <https://adoptopenjdk.net/>`_ or `Oracle's Java <https://java.com/en/download/>`_ website.
+Double-click the downloaded file and click through the installer.
+
 Download DMX
 ============
 
-Currently we recommend you to download the `beta-5 release <https://download.dmx.systems/dmx-5.0-beta-5.zip>`_.
-To try out the latest state of development you can download the `latest snapshot <https://download.dmx.systems/ci/dmx-latest.zip>`_ instead.
-All previous snapshots are available for download on https://download.dmx.systems/ci/.
+The latest stable release is the `DMX 5.0-beta-5 release <https://download.dmx.systems/dmx-5.0-beta-5.zip>`_. Previous versions of DMX are available for download on https://download.dmx.systems/.
 
 Save the according file to a location of your choice.
-Extract the zip archive.
+Extract the ``.zip`` archive.
+
 A new folder is created.
-It has the name of the zip file.
+It has the name of the ``.zip`` file.
+This is your *DMX Home* folder and you can now start DMX.
 
 Start DMX
 =========
@@ -108,8 +109,8 @@ You are ready to go.
 
 Stop DMX
 ========
-
-To stop DMX, press CTRL + C in the terminal window.
+To stop DMX, type `stop 0` into the terminal window and press ENTER.
+DMX is shut down.
 
 Remove DMX
 ==========
@@ -124,10 +125,10 @@ Running DMX on Linux
 ********************
 
 On a Linux machine, you have two options to run DMX:
-You can start it from an unpacked zip file *or* you can install it from our APT repository.
+You can start it from an unpacked zip file *or* you can install it from a package.
 
-Install a Java Runtime Environment
-==================================
+Install Java
+============
 
 Use your package manager to install the Java 8 for your Linux distribution.
 
@@ -167,9 +168,6 @@ Extract the zip archive.
     # to get the beta-5 release:
     ~/Downloads $ wget https://download.dmx.systems/dmx-5.0-beta-5.zip
     ~/Downloads $ unzip dmx-5.0-beta-5.zip
-    # to get the latest nightly build:
-    ~/Downloads $ wget https://download.dmx.systems/ci/dmx-latest.zip
-    ~/Downloads $ unzip dmx-latest.zip
 
 Start DMX
 ---------
@@ -192,6 +190,7 @@ Stop DMX
 --------
 
 To stop DMX, press CTRL + C in the terminal you started it in.
+DMX is shut down.
 
 Remove DMX
 ----------
@@ -206,7 +205,7 @@ Install DMX from our APT repository
 
 For apt-based Linux distributions (like Debian / Ubuntu) we provide a repository.
 It is intended for installations on servers but can obviously be used on Debian/Ubuntu laptops as well.
-The package has a built-in dependency to default-jre.
+The package has a built-in dependency to ``default-jre``.
 
 .. warning:: If your Java Runtime Environment is newer than Java 8, you cannot use the repository for the moment. Check your version by running the command ``java -version``.
 
