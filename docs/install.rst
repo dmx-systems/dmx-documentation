@@ -55,7 +55,7 @@ Just leave it there.
 The Windows Defender Firewall might ask you to allow Java access.
 Choose "Private networks, such as my home or work network".
 
-Your default browser opens the DMX web client at ``http://localhost:8080/systems.dmx.webclient/``.
+Your default browser opens the DMX web client at http://localhost:8080/systems.dmx.webclient/.
 You are ready to go.
 
 .. hint:: Log in as "admin" without a password.
@@ -64,7 +64,7 @@ Opening the Web Client
 ======================
 
 When you close your browser the DMX server is still running.
-To get back to the DMX web client point your browser to the full address ``http://localhost:8080/systems.dmx.webclient/`` again.
+To get back to the DMX web client point your browser to the full address http://localhost:8080/systems.dmx.webclient/ again.
 Without the path (``systems.dmx.webclient/``) your browser cannot find the DMX web client.
 
 Stopping DMX
@@ -110,7 +110,7 @@ Double-click the file ``dmx-macosx.command``.
 A terminal window opens to display what is happening.
 Just leave it there.
 
-Your default browser opens the DMX web client at ``http://localhost:8080/systems.dmx.webclient/``.
+Your default browser opens the DMX web client at http://localhost:8080/systems.dmx.webclient/.
 You are ready to go.
 
 .. hint:: Log in as "admin" without a password.
@@ -119,7 +119,7 @@ Opening the Web Client
 ======================
 
 When you close your browser the DMX server is still running.
-To get back to the DMX web client point your browser to the full address ``http://localhost:8080/systems.dmx.webclient/`` again.
+To get back to the DMX web client point your browser to the full address http://localhost:8080/systems.dmx.webclient/ again.
 Without the path (``systems.dmx.webclient/``) your browser cannot find the DMX web client.
 
 Stopping DMX
@@ -195,7 +195,7 @@ Go into the newly created folder (in this example "dmx-5.0-beta-5") and run the 
     ~/Downloads $ cd dmx-5.0-beta-5
     ~/Downloads/cd dmx-5.0-beta-5 $ ./dmx-linux.sh
 
-Your default browser opens the DMX web client at ``http://localhost:8080/systems.dmx.webclient/``.
+Your default browser opens the DMX web client at http://localhost:8080/systems.dmx.webclient/.
 The path to the web client ``systems.dmx.webclient/`` is mandatory.
 Without it your browser cannot find the DMX web client.
 You are ready to go.
@@ -206,7 +206,7 @@ Opening the Web Client
 ======================
 
 When you close your browser the DMX server is still running.
-To get back to the DMX web client point your browser to the full address ``http://localhost:8080/systems.dmx.webclient/`` again.
+To get back to the DMX web client point your browser to the full address http://localhost:8080/systems.dmx.webclient/ again.
 Without the path (``systems.dmx.webclient/``) your browser cannot find the DMX web client.
 
 Stopping DMX
