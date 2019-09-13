@@ -1180,6 +1180,54 @@ To continue working with a less crowded map, you might want to :ref:`bulk select
 
 .. image:: _static/topic-map-with-own-assoc-and-instances.jpg
 
+.. _user-custom-association-types:
+
+Custom Association Types
+------------------------
+
+Custom Association Types are a different way of modeling associations.
+They are a powerful, semantic authoring tool that is unique to DMX.
+Custom Association Types are used to represent parent-child relationships when you create instances.
+Their semantics are carried over to all instances without you creating associations manually in each instance.
+At the same time you benefit from DMX's model-driven form generator: The form you edit parent instances with will contain fields for all identity attributes of child instances. You thus get a form with all properties you want to add.
+
+
+.. note:: **When to use Custom Association Types?**
+
+    #. If your data model contains a clear parent-child relationship Custom Association Types are the recommended way of modeling these relationships. This is the case when you need a child type to describe the whole entity. (For example you want publications to have authors, and authors are persons.) Create a Composition Definition between parent type and child type and add a Custom Association Type to it as described below.
+    #. If your data model does not have a such clear parent-child relationship we recommend to create associations manually.
+
+The same context as shown above can be modeled using a Custom Association Type.
+
+* Create the topic types "Publication" (data type "identity") and "Publication Title" (text).
+* Reveal the built-in topic type "Year".
+* Reveal the built-in topic type "Person".
+* Create an association type called "Author".
+* Create an association between the topic type Person and the topic type Publication. Edit it and open the drop-down menu "Custom Association Type". Select "Author" and click save.
+
+.. image:: _static/create-custom-association.png
+    :width: 400
+
+Your Composition Definition looks like this:
+
+.. image:: _static/comp-def-with-custom-assoc-type.png
+
+This is your data model:
+
+.. image:: _static/data-model-with-custom-assoc-type.png
+
+Use this model to create an instance:
+
+* Create a person or reveal an existing one.
+* Create a new publication by entering a title into the search/create dialog and selecting the topic type publication.
+* Edit the publication.
+* In the form you now have fields for the year and the author (first name, last name).
+* When typing in a name, DMX's autocompletion offers you existing person names that you can select. If the author you enter does not yet exist in the database, DMX creates a new person and directly adds the custom association "Author" between this person and the publication.
+
+.. image:: _static/custom-association-instance.png
+
+.. _user-creating-a-role-type:
+
 Creating a role type
 ====================
 
