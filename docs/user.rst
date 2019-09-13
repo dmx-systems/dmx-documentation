@@ -250,7 +250,7 @@ It does *not* list the direct child topics, though, to avoid redundancy between 
 
 * The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
 * Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.
-* **When revealing listed items on the topicmap you can control whether the focus should stay with the current item or switch to the next one:** When you click anywhere onto a list item, it is revealed and the focus switches (figure 1). To keep the focus where it is click *the icon* of a different item to just reveal it (figure 2). This is how can quickly bring all relevant related items up on your topicmap.
+* **When revealing listed items on the topicmap you can control whether the focus should stay with the current item or switch to the next one:** When you click anywhere onto a list item, it is revealed and the focus switches (figure 1). To keep the focus where it is click *the icon* of a different item to just reveal it (figure 2). This is how you can quickly bring all relevant related items up on your topicmap.
 
 .. figure:: _static/related-tab-reveal-and-select.png
 
