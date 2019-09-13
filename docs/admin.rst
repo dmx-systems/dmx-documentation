@@ -286,6 +286,8 @@ Enable a few Apache modules before you start:
 This is an example configuration for Apache 2.4.
 The web server handles SSL.
 
+.. note:: Add a RewriteRule to ``https://%{HTTP_HOST}/systems.dmx.webclient/`` as described below.
+
 .. code:: bash
 
    <VirtualHost *:80>
