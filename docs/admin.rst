@@ -373,6 +373,27 @@ Drop all incoming requests on port 8080 like so:
 
     iptables -A INPUT ! -s 127.0.0.1 -p tcp --destination-port 8080 -j REJECT
 
+.. _admin-debian-package:
+
+**********************
+The DMX Debian Package
+**********************
+
+The DMX Debian package uses Linux' File System Hierarchy Standard.
+You find the respective components in the directories listed below:
+
+==========================  ===================================
+File type                   Path
+==========================  ===================================
+Configuration files         ``/etc/dmx/``
+Java files                  ``/usr/share/dmx/``
+DMX database and file repo  ``/var/lib/dmx/``
+Log files                   ``/var/log/dmx/``
+Bundle cache                ``/var/cache/dmx/``
+Examples                    ``/usr/share/docs/dmx/``
+Systemd unit file           ``/etc/systemd/system/dmx.service``
+==========================  ===================================
+
 .. _admin-plugin-installation:
 
 *******
