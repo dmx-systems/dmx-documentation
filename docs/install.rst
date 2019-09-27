@@ -7,7 +7,7 @@ Installation
 DMX is built on the Java Platform which can be installed on many operating systems.
 On this page we have covered how to run DMX on :ref:`Windows <installation-windows>`, :ref:`Mac OS <installation-macos>` and :ref:`Linux <installation-linux>`.
 
-DMX is a web application consisting of a client and server.
+DMX is a web application consisting of a client and a server.
 If you run DMX a web server is started (see Starting DMX) which makes the DMX web client accessible in your web browser (see Opening the Web Client).
 
 .. _installation-windows:
