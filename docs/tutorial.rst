@@ -15,17 +15,20 @@ To get started with DMX you can
 A first look at DMX
 *******************
 
-When you first look at a new installation of DMX, there is not much there, yet.
-We have a detailed guide to the :ref:`user interface<user-the-dmx-user-interface>` in the User Guide but here are some essentials:
-
-* In the upper right corner there is a "Login" button. Log in with the user name "admin" and no password.
-* In the upper left corner there is a workspace selector. The only existing workspace is called "DMX". This is your general context in which everything you are about to do is going (for the moment). Later you will be able to select one of all your workspaces here.
-* Next to it there is another drop-down menu. This is the topicmap selector. Right now, there is only one topicmap, it's called "untitled".
+When you first look at a new installation of DMX and open the web client, this is what you'll see:
 
 .. figure:: _static/upper-toolbar.png
     :alt: Tool bar with workspace and topicmap selection
 
-* Both have a context information button. Click them to see more information. For the moment the most interesting information is the access control. **The first default workspace and the default topicmap are in SharingMode "public" that is: They are not private, but world-readable.** This is important to keep in mind if you are trying DMX on our public demo site or if you installed it on a server that is connected to the internet. You can find out more about access control in the section about :ref:`Collaboration and Sharing<user-collaboration-and-sharing>`.
+* In the **upper right** corner there is a "Login" button. Log in with the user name "admin" and no password.
+* In the **upper left** corner there is the _Workspace_ selector. You can use this to switch between workspaces. By default the _DMX_ workspace is selected.
+* Next to it there is another drop-down menu. This is the _Topicmap_ selector. By default it shows a _Topicmap_ called "untitled".
+
+Both drop-down menus have a context information button "i" next to them. Click it to reveal detail about the selected _Topicmap_ or _Workspace_.
+
+.. For the moment the most interesting information is the access control. **The first default workspace and the default topicmap are in SharingMode "public" that is: They are not private, but world-readable.** This is important to keep in mind if you are trying DMX on our public demo site or if you installed it on a server that is connected to the internet. You can find out more about access control in the section about :ref:`Collaboration and Sharing<user-collaboration-and-sharing>`.
+
+For more information visit our detailed guide to the :ref:`user interface<user-the-dmx-user-interface>` in the DMX User Guide.
 
 .. _tutorial-adding-your-first-topic:
 
@@ -33,13 +36,10 @@ We have a detailed guide to the :ref:`user interface<user-the-dmx-user-interface
 Adding your first topic
 ***********************
 
-:ref:`Content Authoring<user-content-authoring>` is described in-depth in the User Guide.
-This is just a short walkthrough to help you create your first items in DMX.
-
-Right-click into the emptiness.
-A window appears that lets you search for something.
+Right-click into the emptiness of the topicmap.
+A dialog appears that lets you search all your contents.
 This is the :ref:`Search/Create Dialog<user-the-search-create-dialog>`.
-Let's create something!
+Now let's create something!
 
 .. image:: _static/search-create.jpg
 
@@ -48,12 +48,12 @@ That's why you enter whatever you want to create into the search field.
 Let's assume you want to enter all persons and organizations involved in a project.
 Enter a person's first name.
 DMX will answer "No match".
-Select "Person" from the predefined topic types and click "Create".
+Select "Person" in the _Create_ section on the right from the _Topic Types_ menu and click "Create".
 
 .. image:: _static/create-person.jpg
 
-You will see a rectangle on your topicmap.
-It contains the name you entered and it states that this is the person's first name.
+You will see a rectangle appear on the topicmap.
+It represents a _Person_ with the name you just entered and it states that this is the person's first name.
 
 .. image:: _static/person-in-map-details.png
 
@@ -62,24 +62,25 @@ The result would look like this:
 
 .. image:: _static/person-wrong-first-name.png
 
-DMX interpreted both as given name.
+DMX interpreted both as first name.
 Let's correct this:
-Long-press the rectangle and select "edit" from the :ref:`context menu <user-the-context-menu>`.
+Long-press the rectangle and select "edit" from the :ref:`context menu <user-the-context-menu>`. On the right-hand side the so called :ref:`detail panel <user-the-detail-panel>` shows up.
 
 .. image:: _static/context-menu-edit.png
 
-On the right-hand side the :ref:`detail panel <user-the-detail-panel>` opens.
-It contains many fields you might need for all persons.
-Correct the name and click the save button at the very bottom.
-Add a second topic, e.g. "Notes for the interview".
-Select the topic type "Note".
+When "editing" the detail panel shows all the fields you might need to describe a person.
+Correct the first name and click the "Save" button at the very bottom.
+
+Now let's add a second topic. Right-click on the emptiness, enter e.g. "Notes for the interview" into the dialog, select the topic type "Note" and click "Create".
 
 .. image:: _static/person-and-note.png
 
-Add a third topic e.g. "Organization No. 1".
-Select the topic type "Organization" this time.
+Let's add another topic, e.g. "Organization No. 1".
+This time we select "Organization" from the list of topic types and press "Create".
 
 .. image:: _static/person-note-organization.png
+
+This is just a short walkthrough to help you create your first topics in DMX. :ref:`Content Authoring<user-content-authoring>` is described in-depth in the DMX User Guide. Now let's describe the relations between our items.
 
 .. _tutorial-adding-your-first-association:
 
@@ -87,9 +88,7 @@ Select the topic type "Organization" this time.
 Adding your first association
 *****************************
 
-Next, you want to visualize that the note is related to the person.
-
-To create an association between two topics you grab the little dot at the upper border of one of the two topics.
+To create an association between two topics you grab the little dot at the upper border of one of the two topics. As we prepare for our interview let's say the "Note for theinterview" shall be related to the person "Cathy Jones".
 
 .. image:: _static/create-simple-association-1.png
 
@@ -97,60 +96,57 @@ Drag it onto the other topic until that topic is highlighted by a blue border.
 
 .. image:: _static/create-simple-association-2.png
 
-A rectangle appears.
-These are the :ref:`in-map details <user-in-map-details>`.
-They tell you that this is an "Association", that the association type is "Association".
-You can think of it as a very simple association:
-You just drew a line between two topics.
-The line neither does not have a dedicated meaning.
-Click somewhere onto the topicmap to close the in-map-details.
+Then drop the assocation on the "Notes for the interview" item and release your mouse pointer. 
 
-**********************************
-A glimpse into the PIM application
-**********************************
+The association will be created and a rectangle appears.
+These are the :ref:`in-map details <user-in-map-details>` of the newly created association.
+They tell you that this is association is of type "Association" which is the most generic form of association in DMX.
 
-You can see the difference between a simple drawn line and a qualified association with the following example:
-DMX comes with a few predefined topic types that you just selected from:
+Using the Drag & Drop gesture starting on the blue dot above an item you just created an association between two topics.
+Click somewhere onto the topicmap to close the in-map-details of the association.
 
-- person,
-- organization,
-- note,
-- event,
-- bookmark.
+****************************************************
+A glimpse into Personal Information Management (PIM)
+****************************************************
 
-These topic types all come from classical Personal Information Management (PIM).
-As using DMX for PIM is a popular use case, there are also some predefined association types.
-One of those association types describes the role a person has in an organization.
+DMX comes with some predefined topic types that you saw in the topic type menu of the Search/Create dialog:
 
-We will now give the person an organizational role to see that this is a different association type:
-Grab the little dot of the person's rectangle and create an association to the organization.
-The in-map details show at once that the association type is "Organization Association".
-The "Role Type" mentioned in there is not to be confused with the organizational roles.
-This concept is explained in the full DMX User guide, see :ref:`Modeling <user-modeling>`.
+- Person
+- Organization
+- Note
+- Event
+- Bookmark
+
+Now there are also some predefined association types.
+One of those association types is called "Organizational Involvement" and it describes the role a Person can have in an Organization.
+
+So let's specify the persons role in that organization through creating another association.
+We grab the little dot above "Cathy Jones" and drag & drop the line on "Organization No. 1".
+The in-map details show up again and indeed, DMX automatically created an association of type "Organizational Involvement".
 
 .. image:: _static/create-organization-association.png
 
-Next, we have to assign the exact role.
-Right-click onto the rectangle or directly onto the association.
-The context menu opens.
-Select "Edit".
+Next, we want to describe "Cathy Jones" exact role in "Organization No. 1".
+Therefore we right-click onto the association to open the context menu and select "Edit".
 
 .. image:: _static/edit-organization-association.png
 
-The detail panel opens.
+The detail panel opens again and displays a form.
 You can now select an "Organizational Role" from a predefined set of possible values, e.g. "Member".
 
 .. image:: _static/select-role.png
 
-Click "Save".
+For your changes to take effect click "Save".
 
 .. image:: _static/organization-association.png
 
-This is a meaningful association:
-You can open the context menu of the organization with a right-click and select "Related".
+Now this is a more meaningful association.
+If you right-click and select "Related" on "Organization No. 1" you see how the role can be usefuel when navigating in DMX.
 If you have entered more than one person, you can scroll down in the detail panel to see all persons and their respective roles in the organization.
 
 .. image:: _static/organizational-roles.png
+
+Great! We've prepared for our interview with "Cathy Jones" and learned how to create topics and how to work with associations. That's it for this short tutorial.
 
 In DMX you are free to define your own topic types and association types.
 Find out more about it in the section about :ref:`Modeling<user-modeling>`.
