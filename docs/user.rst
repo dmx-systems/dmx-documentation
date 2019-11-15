@@ -140,7 +140,7 @@ The search for existing items and the creation of new ones is done in the same d
 The search/create dialog is opened with a right-click into the topicmap.
 Read more on how to create content in the section about :ref:`Content Authoring<user-content-authoring>`.
 
-.. image:: _static/search-create.jpg
+.. image:: _static/search-create.png
 
 .. _user-advanced-search:
 
@@ -324,7 +324,7 @@ Creating a topic
 Right-click onto the topicmap.
 The search/create dialog appears.
 
-.. image:: _static/search-create.jpg
+.. image:: _static/search-create.png
 
 DMX wants to make sure that you do not create something that already exists.
 That's why you enter whatever you want to create into the search field.
@@ -332,7 +332,7 @@ Enter a term, e.g. a person's given name..
 DMX will answer "No match".
 Select "Person" from the predefined topic types and click "Create".
 
-.. image:: _static/create-person.jpg
+.. image:: _static/create-person.png
 
 You will see a rectangle on your topicmap.
 It contains the name you entered and it states that this is the person's first name.
@@ -389,7 +389,7 @@ If you just draw a line between two things to create an association you will see
 Its association type is just "association".
 You can use these associations to visualize that two items are somehow related to each other without being specific about the meaning of the association.
 
-.. image:: _static/generic-association.jpg
+.. image:: _static/generic-association.png
     :width: 600
 
 If you need qualified associations you have to give your associations a meaning.
@@ -752,7 +752,7 @@ Switching between topicmaps
 
 You can switch between your topicmaps by using the topicmap selector in the tool bar.
 
-.. image:: _static/topic-map-selector.png
+.. image:: _static/topic-map-selector2.png
 
 If you reveal the topicmaps themselves in a topicmap you can jump to different topicmaps with a double-click.
 
@@ -828,9 +828,9 @@ If the name does not exist yet you create it by selecting the topic type "User A
 After that, a password field appears. 
 Only privileged accounts (like admin) can create user accounts.
 
-.. image:: _static/user-account-creation.jpg
+.. image:: _static/user-account-creation.png
 
-.. image:: _static/user-account-password.jpg
+.. image:: _static/user-account-password.png
 
 What is displayed after account creation is just the *user name*?
 The *user account* consists of the user name and the password.
@@ -882,7 +882,7 @@ DMX comes with four default workspaces with the following sharing modes:
 * **Administration**: Only the admin or members can view and edit items in this workspace. Unprivileged user accounts do not have this entry in the menu.
 * **System**: The System workspace is readable by everyone who is logged in. It contains all user names that exist in this DMX installation. The user names are readable to all users. This is needed for sharing content with others as you will see below.
 
-.. image:: _static/system-workspace.jpg
+.. image:: _static/system-workspace.png
 
 .. _user-sharing-a-workspace:
 

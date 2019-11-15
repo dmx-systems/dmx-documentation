@@ -42,7 +42,7 @@ A dialog appears that lets you search all your content.
 This is the :ref:`Search/Create Dialog<user-the-search-create-dialog>`.
 Now let's create something!
 
-.. image:: _static/search-create.jpg
+.. image:: _static/search-create.png
 
 DMX wants to make sure that you do not create something that already exists.
 That's why you enter whatever you want to create into the search field.
@@ -51,7 +51,7 @@ Enter a person's first name.
 DMX will answer "No match".
 Select "Person" in the "Create" section on the right from the Topic Types menu and click "Create".
 
-.. image:: _static/create-person.jpg
+.. image:: _static/create-person.png
 
 You will see a rectangle appear on the topicmap.
 It represents a person with the name you just entered and it states that this is the person's first name.
