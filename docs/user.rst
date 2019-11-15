@@ -138,50 +138,10 @@ The Search/Create Dialog
 
 The search for existing items and the creation of new ones is done in the same dialog box.
 The search/create dialog is opened with a right-click into the topicmap.
+Advanced search options are explained below in the :ref:`Navigation section<user-searching-the-database>`.
 Read more on how to create content in the section about :ref:`Content Authoring<user-content-authoring>`.
 
 .. image:: _static/search-create.png
-
-.. _user-advanced-search:
-
-Advanced Search
----------------
-
-The search in DMX is run by the powerful Lucene search engine.
-You can run simple queries by just entering a search term.
-If this brings up too many results from your database, you can narrow down your search with more complex queries.
-DMX supports the `Lucene Query Parser Syntax <https://lucene.apache.org/core/3_5_0/queryparsersyntax.html>`_.
-Let's look at a few examples:
-
-.. note:: Enter more than one character to start searching.
-
-When your search term consists of letters, you will only get results *starting* with this string.
-You won't see results containing the search term *in the middle* of a word.
-In the following example with the search term "cd" you see that "cde" is displayed in the results, while "bcd" or "abcdef" are not.
-
-.. image:: _static/search-first-letter.png
-
-If you add a wildcard symbol in the beginning you ask for items beginning with one or multiple other characters and ending with the search term.
-Add another wildcard at the end of the search term to query for items *containing* it somewhere in the middle.
-There are two wildcard symbols:
-
-*  ``?`` The question mark represents *one* character.
-*  ``*`` The asterisk represents zero, one or multiple characters.
-
-.. image:: _static/search-wildcard.png
-
-If you enter more than one search term into the Search/Create Dialog the search engine interprets a logical AND connection between them.
-In this example we search for everything containing "abc" AND "def" but not the standalone "abc".
-
-.. image:: _static/search-phrase-unquoted.png
-
-If you want to find all items that contain either "abc" OR "def" OR even both you replace the logical AND with a logical OR like so:
-
-.. image:: _static/search-phrase-OR.png
-
-To get the *exact* search phrase consisting of multiple words enter it surrounded by double quotes.
-
-.. image:: _static/search-phrase-quoted.png
 
 .. _user-the-detail-panel:
 
@@ -720,6 +680,8 @@ Choose a color for your association type and save it.
 Navigation
 **********
 
+.. _user-searching-the-database:
+
 Searching the database
 ======================
 
@@ -730,8 +692,86 @@ You refine the search by typing in more letters.
 
 .. image:: _static/search-results.jpg
 
-Note that the search results include everything:
+Note that the unfiltered search results include everything:
 Your actual content, e.g. persons you entered, is displayed as well as topic types, topicmaps association types etc.
+
+.. _user-advanced-search-filter-types:
+
+Advanced Search with the Type Filter
+------------------------------------
+
+The Search/Create Dialog has two checkboxes right under the search field.
+They narrow down your search results to certain topic types according to your filter.
+
+When you just enter a search term you potentially get a lot of unwanted results:
+
+.. image:: _static/advanced-search-no-filter.png
+
+The first checkbox "Search only selected type" lets you select a topic type you want to apply the search to.
+Tick the box, then select a topic type:
+
+.. image:: _static/search-selected-type.png
+
+If the topic type you need is not displayed in the drop-down menu you can add it:
+Scroll down to the bottom of the drop-down menu.
+Select "Customize Type List..." and tick all types you want to have in the drop-down menu.
+
+.. image:: _static/advanced-search-customize-type-list.png
+
+After that you see the choice was adapted to your needs:
+
+.. image:: _static/advanced-search-custom-type-list.png
+
+The second checkbox "Search child topics" lets you run more complex searches by applying the filter to the selected topic type and its children:
+In this example you can see that searching for the term "Berlin" in the topic type "Person" does not give any results because no person in the database is called "Berlin".
+
+.. image:: _static/advanced-search-without-child-types.png
+
+Ticking the second checkbox additionally searches address entries as a child type of the person type.
+This lets you find all persons with an address in Berlin.
+
+.. image:: _static/advanced-search-with-child-types.png
+
+.. _user-advanced-search-lucene:
+
+Advanced Search with Lucene
+---------------------------
+
+The search in DMX is run by the powerful Lucene search engine.
+You can run simple queries by just entering a search term.
+If this brings up too many results from your database, you can narrow down your search with more complex queries.
+DMX supports the `Lucene Query Parser Syntax <https://lucene.apache.org/core/3_5_0/queryparsersyntax.html>`_.
+Let's look at a few examples:
+
+.. note:: Enter more than one character to start searching.
+
+When your search term consists of letters, you will only get results *starting* with this string.
+You won't see results containing the search term *in the middle* of a word.
+In the following example with the search term "cd" you see that "cde" is displayed in the results, while "bcd" or "abcdef" are not.
+
+.. image:: _static/search-first-letter.png
+
+If you add a wildcard symbol in the beginning you ask for items beginning with one or multiple other characters and ending with the search term.
+Add another wildcard at the end of the search term to query for items *containing* it somewhere in the middle.
+There are two wildcard symbols:
+
+*  ``?`` The question mark represents *one* character.
+*  ``*`` The asterisk represents zero, one or multiple characters.
+
+.. image:: _static/search-wildcard.png
+
+If you enter more than one search term into the Search/Create Dialog the search engine interprets a logical AND connection between them.
+In this example we search for everything containing "abc" AND "def" but not the standalone "abc".
+
+.. image:: _static/search-phrase-unquoted.png
+
+If you want to find all items that contain either "abc" OR "def" OR even both you replace the logical AND with a logical OR like so:
+
+.. image:: _static/search-phrase-OR.png
+
+To get the *exact* search phrase consisting of multiple words enter it surrounded by double quotes.
+
+.. image:: _static/search-phrase-quoted.png
 
 .. _user-associative-navigation:
 
