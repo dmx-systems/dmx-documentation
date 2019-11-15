@@ -894,7 +894,7 @@ Here is how creating a shared workspace works:
 * Log in as an unprivileged user and go to your private workspace where you can edit.
 * Open the search field and **create a workspace**. Make it a collaborative workspace to give others write permission.
 
-.. image:: _static/workspace-creation.jpg
+.. image:: _static/workspace-creation.png
 
 * The new workspace automatically opens. Click onto the blue information icon next to the workspace selector to reveal the workspace topic itself on the topicmap.
 * To add members to the workspace you can just search for their user names and click them to reveal them on the map. As mentioned above, all user names are visible to all other logged in users. In DMX, membership is tied to user names.
@@ -903,11 +903,14 @@ Here is how creating a shared workspace works:
 * Next you have to qualify this association as a membership: Edit the association.
 
 .. image:: _static/edit-ws-assoc.png
-    :width: 300
 
 * In the detail panel you can now select the association type "Membership". You are done!
 
 .. image:: _static/edit-ws-assoc2.png
+
+* Here are the details of the workspace membership association.
+
+.. image:: _static/view-ws-assoc.png
 
 * The user you shared your workspace with can now log in, select your collaborative workspace and add something, e.g. a note. This note is now accessible to all members of the workspace. It will appear on the selected topicmap, visible to all workspace members looking at the same topicmap.
 
