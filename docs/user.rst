@@ -685,7 +685,7 @@ Navigation
 Searching the database
 ======================
 
-To search the DMX database open the Search/Create dialog with a left-click in the topicmap.
+To search the DMX database open the search/create dialog with a left-click in the topicmap.
 Start typing what you are looking for.
 DMX immediately displays all results that you have read access to.
 You refine the search by typing in more letters.
@@ -693,21 +693,21 @@ You refine the search by typing in more letters.
 .. image:: _static/search-results.jpg
 
 Note that the unfiltered search results include everything:
-Your actual content, e.g. persons you entered, is displayed as well as topic types, topicmaps association types etc.
+Your actual content, e.g. persons you entered, is displayed as well as topic types, topicmaps, association types etc.
 
 .. _user-advanced-search-filter-types:
 
 Advanced Search with the Type Filter
 ------------------------------------
 
-The Search/Create Dialog has two checkboxes right under the search field.
+The search/create dialog has two checkboxes right under the search field.
 They narrow down your search results to certain topic types according to your filter.
 
 When you just enter a search term you potentially get a lot of unwanted results:
 
 .. image:: _static/advanced-search-no-filter.png
 
-The first checkbox "Search only selected type" lets you select a topic type you want to apply the search to.
+The first checkbox **"Search only selected type"** lets you select a topic type you want to apply the search to.
 Tick the box, then select a topic type:
 
 .. image:: _static/search-selected-type.png
@@ -722,7 +722,7 @@ After that you see the choice was adapted to your needs:
 
 .. image:: _static/advanced-search-custom-type-list.png
 
-The second checkbox "Search child topics" lets you run more complex searches by applying the filter to the selected topic type and its children:
+The second checkbox **"Search child topics"** lets you run more complex searches by applying the filter to the selected topic type and its children:
 In this example you can see that searching for the term "Berlin" in the topic type "Person" does not give any results because no person in the database is called "Berlin".
 
 .. image:: _static/advanced-search-without-child-types.png
