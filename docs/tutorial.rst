@@ -21,10 +21,11 @@ When you first look at a new installation of DMX and open the web client, this i
     :alt: Tool bar with workspace and topicmap selection
 
 * In the **upper right** corner there is a "Login" button. Log in with the user name "admin" and no password.
-* In the **upper left** corner there is the _Workspace_ selector. You can use this to switch between workspaces. By default the _DMX_ workspace is selected.
-* Next to it there is another drop-down menu. This is the _Topicmap_ selector. By default it shows a _Topicmap_ called "untitled".
+* In the **upper left** corner there is the :ref:`Workspace <user-the-workspace-selector>` selector. You can use this to switch between workspaces. By default the "DMX" workspace is selected.
+* Next to it there is another drop-down menu. This is the :ref:`Topicmap <user-the-topic-map-selector>` selector. By default it shows a Topicmap called "untitled".
 
-Both drop-down menus have a context information button "i" next to them. Click it to reveal detail about the selected _Topicmap_ or _Workspace_.
+Both drop-down menus have a context information button "i" next to them.
+Click it to reveal detail about the selected Topicmap or Workspace.
 
 .. For the moment the most interesting information is the access control. **The first default workspace and the default topicmap are in SharingMode "public" that is: They are not private, but world-readable.** This is important to keep in mind if you are trying DMX on our public demo site or if you installed it on a server that is connected to the internet. You can find out more about access control in the section about :ref:`Collaboration and Sharing<user-collaboration-and-sharing>`.
 
@@ -37,23 +38,23 @@ Adding your first topic
 ***********************
 
 Right-click into the emptiness of the topicmap.
-A dialog appears that lets you search all your contents.
+A dialog appears that lets you search all your content.
 This is the :ref:`Search/Create Dialog<user-the-search-create-dialog>`.
 Now let's create something!
 
-.. image:: _static/search-create.jpg
+.. image:: _static/search-create.png
 
 DMX wants to make sure that you do not create something that already exists.
 That's why you enter whatever you want to create into the search field.
 Let's assume you want to enter all persons and organizations involved in a project.
 Enter a person's first name.
 DMX will answer "No match".
-Select "Person" in the _Create_ section on the right from the _Topic Types_ menu and click "Create".
+Select "Person" in the "Create" section on the right from the Topic Type menu and click "Create".
 
-.. image:: _static/create-person.jpg
+.. image:: _static/create-person.png
 
 You will see a rectangle appear on the topicmap.
-It represents a _Person_ with the name you just entered and it states that this is the person's first name.
+It represents a person with the name you just entered and it states that this is the person's first name.
 
 .. image:: _static/person-in-map-details.png
 
@@ -64,7 +65,8 @@ The result would look like this:
 
 DMX interpreted both as first name.
 Let's correct this:
-Long-press the rectangle and select "edit" from the :ref:`context menu <user-the-context-menu>`. On the right-hand side the so called :ref:`detail panel <user-the-detail-panel>` shows up.
+Long-press the rectangle and select "edit" from the :ref:`context menu <user-the-context-menu>`.
+On the right-hand side the so called :ref:`detail panel <user-the-detail-panel>` shows up.
 
 .. image:: _static/context-menu-edit.png
 
@@ -88,7 +90,8 @@ This is just a short walkthrough to help you create your first topics in DMX. :r
 Adding your first association
 *****************************
 
-To create an association between two topics you grab the little dot at the upper border of one of the two topics. As we prepare for our interview let's say the "Note for theinterview" shall be related to the person "Cathy Jones".
+To create an :ref:`association <user-creating-an-association>` between two topics you grab the little dot at the upper border of one of the two topics.
+As we prepare for our interview let's say the "Note for the interview" shall be related to the person "Cathy Jones".
 
 .. image:: _static/create-simple-association-1.png
 

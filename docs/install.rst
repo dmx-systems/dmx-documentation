@@ -85,6 +85,13 @@ Running DMX on Mac OS
 
 On most current Mac OS versions Java 8 is already installed.
 If Java 8 is not installed you can download it from the `AdoptOpenJDK <https://adoptopenjdk.net/>`_ or `Oracle's Java <https://java.com/en/download/>`_ website.
+
+Your Mac automatically uses the newest Java version. If your default Java version is higher than Java 8 and you installed Java 8 in addition you have to disable the newer version.
+
+1. Find out which Java version is active. Open the Terminal and type ``java -version``.
+2. If it is higher than 8 open Macintosh HD and go to Library - Java - JavaVirtualMachines. Find the newer version.
+3. Rename that version's ``Contents/info.plist`` file to ``Contents/info.plist.disabled``.
+
 Double-click the downloaded file and click through the installer.
 
 Downloading DMX

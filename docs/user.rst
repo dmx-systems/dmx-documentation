@@ -138,50 +138,10 @@ The Search/Create Dialog
 
 The search for existing items and the creation of new ones is done in the same dialog box.
 The search/create dialog is opened with a right-click into the topicmap.
+Advanced search options are explained below in the :ref:`Navigation section<user-searching-the-database>`.
 Read more on how to create content in the section about :ref:`Content Authoring<user-content-authoring>`.
 
-.. image:: _static/search-create.jpg
-
-.. _user-advanced-search:
-
-Advanced Search
----------------
-
-The search in DMX is run by the powerful Lucene search engine.
-You can run simple queries by just entering a search term.
-If this brings up too many results from your database, you can narrow down your search with more complex queries.
-DMX supports the `Lucene Query Parser Syntax <https://lucene.apache.org/core/3_5_0/queryparsersyntax.html>`_.
-Let's look at a few examples:
-
-.. note:: Enter more than one character to start searching.
-
-When your search term consists of letters, you will only get results *starting* with this string.
-You won't see results containing the search term *in the middle* of a word.
-In the following example with the search term "cd" you see that "cde" is displayed in the results, while "bcd" or "abcdef" are not.
-
-.. image:: _static/search-first-letter.png
-
-If you add a wildcard symbol in the beginning you ask for items beginning with one or multiple other characters and ending with the search term.
-Add another wildcard at the end of the search term to query for items *containing* it somewhere in the middle.
-There are two wildcard symbols:
-
-*  ``?`` The question mark represents *one* character.
-*  ``*`` The asterisk represents zero, one or multiple characters.
-
-.. image:: _static/search-wildcard.png
-
-If you enter more than one search term into the Search/Create Dialog the search engine interprets a logical AND connection between them.
-In this example we search for everything containing "abc" AND "def" but not the standalone "abc".
-
-.. image:: _static/search-phrase-unquoted.png
-
-If you want to find all items that contain either "abc" OR "def" OR even both you replace the logical AND with a logical OR like so:
-
-.. image:: _static/search-phrase-OR.png
-
-To get the *exact* search phrase consisting of multiple words enter it surrounded by double quotes.
-
-.. image:: _static/search-phrase-quoted.png
+.. image:: _static/search-create.png
 
 .. _user-the-detail-panel:
 
@@ -324,7 +284,7 @@ Creating a topic
 Right-click onto the topicmap.
 The search/create dialog appears.
 
-.. image:: _static/search-create.jpg
+.. image:: _static/search-create.png
 
 DMX wants to make sure that you do not create something that already exists.
 That's why you enter whatever you want to create into the search field.
@@ -332,7 +292,7 @@ Enter a term, e.g. a person's given name..
 DMX will answer "No match".
 Select "Person" from the predefined topic types and click "Create".
 
-.. image:: _static/create-person.jpg
+.. image:: _static/create-person.png
 
 You will see a rectangle on your topicmap.
 It contains the name you entered and it states that this is the person's first name.
@@ -389,7 +349,7 @@ If you just draw a line between two things to create an association you will see
 Its association type is just "association".
 You can use these associations to visualize that two items are somehow related to each other without being specific about the meaning of the association.
 
-.. image:: _static/generic-association.jpg
+.. image:: _static/generic-association.png
     :width: 600
 
 If you need qualified associations you have to give your associations a meaning.
@@ -720,18 +680,98 @@ Choose a color for your association type and save it.
 Navigation
 **********
 
+.. _user-searching-the-database:
+
 Searching the database
 ======================
 
-To search the DMX database open the Search/Create dialog with a left-click in the topicmap.
+To search the DMX database open the search/create dialog with a left-click in the topicmap.
 Start typing what you are looking for.
 DMX immediately displays all results that you have read access to.
 You refine the search by typing in more letters.
 
 .. image:: _static/search-results.jpg
 
-Note that the search results include everything:
-Your actual content, e.g. persons you entered, is displayed as well as topic types, topicmaps association types etc.
+Note that the unfiltered search results include everything:
+Your actual content, e.g. persons you entered, is displayed as well as topic types, topicmaps, association types etc.
+
+.. _user-advanced-search-filter-types:
+
+Advanced Search with the Type Filter
+------------------------------------
+
+The search/create dialog has two checkboxes right under the search field.
+They narrow down your search results to certain topic types according to your filter.
+
+When you just enter a search term you potentially get a lot of unwanted results:
+
+.. image:: _static/advanced-search-no-filter.png
+
+The first checkbox **"Search only selected type"** lets you select a topic type you want to apply the search to.
+Tick the box, then select a topic type:
+
+.. image:: _static/search-selected-type.png
+
+If the topic type you need is not displayed in the drop-down menu you can add it:
+Scroll down to the bottom of the drop-down menu.
+Select "Customize Type List..." and tick all types you want to have in the drop-down menu.
+
+.. image:: _static/advanced-search-customize-type-list.png
+
+After that you see the choice was adapted to your needs:
+
+.. image:: _static/advanced-search-custom-type-list.png
+
+The second checkbox **"Search child topics"** lets you run more complex searches by applying the filter to the selected topic type and its children:
+In this example you can see that searching for the term "Berlin" in the topic type "Person" does not give any results because no person in the database is called "Berlin".
+
+.. image:: _static/advanced-search-without-child-types.png
+
+Ticking the second checkbox additionally searches address entries as a child type of the person type.
+This lets you find all persons with an address in Berlin.
+
+.. image:: _static/advanced-search-with-child-types.png
+
+.. _user-advanced-search-lucene:
+
+Advanced Search with Lucene
+---------------------------
+
+The search in DMX is run by the powerful Lucene search engine.
+You can run simple queries by just entering a search term.
+If this brings up too many results from your database, you can narrow down your search with more complex queries.
+DMX supports the `Lucene Query Parser Syntax <https://lucene.apache.org/core/3_5_0/queryparsersyntax.html>`_.
+Let's look at a few examples:
+
+.. note:: Enter more than one character to start searching.
+
+When your search term consists of letters, you will only get results *starting* with this string.
+You won't see results containing the search term *in the middle* of a word.
+In the following example with the search term "cd" you see that "cde" is displayed in the results, while "bcd" or "abcdef" are not.
+
+.. image:: _static/search-first-letter.png
+
+If you add a wildcard symbol in the beginning you ask for items beginning with one or multiple other characters and ending with the search term.
+Add another wildcard at the end of the search term to query for items *containing* it somewhere in the middle.
+There are two wildcard symbols:
+
+*  ``?`` The question mark represents *one* character.
+*  ``*`` The asterisk represents zero, one or multiple characters.
+
+.. image:: _static/search-wildcard.png
+
+If you enter more than one search term into the Search/Create Dialog the search engine interprets a logical AND connection between them.
+In this example we search for everything containing "abc" AND "def" but not the standalone "abc".
+
+.. image:: _static/search-phrase-unquoted.png
+
+If you want to find all items that contain either "abc" OR "def" OR even both you replace the logical AND with a logical OR like so:
+
+.. image:: _static/search-phrase-OR.png
+
+To get the *exact* search phrase consisting of multiple words enter it surrounded by double quotes.
+
+.. image:: _static/search-phrase-quoted.png
 
 .. _user-associative-navigation:
 
@@ -752,7 +792,7 @@ Switching between topicmaps
 
 You can switch between your topicmaps by using the topicmap selector in the tool bar.
 
-.. image:: _static/topic-map-selector.png
+.. image:: _static/topic-map-selector2.png
 
 If you reveal the topicmaps themselves in a topicmap you can jump to different topicmaps with a double-click.
 
@@ -828,9 +868,9 @@ If the name does not exist yet you create it by selecting the topic type "User A
 After that, a password field appears. 
 Only privileged accounts (like admin) can create user accounts.
 
-.. image:: _static/user-account-creation.jpg
+.. image:: _static/user-account-creation.png
 
-.. image:: _static/user-account-password.jpg
+.. image:: _static/user-account-password.png
 
 What is displayed after account creation is just the *user name*?
 The *user account* consists of the user name and the password.
@@ -882,7 +922,7 @@ DMX comes with four default workspaces with the following sharing modes:
 * **Administration**: Only the admin or members can view and edit items in this workspace. Unprivileged user accounts do not have this entry in the menu.
 * **System**: The System workspace is readable by everyone who is logged in. It contains all user names that exist in this DMX installation. The user names are readable to all users. This is needed for sharing content with others as you will see below.
 
-.. image:: _static/system-workspace.jpg
+.. image:: _static/system-workspace.png
 
 .. _user-sharing-a-workspace:
 
@@ -894,7 +934,7 @@ Here is how creating a shared workspace works:
 * Log in as an unprivileged user and go to your private workspace where you can edit.
 * Open the search field and **create a workspace**. Make it a collaborative workspace to give others write permission.
 
-.. image:: _static/workspace-creation.jpg
+.. image:: _static/workspace-creation.png
 
 * The new workspace automatically opens. Click onto the blue information icon next to the workspace selector to reveal the workspace topic itself on the topicmap.
 * To add members to the workspace you can just search for their user names and click them to reveal them on the map. As mentioned above, all user names are visible to all other logged in users. In DMX, membership is tied to user names.
@@ -903,11 +943,14 @@ Here is how creating a shared workspace works:
 * Next you have to qualify this association as a membership: Edit the association.
 
 .. image:: _static/edit-ws-assoc.png
-    :width: 300
 
 * In the detail panel you can now select the association type "Membership". You are done!
 
 .. image:: _static/edit-ws-assoc2.png
+
+* Here are the details of the workspace membership association.
+
+.. image:: _static/view-ws-assoc.png
 
 * The user you shared your workspace with can now log in, select your collaborative workspace and add something, e.g. a note. This note is now accessible to all members of the workspace. It will appear on the selected topicmap, visible to all workspace members looking at the same topicmap.
 

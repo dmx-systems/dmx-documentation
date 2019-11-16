@@ -49,9 +49,19 @@ Here you configure the ports DMX will be listening on.
 Request Filters
 ===============
 
-In this section you can control if anonymous users, that is people who are not logged in, can read and/or write content.
+Every incoming request has to pass two filters: The request level filter and the resource level filter.
+
+#. The request level filter checks on the HTTP level if the request is a read or a write request and whether it comes from a logged in user with a valid session.
+#. The resource level filter checks the classical ACL: Which workspace is the requested object assigned to? What are the sharing mode and memberships (resp. the ownership) of that workspace? Does the user have any permissions on the requested resource?
+
+In the Request Filters section you can control if anonymous users, that is people who are not logged in, can read and/or write content.
 
 .. warning:: By default, anyone can read but not write content! Consider to change this!
+
+.. code:: bash
+
+   dmx.security.anonymous_read_allowed = ALL
+   dmx.security.anonymous_write_allowed = NONE
 
 ======================================  ============================================
 Available options                       Meaning
@@ -68,15 +78,9 @@ Each prefix must begin with slash but have *no* slash at the end, e.g. ``/eu.cro
 Spaces, tabs, and line breaks are allowed.
 Line breaks must be escaped with a backslash (\\).
 
-.. code:: bash
-
-   dmx.security.anonymous_read_allowed = ALL
-   dmx.security.anonymous_write_allowed = NONE
-
-
-If you want you instance to be accessible from the internet you might need to change this setting depending on your web server configuration and IP address.
-In a default installation, requests are only allowed from localhost.
-Thus, if you do not change this setting and you run DMX on your laptop without any other web server your instance is not accessible from outside our computer.
+In a default installation, requests are only allowed from localhost for security reasons.
+This is configured in the subnet filter setting.
+If you do not change this setting and you run DMX on your laptop without any other web server your instance is not accessible from outside our computer.
 
 .. code:: bash
 
@@ -85,6 +89,13 @@ Thus, if you do not change this setting and you run DMX on your laptop without a
    # To allow local access only set "127.0.0.1/32". This is the default.
    # To allow global access set "0.0.0.0/0".
    dmx.security.subnet_filter = 127.0.0.1/32
+
+If you want your instance to be accessible from the internet you have to change the subnet filter setting depending on your web server configuration and IP address.
+To allow global access enable the subnet filter like so:
+
+.. code:: bash
+
+    dmx.security.subnet_filter = 0.0.0.0/0
 
 User Accounts and Admin Password
 ================================
