@@ -13,7 +13,7 @@ The DMX User Interface
 The Toolbar
 ===========
 
-The upper toolbar contains some of the crucial steering tools for DMX.
+The upper toolbar contains the crucial steering tools for DMX: The workspace selector, the topicmap selector and the user menu.
 
 .. figure:: _static/upper-toolbar.png
     :alt: Tool bar with workspace and topicmap selector
@@ -23,12 +23,12 @@ The upper toolbar contains some of the crucial steering tools for DMX.
 The Workspace Selector
 ----------------------
 
-In the upper left corner there is a drop-down menu called "Workspace".
-This is the workspace selector.
-Workspaces are the highest level of content organization in DMX.
-You can think of workspaces as the folders you put your different projects into.
-When you start to work on a blank DMX installation and you are not logged in, the only visible workspace is called "DMX".
-Read more about workspaces in the section :ref:`user-introduction-to-workspaces-and-sharing-modes`.
+In the upper left corner there is a drop-down menu showing "DMX" and this is the _Workspace Selector_. When you start to work in a blank DMX installation and you are not logged in, the only visible workspace is "DMX".
+"Workspaces" are the highest level of content organization in DMX. Everything you create in DMX is automatically assigned to the current workspace.
+"DMX" is the name of a pre-installed public standard workspace.
+You can think of workspaces as the different contexts you would organize your work in. Every item in DMX can be assigned to only one workspace at a time. For example, your workspace selection influences the items shown in the next menu, too.
+
+You can learn more about the five available types of workspaces in the section :ref:`user-introduction-to-workspaces-and-sharing-modes`.
 
 .. image:: _static/workspace-selector.png
 
@@ -37,13 +37,15 @@ Read more about workspaces in the section :ref:`user-introduction-to-workspaces-
 The Topicmap Selector
 ----------------------
 
-Next to the workspace selector there is another drop-down menu called "Topicmap".
-This is the topicmap selector.
-A topicmap represents an individual working situation.
-The user chooses what is relevant to the current context and visualizes it by revealing the relevant topics and associations from the database in a topicmap.
-Thus it shows a situation-based selection of the whole database content.
-In the beginning, there is only one topicmap, it's called "untitled".
-Find out how to add topicmaps in the section :ref:`user-organizing-the-working-context`.
+Next to the workspace selector there is another drop-down menu showing, on a blank installation, the name "untitled". This is the _Topicmap Selector_. It enables you to switch between all views of the selected "Workspace"
+
+A "Topicmap" is a specific view of items grouped together and a perspective on a specific task or theme. It represents a situation-based selection of items of your knowledge base and it literally depicts a (personal or shared) perspective on a task or theme trough its layout or appearance.
+
+You select the contents of a Topicmap by using the "Search/Create" dialog or through revealing related items using the "Related" command.
+
+.. Thus it shows a situation-based selection of the whole knowledge base content.
+In the beginning, there is only one topicmap, it's called "untitled". To rename it you could reveal it using the "i" command and then click "Edit".
+You can find out how to add "Topicmaps" in the section :ref:`user-organizing-the-working-context`.
 
 .. image:: _static/topic-map-selector.png
 
@@ -52,36 +54,39 @@ Find out how to add topicmaps in the section :ref:`user-organizing-the-working-c
 The Fit Button
 --------------
 
-Next to Topicmap Selector you can find the fit button.
-It has for arrows pointing from the center to the corners of a square.
 This button adjusts the zoom level of a topicmap to make it fit into the browser window.
 
 .. figure:: _static/upper-toolbar-fit-button.png
     :alt: Tool bar with highlighted fit button
+
+You can find the fit button next to "i" command of the Topicmap Selector.
+It has four arrows pointing from the center to the corners of a square.
 
 .. _user-the-reset-zoom-button:
 
 The Reset Zoom Button
 ---------------------
 
-Next, there is the reset zoom button.
-It has two arrows pointing from the corners to the center of a square.
-It resets the zoom level to "1" and centers the topicmap in its original position.
+This button resets the zoom level to scale "1" and centers the topicmap in 0,0 position.
 
 .. figure:: _static/upper-toolbar-reset-zoom-button.png
     :alt: Tool bar with highlighted reset zoom button
 
-The Login Button
+It has two arrows pointing from the corners to the center of a square and sits also next to the Topicmap Selector.
+
+
+The Login Menu
 ----------------
 
-The "Login" button is located in the upper right corner of the toolbar.
+The "Login" button opens a dialog for you to log in to DMX. It is located in the upper toolbar, to the right.
 
 The Help Button
 ---------------
 
-In the very corner there is the Help button.
-The menu that you can open here contains links to this documentation and to the `DMX Forum <https://forum.dmx.systems>`_.
+The help menu contains links to this documentation. It also links to the `DMX Comunity Forum <https://forum.dmx.systems>`_ where you can ask us and other users of DMX questions and find help.
 "About DMX" displays information about the software version you are currently running.
+
+You can find the "Help" button in the very right corner of the upper toolbar.
 
 .. figure:: _static/upper-toolbar-help-button.png
     :alt: Tool bar with highlighted help button
@@ -91,9 +96,9 @@ The menu that you can open here contains links to this documentation and to the 
 The Topicmap Panel
 ==================
 
-The topicmap panel is the main area of the DMX user interface.
-It displays the currently chosen topicmap.
-The topicmap panel is as big as your browser window unless you open the :ref:`detail panel<user-the-detail-panel>`.
+The "Topicmap Panel" is the main area of the DMX user interface.
+It displays the currently chosen view.
+The topicmap panel is as wide as your browser window unless you open the :ref:`detail panel<user-the-detail-panel>`.
 
 .. image:: _static/topic-map-panel.png
 
@@ -102,36 +107,170 @@ The topicmap panel is as big as your browser window unless you open the :ref:`de
 The Context Menu
 ----------------
 
-The context menu is opened with a right-click on items.
-It has four buttons to interact with the item:
+The "Context Menu" is always related to a selected item and part of the topicmap panel. It is usually opened with a right-click on a topic or association.
+By default, it gives you four commands to do something with the selected item:
 
-* You can display its details.
-* You can edit it.
-* You can hide it from the current topicmap
-* You can show what is related to this item.
+* You can display an items _Details_.
+* You can _Edit_ the item.
+* You can _Hide_ the item in this topicmap
+* You can navigate to _Related_ items.
 
-To close the context menu *without* any action, click into its middle.
+To close the context menu *without* any action, release your mouse in the center of the circle.
 
 .. image:: _static/context-menu.png
     :width: 250
 
 Note that the context menu shows whether you have write permission to an item or not.
-If the terms "edit" or :ref:`"delete"<user_deleting-things>` are grayed out, you cannot edit the content.
+If the term "Edit" is grayed out, you do not have write permission on the item.
 
 .. image:: _static/context-menu-no-permission.png
     :width: 250
+
+To remove an item from your knowledge base completely you can also :ref:`"Delete"<user_deleting-things>` items. Note that deletion removes an item from all topicmaps and for all users.
 
 .. _user-in-map-details:
 
 In-map Details
 --------------
 
-Whenever you select an item on a topicmap, a rectangle opens up displaying details about the selected item.
-This box is called the in-map details.
+When you select an item on a topicmap, a rectangle opens up right in-place presenting details about the selected item.
+This box is called the "In-map detail".
 
 .. image:: _static/in-map-details.jpg
 
 .. _user-the-search-create-dialog:
+
+Note that "In-map details" only show up if the "Detail Panel" is not visible.
+
+The Detail Panel
+================
+
+The "Detail Panel" is usually opened by clicking "Details", "Edit", or "Related" in the :ref:`context menu<user-the-context-menu>` of an item. The detail panel shares your screen width with the "Topicmap Panel".
+
+.. image:: _static/detail-panel.png
+
+The detail panel allows DMX to display a few more information than the :ref:`in-map details<user-in-map-details>` box and it stays open as long as you have selected an item on the map. Once you unselect an item by clicking somewhere onto your topicmap the detail panel closes.
+
+To show selected "In-map Details" while the "Detail Panel" is open you can :ref:`pin<user-pinning-things>` the in-map details to your map. Pinning shows "In-map Details" in a Topicmap, no matter what.
+
+Vice-versa you can also pin the "Detail Panel". Using the little pin icon in its upper right corner,the "Detail Panel" is displayed, no matter what. Using the same button you can un-pin and close the panel.
+
+.. image:: _static/pin-detail-panel.png
+
+Note that the detail panel only display details of a single item, not when you :ref:`bulk select<user-bulk-selection>` several items.
+
+.. _user-detail-panel-the-info-tab:
+
+The "Info" tab
+--------------
+
+The "Info" tab is the first section of the "Detail Panel" and it is named by the content type of your current selection, e.g. "Person" or "Event".
+
+You can go to the info tab directly by choosing "Details" from the :ref:`context menu<user-the-context-menu>` or by selecting the first tab in the "Detail Panel".
+
+In "Display" mode it shows the direct child topics of the current selection and all childs which have a value assigned.
+
+You can you use the display mode to reveal selected child topics in the topicmap panel by hovering the childs and using the little eye symbol (at the very right).
+
+.. image:: _static/detail-panel-reveal-button.png
+
+The info tab also has an "Edit" mode. You can enter edit mode either using the "Edit" button at the bottom of the "Info" tab or directly from within the map by clicking "Edit" in the :ref:`context menu<user-the-context-menu>`.
+
+If you enter the editing mode, you get a form for all possible inputs regarding the respective topic or association type.
+The form is generated using the underlying "Type Definition" of the content (for more details, see our section on :ref:`Modeling<user-modeling>`.)
+
+.. image:: _static/detail-panel-editing-mode.jpg
+
+.. _user-detail-panel-the-related-tab:
+
+The "Related" tab
+-----------------
+
+The "Related" tab is the second tab of the "Detail Panel" and is designed to navigate along associations in the knowledge base. 
+
+In "Related" you see a sorted list of all items directly related with your current selection except its direct child topics. This is what we want to navigate on and avoids redundancy in regards to the contents displayed in the "Info" tab or the "In-map Details". By default the list is sorted by topic type.
+
+You can jump directly into the "Related" tab from within the map using the :ref:`context menu<user-the-context-menu>` or - if the detail panel is already open - by choosing the second tab.
+
+First you see the number of related items and the selected sort mode. 
+
+**Grouping of items**: By default the list of related items is grouped by "Topic Type". Depending on what you are searching for you might want to change the sort mode to "Association Type". This will present you the same data but group all items with an emphasizes on their type of relation. In these cases the group of items are ordered alphabetically descending. If you choose sort mode "Topic", all displayed items are ordered alphabetically descending by their labels without any grouping by type.
+
+Any item in the related tab displays information about the type of topic it is associated with, how it is related to that item (the "Association Type") and, if available, the first value of that association. The figure below illustrates this as a selected Person is related to an "Organization" named "Organization No.1" with an "Organization Involvement" association and "Founder" as a value of this association.
+
+**Related items grouped by their "Topic Type":**
+
+.. Todo: In favour of simplicty and conciseness, the very subtle difference in information display for sort mode "Topic" is not described here. Users will see the difference but for making a decision between sort modes this info is regarded as un-substantial.
+
+.. between the selected person and the other items, e.g. their involvement with the organization, or that this person is an instance of the topic type person.
+
+.. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topicmap you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about :ref:`Modeling<user-modeling>`.)
+
+.. image:: _static/detail-panel-related-tab.png
+
+.. **Related items grouped by Topic Type:**
+
+.. todo: This example needs improvement, skipping this until this is done as, i feel, the following sentence is (yet) to imaginative and thus adds up to confusion: New demo-ref content will def. help us here!
+
+... * : Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
+
+.. .. image:: _static/detail-panel-related-tab-sort-order.png
+
+.. * The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
+
+.. note:: Items that show a blue line at the right side are already part of the map so clicking them will bring them into "focus". Clicking an item without a blue line will add it to the selected map. So, clicking on a related item either "focuses" or "adds" it to a selected view. 
+
+When choosing a related item from the list you can control whether to also "focus" them or not (as illustrated in the following two figures):
+
+1. When you click anywhere onto a list item, it is revealed and the focus switches (figure 1). 
+2. When you click on *the icon* of a list item you add it to the selected view without switching focus (figure 2). 
+
+So, clicking only the icon of a related item allows you to add a number of other related items in this list to the selected view.
+
+(1) Adding a related item to the selected view and bringing it into focus.
+
+.. figure:: _static/related-tab-reveal-and-select.png
+
+    Figure: Clicking anywhere on the list item.
+
+(2) Adding a related item to the selected view without focussing it allows you to continue adding items.
+
+.. figure:: _static/related-tab-reveal.png
+
+    Figure: Clicking only the icon of the list item.
+
+.. _user-detail-panel-the-meta-tab:
+
+The "Meta" tab
+--------------
+
+The "Meta" tab in the "Detail Panel" is the third tab and displays a summary of metadata about the selected item:
+
+* the item's technical identifier (ID)
+* the Uniform Resource Identifier (see `Wikipedia:URI <https://en.wikipedia.org/wiki/Uniform_Resource_Identifier>`)
+* the creation date and the author's user name
+* the date of the last modification and the respective author's user name
+* the _Workspace_ this item resides in as well as the workspace owner's name
+* the _DMXType_ of the item
+* all _Topicmaps_ the item is *visible* (not hidden) on
+
+.. image:: _static/detail-panel-meta-tab.png
+
+Note that in contrast to the Meta tab the "Related tab" lists *all* related database content, e.g. topicmaps an item is part of but currently not visible in (_hidden_).
+
+.. _user-detail-panel-the-view-tab:
+
+The "View" tab
+--------------
+
+The fourth tab "View" gives you access to what is called a "View Configuration". With view configurations you can control the *visual appearance* of topics and associations of a specific type. So, editing a view configuration influences how items are rendered across all topicmaps. At the moment, DMX allows you to perform the following customizations for topic and association types:
+
+* Topic Types: _Icon, Font Color, Background Color_
+* Association Types: _Association Color_
+
+If you need any further assistance for editing "View Configurations" the sections about :ref:`Assigning icons to topic types<user-topic-type-icons>` and :ref:`Assigning colors to association types<user-assigning-colors-to-association-types>` cover that.
+
+For the moment view configurations are only available on a per-type base (which is why the "View" tab is grayed out on any item which does not represent a _Type Definition_). You can learn more about working with type definitions in the section about :ref:`Modeling<user-modeling>`.
 
 The Search/Create Dialog
 ========================
@@ -144,113 +283,6 @@ Read more on how to create content in the section about :ref:`Content Authoring<
 .. image:: _static/search-create.png
 
 .. _user-the-detail-panel:
-
-The Detail Panel
-================
-
-The detail panel is located at the right side of the screen when it is open.
-You open it by clicking "Details", "Edit", or "Related" in the :ref:`context menu<user-the-context-menu>`.
-
-.. image:: _static/detail-panel.png
-
-The detail panel offers much more features to explore and edit your data than the :ref:`in-map details<user-in-map-details>` shown above.
-Depending on what you want to do you can choose where you want to display details - in-map or in the detail panel.
-DMX avoids to display redundant information by not opening both at the same time (*unless* you explicitly :ref:`pin<user-pinning-things>` the in-map details to your map to leave them open).
-
-The detail panel can only be opened if you have selected an item on the map.
-The default behavior is that it stays open as long as you have selected an item.
-Once you unselect an item by clicking somewhere onto your topicmap the detail panel closes.
-You can control whether the detail panel shall stay opened by pinning it with the little pin icon in its upper right corner.
-You close the detail panel by unpinning it with the same button.
-
-.. image:: _static/pin-detail-panel.png
-
-Note that the detail panel can only display details of a single selected item, not when you :ref:`bulk select<user-bulk-selection>` several items.
-
-.. _user-detail-panel-the-info-tab:
-
-The "Info" tab
---------------
-
-The first tab is a general info tab.
-You get there by selecting "Details" from the :ref:`context menu<user-the-context-menu>`.
-The "Info" tab is always labelled with the type of the selected item, e.g. "Person" or "Event".
-It shows the direct child topics of what is currently selected as this is the most commonly wanted information.
-In its display mode it shows only those fields containing data.
-You can reveal the listed child topics on the current topicmap by clicking the little eye symbol.
-
-.. image:: _static/detail-panel-reveal-button.png
-
-The first tab also has an edit button at the bottom.
-From a topicmap you can enter the editing mode directly by clicking "Edit" in the context menu.
-If you enter the editing mode, you get all fields that you can fill in for the respective topic type or association type.
-These fields come from the type definitions. (Please see the section about :ref:`Modeling<user-modeling>`.)
-
-.. image:: _static/detail-panel-editing-mode.jpg
-
-.. _user-detail-panel-the-related-tab:
-
-The "Related" tab
------------------
-
-The second tab is called "Related".
-You can jump directly to this tab by choosing "Related" from the context menu or - if the detail panel is already open - by selecting the tab.
-This tab lists items related to your selection on the topicmap.
-It does *not* list the direct child topics, though, to avoid redundancy between the "Info" tab and the "Related" tab.
-(You can find the direct child topics in the "Info" tab and in the in-map details.)
-
-* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topicmap you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about :ref:`Modeling<user-modeling>`.)
-* Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their involvement with the organization, or that this person is an instance of the topic type person.
-
-.. image:: _static/detail-panel-related-tab.png
-
-* Depending on what you are searching for you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
-
-.. image:: _static/detail-panel-related-tab-sort-order.png
-
-* The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
-* Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.
-* **When revealing listed items on the topicmap you can control whether the focus should stay with the current item or switch to the next one:** When you click anywhere onto a list item, it is revealed and the focus switches (figure 1). To keep the focus where it is click *the icon* of a different item to just reveal it (figure 2). This is how you can quickly bring all relevant related items up on your topicmap.
-
-.. figure:: _static/related-tab-reveal-and-select.png
-
-    Figure 1: Reveal and select.
-
-.. figure:: _static/related-tab-reveal.png
-
-    Figure 2: Reveal without selecting.
-
-.. _user-detail-panel-the-meta-tab:
-
-The "Meta" tab
---------------
-
-The third tab "Meta" displays a summary of metadata about the selected item:
-
-* the item's unique identifier (ID)
-* the URI
-* the creation date and the author's user name
-* the date of the last modification and the respective author's user name
-* the workspace this item is in as well as the workspace owner's name
-* the topic type
-* all topicmaps the item is *currently* revealed on
-
-Note that in contrast to the Meta tab the "Related tab" lists *all* related database content, e.g. also topicmaps the item was revealed on at some point in time.
-
-.. image:: _static/detail-panel-meta-tab.png
-
-.. _user-detail-panel-the-view-tab:
-
-The "View" tab
---------------
-
-The fourth tab "View" allows you to view and edit the *configuration of types*.
-Thus, the tab is grayed out if the selected item is not a topic type or an association type but an individual topic or an association.
-(Read more about the background of the data model in the section about :ref:`Modeling<user-modeling>`.)
-What you can configure in this "View config" has nothing to do with editing the actual data model.
-These changes just have an impact on how items are rendered on your topicmap:
-You can assign custom icons to topic types, or colors to association types.
-(This is covered below in the sections about :ref:`Assigning icons to topic types<user-topic-type-icons>` and :ref:`Assigning colors to association types<user-assigning-colors-to-association-types>`.)
 
 The Login Dialog
 ================
