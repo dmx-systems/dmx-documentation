@@ -23,10 +23,9 @@ The upper toolbar contains the crucial steering tools for DMX: The workspace sel
 The Workspace Selector
 ----------------------
 
-In the upper left corner there is a drop-down menu showing "DMX" and this is the *Workspace Selector*. When you start to work in a blank DMX installation and you are not logged in, the only visible workspace is "DMX".
-"Workspaces" are the highest level of content organization in DMX. Everything you create in DMX is automatically assigned to the workspace selected in this menu.
+The *Workspace Selector* is part of the upper toolbar and let`s you select your current *Workspace*. "Workspaces" are the highest level of content organization in DMX. Everything you create is automatically assigned to the workspace selected in this menu.
 
-"DMX" is the name of a pre-installed *Public* workspace. In DMX everyone can create, edit and delete workspaces. If you create a new workspace you become its *Owner* and can invite other users as "Members" to it. You can think of a workspace as a context in which you would organize your work, but don't worry, all items you store in DMX can be associated with each other, no matter to which workspace they are assigned.
+"DMX" is the name of a pre-installed *Public* workspace. In DMX everyone can create, edit and delete workspaces. If you create a new workspace you become its *Owner* and can invite other users as "Members" to share it. You can think of a workspace as a context in which you would organize your work, but don't worry, all items you store in DMX can be associated with each other, no matter to which workspace they are assigned.
 
 .. note:: Every item in DMX is assigned to one workspace. To which workspace an item is assigned allows DMX to determine who is allowed to *create* new ones, *edit* or *read* the information.
 
@@ -45,26 +44,25 @@ Your choice in the *Workspace Selector* has direct influence on the available co
 The Topicmap Selector
 ----------------------
 
-Next to the workspace selector there is another drop-down menu called the *Topicmap Selector*. It enables you to switch between all available views of a *Workspace*.
+The *Topicmap Selector* is also part of the upper toolbar and enables you to switch between all views of a *Workspace*. A "Topicmap" is a specific view of selected contents from your knowledge base. At the moment a topicmap is either of type *Topicmap* or of type *Geomap*. Topicmaps can be shared and updates to a map are automaticaly mirrored by DMX to otehr connected users. A new topicmap is always empty and in DMX topicmaps are also contents.
 
-A "Topicmap" is a specific view which groups items together and is a utility to work in DMX. It is a situation-based selection of items from the knowledge base and it literally depicts a (personal or shared) perspective on a task or theme trough its layout or appearance. Therefore it also represents your perspective on a specific task or theme.
+A view of type *Topicmap* is like a canvas as it allows you to freely place items. The size of a topicmap can be spanned in all directions and its layout (or geometry) is persisted over sessions of work.
 
-You start selecting the contents of a topicmap by using the "Search/Create" dialog. Through navigating to related items you can select which context of an item you want to reveal. Navigation along related items is down using the "Related" command of an item on map.
+.. Therefore, topicmaps have two powers: the power to represent your work on a task or topic over a time and the power of an aggregated view of different concepts from your work.
 
-.. Thus it shows a situation-based selection of the whole knowledge base content.
-In the beginning, there is only one topicmap, it's called "untitled". To rename it you could reveal it using the "i" command and then click "Edit".
-You can find out how to add "Topicmaps" in the section :ref:`user-organizing-the-working-context`.
+To start working in a new topicmap use the :ref:`user-search-create-dialog` dialog.
+To rename topicmaps you can use the "i" command next to the Topicmap Selector and then use the "Edit" command.
+You can find out more about working with "Topicmaps" in the section :ref:`user-organizing-the-working-context`.
 
 .. image:: _static/topic-map-selector.png
 
 .. _user-the-fit-button:
 
-At the moment a topicmap is either of type *Topicmap* or of type *Geomap*.
 
 The Fit Button
 --------------
 
-This button adjusts the zoom level of a topicmap to make it fit into the browser window.
+This button makes a topcimap fit into your current browser window. It adjusts the zoom level of a topicmap.
 
 .. figure:: _static/upper-toolbar-fit-button.png
     :alt: Tool bar with highlighted fit button
@@ -77,7 +75,7 @@ It has four arrows pointing from the center to the corners of a square.
 The Reset Zoom Button
 ---------------------
 
-This button resets the zoom level to scale "1" and centers the topicmap in 0,0 position.
+This button centers the topicmap and resets the maps zoom level to scale "1".
 
 .. figure:: _static/upper-toolbar-reset-zoom-button.png
     :alt: Tool bar with highlighted reset zoom button
@@ -88,7 +86,7 @@ It has two arrows pointing from the corners to the center of a square and sits a
 The Login Menu
 ----------------
 
-The "Login" button opens a dialog for you to log in to DMX. It is located in the upper toolbar, to the right.
+The "Login" button opens a dialog for you to log in to DMX. It is at the right side of the upper toolbar.
 
 The Help Button
 ---------------
@@ -281,6 +279,8 @@ The fourth tab "View" gives you access to what is called a "View Configuration".
 If you need any further assistance for editing "View Configurations" the sections about :ref:`Assigning icons to topic types<user-topic-type-icons>` and :ref:`Assigning colors to association types<user-assigning-colors-to-association-types>` cover that.
 
 For the moment view configurations are only available on a per-type base (which is why the "View" tab is grayed out on any item which does not represent a _Type Definition_). You can learn more about working with type definitions in the section about :ref:`Modeling<user-modeling>`.
+
+.. _user-search-create-dialog:
 
 The Search/Create Dialog
 ========================
