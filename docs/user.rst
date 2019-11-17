@@ -23,25 +23,33 @@ The upper toolbar contains the crucial steering tools for DMX: The workspace sel
 The Workspace Selector
 ----------------------
 
-In the upper left corner there is a drop-down menu showing "DMX" and this is the _Workspace Selector_. When you start to work in a blank DMX installation and you are not logged in, the only visible workspace is "DMX".
-"Workspaces" are the highest level of content organization in DMX. Everything you create in DMX is automatically assigned to the current workspace.
-"DMX" is the name of a pre-installed public standard workspace.
-You can think of workspaces as the different contexts you would organize your work in. Every item in DMX can be assigned to only one workspace at a time. For example, your workspace selection influences the items shown in the next menu, too.
+In the upper left corner there is a drop-down menu showing "DMX" and this is the *Workspace Selector*. When you start to work in a blank DMX installation and you are not logged in, the only visible workspace is "DMX".
+"Workspaces" are the highest level of content organization in DMX. Everything you create in DMX is automatically assigned to the workspace selected in this menu.
 
-You can learn more about the five available types of workspaces in the section :ref:`user-introduction-to-workspaces-and-sharing-modes`.
+"DMX" is the name of a pre-installed *Public* workspace. In DMX everyone can create, edit and delete workspaces. If you create a new workspace you become its *Owner* and can invite other users as "Members" to it. You can think of a workspace as a context in which you would organize your work, but don't worry, all items you store in DMX can be associated with each other, no matter to which workspace they are assigned.
+
+.. note:: Every item in DMX is assigned to one workspace. To which workspace an item is assigned allows DMX to determine who is allowed to *create* new ones, *edit* or *read* the information.
+
+Therefore each workspace is of one distinct *SharingMode* and you can find more about all five types of workspaces in the section :ref:`user-introduction-to-workspaces-and-sharing-modes`.
+
+The DMX Standard Distribution comes with the following workspaces pre-installed: *System*, *Administration* and *DMX*.
+
+Additionally, each user has a *Private Workspace*. Contents in a workspace with SharingMode *Private* can not be read by anyone other than the workspaces owner.
 
 .. image:: _static/workspace-selector.png
 
 .. _user-the-topic-map-selector:
 
+Your choice in the *Workspace Selector* has direct influence on the available contents in the next menu, the *Topicmap Selector*.
+
 The Topicmap Selector
 ----------------------
 
-Next to the workspace selector there is another drop-down menu showing, on a blank installation, the name "untitled". This is the _Topicmap Selector_. It enables you to switch between all views of the selected "Workspace"
+Next to the workspace selector there is another drop-down menu called the *Topicmap Selector*. It enables you to switch between all available views of a *Workspace*.
 
-A "Topicmap" is a specific view of items grouped together and a perspective on a specific task or theme. It represents a situation-based selection of items of your knowledge base and it literally depicts a (personal or shared) perspective on a task or theme trough its layout or appearance.
+A "Topicmap" is a specific view which groups items together and is a utility to work in DMX. It is a situation-based selection of items from the knowledge base and it literally depicts a (personal or shared) perspective on a task or theme trough its layout or appearance. Therefore it also represents your perspective on a specific task or theme.
 
-You select the contents of a Topicmap by using the "Search/Create" dialog or through revealing related items using the "Related" command.
+You start selecting the contents of a topicmap by using the "Search/Create" dialog. Through navigating to related items you can select which context of an item you want to reveal. Navigation along related items is down using the "Related" command of an item on map.
 
 .. Thus it shows a situation-based selection of the whole knowledge base content.
 In the beginning, there is only one topicmap, it's called "untitled". To rename it you could reveal it using the "i" command and then click "Edit".
@@ -50,6 +58,8 @@ You can find out how to add "Topicmaps" in the section :ref:`user-organizing-the
 .. image:: _static/topic-map-selector.png
 
 .. _user-the-fit-button:
+
+At the moment a topicmap is either of type *Topicmap* or of type *Geomap*.
 
 The Fit Button
 --------------
@@ -212,7 +222,7 @@ Any item in the related tab displays information about the type of topic it is a
 
 .. todo: This example needs improvement, skipping this until this is done as, i feel, the following sentence is (yet) to imaginative and thus adds up to confusion: New demo-ref content will def. help us here!
 
-... * : Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
+.. * : Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
 
 .. .. image:: _static/detail-panel-related-tab-sort-order.png
 
