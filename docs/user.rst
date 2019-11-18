@@ -25,11 +25,11 @@ The Workspace Selector
 
 The *Workspace Selector* is part of the upper toolbar and let`s you select your current *Workspace*. "Workspaces" are the highest level of content organization in DMX. Everything you create is automatically assigned to the workspace selected in this menu.
 
-"DMX" is the name of a pre-installed *Public* workspace. In DMX everyone can create, edit and delete workspaces. If you create a new workspace you become its *Owner* and can invite other users as "Members" to share it. You can think of a workspace as a context in which you would organize your work, but don't worry, all items you store in DMX can be associated with each other, no matter to which workspace they are assigned.
+In DMX everyone can create, edit and delete workspaces. If you create a new workspace you become its *Owner* and can invite users as "Members" to share the workspace with. You can think of a workspace as a context in which you would organize your work while, of course, you can still associate items across different workspaces. 
 
-.. note:: Every item in DMX is assigned to one workspace. To which workspace an item is assigned allows DMX to determine who is allowed to *create* new ones, *edit* or *read* the information.
+Each workspace has a *SharingMode* and you can find more about all five types of workspaces in the section :ref:`user-introduction-to-workspaces-and-sharing-modes`.
 
-Therefore each workspace is of one distinct *SharingMode* and you can find more about all five types of workspaces in the section :ref:`user-introduction-to-workspaces-and-sharing-modes`.
+.. note:: Every item in DMX is assigned to exactly one workspace. Which workspace an item is assigned to determines if a user has *read* or *write* permission for an item.
 
 The DMX Standard Distribution comes with the following workspaces pre-installed: *System*, *Administration* and *DMX*.
 
@@ -44,15 +44,15 @@ Your choice in the *Workspace Selector* has direct influence on the available co
 The Topicmap Selector
 ----------------------
 
-The *Topicmap Selector* is also part of the upper toolbar and enables you to switch between all views of a *Workspace*. A "Topicmap" is a specific view of selected contents from your knowledge base. At the moment a topicmap is either of type *Topicmap* or of type *Geomap*. Topicmaps can be shared and updates to a map are automaticaly mirrored by DMX to otehr connected users. A new topicmap is always empty and in DMX topicmaps are also contents.
+The *Topicmap Selector* is also part of the upper toolbar and enables you to switch between all views in a *Workspace*. A "Topicmap" is a specific view of selected contents from your knowledge base. Topicmaps can be shared and your edits to a map are instantly mirrored by DMX for connected users. A new topicmap is always empty. For the moment, a topicmap is either of type *Topicmap* or of type *Geomap*. 
 
-A view of type *Topicmap* is like a canvas as it allows you to freely place items. The size of a topicmap can be spanned in all directions and its layout (or geometry) is persisted over sessions of work.
+A view of type *Topicmap* is like a canvas as it allows you to freely place items. The size of a topicmap can be well beyond the size of your screen and - as topicmaps are also contents - its layout is persisted over sessions of work.
 
 .. Therefore, topicmaps have two powers: the power to represent your work on a task or topic over a time and the power of an aggregated view of different concepts from your work.
 
-To start working in a new topicmap use the :ref:`user-search-create-dialog` dialog.
+To start working in a new topicmap use :ref:`the search/create dialog <user-search-create-dialog>` dialog.
 To rename topicmaps you can use the "i" command next to the Topicmap Selector and then use the "Edit" command.
-You can find out more about working with "Topicmaps" in the section :ref:`user-organizing-the-working-context`.
+You can find out more about working with "Topicmaps" in the section on :ref:`organizing the working context<user-organizing-the-working-context>`.
 
 .. image:: _static/topic-map-selector.png
 
@@ -115,21 +115,21 @@ The topicmap panel is as wide as your browser window unless you open the :ref:`d
 The Context Menu
 ----------------
 
-The "Context Menu" is always related to a selected item and part of the topicmap panel. It is usually opened with a right-click on a topic or association.
+The "Context Menu" is part of the topicmap panel and thus available for any item on a map. It is usually opened with a right-click on a topic or association.
 By default, it gives you four commands to do something with the selected item:
 
-* You can display an items _Details_.
-* You can _Edit_ the item.
-* You can _Hide_ the item in this topicmap
-* You can navigate to _Related_ items.
+* You can display an items *Details*.
+* You can *Edit* the item.
+* You can *Hide* the item in this topicmap
+* You can navigate to *Related* items.
 
 To close the context menu *without* any action, release your mouse in the center of the circle.
 
 .. image:: _static/context-menu.png
     :width: 250
 
-Note that the context menu shows whether you have write permission to an item or not.
-If the term "Edit" is grayed out, you do not have write permission on the item.
+The context menu indicates whether you have write permission to an item or not.
+If the term "Edit" is grayed out, you do not have write permission on the selected item.
 
 .. image:: _static/context-menu-no-permission.png
     :width: 250
@@ -149,6 +149,8 @@ This box is called the "In-map detail".
 .. _user-the-search-create-dialog:
 
 Note that "In-map details" only show up if the "Detail Panel" is not visible.
+
+.. _user-the-detail-panel:
 
 The Detail Panel
 ================
@@ -172,20 +174,22 @@ Note that the detail panel only display details of a single item, not when you :
 The "Info" tab
 --------------
 
-The "Info" tab is the first section of the "Detail Panel" and it is named by the content type of your current selection, e.g. "Person" or "Event".
+The "Info" tab is the first section of the :ref:`detail panel<user-the-detail-panel>` and it is named after the type of your current selection, e.g. a topic of type "Person" or "Event".
 
-You can go to the info tab directly by choosing "Details" from the :ref:`context menu<user-the-context-menu>` or by selecting the first tab in the "Detail Panel".
+You can go to the info tab directly by choosing *Details* from the :ref:`context menu<user-the-context-menu>` or by selecting the first tab in the detail panel.
 
-In "Display" mode it shows the direct child topics of the current selection and all childs which have a value assigned.
+In **Display** mode it shows the direct child topics of the current selection and all childs which have a value assigned.
 
 You can you use the display mode to reveal selected child topics in the topicmap panel by hovering the childs and using the little eye symbol (at the very right).
 
 .. image:: _static/detail-panel-reveal-button.png
 
-The info tab also has an "Edit" mode. You can enter edit mode either using the "Edit" button at the bottom of the "Info" tab or directly from within the map by clicking "Edit" in the :ref:`context menu<user-the-context-menu>`.
+The info tab also has an **Edit** mode. You can enter edit mode either directly from within the map by clicking "Edit" in the :ref:`context menu<user-the-context-menu>` or through clicking the "Edit" button at the bottom of the "Info" tab.
 
-If you enter the editing mode, you get a form for all possible inputs regarding the respective topic or association type.
-The form is generated using the underlying "Type Definition" of the content (for more details, see our section on :ref:`Modeling<user-modeling>`.)
+.. Maybe we want to remove the sentence (above this) as it may be too much information
+
+If you enter the **Edit** mode, you get a form for all possible inputs regarding the respective item type.
+The form is generated using the type definition representing the content (for more details, see our section on :ref:`Modeling<user-modeling>`.)
 
 .. image:: _static/detail-panel-editing-mode.jpg
 
@@ -194,15 +198,13 @@ The form is generated using the underlying "Type Definition" of the content (for
 The "Related" tab
 -----------------
 
-The "Related" tab is the second tab of the "Detail Panel" and is designed to navigate along associations in the knowledge base. 
+The "Related" tab is the second tab of the :ref:`detail panel<user-the-detail-panel>` and is designed for navigating along existing associations. You can jump directly into the "Related" tab from within the map using the :ref:`context menu<user-the-context-menu>` or - if the detail panel is already open - by choosing the second tab. First you see the number of related items and the selected sort mode. 
 
-In "Related" you see a sorted list of all items directly related with your current selection except its direct child topics. This is what we want to navigate on and avoids redundancy in regards to the contents displayed in the "Info" tab or the "In-map Details". By default the list is sorted by topic type.
+The tabs content is a sorted list of all items directly related with your current selection except its direct child topics. By default the list of related items is grouped by "Topic Type".
 
-You can jump directly into the "Related" tab from within the map using the :ref:`context menu<user-the-context-menu>` or - if the detail panel is already open - by choosing the second tab.
+.. This is what we want to navigate on and avoids redundancy in regards to the contents displayed in the "Info" tab or the "In-map Details". 
 
-First you see the number of related items and the selected sort mode. 
-
-**Grouping of items**: By default the list of related items is grouped by "Topic Type". Depending on what you are searching for you might want to change the sort mode to "Association Type". This will present you the same data but group all items with an emphasizes on their type of relation. In these cases the group of items are ordered alphabetically descending. If you choose sort mode "Topic", all displayed items are ordered alphabetically descending by their labels without any grouping by type.
+**Grouping of items**: Depending on what you are searching for you might want to change the sort mode to "Association Type". This will present you the same data but group all items with an emphasizes on their type of relation. In these cases the group of items are ordered alphabetically descending. If you choose sort mode "Topic", all displayed items are ordered alphabetically descending by their labels without any grouping by type.
 
 Any item in the related tab displays information about the type of topic it is associated with, how it is related to that item (the "Association Type") and, if available, the first value of that association. The figure below illustrates this as a selected Person is related to an "Organization" named "Organization No.1" with an "Organization Involvement" association and "Founder" as a value of this association.
 
@@ -230,22 +232,22 @@ Any item in the related tab displays information about the type of topic it is a
 
 When choosing a related item from the list you can control whether to also "focus" them or not (as illustrated in the following two figures):
 
-1. When you click anywhere onto a list item, it is revealed and the focus switches (figure 1). 
-2. When you click on *the icon* of a list item you add it to the selected view without switching focus (figure 2). 
+1. When you click anywhere onto a list item, it is revealed and the focus switches (Figure 1). 
+2. When you click on *the icon* of a list item you add it to the selected view without switching focus (Figure 2). 
 
 So, clicking only the icon of a related item allows you to add a number of other related items in this list to the selected view.
 
-(1) Adding a related item to the selected view and bringing it into focus.
+Figure 1: Adding a related item to the selected view and bringing it into focus.
 
 .. figure:: _static/related-tab-reveal-and-select.png
 
-    Figure: Clicking anywhere on the list item.
+    Click anywhere on the item to **reveal and focus** the item.
 
-(2) Adding a related item to the selected view without focussing it allows you to continue adding items.
+Figure 2: Adding a related item to the selected view without focussing it allows you to continue adding items.
 
 .. figure:: _static/related-tab-reveal.png
 
-    Figure: Clicking only the icon of the list item.
+    Click on the icon of the item to **reveal without focussing** the item.
 
 .. _user-detail-panel-the-meta-tab:
 
@@ -255,16 +257,16 @@ The "Meta" tab
 The "Meta" tab in the "Detail Panel" is the third tab and displays a summary of metadata about the selected item:
 
 * the item's technical identifier (ID)
-* the Uniform Resource Identifier (see `Wikipedia:URI <https://en.wikipedia.org/wiki/Uniform_Resource_Identifier>`)
+* the Uniform Resource Identifier (see `Wikipedia:URI <https://en.wikipedia.org/wiki/Uniform_Resource_Identifier>`_)
 * the creation date and the author's user name
 * the date of the last modification and the respective author's user name
-* the _Workspace_ this item resides in as well as the workspace owner's name
-* the _DMXType_ of the item
-* all _Topicmaps_ the item is *visible* (not hidden) on
+* the *Workspace* this item resides in as well as the workspace owner's name
+* the *Type* of the item (DMXType)
+* all *Topicmaps* the item is *visible* (not hidden) on
 
 .. image:: _static/detail-panel-meta-tab.png
 
-Note that in contrast to the Meta tab the "Related tab" lists *all* related database content, e.g. topicmaps an item is part of but currently not visible in (_hidden_).
+Note that in contrast to the Meta tab the "Related tab" lists *all* related database content, e.g. topicmaps an item is part of but currently not visible in (*hidden*).
 
 .. _user-detail-panel-the-view-tab:
 
@@ -273,12 +275,12 @@ The "View" tab
 
 The fourth tab "View" gives you access to what is called a "View Configuration". With view configurations you can control the *visual appearance* of topics and associations of a specific type. So, editing a view configuration influences how items are rendered across all topicmaps. At the moment, DMX allows you to perform the following customizations for topic and association types:
 
-* Topic Types: _Icon, Font Color, Background Color_
-* Association Types: _Association Color_
+* Topic Types: *Icon, Font Color, Background Color*
+* Association Types: *Association Color*
 
-If you need any further assistance for editing "View Configurations" the sections about :ref:`Assigning icons to topic types<user-topic-type-icons>` and :ref:`Assigning colors to association types<user-assigning-colors-to-association-types>` cover that.
+If you need any further assistance for editing "View Configurations" the sections about :ref:`assigning icons to topic types<user-topic-type-icons>` and :ref:`assigning colors to association types<user-assigning-colors-to-association-types>` cover that.
 
-For the moment view configurations are only available on a per-type base (which is why the "View" tab is grayed out on any item which does not represent a _Type Definition_). You can learn more about working with type definitions in the section about :ref:`Modeling<user-modeling>`.
+For the moment view configurations are only available on a per-type base (which is why the "View" tab is grayed out on any item which does not represent a *Type Definition*). You can learn more about working with type definitions in the section about :ref:`modeling<user-modeling>`.
 
 .. _user-search-create-dialog:
 
@@ -287,12 +289,11 @@ The Search/Create Dialog
 
 The search for existing items and the creation of new ones is done in the same dialog box.
 The search/create dialog is opened with a right-click into the topicmap.
-Advanced search options are explained below in the :ref:`Navigation section<user-searching-the-database>`.
-Read more on how to create content in the section about :ref:`Content Authoring<user-content-authoring>`.
+Advanced search options are explained below in the :ref:`navigation section<user-searching-the-database>`.
+Read more on how to create content in the section about :ref:`content authoring<user-content-authoring>`.
 
 .. image:: _static/search-create.png
 
-.. _user-the-detail-panel:
 
 The Login Dialog
 ================
@@ -310,7 +311,7 @@ To use the user name and password from your organization select the "LDAP" metho
 
 .. image:: _static/ldap-login.png
 
-.. note:: Learn how to install plugins in our :ref:`Admin Documentation <admin-plugin-installation>`.
+.. note:: You can learn how to install plugins in our :ref:`Admin Documentation <admin-plugin-installation>`.
 
 .. _user-content-authoring:
 
@@ -349,57 +350,59 @@ You can change this by seleting a different topic type from the drop-down menu.
 DMX's default topic types
 -------------------------
 
-DMX comes with a few predefined topic types that you can select from:
+The DMX Standard Distribution comes with a few predefined topic types that you can select in the :ref:`search/create dialog<user-search-create-dialog>`:
 
-- person,
-- organization,
-- note,
-- event,
-- bookmark.
+- *Note*
+- *Event*
+- *Person*
+- *Organization*
+- *Bookmark*
 
-Each topic type brings certain fields you can fill in:
-While events have dates and locations, persons can have telephone numbers and web resources have a URL.
+.. Each of these topic type brings certain fields you can fill in:
+.. While events have dates and locations, persons can have telephone numbers and bookmarks have an URL.
 
-These topic types all come from classical PIM applications (Personal Information Management).
-The special feature here is that you have different types of information in one interface and not spread out in address books, calendars, browsers and files.
-Using DMX for PIM is just *one* proposal for a use case.
+These standard type definitions have been synthesized from a variety of Personal Information Management (PIM) applications.
+One advantage of DMX is that you have these different types of information in one interface and not spread out in address books, calendars, browsers and file manager windows.
+
+Using the DMX platform for personal information management is the use case of the DMX Standard Distribution. If you want to learn about other use cases check out the :ref:`list of currently available extensions<plugins-overview-of-plugins>` for DMX.
+
+If you want to develop your own type definitions, the :ref:`modeling section in this guide<user-modeling>` is the best place to start.
 
 .. _user-creating-an-association:
 
 Creating an association
 =======================
 
-To create an association between two topics you grab the little gray dot at the upper border of one of the topics.
+To create an association between two items you need to connect the dots. Start with grabbing the little gray (or blue) dot appearing at the border of the item you want to connect.
 
 .. image:: _static/create-association-1.png
 
-Drag it onto the other topic until that topic is highlighted by a blue border.
+And drag the line onto the other item until it is highlighted by a blue border.
 
 .. image:: _static/create-association-2.png
 
-Then let go and a rectangle will open that shows you the in-map details of the newly created association.
-Click somewhere into the map to hide the in-map details.
+Then drop the line to create a new association. A rectangle will open that shows you the in-map details of the newly created association.
+Click somewhere into the map to hide the in-map details of the new association.
 
-Note that an association does not necessarily connect two topics:
 You can also create associations between a topic and an association or between two associations.
-To do so, attach an association to the little dot in the middle of the assocation.
+To do so, attach the line to the little dot in the middle of the assocation.
 
 .. image:: _static/create-assoc-with-assoc.png
 
 Now what is important is that there are different association types.
-If you just draw a line between two things to create an association you will see a gray line.
-Its association type is just "association".
-You can use these associations to visualize that two items are somehow related to each other without being specific about the meaning of the association.
+The association in this example is of the most generic type called *Association*.
+You can use it to note down that these two items are somehow related but you can't tell anything more specific (yet) about the association.
 
 .. image:: _static/generic-association.png
     :width: 600
 
-If you need qualified associations you have to give your associations a meaning.
-This is explained step-by-step in the section about :ref:`Modeling<user-modeling>`.
+If you need specific types of associations you can create your own association types.
+This is explained step-by-step in the section about :ref:`modeling<user-modeling>`.
+
+.. If you develop your own application you should always create custom association types for your application. This is because users of DMX expect that all associations of type *Association* do not carry any additional semantics.
 
 Thinking of real-world examples, you will find that there is often more than one association between two things.
-DMX can represent this:
-You can simply create another association between them.
+So you can author many associations between two items.
 
 .. image:: _static/multiple-assocs.jpg
     :width: 600
@@ -414,24 +417,27 @@ Editing content
 Editing in the detail panel
 ---------------------------
 
-To add more details to a topic you use the detail panel on the right side.
-Use the edit button from the context menu to open it (see above).
+To start adding details to a topic you can use the *Edit* command from the :ref:`context menu<user-the-context-menu>` of an item.
 
-The detail panel opens so that you have the topicmap on the left side of your screen and the detail panel on the right side.
-There is an in-depth explanation of the detail panel's features :ref:`further up<user-the-detail-panel>`.
-Here is what is looks like.
-There is a "Save" button at the very bottom of the form.
+The detail panel opens, with the "Info" tab selected and in "Edit" mode. Now you have the topicmap on the left side of your screen and the detail panel on the right side.
+
+Here is what an item looks like in "Edit" mode in the first tab of the detail panel.
 
 .. image:: _static/detail-panel-edit-intro.png
+
+When finished editing the item, press the "Save" button at the very bottom of the tab.
+
+There is an in-depth explanation of the four detail panel tabs :ref:`in this section up<user-the-detail-panel>`.
 
 .. _user-inline-editing:
 
 Inline editing
 --------------
 
-For quick changes of fields you already filled in you can use the inline editing mode.
-Click to select the topic and move your mouse to the upper right corner of the displayed square.
-A little closed lock appears. Click to unlock it.
+You can also edit items in map using the inline editing mode.
+Click to select the topic and move your mouse to the upper right corner of the box.
+
+In the upper right corner a closed lock appears, click to unlock it.
 
 .. image:: _static/inline-editing-unlock.jpg
 
@@ -442,30 +448,31 @@ Double-click onto the content you want to change, do your edit and save the chan
 Inline Topic Links
 ------------------
 
-When editing the text field of an item you can embed links to other topics into the text.
-These inline topic links are clickable so that the referred topics are revealed on the topicmap.
-Link creation utilizes the search/create dialog.
-So you can link to existing topics or create new ones on-the-fly.
-Select the term you want to embed the link into and use the editor's "T" icon to create the link.
+When editing a HTML field of an item you can directly link to other topics of your knowledge base.
+
+Select the text you want to use as label for the link and then use the editor's "T" icon.
 
 .. image:: _static/editor-t-icon.png
 
+Link creation utilizes the :ref:`search/create dialog <user-search-create-dialog>`. Using it you can link to existing topics or create new ones on-the-fly.
+
 .. image:: _static/clickable-inline-topic-links.png
+
+Clicking on inline topic links will reveal the linked topic in a topicmap.
 
 .. _user_uploading-or-embedding-images:
 
 Uploading or embedding images
 -----------------------------
 
-To upload or embed an image, you have to go via the richtext editor right now.
-The richtext editor is accessible in all HTML fields, e.g. in a Note.
-Write text into the HTML field and select some of it.
-The richtext editor opens.
+Uploading images is currently only possible through embedding them in HTML fields. To upload or embed an image select some text in an HTML field and the richtext editor opens.
 
 .. image:: _static/richtext-editor-upload-embed.png
 
-The image icon lets you upload an image from your computer into the DMX database.
-The film icon lets you embed an image from a website. (For the detailed use, please see the respective :ref:`modeling example<user-model-composite-with-composite>` below.)
+The image icon lets you upload an image from your computer into the HTML field.
+The film icon lets you embed an image from a website.
+
+For a more detailed description you are invited to have a look at one of our examples on :ref:`how to model a database of plants<user-model-composite-with-composite>` and how to picture plants in DMX through uploaded images.
 
 .. _user_deleting-things:
 
@@ -475,7 +482,7 @@ Deleting things
 .. warning:: There is an important difference between hiding items and deleting them. **If you delete items they are removed from the database forever.** If you hide them, they are just no longer visible on the topicmap but you can bring them back by revealing them.
 
 You delete things via the context menu on the topicmap.
-Keep the "Alt" key pressed and left-click onto the item you want to delete.
+Keep the *Alt* key pressed and left-click onto the item you want to delete.
 To delete drag your mouse anywhere into the red area.
 To abort let go of both the "Alt" key and the mouse button while the cursor is in the middle of the circle.
 
@@ -492,17 +499,16 @@ You can confirm or cancel the deletion.
 Bulk deletion
 -------------
 
-To delete several items in one go select all of them by clicking them with the CTRL key pressed.
+To delete several items in one go select all of them by clicking them with the CTRL or SHIFT key pressed.
 
 .. image:: _static/bulk-delete-1.png
 
 Then proceed as above:
-Left-click onto the item and drag your mouse onto the delete button.
+Left- or Right-click onto the item and drag your mouse onto the *Delete* command.
 
 .. image:: _static/bulk-delete-2.png
 
-When you select "Delete" the same confirmation dialog window opens:
-It informs you about the number of items you are about to delete.
+When you select *Delete* a confirmation dialog window opens to inform you about the number of items you are about to delete.
 You can confirm or cancel the deletion.
 
 .. _user-organizing-the-working-context:
@@ -511,25 +517,24 @@ You can confirm or cancel the deletion.
 Organizing the working context
 ******************************
 
-The DMX database contains your knowledge at large.
-Everything you enter is saved in the database until you delete it.
+The DMX database contains your knowledge at large, your knowledge base.
+Everything you enter is saved in the knowledge base until you delete it.
 What is important:
-Every item is saved in the database *once* only, even if you use it in many different contexts.
+Every item is saved in the knowledge base only *once*, even if you re-enter it or use it in many different contexts.
 
-To make use of your knowledge base in different working situations you use topicmaps.
-On each topicmap you can reveal what is relevant from the same underlying database.
-The rest stays hidden.
+To visualize your knowledge base in different situations you use topicmaps.
+In each topicmap different items from your knowledge base may be relevant and the rest stays hidden.
 Thus, every topicmap represents *one* view, perspective, or working situation.
 
 The following figure shows the relationship between content and its use in different working situations:
 
+In the upper half two different working situations are shown (*Topicmaps*).
+On each of the maps there is a selection of topics and associations revealed depending on what the topicmap is about.
+
 In the lower half you see a representation of a DMX database.
-It contains lots of topics and associations.
+It contains your complete knowledge graph made up of topics and associations.
 (Note that it also contains topic *types* and association *types* which are not visualized here for clarity.)
 
-In the upper half there are two different working contexts respectively topicmaps.
-On each of them there is a selection of topics and associations revealed depending on what the topicmap is about.
-There can be much more content in the database than what you actually display but everything that is visible in topicmaps is stored in the database.
 
 .. figure:: _static/illustration-database-topicmaps.png
     :alt: Illustration of DMX topicmaps each with a set of data revealed from the same underlying database.
@@ -539,15 +544,15 @@ There can be much more content in the database than what you actually display bu
 Creating a topicmap
 ===================
 
-To start working in a new context or on a different part of your larger project you can create a new topicmap.
-This is done just like always:
-Open the search/create dialog.
-Choose a name for the topicmap, search if it already exists, and create it by selecting the topic type "Topicmap".
+.. To document a meeting, prepare for an interview or just to do some research you can create a topicmap.
+
+To create a new topicmap open the :ref:`search/create dialog <user-search-create-dialog>` (right click).
+Enter the name of the new topicmap, select *Topicmap* from the "Create" menu and confirm with "Create".
 
 .. image:: _static/create-topic-map.png
 
 For topicmaps, the creation dialog has an additional choice between (usual) topicmaps and geo maps (see below).
-Once created, the new empty topicmap is opened.
+Once created, the new topicmap is opened.
 You can see its name in the :ref:`Topicmap Selector<user-the-topic-map-selector>` and use it to switch between topicmaps.
 
 .. _user-geodata:
