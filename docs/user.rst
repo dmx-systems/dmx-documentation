@@ -535,7 +535,6 @@ In the lower half you see a representation of a DMX database.
 It contains your complete knowledge graph made up of topics and associations.
 (Note that it also contains topic *types* and association *types* which are not visualized here for clarity.)
 
-
 .. figure:: _static/illustration-database-topicmaps.png
     :alt: Illustration of DMX topicmaps each with a set of data revealed from the same underlying database.
 
@@ -615,7 +614,7 @@ The :ref:`fit<user-the-fit-button>` and :ref:`reset zoom<user-the-reset-zoom-but
 Hiding things
 =============
 
-.. note:: There is an important difference between hiding items and deleting them. If you delete items they are immediately removed from the database. If you hide them, they are just no longer visible on the topicmap but you can bring them back by revealing them.
+.. note:: There is an important difference between hiding items and deleting them. If you delete items they are immediately removed from the knowledge graph. If you hide them, they are just no longer visible on the topicmap but you can bring them back by revealing them.
 
 You can hide items from the topicmap by long-clicking onto them and using the "Hide" button in the context menu.
 If you bring them back to the map later by searching them, they will reappear in the same spot in your map.
@@ -644,8 +643,8 @@ Bulk operations
 Bulk selection
 --------------
 
-You can bulk select several items by keeping the CTRL key pressed and drawing a rectangle around the items you want to select.
-You can also click them with the CTRL key pressed.
+You can bulk select several items by keeping the CTRL or SHIFT key pressed and drawing a rectangle around the items you want to select.
+You can also click them with the CTRL or SHIFT key pressed.
 The selected topics now have a blue border.
 
 Moving topic clusters
@@ -664,7 +663,7 @@ Once you have bulk selected a few items, you can drag the whole selection where 
 Hiding multiple items
 ---------------------
 
-To hide several items at once select them by keeping the CTRL key pressed and drawing a rectangle around them or by clicking them with the CTRL key pressed.
+To hide several items at once select them by keeping the CTRL or SHIFT key pressed and drawing a rectangle around them or by clicking them with the CTRL or SHIFT key pressed.
 
 .. image:: _static/bulk-hide.png
     :width: 600
@@ -729,10 +728,10 @@ Navigation
 
 .. _user-searching-the-database:
 
-Searching the database
-======================
+Searching the knowledge graph
+=============================
 
-To search the DMX database open the search/create dialog with a left-click in the topicmap.
+To search in DMX open the :ref:`search/create dialog <user-search-create-dialog>` with a right-click on a topicmap.
 Start typing what you are looking for.
 DMX immediately displays all results that you have read access to.
 You refine the search by typing in more letters.
@@ -747,7 +746,7 @@ Your actual content, e.g. persons you entered, is displayed as well as topic typ
 Advanced Search with the Type Filter
 ------------------------------------
 
-The search/create dialog has two checkboxes right under the search field.
+The :ref:`search/create dialog <user-search-create-dialog>` has two checkboxes right under the search field.
 They narrow down your search results to certain topic types according to your filter.
 
 When you just enter a search term you potentially get a lot of unwanted results:
@@ -825,19 +824,16 @@ To get the *exact* search phrase consisting of multiple words enter it surrounde
 Associative navigation
 ======================
 
-As DMX is made to work like a human brain you can navigate in an associative way.
-The "Related" tab of the :ref:`detail panel<user-the-detail-panel>` detail panel permits you to navigate the database by listing associated items.
-
-Use the "Related" button in the context menu to get there.
+To navigate across topics along associations use the '*Related* command in the :ref:`context menu<user-the-context-menu>` of any item. This opens the "Related" tab of the :ref:`detail panel<user-the-detail-panel>`.
 
 .. image:: _static/related.png
 
-Read more about the possible sort orders in the section about the :ref:`"Related" tab<user-detail-panel-the-related-tab>` of the detail panel.
+Here you can learn more about the features of the :ref:`"Related" tab<user-detail-panel-the-related-tab>`.
 
 Switching between topicmaps
 ===========================
 
-You can switch between your topicmaps by using the topicmap selector in the tool bar.
+You can switch between all *Topicmaps* of a *Workspace* by using the :ref:`Topicmap Selector<user-the-topic-map-selector>` in the upper toolbar.
 
 .. image:: _static/topic-map-selector2.png
 
