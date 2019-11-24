@@ -13,7 +13,7 @@ The DMX User Interface
 The Toolbar
 ===========
 
-The upper toolbar contains some of the crucial steering tools for DMX.
+The upper toolbar contains the crucial steering tools for DMX: The workspace selector, the topicmap selector and the user menu.
 
 .. figure:: _static/upper-toolbar.png
     :alt: Tool bar with workspace and topicmap selector
@@ -23,12 +23,27 @@ The upper toolbar contains some of the crucial steering tools for DMX.
 The Workspace Selector
 ----------------------
 
-In the upper left corner there is a drop-down menu called "Workspace".
-This is the workspace selector.
+.. figure:: _static/upper-toolbar-workspace-selector.png
+    :alt: Tool bar with highlighted workspace selector
+
+The *Workspace Selector* is part of the upper toolbar and lets you select your current workspace.
 Workspaces are the highest level of content organization in DMX.
-You can think of workspaces as the folders you put your different projects into.
-When you start to work on a blank DMX installation and you are not logged in, the only visible workspace is called "DMX".
-Read more about workspaces in the section :ref:`user-introduction-to-workspaces-and-sharing-modes`.
+You can think of a workspace as a context in which you organize your work while you can associate items across different workspaces.
+
+Everything you create is automatically assigned to the workspace selected in this menu.
+
+.. note:: Every item in DMX is assigned to exactly **one** workspace.
+
+In DMX read and write permissions of users are tied to workspace memberships:
+Every user can create, edit and delete their own workspaces.
+If you create a new workspace you become its *owner* and you can invite users as members to share the workspace with.
+If a user has read or write permission for an item depends on whether the user has read or write permission for the workspace the item is assigned to.
+DMX's permissions concept is called **sharing modes**.
+You can read more about the five sharing modes in the section :ref:`user-introduction-to-workspaces-and-sharing-modes`.
+
+The DMX Standard Distribution comes with the following pre-installed workspaces: *System*, *Administration* and *DMX*.
+Additionally, each user has a *private workspace*.
+Content in a private workspace cannot be read by anyone other than the workspace owner.
 
 .. image:: _static/workspace-selector.png
 
@@ -36,6 +51,9 @@ Read more about workspaces in the section :ref:`user-introduction-to-workspaces-
 
 The Topicmap Selector
 ----------------------
+
+.. figure:: _static/upper-toolbar-topicmap-selector.png
+    :alt: Tool bar with highlighted topicmap selector
 
 Next to the workspace selector there is another drop-down menu called "Topicmap".
 This is the topicmap selector.
@@ -73,6 +91,8 @@ It resets the zoom level to "1" and centers the topicmap in its original positio
 
 The Login Button
 ----------------
+.. figure:: _static/upper-toolbar-login-button.png
+    :alt: Tool bar with highlighted login button
 
 The "Login" button is located in the upper right corner of the toolbar.
 
