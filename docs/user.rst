@@ -27,12 +27,13 @@ The Workspace Selector
     :alt: Tool bar with highlighted workspace selector
 
 The *Workspace Selector* is part of the upper toolbar and lets you select your current workspace.
-Workspaces are the highest level of content organization in DMX.
+**Workspaces are the highest level of content organization in DMX.**
 You can think of a workspace as a context in which you organize your work while you can associate items across different workspaces.
 
 Everything you create is automatically assigned to the workspace selected in this menu.
+**Every item in DMX is assigned to exactly one workspace.**
 
-.. note:: Every item in DMX is assigned to exactly **one** workspace.
+.. tip:: Look at how we recommend to use workspaces on our `Demo Server <https://demo.dmx.systems/>`_.
 
 In DMX read and write permissions of users are tied to workspace memberships:
 Every user can create, edit and delete their own workspaces.
@@ -49,21 +50,33 @@ Content in a private workspace cannot be read by anyone other than the workspace
 
 .. _user-the-topic-map-selector:
 
+Your choice in the Workspace Selector has direct influence on the available contents in the next menu, the *Topicmap Selector*.
+
 The Topicmap Selector
 ----------------------
 
 .. figure:: _static/upper-toolbar-topicmap-selector.png
     :alt: Tool bar with highlighted topicmap selector
 
-Next to the workspace selector there is another drop-down menu called "Topicmap".
-This is the topicmap selector.
-A topicmap represents an individual working situation.
-The user chooses what is relevant to the current context and visualizes it by revealing the relevant topics and associations from the database in a topicmap.
-Thus it shows a situation-based selection of the whole database content.
-In the beginning, there is only one topicmap, it's called "untitled".
-Find out how to add topicmaps in the section :ref:`user-organizing-the-working-context`.
+The *Topicmap Selector* is the second drop-down menu in the upper toolbar.
+It lets you switch between all views in a workspace.
+**A topicmap represents an individual working situation in the larger context of the selected workspace.**
+On a topicmap you can visualize content that is relevant to the current context.
+It shows a situation-based view of selected content from the database.
 
-.. image:: _static/topic-map-selector.png
+.. hint:: Go to our `Demo Server <https://demo.dmx.systems/>`_, navigate through the workspaces and have a look at the different topicmaps. They all show specific views on parts of the same underlying database.
+
+
+For the moment, two types of topicmaps are supported: *Topicmaps* and *Geomaps*.
+
+A new topicmap is always empty.
+In the beginning, there is only one topicmap, it's called "untitled".
+A topicmap view is like a canvas as it allows you to freely place items.
+The layout of the topicmap is persisted over working sessions.
+Edits to a topicmap are instantly mirrored to other connected users.
+The size of a topicmap can be well beyond the size of your screen. You can move it with your mouse.
+
+Find out more about working with topicmaps and geomaps in the section on :ref:`Organizing the working context<user-organizing-the-working-context>`.
 
 .. _user-the-fit-button:
 
@@ -512,13 +525,17 @@ There can be much more content in the database than what you actually display bu
 .. figure:: _static/illustration-database-topicmaps.png
     :alt: Illustration of DMX topicmaps each with a set of data revealed from the same underlying database.
 
+.. _user-working-with-topicmaps:
+
+Working with topicmaps
+======================
+
 .. _user-creating-a-topicmap:
 
 Creating a topicmap
-===================
+-------------------
 
-To start working in a new context or on a different part of your larger project you can create a new topicmap.
-This is done just like always:
+To start working in a new context or on a different part of your larger project you can create a new topicmap:
 Open the search/create dialog.
 Choose a name for the topicmap, search if it already exists, and create it by selecting the topic type "Topicmap".
 
@@ -527,6 +544,29 @@ Choose a name for the topicmap, search if it already exists, and create it by se
 For topicmaps, the creation dialog has an additional choice between (usual) topicmaps and geo maps (see below).
 Once created, the new empty topicmap is opened.
 You can see its name in the :ref:`Topicmap Selector<user-the-topic-map-selector>` and use it to switch between topicmaps.
+
+.. _user-renaming-a-topicmap:
+
+Renaming a topicmap
+-------------------
+
+You can rename a topicmap by clicking the "i" button next to the :ref:`Topicmap Selector<user-the-topic-map-selector>`.
+
+.. image:: _static/rename-topicmap1.png
+
+The "i" button reveals the topicmap topic itself on the topicmap.
+Long-click onto it and select "Edit" from the context menu.
+
+.. image:: _static/rename-topicmap2.png
+
+The detail panel opens and lets you change the name.
+
+.. image:: _static/rename-topicmap3.png
+
+After saving the change the new name appears in the Topicmap Selector.
+You can :ref:`hide <user-hiding-items>` the topicmap topic from the map via the context menu.
+
+.. image:: _static/rename-topicmap4.png
 
 .. _user-geodata:
 
