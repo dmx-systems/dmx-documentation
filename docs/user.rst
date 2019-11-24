@@ -83,38 +83,43 @@ Find out more about working with topicmaps and geomaps in the section on :ref:`O
 The Fit Button
 --------------
 
-Next to Topicmap Selector you can find the fit button.
-It has for arrows pointing from the center to the corners of a square.
-This button adjusts the zoom level of a topicmap to make it fit into the browser window.
+This button makes a topicmap fit into your current browser window.
+It adjusts the zoom level of a topicmap.
 
 .. figure:: _static/upper-toolbar-fit-button.png
     :alt: Tool bar with highlighted fit button
+
+You can find the fit button next to "i" button of the Topicmap Selector.
+It has four arrows pointing from the center to the corners of a square.
 
 .. _user-the-reset-zoom-button:
 
 The Reset Zoom Button
 ---------------------
 
-Next, there is the reset zoom button.
-It has two arrows pointing from the corners to the center of a square.
-It resets the zoom level to "1" and centers the topicmap in its original position.
+This button centers the topicmap and resets the maps zoom level to scale "1".
 
 .. figure:: _static/upper-toolbar-reset-zoom-button.png
     :alt: Tool bar with highlighted reset zoom button
+
+It has two arrows pointing from the corners to the center of a square and also sits next to the Topicmap Selector.
 
 The Login Button
 ----------------
 .. figure:: _static/upper-toolbar-login-button.png
     :alt: Tool bar with highlighted login button
 
-The "Login" button is located in the upper right corner of the toolbar.
+The "Login" button opens a dialog for you to log in to DMX.
+It is at the right side of the upper toolbar.
 
-The Help Button
+The Help Menu
 ---------------
 
-In the very corner there is the Help button.
-The menu that you can open here contains links to this documentation and to the `DMX Forum <https://forum.dmx.systems>`_.
+The help menu contains a link to this documentation.
+It also links to the `DMX Community Forum <https://forum.dmx.systems>`_ where you can ask us and other users of DMX questions and find help.
 "About DMX" displays information about the software version you are currently running.
+
+You can find the "Help" menu in the very right corner of the upper toolbar.
 
 .. figure:: _static/upper-toolbar-help-button.png
     :alt: Tool bar with highlighted help button
@@ -124,9 +129,9 @@ The menu that you can open here contains links to this documentation and to the 
 The Topicmap Panel
 ==================
 
-The topicmap panel is the main area of the DMX user interface.
-It displays the currently chosen topicmap.
-The topicmap panel is as big as your browser window unless you open the :ref:`detail panel<user-the-detail-panel>`.
+The Topicmap Panel is the main area of the DMX user interface.
+It displays the currently chosen view.
+The topicmap panel is as wide as your browser window unless you open the :ref:`detail panel<user-the-detail-panel>`.
 
 .. image:: _static/topic-map-panel.png
 
@@ -135,21 +140,22 @@ The topicmap panel is as big as your browser window unless you open the :ref:`de
 The Context Menu
 ----------------
 
-The context menu is opened with a right-click on items.
-It has four buttons to interact with the item:
+The context menu is part of the topicmap panel and thus available for any item on a map.
+It is usually opened with a right-click on a topic or association.
+By default, it gives you four commands to execute on the selected item:
 
-* You can display its details.
-* You can edit it.
-* You can hide it from the current topicmap
-* You can show what is related to this item.
+* You can display an item's details.
+* You can edit the item.
+* You can hide the item from this topicmap.
+* You can navigate to related items.
 
-To close the context menu *without* any action, click into its middle.
+To close the context menu *without* any action, release your mouse in the center of the circle.
 
 .. image:: _static/context-menu.png
     :width: 250
 
-Note that the context menu shows whether you have write permission to an item or not.
-If the terms "edit" or :ref:`"delete"<user_deleting-things>` are grayed out, you cannot edit the content.
+The context menu indicates whether you have write permission for an item or not.
+If the term "Edit" is grayed out, you do not have write permission on the selected item.
 
 .. image:: _static/context-menu-no-permission.png
     :width: 250
@@ -159,10 +165,12 @@ If the terms "edit" or :ref:`"delete"<user_deleting-things>` are grayed out, you
 In-map Details
 --------------
 
-Whenever you select an item on a topicmap, a rectangle opens up displaying details about the selected item.
+When you select an item on a topicmap, a rectangle opens up displaying details about the selected item.
 This box is called the in-map details.
 
 .. image:: _static/in-map-details.jpg
+
+Note that the in-map details only show up if the detail panel is not visible.
 
 .. _user-the-search-create-dialog:
 
