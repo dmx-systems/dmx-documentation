@@ -83,11 +83,11 @@ Find out more about working with topicmaps and geomaps in the section on :ref:`O
 The Fit Button
 --------------
 
-This button makes a topicmap fit into your current browser window.
-It adjusts the zoom level of a topicmap.
-
 .. figure:: _static/upper-toolbar-fit-button.png
     :alt: Tool bar with highlighted fit button
+
+This button makes a topicmap fit into your current browser window.
+It adjusts the zoom level of a topicmap.
 
 You can find the fit button next to "i" button of the Topicmap Selector.
 It has four arrows pointing from the center to the corners of a square.
@@ -97,15 +97,15 @@ It has four arrows pointing from the center to the corners of a square.
 The Reset Zoom Button
 ---------------------
 
-This button centers the topicmap and resets the maps zoom level to scale "1".
-
 .. figure:: _static/upper-toolbar-reset-zoom-button.png
     :alt: Tool bar with highlighted reset zoom button
 
+This button centers the topicmap and resets the maps zoom level to scale "1".
 It has two arrows pointing from the corners to the center of a square and also sits next to the Topicmap Selector.
 
 The Login Button
 ----------------
+
 .. figure:: _static/upper-toolbar-login-button.png
     :alt: Tool bar with highlighted login button
 
@@ -115,14 +115,14 @@ It is at the right side of the upper toolbar.
 The Help Menu
 ---------------
 
+.. figure:: _static/upper-toolbar-help-button.png
+    :alt: Tool bar with highlighted help button
+
 The help menu contains a link to this documentation.
 It also links to the `DMX Community Forum <https://forum.dmx.systems>`_ where you can ask us and other users of DMX questions and find help.
 "About DMX" displays information about the software version you are currently running.
 
 You can find the "Help" menu in the very right corner of the upper toolbar.
-
-.. figure:: _static/upper-toolbar-help-button.png
-    :alt: Tool bar with highlighted help button
 
 .. _user-the-topic-map-panel:
 
