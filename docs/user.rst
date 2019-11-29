@@ -316,13 +316,18 @@ Note that in contrast to the Meta tab the "Related tab" lists *all* related data
 The "View" tab
 --------------
 
-The fourth tab "View" allows you to view and edit the *configuration of types*.
-Thus, the tab is grayed out if the selected item is not a topic type or an association type but an individual topic or an association.
-(Read more about the background of the data model in the section about :ref:`Modeling<user-modeling>`.)
-What you can configure in this "View config" has nothing to do with editing the actual data model.
-These changes just have an impact on how items are rendered on your topicmap:
-You can assign custom icons to topic types, or colors to association types.
-(This is covered below in the sections about :ref:`Assigning icons to topic types<user-topic-type-icons>` and :ref:`Assigning colors to association types<user-assigning-colors-to-association-types>`.)
+The fourth tab "View" gives you access to what is called a "View Configuration".
+With view configurations you can control the *visual appearance* of topics and associations of a specific type.
+So, editing a view configuration influences how items are rendered across all topicmaps.
+At the moment, DMX allows you to perform the following customizations for topic and association types:
+
+* Topic Types: *Icon, Font Color, Background Color*
+* Association Types: *Association Color*
+
+If you need any further assistance for editing "View Configurations" the sections about :ref:`assigning icons to topic types<user-topic-type-icons>` and :ref:`assigning colors to association types<user-assigning-colors-to-association-types>` cover that.
+
+For the moment view configurations are only available on a per-type base (which is why the "View" tab is grayed out on any item which does not represent a *Type Definition*).
+You can learn more about working with type definitions in the section about :ref:`modeling<user-modeling>`.
 
 The Login Dialog
 ================
