@@ -384,20 +384,21 @@ You can change this by seleting a different topic type from the drop-down menu.
 DMX's default topic types
 -------------------------
 
-DMX comes with a few predefined topic types that you can select from:
+The DMX Standard Distribution comes with a few predefined topic types that you can select in the :ref:`Search/Create Dialog <user-the-search-create-dialog>`:
 
-- person,
-- organization,
-- note,
-- event,
-- bookmark.
+- *Note*
+- *Event*
+- *Person*
+- *Organization*
+- *Bookmark*
 
-Each topic type brings certain fields you can fill in:
-While events have dates and locations, persons can have telephone numbers and web resources have a URL.
+These standard type definitions have been synthesized from a variety of Personal Information Management (PIM) applications.
+One advantage of DMX is that you have these different types of information in one interface and not spread out in address books, calendars, browsers and file manager windows.
 
-These topic types all come from classical PIM applications (Personal Information Management).
-The special feature here is that you have different types of information in one interface and not spread out in address books, calendars, browsers and files.
-Using DMX for PIM is just *one* proposal for a use case.
+Using the DMX platform for personal information management is the use case of the DMX Standard Distribution.
+If you want to learn about other use cases check out the :ref:`list of currently available extensions<plugins-overview-of-plugins>` for DMX.
+
+If you want to develop your own type definitions, the :ref:`modeling section in this guide<user-modeling>` is the best place to start.
 
 .. _user-creating-an-association:
 
