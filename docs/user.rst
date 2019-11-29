@@ -240,32 +240,57 @@ The form is generated using the type definition representing the content (for mo
 The "Related" tab
 -----------------
 
-The second tab is called "Related".
-You can jump directly to this tab by choosing "Related" from the context menu or - if the detail panel is already open - by selecting the tab.
-This tab lists items related to your selection on the topicmap.
-It does *not* list the direct child topics, though, to avoid redundancy between the "Info" tab and the "Related" tab.
-(You can find the direct child topics in the "Info" tab and in the in-map details.)
+The "Related" tab is the second tab of the :ref:`detail panel<user-the-detail-panel>`.
+It is designed for navigating along existing associations.
+You can jump directly into the "Related" tab from within the topicmap using the :ref:`context menu<user-the-context-menu>` or - if the detail panel is already open - by choosing the second tab.
+First you see the number of related items and the selected sort mode.
 
-* On top, you can see the number of related items and the sort order. By default the list is sorted by topic type. In the example below you can see that the selected person is related to an organization, to the person's name, to a publication, to the topic type "Person", to the topicmap you are working on and to the workspace you are in. This means that you can navigate your content and your data model in the same place. (You will learn more about these concepts in the section about :ref:`Modeling<user-modeling>`.)
-* Additionally, every list item contains information about the association type between the selected person and the other items, e.g. their involvement with the organization, or that this person is an instance of the topic type person.
+The tab's content is a sorted list of all items directly related to your current selection *except* its direct child topics.
+(This avoids redundancy between the "Info" tab and the "Related" tab.)
+
+Sorting of items
+^^^^^^^^^^^^^^^^
+
+The Related Tab has got three sort modes:
+
+* by topic
+* by topic type
+* by association type
+
+.. hint:: Go play with `sample data <https://demo.dmx.systems/systems.dmx.webclient/#/topicmap/15730/topic/8567/related>`_ on our Demo Server. Change the sort order to see what it does.
+
+By default the list of related items is grouped by "Topic Type":
+In the example below you can see that the selected organization is related to a city, a note, and to persons but also to the current topicmap and to the workspace you are in.
+**This means that you can navigate your content and your data model in the same place.** (You will learn more about these concepts in the section about :ref:`Modeling<user-modeling>`.)
+Additionally, every list item contains information about the association type between the selected person and the other items, e.g. person's involvement with the organization, or that this organisation is an instance of the topic type organization.
 
 .. image:: _static/detail-panel-related-tab.png
 
-* Depending on what you are searching for you might want to change the sort order. If you select "Association Type" in the upper drop-down menu you get a different view onto the same data: Think of a working situation where you look for all publications the selected person wrote or for all organizations that person is related to. You could list them with the sort order "Association Type" as shown here:
+Depending on what you are searching for you might want to change the sort order to "Association Type" or "Topic".
+This will present you the same data but group all items with an emphasis on their type of relation:
 
-.. image:: _static/detail-panel-related-tab-sort-order.png
+.. image:: _static/detail-panel-related-tab-sort-by-assoc.png
 
-* The third sorting mechanism is called "Topic". It displays the same information in alphabetical order of the labels (that is the "display names" of the items).
-* Items that have a blue border on the right side are already revealed on the map. All other items can be revealed with a click.
-* **When revealing listed items on the topicmap you can control whether the focus should stay with the current item or switch to the next one:** When you click anywhere onto a list item, it is revealed and the focus switches (figure 1). To keep the focus where it is click *the icon* of a different item to just reveal it (figure 2). This is how you can quickly bring all relevant related items up on your topicmap.
+If you choose the sort mode "Topic", all displayed items are ordered alphabetically descending by their labels without any grouping by type.
+
+Revealing items from the Related Tab
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When choosing a related item from the list you can control whether to also "focus" them or not (as illustrated in the following two figures):
+
+1. When you click anywhere onto a list item, it is revealed and the focus switches (Figure 1). 
+2. When you click on *the icon* of a list item you add it to the selected view without switching focus (Figure 2). So, clicking only the icon of a related item allows you to add a number of other related items in this list to the selected view.
 
 .. figure:: _static/related-tab-reveal-and-select.png
 
-    Figure 1: Reveal and select.
+    Figure 1: Click anywhere on the item to **reveal and focus** the item.
 
 .. figure:: _static/related-tab-reveal.png
 
-    Figure 2: Reveal without selecting.
+    Figure 2: Click on the icon of the item to **reveal without focussing** the item.
+
+
+.. note:: Items that show a blue line at the right side are already part of the map so clicking them will bring them into "focus". Clicking an item without a blue line will add it to the selected map. So, clicking on a related item either "focuses" or "adds" it to a selected view. 
 
 .. _user-detail-panel-the-meta-tab:
 
