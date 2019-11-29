@@ -224,7 +224,7 @@ You can go to the info tab directly by choosing *Details* from the :ref:`context
 In **display mode** it shows the direct child topics of what is currently selected as this is the most commonly wanted information.
 It only shows child topics with a value assigned, that is fields containing data.
 
-You can use the display mode to reveal selected child topics in the topicmap panel by hovering the childs and using the little eye symbol (at the very right).
+You can use the display mode to reveal selected child topics in the topicmap panel by hovering the child topics and using the little eye symbol (at the very right).
 
 .. image:: _static/detail-panel-reveal-button.png
 
