@@ -189,8 +189,9 @@ Read more on how to create content in the section about :ref:`Content Authoring<
 The Detail Panel
 ================
 
-The "Detail Panel" is usually opened by clicking "Details", "Edit", or "Related" in the :ref:`context menu <user-the-context-menu>` of an item.
+The "Detail Panel" is opened by clicking "Details", "Edit", or "Related" in the :ref:`context menu <user-the-context-menu>` of an item.
 The detail panel shares your screen width with the "Topicmap Panel".
+It has four tabs, "Info", "Related", "Meta", and "View" described below.
 
 .. image:: _static/detail-panel.png
 
@@ -201,7 +202,7 @@ The detail panel can only be opened if you have selected an item on the map.
 Once opened, it stays open as long as you have selected an item.
 When you unselect an item by clicking somewhere onto your topicmap the detail panel closes.
 
-DMX avoids to display redundant information by not opening both the detail panel and the in-map details at the same time *unless* you explicitly :ref:`pin<user-pinning-things>` one of them):
+DMX avoids to display redundant information by not opening both the detail panel and the in-map details at the same time *unless* you explicitly :ref:`pin<user-pinning-things>` one of them:
 To show selected "In-map Details" while the "Detail Panel" is open you can :ref:`pin<user-pinning-things>` the in-map details to your map.
 Pinning shows "In-map Details" in a topicmap, no matter what.
 Vice-versa you can also pin the "Detail Panel" by clicking the little pin icon in its upper right corner.
@@ -216,19 +217,21 @@ Note that the detail panel only displays details of a single selected item, not 
 The "Info" tab
 --------------
 
-The first tab is a general info tab.
-You get there by selecting "Details" from the :ref:`context menu<user-the-context-menu>`.
-The "Info" tab is always labelled with the type of the selected item, e.g. "Person" or "Event".
-It shows the direct child topics of what is currently selected as this is the most commonly wanted information.
-In its display mode it shows only those fields containing data.
-You can reveal the listed child topics on the current topicmap by clicking the little eye symbol.
+The "Info" tab is the first section of the :ref:`detail panel<user-the-detail-panel>`.
+It is named after the type of your current selection, e.g. a topic of type "Person" or "Event".
+You can go to the info tab directly by choosing *Details* from the :ref:`context menu<user-the-context-menu>` or by selecting the first tab in the detail panel.
+
+In **display mode** it shows the direct child topics of what is currently selected as this is the most commonly wanted information.
+It only shows child topics with a value assigned, that is fields containing data.
+
+You can use the display mode to reveal selected child topics in the topicmap panel by hovering the childs and using the little eye symbol (at the very right).
 
 .. image:: _static/detail-panel-reveal-button.png
 
-The first tab also has an edit button at the bottom.
-From a topicmap you can enter the editing mode directly by clicking "Edit" in the context menu.
-If you enter the editing mode, you get all fields that you can fill in for the respective topic type or association type.
-These fields come from the type definitions. (Please see the section about :ref:`Modeling<user-modeling>`.)
+The info tab also has an **edit mode**.
+You can enter the edit mode either directly from within the topicmap by clicking "Edit" in the :ref:`context menu<user-the-context-menu>` or by clicking the "Edit" button at the bottom of the "Info" tab.
+If you enter the **Edit** mode, you get a form with all possible input fields regarding the respective item type.
+The form is generated using the type definition representing the content (for more details, see our section on :ref:`Modeling<user-modeling>`).
 
 .. image:: _static/detail-panel-editing-mode.jpg
 
