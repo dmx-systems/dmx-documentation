@@ -327,7 +327,7 @@ At the moment, DMX allows you to perform the following customizations for topic 
 If you need any further assistance for editing "View Configurations" the sections about :ref:`assigning icons to topic types<user-topic-type-icons>` and :ref:`assigning colors to association types<user-assigning-colors-to-association-types>` cover that.
 
 For the moment view configurations are only available on a per-type base (which is why the "View" tab is grayed out on any item which does not represent a *Type Definition*).
-You can learn more about working with type definitions in the section about :ref:`modeling<user-modeling>`.
+You can learn more about working with type definitions in the section about :ref:`Modeling<user-modeling>`.
 
 The Login Dialog
 ================
@@ -398,7 +398,7 @@ One advantage of DMX is that you have these different types of information in on
 Using the DMX platform for personal information management is the use case of the DMX Standard Distribution.
 If you want to learn about other use cases check out the :ref:`list of currently available extensions<plugins-overview-of-plugins>` for DMX.
 
-If you want to develop your own type definitions, the :ref:`modeling section in this guide<user-modeling>` is the best place to start.
+If you want to develop your own type definitions, the :ref:`Modeling section in this guide<user-modeling>` is the best place to start.
 
 .. _user-creating-an-association:
 
