@@ -297,19 +297,19 @@ When choosing a related item from the list you can control whether to also "focu
 The "Meta" tab
 --------------
 
-The third tab "Meta" displays a summary of metadata about the selected item:
+The "Meta" tab in the "Detail Panel" is the third tab and displays a summary of metadata about the selected item:
 
-* the item's unique identifier (ID)
-* the URI
+* the item's technical identifier (ID)
+* the Uniform Resource Identifier (see `Wikipedia: URI <https://en.wikipedia.org/wiki/Uniform_Resource_Identifier>`_)
 * the creation date and the author's user name
 * the date of the last modification and the respective author's user name
-* the workspace this item is in as well as the workspace owner's name
-* the topic type
-* all topicmaps the item is *currently* revealed on
-
-Note that in contrast to the Meta tab the "Related tab" lists *all* related database content, e.g. also topicmaps the item was revealed on at some point in time.
+* the *Workspace* this item resides in as well as the workspace owner's name
+* the *Type* of the item (DMXType)
+* all *Topicmaps* the item is *visible* (not hidden) on
 
 .. image:: _static/detail-panel-meta-tab.png
+
+Note that in contrast to the Meta tab the "Related tab" lists *all* related database content, e.g. topicmaps an item is part of but currently not visible in (*hidden*).
 
 .. _user-detail-panel-the-view-tab:
 
