@@ -345,7 +345,7 @@ To use the user name and password from your organization select the "LDAP" metho
 
 .. image:: _static/ldap-login.png
 
-.. note:: Learn how to install plugins in our :ref:`Admin Documentation <admin-plugin-installation>`.
+.. note:: You can learn how to install plugins in our :ref:`Admin Documentation <admin-plugin-installation>`.
 
 .. _user-content-authoring:
 
