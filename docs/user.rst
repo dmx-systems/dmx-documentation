@@ -189,24 +189,27 @@ Read more on how to create content in the section about :ref:`Content Authoring<
 The Detail Panel
 ================
 
-The detail panel is located at the right side of the screen when it is open.
-You open it by clicking "Details", "Edit", or "Related" in the :ref:`context menu<user-the-context-menu>`.
+The "Detail Panel" is usually opened by clicking "Details", "Edit", or "Related" in the :ref:`context menu <user-the-context-menu>` of an item.
+The detail panel shares your screen width with the "Topicmap Panel".
 
 .. image:: _static/detail-panel.png
 
-The detail panel offers much more features to explore and edit your data than the :ref:`in-map details<user-in-map-details>` shown above.
-Depending on what you want to do you can choose where you want to display details - in-map or in the detail panel.
-DMX avoids to display redundant information by not opening both at the same time (*unless* you explicitly :ref:`pin<user-pinning-things>` the in-map details to your map to leave them open).
+The detail panel allows DMX to display more information than the :ref:`in-map details <user-in-map-details>`.
+It is also used for editing data.
 
 The detail panel can only be opened if you have selected an item on the map.
-The default behavior is that it stays open as long as you have selected an item.
-Once you unselect an item by clicking somewhere onto your topicmap the detail panel closes.
-You can control whether the detail panel shall stay opened by pinning it with the little pin icon in its upper right corner.
-You close the detail panel by unpinning it with the same button.
+Once opened, it stays open as long as you have selected an item.
+When you unselect an item by clicking somewhere onto your topicmap the detail panel closes.
+
+DMX avoids to display redundant information by not opening both the detail panel and the in-map details at the same time *unless* you explicitly :ref:`pin<user-pinning-things>` one of them):
+To show selected "In-map Details" while the "Detail Panel" is open you can :ref:`pin<user-pinning-things>` the in-map details to your map.
+Pinning shows "In-map Details" in a topicmap, no matter what.
+Vice-versa you can also pin the "Detail Panel" by clicking the little pin icon in its upper right corner.
+Using the same button you can un-pin and close the detail panel.
 
 .. image:: _static/pin-detail-panel.png
 
-Note that the detail panel can only display details of a single selected item, not when you :ref:`bulk select<user-bulk-selection>` several items.
+Note that the detail panel only displays details of a single selected item, not when you :ref:`bulk select<user-bulk-selection>` several items.
 
 .. _user-detail-panel-the-info-tab:
 
