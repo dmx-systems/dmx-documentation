@@ -588,14 +588,14 @@ Working with topicmaps
 Creating a topicmap
 -------------------
 
-To start working in a new context or on a different part of your larger project you can create a new topicmap:
-Open the search/create dialog.
-Choose a name for the topicmap, search if it already exists, and create it by selecting the topic type "Topicmap".
+To document a meeting, prepare for an interview or to do some research you can create a topicmap.
+To create a new topicmap open the :ref:`search/create dialog <user-the-search-create-dialog>` (right click).
+Enter the name of the new topicmap, select *Topicmap* from the "Create" menu and confirm with "Create".
 
 .. image:: _static/create-topic-map.png
 
 For topicmaps, the creation dialog has an additional choice between (usual) topicmaps and geo maps (see below).
-Once created, the new empty topicmap is opened.
+Once created, the new topicmap is opened.
 You can see its name in the :ref:`Topicmap Selector<user-the-topic-map-selector>` and use it to switch between topicmaps.
 
 .. _user-renaming-a-topicmap:
@@ -710,8 +710,8 @@ Bulk operations
 Bulk selection
 --------------
 
-You can bulk select several items by keeping the CTRL key pressed and drawing a rectangle around the items you want to select.
-You can also click them with the CTRL key pressed.
+You can bulk select several items by keeping the CTRL or SHIFT key pressed and drawing a rectangle around the items you want to select.
+You can also click them with the CTRL or SHIFT key pressed.
 The selected topics now have a blue border.
 
 Moving topic clusters
@@ -730,7 +730,7 @@ Once you have bulk selected a few items, you can drag the whole selection where 
 Hiding multiple items
 ---------------------
 
-To hide several items at once select them by keeping the CTRL key pressed and drawing a rectangle around them or by clicking them with the CTRL key pressed.
+To hide several items at once select them by keeping the CTRL or SHIFT key pressed and drawing a rectangle around them or by clicking them with the CTRL or SHIFT key pressed.
 
 .. image:: _static/bulk-hide.png
     :width: 600
@@ -798,7 +798,7 @@ Navigation
 Searching the database
 ======================
 
-To search the DMX database open the search/create dialog with a left-click in the topicmap.
+To search in DMX open the :ref:`search/create dialog <user-the-search-create-dialog>` with a right-click on a topicmap.
 Start typing what you are looking for.
 DMX immediately displays all results that you have read access to.
 You refine the search by typing in more letters.
@@ -813,7 +813,7 @@ Your actual content, e.g. persons you entered, is displayed as well as topic typ
 Advanced Search with the Type Filter
 ------------------------------------
 
-The search/create dialog has two checkboxes right under the search field.
+The :ref:`search/create dialog <user-the-search-create-dialog>` has two checkboxes right under the search field.
 They narrow down your search results to certain topic types according to your filter.
 
 When you just enter a search term you potentially get a lot of unwanted results:
@@ -892,18 +892,17 @@ Associative navigation
 ======================
 
 As DMX is made to work like a human brain you can navigate in an associative way.
-The "Related" tab of the :ref:`detail panel<user-the-detail-panel>` detail panel permits you to navigate the database by listing associated items.
-
-Use the "Related" button in the context menu to get there.
+To navigate across topics along associations use the '*Related* command in the :ref:`context menu<user-the-context-menu>` of any item.
+This opens the "Related" tab of the :ref:`detail panel<user-the-detail-panel>`.
 
 .. image:: _static/related.png
 
-Read more about the possible sort orders in the section about the :ref:`"Related" tab<user-detail-panel-the-related-tab>` of the detail panel.
+Here you can learn more about the features of the :ref:`"Related" tab<user-detail-panel-the-related-tab>`.
 
 Switching between topicmaps
 ===========================
 
-You can switch between your topicmaps by using the topicmap selector in the tool bar.
+You can switch between all *Topicmaps* of a *Workspace* by using the :ref:`Topicmap Selector<user-the-topic-map-selector>` in the upper toolbar.
 
 .. image:: _static/topic-map-selector2.png
 
