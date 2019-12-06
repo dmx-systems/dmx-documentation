@@ -405,37 +405,39 @@ If you want to develop your own type definitions, the :ref:`Modeling section in 
 Creating an association
 =======================
 
-To create an association between two topics you grab the little gray dot at the upper border of one of the topics.
+To create an association between two items you need to connect the dots. Start with grabbing the little gray (or blue) dot appearing at the border of the item you want to connect.
 
 .. image:: _static/create-association-1.png
 
-Drag it onto the other topic until that topic is highlighted by a blue border.
+Drag the line onto the other item until it is highlighted by a blue border.
 
 .. image:: _static/create-association-2.png
 
-Then let go and a rectangle will open that shows you the in-map details of the newly created association.
-Click somewhere into the map to hide the in-map details.
+Then drop the line to create a new association. A rectangle will open that shows you the in-map details of the newly created association.
+Click somewhere into the map to hide the in-map details of the new association.
 
 Note that an association does not necessarily connect two topics:
 You can also create associations between a topic and an association or between two associations.
-To do so, attach an association to the little dot in the middle of the assocation.
+To do so, attach the line to the little dot in the middle of the assocation.
 
 .. image:: _static/create-assoc-with-assoc.png
 
 Now what is important is that there are different association types.
-If you just draw a line between two things to create an association you will see a gray line.
-Its association type is just "association".
-You can use these associations to visualize that two items are somehow related to each other without being specific about the meaning of the association.
+The association in this example is of the most generic type called *Association*.
+You can use it to note down that these two items are somehow related but you can't tell anything more specific (yet) about the association.
 
 .. image:: _static/generic-association.png
     :width: 600
 
-If you need qualified associations you have to give your associations a meaning.
-This is explained step-by-step in the section about :ref:`Modeling<user-modeling>`.
+If you need specific types of associations you can create your own association types.
+This is explained step-by-step in the section about :ref:`modeling<user-modeling>`.
+
+.. If you develop your own application you should always create custom association types for your application. This is because users of DMX expect that all associations of type *Association* do not carry any additional semantics.
 
 Thinking of real-world examples, you will find that there is often more than one association between two things.
-DMX can represent this:
-You can simply create another association between them.
+So DMX lets you create many different associations between two items.
+
+.. hint:: You can play with different associations resp. association types on our Demo server, e.g. in the `Person and Organizations topicmap <https://demo.dmx.systems/systems.dmx.webclient/#/topicmap/8551>`_.
 
 .. image:: _static/multiple-assocs.jpg
     :width: 600
