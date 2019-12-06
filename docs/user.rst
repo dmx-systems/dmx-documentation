@@ -178,7 +178,7 @@ The Search/Create Dialog
 ========================
 
 The search for existing items and the creation of new ones is done in the same dialog box.
-The search/create dialog is opened with a right-click into the topicmap.
+The search/create dialog is opened in the center of the screen with a right-click into the topicmap.
 Advanced search options are explained below in the :ref:`Navigation section<user-searching-the-database>`.
 Read more on how to create content in the section about :ref:`Content Authoring<user-content-authoring>`.
 
