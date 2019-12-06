@@ -452,24 +452,25 @@ Editing content
 Editing in the detail panel
 ---------------------------
 
-To add more details to a topic you use the detail panel on the right side.
-Use the edit button from the context menu to open it (see above).
+To start adding details to a topic you can use the *Edit* command from the :ref:`context menu<user-the-context-menu>` of an item.
+The detail panel opens, with the "Info" tab selected and in "Edit" mode.
+Now you have the topicmap on the left side of your screen and the detail panel on the right side.
 
-The detail panel opens so that you have the topicmap on the left side of your screen and the detail panel on the right side.
-There is an in-depth explanation of the detail panel's features :ref:`further up<user-the-detail-panel>`.
-Here is what is looks like.
-There is a "Save" button at the very bottom of the form.
+Here is what an item looks like in "Edit" mode in the first tab of the detail panel.
 
 .. image:: _static/detail-panel-edit-intro.png
+
+When finished editing the item, press the "Save" button at the very bottom of the tab.
+There is an in-depth explanation of the four detail panel tabs above, in the section about the :ref:`Detail Panel <user-the-detail-panel>`.
 
 .. _user-inline-editing:
 
 Inline editing
 --------------
 
-For quick changes of fields you already filled in you can use the inline editing mode.
-Click to select the topic and move your mouse to the upper right corner of the displayed square.
-A little closed lock appears. Click to unlock it.
+You can also edit items in map using the inline editing mode.
+Click to select the topic and move your mouse to the upper right corner of the box.
+In the upper right corner a closed lock appears, click to unlock it.
 
 .. image:: _static/inline-editing-unlock.jpg
 
@@ -480,30 +481,34 @@ Double-click onto the content you want to change, do your edit and save the chan
 Inline Topic Links
 ------------------
 
-When editing the text field of an item you can embed links to other topics into the text.
-These inline topic links are clickable so that the referred topics are revealed on the topicmap.
-Link creation utilizes the search/create dialog.
-So you can link to existing topics or create new ones on-the-fly.
-Select the term you want to embed the link into and use the editor's "T" icon to create the link.
+When editing an HTML field of an item you can directly link to other topics of your knowledge base.
+Select the text you want to use as label for the link and then use the editor's "T" icon.
 
 .. image:: _static/editor-t-icon.png
 
+Link creation utilizes the :ref:`search/create dialog <user-the-search-create-dialog>`.
+Using it you can link to existing topics or create new ones on-the-fly.
+
 .. image:: _static/clickable-inline-topic-links.png
+
+Clicking on inline topic links will reveal the linked topic in a topicmap.
 
 .. _user_uploading-or-embedding-images:
 
 Uploading or embedding images
 -----------------------------
 
-To upload or embed an image, you have to go via the richtext editor right now.
-The richtext editor is accessible in all HTML fields, e.g. in a Note.
-Write text into the HTML field and select some of it.
+Uploading images is currently only possible through embedding them in HTML fields.
+To upload or embed an image select some text in an HTML field.
 The richtext editor opens.
 
 .. image:: _static/richtext-editor-upload-embed.png
 
-The image icon lets you upload an image from your computer into the DMX database.
-The film icon lets you embed an image from a website. (For the detailed use, please see the respective :ref:`modeling example<user-model-composite-with-composite>` below.)
+The image icon lets you upload an image from your computer into the HTML field.
+The film icon lets you embed an image from a website.
+For a more detailed description you are invited to have a look at one of our examples on :ref:`how to model a database of plants <user-model-composite-with-composite>` and how to picture plants in DMX through uploaded images.
+
+.. hint:: You can find the same example on the Demo server in the topicmap `Modeling patterns and pitfalls <https://demo.dmx.systems/systems.dmx.webclient/#/topicmap/14435>`_ to play with.
 
 .. _user_deleting-things:
 
@@ -513,7 +518,7 @@ Deleting things
 .. warning:: There is an important difference between hiding items and deleting them. **If you delete items they are removed from the database forever.** If you hide them, they are just no longer visible on the topicmap but you can bring them back by revealing them.
 
 You delete things via the context menu on the topicmap.
-Keep the "Alt" key pressed and left-click onto the item you want to delete.
+Keep the *Alt* key pressed and left-click onto the item you want to delete.
 To delete drag your mouse anywhere into the red area.
 To abort let go of both the "Alt" key and the mouse button while the cursor is in the middle of the circle.
 
@@ -530,17 +535,16 @@ You can confirm or cancel the deletion.
 Bulk deletion
 -------------
 
-To delete several items in one go select all of them by clicking them with the CTRL key pressed.
+To delete several items in one go select all of them by clicking them with the CTRL or SHIFT key pressed.
 
 .. image:: _static/bulk-delete-1.png
 
 Then proceed as above:
-Left-click onto the item and drag your mouse onto the delete button.
+Left- or right-click onto the item and drag your mouse onto the *Delete* command.
 
 .. image:: _static/bulk-delete-2.png
 
-When you select "Delete" the same confirmation dialog window opens:
-It informs you about the number of items you are about to delete.
+When you select *Delete* a confirmation dialog window opens to inform you about the number of items you are about to delete.
 You can confirm or cancel the deletion.
 
 .. _user-organizing-the-working-context:
@@ -549,20 +553,22 @@ You can confirm or cancel the deletion.
 Organizing the working context
 ******************************
 
-The DMX database contains your knowledge at large.
-Everything you enter is saved in the database until you delete it.
+The DMX database contains your knowledge at large, your knowledge base.
+Everything you enter is saved in the knowledge base until you delete it.
 What is important:
-Every item is saved in the database *once* only, even if you use it in many different contexts.
+Every item is saved in the knowledge base only *once*, even if you re-enter it or use it in many different contexts.
 
-To make use of your knowledge base in different working situations you use topicmaps.
-On each topicmap you can reveal what is relevant from the same underlying database.
-The rest stays hidden.
+To visualize your knowledge base in different situations you use topicmaps.
+In each topicmap different items from your knowledge base may be relevant and the rest stays hidden.
 Thus, every topicmap represents *one* view, perspective, or working situation.
 
 The following figure shows the relationship between content and its use in different working situations:
 
+In the upper half two different working situations are shown (*Topicmaps*).
+On each of the maps there is a selection of topics and associations revealed depending on what the topicmap is about.
+
 In the lower half you see a representation of a DMX database.
-It contains lots of topics and associations.
+It contains your complete knowledge graph made up of topics and associations.
 (Note that it also contains topic *types* and association *types* which are not visualized here for clarity.)
 
 In the upper half there are two different working contexts respectively topicmaps.
