@@ -460,6 +460,13 @@ Here is what an item looks like in "Edit" mode in the first tab of the detail pa
 
 .. image:: _static/detail-panel-edit-intro.png
 
+Some fields in the editing form can take more than one value:
+For instance, persons can have several telephone numbers.
+In these cases, a "+" icon is revealed when you hover over the field with your mouse.
+Press it to get a new field.
+
+.. image:: _static/editing-field-with-cardinality-many.png
+
 When finished editing the item, press the "Save" button at the very bottom of the tab.
 There is an in-depth explanation of the four detail panel tabs above, in the section about the :ref:`Detail Panel <user-the-detail-panel>`.
 
