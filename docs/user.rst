@@ -893,6 +893,41 @@ To get the *exact* search phrase consisting of multiple words enter it surrounde
 
 .. image:: _static/search-phrase-quoted.png
 
+.. note:: Search terms including **Lucene Special Characters** have to be escaped by a backslash ``\`` or wrapped in quotation marks ``"``.
+
+The following characters are `Lucene Special Characters <https://lucene.apache.org/core/3_5_0/queryparsersyntax.html#Escaping%20Special%20Characters>`_: ``+ - && || ! ( ) { } [ ] ^ " ~ * ? : \``
+
+To search for a string that contains one or more of these characters, like URLs (containing at least a colon) or names containing a dash you have two possibilities:
+
+1. Wrap the whole string in quotation marks (``"``) to form a phrase search.
+2. Escape the special character with a backslash (``\``).
+
+For searches *without* any Lucene Special Characters DMX automatically appends a wildcard to search terms for a better use experience.
+The moment you enter a Lucene Special Character this does not apply any more.
+If needed you have to append the wildcard yourself.
+Here are some examples:
+
+If your search terms does not include the special character you just get the results.
+DMX appends the wildcard symbol to your search term.
+
+.. image:: _static/search-lucene-special-characters1.png
+
+If your search terms contains a special character and you don't intervene you don't get any matches:
+
+.. image:: _static/search-lucene-special-characters2.png
+
+If you wrap the entire search term in quotation marks, Lucene presents you the *exact* matches:
+
+.. image:: _static/search-lucene-special-characters4.png
+
+If you wrap a part of the string in quotation marks, Lucene only searches for *this* exact string and might not find anything.
+
+.. image:: _static/search-lucene-special-characters3.png
+
+If you escape the special character and you add a wild card to the end of the string, Lucene searches for everything that starts like your search term including the special character:
+
+.. image:: _static/search-lucene-special-characters5.png
+
 .. _user-associative-navigation:
 
 Associative navigation
