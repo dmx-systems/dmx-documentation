@@ -436,7 +436,7 @@ Java files                  ``/usr/share/dmx/``
 DMX database and file repo  ``/var/lib/dmx/``
 Log files                   ``/var/log/dmx/``
 Bundle cache                ``/var/cache/dmx/``
-Examples                    ``/usr/share/docs/dmx/``
+Examples                    ``/usr/share/doc/dmx/``
 Systemd unit file           ``/etc/systemd/system/dmx.service``
 ==========================  ===================================
 
