@@ -128,19 +128,35 @@ You can use an existing LDAP or Active Directory backend to manage DMX users.
 The configuration file contains a section with the following options.
 Just leave them empty if you do not have any such backend.
 
-Specify your LDAP/AD server and port. The server can be a fully-qualified domain name or an IP address, e.g.
+Specify your LDAP/AD server and port.
+The following protocols are supported:
+
+1. StartTLS ``ldap://<hostname>:389``. The default port is 389.
+2. LDAPS ``ldaps://<hostname>:636``. The default port is 636.
+3. LDAP ``ldap://<hostname>:389``. The default port is 389.
 
 .. code:: bash
 
    dmx.ldap.server = 127.0.0.1
    dmx.ldap.port = 389
 
+For an unencrypted connection the ``dmx.ldap.server`` can be a fully-qualified domain name or an IP address. For an encrypted connection ``dmx.ldap.server`` must contain the hostname that is specified in the CN of the certificate. The IP address is not sufficient.
+
+There are two additional settings for self-signed certificates used with the Java keystore.
+The first one is the path to your keystore file.
+The second one is the keystore password.
+
+.. code:: bash
+
+   javax.net.ssl.trustStore = /path/to/keystore.jks
+   javax.net.ssl.trustStorePassword = changeit
+
 The manager and password are your LDAP bind account and bind password.
 
 .. code:: bash
 
-   dmx.ldap.manager = 
-   dmx.ldap.password = 
+   dmx.ldap.manager = cn=admin,dc=example,dc=org
+   dmx.ldap.password = secret
 
 Configure where DMX shall start the search for users in the LDAP/AD tree, e.g.
 
@@ -168,7 +184,11 @@ This is usually the group that is also used in the ``dmx.ldap.filter``, e.g.
 
    dmx.ldap.user_member_group = cn=dmxusers,ou=groups,dc=example,dc=com
 
-The last option specifies DMX's loglevel for everything related to the LDAP plugin, e.g.
+The last option specifies DMX's loglevel for everything related to the LDAP plugin.
+Currently two loglevels are supported:
+
+1.  ``INFO`` (default): Only warnings and errors are logged including possible misconfigurations.
+2.  ``DEBUG``: Hints, warning and errors are extensively logged during configuration and runtime phase.
 
 .. code:: bash
 
