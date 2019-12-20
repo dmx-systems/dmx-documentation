@@ -119,21 +119,60 @@ You can control whether you want to enable new user accounts right away or not.
    # If false user accounts must be manually enabled by an administrator (using the web client).
    dmx.security.new_accounts_are_enabled = true
 
+.. _admin-ldap-configuration:
 
-DM5 does currently not support an LDAP backend, yet.
-You can thus ignore the section in the settings file.
-In future releases you will be able to use it.
+LDAP Configuration
+==================
+
+You can use an existing LDAP or Active Directory backend to manage DMX users.
+The configuration file contains a section with the following options.
+Just leave them empty if you do not have any such backend.
+
+Specify your LDAP/AD server and port. The server can be a fully-qualified domain name or an IP address, e.g.
 
 .. code:: bash
 
-   # LDAP
    dmx.ldap.server = 127.0.0.1
    dmx.ldap.port = 389
+
+The manager and password are your LDAP bind account and bind password.
+
+.. code:: bash
+
    dmx.ldap.manager = 
    dmx.ldap.password = 
-   dmx.ldap.user_base = 
-   dmx.ldap.user_attribute = 
-   dmx.ldap.filter = 
+
+Configure where DMX shall start the search for users in the LDAP/AD tree, e.g.
+
+.. code:: bash
+
+   dmx.ldap.user_base = ou=users,dc=example,dc=com
+
+Which attribute is used to identify a user, e.g.
+
+.. code:: bash
+
+   dmx.ldap.user_attribute = uid
+
+In the user filter you can add an additional filter to verify if the user is authorized to log in to DMX via LDAP, e.g.
+
+.. code:: bash
+
+   dmx.ldap.user_filter = (&(objectclass=inetOrgPerson)(memberof=cn=dmxusers,ou=groups,dc=example,dc=com))
+
+The member group option is only needed if the DMX LDAP plugin is used to *create* new users.
+In that case, new users can be automatically added to a group.
+This is usually the group that is also used in the ``dmx.ldap.filter``, e.g.
+
+.. code:: bash
+
+   dmx.ldap.user_member_group = cn=dmxusers,ou=groups,dc=example,dc=com
+
+The last option specifies DMX's loglevel for everything related to the LDAP plugin, e.g.
+
+.. code:: bash
+
+   dmx.ldap.logging = INFO
 
 .. _admin-workspace-sharing-modes:
 
