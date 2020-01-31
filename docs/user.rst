@@ -1066,7 +1066,6 @@ Enter the clear text password - DMX will hash it for you when you press "save".
 .. image:: _static/change-password.png
 
 The admin password can be changed in the same way.
-Once changed, the initial admin password that is configured in the ``config.properties`` :ref:`file<admin-user-accounts-and-admin-password>` is ignored.
 
 .. _user-introduction-to-workspaces-and-sharing-modes:
 

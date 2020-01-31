@@ -103,6 +103,8 @@ User Accounts and Admin Password
 ================================
 
 In the section about user accounts you can set the initial password for the admin account.
+It is only evaluated when the database is initialized for the first time, after that it is saved in the database.
+The admin password can be changed via the web client just like :ref:`user passwords<user-changing-a-password>`.
 
 .. warning:: By default, the admin password is empty! Please do not forget to change it if you are planning to give others access to your instance.
    
