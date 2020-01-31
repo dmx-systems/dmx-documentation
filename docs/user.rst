@@ -1046,11 +1046,11 @@ Changing a password
 ===================
 
 Users can change their own password by searching for it and editing it.
-Open the Search/Create Dialog, enter your user name and click it to reveal it on the topicmap.
+Open the :ref:`Search/Create Dialog <user-the-search-create-dialog>`, enter your user name and click it to reveal it on the topicmap.
 
 .. image:: _static/user-account.png
 
-Click it to open the in-map details and investigate it:
+Click it to open the :ref:`in-map details <user-in-map-details>` and investigate it:
 The user account is a composite consisting of a user name and a password.
 The password is not visible in clear text but it is hashed for more security.
 
@@ -1060,7 +1060,7 @@ Use the context menu to edit the user account.
 
 .. image:: _static/edit-user-account.png
 
-Edit the password field in the detail panel.
+Edit the password field in the :ref:`detail panel<user-the-detail-panel>`.
 Enter the clear text password - DMX will hash it for you when you press "save".
 
 .. image:: _static/change-password.png
