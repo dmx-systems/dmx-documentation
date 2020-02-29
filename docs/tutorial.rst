@@ -1,7 +1,7 @@
 .. _user-beginners-tutorial:
 
 ###################
-Beginners' Tutorial
+Beginner's Tutorial
 ###################
 
 To get started with DMX you can
@@ -66,14 +66,14 @@ The result would look like this:
 DMX interpreted both as first name.
 Let's correct this:
 Long-press the rectangle and select "edit" from the :ref:`context menu <user-the-context-menu>`.
-On the right-hand side the so called :ref:`detail panel <user-the-detail-panel>` shows up.
+On the right-hand side the :ref:`detail panel <user-the-detail-panel>` shows up.
 
 .. image:: _static/context-menu-edit.png
 
-When "editing" the detail panel shows all the fields you might need to describe a person.
+When "editing", the detail panel shows all the fields you might need to describe a person.
 Correct the first name and click the "Save" button at the very bottom.
 
-Now let's add a second topic. Right-click on the emptiness, enter e.g. "Notes for the interview" into the dialog, select the topic type "Note" and click "Create".
+Now let's add a second topic. Right-click on the empty background, enter e.g. "Notes for the interview" into the dialog, select the topic type "Note" and click "Create".
 
 .. image:: _static/person-and-note.png
 
@@ -95,17 +95,17 @@ As we prepare for our interview let's say the "Note for the interview" shall be 
 
 .. image:: _static/create-simple-association-1.png
 
-Drag it onto the other topic until that topic is highlighted by a blue border.
+Drag it onto the other topic until the topic is highlighted by a blue border.
 
 .. image:: _static/create-simple-association-2.png
 
-Then drop the assocation on the "Notes for the interview" item and release your mouse pointer. 
+Then drop the association on the "Notes for the interview" item and release your mouse pointer. 
 
 The association will be created and a rectangle appears.
 These are the :ref:`in-map details <user-in-map-details>` of the newly created association.
 They tell you that this is association is of type "Association" which is the most generic form of association in DMX.
 
-Using the Drag & Drop gesture starting on the blue dot above an item you just created an association between two topics.
+Using the Drag & Drop gesture start on the blue dot above your new item to create an association between two topics.
 Click somewhere onto the topicmap to close the in-map-details of the association.
 
 ****************************************************
@@ -130,7 +130,7 @@ The in-map details show up again and indeed, DMX automatically created an associ
 .. image:: _static/create-organization-association.png
 
 Next, we want to describe "Cathy Jones" exact role in "Organization No. 1".
-Therefore we right-click onto the association to open the context menu and select "Edit".
+Right-click onto the association to open the context menu and select "Edit".
 
 .. image:: _static/edit-organization-association.png
 
@@ -144,7 +144,7 @@ For your changes to take effect click "Save".
 .. image:: _static/organization-association.png
 
 Now this is a more meaningful association.
-If you right-click and select "Related" on "Organization No. 1" you see how the role can be usefuel when navigating in DMX.
+If you right-click and select "Related" on "Organization No. 1" you see how the role can be useful when navigating in DMX.
 If you have entered more than one person, you can scroll down in the detail panel to see all persons and their respective roles in the organization.
 
 .. image:: _static/organizational-roles.png
