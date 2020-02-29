@@ -4,11 +4,11 @@
 Installation
 ############
 
-DMX is built on the Java Platform which can be installed on many operating systems.
+DMX is built on the Java Platform which can be installed on most operating systems.
 On this page we have covered how to run DMX on :ref:`Windows <installation-windows>`, :ref:`Mac OS <installation-macos>` and :ref:`Linux <installation-linux>`.
 
 DMX is a web application consisting of a client and a server.
-If you run DMX a web server is started (see Starting DMX) which makes the DMX web client accessible in your web browser (see Opening the Web Client).
+When you run DMX, a web server is started (see Starting DMX) making the DMX web client accessible in your web browser (see Opening the Web Client).
 
 .. _installation-windows:
 
@@ -20,7 +20,7 @@ Installing Java
 ===============
 
 DMX runs out of the box with Java versions 6 to 8.
-To run DMX we recommend you to download **Java 8**.
+To run DMX we recommend you use **Java 8**.
 If Java 8 is not already installed you can download it from the `AdoptOpenJDK <https://adoptopenjdk.net/>`_ or `Oracle's Java <https://java.com/en/download/>`_ website.
 Double-click the downloaded file and click through the installer.
 
@@ -146,7 +146,7 @@ Running DMX on Linux
 Installing Java
 ===============
 
-Use your package manager to install the Java 8 for your Linux distribution.
+Use your package manager to install Java 8 for your Linux distribution.
 
 For example, on Debian / Ubuntu, you would run the command
 
