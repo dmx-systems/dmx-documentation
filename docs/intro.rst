@@ -28,15 +28,15 @@ Data Sovereignty
 ****************
 
 DMX lets you keep control of your data.
-All data you enter are stored in the DMX database.
+All data is stored in the DMX database.
 Where this database is stored depends on the way you decided to run DMX.
 
 DMX on your local computer
 ==========================
 
-If you downloaded DMX to your local computer and started it on there the database is stored on that same computer.
+If you download and start DMX on your local computer, the database is stored on that same computer.
 It does not leave it unless you copy it elsewhere.
-After the initial download of the software, you can use DMX locally and without an internet connection unless you do need :ref:`Geomaps<user-geodata>`.
+After the initial download of the software, you can use DMX locally and without an internet connection unless you use :ref:`Geomaps<user-geodata>`.
 Geomaps are rendered in DMX with the help of `OpenStreetMap <https://www.openstreetmap.org>`_.
 OpenStreetMap is also used to transform the addresses you entered into geographical coordinates.
 Those features require an internet connection to work.
@@ -44,7 +44,7 @@ Those features require an internet connection to work.
 DMX as a self-hosted service
 ============================
 
-If you are running DMX on your own server or if someone shares their self-hosted instance with you, your data are on that person's server.
+If you are running DMX on your own server or if someone shares their self-hosted instance with you, your data is stored on that person's server.
 To work with DMX on a remote server you need an internet connection to communicate with the server.
 
 DMX as a service hosted by us
