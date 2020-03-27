@@ -633,7 +633,9 @@ You can :ref:`hide <user-hiding-items>` the topicmap topic from the map via the 
 Displaying Geodata
 ------------------
 
-DMX comes with built-in support for geodata.
+.. note:: As of DMX 5.0-beta-7 the geomap plugin has to be installed separately as described in our :ref:`Admin Documentation <admin-plugin-installation>`. Download it `here <https://download.dmx.systems/plugins/dmx-geomaps/>`_.
+
+DMX offers a plugin to support geodata.
 Every topic with an address can be shown on a geographical map.
 The so-called geomaps are a special type of topicmap in DMX.
 Geomaps are based on `openstreetmap.org <https://www.openstreetmap.org>`_.
