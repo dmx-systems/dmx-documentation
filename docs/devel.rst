@@ -6,7 +6,9 @@ DeepaMehta is made to be extensible by external developers. Developers extend De
 
 To see how a DeepaMehta plugin fits in the overall DeepaMehta architecture go to [[ArchitectureOverview|Architecture Overview]].
 
-== Build DeepaMehta from source ==
+****************************
+Build DeepaMehta from source
+****************************
 
 The best way to develop DeepaMehta plugins is to build DeepaMehta from source first. This way you get a hot-deploy environment, that is DeepaMehta redeploys your plugin automatically once you compile it. This is very handy while plugin development.
 
@@ -37,7 +39,9 @@ This builds all components of the DeepaMehta Standard Distribution and installs 
 ...
 }}}
 
-== The plugin turn-around cycle ==
+****************************
+The plugin turn-around cycle
+****************************
 
 This section illustrates how to begin a plugin project, how to build and how to deploy a plugin, and how to redeploy the plugin once you made changes in its source code. In other words, this section illustrates the plugin development turn-around cycle.
 
@@ -47,9 +51,11 @@ Developing a plugin whose only purpose is to provide new topic type definitions 
 
 Of course the topic type could be created interactively as well, by using the DeepaMehta Webclient's type editor. However, being packaged as a plugin means you can distribute it. When other DeepaMehta users install your plugin they can use your type definitions.
 
-=== Begin a plugin project ===
+Begin a plugin project
+======================
 
-==== Naming Conventions ====
+Naming Conventions
+------------------
 
 {{{
 When you are working with git, your new DeepaMehta repo should always start with 'dm4-',
@@ -147,7 +153,8 @@ dm4.plugin.activate_after=de.deepamehta.webclient
 dm4.plugin.model_version=1
 }}}
 
-=== Setup for Hot-Deployment ===
+Setup for Hot-Deployment
+========================
 
 The easiest way to let DeepaMehta hot-deploy the plugin is to develop it within the **`bundle-dev`** directory. To do so move the plugin directory on your hard disc into DeepaMehta's hot-deployment folder called **`bundle-dev`**. The next step is then to build your plugin.
 
@@ -215,7 +222,8 @@ START LEVEL 6
 
 The //DeepaMehta 4 Tagging// plugin does not yet appear in that list as it is not yet build.
 
-=== Build the plugin ===
+Build the plugin
+================
 
 In another terminal:
 
@@ -303,13 +311,15 @@ START LEVEL 6
    32|Active     |    5|DeepaMehta 4 Tagging (0.1.0.SNAPSHOT)
 }}}
 
-=== Try out the plugin ===
+Try out the plugin
+==================
 
 Now you can try out the plugin. In the DeepaMehta Webclient login as user "admin" and leave the password field empty. The //Create// menu appears and when you open it you'll see the new type //Tag// listed. Thus, you can create tags now. Additionally you can associate tags to your content topics, search for tags, and navigate along the tag associations, just as you do with other topics.
 
 The result so far: the //DeepaMehta 4 Tagging// plugin provides a new topic type definition or, in other words: a data model. All the active operations on the other hand like create, edit, search, delete, associate, and navigate are provided by the DeepaMehta Webclient at a generic level, and are applicable to your new topic type as well.
 
-=== Redeploy the plugin ===
+Redeploy the plugin
+===================
 
 Once you've made any changes to the plugin files, you have to build the plugin again. Just like before in the plugin terminal:
 
@@ -364,7 +374,8 @@ In contrast to the initial build of the plugin you can recognize some difference
 
 To ensure the DeepaMehta Webclient is aware of the changed plugin press the browser's reload button.
 
-=== Stopping DeepaMehta ===
+Stopping DeepaMehta
+===================
 
 To stop DeepaMehta, in the Gogo shell type:
 
@@ -375,7 +386,9 @@ g! stop 0
 
 This stops all bundles, shuts down the webserver, and the database.
 
-== Migrations ==
+**********
+Migrations
+**********
 
 A //migration// is a sequence of database operations that is executed exactly once in the lifetime of a particular DeepaMehta installation. You as a developer are responsible for equipping your plugin with the required migrations. Migrations serve several purposes:
 
@@ -387,7 +400,8 @@ A //migration// is a sequence of database operations that is executed exactly on
 
 So, the purpose expressed in points 2. and 3. is to make your plugin //upgradable//. That is, keeping existing database content //in-snyc// with the plugin logic. By providing the corresponding migrations you make your plugin //compatible// with the previous plugin version.
 
-=== The migration machinery ===
+The migration machinery
+=======================
 
 Each plugin comes with its own data model. For each plugin DeepaMehta keeps track what data model version is currently installed. It does so by storing the version of the installed data model in the database as well. The data model version is an integer number that starts at 0 and is increased consecutively: 0, 1, 2, and so on. Each version number (except 0) corresponds with a particular migration. The migration with number //n// is responsible for transforming the database content from version //n-1// to version //n//.
 
@@ -408,7 +422,8 @@ If e.g. version 0.1 of the plugin is currently installed, the database holds "2"
 
 Thus, the users database will always be compatible with the installed version of the plugin. Furthermore, the user is free to skip versions when upgrading the plugin.
 
-=== Plugin configuration ===
+Plugin configuration
+====================
 
 If your plugin comes with its own data model you must tell DeepaMehta the data model version it relies on. To do so, set the `dm4.plugin.model_version` configuration property in the `plugin.properties` file, e.g.:
 
@@ -428,7 +443,8 @@ dm4-myplugin/src/main/resources/plugin.properties
 
 If no `plugin.properties` file is present, the default configuration values apply.
 
-=== The two kinds of migrations ===
+The two kinds of migrations
+===========================
 
 As you've already learned, migrations serve different (but related) purposes: some just //create// new type definitions and others //modify// existing type definitions and/or transform existing database content. To support the developer with these different tasks DeepaMehta offers two kinds of migrations:
 
@@ -440,7 +456,8 @@ As you've already learned, migrations serve different (but related) purposes: so
 
 The developer can equip a plugin with an arbitrary number of both, declarative migrations and imperative migrations.
 
-=== Directory structure ===
+Directory structure
+===================
 
 In order to let DeepaMehta find the plugin's migration files, you must adhere to a fixed directory structure and file names. Each migration file must contain its number, so DeepaMehta can run them consecutively.
 
@@ -478,7 +495,8 @@ Important: for each number between 1 and `dm4.plugin.model_version` exactly one 
 
 It would be invalid if for a given number a) no migration file exists, or b) two migration files exist (one declarative and one imperative). In these cases the DeepaMehta migration machinery throws an error and the plugin is not activated.
 
-=== Writing a declarative migration ===
+Writing a declarative migration
+===============================
 
 A declarative migration is a JSON file with exactly one JSON Object in it. In a declarative migration you can define 4 things: topic types, association types, topics, associations. The general format is:
 
@@ -552,7 +570,8 @@ As an example see the (simplified) migration that defines the //Note// topic typ
 
 As you see, this migration defines 3 topic types (and no other things): //Title// and //Text// are 2 simple types, and //Note// is a composite type. A Note is composed of one Title and one Text.
 
-=== Writing an imperative migration ===
+Writing an imperative migration
+===============================
 
 An imperative migration is a Java class that is derived from `de.deepamehta.core.service.Migration` and that overrides the `run()` method. The `run()` method is called by DeepaMehta to run the migration.
 
@@ -580,7 +599,9 @@ public class Migration3 extends Migration {
 
 Here an association definition is added to the //Topicmap// type subsequently.
 
-== The server side ==
+***************
+The server side
+***************
 
 What a DeepaMehta plugin can do at the server side:
 
@@ -594,7 +615,8 @@ What a DeepaMehta plugin can do at the server side:
 
 Weather a DeepaMehta plugin has a server side part at all depends on the nature of the plugin. Plugins without a server side part include those which e.g. just define a data model or just provide a custom (JavaScript) renderer.
 
-=== The plugin main file ===
+The plugin main file
+====================
 
 You must write a //plugin main file// if your plugin needs to a) listen to DeepaMehta Core events and/or b) provide a service. The plugin main file contains the event handlers resp. the service implementation then.
 
@@ -676,7 +698,8 @@ Furthermore when writing a plugin main file you must add 2 entries in the plugin
 </project>
 }}}
 
-=== Listen to DeepaMehta Core events ===
+Listen to DeepaMehta Core events
+================================
 
 In particular situations the DeepaMehta Core fires events, e.g. before and after it creates a new topic in the database. Your plugin can listen to these events and react in its own way.
 
@@ -730,11 +753,13 @@ The example plugin just logs the created resp. updated topic. In case of "update
 
 A [[DeepaMehtaCoreEvents|list of all DeepaMehta Core events]] is available in the reference section.
 
-=== Providing a service ===
+Providing a service
+===================
 
 Your plugin can make its business logic, that is its service methods, accessible by other plugins (via OSGi) and/or by external applications (via HTTP/REST).
 
-==== The service interface ====
+The service interface
+---------------------
 
 For a plugin to provide a service you must define a //service interface//. The service interface contains all the method signatures that make up the service. When other plugins consume your plugin's service they do so via the service interface.
 
@@ -804,7 +829,8 @@ public interface TopicmapsService {
 
 You see the Topicmaps service consist of methods to create topicmaps, retrieve topicmaps, and manipulate topicmaps.
 
-==== Implementing the service ====
+Implementing the service
+------------------------
 
 After defining the plugin's service interface you must implement the actual service methods. Implementation takes place in the plugin main file.
 
@@ -857,7 +883,8 @@ public class TopicmapsPlugin extends PluginActivator implements TopicmapsService
 
 You see, the plugin main class `TopicmapsPlugin` implements the plugin's service interface `TopicmapsService`.
 
-=== Consuming a service ===
+Consuming a service
+===================
 
 Your plugin can consume the services provided by other plugins. To do so your plugin must get hold of the //service object// of the other plugin. Through the service object your plugin can call all the service methods declared in the other's plugin service interface.
 
@@ -926,7 +953,8 @@ You see the Workspaces plugin consumes a plugin service: the //Facets// service.
 
 In this way your plugin could also consume more than one service.
 
-=== Providing a RESTful web service ===
+Providing a RESTful web service
+===============================
 
 Until here your plugin service is accessible from within the OSGi environment only. You can make the service accessible from //outside// the OSGi environment as well by promoting it to a RESTful web service. Your plugin service is then accessible from external applications via HTTP. (External application here means both, the client-side portion of a DeepaMehta plugin, or an arbitrary 3rd-party application).
 
@@ -1004,7 +1032,8 @@ public class TopicmapsPlugin extends PluginActivator implements TopicmapsService
 JAX-RS: Java API for RESTful Web Services[[BR]]
 http://jsr311.java.net/nonav/releases/1.1/spec/spec.html
 
-==== Extract values from a HTTP request ====
+Extract values from a HTTP request
+----------------------------------
 
 This section describes in more detail how DeepaMehta (resp. the underlying JAX-RS implementation to be precise) extracts the service method argument values from the various parts of a HTTP request. As seen in the example above this is controlled by annotating the service method arguments. Besides `@PathParam` you can use further annotations:
 
@@ -1043,7 +1072,8 @@ Now you know how exactly the JAX-RS implementation extracts the `topicmapId` par
 
     The `topicmapId` value is extracted from the request's URI path and then converted to a `long`. Here criterion 1 is satisfied and the conversion is straight-forward.
 
-==== Parsing the HTTP request body ====
+Parsing the HTTP request body
+-----------------------------
 
 Until here we talked about how to extract values from the HTTP request's path, the request's query string, or the request headers. This section describes how to feed the //HTTP request body// into your service methods. Feeding here refers to a) parsing the body's byte stream, b) constructing a Java object from it, and passing that Java object to a particular service method.
 
