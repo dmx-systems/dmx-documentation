@@ -20,24 +20,22 @@ Requirements:
 
 Build DMX from source:
 
-{{{
-#!sh
-$ git clone git://github.com/jri/deepamehta.git
-$ cd deepamehta
-$ mvn install -P all
-}}}
+.. code-block:: bash
+
+    $ git clone git://github.com/jri/deepamehta.git
+    $ cd deepamehta
+    $ mvn install -P all
 
 This builds all components of the DMX Standard Distribution and installs them in your local Maven repository. You'll see a lot of information logged, cumulating in:
 
-{{{
-#!txt
-...
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 53.515s
-...
-}}}
+.. code-block::
+
+    ...
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time: 53.515s
+    ...
 
 ****************************
 The plugin turn-around cycle
@@ -57,101 +55,96 @@ Begin a plugin project
 Naming Conventions
 ------------------
 
-{{{
-When you are working with git, your new DMX repo should always start with 'dm4-',
-eg. 'dm4-my-fancy-plugin'. The minor-version number is not part of the repo name.
+.. hint::
 
-But the Maven Artifact (jar file) should include the minor-version number, to display the
-compatibility with a certain DMX release, eg. dm48-my-fancy-plugin-0.1.jar or 
-dm48-my-fancy-plugin-0.2-SNAPSHOT.jar . Usually a dm48- artefact needs adoption, to be 
-compatible with the next major version DMX 4.9.
-}}}
+    When you are working with git, your new DMX repo should always start with 'dm4-',
+    eg. 'dm4-my-fancy-plugin'. The minor-version number is not part of the repo name.
 
+    But the Maven Artifact (jar file) should include the minor-version number, to display the
+    compatibility with a certain DMX release, eg. dm48-my-fancy-plugin-0.1.jar or 
+    dm48-my-fancy-plugin-0.2-SNAPSHOT.jar . Usually a dm48- artefact needs adoption, to be 
+    compatible with the next major version DMX 4.9.
 
 From the developer's view a DMX plugin is just a directory on your hard disc. The directory can have an arbitrary name and exist at an arbitrary location. By convention the plugin directory begins with ``dm4-`` as it is aimed to the DMX 4 platform. The directory content adheres to a certain directory structure and file name conventions. The files are text files (xml, json, properties, java, js, css) and resources like images.
 
 To create the //DMX Tagging// plugin setup a directory structure as follows:
 
-{{{
-#!txt
-dm4-tagging/
-    pom.xml
-    src/
-        main/
-            resources/
-                migrations/
-                    migration1.json
-                plugin.properties
-}}}
+.. code-block::
+
+    dm4-tagging/
+        pom.xml
+        src/
+            main/
+                resources/
+                    migrations/
+                        migration1.json
+                    plugin.properties
 
 Create the file **``pom.xml``** with this content:
 
-{{{
-#!xml
-<project>
-    <modelVersion>4.0.0</modelVersion>
+.. code-block:: xml
 
-    <name>DMX Tagging</name>
-    <groupId>org.mydomain.dm4</groupId>
-    <artifactId>tagging</artifactId>
-    <version>0.1-SNAPSHOT</version>
-    <packaging>bundle</packaging>
+    <project>
+        <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>de.deepamehta</groupId>
-        <artifactId>deepamehta-plugin</artifactId>
-        <version>4.8</version>
-    </parent>
+        <name>DMX Tagging</name>
+        <groupId>org.mydomain.dm4</groupId>
+        <artifactId>tagging</artifactId>
+        <version>0.1-SNAPSHOT</version>
+        <packaging>bundle</packaging>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <configuration>
-                    <instructions>
-                        <Bundle-SymbolicName>
-                            org.mydomain.dm4-tagging
-                        </Bundle-SymbolicName>
-                    </instructions>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-</project>
-}}}
+        <parent>
+            <groupId>de.deepamehta</groupId>
+            <artifactId>deepamehta-plugin</artifactId>
+            <version>4.8</version>
+        </parent>
+
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <configuration>
+                        <instructions>
+                            <Bundle-SymbolicName>
+                                org.mydomain.dm4-tagging
+                            </Bundle-SymbolicName>
+                        </instructions>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </project>
 
 Create the file **``migration1.json``**:
 
-{{{
-#!js
-{
-    topic_types: [
-        {
-            value: "Tag",
-            uri: "domain.tagging.tag",
-            data_type_uri: "dm4.core.text",
-            index_mode_uris: ["dm4.core.fulltext"],
-            view_config_topics: [
-                {
-                    type_uri: "dm4.webclient.view_config",
-                    childs: {
-                        dm4.webclient.show_in_create_menu: true
+.. code-block:: js
+
+    {
+        topic_types: [
+            {
+                value: "Tag",
+                uri: "domain.tagging.tag",
+                data_type_uri: "dm4.core.text",
+                index_mode_uris: ["dm4.core.fulltext"],
+                view_config_topics: [
+                    {
+                        type_uri: "dm4.webclient.view_config",
+                        childs: {
+                            dm4.webclient.show_in_create_menu: true
+                        }
                     }
-                }
-            ]
-        }
-    ]
-}
-}}}
+                ]
+            }
+        ]
+    }
 
 Create the file **``plugin.properties``**:
 
-{{{
-#!txt
-dm4.plugin.activate_after=de.deepamehta.webclient
-dm4.plugin.model_version=1
-}}}
+.. code-block::
+
+    dm4.plugin.activate_after=de.deepamehta.webclient
+    dm4.plugin.model_version=1
 
 Setup for Hot-Deployment
 ========================
@@ -162,24 +155,21 @@ But lets first start DMX in development mode, that is with hot-deployment activa
 
 In the platforms home directory ``deepamehta``:
 
-{{{
-#!sh
+.. code-block:: bash
 $ mvn pax:run
-}}}
 
 You'll see a lot of information logged, cumulating with:
 
-{{{
-#!txt
-...
-Apr 6, 2013 11:21:20 PM de.deepamehta.core.impl.PluginManager checkAllPluginsActivated
-INFO: ### Bundles total: 32, DeepaMehta plugins: 16, Activated: 16
-Apr 6, 2013 11:21:20 PM de.deepamehta.core.impl.PluginManager activatePlugin
-INFO: ########## All Plugins Activated ##########
-Apr 6, 2013 11:21:20 PM de.deepamehta.plugins.webclient.WebclientPlugin allPluginsActive
-INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclient/")
-...
-}}}
+.. code-block::
+
+    ...
+    Apr 6, 2013 11:21:20 PM de.deepamehta.core.impl.PluginManager checkAllPluginsActivated
+    INFO: ### Bundles total: 32, DeepaMehta plugins: 16, Activated: 16
+    Apr 6, 2013 11:21:20 PM de.deepamehta.core.impl.PluginManager activatePlugin
+    INFO: ########## All Plugins Activated ##########
+    Apr 6, 2013 11:21:20 PM de.deepamehta.plugins.webclient.WebclientPlugin allPluginsActive
+    INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclient/")
+    ...
 
 Then a browser windows opens automatically and displays the DMX Webclient.
 
@@ -187,38 +177,36 @@ The terminal is now occupied by the //Gogo// shell. Press the return key some ti
 
 Type the ``lb`` command to get the list of activated bundles:
 
-{{{
-#!sh
-g! lb
-}}}
+.. code-block:: bash
+
+    g! lb
 
 The output  looks like this:
 
-{{{
-#!txt
-START LEVEL 6
-   ID|State      |Level|Name
-    0|Active     |    0|System Bundle (3.2.1)
-   ...
-   14|Active     |    5|DeepaMehta 4 Help (4.1.1.SNAPSHOT)
-   15|Active     |    5|DeepaMehta 4 Topicmaps (4.1.1.SNAPSHOT)
-   16|Active     |    5|DeepaMehta 4 Webservice (4.1.1.SNAPSHOT)
-   17|Active     |    5|DeepaMehta 4 Files (4.1.1.SNAPSHOT)
-   18|Active     |    5|DeepaMehta 4 Geomaps (4.1.1.SNAPSHOT)
-   19|Active     |    5|DeepaMehta 4 Storage - Neo4j (4.1.1.SNAPSHOT)
-   20|Active     |    5|DeepaMehta 4 Core (4.1.1.SNAPSHOT)
-   21|Active     |    5|DeepaMehta 4 Access Control (4.1.1.SNAPSHOT)
-   22|Active     |    5|DeepaMehta 4 Webclient (4.1.1.SNAPSHOT)
-   23|Active     |    5|DeepaMehta 4 Webbrowser (4.1.1.SNAPSHOT)
-   24|Active     |    5|DeepaMehta 4 Type Search (4.1.1.SNAPSHOT)
-   25|Active     |    5|DeepaMehta 4 Workspaces (4.1.1.SNAPSHOT)
-   26|Active     |    5|DeepaMehta 4 Notes (4.1.1.SNAPSHOT)
-   27|Active     |    5|DeepaMehta 4 Type Editor (4.1.1.SNAPSHOT)
-   28|Active     |    5|DeepaMehta 4 Contacts (4.1.1.SNAPSHOT)
-   29|Active     |    5|DeepaMehta 4 Facets (4.1.1.SNAPSHOT)
-   30|Active     |    5|DeepaMehta 4 File Manager (4.1.1.SNAPSHOT)
-   31|Active     |    5|DeepaMehta 4 Icon Picker (4.1.1.SNAPSHOT)
-}}}
+.. code-block::
+
+    START LEVEL 6
+       ID|State      |Level|Name
+        0|Active     |    0|System Bundle (3.2.1)
+       ...
+       14|Active     |    5|DeepaMehta 4 Help (4.1.1.SNAPSHOT)
+       15|Active     |    5|DeepaMehta 4 Topicmaps (4.1.1.SNAPSHOT)
+       16|Active     |    5|DeepaMehta 4 Webservice (4.1.1.SNAPSHOT)
+       17|Active     |    5|DeepaMehta 4 Files (4.1.1.SNAPSHOT)
+       18|Active     |    5|DeepaMehta 4 Geomaps (4.1.1.SNAPSHOT)
+       19|Active     |    5|DeepaMehta 4 Storage - Neo4j (4.1.1.SNAPSHOT)
+       20|Active     |    5|DeepaMehta 4 Core (4.1.1.SNAPSHOT)
+       21|Active     |    5|DeepaMehta 4 Access Control (4.1.1.SNAPSHOT)
+       22|Active     |    5|DeepaMehta 4 Webclient (4.1.1.SNAPSHOT)
+       23|Active     |    5|DeepaMehta 4 Webbrowser (4.1.1.SNAPSHOT)
+       24|Active     |    5|DeepaMehta 4 Type Search (4.1.1.SNAPSHOT)
+       25|Active     |    5|DeepaMehta 4 Workspaces (4.1.1.SNAPSHOT)
+       26|Active     |    5|DeepaMehta 4 Notes (4.1.1.SNAPSHOT)
+       27|Active     |    5|DeepaMehta 4 Type Editor (4.1.1.SNAPSHOT)
+       28|Active     |    5|DeepaMehta 4 Contacts (4.1.1.SNAPSHOT)
+       29|Active     |    5|DeepaMehta 4 Facets (4.1.1.SNAPSHOT)
+       30|Active     |    5|DeepaMehta 4 File Manager (4.1.1.SNAPSHOT)
+       31|Active     |    5|DeepaMehta 4 Icon Picker (4.1.1.SNAPSHOT)
 
 The //DMX Tagging// plugin does not yet appear in that list as it is not yet build.
 
@@ -227,89 +215,85 @@ Build the plugin
 
 In another terminal:
 
-{{{
-#!sh
-$ cd dm4-tagging
-$ mvn clean package
-}}}
+.. code-block:: bash
+
+    $ cd dm4-tagging
+    $ mvn clean package
 
 This builds the plugin. After some seconds you'll see:
 
-{{{
-#!txt
-...
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 3.988s
-...
-}}}
+.. code-block::
+
+    ...
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time: 3.988s
+    ...
 
 Once build, DMX hot-deploys the plugin automatically. In the terminal where you've started DMX the logging informs you about plugin activation:
 
-{{{
-#!txt
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl readConfigFile
-INFO: Reading config file "/plugin.properties" for plugin "DeepaMehta 4 Tagging"
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.osgi.PluginActivator start
-INFO: ========== Starting plugin "DeepaMehta 4 Tagging" ==========
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl createPluginServiceTrackers
-INFO: Tracking plugin services for plugin "DeepaMehta 4 Tagging" ABORTED -- no consumed services declared
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl addService
-INFO: Adding DeepaMehta 4 core service to plugin "DeepaMehta 4 Tagging"
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl addService
-INFO: Adding Web Publishing service to plugin "DeepaMehta 4 Tagging"
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerWebResources
-INFO: Registering Web resources of plugin "DeepaMehta 4 Tagging" ABORTED -- no Web resources provided
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerRestResources
-INFO: Registering REST resources of plugin "DeepaMehta 4 Tagging" ABORTED -- no REST resources provided
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerRestResources
-INFO: Registering provider classes of plugin "DeepaMehta 4 Tagging" ABORTED -- no provider classes provided
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl addService
-INFO: Adding Event Admin service to plugin "DeepaMehta 4 Tagging"
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager activatePlugin
-INFO: ----- Activating plugin "DeepaMehta 4 Tagging" -----
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl createPluginTopicIfNotExists
-INFO: Installing plugin "DeepaMehta 4 Tagging" in the database
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runPluginMigrations
-INFO: Running 1 migrations for plugin "DeepaMehta 4 Tagging" (migrationNr=0, requiredMigrationNr=1)
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager$MigrationInfo readMigrationConfigFile
-INFO: Reading migration config file "/migrations/migration1.properties" ABORTED -- file does not exist
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runMigration
-INFO: Running migration 1 of plugin "DeepaMehta 4 Tagging" (runMode=ALWAYS, isCleanInstall=true)
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.util.DeepaMehtaUtils readMigrationFile
-INFO: Reading migration file "/migrations/migration1.json"
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runMigration
-INFO: Completing migration 1 of plugin "DeepaMehta 4 Tagging"
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runMigration
-INFO: Updating migration number (1)
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerListeners
-INFO: Registering listeners of plugin "DeepaMehta 4 Tagging" at DeepaMehta 4 core service ABORTED -- no listeners implemented
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerPluginService
-INFO: Registering OSGi service of plugin "DeepaMehta 4 Tagging" ABORTED -- no OSGi service provided
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager activatePlugin
-INFO: ----- Activation of plugin "DeepaMehta 4 Tagging" complete -----
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager checkAllPluginsActivated
-INFO: ### Bundles total: 33, DeepaMehta plugins: 17, Activated: 17
-Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager activatePlugin
-INFO: ########## All Plugins Activated ##########
-Apr 6, 2013 11:38:40 PM de.deepamehta.plugins.webclient.WebclientPlugin allPluginsActive
-INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclient/") ABORTED -- already launched
-...
-}}}
+.. code-block::
+
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl readConfigFile
+    INFO: Reading config file "/plugin.properties" for plugin "DeepaMehta 4 Tagging"
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.osgi.PluginActivator start
+    INFO: ========== Starting plugin "DeepaMehta 4 Tagging" ==========
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl createPluginServiceTrackers
+    INFO: Tracking plugin services for plugin "DeepaMehta 4 Tagging" ABORTED -- no consumed services declared
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl addService
+    INFO: Adding DeepaMehta 4 core service to plugin "DeepaMehta 4 Tagging"
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl addService
+    INFO: Adding Web Publishing service to plugin "DeepaMehta 4 Tagging"
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerWebResources
+    INFO: Registering Web resources of plugin "DeepaMehta 4 Tagging" ABORTED -- no Web resources provided
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerRestResources
+    INFO: Registering REST resources of plugin "DeepaMehta 4 Tagging" ABORTED -- no REST resources provided
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerRestResources
+    INFO: Registering provider classes of plugin "DeepaMehta 4 Tagging" ABORTED -- no provider classes provided
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl addService
+    INFO: Adding Event Admin service to plugin "DeepaMehta 4 Tagging"
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager activatePlugin
+    INFO: ----- Activating plugin "DeepaMehta 4 Tagging" -----
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl createPluginTopicIfNotExists
+    INFO: Installing plugin "DeepaMehta 4 Tagging" in the database
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runPluginMigrations
+    INFO: Running 1 migrations for plugin "DeepaMehta 4 Tagging" (migrationNr=0, requiredMigrationNr=1)
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager$MigrationInfo readMigrationConfigFile
+    INFO: Reading migration config file "/migrations/migration1.properties" ABORTED -- file does not exist
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runMigration
+    INFO: Running migration 1 of plugin "DeepaMehta 4 Tagging" (runMode=ALWAYS, isCleanInstall=true)
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.util.DeepaMehtaUtils readMigrationFile
+    INFO: Reading migration file "/migrations/migration1.json"
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runMigration
+    INFO: Completing migration 1 of plugin "DeepaMehta 4 Tagging"
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runMigration
+    INFO: Updating migration number (1)
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerListeners
+    INFO: Registering listeners of plugin "DeepaMehta 4 Tagging" at DeepaMehta 4 core service ABORTED -- no listeners implemented
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerPluginService
+    INFO: Registering OSGi service of plugin "DeepaMehta 4 Tagging" ABORTED -- no OSGi service provided
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager activatePlugin
+    INFO: ----- Activation of plugin "DeepaMehta 4 Tagging" complete -----
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager checkAllPluginsActivated
+    INFO: ### Bundles total: 33, DeepaMehta plugins: 17, Activated: 17
+    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager activatePlugin
+    INFO: ########## All Plugins Activated ##########
+    Apr 6, 2013 11:38:40 PM de.deepamehta.plugins.webclient.WebclientPlugin allPluginsActive
+    INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclient/") ABORTED -- already launched
+    ...
 
 When you type again ``lb`` in the DMX terminal you'll see the //DMX Tagging// plugin now appears in the list of activated bundles:
 
-{{{
-#!txt
-START LEVEL 6
-   ID|State      |Level|Name
-    0|Active     |    0|System Bundle (3.2.1)
-   ...
-   30|Active     |    5|DeepaMehta 4 File Manager (4.1.1.SNAPSHOT)
-   31|Active     |    5|DeepaMehta 4 Icon Picker (4.1.1.SNAPSHOT)
-   32|Active     |    5|DeepaMehta 4 Tagging (0.1.0.SNAPSHOT)
-}}}
+.. code-block::
+
+    START LEVEL 6
+       ID|State      |Level|Name
+        0|Active     |    0|System Bundle (3.2.1)
+       ...
+       30|Active     |    5|DeepaMehta 4 File Manager (4.1.1.SNAPSHOT)
+       31|Active     |    5|DeepaMehta 4 Icon Picker (4.1.1.SNAPSHOT)
+       32|Active     |    5|DeepaMehta 4 Tagging (0.1.0.SNAPSHOT)
 
 Try out the plugin
 ==================
@@ -323,47 +307,45 @@ Redeploy the plugin
 
 Once you've made any changes to the plugin files, you have to build the plugin again. Just like before in the plugin terminal:
 
-{{{
-#!sh
-$ mvn clean package
-}}}
+.. code-block:: bash
+
+    $ mvn clean package
 
 Once building is complete the changed plugin is redeployed automatically. You'll notice activity in the DMX terminal:
 
-{{{
-#!txt
-Apr 8, 2013 1:10:40 AM de.deepamehta.core.osgi.PluginActivator stop
-INFO: ========== Stopping plugin "DeepaMehta 4 Tagging" ==========
-Apr 8, 2013 1:10:40 AM de.deepamehta.core.impl.PluginImpl removeService
-INFO: Removing DeepaMehta 4 core service from plugin "DeepaMehta 4 Tagging"
-Apr 8, 2013 1:10:40 AM de.deepamehta.core.impl.PluginImpl removeService
-INFO: Removing Web Publishing service from plugin "DeepaMehta 4 Tagging"
-Apr 8, 2013 1:10:40 AM de.deepamehta.core.impl.PluginImpl removeService
-INFO: Removing Event Admin service from plugin "DeepaMehta 4 Tagging"
-...
-...
-Apr 8, 2013 1:10:44 AM de.deepamehta.core.osgi.PluginActivator start
-INFO: ========== Starting plugin "DeepaMehta 4 Tagging" ==========
-...
-...
-Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginManager activatePlugin
-INFO: ----- Activating plugin "DeepaMehta 4 Tagging" -----
-Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginImpl createPluginTopicIfNotExists
-INFO: Installing plugin "DeepaMehta 4 Tagging" in the database ABORTED -- already installed
-Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.MigrationManager runPluginMigrations
-INFO: Running migrations for plugin "DeepaMehta 4 Tagging" ABORTED -- everything up-to-date (migrationNr=1)
-...
-...
-Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginManager activatePlugin
-INFO: ----- Activation of plugin "DeepaMehta 4 Tagging" complete -----
-Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginManager checkAllPluginsActivated
-INFO: ### Bundles total: 33, DeepaMehta plugins: 17, Activated: 17
-Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginManager activatePlugin
-INFO: ########## All Plugins Activated ##########
-Apr 8, 2013 1:10:44 AM de.deepamehta.plugins.webclient.WebclientPlugin allPluginsActive
-INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclient/") ABORTED -- already launched
-...
-}}}
+.. code-block::
+
+    Apr 8, 2013 1:10:40 AM de.deepamehta.core.osgi.PluginActivator stop
+    INFO: ========== Stopping plugin "DeepaMehta 4 Tagging" ==========
+    Apr 8, 2013 1:10:40 AM de.deepamehta.core.impl.PluginImpl removeService
+    INFO: Removing DeepaMehta 4 core service from plugin "DeepaMehta 4 Tagging"
+    Apr 8, 2013 1:10:40 AM de.deepamehta.core.impl.PluginImpl removeService
+    INFO: Removing Web Publishing service from plugin "DeepaMehta 4 Tagging"
+    Apr 8, 2013 1:10:40 AM de.deepamehta.core.impl.PluginImpl removeService
+    INFO: Removing Event Admin service from plugin "DeepaMehta 4 Tagging"
+    ...
+    ...
+    Apr 8, 2013 1:10:44 AM de.deepamehta.core.osgi.PluginActivator start
+    INFO: ========== Starting plugin "DeepaMehta 4 Tagging" ==========
+    ...
+    ...
+    Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginManager activatePlugin
+    INFO: ----- Activating plugin "DeepaMehta 4 Tagging" -----
+    Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginImpl createPluginTopicIfNotExists
+    INFO: Installing plugin "DeepaMehta 4 Tagging" in the database ABORTED -- already installed
+    Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.MigrationManager runPluginMigrations
+    INFO: Running migrations for plugin "DeepaMehta 4 Tagging" ABORTED -- everything up-to-date (migrationNr=1)
+    ...
+    ...
+    Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginManager activatePlugin
+    INFO: ----- Activation of plugin "DeepaMehta 4 Tagging" complete -----
+    Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginManager checkAllPluginsActivated
+    INFO: ### Bundles total: 33, DeepaMehta plugins: 17, Activated: 17
+    Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginManager activatePlugin
+    INFO: ########## All Plugins Activated ##########
+    Apr 8, 2013 1:10:44 AM de.deepamehta.plugins.webclient.WebclientPlugin allPluginsActive
+    INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclient/") ABORTED -- already launched
+    ...
 
 In contrast to the initial build of the plugin you can recognize some differences in this log:
 
@@ -379,10 +361,9 @@ Stopping the DMX server
 
 To stop the DMX server, in the Gogo shell type:
 
-{{{
-#!sh
-g! stop 0
-}}}
+.. code-block:: bash
+
+    g! stop 0
 
 This stops all bundles, shuts down the webserver, and the database.
 
@@ -427,19 +408,17 @@ Plugin configuration
 
 If your plugin comes with its own data model you must tell DMX the data model version it relies on. To do so, set the ``dm4.plugin.model_version`` configuration property in the ``plugin.properties`` file, e.g.:
 
-{{{
-#!txt
-dm4.plugin.model_version=2
-}}}
+.. code-block::
+
+    dm4.plugin.model_version=2
 
 DMX's migration machinery takes charge of running the plugin's migrations up to that configured number. If your plugin comes with no data model, you can specify ``0`` resp. omit the ``dm4.plugin.model_version`` property as ``0`` is its default value.
 
 Usually each plugin has its own ``plugin.properties`` file. It allows the developer to configure certain aspects of the plugin. The name of the ``plugin.properties`` file and its path within the plugin directory is fixed:
 
-{{{
-#!txt
-dm4-myplugin/src/main/resources/plugin.properties
-}}}
+.. code-block::
+
+    dm4-myplugin/src/main/resources/plugin.properties
 
 If no ``plugin.properties`` file is present, the default configuration values apply.
 
@@ -467,27 +446,26 @@ An imperative migration must be named ``Migration<nr>.java`` and must be located
 
 Example:
 
-{{{
-#!txt
-dm4-myplugin/
-    src/
-        main/
-            java/
-                org/
-                    mydomain/
-                        deepamehta4/
-                            myplugin/
-                                migrations/
-                                    Migration2.java
-                                    Migration5.java
-            resources/
-                migrations/
-                    migration1.json
-                    migration3.json
-                    migration4.json
-                    migration6.json
-                plugin.properties
-}}}
+.. code-block::
+
+    dm4-myplugin/
+        src/
+            main/
+                java/
+                    org/
+                        mydomain/
+                            deepamehta4/
+                                myplugin/
+                                    migrations/
+                                        Migration2.java
+                                        Migration5.java
+                resources/
+                    migrations/
+                        migration1.json
+                        migration3.json
+                        migration4.json
+                        migration6.json
+                    plugin.properties
 
 This example plugin would have set ``dm4.plugin.model_version`` to 6 (configured in ``plugin.properties``), so 6 migrations are involved. 4 are declarative and 2 are imperative here.
 
@@ -500,73 +478,71 @@ Writing a declarative migration
 
 A declarative migration is a JSON file with exactly one JSON Object in it. In a declarative migration you can define 4 things: topic types, association types, topics, associations. The general format is:
 
-{{{
-#!js
-{
-    topic_types: [
-        ...
-    ],
-    assoc_types: [
-        ...
-    ],
-    topics: [
-        ...
-    ],
-    associations: [
-        ...
-    ]
-}
-}}}
+.. code-block:: js
+
+    {
+        topic_types: [
+            ...
+        ],
+        assoc_types: [
+            ...
+        ],
+        topics: [
+            ...
+        ],
+        associations: [
+            ...
+        ]
+    }
 
 Each of the 4 sections is optional.
 
 As an example see the (simplified) migration that defines the //Note// topic type. This migration is part of the //DMX Notes// plugin:
 
-{{{
-#!js
-{
-    topic_types: [
-        {
-            value: "Title",
-            uri: "dm4.notes.title",
-            data_type_uri: "dm4.core.text",
-            index_mode_uris: ["dm4.core.fulltext"]
-        },
-        {
-            value: "Text",
-            uri: "dm4.notes.text",
-            data_type_uri: "dm4.core.html",
-            index_mode_uris: ["dm4.core.fulltext"]
-        },
-        {
-            value: "Note",
-            uri: "dm4.notes.note",
-            data_type_uri: "dm4.core.composite",
-            assoc_defs: [
-                {
-                    child_type_uri:        "dm4.notes.title",
-                    child_cardinality_uri: "dm4.core.one",
-                    assoc_type_uri:        "dm4.core.composition_def"
-                },
-                {
-                    child_type_uri:        "dm4.notes.text",
-                    child_cardinality_uri: "dm4.core.one",
-                    assoc_type_uri:        "dm4.core.composition_def"
-                }
-            ],
-            view_config_topics: [
-                {
-                    type_uri: "dm4.webclient.view_config",
-                    childs: {
-                        dm4.webclient.icon: "/de.deepamehta.notes/images/yellow-ball.png",
-                        dm4.webclient.show_in_create_menu: true
+.. code-block:: js
+
+    {
+        topic_types: [
+            {
+                value: "Title",
+                uri: "dm4.notes.title",
+                data_type_uri: "dm4.core.text",
+                index_mode_uris: ["dm4.core.fulltext"]
+            },
+            {
+                value: "Text",
+                uri: "dm4.notes.text",
+                data_type_uri: "dm4.core.html",
+                index_mode_uris: ["dm4.core.fulltext"]
+            },
+            {
+                value: "Note",
+                uri: "dm4.notes.note",
+                data_type_uri: "dm4.core.composite",
+                assoc_defs: [
+                    {
+                        child_type_uri:        "dm4.notes.title",
+                        child_cardinality_uri: "dm4.core.one",
+                        assoc_type_uri:        "dm4.core.composition_def"
+                    },
+                    {
+                        child_type_uri:        "dm4.notes.text",
+                        child_cardinality_uri: "dm4.core.one",
+                        assoc_type_uri:        "dm4.core.composition_def"
                     }
-                }
-            ]
-        }
-    ]
-}
-}}}
+                ],
+                view_config_topics: [
+                    {
+                        type_uri: "dm4.webclient.view_config",
+                        childs: {
+                            dm4.webclient.icon: "/de.deepamehta.notes/images/yellow-ball.png",
+                            dm4.webclient.show_in_create_menu: true
+                        }
+                    }
+                ]
+            }
+        ]
+    }
 
 As you see, this migration defines 3 topic types (and no other things): //Title// and //Text// are 2 simple types, and //Note// is a composite type. A Note is composed of one Title and one Text.
 
@@ -579,23 +555,22 @@ Within the migration you have access to the DMX //Core Service// through the ``d
 
 As an example see a migration that comes with the //DMX Topicmaps// plugin:
 
-{{{
-#!java
-package de.deepamehta.topicmaps.migrations;
+.. code-block:: java
 
-import de.deepamehta.core.TopicType;
-import de.deepamehta.core.service.Migration;
+    package de.deepamehta.topicmaps.migrations;
 
-public class Migration3 extends Migration {
+    import de.deepamehta.core.TopicType;
+    import de.deepamehta.core.service.Migration;
 
-    @Override
-    public void run() {
-        TopicType type = dm4.getTopicType("dm4.topicmaps.topicmap");
-        type.addAssocDef(mf.newAssociationDefinitionModel("dm4.core.composition_def",
-            "dm4.topicmaps.topicmap", "dm4.topicmaps.state", "dm4.core.one", "dm4.core.one"));
+    public class Migration3 extends Migration {
+
+        @Override
+        public void run() {
+            TopicType type = dm4.getTopicType("dm4.topicmaps.topicmap");
+            type.addAssocDef(mf.newAssociationDefinitionModel("dm4.core.composition_def",
+                "dm4.topicmaps.topicmap", "dm4.topicmaps.state", "dm4.core.one", "dm4.core.one"));
+        }
     }
-}
-}}}
 
 Here an association definition is added to the //Topicmap// type subsequently.
 
@@ -624,32 +599,30 @@ The plugin main file must be located directly in the plugin's ``src/main/java/<y
 
 Example:
 
-{{{
-#!txt
-dm4-mycoolplugin/
-    src/
-        main/
-            java/
-                org/
-                    mydomain/
-                        deepamehta4/
-                            mycoolplugin/
-                                MyCoolPlugin.java
-}}}
+.. code-block::
+
+    dm4-mycoolplugin/
+        src/
+            main/
+                java/
+                    org/
+                        mydomain/
+                            deepamehta4/
+                                mycoolplugin/
+                                    MyCoolPlugin.java
 
 Here the plugin package is ``org.mydomain.deepamehta4.mycoolplugin`` and the plugin main class is ``MyCoolPlugin``.
 
 A plugin main file is a Java class that is derived from ``de.deepamehta.core.osgi.PluginActivator``. The smallest possible plugin main file looks like this:
 
-{{{
-#!java
-package org.mydomain.deepamehta4.mycoolplugin;
+.. code-block:: java
 
-import de.deepamehta.core.osgi.PluginActivator;
+    package org.mydomain.deepamehta4.mycoolplugin;
 
-public class MyCoolPlugin extends PluginActivator {
-}
-}}}
+    import de.deepamehta.core.osgi.PluginActivator;
+
+    public class MyCoolPlugin extends PluginActivator {
+    }
 
 3 things are illustrated here:
     * The plugin should be packaged in an unique namespace.
@@ -660,43 +633,42 @@ Furthermore when writing a plugin main file you must add 2 entries in the plugin
     1. a <parent> element to declare the artifactId **``deepamehta-plugin``**. This brings you necessary dependenies and the ``PluginActivator`` class.
     2. a <build> element to configure the Maven Bundle Plugin. It needs to know what your plugin main class is. You must specify the fully-qualified class name.
 
-{{{
-#!xml
-<project>
-    <modelVersion>4.0.0</modelVersion>
+.. code-block:: xml
 
-    <name>My Cool Plugin</name>
-    <groupId>org.mydomain.dm4</groupId>
-    <artifactId>my-cool-plugin</artifactId>
-    <version>0.1-SNAPSHOT</version>
-    <packaging>bundle</packaging>
+    <project>
+        <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>de.deepamehta</groupId>
-        <artifactId>deepamehta-plugin</artifactId>
-        <version>4.8</version>
-    </parent>
+        <name>My Cool Plugin</name>
+        <groupId>org.mydomain.dm4</groupId>
+        <artifactId>my-cool-plugin</artifactId>
+        <version>0.1-SNAPSHOT</version>
+        <packaging>bundle</packaging>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <configuration>
-                    <instructions>
-                        <Bundle-SymbolicName>
-                            org.mydomain.dm4.my-cool-plugin
-                        </Bundle-SymbolicName>
-                        <Bundle-Activator>
-                            org.mydomain.deepamehta4.mycoolplugin.MyCoolPlugin
-                        </Bundle-Activator>
-                    </instructions>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-</project>
-}}}
+        <parent>
+            <groupId>de.deepamehta</groupId>
+            <artifactId>deepamehta-plugin</artifactId>
+            <version>4.8</version>
+        </parent>
+
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <configuration>
+                        <instructions>
+                            <Bundle-SymbolicName>
+                                org.mydomain.dm4.my-cool-plugin
+                            </Bundle-SymbolicName>
+                            <Bundle-Activator>
+                                org.mydomain.deepamehta4.mycoolplugin.MyCoolPlugin
+                            </Bundle-Activator>
+                        </instructions>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </project>
 
 Listen to DMX Core events
 =========================
@@ -714,36 +686,35 @@ To listen to a DMX Core event, in the plugin main class you must:
 
 Example:
 
-{{{
-#!java
-package org.mydomain.deepamehta4.mycoolplugin;
+.. code-block:: java
 
-import de.deepamehta.core.Topic;
-import de.deepamehta.core.model.TopicModel;
-import de.deepamehta.core.osgi.PluginActivator;
-import de.deepamehta.core.service.Directives;
-import de.deepamehta.core.service.event.PostCreateTopicListener;
-import de.deepamehta.core.service.event.PostUpdateTopicListener;
+    package org.mydomain.deepamehta4.mycoolplugin;
 
-import java.util.logging.Logger;
+    import de.deepamehta.core.Topic;
+    import de.deepamehta.core.model.TopicModel;
+    import de.deepamehta.core.osgi.PluginActivator;
+    import de.deepamehta.core.service.Directives;
+    import de.deepamehta.core.service.event.PostCreateTopicListener;
+    import de.deepamehta.core.service.event.PostUpdateTopicListener;
+
+    import java.util.logging.Logger;
 
 
 
-public class MyCoolPlugin extends PluginActivator implements PostCreateTopicListener, PostUpdateTopicListener {
+    public class MyCoolPlugin extends PluginActivator implements PostCreateTopicListener, PostUpdateTopicListener {
 
-    private Logger log = Logger.getLogger(getClass().getName());
+        private Logger log = Logger.getLogger(getClass().getName());
 
-    @Override
-    public void postCreateTopic(Topic topic) {
-        log.info("### Topic created: " + topic);
+        @Override
+        public void postCreateTopic(Topic topic) {
+            log.info("### Topic created: " + topic);
+        }
+
+        @Override
+        public void postUpdateTopic(Topic topic, TopicModel newModel, TopicModel oldModel) {
+            log.info("### Topic updated: " + topic + "\nOld topic: " + oldModel);
+        }
     }
-
-    @Override
-    public void postUpdateTopic(Topic topic, TopicModel newModel, TopicModel oldModel) {
-        log.info("### Topic updated: " + topic + "\nOld topic: " + oldModel);
-    }
-}
-}}}
 
 This example plugin listens to 2 DMX Core events: ``POST_CREATE_TOPIC`` and ``POST_UPDATE_TOPIC``.
 
@@ -769,63 +740,61 @@ A DMX plugin can define //one// service interface at most. More than one service
 
 As an example see the //Topicmaps// plugin (part of the DMX Standard Distribution):
 
-{{{
-#!txt
-dm4-topicmaps/
-    src/
-        main/
-            java/
-                de/
-                    deepamehta/
-                        topicmaps/
-                            TopicmapsService.java
-}}}
+.. code-block::
+
+    dm4-topicmaps/
+        src/
+            main/
+                java/
+                    de/
+                        deepamehta/
+                            topicmaps/
+                                TopicmapsService.java
 
 The service interface of the //Topicmaps// plugin is named ``TopicmapsService``. The plugin package is ``de.deepamehta.topicmaps``.
 
 The //Topicmaps// service interface looks like this:
 
-{{{
-#!java
-package de.deepamehta.topicmaps.service;
+.. code-block:: java
 
-import de.deepamehta.topicmaps.TopicmapRenderer;
-import de.deepamehta.topicmaps.model.ClusterCoords;
-import de.deepamehta.topicmaps.model.Topicmap;
+    package de.deepamehta.topicmaps.service;
 
-import de.deepamehta.core.Topic;
+    import de.deepamehta.topicmaps.TopicmapRenderer;
+    import de.deepamehta.topicmaps.model.ClusterCoords;
+    import de.deepamehta.topicmaps.model.Topicmap;
+
+    import de.deepamehta.core.Topic;
 
 
-public interface TopicmapsService {
+    public interface TopicmapsService {
 
-    Topic createTopicmap(String name,             String topicmapRendererUri);
-    Topic createTopicmap(String name, String uri, String topicmapRendererUri);
+        Topic createTopicmap(String name,             String topicmapRendererUri);
+        Topic createTopicmap(String name, String uri, String topicmapRendererUri);
 
-    // ---
+        // ---
 
-    Topicmap getTopicmap(long topicmapId);
+        Topicmap getTopicmap(long topicmapId);
 
-    // ---
+        // ---
 
-    void addTopicToTopicmap(long topicmapId, long topicId, int x, int y);
+        void addTopicToTopicmap(long topicmapId, long topicId, int x, int y);
 
-    void addAssociationToTopicmap(long topicmapId, long assocId);
+        void addAssociationToTopicmap(long topicmapId, long assocId);
 
-    void moveTopic(long topicmapId, long topicId, int x, int y);
+        void moveTopic(long topicmapId, long topicId, int x, int y);
 
-    void setTopicVisibility(long topicmapId, long topicId, boolean visibility);
+        void setTopicVisibility(long topicmapId, long topicId, boolean visibility);
 
-    void removeAssociationFromTopicmap(long topicmapId, long assocId);
+        void removeAssociationFromTopicmap(long topicmapId, long assocId);
 
-    void moveCluster(long topicmapId, ClusterCoords coords);
+        void moveCluster(long topicmapId, ClusterCoords coords);
 
-    void setTopicmapTranslation(long topicmapId, int trans_x, int trans_y);
+        void setTopicmapTranslation(long topicmapId, int trans_x, int trans_y);
 
-    // ---
+        // ---
 
-    void registerTopicmapRenderer(TopicmapRenderer renderer);
-}
-}}}
+        void registerTopicmapRenderer(TopicmapRenderer renderer);
+    }
 
 You see the Topicmaps service consist of methods to create topicmaps, retrieve topicmaps, and manipulate topicmaps.
 
@@ -838,48 +807,47 @@ The plugin main class must declare that it implements the plugin's service inter
 
 As an example see the implementation of the //Topicmaps// service:
 
-{{{
-#!java
-package de.deepamehta.topicmaps;
+.. code-block:: java
 
-import de.deepamehta.topicmaps.model.Topicmap;
-import de.deepamehta.topicmaps.TopicmapsService;
+    package de.deepamehta.topicmaps;
 
-import de.deepamehta.core.Topic;
-import de.deepamehta.core.osgi.PluginActivator;
+    import de.deepamehta.topicmaps.model.Topicmap;
+    import de.deepamehta.topicmaps.TopicmapsService;
+
+    import de.deepamehta.core.Topic;
+    import de.deepamehta.core.osgi.PluginActivator;
 
 
 
-public class TopicmapsPlugin extends PluginActivator implements TopicmapsService {
+    public class TopicmapsPlugin extends PluginActivator implements TopicmapsService {
 
-    // *** TopicmapsService Implementation ***
+        // *** TopicmapsService Implementation ***
 
-    @Override
-    public Topic createTopicmap(String name, String topicmapRendererUri) {
+        @Override
+        public Topic createTopicmap(String name, String topicmapRendererUri) {
+            ...
+        }
+
+        @Override
+        public Topic createTopicmap(String name, String uri, String topicmapRendererUri) {
+            ...
+        }
+
+        // ---
+
+        @Override
+        public Topicmap getTopicmap(long topicmapId) {
+            ...
+        }
+
+        // ---
+
+        @Override
+        public void addTopicToTopicmap(long topicmapId, long topicId, int x, int y) {
+            ...
+        }
+
         ...
-    }
-
-    @Override
-    public Topic createTopicmap(String name, String uri, String topicmapRendererUri) {
-        ...
-    }
-
-    // ---
-
-    @Override
-    public Topicmap getTopicmap(long topicmapId) {
-        ...
-    }
-
-    // ---
-
-    @Override
-    public void addTopicToTopicmap(long topicmapId, long topicId, int x, int y) {
-        ...
-    }
-
-    ...
-}}}
 
 You see, the plugin main class ``TopicmapsPlugin`` implements the plugin's service interface ``TopicmapsService``.
 
@@ -890,16 +858,15 @@ Your plugin can consume the services provided by other plugins. To do so your pl
 
 To tell the DMX Core which plugin service your plugin wants to consume you need to declare an instance variable in your plugin like using the @Inject notation:
 
-{{{
-#!java
+.. code-block:: java
+
     @Inject
     private AccessControlService acService;
-}}}
 
 Make sure to add your interest in building on the respective plugin service as dependencies to your **``pom.xml``** file. In the case of using the AccessControlService we would need to add the following:
 
-{{{
-#!xml
+.. code-block:: xml
+
     <dependencies>
         <dependency>
             <groupId>de.deepamehta</groupId>
@@ -907,7 +874,6 @@ Make sure to add your interest in building on the respective plugin service as d
             <version>4.8</version>
         </dependency>
     </dependencies>
-}}}
 
 Behind the scenes the DMX Core handles a plugin service as an OSGi service. Because of the dynamic nature of an OSGi environment DMX plugin services can arrive and go away at any time. Your plugin must deal with that. However, you as a plugin developer must not care about DMX's OSGi foundation. The DMX Core hides the details from you and provides an easy-to-use API for consuming plugin services.
 
@@ -917,37 +883,36 @@ The single argument of the 2 ``serviceArrived`` and ``serviceGone`` hooks is the
 
 As an example, see how the //Workspaces// plugin (part of the DMX Standard Distribution) consumes the //Facets// service:
 
-{{{
-#!java
-package de.deepamehta.workspaces;
+.. code-block:: java
 
-import de.deepamehta.facets.FacetsService;
+    package de.deepamehta.workspaces;
 
-import de.deepamehta.core.osgi.PluginActivator;
-import de.deepamehta.core.service.PluginService;
-import de.deepamehta.core.service.annotation.ConsumesService;
+    import de.deepamehta.facets.FacetsService;
+
+    import de.deepamehta.core.osgi.PluginActivator;
+    import de.deepamehta.core.service.PluginService;
+    import de.deepamehta.core.service.annotation.ConsumesService;
 
 
 
-public class WorkspacesPlugin extends PluginActivator {
+    public class WorkspacesPlugin extends PluginActivator {
 
-    @Inject
-    private FacetsService facetsService;
+        @Inject
+        private FacetsService facetsService;
 
-    // *** Hook Implementations ***
+        // *** Hook Implementations ***
 
-    @Override
-    public void serviceArrived(PluginService service) {
-        if (service instanceof FacetsService) {
-            // do something when the facet service comes around
+        @Override
+        public void serviceArrived(PluginService service) {
+            if (service instanceof FacetsService) {
+                // do something when the facet service comes around
+            }
         }
-    }
 
-    @Override
-    public void serviceGone(PluginService service) {
-        // do something when a service goes away
-    }
-}}}
+        @Override
+        public void serviceGone(PluginService service) {
+            // do something when a service goes away
+        }
 
 You see the Workspaces plugin consumes a plugin service: the //Facets// service.  The ``PluginService`` object passed to the 2 hooks needs not being further investigated.
 
@@ -974,60 +939,59 @@ To make your plugin service RESTful you must:
 
 As an example let's see how the //Topicmaps// plugin (part of the DMX Standard Distribution) annotates its main class and service methods:
 
-{{{
-#!java
-package de.deepamehta.topicmaps;
+.. code-block:: java
 
-import de.deepamehta.topicmaps.model.Topicmap;
-import de.deepamehta.topicmaps.TopicmapsService;
+    package de.deepamehta.topicmaps;
 
-import de.deepamehta.core.Topic;
-import de.deepamehta.core.osgi.PluginActivator;
+    import de.deepamehta.topicmaps.model.Topicmap;
+    import de.deepamehta.topicmaps.TopicmapsService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.PUT;
-import javax.ws.rs.POST;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.HeaderParam;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.Consumes;
+    import de.deepamehta.core.Topic;
+    import de.deepamehta.core.osgi.PluginActivator;
+
+    import javax.ws.rs.GET;
+    import javax.ws.rs.PUT;
+    import javax.ws.rs.POST;
+    import javax.ws.rs.DELETE;
+    import javax.ws.rs.HeaderParam;
+    import javax.ws.rs.Path;
+    import javax.ws.rs.PathParam;
+    import javax.ws.rs.Produces;
+    import javax.ws.rs.Consumes;
 
 
 
-@Path("/topicmap")
-@Consumes("application/json")
-@Produces("application/json")
-public class TopicmapsPlugin extends PluginActivator implements TopicmapsService {
+    @Path("/topicmap")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public class TopicmapsPlugin extends PluginActivator implements TopicmapsService {
 
-    // *** TopicmapsService Implementation ***
+        // *** TopicmapsService Implementation ***
 
-    @POST
-    @Path("/{name}/{topicmap_renderer_uri}")
-    @Override
-    public Topic createTopicmap(@PathParam("name") String name,
-                                @PathParam("topicmap_renderer_uri") String topicmapRendererUri) {
+        @POST
+        @Path("/{name}/{topicmap_renderer_uri}")
+        @Override
+        public Topic createTopicmap(@PathParam("name") String name,
+                                    @PathParam("topicmap_renderer_uri") String topicmapRendererUri) {
+            ...
+        }
+
+        @GET
+        @Path("/{id}")
+        @Override
+        public Topicmap getTopicmap(@PathParam("id") long topicmapId) {
+            ...
+        }
+
+        @POST
+        @Path("/{id}/topic/{topic_id}/{x}/{y}")
+        @Override
+        public void addTopicToTopicmap(@PathParam("id") long topicmapId, @PathParam("topic_id") long topicId,
+                                       @PathParam("x") int x, @PathParam("y") int y) {
+            ...
+        }
+
         ...
-    }
-
-    @GET
-    @Path("/{id}")
-    @Override
-    public Topicmap getTopicmap(@PathParam("id") long topicmapId) {
-        ...
-    }
-
-    @POST
-    @Path("/{id}/topic/{topic_id}/{x}/{y}")
-    @Override
-    public void addTopicToTopicmap(@PathParam("id") long topicmapId, @PathParam("topic_id") long topicId,
-                                   @PathParam("x") int x, @PathParam("y") int y) {
-        ...
-    }
-
-    ...
-}}}
 
 JAX-RS: Java API for RESTful Web Services[[BR]]
 http://jsr311.java.net/nonav/releases/1.1/spec/spec.html
@@ -1058,15 +1022,14 @@ So, when you use a self-defined class (including enum classes) along with ``@Pat
 
 As an example lets revisit the ``getTopicmap`` method from the previous section:
 
-{{{
-#!java
+.. code-block:: java
+
     @GET
     @Path("/{id}")
     @Override
     public Topicmap getTopicmap(@PathParam("id") long topicmapId) {
         ...
     }
-}}}
 
 Now you know how exactly the JAX-RS implementation extracts the ``topicmapId`` parameter value from the HTTP request:
 
