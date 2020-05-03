@@ -14,8 +14,8 @@ The best way to develop DMX plugins is to build DMX from source first. This way 
 
 Requirements:
 
-* **Java 6** (newer versions *might* work as well, older versions do *not* work)
-* **Maven 3** (older versions do *not* work)
+* **Java 8** (other versions do *not* work)
+* **Maven 3**
 * **Git**
 
 Build DMX from source:
@@ -80,7 +80,7 @@ To create the *DMX Tagging* plugin setup a directory structure as follows:
                         migration1.json
                     plugin.properties
 
-Create the file **``pom.xml``** with this content:
+Create the file ``pom.xml`` with this content:
 
 .. code-block:: xml
 
@@ -116,7 +116,7 @@ Create the file **``pom.xml``** with this content:
         </build>
     </project>
 
-Create the file **``migration1.json``**:
+Create the file ``migration1.json``:
 
 .. code-block:: js
 
@@ -139,7 +139,7 @@ Create the file **``migration1.json``**:
         ]
     }
 
-Create the file **``plugin.properties``**:
+Create the file ``plugin.properties``:
 
 .. code-block:: text
 
@@ -149,7 +149,7 @@ Create the file **``plugin.properties``**:
 Setup for Hot-Deployment
 ========================
 
-The easiest way to let DMX hot-deploy the plugin is to develop it within the **``bundle-dev``** directory. To do so move the plugin directory on your hard disc into DMX's hot-deployment folder called **``bundle-dev``**. The next step is then to build your plugin.
+The easiest way to let DMX hot-deploy the plugin is to develop it within the ``bundle-dev/`` directory. To do so move the plugin directory on your hard disc into DMX's hot-deployment folder called ``bundle-dev/``. The next step is then to build your plugin.
 
 But lets first start DMX in development mode, that is with hot-deployment activated.
 
@@ -630,8 +630,8 @@ A plugin main file is a Java class that is derived from ``de.deepamehta.core.osg
     * The ``PluginActivator`` class needs to be imported.
     * The plugin main class must be derived from ``PluginActivator`` and must be public.
 
-Furthermore when writing a plugin main file you must add 2 entries in the plugin's **``pom.xml``**:
-    1. a <parent> element to declare the artifactId **``deepamehta-plugin``**. This brings you necessary dependenies and the ``PluginActivator`` class.
+Furthermore when writing a plugin main file you must add 2 entries in the plugin's ``pom.xml``:
+    1. a <parent> element to declare the artifactId ``deepamehta-plugin``. This brings you necessary dependenies and the ``PluginActivator`` class.
     2. a <build> element to configure the Maven Bundle Plugin. It needs to know what your plugin main class is. You must specify the fully-qualified class name.
 
 .. code-block:: xml
@@ -864,7 +864,7 @@ To tell the DMX Core which plugin service your plugin wants to consume you need 
     @Inject
     private AccessControlService acService;
 
-Make sure to add your interest in building on the respective plugin service as dependencies to your **``pom.xml``** file. In the case of using the AccessControlService we would need to add the following:
+Make sure to add your interest in building on the respective plugin service as dependencies to your ``pom.xml`` file. In the case of using the AccessControlService we would need to add the following:
 
 .. code-block:: xml
 
