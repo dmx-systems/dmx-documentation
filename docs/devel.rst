@@ -28,7 +28,7 @@ Build DMX from source:
 
 This builds all components of the DMX Standard Distribution and installs them in your local Maven repository. You'll see a lot of information logged, cumulating in:
 
-.. code-block::
+.. code-block:: text
 
     ...
     [INFO] ------------------------------------------------------------------------
@@ -69,7 +69,7 @@ From the developer's view a DMX plugin is just a directory on your hard disc. Th
 
 To create the //DMX Tagging// plugin setup a directory structure as follows:
 
-.. code-block::
+.. code-block:: text
 
     dm4-tagging/
         pom.xml
@@ -141,7 +141,7 @@ Create the file **``migration1.json``**:
 
 Create the file **``plugin.properties``**:
 
-.. code-block::
+.. code-block:: text
 
     dm4.plugin.activate_after=de.deepamehta.webclient
     dm4.plugin.model_version=1
@@ -156,11 +156,12 @@ But lets first start DMX in development mode, that is with hot-deployment activa
 In the platforms home directory ``deepamehta``:
 
 .. code-block:: bash
-$ mvn pax:run
+
+    $ mvn pax:run
 
 You'll see a lot of information logged, cumulating with:
 
-.. code-block::
+.. code-block:: text
 
     ...
     Apr 6, 2013 11:21:20 PM de.deepamehta.core.impl.PluginManager checkAllPluginsActivated
@@ -183,7 +184,7 @@ Type the ``lb`` command to get the list of activated bundles:
 
 The output  looks like this:
 
-.. code-block::
+.. code-block:: text
 
     START LEVEL 6
        ID|State      |Level|Name
@@ -222,7 +223,7 @@ In another terminal:
 
 This builds the plugin. After some seconds you'll see:
 
-.. code-block::
+.. code-block:: text
 
     ...
     [INFO] ------------------------------------------------------------------------
@@ -233,7 +234,7 @@ This builds the plugin. After some seconds you'll see:
 
 Once build, DMX hot-deploys the plugin automatically. In the terminal where you've started DMX the logging informs you about plugin activation:
 
-.. code-block::
+.. code-block:: text
 
     Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl readConfigFile
     INFO: Reading config file "/plugin.properties" for plugin "DeepaMehta 4 Tagging"
@@ -285,7 +286,7 @@ Once build, DMX hot-deploys the plugin automatically. In the terminal where you'
 
 When you type again ``lb`` in the DMX terminal you'll see the //DMX Tagging// plugin now appears in the list of activated bundles:
 
-.. code-block::
+.. code-block:: text
 
     START LEVEL 6
        ID|State      |Level|Name
@@ -313,7 +314,7 @@ Once you've made any changes to the plugin files, you have to build the plugin a
 
 Once building is complete the changed plugin is redeployed automatically. You'll notice activity in the DMX terminal:
 
-.. code-block::
+.. code-block:: text
 
     Apr 8, 2013 1:10:40 AM de.deepamehta.core.osgi.PluginActivator stop
     INFO: ========== Stopping plugin "DeepaMehta 4 Tagging" ==========
@@ -408,7 +409,7 @@ Plugin configuration
 
 If your plugin comes with its own data model you must tell DMX the data model version it relies on. To do so, set the ``dm4.plugin.model_version`` configuration property in the ``plugin.properties`` file, e.g.:
 
-.. code-block::
+.. code-block:: text
 
     dm4.plugin.model_version=2
 
@@ -416,7 +417,7 @@ DMX's migration machinery takes charge of running the plugin's migrations up to 
 
 Usually each plugin has its own ``plugin.properties`` file. It allows the developer to configure certain aspects of the plugin. The name of the ``plugin.properties`` file and its path within the plugin directory is fixed:
 
-.. code-block::
+.. code-block:: text
 
     dm4-myplugin/src/main/resources/plugin.properties
 
@@ -446,7 +447,7 @@ An imperative migration must be named ``Migration<nr>.java`` and must be located
 
 Example:
 
-.. code-block::
+.. code-block:: text
 
     dm4-myplugin/
         src/
@@ -599,7 +600,7 @@ The plugin main file must be located directly in the plugin's ``src/main/java/<y
 
 Example:
 
-.. code-block::
+.. code-block:: text
 
     dm4-mycoolplugin/
         src/
@@ -740,7 +741,7 @@ A DMX plugin can define //one// service interface at most. More than one service
 
 As an example see the //Topicmaps// plugin (part of the DMX Standard Distribution):
 
-.. code-block::
+.. code-block:: text
 
     dm4-topicmaps/
         src/
