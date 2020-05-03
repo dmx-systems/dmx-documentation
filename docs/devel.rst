@@ -14,8 +14,8 @@ The best way to develop DMX plugins is to build DMX from source first. This way 
 
 Requirements:
 
-* **Java 6** (newer versions //might// work as well, older versions do //not// work)
-* **Maven 3** (older versions do //not// work)
+* **Java 6** (newer versions *might* work as well, older versions do *not* work)
+* **Maven 3** (older versions do *not* work)
 * **Git**
 
 Build DMX from source:
@@ -43,7 +43,7 @@ The plugin turn-around cycle
 
 This section illustrates how to begin a plugin project, how to build and how to deploy a plugin, and how to redeploy the plugin once you made changes in its source code. In other words, this section illustrates the plugin development turn-around cycle.
 
-Let's start with a very simple plugin called //DMX Tagging//. This plugin will just create a new topic type called ``Tag``. Once the plugin is activated the topic type will appear in the DMX Webclient's //Create// menu, so you can create tag topics and associate them with arbitrary topics. And you will be able to fulltext search for tags.
+Let's start with a very simple plugin called *DMX Tagging*. This plugin will just create a new topic type called ``Tag``. Once the plugin is activated the topic type will appear in the DMX Webclient's *Create* menu, so you can create tag topics and associate them with arbitrary topics. And you will be able to fulltext search for tags.
 
 Developing a plugin whose only purpose is to provide new topic type definitions requires no Java or JavaScript coding. All is declarative, mainly in JSON format.
 
@@ -67,7 +67,7 @@ Naming Conventions
 
 From the developer's view a DMX plugin is just a directory on your hard disc. The directory can have an arbitrary name and exist at an arbitrary location. By convention the plugin directory begins with ``dm4-`` as it is aimed to the DMX 4 platform. The directory content adheres to a certain directory structure and file name conventions. The files are text files (xml, json, properties, java, js, css) and resources like images.
 
-To create the //DMX Tagging// plugin setup a directory structure as follows:
+To create the *DMX Tagging* plugin setup a directory structure as follows:
 
 .. code-block:: text
 
@@ -174,7 +174,7 @@ You'll see a lot of information logged, cumulating with:
 
 Then a browser windows opens automatically and displays the DMX Webclient.
 
-The terminal is now occupied by the //Gogo// shell. Press the return key some times and you'll see its ``g!`` prompt.
+The terminal is now occupied by the *Gogo* shell. Press the return key some times and you'll see its ``g!`` prompt.
 
 Type the ``lb`` command to get the list of activated bundles:
 
@@ -209,7 +209,7 @@ The output  looks like this:
        30|Active     |    5|DeepaMehta 4 File Manager (4.1.1.SNAPSHOT)
        31|Active     |    5|DeepaMehta 4 Icon Picker (4.1.1.SNAPSHOT)
 
-The //DMX Tagging// plugin does not yet appear in that list as it is not yet build.
+The *DMX Tagging* plugin does not yet appear in that list as it is not yet build.
 
 Build the plugin
 ================
@@ -284,7 +284,7 @@ Once build, DMX hot-deploys the plugin automatically. In the terminal where you'
     INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclient/") ABORTED -- already launched
     ...
 
-When you type again ``lb`` in the DMX terminal you'll see the //DMX Tagging// plugin now appears in the list of activated bundles:
+When you type again ``lb`` in the DMX terminal you'll see the *DMX Tagging* plugin now appears in the list of activated bundles:
 
 .. code-block:: text
 
@@ -299,9 +299,9 @@ When you type again ``lb`` in the DMX terminal you'll see the //DMX Tagging// pl
 Try out the plugin
 ==================
 
-Now you can try out the plugin. In the DMX Webclient login as user "admin" and leave the password field empty. The //Create// menu appears and when you open it you'll see the new type //Tag// listed. Thus, you can create tags now. Additionally you can associate tags to your content topics, search for tags, and navigate along the tag associations, just as you do with other topics.
+Now you can try out the plugin. In the DMX Webclient login as user "admin" and leave the password field empty. The *Create* menu appears and when you open it you'll see the new type *Tag* listed. Thus, you can create tags now. Additionally you can associate tags to your content topics, search for tags, and navigate along the tag associations, just as you do with other topics.
 
-The result so far: the //DMX Tagging// plugin provides a new topic type definition or, in other words: a data model. All the active operations on the other hand like create, edit, search, delete, associate, and navigate are provided by the DMX Webclient at a generic level, and are applicable to your new topic type as well.
+The result so far: the *DMX Tagging* plugin provides a new topic type definition or, in other words: a data model. All the active operations on the other hand like create, edit, search, delete, associate, and navigate are provided by the DMX Webclient at a generic level, and are applicable to your new topic type as well.
 
 Redeploy the plugin
 ===================
@@ -351,9 +351,9 @@ Once building is complete the changed plugin is redeployed automatically. You'll
 In contrast to the initial build of the plugin you can recognize some differences in this log:
 
 * The old version of the plugin currently deployed is stopped.
-* The new version of the plugin is deployed (that is //started// and //activated//) right away.
-* The plugin is //not// installed again in the database as already done while initial build.
-* The migration is //not// run again as already done while initial build.
+* The new version of the plugin is deployed (that is *started* and *activated*) right away.
+* The plugin is *not* installed again in the database as already done while initial build.
+* The migration is *not* run again as already done while initial build.
 
 To ensure the DMX Webclient is aware of the changed plugin press the browser's reload button.
 
@@ -372,20 +372,20 @@ This stops all bundles, shuts down the webserver, and the database.
 Migrations
 **********
 
-A //migration// is a sequence of database operations that is executed exactly once in the lifetime of a particular DMX installation. You as a developer are responsible for equipping your plugin with the required migrations. Migrations serve several purposes:
+A *migration* is a sequence of database operations that is executed exactly once in the lifetime of a particular DMX installation. You as a developer are responsible for equipping your plugin with the required migrations. Migrations serve several purposes:
 
-1. Define the plugin's data model. That is, storing new topic type definitions and association type definitions in the database. E.g. a //Books// plugin might define the types //Book//, //Title//, and //Author//.
+1. Define the plugin's data model. That is, storing new topic type definitions and association type definitions in the database. E.g. a *Books* plugin might define the types *Book*, *Title*, and *Author*.
 
-2. A newer version of your plugin might extend or modify the data model defined by the previous version of your plugin. The migration of the updated plugin change the stored type definitions //and// transforms existing content if necessary.
+2. A newer version of your plugin might extend or modify the data model defined by the previous version of your plugin. The migration of the updated plugin change the stored type definitions *and* transforms existing content if necessary.
 
 3. The application logic of a newer version of your plugin changes in a way it is not compatible anymore with the existing database content. The migration must transform the existing content then.
 
-So, the purpose expressed in points 2. and 3. is to make your plugin //upgradable//. That is, keeping existing database content //in-snyc// with the plugin logic. By providing the corresponding migrations you make your plugin //compatible// with the previous plugin version.
+So, the purpose expressed in points 2. and 3. is to make your plugin *upgradable*. That is, keeping existing database content *in-snyc* with the plugin logic. By providing the corresponding migrations you make your plugin *compatible* with the previous plugin version.
 
 The migration machinery
 =======================
 
-Each plugin comes with its own data model. For each plugin DMX keeps track what data model version is currently installed. It does so by storing the version of the installed data model in the database as well. The data model version is an integer number that starts at 0 and is increased consecutively: 0, 1, 2, and so on. Each version number (except 0) corresponds with a particular migration. The migration with number //n// is responsible for transforming the database content from version //n-1// to version //n//.
+Each plugin comes with its own data model. For each plugin DMX keeps track what data model version is currently installed. It does so by storing the version of the installed data model in the database as well. The data model version is an integer number that starts at 0 and is increased consecutively: 0, 1, 2, and so on. Each version number (except 0) corresponds with a particular migration. The migration with number *n* is responsible for transforming the database content from version *n-1* to version *n*.
 
 You as the developer know 2 things about your plugin: a) Which plugin version relies on which data model version, and b) How to transform the database content in order to advance from a given data model version to the next. So, when you ship your plugin you must equip it with 2 things:
 
@@ -426,13 +426,13 @@ If no ``plugin.properties`` file is present, the default configuration values ap
 The two kinds of migrations
 ===========================
 
-As you've already learned, migrations serve different (but related) purposes: some just //create// new type definitions and others //modify// existing type definitions and/or transform existing database content. To support the developer with these different tasks DMX offers two kinds of migrations:
+As you've already learned, migrations serve different (but related) purposes: some just *create* new type definitions and others *modify* existing type definitions and/or transform existing database content. To support the developer with these different tasks DMX offers two kinds of migrations:
 
     * A **Declarative Migration** is a JSON file that declares 4 kinds of things: topic types, association types, topics, associations. Use a declarative migration to let DMX create new types and instances in the database. Use a declarative migration to let your plugin setup the initial type definitions.
 
-    With a declarative migration you can only create new things. You can't modify existing things. All you do with a declarative migration you could achieve with an imperative migration as well, but as long as you just want create new things, it is more convenient to do it declaratively.
+      With a declarative migration you can only create new things. You can't modify existing things. All you do with a declarative migration you could achieve with an imperative migration as well, but as long as you just want create new things, it is more convenient to do it declaratively.
 
-    * An **Imperative Migration** is a Java class that has access to the //DMX Core Service//. Thus, you can perform arbitrary database operations like creation, retrieval, update, deletion. Use an imperative migration when (a later version of) your plugin needs to modify existing type definitions and/or transform existing database content.
+    * An **Imperative Migration** is a Java class that has access to the *DMX Core Service*. Thus, you can perform arbitrary database operations like creation, retrieval, update, deletion. Use an imperative migration when (a later version of) your plugin needs to modify existing type definitions and/or transform existing database content.
 
 The developer can equip a plugin with an arbitrary number of both, declarative migrations and imperative migrations.
 
@@ -470,7 +470,7 @@ Example:
 
 This example plugin would have set ``dm4.plugin.model_version`` to 6 (configured in ``plugin.properties``), so 6 migrations are involved. 4 are declarative and 2 are imperative here.
 
-Important: for each number between 1 and ``dm4.plugin.model_version`` exactly one migration file must exist. That is //either// a declarative migration file //or// an imperative migration file.
+Important: for each number between 1 and ``dm4.plugin.model_version`` exactly one migration file must exist. That is *either* a declarative migration file *or* an imperative migration file.
 
 It would be invalid if for a given number a) no migration file exists, or b) two migration files exist (one declarative and one imperative). In these cases the DMX migration machinery throws an error and the plugin is not activated.
 
@@ -498,7 +498,7 @@ A declarative migration is a JSON file with exactly one JSON Object in it. In a 
 
 Each of the 4 sections is optional.
 
-As an example see the (simplified) migration that defines the //Note// topic type. This migration is part of the //DMX Notes// plugin:
+As an example see the (simplified) migration that defines the *Note* topic type. This migration is part of the *DMX Notes* plugin:
 
 .. code-block:: js
 
@@ -545,16 +545,16 @@ As an example see the (simplified) migration that defines the //Note// topic typ
         ]
     }
 
-As you see, this migration defines 3 topic types (and no other things): //Title// and //Text// are 2 simple types, and //Note// is a composite type. A Note is composed of one Title and one Text.
+As you see, this migration defines 3 topic types (and no other things): *Title* and *Text* are 2 simple types, and *Note* is a composite type. A Note is composed of one Title and one Text.
 
 Writing an imperative migration
 ===============================
 
 An imperative migration is a Java class that is derived from ``de.deepamehta.core.service.Migration`` and that overrides the ``run()`` method. The ``run()`` method is called by DMX to run the migration.
 
-Within the migration you have access to the DMX //Core Service// through the ``dm4`` object. By the means of the Core Service you can perform arbitrary database operations. Typically this involves importing further objects from the ``de.deepamehta.core`` API.
+Within the migration you have access to the DMX *Core Service* through the ``dm4`` object. By the means of the Core Service you can perform arbitrary database operations. Typically this involves importing further objects from the ``de.deepamehta.core`` API.
 
-As an example see a migration that comes with the //DMX Topicmaps// plugin:
+As an example see a migration that comes with the *DMX Topicmaps* plugin:
 
 .. code-block:: java
 
@@ -573,7 +573,7 @@ As an example see a migration that comes with the //DMX Topicmaps// plugin:
         }
     }
 
-Here an association definition is added to the //Topicmap// type subsequently.
+Here an association definition is added to the *Topicmap* type subsequently.
 
 ***************
 The server side
@@ -581,20 +581,20 @@ The server side
 
 What a DMX plugin can do at the server side:
 
-    * **Listen to DMX Core events**. In particular situations the DMX Core fires events, e.g. before and after it creates a new topic in the database. Your plugin can listen to these events and react in its own way. Thus, the //DMX Workspaces// plugin e.g. ensures that each new topic is assigned to a workspace.
+    * **Listen to DMX Core events**. In particular situations the DMX Core fires events, e.g. before and after it creates a new topic in the database. Your plugin can listen to these events and react in its own way. Thus, the *DMX Workspaces* plugin e.g. ensures that each new topic is assigned to a workspace.
 
-    * **Providing a service**. Your plugin can make its business logic, that is its service methods, accessible by other plugins (via OSGi) and/or by external applications (via HTTP/REST). Example: the service provided by the //DMX Topicmaps// plugin includes methods to add a topic to a topicmap or to change the topic's coordinates within a topicmap.
+    * **Providing a service**. Your plugin can make its business logic, that is its service methods, accessible by other plugins (via OSGi) and/or by external applications (via HTTP/REST). Example: the service provided by the *DMX Topicmaps* plugin includes methods to add a topic to a topicmap or to change the topic's coordinates within a topicmap.
 
-    * **Consuming services provided by other plugins**. Example: in order to investigate a topic's workspace assignments and the current user's memberships the //DMX Access Control// plugin consumes the service provided by the //DMX Workspaces// plugin.
+    * **Consuming services provided by other plugins**. Example: in order to investigate a topic's workspace assignments and the current user's memberships the *DMX Access Control* plugin consumes the service provided by the *DMX Workspaces* plugin.
 
-    * **Access the DMX Core Service**. The DMX //Core Service// provides the basic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: Topics, Associations, Topic Types, Association Types.
+    * **Access the DMX Core Service**. The DMX *Core Service* provides the basic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: Topics, Associations, Topic Types, Association Types.
 
 Weather a DMX plugin has a server side part at all depends on the nature of the plugin. Plugins without a server side part include those which e.g. just define a data model or just provide a custom (JavaScript) renderer.
 
 The plugin main file
 ====================
 
-You must write a //plugin main file// if your plugin needs to a) listen to DMX Core events and/or b) provide a service. The plugin main file contains the event handlers resp. the service implementation then.
+You must write a *plugin main file* if your plugin needs to a) listen to DMX Core events and/or b) provide a service. The plugin main file contains the event handlers resp. the service implementation then.
 
 The plugin main file must be located directly in the plugin's ``src/main/java/<your plugin package>/`` directory. By convention the plugin main class ends with ``Plugin``.
 
@@ -676,7 +676,7 @@ Listen to DMX Core events
 
 In particular situations the DMX Core fires events, e.g. before and after it creates a new topic in the database. Your plugin can listen to these events and react in its own way.
 
-Listening to a DMX Core event means implementing the corresponding listener interface. A listener interface consist of just one method: the //listener method//. That method is called by the DMX Core when the event is fired. The listener interfaces are located in package ``de.deepamehta.core.service.event``.
+Listening to a DMX Core event means implementing the corresponding listener interface. A listener interface consist of just one method: the *listener method*. That method is called by the DMX Core when the event is fired. The listener interfaces are located in package ``de.deepamehta.core.service.event``.
 
 To listen to a DMX Core event, in the plugin main class you must:
 
@@ -719,7 +719,7 @@ Example:
 
 This example plugin listens to 2 DMX Core events: ``POST_CREATE_TOPIC`` and ``POST_UPDATE_TOPIC``.
 
-These particular events are fired //after// the DMX Core has created resp. updated a topic. The DMX Core passes the created/updated topic to the respective listener method. In case of "update" the previous topic content (``oldModel``) is also passed to enable the plugin to investigate what exactly has changed.
+These particular events are fired *after* the DMX Core has created resp. updated a topic. The DMX Core passes the created/updated topic to the respective listener method. In case of "update" the previous topic content (``oldModel``) is also passed to enable the plugin to investigate what exactly has changed.
 
 The example plugin just logs the created resp. updated topic. In case of "update" the previous topic content is logged as well.
 
@@ -733,13 +733,13 @@ Your plugin can make its business logic, that is its service methods, accessible
 The service interface
 ---------------------
 
-For a plugin to provide a service you must define a //service interface//. The service interface contains all the method signatures that make up the service. When other plugins consume your plugin's service they do so via the service interface.
+For a plugin to provide a service you must define a *service interface*. The service interface contains all the method signatures that make up the service. When other plugins consume your plugin's service they do so via the service interface.
 
-To be recogbized the service interface //must// by convention end its name on ``...Service``. The service interface must be declared ``public`` and is a regular Java interface.
+To be recogbized the service interface *must* by convention end its name on ``...Service``. The service interface must be declared ``public`` and is a regular Java interface.
 
-A DMX plugin can define //one// service interface at most. More than one service interface is not supported.
+A DMX plugin can define *one* service interface at most. More than one service interface is not supported.
 
-As an example see the //Topicmaps// plugin (part of the DMX Standard Distribution):
+As an example see the *Topicmaps* plugin (part of the DMX Standard Distribution):
 
 .. code-block:: text
 
@@ -752,9 +752,9 @@ As an example see the //Topicmaps// plugin (part of the DMX Standard Distributio
                             topicmaps/
                                 TopicmapsService.java
 
-The service interface of the //Topicmaps// plugin is named ``TopicmapsService``. The plugin package is ``de.deepamehta.topicmaps``.
+The service interface of the *Topicmaps* plugin is named ``TopicmapsService``. The plugin package is ``de.deepamehta.topicmaps``.
 
-The //Topicmaps// service interface looks like this:
+The *Topicmaps* service interface looks like this:
 
 .. code-block:: java
 
@@ -806,7 +806,7 @@ After defining the plugin's service interface you must implement the actual serv
 
 The plugin main class must declare that it implements the plugin's service interface. (So you need to import the service interface.) Each service method implementation must be ``public``. Annotate each service method implementation with ``@Override``.
 
-As an example see the implementation of the //Topicmaps// service:
+As an example see the implementation of the *Topicmaps* service:
 
 .. code-block:: java
 
@@ -855,7 +855,7 @@ You see, the plugin main class ``TopicmapsPlugin`` implements the plugin's servi
 Consuming a service
 ===================
 
-Your plugin can consume the services provided by other plugins. To do so your plugin must get hold of the //service object// of the other plugin. Through the service object your plugin can call all the service methods declared in the other's plugin service interface.
+Your plugin can consume the services provided by other plugins. To do so your plugin must get hold of the *service object* of the other plugin. Through the service object your plugin can call all the service methods declared in the other's plugin service interface.
 
 To tell the DMX Core which plugin service your plugin wants to consume you need to declare an instance variable in your plugin like using the @Inject notation:
 
@@ -882,7 +882,7 @@ To deal with other plugin services coming and going your plugin can override 2 h
 
 The single argument of the 2 ``serviceArrived`` and ``serviceGone`` hooks is the respective service object, declared generically just as ``PluginService``. (Remember, ``PluginService`` is the common base interface for all plugin services.) So casting is required. In ``serviceArrived`` you typically store the service object in a private instance variable. In ``serviceGone`` you typically set the instance variable to ``null`` in order to release the service object.
 
-As an example, see how the //Workspaces// plugin (part of the DMX Standard Distribution) consumes the //Facets// service:
+As an example, see how the *Workspaces* plugin (part of the DMX Standard Distribution) consumes the *Facets* service:
 
 .. code-block:: java
 
@@ -915,14 +915,14 @@ As an example, see how the //Workspaces// plugin (part of the DMX Standard Distr
             // do something when a service goes away
         }
 
-You see the Workspaces plugin consumes a plugin service: the //Facets// service.  The ``PluginService`` object passed to the 2 hooks needs not being further investigated.
+You see the Workspaces plugin consumes a plugin service: the *Facets* service.  The ``PluginService`` object passed to the 2 hooks needs not being further investigated.
 
 In this way your plugin could also consume more than one service.
 
 Providing a RESTful web service
 ===============================
 
-Until here your plugin service is accessible from within the OSGi environment only. You can make the service accessible from //outside// the OSGi environment as well by promoting it to a RESTful web service. Your plugin service is then accessible from external applications via HTTP. (External application here means both, the client-side portion of a DMX plugin, or an arbitrary 3rd-party application).
+Until here your plugin service is accessible from within the OSGi environment only. You can make the service accessible from *outside* the OSGi environment as well by promoting it to a RESTful web service. Your plugin service is then accessible from external applications via HTTP. (External application here means both, the client-side portion of a DMX plugin, or an arbitrary 3rd-party application).
 
 To provide a RESTful web service you must provide a generic plugin service first (as described above in [[#Providingaservice|Providing a service]]) and then make it RESTful by using JAX-RS annotations. With JAX-RS annotations you basically control how HTTP requests will be mapped to your service methods.
 
@@ -938,7 +938,7 @@ To make your plugin service RESTful you must:
 
 * Annotate service method parameters with ``@PathParam`` to map URI template parameters to service method parameters.
 
-As an example let's see how the //Topicmaps// plugin (part of the DMX Standard Distribution) annotates its main class and service methods:
+As an example let's see how the *Topicmaps* plugin (part of the DMX Standard Distribution) annotates its main class and service methods:
 
 .. code-block:: java
 
@@ -1039,11 +1039,11 @@ Now you know how exactly the JAX-RS implementation extracts the ``topicmapId`` p
 Parsing the HTTP request body
 -----------------------------
 
-Until here we talked about how to extract values from the HTTP request's path, the request's query string, or the request headers. This section describes how to feed the //HTTP request body// into your service methods. Feeding here refers to a) parsing the body's byte stream, b) constructing a Java object from it, and passing that Java object to a particular service method.
+Until here we talked about how to extract values from the HTTP request's path, the request's query string, or the request headers. This section describes how to feed the *HTTP request body* into your service methods. Feeding here refers to a) parsing the body's byte stream, b) constructing a Java object from it, and passing that Java object to a particular service method.
 
-JAX-RS can't know how to construct arbitrary application objects from a sole byte stream. That's why JAX-RS comprises a extension facility called //Provider Classes//. A provider class is responsible to read the request body, parse it, and construct an particular application object from it. It is the duty of the application developer to implement the required provider classes for the application objects.
+JAX-RS can't know how to construct arbitrary application objects from a sole byte stream. That's why JAX-RS comprises a extension facility called *Provider Classes*. A provider class is responsible to read the request body, parse it, and construct an particular application object from it. It is the duty of the application developer to implement the required provider classes for the application objects.
 
-A service method that want to receive the constructed application object must have a dedicated parameter called (in JAX-RS speak) the //Entity Parameter//. The entity parameter stands for the entity that is represented in the request body. Unlike the other service method parameters the entity parameter has //no// annotation. A service method can have //one// entity parameter at most (a HTTP request has //one// body).
+A service method that want to receive the constructed application object must have a dedicated parameter called (in JAX-RS speak) the *Entity Parameter*. The entity parameter stands for the entity that is represented in the request body. Unlike the other service method parameters the entity parameter has *no* annotation. A service method can have *one* entity parameter at most (a HTTP request has *one* body).
 
 To feed the HTTP request body into a service method you must:
 
