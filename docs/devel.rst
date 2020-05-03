@@ -45,7 +45,7 @@ The plugin turn-around cycle
 
 This section illustrates how to begin a plugin project, how to build and how to deploy a plugin, and how to redeploy the plugin once you made changes in its source code. In other words, this section illustrates the plugin development turn-around cycle.
 
-Let's start with a very simple plugin called //DMX Tagging//. This plugin will just create a new topic type called `Tag`. Once the plugin is activated the topic type will appear in the DMX Webclient's //Create// menu, so you can create tag topics and associate them with arbitrary topics. And you will be able to fulltext search for tags.
+Let's start with a very simple plugin called //DMX Tagging//. This plugin will just create a new topic type called ``Tag``. Once the plugin is activated the topic type will appear in the DMX Webclient's //Create// menu, so you can create tag topics and associate them with arbitrary topics. And you will be able to fulltext search for tags.
 
 Developing a plugin whose only purpose is to provide new topic type definitions requires no Java or JavaScript coding. All is declarative, mainly in JSON format.
 
@@ -68,7 +68,7 @@ compatible with the next major version DMX 4.9.
 }}}
 
 
-From the developer's view a DMX plugin is just a directory on your hard disc. The directory can have an arbitrary name and exist at an arbitrary location. By convention the plugin directory begins with `dm4-` as it is aimed to the DMX 4 platform. The directory content adheres to a certain directory structure and file name conventions. The files are text files (xml, json, properties, java, js, css) and resources like images.
+From the developer's view a DMX plugin is just a directory on your hard disc. The directory can have an arbitrary name and exist at an arbitrary location. By convention the plugin directory begins with ``dm4-`` as it is aimed to the DMX 4 platform. The directory content adheres to a certain directory structure and file name conventions. The files are text files (xml, json, properties, java, js, css) and resources like images.
 
 To create the //DMX Tagging// plugin setup a directory structure as follows:
 
@@ -84,7 +84,7 @@ dm4-tagging/
                 plugin.properties
 }}}
 
-Create the file **`pom.xml`** with this content:
+Create the file **``pom.xml``** with this content:
 
 {{{
 #!xml
@@ -121,7 +121,7 @@ Create the file **`pom.xml`** with this content:
 </project>
 }}}
 
-Create the file **`migration1.json`**:
+Create the file **``migration1.json``**:
 
 {{{
 #!js
@@ -145,7 +145,7 @@ Create the file **`migration1.json`**:
 }
 }}}
 
-Create the file **`plugin.properties`**:
+Create the file **``plugin.properties``**:
 
 {{{
 #!txt
@@ -156,11 +156,11 @@ dm4.plugin.model_version=1
 Setup for Hot-Deployment
 ========================
 
-The easiest way to let DMX hot-deploy the plugin is to develop it within the **`bundle-dev`** directory. To do so move the plugin directory on your hard disc into DMX's hot-deployment folder called **`bundle-dev`**. The next step is then to build your plugin.
+The easiest way to let DMX hot-deploy the plugin is to develop it within the **``bundle-dev``** directory. To do so move the plugin directory on your hard disc into DMX's hot-deployment folder called **``bundle-dev``**. The next step is then to build your plugin.
 
 But lets first start DMX in development mode, that is with hot-deployment activated.
 
-In the platforms home directory `deepamehta`:
+In the platforms home directory ``deepamehta``:
 
 {{{
 #!sh
@@ -183,9 +183,9 @@ INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclien
 
 Then a browser windows opens automatically and displays the DMX Webclient.
 
-The terminal is now occupied by the //Gogo// shell. Press the return key some times and you'll see its `g!` prompt.
+The terminal is now occupied by the //Gogo// shell. Press the return key some times and you'll see its ``g!`` prompt.
 
-Type the `lb` command to get the list of activated bundles:
+Type the ``lb`` command to get the list of activated bundles:
 
 {{{
 #!sh
@@ -298,7 +298,7 @@ INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclien
 ...
 }}}
 
-When you type again `lb` in the DMX terminal you'll see the //DMX Tagging// plugin now appears in the list of activated bundles:
+When you type again ``lb`` in the DMX terminal you'll see the //DMX Tagging// plugin now appears in the list of activated bundles:
 
 {{{
 #!txt
@@ -425,23 +425,23 @@ Thus, the users database will always be compatible with the installed version of
 Plugin configuration
 ====================
 
-If your plugin comes with its own data model you must tell DMX the data model version it relies on. To do so, set the `dm4.plugin.model_version` configuration property in the `plugin.properties` file, e.g.:
+If your plugin comes with its own data model you must tell DMX the data model version it relies on. To do so, set the ``dm4.plugin.model_version`` configuration property in the ``plugin.properties`` file, e.g.:
 
 {{{
 #!txt
 dm4.plugin.model_version=2
 }}}
 
-DMX's migration machinery takes charge of running the plugin's migrations up to that configured number. If your plugin comes with no data model, you can specify `0` resp. omit the `dm4.plugin.model_version` property as `0` is its default value.
+DMX's migration machinery takes charge of running the plugin's migrations up to that configured number. If your plugin comes with no data model, you can specify ``0`` resp. omit the ``dm4.plugin.model_version`` property as ``0`` is its default value.
 
-Usually each plugin has its own `plugin.properties` file. It allows the developer to configure certain aspects of the plugin. The name of the `plugin.properties` file and its path within the plugin directory is fixed:
+Usually each plugin has its own ``plugin.properties`` file. It allows the developer to configure certain aspects of the plugin. The name of the ``plugin.properties`` file and its path within the plugin directory is fixed:
 
 {{{
 #!txt
 dm4-myplugin/src/main/resources/plugin.properties
 }}}
 
-If no `plugin.properties` file is present, the default configuration values apply.
+If no ``plugin.properties`` file is present, the default configuration values apply.
 
 The two kinds of migrations
 ===========================
@@ -461,9 +461,9 @@ Directory structure
 
 In order to let DMX find the plugin's migration files, you must adhere to a fixed directory structure and file names. Each migration file must contain its number, so DMX can run them consecutively.
 
-A declarative migration must be named `migration<nr>.json` and must be located in the plugin's `src/main/resources/migrations/` directory.
+A declarative migration must be named ``migration<nr>.json`` and must be located in the plugin's ``src/main/resources/migrations/`` directory.
 
-An imperative migration must be named `Migration<nr>.java` and must be located in the plugin's `src/main/java/<your plugin package>/migrations/` directory.
+An imperative migration must be named ``Migration<nr>.java`` and must be located in the plugin's ``src/main/java/<your plugin package>/migrations/`` directory.
 
 Example:
 
@@ -489,9 +489,9 @@ dm4-myplugin/
                 plugin.properties
 }}}
 
-This example plugin would have set `dm4.plugin.model_version` to 6 (configured in `plugin.properties`), so 6 migrations are involved. 4 are declarative and 2 are imperative here.
+This example plugin would have set ``dm4.plugin.model_version`` to 6 (configured in ``plugin.properties``), so 6 migrations are involved. 4 are declarative and 2 are imperative here.
 
-Important: for each number between 1 and `dm4.plugin.model_version` exactly one migration file must exist. That is //either// a declarative migration file //or// an imperative migration file.
+Important: for each number between 1 and ``dm4.plugin.model_version`` exactly one migration file must exist. That is //either// a declarative migration file //or// an imperative migration file.
 
 It would be invalid if for a given number a) no migration file exists, or b) two migration files exist (one declarative and one imperative). In these cases the DMX migration machinery throws an error and the plugin is not activated.
 
@@ -573,9 +573,9 @@ As you see, this migration defines 3 topic types (and no other things): //Title/
 Writing an imperative migration
 ===============================
 
-An imperative migration is a Java class that is derived from `de.deepamehta.core.service.Migration` and that overrides the `run()` method. The `run()` method is called by DMX to run the migration.
+An imperative migration is a Java class that is derived from ``de.deepamehta.core.service.Migration`` and that overrides the ``run()`` method. The ``run()`` method is called by DMX to run the migration.
 
-Within the migration you have access to the DMX //Core Service// through the `dm4` object. By the means of the Core Service you can perform arbitrary database operations. Typically this involves importing further objects from the `de.deepamehta.core` API.
+Within the migration you have access to the DMX //Core Service// through the ``dm4`` object. By the means of the Core Service you can perform arbitrary database operations. Typically this involves importing further objects from the ``de.deepamehta.core`` API.
 
 As an example see a migration that comes with the //DMX Topicmaps// plugin:
 
@@ -620,7 +620,7 @@ The plugin main file
 
 You must write a //plugin main file// if your plugin needs to a) listen to DMX Core events and/or b) provide a service. The plugin main file contains the event handlers resp. the service implementation then.
 
-The plugin main file must be located directly in the plugin's `src/main/java/<your plugin package>/` directory. By convention the plugin main class ends with `Plugin`.
+The plugin main file must be located directly in the plugin's ``src/main/java/<your plugin package>/`` directory. By convention the plugin main class ends with ``Plugin``.
 
 Example:
 
@@ -637,9 +637,9 @@ dm4-mycoolplugin/
                                 MyCoolPlugin.java
 }}}
 
-Here the plugin package is `org.mydomain.deepamehta4.mycoolplugin` and the plugin main class is `MyCoolPlugin`.
+Here the plugin package is ``org.mydomain.deepamehta4.mycoolplugin`` and the plugin main class is ``MyCoolPlugin``.
 
-A plugin main file is a Java class that is derived from `de.deepamehta.core.osgi.PluginActivator`. The smallest possible plugin main file looks like this:
+A plugin main file is a Java class that is derived from ``de.deepamehta.core.osgi.PluginActivator``. The smallest possible plugin main file looks like this:
 
 {{{
 #!java
@@ -653,11 +653,11 @@ public class MyCoolPlugin extends PluginActivator {
 
 3 things are illustrated here:
     * The plugin should be packaged in an unique namespace.
-    * The `PluginActivator` class needs to be imported.
-    * The plugin main class must be derived from `PluginActivator` and must be public.
+    * The ``PluginActivator`` class needs to be imported.
+    * The plugin main class must be derived from ``PluginActivator`` and must be public.
 
-Furthermore when writing a plugin main file you must add 2 entries in the plugin's **`pom.xml`**:
-    1. a <parent> element to declare the artifactId **`deepamehta-plugin`**. This brings you necessary dependenies and the `PluginActivator` class.
+Furthermore when writing a plugin main file you must add 2 entries in the plugin's **``pom.xml``**:
+    1. a <parent> element to declare the artifactId **``deepamehta-plugin``**. This brings you necessary dependenies and the ``PluginActivator`` class.
     2. a <build> element to configure the Maven Bundle Plugin. It needs to know what your plugin main class is. You must specify the fully-qualified class name.
 
 {{{
@@ -703,13 +703,13 @@ Listen to DMX Core events
 
 In particular situations the DMX Core fires events, e.g. before and after it creates a new topic in the database. Your plugin can listen to these events and react in its own way.
 
-Listening to a DMX Core event means implementing the corresponding listener interface. A listener interface consist of just one method: the //listener method//. That method is called by the DMX Core when the event is fired. The listener interfaces are located in package `de.deepamehta.core.service.event`.
+Listening to a DMX Core event means implementing the corresponding listener interface. A listener interface consist of just one method: the //listener method//. That method is called by the DMX Core when the event is fired. The listener interfaces are located in package ``de.deepamehta.core.service.event``.
 
 To listen to a DMX Core event, in the plugin main class you must:
 
     * Import the listener interface.
     * Declare the plugin main class implements that interface.
-    * Implement the listener method. Use the `@Override` annotation.
+    * Implement the listener method. Use the ``@Override`` annotation.
     * Import the classes appearing in the listener method arguments.
 
 Example:
@@ -745,9 +745,9 @@ public class MyCoolPlugin extends PluginActivator implements PostCreateTopicList
 }
 }}}
 
-This example plugin listens to 2 DMX Core events: `POST_CREATE_TOPIC` and `POST_UPDATE_TOPIC`.
+This example plugin listens to 2 DMX Core events: ``POST_CREATE_TOPIC`` and ``POST_UPDATE_TOPIC``.
 
-These particular events are fired //after// the DMX Core has created resp. updated a topic. The DMX Core passes the created/updated topic to the respective listener method. In case of "update" the previous topic content (`oldModel`) is also passed to enable the plugin to investigate what exactly has changed.
+These particular events are fired //after// the DMX Core has created resp. updated a topic. The DMX Core passes the created/updated topic to the respective listener method. In case of "update" the previous topic content (``oldModel``) is also passed to enable the plugin to investigate what exactly has changed.
 
 The example plugin just logs the created resp. updated topic. In case of "update" the previous topic content is logged as well.
 
@@ -763,7 +763,7 @@ The service interface
 
 For a plugin to provide a service you must define a //service interface//. The service interface contains all the method signatures that make up the service. When other plugins consume your plugin's service they do so via the service interface.
 
-To be recogbized the service interface //must// by convention end its name on `...Service`. The service interface must be declared `public` and is a regular Java interface.
+To be recogbized the service interface //must// by convention end its name on ``...Service``. The service interface must be declared ``public`` and is a regular Java interface.
 
 A DMX plugin can define //one// service interface at most. More than one service interface is not supported.
 
@@ -781,7 +781,7 @@ dm4-topicmaps/
                             TopicmapsService.java
 }}}
 
-The service interface of the //Topicmaps// plugin is named `TopicmapsService`. The plugin package is `de.deepamehta.topicmaps`.
+The service interface of the //Topicmaps// plugin is named ``TopicmapsService``. The plugin package is ``de.deepamehta.topicmaps``.
 
 The //Topicmaps// service interface looks like this:
 
@@ -834,7 +834,7 @@ Implementing the service
 
 After defining the plugin's service interface you must implement the actual service methods. Implementation takes place in the plugin main file.
 
-The plugin main class must declare that it implements the plugin's service interface. (So you need to import the service interface.) Each service method implementation must be `public`. Annotate each service method implementation with `@Override`.
+The plugin main class must declare that it implements the plugin's service interface. (So you need to import the service interface.) Each service method implementation must be ``public``. Annotate each service method implementation with ``@Override``.
 
 As an example see the implementation of the //Topicmaps// service:
 
@@ -881,7 +881,7 @@ public class TopicmapsPlugin extends PluginActivator implements TopicmapsService
     ...
 }}}
 
-You see, the plugin main class `TopicmapsPlugin` implements the plugin's service interface `TopicmapsService`.
+You see, the plugin main class ``TopicmapsPlugin`` implements the plugin's service interface ``TopicmapsService``.
 
 Consuming a service
 ===================
@@ -896,7 +896,7 @@ To tell the DMX Core which plugin service your plugin wants to consume you need 
     private AccessControlService acService;
 }}}
 
-Make sure to add your interest in building on the respective plugin service as dependencies to your **`pom.xml`** file. In the case of using the AccessControlService we would need to add the following:
+Make sure to add your interest in building on the respective plugin service as dependencies to your **``pom.xml``** file. In the case of using the AccessControlService we would need to add the following:
 
 {{{
 #!xml
@@ -911,9 +911,9 @@ Make sure to add your interest in building on the respective plugin service as d
 
 Behind the scenes the DMX Core handles a plugin service as an OSGi service. Because of the dynamic nature of an OSGi environment DMX plugin services can arrive and go away at any time. Your plugin must deal with that. However, you as a plugin developer must not care about DMX's OSGi foundation. The DMX Core hides the details from you and provides an easy-to-use API for consuming plugin services.
 
-To deal with other plugin services coming and going your plugin can override 2 hooks: `serviceArrived` and `serviceGone`. These 2 hooks are called by the DMX Core as soon as a desired plugin becomes available resp. goes away.
+To deal with other plugin services coming and going your plugin can override 2 hooks: ``serviceArrived`` and ``serviceGone``. These 2 hooks are called by the DMX Core as soon as a desired plugin becomes available resp. goes away.
 
-The single argument of the 2 `serviceArrived` and `serviceGone` hooks is the respective service object, declared generically just as `PluginService`. (Remember, `PluginService` is the common base interface for all plugin services.) So casting is required. In `serviceArrived` you typically store the service object in a private instance variable. In `serviceGone` you typically set the instance variable to `null` in order to release the service object.
+The single argument of the 2 ``serviceArrived`` and ``serviceGone`` hooks is the respective service object, declared generically just as ``PluginService``. (Remember, ``PluginService`` is the common base interface for all plugin services.) So casting is required. In ``serviceArrived`` you typically store the service object in a private instance variable. In ``serviceGone`` you typically set the instance variable to ``null`` in order to release the service object.
 
 As an example, see how the //Workspaces// plugin (part of the DMX Standard Distribution) consumes the //Facets// service:
 
@@ -949,7 +949,7 @@ public class WorkspacesPlugin extends PluginActivator {
     }
 }}}
 
-You see the Workspaces plugin consumes a plugin service: the //Facets// service.  The `PluginService` object passed to the 2 hooks needs not being further investigated.
+You see the Workspaces plugin consumes a plugin service: the //Facets// service.  The ``PluginService`` object passed to the 2 hooks needs not being further investigated.
 
 In this way your plugin could also consume more than one service.
 
@@ -962,15 +962,15 @@ To provide a RESTful web service you must provide a generic plugin service first
 
 To make your plugin service RESTful you must:
 
-* Annotate the plugin main class with `@Path` to anchor the plugin service in URI space.
+* Annotate the plugin main class with ``@Path`` to anchor the plugin service in URI space.
 
-* Annotate the plugin main class with `@Consumes` and `@Produces` to declare the supported HTTP request and response media types. You can use these annotations also at a particular service method to override the class-level defaults.
+* Annotate the plugin main class with ``@Consumes`` and ``@Produces`` to declare the supported HTTP request and response media types. You can use these annotations also at a particular service method to override the class-level defaults.
 
-* Annotate each service method with one of `@GET`, `@POST`, `@PUT`, or `@DELETE` to declare the HTTP method that will invoke that service method.
+* Annotate each service method with one of ``@GET``, ``@POST``, ``@PUT``, or ``@DELETE`` to declare the HTTP method that will invoke that service method.
 
-* Annotate each service method with `@Path` to declare the URI template that will invoke that service method. The URI template can contain parameters, notated with curly braces `{...}`.
+* Annotate each service method with ``@Path`` to declare the URI template that will invoke that service method. The URI template can contain parameters, notated with curly braces ``{...}``.
 
-* Annotate service method parameters with `@PathParam` to map URI template parameters to service method parameters.
+* Annotate service method parameters with ``@PathParam`` to map URI template parameters to service method parameters.
 
 As an example let's see how the //Topicmaps// plugin (part of the DMX Standard Distribution) annotates its main class and service methods:
 
@@ -1035,28 +1035,28 @@ http://jsr311.java.net/nonav/releases/1.1/spec/spec.html
 Extract values from a HTTP request
 ----------------------------------
 
-This section describes in more detail how DMX (resp. the underlying JAX-RS implementation to be precise) extracts the service method argument values from the various parts of a HTTP request. As seen in the example above this is controlled by annotating the service method arguments. Besides `@PathParam` you can use further annotations:
+This section describes in more detail how DMX (resp. the underlying JAX-RS implementation to be precise) extracts the service method argument values from the various parts of a HTTP request. As seen in the example above this is controlled by annotating the service method arguments. Besides ``@PathParam`` you can use further annotations:
 
 ||= Annotation =||= Semantics =||
-|| `@PathParam` || Extracts the value of a URI template parameter ||
-|| `@QueryParam` || Extracts the value of a URI query parameter ||
-|| `@HeaderParam` || Extracts the value of a header ||
+|| ``@PathParam`` || Extracts the value of a URI template parameter ||
+|| ``@QueryParam`` || Extracts the value of a URI query parameter ||
+|| ``@HeaderParam`` || Extracts the value of a header ||
 
 A value extracted from a HTTP request is inherently a string. So the JAX-RS implementation must know how to actually construct a Java object (resp. a primitive value) from it. That's why the type of a service method argument that is annotated with one of these annotations must satisfy one of these criteria:
 
-1. The type is a primitive type like `int`, `long`, `float`, `double`, `boolean`, `char`.
+1. The type is a primitive type like ``int``, ``long``, ``float``, ``double``, ``boolean``, ``char``.
 
-2. The type has a constructor that accepts a single `String` argument.
+2. The type has a constructor that accepts a single ``String`` argument.
 
-3. The type has a static method named `valueOf` that takes a single `String` argument and returns an instance of the type.
+3. The type has a static method named ``valueOf`` that takes a single ``String`` argument and returns an instance of the type.
 
-    Enum types are special as they already have a static `valueOf` method. If this one does not fit your need add a `fromString` method to your enum type that has the same characteristics as the `valueOf` method mentioned above.
+    Enum types are special as they already have a static ``valueOf`` method. If this one does not fit your need add a ``fromString`` method to your enum type that has the same characteristics as the ``valueOf`` method mentioned above.
 
-4. The type is `List<T>`, `Set<T>`, or `SortedSet<T>`, where `T` satisfies criterion 2 or 3.
+4. The type is ``List<T>``, ``Set<T>``, or ``SortedSet<T>``, where ``T`` satisfies criterion 2 or 3.
 
-So, when you use a self-defined class (including enum classes) along with `@PathParam`, `@QueryParam`, or `@HeaderParam` make sure your class satisfies criterion 2 or 3.
+So, when you use a self-defined class (including enum classes) along with ``@PathParam``, ``@QueryParam``, or ``@HeaderParam`` make sure your class satisfies criterion 2 or 3.
 
-As an example lets revisit the `getTopicmap` method from the previous section:
+As an example lets revisit the ``getTopicmap`` method from the previous section:
 
 {{{
 #!java
@@ -1068,9 +1068,9 @@ As an example lets revisit the `getTopicmap` method from the previous section:
     }
 }}}
 
-Now you know how exactly the JAX-RS implementation extracts the `topicmapId` parameter value from the HTTP request:
+Now you know how exactly the JAX-RS implementation extracts the ``topicmapId`` parameter value from the HTTP request:
 
-    The `topicmapId` value is extracted from the request's URI path and then converted to a `long`. Here criterion 1 is satisfied and the conversion is straight-forward.
+    The ``topicmapId`` value is extracted from the request's URI path and then converted to a ``long``. Here criterion 1 is satisfied and the conversion is straight-forward.
 
 Parsing the HTTP request body
 -----------------------------
