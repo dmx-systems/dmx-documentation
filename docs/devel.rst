@@ -146,7 +146,7 @@ The easiest way to let DMX hot-deploy the plugin is to develop it within the ``b
 
 But lets first start DMX in development mode, that is with hot-deployment activated.
 
-In the platforms home directory ``deepamehta``:
+In the home directory ``dmx-platform``:
 
 .. code-block:: bash
 
@@ -718,7 +718,7 @@ These particular events are fired *after* the DMX Core has created resp. updated
 
 The example plugin just logs the created resp. updated topic. In case of "update" the previous topic content is logged as well.
 
-A [[DeepaMehtaCoreEvents|list of all DMX Core events]] is available in the reference section.
+A [[DMXCoreEvents|list of all DMX Core events]] is available in the reference section.
 
 Providing a service
 ===================
@@ -742,8 +742,8 @@ As an example see the *Topicmaps* plugin (part of the DMX platform):
         src/
             main/
                 java/
-                    de/
-                        deepamehta/
+                    systems/
+                        dmx/
                             topicmaps/
                                 TopicmapsService.java
 
