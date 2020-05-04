@@ -119,13 +119,12 @@ Create the file ``migration1.json``:
             {
                 value: "Tag",
                 uri: "domain.tagging.tag",
-                data_type_uri: "dm4.core.text",
-                index_mode_uris: ["dm4.core.fulltext"],
-                view_config_topics: [
+                dataTypeUri: "dmx.core.text",
+                viewConfigTopics: [
                     {
-                        type_uri: "dm4.webclient.view_config",
-                        childs: {
-                            dm4.webclient.show_in_create_menu: true
+                        typeUri: "dmx.webclient.view_config",
+                        children: {
+                            dmx.webclient.add_to_create_menu: true
                         }
                     }
                 ]
@@ -502,39 +501,35 @@ As an example see the (simplified) migration that defines the *Note* topic type.
     {
         topic_types: [
             {
-                value: "Title",
-                uri: "dm4.notes.title",
-                data_type_uri: "dm4.core.text",
-                index_mode_uris: ["dm4.core.fulltext"]
+                value:       "Title",
+                uri:         "dmx.notes.title",
+                dataTypeUri: "dmx.core.text"
             },
             {
-                value: "Text",
-                uri: "dm4.notes.text",
-                data_type_uri: "dm4.core.html",
-                index_mode_uris: ["dm4.core.fulltext"]
+                value:       "Text",
+                uri:         "dmx.notes.text",
+                dataTypeUri: "dmx.core.html"
             },
             {
-                value: "Note",
-                uri: "dm4.notes.note",
-                data_type_uri: "dm4.core.composite",
-                assoc_defs: [
+                value:       "Note",
+                uri:         "dmx.notes.note",
+                dataTypeUri: "dmx.core.entity",
+                compDefs: [
                     {
-                        child_type_uri:        "dm4.notes.title",
-                        child_cardinality_uri: "dm4.core.one",
-                        assoc_type_uri:        "dm4.core.composition_def"
+                        childTypeUri:        "dmx.notes.title",
+                        childCardinalityUri: "dmx.core.one"
                     },
                     {
-                        child_type_uri:        "dm4.notes.text",
-                        child_cardinality_uri: "dm4.core.one",
-                        assoc_type_uri:        "dm4.core.composition_def"
+                        childTypeUri:        "dmx.notes.text",
+                        childCardinalityUri: "dmx.core.one"
                     }
                 ],
-                view_config_topics: [
+                viewConfigTopics: [
                     {
-                        type_uri: "dm4.webclient.view_config",
-                        childs: {
-                            dm4.webclient.icon: "/de.deepamehta.notes/images/yellow-ball.png",
-                            dm4.webclient.show_in_create_menu: true
+                        typeUri: "dmx.webclient.view_config",
+                        children: {
+                            dmx.webclient.icon: "\uf24a",
+                            dmx.webclient.add_to_create_menu: true
                         }
                     }
                 ]
@@ -871,8 +866,8 @@ Make sure to add your interest in building on the respective plugin service as d
     <dependencies>
         <dependency>
             <groupId>systems.dmx</groupId>
-            <artifactId>deepamehta-accesscontrol</artifactId>
-            <version>4.8</version>
+            <artifactId>dmx-accesscontrol</artifactId>
+            <version>5.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
