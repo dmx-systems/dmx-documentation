@@ -82,8 +82,8 @@ Create the file ``pom.xml`` with this content:
         <modelVersion>4.0.0</modelVersion>
 
         <name>DMX Tagging</name>
-        <groupId>org.mydomain.dmx</groupId>
-        <artifactId>tagging</artifactId>
+        <groupId>org.mydomain</groupId>
+        <artifactId>dmx-tagging</artifactId>
         <version>0.1-SNAPSHOT</version>
         <packaging>bundle</packaging>
 
@@ -606,17 +606,17 @@ Example:
                 java/
                     org/
                         mydomain/
-                            deepamehta4/
+                            dmx/
                                 mycoolplugin/
                                     MyCoolPlugin.java
 
-Here the plugin package is ``org.mydomain.deepamehta4.mycoolplugin`` and the plugin main class is ``MyCoolPlugin``.
+Here the plugin package is ``org.mydomain.dmx.mycoolplugin`` and the plugin main class is ``MyCoolPlugin``.
 
 A plugin main file is a Java class that is derived from ``systems.dmx.core.osgi.PluginActivator``. The smallest possible plugin main file looks like this:
 
 .. code-block:: java
 
-    package org.mydomain.deepamehta4.mycoolplugin;
+    package org.mydomain.dmx.mycoolplugin;
 
     import systems.dmx.core.osgi.PluginActivator;
 
@@ -629,7 +629,7 @@ A plugin main file is a Java class that is derived from ``systems.dmx.core.osgi.
     * The plugin main class must be derived from ``PluginActivator`` and must be public.
 
 Furthermore when writing a plugin main file you must add 2 entries in the plugin's ``pom.xml``:
-    1. a <parent> element to declare the artifactId ``deepamehta-plugin``. This brings you necessary dependenies and the ``PluginActivator`` class.
+    1. a <parent> element to declare the artifactId ``dmx-plugin``. This brings you necessary dependenies and the ``PluginActivator`` class.
     2. a <build> element to configure the Maven Bundle Plugin. It needs to know what your plugin main class is. You must specify the fully-qualified class name.
 
 .. code-block:: xml
@@ -638,15 +638,15 @@ Furthermore when writing a plugin main file you must add 2 entries in the plugin
         <modelVersion>4.0.0</modelVersion>
 
         <name>My Cool Plugin</name>
-        <groupId>org.mydomain.dm4</groupId>
-        <artifactId>my-cool-plugin</artifactId>
+        <groupId>org.mydomain</groupId>
+        <artifactId>dmx-mycoolplugin</artifactId>
         <version>0.1-SNAPSHOT</version>
         <packaging>bundle</packaging>
 
         <parent>
             <groupId>systems.dmx</groupId>
-            <artifactId>deepamehta-plugin</artifactId>
-            <version>4.8</version>
+            <artifactId>dmx-plugin</artifactId>
+            <version>5.0-SNAPSHOT</version>
         </parent>
 
         <build>
@@ -657,10 +657,10 @@ Furthermore when writing a plugin main file you must add 2 entries in the plugin
                     <configuration>
                         <instructions>
                             <Bundle-SymbolicName>
-                                org.mydomain.dm4.my-cool-plugin
+                                org.mydomain.dmx-mycoolplugin
                             </Bundle-SymbolicName>
                             <Bundle-Activator>
-                                org.mydomain.deepamehta4.mycoolplugin.MyCoolPlugin
+                                org.mydomain.dmx.mycoolplugin.MyCoolPlugin
                             </Bundle-Activator>
                         </instructions>
                     </configuration>
@@ -687,20 +687,20 @@ Example:
 
 .. code-block:: java
 
-    package org.mydomain.deepamehta4.mycoolplugin;
+    package org.mydomain.dmx.mycoolplugin;
 
     import systems.dmx.core.Topic;
     import systems.dmx.core.model.TopicModel;
     import systems.dmx.core.osgi.PluginActivator;
     import systems.dmx.core.service.Directives;
-    import systems.dmx.core.service.event.PostCreateTopicListener;
-    import systems.dmx.core.service.event.PostUpdateTopicListener;
+    import systems.dmx.core.service.event.PostCreateTopic;
+    import systems.dmx.core.service.event.PostUpdateTopic;
 
     import java.util.logging.Logger;
 
 
 
-    public class MyCoolPlugin extends PluginActivator implements PostCreateTopicListener, PostUpdateTopicListener {
+    public class MyCoolPlugin extends PluginActivator implements PostCreateTopic, PostUpdateTopic {
 
         private Logger log = Logger.getLogger(getClass().getName());
 
