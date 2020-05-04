@@ -22,11 +22,11 @@ Build DMX from source:
 
 .. code-block:: bash
 
-    $ git clone git://github.com/jri/deepamehta.git
-    $ cd deepamehta
+    $ git clone https://git.dmx.systems/dmx-platform/dmx-platform.git
+    $ cd dmx-platform
     $ mvn install -P all
 
-This builds all components of the DMX Standard Distribution and installs them in your local Maven repository. You'll see a lot of information logged, cumulating in:
+This builds all components of the DMX platform and installs them in your local Maven repository. Tests are run; you'll see a lot of information logged, cumulating in:
 
 .. code-block:: text
 
@@ -34,7 +34,7 @@ This builds all components of the DMX Standard Distribution and installs them in
     [INFO] ------------------------------------------------------------------------
     [INFO] BUILD SUCCESS
     [INFO] ------------------------------------------------------------------------
-    [INFO] Total time: 53.515s
+    [INFO] Total time: 03:07 min
     ...
 
 ****************************
@@ -57,21 +57,15 @@ Naming Conventions
 
 .. hint::
 
-    When you are working with git, your new DMX repo should always start with 'dm4-',
-    eg. 'dm4-my-fancy-plugin'. The minor-version number is not part of the repo name.
+    It is convention to have prefix ``dmx-`` when creating a Git repo for your DMX plugin, eg. ``dmx-tagging``.
 
-    But the Maven Artifact (jar file) should include the minor-version number, to display the
-    compatibility with a certain DMX release, eg. dm48-my-fancy-plugin-0.1.jar or 
-    dm48-my-fancy-plugin-0.2-SNAPSHOT.jar . Usually a dm48- artefact needs adoption, to be 
-    compatible with the next major version DMX 4.9.
-
-From the developer's view a DMX plugin is just a directory on your hard disc. The directory can have an arbitrary name and exist at an arbitrary location. By convention the plugin directory begins with ``dm4-`` as it is aimed to the DMX 4 platform. The directory content adheres to a certain directory structure and file name conventions. The files are text files (xml, json, properties, java, js, css) and resources like images.
+From the developer's view a DMX plugin is a directory on your hard disc. The directory can have an arbitrary name and exist at an arbitrary location. By convention the plugin directory begins with ``dmx-`` as it is aimed to the DMX platform. The directory content adheres to a certain directory structure and file name conventions. The files are text files (xml, json, properties, java, js, css) and resources like images.
 
 To create the *DMX Tagging* plugin setup a directory structure as follows:
 
 .. code-block:: text
 
-    dm4-tagging/
+    dmx-tagging/
         pom.xml
         src/
             main/
@@ -143,8 +137,8 @@ Create the file ``plugin.properties``:
 
 .. code-block:: text
 
-    dm4.plugin.activate_after=de.deepamehta.webclient
-    dm4.plugin.model_version=1
+    dmx.plugin.model_version = 1
+    dmx.plugin.dependencies = systems.dmx.webclient
 
 Setup for Hot-Deployment
 ========================
@@ -218,7 +212,7 @@ In another terminal:
 
 .. code-block:: bash
 
-    $ cd dm4-tagging
+    $ cd dmx-tagging
     $ mvn clean package
 
 This builds the plugin. After some seconds you'll see:
@@ -410,19 +404,19 @@ Thus, the users database will always be compatible with the installed version of
 Plugin configuration
 ====================
 
-If your plugin comes with its own data model you must tell DMX the data model version it relies on. To do so, set the ``dm4.plugin.model_version`` configuration property in the ``plugin.properties`` file, e.g.:
+If your plugin comes with its own data model you must tell DMX the data model version it relies on. To do so, set the ``dmx.plugin.model_version`` configuration property in the ``plugin.properties`` file, e.g.:
 
 .. code-block:: text
 
-    dm4.plugin.model_version=2
+    dmx.plugin.model_version = 2
 
-DMX's migration machinery takes charge of running the plugin's migrations up to that configured number. If your plugin comes with no data model, you can specify ``0`` resp. omit the ``dm4.plugin.model_version`` property as ``0`` is its default value.
+DMX's migration machinery takes charge of running the plugin's migrations up to that configured number. If your plugin comes with no data model, you can specify ``0`` resp. omit the ``dmx.plugin.model_version`` property as ``0`` is its default value.
 
 Usually each plugin has its own ``plugin.properties`` file. It allows the developer to configure certain aspects of the plugin. The name of the ``plugin.properties`` file and its path within the plugin directory is fixed:
 
 .. code-block:: text
 
-    dm4-myplugin/src/main/resources/plugin.properties
+    dmx-myplugin/src/main/resources/plugin.properties
 
 If no ``plugin.properties`` file is present, the default configuration values apply.
 
@@ -452,13 +446,13 @@ Example:
 
 .. code-block:: text
 
-    dm4-myplugin/
+    dmx-myplugin/
         src/
             main/
                 java/
                     org/
                         mydomain/
-                            deepamehta4/
+                            dmx/
                                 myplugin/
                                     migrations/
                                         Migration2.java
@@ -471,9 +465,9 @@ Example:
                         migration6.json
                     plugin.properties
 
-This example plugin would have set ``dm4.plugin.model_version`` to 6 (configured in ``plugin.properties``), so 6 migrations are involved. 4 are declarative and 2 are imperative here.
+This example plugin would have set ``dmx.plugin.model_version`` to 6 (configured in ``plugin.properties``), so 6 migrations are involved. 4 are declarative and 2 are imperative here.
 
-Important: for each number between 1 and ``dm4.plugin.model_version`` exactly one migration file must exist. That is *either* a declarative migration file *or* an imperative migration file.
+Important: for each number between 1 and ``dmx.plugin.model_version`` exactly one migration file must exist. That is *either* a declarative migration file *or* an imperative migration file.
 
 It would be invalid if for a given number a) no migration file exists, or b) two migration files exist (one declarative and one imperative). In these cases the DMX migration machinery throws an error and the plugin is not activated.
 
@@ -555,7 +549,7 @@ Writing an imperative migration
 
 An imperative migration is a Java class that is derived from ``de.deepamehta.core.service.Migration`` and that overrides the ``run()`` method. The ``run()`` method is called by DMX to run the migration.
 
-Within the migration you have access to the DMX *Core Service* through the ``dm4`` object. By the means of the Core Service you can perform arbitrary database operations. Typically this involves importing further objects from the ``de.deepamehta.core`` API.
+Within the migration you have access to the DMX *Core Service* through the ``dmx`` object. By the means of the Core Service you can perform arbitrary database operations. Typically this involves importing further objects from the ``de.deepamehta.core`` API.
 
 As an example see a migration that comes with the *DMX Topicmaps* plugin:
 
@@ -570,9 +564,10 @@ As an example see a migration that comes with the *DMX Topicmaps* plugin:
 
         @Override
         public void run() {
-            TopicType type = dm4.getTopicType("dm4.topicmaps.topicmap");
-            type.addAssocDef(mf.newAssociationDefinitionModel("dm4.core.composition_def",
-                "dm4.topicmaps.topicmap", "dm4.topicmaps.state", "dm4.core.one", "dm4.core.one"));
+            TopicType type = dmx.getTopicType("dmx.topicmaps.topicmap");
+            type.addCompDef(mf.newCompDefModel(
+                "dmx.topicmaps.topicmap", "dmx.topicmaps.state", "dmx.core.one")
+            );
         }
     }
 
@@ -605,7 +600,7 @@ Example:
 
 .. code-block:: text
 
-    dm4-mycoolplugin/
+    dmx-mycoolplugin/
         src/
             main/
                 java/
@@ -742,11 +737,11 @@ To be recogbized the service interface *must* by convention end its name on ``..
 
 A DMX plugin can define *one* service interface at most. More than one service interface is not supported.
 
-As an example see the *Topicmaps* plugin (part of the DMX Standard Distribution):
+As an example see the *Topicmaps* plugin (part of the DMX platform):
 
 .. code-block:: text
 
-    dm4-topicmaps/
+    dmx-topicmaps/
         src/
             main/
                 java/
@@ -885,7 +880,7 @@ To deal with other plugin services coming and going your plugin can override 2 h
 
 The single argument of the 2 ``serviceArrived`` and ``serviceGone`` hooks is the respective service object, declared generically just as ``PluginService``. (Remember, ``PluginService`` is the common base interface for all plugin services.) So casting is required. In ``serviceArrived`` you typically store the service object in a private instance variable. In ``serviceGone`` you typically set the instance variable to ``null`` in order to release the service object.
 
-As an example, see how the *Workspaces* plugin (part of the DMX Standard Distribution) consumes the *Facets* service:
+As an example, see how the *Workspaces* plugin (part of the DMX platform) consumes the *Facets* service:
 
 .. code-block:: java
 
@@ -941,7 +936,7 @@ To make your plugin service RESTful you must:
 
 * Annotate service method parameters with ``@PathParam`` to map URI template parameters to service method parameters.
 
-As an example let's see how the *Topicmaps* plugin (part of the DMX Standard Distribution) annotates its main class and service methods:
+As an example let's see how the *Topicmaps* plugin (part of the DMX platform) annotates its main class and service methods:
 
 .. code-block:: java
 
