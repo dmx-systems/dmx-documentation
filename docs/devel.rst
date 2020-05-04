@@ -82,15 +82,15 @@ Create the file ``pom.xml`` with this content:
         <modelVersion>4.0.0</modelVersion>
 
         <name>DMX Tagging</name>
-        <groupId>org.mydomain.dm4</groupId>
+        <groupId>org.mydomain.dmx</groupId>
         <artifactId>tagging</artifactId>
         <version>0.1-SNAPSHOT</version>
         <packaging>bundle</packaging>
 
         <parent>
-            <groupId>de.deepamehta</groupId>
-            <artifactId>deepamehta-plugin</artifactId>
-            <version>4.8</version>
+            <groupId>systems.dmx</groupId>
+            <artifactId>dmx-plugin</artifactId>
+            <version>5.0-SNAPSHOT</version>
         </parent>
 
         <build>
@@ -101,7 +101,7 @@ Create the file ``pom.xml`` with this content:
                     <configuration>
                         <instructions>
                             <Bundle-SymbolicName>
-                                org.mydomain.dm4-tagging
+                                org.mydomain.dmx-tagging
                             </Bundle-SymbolicName>
                         </instructions>
                     </configuration>
@@ -547,18 +547,18 @@ As you see, this migration defines 3 topic types (and no other things): *Title* 
 Writing an imperative migration
 ===============================
 
-An imperative migration is a Java class that is derived from ``de.deepamehta.core.service.Migration`` and that overrides the ``run()`` method. The ``run()`` method is called by DMX to run the migration.
+An imperative migration is a Java class that is derived from ``systems.dmx.core.service.Migration`` and that overrides the ``run()`` method. The ``run()`` method is called by DMX to run the migration.
 
-Within the migration you have access to the DMX *Core Service* through the ``dmx`` object. By the means of the Core Service you can perform arbitrary database operations. Typically this involves importing further objects from the ``de.deepamehta.core`` API.
+Within the migration you have access to the DMX *Core Service* through the ``dmx`` object. By the means of the Core Service you can perform arbitrary database operations. Typically this involves importing further objects from the ``systems.dmx.core`` API.
 
 As an example see a migration that comes with the *DMX Topicmaps* plugin:
 
 .. code-block:: java
 
-    package de.deepamehta.topicmaps.migrations;
+    package systems.dmx.topicmaps.migrations;
 
-    import de.deepamehta.core.TopicType;
-    import de.deepamehta.core.service.Migration;
+    import systems.dmx.core.TopicType;
+    import systems.dmx.core.service.Migration;
 
     public class Migration3 extends Migration {
 
@@ -612,13 +612,13 @@ Example:
 
 Here the plugin package is ``org.mydomain.deepamehta4.mycoolplugin`` and the plugin main class is ``MyCoolPlugin``.
 
-A plugin main file is a Java class that is derived from ``de.deepamehta.core.osgi.PluginActivator``. The smallest possible plugin main file looks like this:
+A plugin main file is a Java class that is derived from ``systems.dmx.core.osgi.PluginActivator``. The smallest possible plugin main file looks like this:
 
 .. code-block:: java
 
     package org.mydomain.deepamehta4.mycoolplugin;
 
-    import de.deepamehta.core.osgi.PluginActivator;
+    import systems.dmx.core.osgi.PluginActivator;
 
     public class MyCoolPlugin extends PluginActivator {
     }
@@ -644,7 +644,7 @@ Furthermore when writing a plugin main file you must add 2 entries in the plugin
         <packaging>bundle</packaging>
 
         <parent>
-            <groupId>de.deepamehta</groupId>
+            <groupId>systems.dmx</groupId>
             <artifactId>deepamehta-plugin</artifactId>
             <version>4.8</version>
         </parent>
@@ -674,7 +674,7 @@ Listen to DMX Core events
 
 In particular situations the DMX Core fires events, e.g. before and after it creates a new topic in the database. Your plugin can listen to these events and react in its own way.
 
-Listening to a DMX Core event means implementing the corresponding listener interface. A listener interface consist of just one method: the *listener method*. That method is called by the DMX Core when the event is fired. The listener interfaces are located in package ``de.deepamehta.core.service.event``.
+Listening to a DMX Core event means implementing the corresponding listener interface. A listener interface consist of just one method: the *listener method*. That method is called by the DMX Core when the event is fired. The listener interfaces are located in package ``systems.dmx.core.service.event``.
 
 To listen to a DMX Core event, in the plugin main class you must:
 
@@ -689,12 +689,12 @@ Example:
 
     package org.mydomain.deepamehta4.mycoolplugin;
 
-    import de.deepamehta.core.Topic;
-    import de.deepamehta.core.model.TopicModel;
-    import de.deepamehta.core.osgi.PluginActivator;
-    import de.deepamehta.core.service.Directives;
-    import de.deepamehta.core.service.event.PostCreateTopicListener;
-    import de.deepamehta.core.service.event.PostUpdateTopicListener;
+    import systems.dmx.core.Topic;
+    import systems.dmx.core.model.TopicModel;
+    import systems.dmx.core.osgi.PluginActivator;
+    import systems.dmx.core.service.Directives;
+    import systems.dmx.core.service.event.PostCreateTopicListener;
+    import systems.dmx.core.service.event.PostUpdateTopicListener;
 
     import java.util.logging.Logger;
 
@@ -750,19 +750,19 @@ As an example see the *Topicmaps* plugin (part of the DMX platform):
                             topicmaps/
                                 TopicmapsService.java
 
-The service interface of the *Topicmaps* plugin is named ``TopicmapsService``. The plugin package is ``de.deepamehta.topicmaps``.
+The service interface of the *Topicmaps* plugin is named ``TopicmapsService``. The plugin package is ``systems.dmx.topicmaps``.
 
 The *Topicmaps* service interface looks like this:
 
 .. code-block:: java
 
-    package de.deepamehta.topicmaps.service;
+    package systems.dmx.topicmaps.service;
 
-    import de.deepamehta.topicmaps.TopicmapRenderer;
-    import de.deepamehta.topicmaps.model.ClusterCoords;
-    import de.deepamehta.topicmaps.model.Topicmap;
+    import systems.dmx.topicmaps.TopicmapRenderer;
+    import systems.dmx.topicmaps.model.ClusterCoords;
+    import systems.dmx.topicmaps.model.Topicmap;
 
-    import de.deepamehta.core.Topic;
+    import systems.dmx.core.Topic;
 
 
     public interface TopicmapsService {
@@ -808,13 +808,13 @@ As an example see the implementation of the *Topicmaps* service:
 
 .. code-block:: java
 
-    package de.deepamehta.topicmaps;
+    package systems.dmx.topicmaps;
 
-    import de.deepamehta.topicmaps.model.Topicmap;
-    import de.deepamehta.topicmaps.TopicmapsService;
+    import systems.dmx.topicmaps.model.Topicmap;
+    import systems.dmx.topicmaps.TopicmapsService;
 
-    import de.deepamehta.core.Topic;
-    import de.deepamehta.core.osgi.PluginActivator;
+    import systems.dmx.core.Topic;
+    import systems.dmx.core.osgi.PluginActivator;
 
 
 
@@ -868,7 +868,7 @@ Make sure to add your interest in building on the respective plugin service as d
 
     <dependencies>
         <dependency>
-            <groupId>de.deepamehta</groupId>
+            <groupId>systems.dmx</groupId>
             <artifactId>deepamehta-accesscontrol</artifactId>
             <version>4.8</version>
         </dependency>
@@ -884,13 +884,13 @@ As an example, see how the *Workspaces* plugin (part of the DMX platform) consum
 
 .. code-block:: java
 
-    package de.deepamehta.workspaces;
+    package systems.dmx.workspaces;
 
-    import de.deepamehta.facets.FacetsService;
+    import systems.dmx.facets.FacetsService;
 
-    import de.deepamehta.core.osgi.PluginActivator;
-    import de.deepamehta.core.service.PluginService;
-    import de.deepamehta.core.service.annotation.ConsumesService;
+    import systems.dmx.core.osgi.PluginActivator;
+    import systems.dmx.core.service.PluginService;
+    import systems.dmx.core.service.annotation.ConsumesService;
 
 
 
@@ -940,13 +940,13 @@ As an example let's see how the *Topicmaps* plugin (part of the DMX platform) an
 
 .. code-block:: java
 
-    package de.deepamehta.topicmaps;
+    package systems.dmx.topicmaps;
 
-    import de.deepamehta.topicmaps.model.Topicmap;
-    import de.deepamehta.topicmaps.TopicmapsService;
+    import systems.dmx.topicmaps.model.Topicmap;
+    import systems.dmx.topicmaps.TopicmapsService;
 
-    import de.deepamehta.core.Topic;
-    import de.deepamehta.core.osgi.PluginActivator;
+    import systems.dmx.core.Topic;
+    import systems.dmx.core.osgi.PluginActivator;
 
     import javax.ws.rs.GET;
     import javax.ws.rs.PUT;
