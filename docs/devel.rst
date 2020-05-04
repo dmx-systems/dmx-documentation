@@ -383,8 +383,8 @@ Each plugin comes with its own data model. For each plugin DMX keeps track what 
 
 You as the developer know 2 things about your plugin: a) Which plugin version relies on which data model version, and b) How to transform the database content in order to advance from a given data model version to the next. So, when you ship your plugin you must equip it with 2 things:
 
-    * The information what data model version the plugin relies on.
-    * All the migrations required to update to that data model version.
+* The information what data model version the plugin relies on.
+* All the migrations required to update to that data model version.
 
 The relationship between plugin version and data model version might look as follows:
 
@@ -425,11 +425,11 @@ The two kinds of migrations
 
 As you've already learned, migrations serve different (but related) purposes: some just *create* new type definitions and others *modify* existing type definitions and/or transform existing database content. To support the developer with these different tasks DMX offers two kinds of migrations:
 
-    * A **Declarative Migration** is a JSON file that declares 4 kinds of things: topic types, association types, topics, associations. Use a declarative migration to let DMX create new types and instances in the database. Use a declarative migration to let your plugin setup the initial type definitions.
+* A **Declarative Migration** is a JSON file that declares 4 kinds of things: topic types, association types, topics, associations. Use a declarative migration to let DMX create new types and instances in the database. Use a declarative migration to let your plugin setup the initial type definitions.
 
-      With a declarative migration you can only create new things. You can't modify existing things. All you do with a declarative migration you could achieve with an imperative migration as well, but as long as you just want create new things, it is more convenient to do it declaratively.
+  With a declarative migration you can only create new things. You can't modify existing things. All you do with a declarative migration you could achieve with an imperative migration as well, but as long as you just want create new things, it is more convenient to do it declaratively.
 
-    * An **Imperative Migration** is a Java class that has access to the *DMX Core Service*. Thus, you can perform arbitrary database operations like creation, retrieval, update, deletion. Use an imperative migration when (a later version of) your plugin needs to modify existing type definitions and/or transform existing database content.
+* An **Imperative Migration** is a Java class that has access to the *DMX Core Service*. Thus, you can perform arbitrary database operations like creation, retrieval, update, deletion. Use an imperative migration when (a later version of) your plugin needs to modify existing type definitions and/or transform existing database content.
 
 The developer can equip a plugin with an arbitrary number of both, declarative migrations and imperative migrations.
 
@@ -579,13 +579,13 @@ The server side
 
 What a DMX plugin can do at the server side:
 
-    * **Listen to DMX Core events**. In particular situations the DMX Core fires events, e.g. before and after it creates a new topic in the database. Your plugin can listen to these events and react in its own way. Thus, the *DMX Workspaces* plugin e.g. ensures that each new topic is assigned to a workspace.
+* **Listen to DMX Core events**. In particular situations the DMX Core fires events, e.g. before and after it creates a new topic in the database. Your plugin can listen to these events and react in its own way. Thus, the *DMX Workspaces* plugin e.g. ensures that each new topic is assigned to a workspace.
 
-    * **Providing a service**. Your plugin can make its business logic, that is its service methods, accessible by other plugins (via OSGi) and/or by external applications (via HTTP/REST). Example: the service provided by the *DMX Topicmaps* plugin includes methods to add a topic to a topicmap or to change the topic's coordinates within a topicmap.
+* **Providing a service**. Your plugin can make its business logic, that is its service methods, accessible by other plugins (via OSGi) and/or by external applications (via HTTP/REST). Example: the service provided by the *DMX Topicmaps* plugin includes methods to add a topic to a topicmap or to change the topic's coordinates within a topicmap.
 
-    * **Consuming services provided by other plugins**. Example: in order to investigate a topic's workspace assignments and the current user's memberships the *DMX Access Control* plugin consumes the service provided by the *DMX Workspaces* plugin.
+* **Consuming services provided by other plugins**. Example: in order to investigate a topic's workspace assignments and the current user's memberships the *DMX Access Control* plugin consumes the service provided by the *DMX Workspaces* plugin.
 
-    * **Access the DMX Core Service**. The DMX *Core Service* provides the basic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: Topics, Associations, Topic Types, Association Types.
+* **Access the DMX Core Service**. The DMX *Core Service* provides the basic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: Topics, Associations, Topic Types, Association Types.
 
 Weather a DMX plugin has a server side part at all depends on the nature of the plugin. Plugins without a server side part include those which e.g. just define a data model or just provide a custom (JavaScript) renderer.
 
@@ -624,13 +624,15 @@ A plugin main file is a Java class that is derived from ``systems.dmx.core.osgi.
     }
 
 3 things are illustrated here:
-    * The plugin should be packaged in an unique namespace.
-    * The ``PluginActivator`` class needs to be imported.
-    * The plugin main class must be derived from ``PluginActivator`` and must be public.
+
+* The plugin should be packaged in an unique namespace.
+* The ``PluginActivator`` class needs to be imported.
+* The plugin main class must be derived from ``PluginActivator`` and must be public.
 
 Furthermore when writing a plugin main file you must add 2 entries in the plugin's ``pom.xml``:
-    1. a <parent> element to declare the artifactId ``dmx-plugin``. This brings you necessary dependenies and the ``PluginActivator`` class.
-    2. a <build> element to configure the Maven Bundle Plugin. It needs to know what your plugin main class is. You must specify the fully-qualified class name.
+
+1. a <parent> element to declare the artifactId ``dmx-plugin``. This brings you necessary dependenies and the ``PluginActivator`` class.
+2. a <build> element to configure the Maven Bundle Plugin. It needs to know what your plugin main class is. You must specify the fully-qualified class name.
 
 .. code-block:: xml
 
@@ -678,10 +680,10 @@ Listening to a DMX Core event means implementing the corresponding listener inte
 
 To listen to a DMX Core event, in the plugin main class you must:
 
-    * Import the listener interface.
-    * Declare the plugin main class implements that interface.
-    * Implement the listener method. Use the ``@Override`` annotation.
-    * Import the classes appearing in the listener method arguments.
+* Import the listener interface.
+* Declare the plugin main class implements that interface.
+* Implement the listener method. Use the ``@Override`` annotation.
+* Import the classes appearing in the listener method arguments.
 
 Example:
 
