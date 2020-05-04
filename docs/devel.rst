@@ -394,11 +394,14 @@ You as the developer know 2 things about your plugin: a) Which plugin version re
 
 The relationship between plugin version and data model version might look as follows:
 
-||= Plugin Version =||= Data Model Version =||
-|| 0.1 || 2 ||
-|| 0.2 || 5 ||
-|| 0.2.1 || 5 ||
-|| 0.3 || 6 ||
+==============  ==================
+Plugin Version  Data Model Version
+==============  ==================
+0.1             2
+0.2             5
+0.2.1           5
+0.3             6
+==============  ==================
 
 If e.g. version 0.1 of the plugin is currently installed, the database holds "2" as the current data model version. When the user updates to version 0.3 of the plugin, DMX's migration machinery will recognize that data model version 2 is present but version 6 is required. As a consequence DMX will consecutively run migrations 3 through 6. Once completed, the database holds "6" as the current data model version.
 
@@ -1002,10 +1005,13 @@ Extract values from a HTTP request
 
 This section describes in more detail how DMX (resp. the underlying JAX-RS implementation to be precise) extracts the service method argument values from the various parts of a HTTP request. As seen in the example above this is controlled by annotating the service method arguments. Besides ``@PathParam`` you can use further annotations:
 
-||= Annotation =||= Semantics =||
-|| ``@PathParam`` || Extracts the value of a URI template parameter ||
-|| ``@QueryParam`` || Extracts the value of a URI query parameter ||
-|| ``@HeaderParam`` || Extracts the value of a header ||
+================  ==============================================
+Annotation        Semantics
+================  ==============================================
+``@PathParam``    Extracts the value of a URI template parameter
+``@QueryParam``   Extracts the value of a URI query parameter
+``@HeaderParam``  Extracts the value of a header
+================  ==============================================
 
 A value extracted from a HTTP request is inherently a string. So the JAX-RS implementation must know how to actually construct a Java object (resp. a primitive value) from it. That's why the type of a service method argument that is annotated with one of these annotations must satisfy one of these criteria:
 
