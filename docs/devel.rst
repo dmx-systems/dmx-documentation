@@ -4,15 +4,45 @@ DMX Developer Guide
 
 This guide describes how to develop plugins for the DMX platform.
 
-A DMX plugin can contain both, a backend part, and/or a frontend part. The frontend part can either extend the DMX Webclient, or can be a proprietary web frontend (possibly exposing its own extension mechanism).
+************
+Introduction
+************
 
-To see how a DMX plugin fits in the overall DMX architecture go to [[ArchitectureOverview|Architecture Overview]].
+A DMX plugin can contain both, a backend part, and/or a frontend part. The frontend part can either extend the DMX Webclient, or can be a proprietary web frontend (possibly exposing its own extension mechanism).
 
 At the backend you'll work with Java; JAX-RS knowledge is useful. At the frontend you'll work with `Vue <https://vuejs.org>`_, `Vuex <https://vuex.vuejs.org>`_; `Element UI <https://element.eleme.io>`_ knowledge is useful.
 
-*********************
-Build DMX from source
-*********************
+What a DMX plugin can do
+========================
+
+Backend:
+
+* Provide a data model; change existing data models
+* Provide listeners to react on backend events (e.g. ``POST_UPDATE_TOPIC``, ``PRE_CREATE_ASSOCIATION``)
+* Implement plugin life-cycle hooks (e.g. ``preInstall``, ``init``, ``shutdown``, ``serviceArrived``)
+* Provide/consume services (business logic)
+
+    * Provide an OSGi service consumable by other plugins
+    * Consume OSGi services provided by other plugins
+    * Provide a REST service; you can make an OSGi service method RESTful just by adding JAX-RS annotations to it.
+
+Extending the DMX Webclient:
+
+* Provide a Vuex store module (for state management)
+* Mount Vue components into the Webclient; supply them with data and react to their events
+* Provide detail renderers (for topic/association rendering)
+* Provide topicmap renderers
+* Plug in items to the Create menu; provide Options components
+
+Building custom frontends; independent from DMX Webclient:
+
+* Utilize frontend libraries/frameworks of your own choice
+* Use the `dmx-api <https://git.dmx.systems/nodejs-modules/dmx-api>`_ library to access the DMX backend.
+* Optionally embed particular components from the DMX Webclient, e.g. the Topicmap Panel or the topic/association detail/form renderer. See `npm <https://www.npmjs.com/~jri>`_ for available components.
+
+******************************
+Build DMX platform from source
+******************************
 
 The best way to develop DMX plugins is to build the DMX platform from source first. This gives you a development environment which features hot-deployment: the DMX platform automatically redeploys your plugin once you make changes. This is very handy while development.
 
