@@ -2,20 +2,25 @@
 DMX Developer Guide
 ###################
 
-DMX is made to be extensible by external developers. Developers extend DMX by developing plugins (resp. "modules" resp. "applications" which is all synonymous). This guide teaches you how to develop DMX plugins.
+This guide describes how to develop plugins for the DMX platform.
+
+A DMX plugin can contain both, a backend part, and/or a frontend part. The frontend part can either extend the DMX Webclient, or can be a proprietary web frontend (possibly exposing its own extension mechanism).
 
 To see how a DMX plugin fits in the overall DMX architecture go to [[ArchitectureOverview|Architecture Overview]].
+
+At the backend you'll work with Java; JAX-RS knowledge is useful. At the frontend you'll work with `Vue <https://vuejs.org>`_, `Vuex <https://vuex.vuejs.org>`_; `Element UI <https://element.eleme.io>`_ knowledge is useful.
 
 *********************
 Build DMX from source
 *********************
 
-The best way to develop DMX plugins is to build DMX from source first. This way you get a hot-deploy environment, that is DMX redeploys your plugin automatically once you compile it. This is very handy while plugin development.
+The best way to develop DMX plugins is to build the DMX platform from source first. This gives you a development environment which features hot-deployment: the DMX platform automatically redeploys your plugin once you make changes. This is very handy while development.
 
 Requirements:
 
 * **Java 8** (other versions do *not* work)
-* **Maven 3**
+* **Maven**
+* **Node.js**
 * **Git**
 
 Build DMX from source:
