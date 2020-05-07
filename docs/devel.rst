@@ -18,8 +18,8 @@ What a DMX plugin can do
 Backend:
 
 * Provide a data model; change existing data models
-* Provide listeners to react on backend events (e.g. ``POST_UPDATE_TOPIC``, ``PRE_CREATE_ASSOCIATION``)
-* Implement plugin life-cycle hooks (e.g. ``preInstall``, ``init``, ``shutdown``, ``serviceArrived``)
+* Provide listeners for backend events (``postUpdateTopic()``, ``preCreateAssoc()``, ...)
+* Implement plugin life-cycle hooks (``preInstall()``, ``init()``, ``serviceArrived()``, ...)
 * Provide/consume services (business logic)
 
     * Provide an OSGi service consumable by other plugins
@@ -603,21 +603,21 @@ As an example see a migration that comes with the *DMX Topicmaps* plugin:
 
 Here an association definition is added to the *Topicmap* type subsequently.
 
-***************
-The server side
-***************
+******************
+The plugin backend
+******************
 
-What a DMX plugin can do at the server side:
+What a DMX plugin can do at backend:
 
 * **Listen to DMX Core events**. In particular situations the DMX Core fires events, e.g. before and after it creates a new topic in the database. Your plugin can listen to these events and react in its own way. Thus, the *DMX Workspaces* plugin e.g. ensures that each new topic is assigned to a workspace.
+
+* **Access the DMX Core Service**. The DMX *Core Service* provides the basic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: Topics, Associations, Topic Types, Association Types.
 
 * **Providing a service**. Your plugin can make its business logic, that is its service methods, accessible by other plugins (via OSGi) and/or by external applications (via HTTP/REST). Example: the service provided by the *DMX Topicmaps* plugin includes methods to add a topic to a topicmap or to change the topic's coordinates within a topicmap.
 
 * **Consuming services provided by other plugins**. Example: in order to investigate a topic's workspace assignments and the current user's memberships the *DMX Access Control* plugin consumes the service provided by the *DMX Workspaces* plugin.
 
-* **Access the DMX Core Service**. The DMX *Core Service* provides the basic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: Topics, Associations, Topic Types, Association Types.
-
-Weather a DMX plugin has a server side part at all depends on the nature of the plugin. Plugins without a server side part include those which e.g. just define a data model or just provide a custom (JavaScript) renderer.
+Whether a DMX plugin has a backend part depends on the the plugin's purpose. Plugins without a backend part include those which e.g. just define a data model or just provide a custom (JavaScript) renderer.
 
 The plugin main file
 ====================
