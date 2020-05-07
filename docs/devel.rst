@@ -601,7 +601,7 @@ As an example see a migration that comes with the *DMX Topicmaps* plugin:
         }
     }
 
-Here an association definition is added to the *Topicmap* type subsequently.
+Here a **Composition Definition** is added to the *Topicmap* type subsequently.
 
 ******************
 The plugin backend
