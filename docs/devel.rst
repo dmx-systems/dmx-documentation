@@ -8,37 +8,18 @@ This guide describes how to develop plugins for the DMX platform.
 Introduction
 ************
 
-A DMX plugin can contain both, a backend part, and/or a frontend part. The frontend part can either extend the DMX Webclient, or can be a proprietary web frontend (possibly exposing its own extension mechanism).
+The DMX platform is build for extensibility. By developing DMX plugins you can extend/customize DMX to your needs.
 
-At the backend you'll work with Java; JAX-RS knowledge is useful. At the frontend you'll work with `Vue <https://vuejs.org>`_, `Vuex <https://vuex.vuejs.org>`_; `Element UI <https://element.eleme.io>`_ knowledge is useful.
+One specialty about a DMX plugin is that it can contain all the parts that make up an application in a single hot-deployable unit (a .jar file):
 
-What a DMX plugin can do
-========================
+* **Evolutionary data model**, that is defining topic types, association types, role types, and default instances. Your data model can build upon, and even change, the data models provided by the platform or by other plugins. To do so in a controlled manner the platform provides a migration facility that runs the migrations provided by a plugin.
+* **Business logic** in form of (OSGi) service methods, event listeners, and plugin life-cycle hooks. A service method can be made RESTful just by adding JAX-RS annotations. JAX-RS knowledge is useful. Business logic can consume the (OSGi) services provided by other plugins, or by the platform itself.
+* For **Presentation** a plugin has 2 options:
 
-Backend:
+    * **Extending the DMX Webclient** e.g. by adding custom topic/topicmap renderers or by adding commands to the Webclient menus. The DMX Webclient is made of `Vue <https://vuejs.org>`_ (reactivity), `Vuex <https://vuex.vuejs.org>`_ for state management, and `Element UI <https://element.eleme.io>`_ as widget library. Knowledge about these libraries is useful.
+    * **Headless CMS**. Utilize frontend libraries/frameworks of your own choice. Optionally use the `dmx-api <https://git.dmx.systems/nodejs-modules/dmx-api>`_ Javascript library to access the DMX backend. Optionally embed particular components from the DMX Webclient, e.g. the Topicmap Panel or the topic/association detail/form renderer. See `npm <https://www.npmjs.com/~jri>`_ for available components.
 
-* Provide a data model; change existing data models
-* Provide listeners for backend events (``postUpdateTopic()``, ``preCreateAssoc()``, ...)
-* Implement plugin life-cycle hooks (``preInstall()``, ``init()``, ``serviceArrived()``, ...)
-* Provide/consume services (business logic)
-
-    * Provide an OSGi service consumable by other plugins
-    * Consume OSGi services provided by other plugins
-    * Provide a REST service; you can make an OSGi service method RESTful just by adding JAX-RS annotations to it.
-
-Extending the DMX Webclient:
-
-* Provide a Vuex store module (for state management)
-* Mount Vue components into the Webclient; supply them with data and react to their events
-* Provide detail renderers (for topic/association rendering)
-* Provide topicmap renderers
-* Plug in items to the Create menu; provide Options components
-
-Building custom frontends; independent from DMX Webclient:
-
-* Utilize frontend libraries/frameworks of your own choice
-* Use the `dmx-api <https://git.dmx.systems/nodejs-modules/dmx-api>`_ library to access the DMX backend.
-* Optionally embed particular components from the DMX Webclient, e.g. the Topicmap Panel or the topic/association detail/form renderer. See `npm <https://www.npmjs.com/~jri>`_ for available components.
+Technically the DMX plattform is a Java/OSGi based application server. OSGi is a service oriented component architecture to support modularity. A DMX plugin is also an *OSGi Bundle*. A DMX application consists of one or more plugins. Plugins provide services consumable by other plugins, and exposed via a REST API. Plugins can be installed/updated/uninstalled without restarting the server (Hot Deployment). When a service becomes unavailable all plugins depending on that service shutdown. When the service becomes available again, all depending plugins are activeated again. This has great advantages for both administration and development.
 
 ******************************
 Build DMX platform from source
