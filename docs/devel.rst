@@ -8,6 +8,8 @@ This guide describes how to develop plugins for the DMX platform.
 Introduction
 ************
 
+.. figure:: _static/dmx-arch.svg
+
 The DMX platform is build for extensibility. By developing DMX plugins you can extend/customize DMX to your needs.
 
 One specialty about a DMX plugin is that it can contain all the parts that make up an application in a single hot-deployable unit (a .jar file):
