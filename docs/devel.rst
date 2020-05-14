@@ -8,7 +8,7 @@ This guide describes how to develop plugins for the DMX platform.
 Introduction
 ************
 
-.. figure:: _static/dmx-arch.svg
+.. figure:: _static/dmx-plugin-types.svg
 
 The DMX platform is build for extensibility. By developing DMX plugins you can extend/customize DMX to your needs.
 
