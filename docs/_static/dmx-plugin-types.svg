@@ -26,7 +26,7 @@
   </defs>
   <path d="M 45 160 L 60 160 C 60 185 110 185 110 160 L 130 160 C 130 185 180 185 180.564 160 L 200 160 C 200 185 250 185 250 160 L 270 160 C 270 185 320 185 320 160 L 340 160 C 340 185 390 185 390 160 L 409.882 160 C 410 185 460 185 460 160 L 475 160 L 475 260 L 45 260 L 45 160 Z" style="fill: url(#color-1);"></path>
   <rect x="120" width="210" height="100" style="fill: url(#color-4);" y="10"></rect>
-  <rect x="340" width="50" height="100" style="fill: url(#color-4);" y="10"></rect>
+  <rect x="340" width="60" height="100" style="fill: url(#color-4);" y="10"></rect>
   <rect x="65" y="200" width="390" height="30" style="fill: rgb(235, 244, 255);"></rect>
   <line style="stroke: rgb(217, 217, 217); stroke-dasharray: 5px;" x1="5" y1="115" x2="475" y2="115"></line>
   <line style="paint-order: fill; fill: rgb(0, 0, 0); stroke: rgb(217, 217, 217);" x1="30" y1="260" x2="30" y2="10"></line>

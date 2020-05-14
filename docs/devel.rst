@@ -2,13 +2,54 @@
 DMX Developer Guide
 ###################
 
-This guide describes how to develop plugins for the DMX platform.
-
 ************
 Introduction
 ************
 
+The DMX plattform is an application server written in Java.
+It provides a framework for application developers.
+
+.. hint::
+
+    | Wording: DMX developers create *Plugins*.
+    | *Application* on the other hand is not an explicit concept in DMX. In practice an application is a set of 1 or more plugins installed together. Existing plugins can be mixed to new applications.
+
+This guide describes how to develop plugins for the DMX platform.
+
+One specialty about a DMX plugin (green) is that it contains both, a frontend part (presentation) and a backend part (data model, business logic). To give you an impression what a DMX plugin can do, this might happen once it is installed:
+
+* The database contains additional *Types*. Some of them may appear in the menus of the DMX Webclient. E.g. the `dmx-notes` plugin creates the "Note" topic type. The type appears in the Webclient search/create dialog, so the user can create/edit/search notes now.
+* Customized detail renderings. E.g. the `dmx-datetime` plugin provides formaters/editors for date and time values.
+* An additional *Topicmap Type* becomes available in the Webclient search/create dialog. E.g. once `dmx-geomaps` plugin is installed the user can create geo maps (besides normal topicmaps).
+* New commands appear in the Webclient context menu. E.g. the `dmx-dita` plugins defines a topic type "DITA Processor", and adds a "Run" command to the context menu of DITA Processor topics.
+* A new URL becomes available which launches a custom web frontend, completely independent from DMX Webclient. E.g. once the `dmx-mobile` plugin is installed you can launch its frontend via `http://localhost:8080/systems.dmx.mobile/`.
+* An additional OSGi backend service becomes available to be consumable by other plugins. E.g. a plugin can call the  ``createWorkspace()`` method of the `Workspaces Service` (as provided by the `dmx-workspaces` plugin).
+* An additional REST service becomes available at a dedicated namespace URI. E.g. when the `dmx-topicmaps` plugin is installed its REST service is availble under `http://localhost:8080/topicmaps`. So you can create/manipulate topicmaps regardless of which programming language you use.
+
+
+
+Let's see how plugins fit into the bigger picture:
+
 .. figure:: _static/dmx-plugin-types.svg
+
+The "heart" of the DMX platform is the *Core*. The Core a) is the runtime environment for DMX plugins, and b) provide plugins the *Core Service*, mainly for manipulating the database.
+
+Let's see how the various plugin types differ:
+
+Backend-only (P1)
+    Defining a data model: creating topic types, association types, role types.
+
+
+Frontend Host (P2)
+    Description here
+
+Frontend Extension (P3)
+    Description here
+
+Frontend (P4)
+    Description here
+
+-----
 
 The DMX platform is build for extensibility. By developing DMX plugins you can extend/customize DMX to your needs.
 
