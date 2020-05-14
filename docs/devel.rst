@@ -14,9 +14,9 @@ It provides a framework for application developers.
     | Wording: DMX developers create *Plugins*.
     | *Application* on the other hand is not an explicit concept in DMX. In practice an application is a set of 1 or more plugins installed together. Existing plugins can be mixed to new applications.
 
-This guide describes how to develop plugins for the DMX platform.
+This guide describes how to develop DMX plugins.
 
-One specialty about a DMX plugin (green) is that it contains both, a frontend part (presentation) and a backend part (data model, business logic). To give you an impression what a DMX plugin can do, this might happen once it is installed:
+One specialty about a DMX plugin is that it can contain any part a traditional application is made of: a *Data Model*, *Business Logic* (server side), and a web frontend. To give you an impression what a DMX plugin can do, these might the effects once you install one:
 
 * The database contains additional *Types*. Some of them may appear in the menus of the DMX Webclient. E.g. the `dmx-notes` plugin creates the "Note" topic type. The type appears in the Webclient search/create dialog, so the user can create/edit/search notes now.
 * Customized detail renderings. E.g. the `dmx-datetime` plugin provides formaters/editors for date and time values.
@@ -24,30 +24,45 @@ One specialty about a DMX plugin (green) is that it contains both, a frontend pa
 * New commands appear in the Webclient context menu. E.g. the `dmx-dita` plugins defines a topic type "DITA Processor", and adds a "Run" command to the context menu of DITA Processor topics.
 * A new URL becomes available which launches a custom web frontend, completely independent from DMX Webclient. E.g. once the `dmx-mobile` plugin is installed you can launch its frontend via `http://localhost:8080/systems.dmx.mobile/`.
 * An additional OSGi backend service becomes available to be consumable by other plugins. E.g. a plugin can call the  ``createWorkspace()`` method of the `Workspaces Service` (as provided by the `dmx-workspaces` plugin).
-* An additional REST service becomes available at a dedicated namespace URI. E.g. when the `dmx-topicmaps` plugin is installed its REST service is availble under `http://localhost:8080/topicmaps`. So you can create/manipulate topicmaps regardless of which programming language you use.
+* An additional REST service becomes available at a dedicated namespace URI. E.g. when the `dmx-topicmaps` plugin is installed its REST service is available under `http://localhost:8080/topicmaps`. So you can create/manipulate topicmaps regardless of which programming language you use.
 
+A DMX plugin contains one or more of these effects, in an arbitrary combination.
 
+In every case a plugin is a single ``.jar`` file prefixed by ``dmx-``, e.g. ``dmx-geomaps-0.1.jar``. A pluging is hot-deployed/stopped/updated at runtime by (re)moving that .jar file to/from ``bundle-deploy/``.
 
-Let's see how plugins fit into the bigger picture:
+Regarding the effects a plugin has it typically falls into one (or more) of 4 categories:
 
 .. figure:: _static/dmx-plugin-types.svg
 
-The "heart" of the DMX platform is the *Core*. The Core a) is the runtime environment for DMX plugins, and b) provide plugins the *Core Service*, mainly for manipulating the database.
-
-Let's see how the various plugin types differ:
-
 Backend-only (P1)
-    Defining a data model: creating topic types, association types, role types.
+    A plugin that acts purely at the backend:
 
+    * Define a **data model**: creating *Topic Types*, *Association Types*, *Role Types*, and default instances.
+    * Provide an **OSGi service**. Consume OSGi services provided by other plugins, or by the platform itself.
+    * Listen to Core **events**, and events fired by other plugins.
+    * React to **plugin life-cycle** hooks.
 
 Frontend Host (P2)
-    Description here
+    A plugin that creates a user interface (see P4) that is extensible by other plugins:
+
+    * Manage loading the frontend parts of installed plugins.
+
+    An example is the ``dmx-webclient`` plugin. Other plugins can extend it e.g. with additional renderers and menu items. 
 
 Frontend Extension (P3)
-    Description here
+    A plugin that extends the user interface created by another plugin (see P2).
+
+    Examples are the ``dmx-accesscontrol``, ``dmx-base``, ``dmx-contacts``, ``dmx-datetime``, ``dmx-details``, ``dmx-help-menu``, ``dmx-search``, ``dmx-topicmaps``, ``dmx-typeeditor``, ``dmx-workspaces``, and the ``dmx-geomaps`` plugins. All their frontend parts extend the DMX Webclient.
 
 Frontend (P4)
-    Description here
+    A plugin that creates a user interface:
+
+    * Has all the frontend assets (``index.html``, ``.vue``, ``.js``, ``.css``, ...).
+    * Communicates with the backend via ``dmx-api`` library.
+
+    Examples are the ``dmx-webclient`` and ``dmx-mobile`` plugins.
+
+The "heart" of the DMX platform is the *Core*. The Core a) is the runtime environment for DMX plugins, and b) provide plugins the *Core Service*, mainly for manipulating the database.
 
 -----
 
