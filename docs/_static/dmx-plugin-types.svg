@@ -25,18 +25,18 @@
     </linearGradient>
   </defs>
   <path d="M 45 160 L 60 160 C 60 185 110 185 110 160 L 130 160 C 130 185 180 185 180.564 160 L 200 160 C 200 185 250 185 250 160 L 270 160 C 270 185 320 185 320 160 L 340 160 C 340 185 390 185 390 160 L 409.882 160 C 410 185 460 185 460 160 L 475 160 L 475 260 L 45 260 L 45 160 Z" style="fill: url(#color-1);"></path>
-  <path d="M 65 135 C 65 115 105 115 105 135 L 105 160 C 105 180 65 180 65 160 L 65 135 Z" style="fill: url(#color-3);"></path>
   <rect x="120" width="210" height="100" style="fill: url(#color-4);" y="10"></rect>
+  <rect x="340" width="50" height="100" style="fill: url(#color-4);" y="10"></rect>
+  <rect x="65" y="200" width="390" height="30" style="fill: rgb(235, 244, 255);"></rect>
   <line style="stroke: rgb(217, 217, 217); stroke-dasharray: 5px;" x1="5" y1="115" x2="475" y2="115"></line>
+  <line style="paint-order: fill; fill: rgb(0, 0, 0); stroke: rgb(217, 217, 217);" x1="30" y1="260" x2="30" y2="10"></line>
+  <path d="M 65 135 C 65 115 105 115 105 135 L 105 160 C 105 180 65 180 65 160 L 65 135 Z" style="fill: url(#color-3);"></path>
   <path d="M 135 54.858 C 135 37.277 155 39.858 155 39.858 L 304.493 39.858 C 305 39.858 325 37.376 325 54.858 L 325 89.858 L 320 89.858 C 320 64.858 270 64.858 270 89.858 L 250 89.858 C 250 64.858 200 64.858 200 89.858 L 175 89.858 L 175 159.858 C 175 179.858 135 179.858 135 159.858 L 135 54.858 Z" style="fill: url(#color-3);"></path>
   <path d="M 205 89.858 C 204.702 69.716 244.702 69.716 245 89.858 L 245.298 160 C 245.298 180 205.298 180 205.298 160 L 205 89.858 Z" style="fill: url(#color-3);"></path>
-  <rect x="340" width="50" height="100" style="fill: url(#color-4);" y="10"></rect>
   <path d="M 345 89.858 C 345 69.858 385 69.858 385 89.858 L 385 159.858 C 385 179.858 345 179.858 345 159.858 L 345 89.858 Z" style="fill: url(#color-3);"></path>
-  <rect x="65" y="200" width="390" height="30" style="fill: rgb(235, 244, 255);"></rect>
-  <line style="paint-order: fill; fill: rgb(0, 0, 0); stroke: rgb(217, 217, 217);" x1="30" y1="260" x2="30" y2="10"></line>
-  <text transform="matrix(1, 0, 0, 1, -11.125, -108.90625)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 12px; white-space: pre; text-anchor: middle;"><tspan x="270.652" y="327.756">Core Service</tspan><tspan x="270.652" dy="1em">​</tspan></text>
-  <text transform="matrix(1, 0, 0, 1, -10.671875, -78.40625)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 12px; text-anchor: middle; white-space: pre;"><tspan x="270.652" y="327.756">DMX Core</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
-  <text transform="matrix(0, -1, 1, 0, -308.362244, 485.703125)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 12px; white-space: pre;"><tspan x="270.652" y="327.756">Backend</tspan><tspan x="270.652" dy="1em">​</tspan></text>
+  <text transform="matrix(1, 0, 0, 1, -11.125, -108.90625)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; text-anchor: middle; white-space: pre;"><tspan x="270.652" y="327.756">Core Service</tspan><tspan x="270.652" dy="1em">​</tspan></text>
+  <text transform="matrix(1, 0, 0, 1, -10.671875, -78.40625)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; text-anchor: middle; white-space: pre;"><tspan x="270.652" y="327.756">DMX Core</tspan><tspan x="270.652" dy="1em">​</tspan></text>
+  <text transform="matrix(0, -1, 1, 0, -308.362244, 483.703125)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 12px; white-space: pre;"><tspan x="270.652" y="327.756">Backend</tspan><tspan x="270.652" dy="1em">​</tspan></text>
   <text transform="matrix(0, -1, 1, 0, -308.362244, 359.131287)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 12px; white-space: pre;"><tspan x="270.652" y="327.756">Frontend</tspan><tspan x="270.652" dy="1em">​</tspan></text>
   <text transform="matrix(1, 0, 0, 1, -140.640625, -303.09375)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; white-space: pre;"><tspan x="270.652" y="327.756">F1</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
   <text transform="matrix(1, 0, 0, 1, 79.359375, -303.09375)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; white-space: pre;"><tspan x="270.652" y="327.756">F2</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
@@ -44,4 +44,8 @@
   <text transform="matrix(1, 0, 0, 1, -115.6875, -179.734375)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; white-space: pre; text-anchor: middle;"><tspan x="270.652" y="327.756">P2</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
   <text transform="matrix(1, 0, 0, 1, -45.6875, -179.734375)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; white-space: pre; text-anchor: middle;"><tspan x="270.652" y="327.756">P3</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
   <text transform="matrix(1, 0, 0, 1, 93.94722, -179.465698)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; white-space: pre; text-anchor: middle;"><tspan x="270.652" y="327.756">P4</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
+  <path d="M 85 174 H 103 L 103 171.5 L 110 175 L 103 178.5 L 103 176 H 85 V 174 Z" style="fill: rgb(168, 168, 168);" transform="matrix(0, 1, -1, 0, 260, 89.999992)" bx:shape="arrow 85 171.5 25 7 2 7 0 1@01a59891"></path>
+  <path d="M 84.955 174 H 102.955 L 102.955 171.5 L 109.955 175 L 102.955 178.5 L 102.955 176 H 84.955 V 174 Z" style="fill: rgb(168, 168, 168);" transform="matrix(0.000002, 1, -1, 0.000002, 329.999847, 90.044632)" bx:shape="arrow 84.955 171.5 25 7 2 7 0 1@e3d1b68a"></path>
+  <path d="M 85.142 174 H 103.142 L 103.142 171.5 L 110.142 175 L 103.142 178.5 L 103.142 176 H 85.142 V 174 Z" style="fill: rgb(168, 168, 168);" transform="matrix(0.000001, 1, -1, 0.000001, 399.999939, 89.858147)" bx:shape="arrow 85.142 171.5 25 7 2 7 0 1@feacf713"></path>
+  <path d="M 84.695 174 H 102.695 L 102.695 171.5 L 109.695 175 L 102.695 178.5 L 102.695 176 H 84.695 V 174 Z" style="fill: rgb(168, 168, 168);" transform="matrix(-0.000011, 1, -1, -0.000011, 540.001221, 90.30677)" bx:shape="arrow 84.695 171.5 25 7 2 7 0 1@8e98c4d0"></path>
 </svg>
