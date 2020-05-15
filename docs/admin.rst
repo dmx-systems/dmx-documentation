@@ -602,3 +602,11 @@ Here is what the log tells you when you do so:
     Jul 19, 2019 1:47:12 PM systems.dmx.accesscontrol.AccessControlPlugin unregisterAuthorizationMethod
     INFO: Unregistering authorization method "LDAP"
 
+Plugin Troubleshooting
+======================
+
+You may get Java error messages if you try to deploy a plugin and you are running DMX from the ``./dmx-linux.sh`` start script on a Linux computer with a GNOME desktop and you have ``openjdk-8-jre-headless`` installed. Edit the file ``/etc/java-8-openjdk/accessibility.properties`` with root privileges and comment out the following line:
+
+.. code:: bash
+
+    #assistive_technologies=org.GNOME.Accessibility.AtkWrapper
