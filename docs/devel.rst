@@ -36,40 +36,24 @@ A DMX plugin contains one or more of these effects, in an arbitrary combination.
 
 In every case a plugin is a single ``.jar`` file prefixed by ``dmx-``, e.g. ``dmx-geomaps-0.1.jar``. A plugin is hot-deployed/stopped/updated at runtime by (re)moving that .jar file to/from ``bundle-deploy/``.
 
-Regarding the effects a plugin has it typically falls into one (or more) of 4 categories:
+Regarding the effects a plugin (green) has it typically falls into one (or more) of 4 categories:
 
 .. figure:: _static/dmx-plugin-types.svg
 
 Back-end-only (P1)
-    A plugin that acts purely at the back-end. It typically performs one or more of these tasks:
+    A plugin that acts purely at the back-end. It has one or more of these properties:
 
-    * Define a **data model**: creating *Topic Types*, *Association Types*, *Role Types*, and default instances.
+    * Defines a **data model**: creating *Topic Types*, *Association Types*, *Role Types*, and default instances.
 
       A purely passive plugin that doesn't do anything but defining a data model is nothing unusual. Often in this case no Java code is required at all; you define a data model declaratively, in JSON.
 
       Examples are basically the `dmx-base <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-base>`_, `dmx-bookmarks <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-bookmarks>`_, `dmx-contacts <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-contacts>`_, `dmx-datetime <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-datetime>`_, `dmx-events <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-events>`_, `dmx-notes <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-notes>`_, and the `dmx-tags <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-tags>`_ plugins. These effectively create the included DMX applications (*Note Taking*, *Contact Management*, *Bookmark Management*, and *Calendar*), just by providing data models. All the functionality on the other hand (e.g. create, search, edit, navigate, share, delete) is generic platform functionality.
 
-    * Provide an **OSGi service**. Consume OSGi services provided by other plugins, or by the platform itself.
-    * Listen to Core **events**, and events fired by other plugins.
-    * Implement **plugin life-cycle** hooks.
+    * Provides an **OSGi service**. Consumes OSGi services provided by other plugins, or by the platform itself.
+    * Listens to Core **events**, and events fired by other plugins.
+    * Implements **plugin life-cycle** hooks.
 
-Front-end Host (P2)
-    A plugin that creates a user interface (see P4) that is extensible by other plugins:
-
-    * Manage loading the front-end parts of installed plugins.
-
-    An example is the `dmx-webclient <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-webclient>`_ plugin. Other plugins (see P3) can extend it e.g. with additional renderers and menu items. 
-
-Front-end Extension (P3)
-    A plugin that extends the user interface created by another plugin (see P2).
-
-    Examples are the `dmx-accesscontrol <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-accesscontrol>`_, `dmx-base <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-base>`_, `dmx-contacts <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-contacts>`_, `dmx-datetime <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-datetime>`_, `dmx-details <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-details>`_, `dmx-help-menu <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-help-menu>`_, `dmx-search <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-search>`_, `dmx-topicmaps <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-topicmaps>`_, `dmx-typeeditor <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-typeeditor>`_, `dmx-workspaces <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-workspaces>`_, and the `dmx-geomaps <https://git.dmx.systems/dmx-plugins/dmx-geomaps>`_ plugins. All their front-end parts extend the DMX Webclient.
-
-    When developing an extension for the DMX Webclient you'll get in touch with `Vue <https://vuejs.org>`_ (for reactivity), `Vuex <https://vuex.vuejs.org>`_ (state management), and possibly `Element UI <https://element.eleme.io>`_ (widgets) as these are the libraries the DMX Webclient is built from.
-
-    You can start developing a DMX Webclient extension by cloning `dmx-plugin-template <https://git.dmx.systems/dmx-plugins/dmx-plugin-template>`_.
-
-Front-end (P4)
+Front-end (P2)
     A plugin that creates a user interface:
 
     * Has all the assets (``index.html``, ``.vue``, ``.js``, ``.css``, ...) to create a SPA front-end.
@@ -78,6 +62,30 @@ Front-end (P4)
     Examples are the `dmx-webclient <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-webclient>`_ and `dmx-mobile <https://git.dmx.systems/dmx-plugins/dmx-mobile>`_ plugins.
 
     When developing a custom front-end you can freely choose the libraries. You're not bound to Vue or anything. For convenience you'll probably use the `dmx-api <https://git.dmx.systems/nodejs-modules/dmx-api>`_ library to communicate with the back-end. And *if* you're using Vue you can possibly re-use the Vue components the DMX Webclient is built from, e.g. the detail renderer/form generator (`dmx-object-renderer <https://git.dmx.systems/nodejs-modules/dmx-object-renderer>`_) or the topicmap rendering (`dmx-topicmap-panel <https://git.dmx.systems/nodejs-modules/dmx-topicmap-panel>`_).
+
+    Such a plugin can have a back-end part as well (see P1).
+
+Front-end Host (P3)
+    A plugin that creates a user interface (see P2) that is extensible by other plugins (see P4):
+
+    * Manage loading the front-end parts of installed plugins.
+
+    An example is the `dmx-webclient <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-webclient>`_ plugin. Other plugins can extend it e.g. with additional renderers and menu items.
+
+    Such a plugin can have a back-end part as well (see P1).
+
+Front-end Extension (P4)
+    A plugin that extends the user interface created by another plugin:
+
+    * Has all the assets (e.g. ``.vue``, ``.js``) as expected by the Front-end Host (see P3).
+
+    Examples are the `dmx-accesscontrol <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-accesscontrol>`_, `dmx-base <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-base>`_, `dmx-contacts <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-contacts>`_, `dmx-datetime <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-datetime>`_, `dmx-details <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-details>`_, `dmx-help-menu <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-help-menu>`_, `dmx-search <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-search>`_, `dmx-topicmaps <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-topicmaps>`_, `dmx-typeeditor <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-typeeditor>`_, `dmx-workspaces <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-workspaces>`_, and the `dmx-geomaps <https://git.dmx.systems/dmx-plugins/dmx-geomaps>`_ plugins. All their front-end parts extend the DMX Webclient.
+
+    When developing an extension for the DMX Webclient you'll get in touch with `Vue <https://vuejs.org>`_ (for reactivity), `Vuex <https://vuex.vuejs.org>`_ (state management), and possibly `Element UI <https://element.eleme.io>`_ (widgets) as these are the libraries the DMX Webclient is built from.
+
+    You can start developing a DMX Webclient extension by cloning `dmx-plugin-template <https://git.dmx.systems/dmx-plugins/dmx-plugin-template>`_.
+
+    Such a plugin can have a back-end part as well (see P1).
 
 The "heart" of the DMX platform is the *Core*. The Core a) is the runtime environment for DMX plugins, and b) allows plugins consuming the *DMX Core Service*, mainly for manipulating the database.
 
