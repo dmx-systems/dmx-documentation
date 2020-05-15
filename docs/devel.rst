@@ -18,19 +18,19 @@ It provides a framework for application developers.
     | Wording: DMX developers create *Plugins*.
     | *Application* on the other hand is not an explicit concept in DMX. In practice an application is a set of 1 or more plugins installed together. Existing plugins can be mixed to new applications.
 
-TODO: plugin vs. application
+TODO: explain plugin vs. application
 
 This guide describes how to develop DMX plugins.
 
-One specialty about a DMX plugin is that it can contain any part a traditional application is made of: a *Data Model*, *Business Logic* (server side), and a web front-end. To give you an impression what a DMX plugin can do, these might the effects once you install one:
+One specialty about a DMX plugin is that it can contain any part a traditional application is made of: a *Data Model*, *Business Logic* (server side), and a web front-end. To give you an impression what a DMX plugin can do, these might be the effects once you install one:
 
-* The database contains additional *Types*. Some of them may appear in the menus of the DMX Webclient. E.g. the `dmx-notes` plugin creates the "Note" topic type. The type appears in the Webclient search/create dialog, so the user can create/edit/search notes now.
-* Customized detail renderings. E.g. the `dmx-datetime` plugin provides formatters/editors for date and time values.
-* An additional *Topicmap Type* becomes available in the Webclient search/create dialog. E.g. once `dmx-geomaps` plugin is installed the user can create geo maps (besides normal topicmaps).
-* New commands appear in the Webclient context menu. E.g. the `dmx-dita` plugins defines a topic type "DITA Processor", and adds a "Run" command to the context menu of DITA Processor topics.
-* A new URL becomes available which launches a custom web front-end, completely independent from DMX Webclient. E.g. once the `dmx-mobile` plugin is installed you can launch its front-end via `http://localhost:8080/systems.dmx.mobile/`.
-* An additional OSGi back-end service becomes available to be consumable by other plugins. E.g. a plugin can call the  ``createWorkspace()`` method of the `Workspaces Service` (as provided by the `dmx-workspaces` plugin).
-* An additional REST service becomes available at a dedicated namespace URI. E.g. when the `dmx-topicmaps` plugin is installed its REST service is available under `http://localhost:8080/topicmaps`. So you can create/manipulate topicmaps regardless of which programming language you use.
+* The database contains additional *Types*. Some of them may appear in the menus of the DMX Webclient. E.g. the `dmx-notes <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-notes>`_ plugin creates the "Note" topic type. The type appears in the Webclient search/create dialog, so the user can create/edit/search notes now.
+* Customized detail renderings. E.g. the `dmx-datetime <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-datetime>`_ plugin provides formatters/editors for date and time values.
+* An additional *Topicmap Type* becomes available in the Webclient search/create dialog. E.g. once `dmx-geomaps <https://git.dmx.systems/dmx-plugins/dmx-geomaps>`_ plugin is installed the user can create geo maps (besides normal topicmaps).
+* New commands appear in the Webclient context menu. E.g. the `dmx-dita <https://git.dmx.systems/dmx-plugins/dmx-dita>`_ plugin defines a topic type "DITA Processor", and adds a "Run" command to the context menu of DITA Processor topics.
+* A new URL becomes available which launches a custom web front-end, completely independent from DMX Webclient. E.g. once the `dmx-mobile <https://git.dmx.systems/dmx-plugins/dmx-mobile>`_ plugin is installed you can launch its front-end via `http://localhost:8080/systems.dmx.mobile/`.
+* An additional OSGi back-end service becomes available to be consumable by other plugins. E.g. a plugin can call the  ``createWorkspace()`` method of the `Workspaces Service` (as provided by the `dmx-workspaces <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-workspaces>`_ plugin).
+* An additional REST service becomes available at a dedicated namespace URI. E.g. when the `dmx-topicmaps <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-topicmaps>`_ plugin is installed its REST service is available under `http://localhost:8080/topicmaps`. So you can create/manipulate topicmaps regardless of which programming language you use.
 
 A DMX plugin contains one or more of these effects, in an arbitrary combination.
 
@@ -45,9 +45,9 @@ Back-end-only (P1)
 
     * Define a **data model**: creating *Topic Types*, *Association Types*, *Role Types*, and default instances.
 
-      A plugin that does not do anything other than defining a data model is not unusual. Often in this case no Java code is required at all; you define a data model declaratively, in JSON.
+      A purely passive plugin that doesn't do anything but defining a data model is nothing unusual. Often in this case no Java code is required at all; you define a data model declaratively, in JSON.
 
-      Examples are basically the ``dmx-base``, ``dmx-bookmarks``, ``dmx-contacts``, ``dmx-datetime``, ``dmx-events``, ``dmx-notes``, ``dmx-tags`` plugins. These effectively create the included DMX applications ("Note Taking", "Contact Management", "Bookmark Management", and "Calender"), just by providing data models. All the functionality on the other hand (create, search, edit, navigate, share, delete) is generic platform functionality.
+      Examples are basically the `dmx-base <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-base>`_, `dmx-bookmarks <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-bookmarks>`_, `dmx-contacts <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-contacts>`_, `dmx-datetime <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-datetime>`_, `dmx-events <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-events>`_, `dmx-notes <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-notes>`_, and the `dmx-tags <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-tags>`_ plugins. These effectively create the included DMX applications (*Note Taking*, *Contact Management*, *Bookmark Management*, and *Calendar*), just by providing data models. All the functionality on the other hand (e.g. create, search, edit, navigate, share, delete) is generic platform functionality.
 
     * Provide an **OSGi service**. Consume OSGi services provided by other plugins, or by the platform itself.
     * Listen to Core **events**, and events fired by other plugins.
@@ -58,22 +58,22 @@ Front-end Host (P2)
 
     * Manage loading the front-end parts of installed plugins.
 
-    An example is the ``dmx-webclient`` plugin. Other plugins can extend it e.g. with additional renderers and menu items. 
+    An example is the `dmx-webclient <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-webclient>`_ plugin. Other plugins (see P3) can extend it e.g. with additional renderers and menu items. 
 
 Front-end Extension (P3)
     A plugin that extends the user interface created by another plugin (see P2).
 
-    Examples are the ``dmx-accesscontrol``, ``dmx-base``, ``dmx-contacts``, ``dmx-datetime``, ``dmx-details``, ``dmx-help-menu``, ``dmx-search``, ``dmx-topicmaps``, ``dmx-typeeditor``, ``dmx-workspaces``, and the ``dmx-geomaps`` plugins. All their front-end parts extend the DMX Webclient.
+    Examples are the `dmx-accesscontrol <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-accesscontrol>`_, `dmx-base <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-base>`_, `dmx-contacts <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-contacts>`_, `dmx-datetime <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-datetime>`_, `dmx-details <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-details>`_, `dmx-help-menu <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-help-menu>`_, `dmx-search <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-search>`_, `dmx-topicmaps <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-topicmaps>`_, `dmx-typeeditor <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-typeeditor>`_, `dmx-workspaces <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-workspaces>`_, and the `dmx-geomaps <https://git.dmx.systems/dmx-plugins/dmx-geomaps>`_ plugins. All their front-end parts extend the DMX Webclient.
 
-    You can start developing such a plugin by cloning `dmx-plugin-template`.
+    You can start developing such a plugin by cloning `dmx-plugin-template <https://git.dmx.systems/dmx-plugins/dmx-plugin-template>`_.
 
 Front-end (P4)
     A plugin that creates a user interface:
 
     * Has all the front-end assets (``index.html``, ``.vue``, ``.js``, ``.css``, ...).
-    * Communicates with the back-end via ``dmx-api`` library.
+    * Communicates with the back-end via `dmx-api <https://git.dmx.systems/nodejs-modules/dmx-api>`_ library.
 
-    Examples are the ``dmx-webclient`` and ``dmx-mobile`` plugins.
+    Examples are the `dmx-webclient <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-webclient>`_ and `dmx-mobile <https://git.dmx.systems/dmx-plugins/dmx-mobile>`_ plugins.
 
 The "heart" of the DMX platform is the *Core*. The Core a) is the runtime environment for DMX plugins, and b) allows plugins consuming the *DMX Core Service*, mainly for manipulating the database.
 
