@@ -25,10 +25,10 @@
     </linearGradient>
   </defs>
   <path d="M 45 160 L 60 160 C 60 185 110 185 110 160 L 130 160 C 130 185 180 185 180.564 160 L 200 160 C 200 185 250 185 250 160 L 270 160 C 270 185 320 185 320 160 L 340 160 C 340 185 390 185 390 160 L 409.882 160 C 410 185 460 185 460 160 L 475 160 L 475 260 L 45 260 L 45 160 Z" style="fill: url(#color-1);"></path>
-  <rect x="195" width="210" height="100" style="fill: url(#color-4);" y="10"></rect>
+  <rect x="195" width="205" height="100" style="fill: url(#color-4);" y="10"></rect>
   <rect x="125" width="60" height="100" style="fill: url(#color-4);" y="10"></rect>
   <rect x="65" y="200" width="390" height="30" style="fill: rgb(235, 244, 255);"></rect>
-  <line style="stroke: rgb(217, 217, 217); stroke-dasharray: 5px;" x1="5" y1="115" x2="475" y2="115"></line>
+  <line style="stroke: rgb(217, 217, 217); stroke-dasharray: 5px; stroke-width: 2px;" x1="5" y1="115" x2="475" y2="115"></line>
   <line style="paint-order: fill; fill: rgb(0, 0, 0); stroke: rgb(217, 217, 217);" x1="30" y1="260" x2="30" y2="10"></line>
   <path d="M 65 135 C 65 115 105 115 105 135 L 105 160 C 105 180 65 180 65 160 L 65 135 Z" style="fill: url(#color-3);"></path>
   <path d="M 205 55 C 205 37 225 40 225 40 L 374 40 C 375 40 395 37 395 55 L 395 90 L 390 90 C 390 65 340 65 340 90 L 320 90 C 320 65 270 65 270 90 L 245 90 L 245 160 C 245 180 205 180 205 160 L 205 55 Z" style="fill: url(#color-3);"></path>

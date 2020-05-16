@@ -6,23 +6,24 @@ DMX Developer Guide
 Introduction
 ************
 
-DMX is a plugin container on top of a semantic storage.
-
-TODO: explain semantic storage
-
-The DMX platform is an application server written in Java.
+The DMX platform is a web application server written in Java.
 It provides a framework for application developers.
+
+Traditionally a web application consists of 3 parts: *Data Model*, *Business Logic* (server-side), and a front-end. In DMX there are no *applications*, there are *plugins*. One specialty about a DMX plugin (green) is that it can have both, a back-end part and a front-end part.
+
+.. figure:: _static/dmx-plugin-types.svg
+
+All installed plugins a) operate on the same semantic storage (governed by access control), b) provide services and consume services provided by other plugins, and c) can have a client-side part. At client-side a plugin either *creates* a front-end, or *extends* an existing front-end.
+
+The heart of the DMX platform is the *Core*. The Core a) is the runtime environment for DMX plugins, and b) allows plugins consuming the *DMX Core Service*, mainly for manipulating the database.
 
 .. hint::
 
-    | Wording: DMX developers create *Plugins*.
-    | *Application* on the other hand is not an explicit concept in DMX. In practice an application is a set of 1 or more plugins installed together. Existing plugins can be mixed to new applications.
-
-TODO: explain plugin vs. application
+    The most prominent DMX plugin is probably `dmx-webclient <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-webclient>`_ (see P3). It creates an extensible web front-end: the well-known "DMX Webclient".
 
 This guide describes how to develop DMX plugins.
 
-One specialty about a DMX plugin is that it can contain any part a traditional application is made of: a *Data Model*, *Business Logic* (server side), and a web front-end. To give you an impression what a DMX plugin can do, these might be the effects once you install one:
+To give you an impression what a DMX plugin can do, these might be the effects once you install one:
 
 * The database contains additional *Types*. Some of them may appear in the menus of the DMX Webclient. E.g. the `dmx-notes <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-notes>`_ plugin creates the "Note" topic type. The type appears in the Webclient search/create dialog, so the user can create/edit/search notes now.
 * Customized detail renderings. E.g. the `dmx-datetime <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-datetime>`_ plugin provides formatters/editors for date and time values.
@@ -36,9 +37,7 @@ A DMX plugin contains one or more of these effects, in an arbitrary combination.
 
 In every case a plugin is a single ``.jar`` file prefixed by ``dmx-``, e.g. ``dmx-geomaps-0.1.jar``. A plugin is hot-deployed/stopped/updated at runtime by (re)moving that .jar file to/from ``bundle-deploy/``.
 
-Regarding the effects a plugin (green) has it typically falls into one (or more) of 4 categories:
-
-.. figure:: _static/dmx-plugin-types.svg
+Depending on the effects a plugin has it falls into one (or more) of 4 categories:
 
 Back-end-only (P1)
     A plugin that acts purely at the back-end. It has one or more of these properties:
@@ -86,8 +85,6 @@ Front-end Extension (P4)
     You can start developing a DMX Webclient extension by cloning `dmx-plugin-template <https://git.dmx.systems/dmx-plugins/dmx-plugin-template>`_.
 
     Such a plugin can have a back-end part as well (see P1).
-
-The "heart" of the DMX platform is the *Core*. The Core a) is the runtime environment for DMX plugins, and b) allows plugins consuming the *DMX Core Service*, mainly for manipulating the database.
 
 -----
 
