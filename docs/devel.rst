@@ -6,16 +6,18 @@ DMX Developer Guide
 Introduction
 ************
 
-The DMX platform is a web application server written in Java.
+The DMX platform is a web application server, written in Java.
 It provides a framework for application developers.
 
-Traditionally a web application consists of 3 parts: *Data Model*, *Business Logic* (server-side), and a front-end. In DMX there are no *applications*, there are *plugins*. One specialty about a DMX plugin (green) is that it can have both, a back-end part and a front-end part.
+Traditionally a web application consists of 3 parts: *data model*, *business logic* (server-side), and a front-end. In DMX there are no *applications*. Instead there is the DMX platform on one hand, and *DMX plugins* on the other, nothing else. One specialty about a DMX plugin (green) is that it can contain both, a back-end portion and a front-end portion, in one single hot-deployable ``.jar`` file.
 
 .. figure:: _static/dmx-plugin-types.svg
 
-All installed plugins a) operate on the same semantic storage (governed by access control), b) provide services and consume services provided by other plugins, and c) can have a client-side part. At client-side a plugin either *creates* a front-end, or *extends* an existing front-end.
+In its back-end portion (see P1) a plugin can define a data model (creating *Types* and their relationships), and/or provide business logic in form of a service (consumable by other plugins or through a REST API). In its client-side portion a plugin either *creates* a front-end (see P2, P3), or *extends* an existing front-end (see P4).
 
-The heart of the DMX platform is the *Core*. The Core a) is the runtime environment for DMX plugins, and b) allows plugins consuming the *DMX Core Service*, mainly for manipulating the database.
+All installed plugins operate on the same semantic storage (with access restrictions applied). Operating on the semantic storage is possible exclusively through the *DMX Core Service*, which is injected into every plugin.
+
+The heart of the platform is the *DMX Core*. The Core provides the runtime environment for DMX plugins. The Core a) loads plugins and manages their life-cycle, and b) governs all access to the semantic storage, and provides this duty as *DMX Core Service*.
 
 .. hint::
 

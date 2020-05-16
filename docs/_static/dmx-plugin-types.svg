@@ -24,6 +24,7 @@
       <stop style="stop-color: rgb(250, 242, 199);"></stop>
     </linearGradient>
   </defs>
+  <rect width="485" height="310" style="fill: rgb(255, 255, 255);"></rect>
   <path d="M 45 160 L 60 160 C 60 185 110 185 110 160 L 130 160 C 130 185 180 185 181 160 L 200 160 C 200 185 250 185 250 160 L 270 160 C 270 185 320 185 320 160 L 340 160 C 340 185 390 185 390 160 L 410 160 C 410 185 460 185 460 160 L 475 160 L 475 250 L 45 250 L 45 160 Z" style="fill: url(#color-1);"></path>
   <rect x="195" width="205" height="100" style="fill: url(#color-4);" y="10"></rect>
   <rect x="125" width="60" height="100" style="fill: url(#color-4);" y="10"></rect>
