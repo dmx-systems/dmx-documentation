@@ -29,6 +29,7 @@ The Semantic Storage
 ====================
 
 .. figure:: _static/dmx-person-example.svg
+.. figure:: _static/dmx-person-example-2.svg
 
 4 plugin categories
 ===================
