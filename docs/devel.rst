@@ -25,6 +25,14 @@ The heart of the platform is the *DMX Core*. The Core provides the runtime envir
 
 This guide describes how to develop DMX plugins.
 
+The Semantic Storage
+====================
+
+.. figure:: _static/dmx-person-example.svg
+
+4 plugin categories
+===================
+
 To give you an impression what a DMX plugin can do, these might be the effects once you install one:
 
 * The database contains additional *Types*. Some of them may appear in the menus of the DMX Webclient. E.g. the `dmx-notes <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-notes>`_ plugin creates the "Note" topic type. The type appears in the Webclient search/create dialog, so the user can create/edit/search notes now.

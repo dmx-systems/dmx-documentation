@@ -1,4 +1,4 @@
-<svg viewBox="0 0 485 310" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+<svg viewBox="15 0 470 255" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
   <defs>
     <bx:grid x="0" y="0" width="5" height="5"></bx:grid>
     <linearGradient id="color-1" bx:pinned="true">
@@ -24,38 +24,75 @@
       <stop style="stop-color: rgb(250, 242, 199);"></stop>
     </linearGradient>
   </defs>
-  <rect width="485" height="310" style="fill: rgb(255, 255, 255);"></rect>
-  <path d="M 45 160 L 60 160 C 60 185 110 185 110 160 L 130 160 C 130 185 180 185 181 160 L 200 160 C 200 185 250 185 250 160 L 270 160 C 270 185 320 185 320 160 L 340 160 C 340 185 390 185 390 160 L 410 160 C 410 185 460 185 460 160 L 475 160 L 475 250 L 45 250 L 45 160 Z" style="fill: url(#color-1);"></path>
-  <rect x="195" width="205" height="100" style="fill: url(#color-4);" y="10"></rect>
-  <rect x="125" width="60" height="100" style="fill: url(#color-4);" y="10"></rect>
-  <rect x="65" y="210" width="390" height="30" style="fill: rgb(235, 244, 255);"></rect>
-  <rect x="180" y="265" width="160" height="35" style="fill: rgb(179, 213, 255);"></rect>
-  <line style="stroke: rgb(217, 217, 217); stroke-dasharray: 5px; stroke-width: 2px;" x1="5" y1="115" x2="475" y2="115"></line>
-  <line style="paint-order: fill; fill: rgb(0, 0, 0); stroke: rgb(217, 217, 217);" x1="30" y1="300" x2="30" y2="10" bx:origin="0 0.531034"></line>
-  <path d="M 65 135 C 65 115 105 115 105 135 L 105 160 C 105 180 65 180 65 160 L 65 135 Z" style="fill: url(#color-3);"></path>
-  <path d="M 135 90 C 135 70 175 70 175 90 L 175 160 C 175 180 135 180 135 160 L 135 90 Z" style="fill: url(#color-3);"></path>
-  <path d="M 205 55 C 205 37 225 40 225 40 L 374 40 C 375 40 395 37 395 55 L 395 90 L 390 90 C 390 65 340 65 340 90 L 320 90 C 320 65 270 65 270 90 L 245 90 L 245 160 C 245 180 205 180 205 160 L 205 55 Z" style="fill: url(#color-3);"></path>
-  <path d="M 275 90 C 275 70 315 70 315 90 L 315 160 C 315 180 275 180 275 160 L 275 90 Z" style="fill: url(#color-3);"></path>
-  <text transform="matrix(1, 0, 0, 1, -10.765625, -97.859375)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; text-anchor: middle; white-space: pre;"><tspan x="270.652" y="327.756">DMX Core Service</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
-  <text transform="matrix(1, 0, 0, 1, -11.046875, -131.859375)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; text-anchor: middle; white-space: pre;"><tspan x="270.652" y="327.756">DMX Core</tspan><tspan x="270.652" dy="1em">​</tspan></text>
-  <text transform="matrix(0, -1, 1, 0, -308.362244, 503.703125)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 12px; white-space: pre;"><tspan x="270.652" y="327.756">Back-end</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
-  <text transform="matrix(0, -1, 1, 0, -308.399231, 360.131287)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 12px; white-space: pre;"><tspan x="270.652" y="327.756">Front-end</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
-  <text transform="matrix(1, 0, 0, 1, -140.640625, -303.09375)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; white-space: pre;"><tspan x="270.652" y="327.756">F1</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
-  <text transform="matrix(1, 0, 0, 1, -70.640625, -303.09375)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; white-space: pre;"><tspan x="270.652" y="327.756">F2</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
-  <text transform="matrix(1, 0, 0, 1, -185.6875, -179.734375)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; white-space: pre; text-anchor: middle;"><tspan x="270.652" y="327.756">P1</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
-  <text transform="matrix(1, 0, 0, 1, -116.05278, -179.465576)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; white-space: pre; text-anchor: middle;"><tspan x="270.652" y="327.756">P2</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
-  <text transform="matrix(1, 0, 0, 1, -45.687504, -179.734375)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; white-space: pre; text-anchor: middle;"><tspan x="270.652" y="327.756">P3</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
-  <text transform="matrix(1, 0, 0, 1, 24.312498, -179.734375)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; white-space: pre; text-anchor: middle;"><tspan x="270.652" y="327.756">P4</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
-  <text transform="matrix(1, 0, 0, 1, -10.30651, -42.4399)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 10px; text-anchor: middle; white-space: pre;"><tspan x="270.652" y="327.756">Semantic Storage</tspan><tspan x="270.6520080566406" dy="1em">​</tspan></text>
-  <path d="M 85 175 H 114 L 114 173 L 120 176 L 114 179 L 114 177 H 85 V 175 Z" style="fill: rgb(168, 168, 168);" transform="matrix(0.000003, 1, -1, 0.000003, 260.499603, 90.002487)" bx:shape="arrow 85 173 35 6 2 6 0 1@8fdf1dc7"></path>
-  <path d="M 85 175 H 114 L 114 173 L 120 176 L 114 179 L 114 177 H 85 V 175 Z" style="fill: rgb(168, 168, 168);" transform="matrix(0, 1, -1, 0, 330.5, 90.044861)" bx:shape="arrow 85 173 35 6 2 6 0 1@8fdf1dc7"></path>
-  <path d="M 85 175 H 114 L 114 173 L 120 176 L 114 179 L 114 177 H 85 V 175 Z" style="fill: rgb(168, 168, 168);" transform="matrix(-0.000003, 1, -1, -0.000003, 400.500336, 90.042381)" bx:shape="arrow 85 173 35 6 2 6 0 1@8fdf1dc7"></path>
-  <path d="M 85 175 H 114 L 114 173 L 120 176 L 114 179 L 114 177 H 85 V 175 Z" style="fill: rgb(168, 168, 168);" transform="matrix(0, 1, -1, 0, 470.5, 89.855339)" bx:shape="arrow 85 173 35 6 2 6 0 1@8fdf1dc7"></path>
-  <path d="M 80 175 H 99 L 99 173 L 105 176 L 99 179 L 99 177 H 80 V 175 Z" style="fill: rgb(168, 168, 168);" transform="matrix(0.019966, 0.999801, -0.999801, 0.019966, 433.867584, 156.464676)" bx:shape="arrow 80 173 25 6 2 6 0 1@25d53dd4"></path>
-  <path d="M 90 175.5 H 111 L 111 174 L 115 176 L 111 178 L 111 176.5 H 90 V 175.5 Z" style="fill: rgb(168, 168, 168);" transform="matrix(1, -0.000176, 0.000176, 1, 19.902563, -30.98418)" bx:shape="arrow 90 174 25 4 1 4 0 1@3f0fef50"></path>
-  <path d="M 90 175.5 H 111 L 111 174 L 115 176 L 111 178 L 111 176.5 H 90 V 175.5 Z" style="fill: rgb(168, 168, 168);" transform="matrix(-1, 0.000002, -0.000002, -1, 219.933838, 320.999878)" bx:shape="arrow 90 174 25 4 1 4 0 1@3f0fef50"></path>
-  <path d="M 90 175.5 H 111 L 111 174 L 115 176 L 111 178 L 111 176.5 H 90 V 175.5 Z" style="fill: rgb(168, 168, 168);" transform="matrix(1, -0.00025, 0.00025, 1, 90.034637, -30.971163)" bx:shape="arrow 90 174 25 4 1 4 0 1@3f0fef50"></path>
-  <path d="M 90 175.5 H 111 L 111 174 L 115 176 L 111 178 L 111 176.5 H 90 V 175.5 Z" style="fill: rgb(168, 168, 168);" transform="matrix(-1, 0.000254, -0.000254, -1, 290.12381, 320.977081)" bx:shape="arrow 90 174 25 4 1 4 0 1@3f0fef50"></path>
-  <path d="M 90 175.5 H 111 L 111 174 L 115 176 L 111 178 L 111 176.5 H 90 V 175.5 Z" style="fill: rgb(168, 168, 168);" transform="matrix(1, -0.000255, 0.000255, 1, 160.03447, -30.970722)" bx:shape="arrow 90 174 25 4 1 4 0 1@3f0fef50"></path>
-  <path d="M 90 175.5 H 111 L 111 174 L 115 176 L 111 178 L 111 176.5 H 90 V 175.5 Z" style="fill: rgb(168, 168, 168);" transform="matrix(-1, 0.000257, -0.000257, -1, 360.124969, 320.976746)" bx:shape="arrow 90 174 25 4 1 4 0 1@3f0fef50"></path>
+  <line style="fill: rgb(184, 184, 184); stroke: rgb(230, 230, 230); stroke-width: 2px;" x1="40" y1="131" x2="80" y2="77"></line>
+  <line style="fill: rgb(184, 184, 184); stroke: rgb(230, 230, 230); stroke-width: 2px;" x1="113" y1="123" x2="79" y2="77"></line>
+  <line style="fill: rgb(184, 184, 184); stroke: rgb(230, 230, 230); stroke-width: 2px;" x1="163" y1="28" x2="244" y2="132"></line>
+  <line style="fill: rgb(184, 184, 184); stroke: rgb(230, 230, 230); stroke-width: 2px;" x1="164" y1="27" x2="79" y2="77"></line>
+  <line style="fill: rgb(184, 184, 184); stroke: rgb(230, 230, 230); stroke-width: 2px;" x1="184" y1="192" x2="243" y2="132"></line>
+  <line style="fill: rgb(184, 184, 184); stroke: rgb(230, 230, 230); stroke-width: 2px;" x1="253" y1="222" x2="244" y2="133"></line>
+  <line style="fill: rgb(184, 184, 184); stroke: rgb(230, 230, 230); stroke-width: 2px;" x1="307" y1="198" x2="243" y2="131"></line>
+  <line style="fill: rgb(184, 184, 184); stroke: rgb(230, 230, 230); stroke-width: 2px;" x1="306" y1="22" x2="242" y2="132"></line>
+  <line style="fill: rgb(184, 184, 184); stroke: rgb(230, 230, 230); stroke-width: 2px;" x1="306" y1="22" x2="383" y2="73"></line>
+  <line style="fill: rgb(184, 184, 184); stroke: rgb(230, 230, 230); stroke-width: 2px;" x1="348" y1="138" x2="380" y2="72"></line>
+  <line style="fill: rgb(184, 184, 184); stroke: rgb(230, 230, 230); stroke-width: 2px;" x1="412" y1="122" x2="379" y2="71"></line>
+  <g transform="matrix(1, 0, 0, 1, 10, -10)">
+    <rect x="125" width="60" height="15" style="fill: url(#color-1);" y="30"></rect>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre;" y="40" x="130">Peter Meyer</text>
+    <text style="fill: rgb(168, 168, 168); font-family: Lato; font-size: 8px; white-space: pre;" x="125" y="54">dmx.contacts.person</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, -35, -15)">
+    <rect x="305" width="75" height="15" style="fill: url(#color-1);" y="30"></rect>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre;" y="40" x="310">Sabine Lehmann</text>
+    <text style="fill: rgb(168, 168, 168); font-family: Lato; font-size: 8px; white-space: pre;" x="305" y="54">dmx.contacts.person</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 15, -15)">
+    <rect x="35" width="60" height="15" style="fill: url(#color-1);" y="85"></rect>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre;" y="95" x="40">Peter Meyer</text>
+    <text style="fill: rgb(168, 168, 168); font-family: Lato; font-size: 8px; white-space: pre;" x="35" y="109">dmx.contacts.person_name</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 1, -29)">
+    <rect x="24" width="30" height="15" style="fill: url(#color-1);" y="154"></rect>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre;" y="164" x="28">Peter</text>
+    <text style="fill: rgb(168, 168, 168); font-family: Lato; font-size: 8px; white-space: pre;" x="25" y="178">dmx.contacts.first_name</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 15, -20)">
+    <rect x="80" width="35" height="15" style="fill: url(#color-1);" y="135"></rect>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre;" y="145" x="85">Meyer</text>
+    <text style="fill: rgb(168, 168, 168); font-family: Lato; font-size: 8px; white-space: pre;" x="81" y="159">dmx.contacts.last_name</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 5, 20)">
+    <rect x="210" width="60" height="25" style="fill: url(#color-1);" y="100"></rect>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre;" y="110" x="195" transform="matrix(1, 0, 0, 1, 19, 1)">Parkstr. 3<tspan x="195" dy="1em">​</tspan>13187 Berlin</text>
+    <text style="fill: rgb(168, 168, 168); font-family: Lato; font-size: 8px; white-space: pre;" x="210" y="134">dmx.contacts.address</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 15, -25)">
+    <rect x="145" width="50" height="15" style="fill: url(#color-1);" y="210"></rect>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre;" y="220" x="151">Parkstr. 3</text>
+    <text style="fill: rgb(168, 168, 168); font-family: Lato; font-size: 8px; white-space: pre;" x="145" y="234">dmx.contacts.street</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 15, 40)">
+    <rect x="220" width="35" height="15" style="fill: url(#color-1);" y="175"></rect>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre;" y="185" x="224">13187</text>
+    <text style="fill: rgb(168, 168, 168); font-family: Lato; font-size: 8px; white-space: pre;" x="221" y="199">dmx.contacts.postal_code</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, -14, -15)">
+    <rect x="304" width="35" height="15" style="fill: url(#color-1);" y="205"></rect>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre;" y="215" x="308"> Berlin</text>
+    <text style="fill: rgb(168, 168, 168); font-family: Lato; font-size: 8px; white-space: pre;" x="304" y="229">dmx.contacts.city</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, -9.96875, -5)">
+    <rect x="340" width="35" height="15" style="fill: url(#color-1);" y="135"></rect>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre;" y="145" x="344">Sabine</text>
+    <text style="fill: rgb(168, 168, 168); font-family: Lato; font-size: 8px; white-space: pre;" x="340" y="159">dmx.contacts.first_name</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, -4.92187, -20)">
+    <rect x="350" width="75" height="15" style="fill: url(#color-1);" y="85"></rect>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre;" y="95" x="355">Sabine Lehmann</text>
+    <text style="fill: rgb(168, 168, 168); font-family: Lato; font-size: 8px; white-space: pre;" x="350" y="109">dmx.contacts.person_name</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, -15, -20)">
+    <rect x="405" width="45" height="15" style="fill: url(#color-1);" y="135"></rect>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre;" y="145" x="409">Lehmann</text>
+    <text style="fill: rgb(168, 168, 168); font-family: Lato; font-size: 8px; white-space: pre;" x="405" y="159">dmx.contacts.last_name</text>
+  </g>
 </svg>
