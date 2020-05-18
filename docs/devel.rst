@@ -2,6 +2,8 @@
 DMX Developer Guide
 ###################
 
+This guide describes how to develop DMX plugins.
+
 ************
 Introduction
 ************
@@ -23,23 +25,36 @@ The heart of the platform is the *DMX Core*. The Core provides the runtime envir
 
     The most prominent DMX plugin is probably `dmx-webclient <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-webclient>`_ (see P3). It creates an extensible web front-end: the well-known "DMX Webclient".
 
-This guide describes how to develop DMX plugins.
+Semantic Storage
+================
 
-The Semantic Storage
-====================
-
-These are the features why we regard the DMX database a *Semantic Storage*:
-
-* The DMX Semantic Storage holds a semantic network consisting of topics and associations. Unconnected subnetworks may exist. Topics and associations together are referred to as *DMX Objects*.
+* The *Semantic Storage* holds a semantic network consisting of topics and associations. Unconnected subnetworks may exist. Topics and associations together are referred to as *DMX Objects*.
 * Topics and associations have no properties. We see the meaning of an object not as a set of properties but as the relationships the object is involved in.
-* In DMX there are just values. Simple values (text, number, boolean, html) and composite values (a hierarchy). Values are typed. A type is identified by its URI.
+* In DMX there are just values. *Simple values* (text, number, boolean, html) and *composite values* (a hierarchy). Values are typed. A type is identified by its URI.
 * The URI is mappable to public vocabularies like Dublin Core or schema.org.
-* Everything that exists in reality only once exists in DMX only once as well, e.g. a City, a Person, or an Postal Address. E.g. the city "Berlin" exists exactly once and is shared e.g. between all postal addresses within Berlin.
-
-Example: 2 persons live at the same place. The corresponding Address topic is shared between Person topics.
+* Everything that exists in reality only once exists in DMX only once as well, e.g. a city, a person, or a postal address. E.g. the city "Berlin" exists exactly once and is shared between all postal addresses within Berlin.
+* Multi user support: every DMX object is assigned to a *Workspace* which imposes an access level: *private*, *confidential*, *collaborative*, *public*, and *common*. Access control is enforced by the DMX Core on a per-request basis, by inspecting the request's ``Authorization`` header.
 
 .. figure:: _static/dmx-person-example.svg
+
+    2 persons live at the same place. The corresponding Address topic is shared between 2 Person topics. "Person" and "Address" are composite types, at the leaves are values of simple types. Below each topic its type URI is shown.
+
+Immutability
+------------
+
+Besides *representation* the semantic storage is also responsible for data *manipulation*. Manipulating of shared semantic data is a tricky thing. As everything is stored *only once* and is potentially shared by many parents, changing a shared object might have unintended semantic *side effects*.
+
+Example: an Address topic is shared between many Person topics, the semantics being: these persons live/work together. Now consider one particular person is moving. We must not change the value of the Address topic, as this would express wrong semantics. Only one person has moved, not all together.
+
+To solve the problem of side effects in DMX values are *immutable*, they never change. Only the associations forming the composite values do.
+
+When issuing the move-person request the DMX Core creates a *new* Address topic and associates it to the person moved. Not quite: actually DMX will first look if such an address exists already, that is an Address topic with exactly the 3 particular children (), and if so associate that one.
+
+When updating a composite topic you never maintain the hierarchy associations manually. You just give a (fragment of the) new value hierarchy, and the Core will maintain the associations. This Core responsibility is called *Value Integration*. This works for arbitrary hierarchy depth.
+
 .. figure:: _static/dmx-person-example-2.svg
+
+    After one person has moved there is no longer a shared Address topic; the City topic "Berlin" is still shared between the 2 Address topics though.
 
 4 plugin categories
 ===================
