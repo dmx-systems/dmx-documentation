@@ -28,6 +28,16 @@ This guide describes how to develop DMX plugins.
 The Semantic Storage
 ====================
 
+These are the features why we regard the DMX database a *Semantic Storage*:
+
+* The DMX Semantic Storage holds a semantic network consisting of topics and associations. Unconnected subnetworks may exist. Topics and associations together are referred to as *DMX Objects*.
+* Topics and associations have no properties. We see the meaning of an object not as a set of properties but as the relationships the object is involved in.
+* In DMX there are just values. Simple values (text, number, boolean, html) and composite values (a hierarchy). Values are typed. A type is identified by its URI.
+* The URI is mappable to public vocabularies like Dublin Core or schema.org.
+* Everything that exists in reality only once exists in DMX only once as well, e.g. a City, a Person, or an Postal Address. E.g. the city "Berlin" exists exactly once and is shared e.g. between all postal addresses within Berlin.
+
+Example: 2 persons live at the same place. The corresponding Address topic is shared between Person topics.
+
 .. figure:: _static/dmx-person-example.svg
 .. figure:: _static/dmx-person-example-2.svg
 
