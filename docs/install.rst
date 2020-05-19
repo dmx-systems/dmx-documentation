@@ -38,7 +38,7 @@ Extract the ``.zip`` archive.
 .. image:: _static/windows-choose-destination.png
 
 A new folder is created and the folder has the name of the ``.zip`` file.
-This is your *DMX Home* folder and you can now start DMX.
+This is your DMX home directory and you can now start DMX.
 
 Starting DMX
 ============
@@ -67,7 +67,7 @@ The DMX server must be running (see Starting DMX) for the web client to be acces
 Stopping DMX
 ============
 
-To stop the DMX server, bring the black terminal windows to the foreground.
+To stop the DMX server, bring the black terminal window to the foreground.
 Type ``stop 0`` into the terminal and press ENTER.
 The DMX server is shut down.
 
@@ -104,7 +104,7 @@ Extract the ``.zip`` archive.
 
 A new folder is created.
 It has the name of the ``.zip`` file.
-This is your *DMX Home* folder and you can now start DMX.
+This is your DMX home directory and you can now start DMX.
 
 Starting DMX
 ============
@@ -171,8 +171,6 @@ Downloading DMX
 ---------------
 
 Currently we recommend you to download the `beta-7 release <https://download.dmx.systems/dmx-5.0-beta-7.zip>`_.
-To try out the latest state of development you can download the `latest snapshot <https://download.dmx.systems/ci/dmx-latest.zip>`_ instead.
-All previous snapshots are available for download on https://download.dmx.systems/ci/.
 
 Save the according file to a location of your choice, e.g. your "Downloads" folder.
 Open a terminal and go to that location.
