@@ -28,7 +28,8 @@ The Workspace Selector
 
 The *Workspace Selector* is part of the upper toolbar and lets you select your current workspace.
 **Workspaces are the highest level of content organization in DMX.**
-You can think of a workspace as a context in which you organize your work while you can associate items across different workspaces.
+You can think of a workspace as a context in which you organize your work.
+Items can be connected across different workspaces.
 
 Everything you create is automatically assigned to the workspace selected in this menu.
 **Every item in DMX is assigned to exactly one workspace.**
@@ -67,7 +68,8 @@ It shows a situation-based view of selected content from the database.
 .. hint:: Go to our `Demo Server <https://demo.dmx.systems/>`_, navigate through the workspaces and have a look at the different topicmaps. They all show specific views on parts of the same underlying database.
 
 
-For the moment, two types of topicmaps are supported: *Topicmaps* and *Geomaps*.
+For the moment, three types of topicmaps are supported: *Topicmaps*, *Geomaps* and *Tableviews*.
+Geomaps and tableviews both are :ref:`plugins <admin-plugin-installation>` that have to be installed separately.
 
 A new topicmap is always empty.
 In the beginning, there is only one topicmap, it's called "untitled".
@@ -76,7 +78,7 @@ The layout of the topicmap is persisted over working sessions.
 Edits to a topicmap are instantly mirrored to other connected users.
 The size of a topicmap can be well beyond the size of your screen. You can move it with your mouse.
 
-Find out more about working with topicmaps and geomaps in the section on :ref:`Organizing the working context<user-organizing-the-working-context>`.
+Find out more about working with topicmaps, geomaps and tableviews in the section on :ref:`Organizing the working context<user-organizing-the-working-context>`.
 
 .. _user-the-fit-button:
 
@@ -86,7 +88,7 @@ The Fit Button
 .. figure:: _static/upper-toolbar-fit-button.png
     :alt: Tool bar with highlighted fit button
 
-This button makes a topicmap fit into your current browser window.
+The fit button makes a topicmap fit into your current browser window.
 It adjusts the zoom level of a topicmap.
 
 You can find the fit button next to "i" button of the Topicmap Selector.
@@ -142,12 +144,13 @@ The Context Menu
 
 The context menu is part of the topicmap panel and thus available for any item on a map.
 It is usually opened with a right-click on a topic or association.
-By default, it gives you four commands to execute on the selected item:
+It gives you five commands to execute on the selected item:
 
 * You can display an item's details.
 * You can edit the item.
 * You can hide the item from this topicmap.
 * You can navigate to related items.
+* You can delete the item.
 
 To close the context menu *without* any action, release your mouse in the center of the circle.
 
@@ -155,7 +158,7 @@ To close the context menu *without* any action, release your mouse in the center
     :width: 250
 
 The context menu indicates whether you have write permission for an item or not.
-If the term "Edit" is grayed out, you do not have write permission on the selected item.
+If the terms "Edit" and "Delete" are grayed out, you do not have write permission on the selected item.
 
 .. image:: _static/context-menu-no-permission.png
     :width: 250
