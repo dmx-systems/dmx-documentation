@@ -1,3 +1,5 @@
+.. _developer-guide:
+
 ###################
 DMX Developer Guide
 ###################
