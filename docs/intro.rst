@@ -18,7 +18,7 @@ DMX is Free Software
 
 DMX is dual licensed:
 
-#.  The Community Edition is licensed under the `GNU Affero General Public License (GNU AGPLv3) <https://www.gnu.org/licenses/agpl-3.0.en.html>`_ . In short, this means that you are allowed to run the software of any purpose, to study and modify the source code, and to distribute copies or modified copies of the code. Note that you have to publish all modifications you make under the same license. Visit `git.dmx.systems <https://git.dmx.systems/explore>`_ to get the source code. 
+#.  The Community Edition is licensed under the `GNU Affero General Public License (GNU AGPLv3) <https://www.gnu.org/licenses/agpl-3.0.en.html>`_. In short, this means that you are allowed to run the software for any purpose, to study and modify the source code, and to distribute copies or modified copies of the code. Note that you have to publish all modifications you make under the same license. Visit `git.dmx.systems <https://git.dmx.systems/explore>`_ to get the source code. 
 #.  The Enterprise Edition is licensed under a proprietary license. With the Enterprise Edition you are entitled to develop or use proprietary plugins or other modifications of the software.
 
 .. _intro-data-sovereignty:
@@ -36,9 +36,9 @@ DMX on your local computer
 
 If you download and start DMX on your local computer, the database is stored on that same computer.
 It does not leave it unless you copy it elsewhere.
-After the initial download of the software, you can use DMX locally and without an internet connection unless you use :ref:`Geomaps<user-geodata>`.
+After the initial download of the software, you can use DMX locally and without an internet connection unless you use the :ref:`Geomaps<user-geodata>` plugin.
 Geomaps are rendered in DMX with the help of `OpenStreetMap <https://www.openstreetmap.org>`_.
-OpenStreetMap is also used to transform the addresses you entered into geographical coordinates.
+OpenStreetMap is also used to transform addresses into geographical coordinates.
 Those features require an internet connection to work.
 
 DMX as a self-hosted service
@@ -69,7 +69,7 @@ That can happen in different ways:
 Find out more about our existing plugins in the :ref:`Plugin section <plugins-overview-of-plugins>`.
 
 Of course, you are free to develop your own DMX plugins.
-For more details on this, please check back our Developer Documentation in a little while.
+For more details on this, please see our :ref:`Developer Guide <developer-guide>`.
 To get started we recommend you to start with our `Plugin Template <https://git.dmx.systems/dmx-plugins/dmx-plugin-template>`_.
 
 *****************************
