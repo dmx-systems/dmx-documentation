@@ -34,7 +34,7 @@ Semantic Storage
 * Topics and associations have no properties. We see the meaning of an object not as a set of properties but as the relationships the object is involved in.
 * In DMX there are just values. *Simple values* (text, number, boolean, html) and *composite values* (a hierarchy). Values are typed. A type is identified by its URI.
 * The URI is mappable to public vocabularies like Dublin Core or schema.org.
-* Everything that exists in reality only once exists in DMX only once as well, e.g. a city, a person, or a postal address. E.g. the city "Berlin" exists exactly once and is shared between all postal addresses within Berlin.
+* Uniqueness: everything that exists in reality only once exists in DMX only once as well, e.g. a city, a person, or a postal address. E.g. the city "Berlin" exists exactly once and is shared between all postal addresses within Berlin.
 * Multi user support: every DMX object is assigned to a *Workspace* which imposes an access level: *private*, *confidential*, *collaborative*, *public*, and *common*. Access control is enforced by the DMX Core on a per-request basis, by inspecting the request's ``Authorization`` header.
 
 .. figure:: _static/dmx-person-example.svg
@@ -48,15 +48,27 @@ Besides *representation* the semantic storage is also responsible for data *mani
 
 Example: an Address topic is shared between many Person topics, the semantics being: these persons live/work together. Now consider one particular person is moving. We must not change the value of the Address topic, as this would express wrong semantics. Only one person has moved, not all together.
 
-To solve the problem of side effects in DMX values are *immutable*, they never change. Only the associations forming the composite values do.
+To solve the problem of side effects, in DMX values are *immutable*, they never change. Only the associations forming the composite values do.
 
-When issuing the move-person request the DMX Core creates a *new* Address topic and associates it to the person moved. Not quite: actually DMX will first look if such an address exists already, that is an Address topic with exactly the 3 particular children (), and if so associate that one.
+When issuing the move-person request the DMX Core creates a *new* Address topic and associates it to the person moved. Not quite: actually DMX will first look if such an address exists already, that is an Address topic with exactly the 3 particular children ("Petersburger Straße 101", "10247", "Berlin"), and if so associate that one.
 
 When updating a composite topic you never maintain the hierarchy associations manually. You just give a (fragment of the) new value hierarchy, and the Core will maintain the associations. This Core responsibility is called *Value Integration*. This works for arbitrary hierarchy depth.
 
 .. figure:: _static/dmx-person-example-2.svg
 
-    After one person has moved there is no longer a shared Address topic; the City topic "Berlin" is still shared between the 2 Address topics though.
+    After one person has moved the 2 persons do not share a common Address topic anymore; the City topic "Berlin" is still shared between the 2 Address topics though.
+
+Value vs. Entity
+----------------
+
+We've seen values in DMX are immutable. When an address's (parent) street and postal code (children) change, a *new* Address topic is created. Now lets consider another change-request, Peter Meyer changes his phone number, and apply the very same rule as with the address. As the particular person (parent) phone (child) combination does not yet exist, a *new* Person topic would be created. That is we have now 2 "Peter Meyer" topics when in reality there is only one. The uniqueness criteria (see "Semantic Storage") is violated.
+
+The solution is to introduce another concept -- **Entity** -- and categorize composite types either as value type or entity type.
+
+Values are immutable. Simple topics are always immutable. Examples for values: "Person Name", "First Name", "Last Name", "Street", "Postal Code", "City", "Address", "Time", "Date", "Geo Coordinate".
+
+Entities on the other hand are mutable. An entity topic's child hierarchy may change while the topic keeps its identity. When modeling an entity type, you have to configure whose of its children make up its identity. A person could be identified e.g. either by the Name/Birthday/City of Birth combination or by a synthetic attribute like Social Security Number. Examples for entities: "Person", "Note".
+
 
 4 plugin categories
 ===================
