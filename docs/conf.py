@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = u'DMX'
-copyright = u'2018 DMX Systems, https://dmx.berlin, Author: Silke Meyer <silke@dmx.berlin>, License: Creative Commons Attribution-ShareAlike 4.0 International (https://creativecommons.org/licenses/by-sa/4.0/)'
-author = "Silke Meyer <silke@dmx.berlin>"
+copyright = u'2018 DMX Systems, https://dmx.berlin, Authors: Silke Meyer <silke@dmx.berlin>, Jörg Richter <jri@dmx.berlin>, Malte Reißig <malte.reissig@dmx.berlin>, License: Creative Commons Attribution-ShareAlike 4.0 International (https://creativecommons.org/licenses/by-sa/4.0/)'
+author = "Silke Meyer <silke@dmx.berlin>, Joerg Richter <jri@dmx.berlin>, Malte Reissig <malte.reissig@dmx.berlin>"
 
 # The short X.Y version
 version = u''
