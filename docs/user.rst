@@ -558,7 +558,13 @@ To delete several items in one go select all of them by clicking them with the C
 Then proceed as above:
 Left- or right-click onto the item and drag your mouse onto the *Delete* command.
 
-.. image:: _static/bulk-delete-2.png
+.. figure:: _static/bulk-delete-2.png
+    :alt: Bulk deletion until DMX 5.0-beta-7
+
+
+.. figure:: _static/bulk-delete-2-new.png
+    :alt: Bulk deletion as of DMX 5.0
+
 
 When you select *Delete* a confirmation dialog window opens to inform you about the number of items you are about to delete.
 You can confirm or cancel the deletion.
