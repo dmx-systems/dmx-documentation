@@ -170,10 +170,9 @@ In-map Details
 
 When you select an item on a topicmap, a rectangle opens up displaying details about the selected item.
 This box is called the in-map details.
+They only show up if the detail panel is not visible.
 
 .. image:: _static/in-map-details.jpg
-
-Note that the in-map details only show up if the detail panel is not visible.
 
 .. _user-the-search-create-dialog:
 
@@ -181,7 +180,7 @@ The Search/Create Dialog
 ========================
 
 The search for existing items and the creation of new ones is done in the same dialog box.
-The search/create dialog is opened in the center of the screen with a right-click into the topicmap.
+The search/create dialog is opened with a right-click into the topicmap.
 Advanced search options are explained below in the :ref:`Navigation section<user-searching-the-database>`.
 Read more on how to create content in the section about :ref:`Content Authoring<user-content-authoring>`.
 
@@ -192,8 +191,8 @@ Read more on how to create content in the section about :ref:`Content Authoring<
 The Detail Panel
 ================
 
-The "Detail Panel" is opened by clicking "Details", "Edit", or "Related" in the :ref:`context menu <user-the-context-menu>` of an item.
-The detail panel shares your screen width with the "Topicmap Panel".
+The Detail Panel is opened by clicking "Details", "Edit", or "Related" in the :ref:`context menu <user-the-context-menu>` of an item.
+The Detail Panel shares your screen width with the Topicmap Panel.
 It has four tabs, "Info", "Related", "Meta", and "View" described below.
 
 .. image:: _static/detail-panel.png
@@ -264,7 +263,8 @@ The Related Tab has got three sort modes:
 
 By default the list of related items is grouped by "Topic Type":
 In the example below you can see that the selected organization is related to a city, a note, and to persons but also to the current topicmap and to the workspace you are in.
-**This means that you can navigate your content and your data model in the same place.** (You will learn more about these concepts in the section about :ref:`Modeling<user-modeling>`.)
+This means that **you can navigate your content and your data model in the same place.**
+(You can learn more about these concepts in the section about :ref:`Modeling<user-modeling>`.)
 Additionally, every list item contains information about the association type between the selected person and the other items, e.g. person's involvement with the organization, or that this organisation is an instance of the topic type organization.
 
 .. image:: _static/detail-panel-related-tab.png
@@ -282,7 +282,7 @@ Revealing items from the Related Tab
 When choosing a related item from the list you can control whether to also "focus" them or not (as illustrated in the following two figures):
 
 1. When you click anywhere onto a list item, it is revealed and the focus switches (Figure 1). 
-2. When you click on *the icon* of a list item you add it to the selected view without switching focus (Figure 2). So, clicking only the icon of a related item allows you to add a number of other related items in this list to the selected view.
+2. When you click on *the icon* of a list item you add it to the selected topicmap without switching focus (Figure 2). So, clicking only the icon of a related item allows you to add a number of other related items in this list to the selected topicmap.
 
 .. figure:: _static/related-tab-reveal-and-select.png
 
@@ -293,7 +293,7 @@ When choosing a related item from the list you can control whether to also "focu
     Figure 2: Click on the icon of the item to **reveal without focussing** the item.
 
 
-.. note:: Items that show a blue line at the right side are already part of the map so clicking them will bring them into "focus". Clicking an item without a blue line will add it to the selected map. So, clicking on a related item either "focuses" or "adds" it to a selected view. 
+.. note:: Items that show a blue line at the right side are already part of the map so clicking them will bring them into "focus". Clicking an item without a blue line will add it to the selected map. So, clicking on a related item either "focuses" or "adds" it to a selected topicmap. 
 
 .. _user-detail-panel-the-meta-tab:
 
@@ -327,7 +327,7 @@ At the moment, DMX allows you to perform the following customizations for topic 
 * Topic Types: *Icon, Font Color, Background Color*
 * Association Types: *Association Color*
 
-If you need any further assistance for editing "View Configurations" the sections about :ref:`assigning icons to topic types<user-topic-type-icons>` and :ref:`assigning colors to association types<user-assigning-colors-to-association-types>` cover that.
+If you need any further assistance for editing "View Configurations", the sections about :ref:`assigning icons to topic types<user-topic-type-icons>` and :ref:`assigning colors to association types<user-assigning-colors-to-association-types>` cover that.
 
 For the moment view configurations are only available on a per-type base (which is why the "View" tab is grayed out on any item which does not represent a *Type Definition*).
 You can learn more about working with type definitions in the section about :ref:`Modeling<user-modeling>`.
@@ -339,8 +339,8 @@ In a standard DMX installation, once you click "Login" in the upper toolbar you 
 
 .. image:: _static/simple-login-dialog.png
 
-In some cases this dialog looks different.
-This can be the case when the DMX installation you are working with is run by your organization and you were told to use your normal credentials you have with the organization.
+This dialog can look different if the DMX installation is run by your organization.
+Organizations (as opposed to individuals) are likely to use our LDAP plugin so that you can use your normal credentials you have with the organization.
 In that case you can select the authentication method from the drop-down menu in the login dialog.
 To use the user name and password from your organization select the "LDAP" method and enter your credentials.
 
@@ -348,7 +348,7 @@ To use the user name and password from your organization select the "LDAP" metho
 
 .. image:: _static/ldap-login.png
 
-.. note:: You can learn how to install plugins in our :ref:`Admin Documentation <admin-plugin-installation>`.
+.. note:: You can learn how to install the LDAP plugin in our :ref:`Admin Documentation <admin-plugin-installation>`.
 
 .. _user-content-authoring:
 
@@ -389,11 +389,11 @@ DMX's default topic types
 
 The DMX Standard Distribution comes with a few predefined topic types that you can select in the :ref:`Search/Create Dialog <user-the-search-create-dialog>`:
 
-- *Note*
-- *Event*
-- *Person*
-- *Organization*
-- *Bookmark*
+- Note
+- Event
+- Person
+- Organization
+- Bookmark
 
 These standard type definitions have been synthesized from a variety of Personal Information Management (PIM) applications.
 One advantage of DMX is that you have these different types of information in one interface and not spread out in address books, calendars, browsers and file manager windows.
@@ -408,7 +408,7 @@ If you want to develop your own type definitions, the :ref:`Modeling section in 
 Creating an association
 =======================
 
-To create an association between two items you need to connect the dots. Start with grabbing the little gray (or blue) dot appearing at the border of the item you want to connect.
+To create an association between two items grab the little gray or blue dot appearing at the border of the item you want to connect.
 
 .. image:: _static/create-association-1.png
 
@@ -416,7 +416,8 @@ Drag the line onto the other item until it is highlighted by a blue border.
 
 .. image:: _static/create-association-2.png
 
-Then drop the line to create a new association. A rectangle will open that shows you the in-map details of the newly created association.
+Release your mouse button to create the association.
+A rectangle will open that shows you the in-map details of the newly created association.
 Click somewhere into the map to hide the in-map details of the new association.
 
 Note that an association does not necessarily connect two topics:
@@ -501,7 +502,7 @@ Using it you can link to existing topics or create new ones on-the-fly.
 
 .. image:: _static/clickable-inline-topic-links.png
 
-Clicking on inline topic links will reveal the linked topic in a topicmap.
+Clicking on inline topic links will reveal the linked topic in the topicmap.
 
 .. _user_uploading-or-embedding-images:
 
@@ -528,11 +529,16 @@ Deleting things
 .. warning:: There is an important difference between hiding items and deleting them. **If you delete items they are removed from the database forever.** If you hide them, they are just no longer visible on the topicmap but you can bring them back by revealing them.
 
 You delete things via the context menu on the topicmap.
-Keep the *Alt* key pressed and left-click onto the item you want to delete.
+
+Until DMX 5.0-beta-7 keep the *Alt* key pressed and left-click onto the item you want to delete.
 To delete drag your mouse anywhere into the red area.
 To abort let go of both the "Alt" key and the mouse button while the cursor is in the middle of the circle.
 
 .. image:: _static/delete-item.png
+
+As of DMX 5.0 the "Delete" command is integrated directly into the context menu.
+
+.. image:: _static/delete-item-new.png
 
 When you select "Delete" a dialog window opens.
 It informs you about the number of items you are about to delete.
