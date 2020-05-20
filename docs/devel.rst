@@ -10,11 +10,15 @@ This guide describes how to develop DMX plugins.
 Introduction
 ************
 
+About the DMX platform
+======================
+
 The DMX platform is a web application server, written in Java.
 It provides a framework for application developers.
 
 Traditionally a web application consists of 3 parts: *data model*, *business logic* (server-side), and a front-end. In DMX there are no *applications*. Instead there is the DMX platform on one hand, and *DMX plugins* on the other, nothing else. One specialty about a DMX plugin (green) is that it can contain both, a back-end portion and a front-end portion, in one single hot-deployable ``.jar`` file.
 
+.. _plugin-types:
 .. figure:: _static/dmx-plugin-types.svg
 
 In its back-end portion (see P1) a plugin can define a data model (creating *Types* and their relationships), and/or provide business logic in form of a service (consumable by other plugins or through a REST API). In its client-side portion a plugin either *creates* a front-end (see P2, P3), or *extends* an existing front-end (see P4).
@@ -26,6 +30,8 @@ The heart of the platform is the *DMX Core*. The Core provides the runtime envir
 .. hint::
 
     The most prominent DMX plugin is probably `dmx-webclient <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-webclient>`_ (see P3). It creates an extensible web front-end: the well-known "DMX Webclient".
+
+.. _semantic-storage:
 
 Semantic Storage
 ================
@@ -61,7 +67,7 @@ When updating a composite topic you never maintain the hierarchy associations ma
 Value vs. Entity
 ----------------
 
-We've seen values in DMX are immutable. When an address's (parent) street and postal code (children) change, a *new* Address topic is created. Now lets consider another change-request, Peter Meyer changes his phone number, and apply the very same rule as with the address. As the particular person (parent) phone (child) combination does not yet exist, a *new* Person topic would be created. That is we have now 2 "Peter Meyer" topics when in reality there is only one. The uniqueness criteria (see "Semantic Storage") is violated.
+We've seen values in DMX are immutable. When an address's (parent) street and postal code (children) change, a *new* Address topic is created. Now lets consider another change-request, Peter Meyer changes his phone number, and apply the very same rule as with the address. As the particular person (parent) phone (child) combination does not yet exist, a *new* Person topic would be created. That is we have now 2 "Peter Meyer" topics when in reality there is only one. The uniqueness criteria (see :ref:`semantic-storage`) is violated.
 
 The solution is to introduce another concept -- **Entity** -- and categorize composite types either as value type or entity type.
 
@@ -70,8 +76,11 @@ Values are immutable. Simple topics are always immutable. Examples for values: "
 Entities on the other hand are mutable. An entity topic's child hierarchy may change while the topic keeps its identity. When modeling an entity type, you have to configure whose of its children make up its identity. A person could be identified e.g. either by the Name/Birthday/City of Birth combination or by a synthetic attribute like Social Security Number. Examples for entities: "Person", "Note".
 
 
-4 plugin categories
-===================
+Writing a DMX plugin
+====================
+
+What a plugin can do
+--------------------
 
 To give you an impression what a DMX plugin can do, these might be the effects once you install one:
 
@@ -87,7 +96,24 @@ A DMX plugin contains one or more of these effects, in an arbitrary combination.
 
 In every case a plugin is a single ``.jar`` file prefixed by ``dmx-``, e.g. ``dmx-geomaps-0.1.jar``. A plugin is hot-deployed/stopped/updated at runtime by (re)moving that .jar file to/from ``bundle-deploy/``.
 
-Depending on the effects a plugin has it falls into one (or more) of 4 categories:
+The 4 plugin archetypes
+-----------------------
+
+To find out what type of plugin (see :ref:`P1-P4 <plugin-types>` illustration above) you're about to develop, ask yourself these questions:
+
+* Will it have a back-end portion?
+* Will it have a front-end portion? If yes:
+
+    * Will it extend the DMX Webclient (or a custom front-end)? Or
+    * Will it create a custom front-end
+
+Note: the "plugin type" is nothing explicit. You effectively change a plugin's type by adding/removing the respective portions/assets to/from it.
+
+.. hint::
+
+    The DMX platform itself is built from (about 20) plugins, e.g. `dmx-webclient <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-webclient>`_, `dmx-topicmaps <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-topicmaps>`_, `dmx-contacts <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-contacts>`_. These plugins are in no way different than the plugins you write. It is recommended to study them as a learning resource. Whenever this guide mentions a plugin it is a link to the plugin source code.
+
+The following list gives you an impression what it means when you're developing a DMX plugin of the respective type:
 
 Back-end-only (P1)
     A plugin that acts purely at the back-end. It has one or more of these properties:
@@ -812,6 +838,11 @@ Furthermore when writing a plugin main file you must add 2 entries in the plugin
         </build>
     </project>
 
+Using the DMX Core Service
+==========================
+
+TODO
+
 Listen to DMX Core events
 =========================
 
@@ -1194,3 +1225,15 @@ To feed the HTTP request body into a service method you must:
 * Add an entity parameter to the service method. That is a parameter without any annotation.
 
 * Implement a provider class for the type of the entity parameter, resp. make sure such a provider class already exists (as part of the DMX Core or one of the installed DMX plugins).
+
+********************
+Webclient Extensions
+********************
+
+TODO
+
+*********
+Reference
+*********
+
+TODO
