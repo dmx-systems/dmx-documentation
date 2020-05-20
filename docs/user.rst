@@ -1200,7 +1200,7 @@ If you want to dive deeper into this concept, we recommend the following sources
 Types versus instances
 ----------------------
 
-To understand the fundamental concepts of DMX it is very important to understand the distinction between topics and topic types, respectively between associations and association types.
+To understand the fundamental concepts of DMX it is very important to understand the distinction between topic types and topics, respectively between association types and associations.
 This distinction separates an abstract concept (types) from the particular occurences (instances) of the concept.
 
 For example, the particular bicycle in your garage is an instance of the type of thing known as "The bicycle".
@@ -1208,11 +1208,11 @@ Types are the ideas or abstract descriptions of the things you want to represent
 They can be sets, collections, object classes or kinds of things.
 
 Instances of a type are the concrete items, the content (topics and associations).
-In DMX you can visualize both, types and instances, even in the same topicmap.
+In DMX you can create, edit and visualize both, types and instances, even in the same topicmap.
 
 .. _user-topics-and-topic-types:
 
-Topics and topic types
+Topic types and topics
 ----------------------
 
 On the level of topic types you describe models of the topics you want to create.
@@ -1230,7 +1230,7 @@ Color       red, yellow, blue, green
 
 .. _user-associations-and-association-types:
 
-Associations and association types
+Association types and associations
 ----------------------------------
 
 Associations represent the relationships between items.
@@ -1300,7 +1300,7 @@ The composite type "value"
 --------------------------
 
 The composite data type "value" is used whenever you want to refer to something different upon a change.
-While the topic type *person* is a composite of the data type "identity", topic type *person name* is a composite of the data type "value":
+While the topic type *person* is a composite of the data type "identity", the topic type *person name* is a composite of the data type "value":
 
 .. image:: _static/composite-value.png
 
@@ -1369,13 +1369,13 @@ By default, a new topic type has the simple data type "Text".
 Creating a composite topic type
 ===============================
 
-To create your own topic type with a few properties here is how to proceed.
+To create your own composite topic type with a few properties here is how to proceed.
 Let's say you want to add a topic type "publication".
 Each publication shall have a title and a year.
 
 - Open the search field. Enter "Publication", select "Topic Type" and press "create".
 - Go into editing mode via the context menu. **Change the data type from "Text" to "Identity"** and hit "Save". Click somewhere into your map to close the detail panel.
-- Open the search field and enter "Title". You will find that two entries already exist. They come from the default topics types "Event" and "Note" which also have titles. Create a new topic type "Title".
+- Open the search field and enter "Title". You will find that two entries already exist. They come from the default topics types "Event" and "Note" which also have titles. Create a new topic type, e.g. "Title of Publication".
 - Create an association between the title item and the publication item. DMX will display what you just created:
 
   * You created an association of the type "Composition Definition". Composition Definition means that you are defining a more complex context between items on your map: The relationship between a publication, a title and a year. 
