@@ -576,7 +576,7 @@ Organizing the working context
 ******************************
 
 The DMX database contains your knowledge at large, your knowledge base.
-Everything you enter is saved in the knowledge base until you delete it.
+Everything you enter is saved in the database until you delete it.
 What is important:
 Every item is saved in the knowledge base only *once*, even if you re-enter it or use it in many different contexts.
 
@@ -585,9 +585,6 @@ In each topicmap different items from your knowledge base may be relevant and th
 Thus, every topicmap represents *one* view, perspective, or working situation.
 
 The following figure shows the relationship between content and its use in different working situations:
-
-In the upper half two different working situations are shown (*Topicmaps*).
-On each of the maps there is a selection of topics and associations revealed depending on what the topicmap is about.
 
 In the lower half you see a representation of a DMX database.
 It contains your complete knowledge graph made up of topics and associations.
@@ -611,12 +608,16 @@ Creating a topicmap
 -------------------
 
 To document a meeting, prepare for an interview or to do some research you can create a topicmap.
-To create a new topicmap open the :ref:`search/create dialog <user-the-search-create-dialog>` (right click).
+To create a new topicmap got to the Workspace it shall be assigned to.
+Open the :ref:`search/create dialog <user-the-search-create-dialog>` (right click).
 Enter the name of the new topicmap, select *Topicmap* from the "Create" menu and confirm with "Create".
 
 .. image:: _static/create-topic-map.png
 
-For topicmaps, the creation dialog has an additional choice between (usual) topicmaps and geo maps (see below).
+For topicmaps, the creation dialog has an additional drop-down menu.
+If you have the :ref:`Geomaps <user-geodata>` plugin installed, you can choose between a regular topicmap and a Geomap here.
+Without the plugin, you don't have to choose anything here.
+
 Once created, the new topicmap is opened.
 You can see its name in the :ref:`Topicmap Selector<user-the-topic-map-selector>` and use it to switch between topicmaps.
 
@@ -678,7 +679,7 @@ If you click onto an item the in-map details show you what is there.
 .. image:: _static/display-map-item.jpg
     :width: 400
 
-Again, you return to the other topicmaps via the :ref:`Topicmap Selector<user-the-topic-map-selector>`.
+You return to the other topicmaps via the :ref:`Topicmap Selector<user-the-topic-map-selector>`.
 
 .. _user-moving-things-around:
 
@@ -768,11 +769,9 @@ Assigning icons and colors to topic types
 -----------------------------------------
 
 You can assign icons from the Font Awesome collection to your topic types.
-Editing the view configuration is explained with the topic type "Publication".
-In the section about :ref:`Modeling <user-modeling>` you will learn how to create such a topic type.
-Let's say you have a topic type "Publication" and you want all publications in your map to have a book icon.
+Let's say you have a topic type "Publication" and you want all publications to have a book icon.
 
-- Click onto the topic type "Publication", *not* onto an individual publication you already added. You are about to modify the general concept of all your publications, not an existing instance of it.
+- You are about to modify the general concept of all your publications, not an existing instance of it. Click onto the topic type "Publication", *not* onto an individual publication.
 - Open the detail panel by selecting "Details" from the context menu.
 - Go to the fourth tab called "View". Here you can view and edit the configuration of the topic type. Click "Edit".
 - Click into the white field labeled "Icon".
@@ -805,7 +804,7 @@ Assigning colors to association types
 -------------------------------------
 
 You can assign colors to association types just as you can assign icons to topic types.
-Select the association type on your map, open the details panel and open the fourth tab "View".
+Select the association type on your map, open the detail panel and open the fourth tab "View".
 Choose a color for your association type and save it.
 
 .. image:: _static/new-assoc-color.png
@@ -830,7 +829,7 @@ You refine the search by typing in more letters.
 .. image:: _static/search-results.jpg
 
 Note that the unfiltered search results include everything:
-Your actual content, e.g. persons you entered, is displayed as well as topic types, topicmaps, association types etc.
+Your actual content is displayed as well as topic types, topicmaps, association types etc.
 
 .. _user-advanced-search-filter-types:
 
@@ -878,7 +877,6 @@ The search in DMX is run by the powerful Lucene search engine.
 You can run simple queries by just entering a search term.
 If this brings up too many results from your database, you can narrow down your search with more complex queries.
 DMX supports the `Lucene Query Parser Syntax <https://lucene.apache.org/core/3_5_0/queryparsersyntax.html>`_.
-Let's look at a few examples:
 
 .. note:: Enter more than one character to start searching.
 
@@ -945,6 +943,8 @@ If you escape the special character and you add a wild card to the end of the st
 
 .. image:: _static/search-lucene-special-characters5.png
 
+.. note:: Advanced search along associations is not yet supported.
+
 .. _user-associative-navigation:
 
 Associative navigation
@@ -980,7 +980,7 @@ Using the browser history
 =========================
 
 Every view onto an item has a stable deep link that you can use for navigating back and forth in your browser:
-If you have nothing selected the URL, that is the address in your browser, shows the exact link to this topicmap.
+If you have nothing selected, the URL (the address in your browser) shows the exact link to this topicmap.
 
 .. image:: _static/deep-link-topic-map.jpg
 
@@ -1043,7 +1043,7 @@ Only privileged accounts (like admin) can create user accounts.
 
 .. image:: _static/user-account-password.png
 
-What is displayed after account creation is just the *user name*?
+What is displayed after account creation is just the *user name*.
 The *user account* consists of the user name and the password.
 Investigate the newly created user name via the "Related" button.
 The user name is associated with some information:
@@ -1115,7 +1115,7 @@ If you explicitly do not want or need any of the five sharing modes, you can dis
 
 DMX comes with four default workspaces with the following sharing modes:
 
-* **DMX**: This workspace a public, it is the one that is displayed publicly when people come to the site.
+* **DMX**: This workspace is public. It is displayed publicly when people come to the site.
 * **Private Workspace**: This is the private workspace of the respective logged in user. Only this user can see and and edit their items as the workspace is private.
 * **Administration**: Only the admin or members can view and edit items in this workspace. Unprivileged user accounts do not have this entry in the menu.
 * **System**: The System workspace is readable by everyone who is logged in. It contains all user names that exist in this DMX installation. The user names are readable to all users. This is needed for sharing content with others as you will see below.
