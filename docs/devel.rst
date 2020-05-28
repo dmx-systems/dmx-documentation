@@ -13,7 +13,7 @@ Introduction
 About the DMX platform
 ======================
 
-The DMX platform is a web application server, written in Java.
+The DMX platform is a web application server written in Java.
 It provides a framework for application developers.
 
 Traditionally a web application consists of 3 parts: *data model*, *business logic* (server-side), and a front-end. In DMX there are no *applications*. Instead there is the DMX platform on one hand, and *DMX plugins* on the other, nothing else. One specialty about a DMX plugin (green) is that it can contain both, a back-end portion and a front-end portion, in one single hot-deployable ``.jar`` file.
@@ -23,7 +23,7 @@ Traditionally a web application consists of 3 parts: *data model*, *business log
 
 In its back-end portion (see P1) a plugin can define a data model (creating *Types* and their relationships), and/or provide business logic in form of a service (consumable by other plugins or through a REST API). In its client-side portion a plugin either *creates* a front-end (see P2, P3), or *extends* an existing front-end (see P4).
 
-All installed plugins operate on the same semantic storage (with access restrictions applied). Operating on the semantic storage is possible exclusively through the *DMX Core Service*, which is injected into every plugin.
+All installed plugins operate on the same semantic storage (with access restrictions applied). Operating on the semantic storage is possible exclusively through the *DMX Core Service* which is injected into every plugin.
 
 The heart of the platform is the *DMX Core*. The Core provides the runtime environment for DMX plugins. The Core a) loads plugins and manages their life-cycle, and b) governs all access to the semantic storage, and provides this duty as *DMX Core Service*.
 
@@ -36,8 +36,8 @@ The heart of the platform is the *DMX Core*. The Core provides the runtime envir
 Semantic Storage
 ================
 
-* The *Semantic Storage* holds a semantic network consisting of topics and associations. Unconnected subnetworks may exist. Topics and associations together are referred to as *DMX Objects*.
-* Topics and associations have no properties. We see the meaning of an object not as a set of properties but as the relationships the object is involved in.
+* The *Semantic Storage* holds a semantic network consisting of topics and associations. Unconnected subnetworks can exist. Topics and associations together are referred to as *DMX Objects*.
+* Topics and associations have no properties. In DMX the meaning of an object is seen not as a set of properties but as the relationships the object has.
 * In DMX there are just values. *Simple values* (text, number, boolean, html) and *composite values* (a hierarchy). Values are typed. A type is identified by its URI.
 * The URI is mappable to public vocabularies like Dublin Core or schema.org.
 * Uniqueness: everything that exists in reality only once exists in DMX only once as well, e.g. a city, a person, or a postal address. E.g. the city "Berlin" exists exactly once and is shared between all postal addresses within Berlin.
@@ -104,7 +104,7 @@ To find out what type of plugin (see :ref:`P1-P4 <plugin-types>` illustration ab
 * Will it have a back-end portion?
 * Will it have a front-end portion? If yes:
 
-    * Will it extend the DMX Webclient (or a custom front-end)? Or
+    * Will it extend the DMX Webclient (or a custom front-end)? Or:
     * Will it create a custom front-end
 
 Note: the "plugin type" is nothing explicit. You effectively change a plugin's type by adding/removing the respective portions/assets to/from it.
@@ -139,7 +139,7 @@ Front-end (P2)
 
     Examples are the `dmx-webclient <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-webclient>`_ and `dmx-mobile <https://git.dmx.systems/dmx-plugins/dmx-mobile>`_ plugins.
 
-    Use case **Headless CMS**: You're relying basically on DMX back-end capabilities (see P1) and build a custom front-end. You can freely choose the 3rd party front-end libraries/frameworks then. You're not bound to Vue or anything. For convenience you'll probably use the `dmx-api <https://git.dmx.systems/nodejs-modules/dmx-api>`_ library to communicate with the DMX back-end. And *if* you're using Vue you can possibly re-use the Vue components the DMX Webclient is built from, e.g. the detail renderer/form generator (`dmx-object-renderer <https://git.dmx.systems/nodejs-modules/dmx-object-renderer>`_) or the topicmap rendering (`dmx-topicmap-panel <https://git.dmx.systems/nodejs-modules/dmx-topicmap-panel>`_). See `npm <https://www.npmjs.com/~jri>`_ for available components.
+    Use case **Headless CMS**: You're relying basically on DMX back-end capabilities (see P1) and build a custom front-end. You can freely choose the 3rd party front-end libraries/frameworks then. You're not bound to Vue or anything. For convenience you'll probably use the `dmx-api <https://git.dmx.systems/nodejs-modules/dmx-api>`_ library to communicate with the DMX back-end. And *if* you're using Vue you can possibly re-use some of the Vue components the DMX Webclient is built from, e.g. the detail renderer/form generator (`dmx-object-renderer <https://git.dmx.systems/nodejs-modules/dmx-object-renderer>`_) or the topicmap rendering (`dmx-topicmap-panel <https://git.dmx.systems/nodejs-modules/dmx-topicmap-panel>`_). See `npm <https://www.npmjs.com/~jri>`_ for available components.
 
     Such a plugin can have a back-end part as well (see P1).
 
