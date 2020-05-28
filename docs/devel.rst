@@ -75,6 +75,24 @@ Values are immutable. Simple topics are always immutable. Examples for values: "
 
 Entities on the other hand are mutable. An entity topic's child hierarchy may change while the topic keeps its identity. When modeling an entity type, you have to configure whose of its children make up its identity. A person could be identified e.g. either by the Name/Birthday/City of Birth combination or by a synthetic attribute like Social Security Number. Examples for entities: "Person", "Note".
 
+Associative Model of Data
+-------------------------
+
+So far the DMX storage model looks like the *graph* model: *nodes* and *edges*. Actually DMX is based on the *Associative Model of Data*, an substantial extension of the graph model. While in a graph an edge is always a connection between 2 *nodes*, in the Associative Model of Data an edge can connect *edges* too. That is an edge connects either 2 nodes (as traditionally), or a node and an edge, or 2 edges.
+
+To learn about the advantages of the Associative Model of Data see:
+
+| Joseph V. Homan, Paul J. Kovacs -- A Comparison Of The Relational Database Model And The Associative Database Model (6 page article)
+| *Issues in Information Systems*, Volume X, No. 1, 2009
+| http://iacis.org/iis/2009/P2009_1301.pdf
+
+| Simon Williams -- The Associative Model Of Data (24 page article)
+| *Journal of Database Marketing*, Volume 8, 4, 2001
+| https://link.springer.com/content/pdf/10.1057/palgrave.jdm.3240049.pdf
+
+| Simon Williams -- The Associative Model Of Data (book, 284 pages)
+| *Lazy Software*, 2nd edition, 2002
+| http://www.sentences.com/docs/other_docs/AMD.pdf
 
 Writing a DMX plugin
 ====================
