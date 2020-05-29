@@ -422,52 +422,56 @@ Once build, DMX hot-deploys the plugin automatically. In the terminal where you'
 
 .. code-block:: text
 
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl readConfigFile
-    INFO: Reading config file "/plugin.properties" for plugin "DeepaMehta 4 Tagging"
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.osgi.PluginActivator start
-    INFO: ========== Starting plugin "DeepaMehta 4 Tagging" ==========
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl createPluginServiceTrackers
-    INFO: Tracking plugin services for plugin "DeepaMehta 4 Tagging" ABORTED -- no consumed services declared
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl addService
-    INFO: Adding DeepaMehta 4 core service to plugin "DeepaMehta 4 Tagging"
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl addService
-    INFO: Adding Web Publishing service to plugin "DeepaMehta 4 Tagging"
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerWebResources
-    INFO: Registering Web resources of plugin "DeepaMehta 4 Tagging" ABORTED -- no Web resources provided
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerRestResources
-    INFO: Registering REST resources of plugin "DeepaMehta 4 Tagging" ABORTED -- no REST resources provided
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerRestResources
-    INFO: Registering provider classes of plugin "DeepaMehta 4 Tagging" ABORTED -- no provider classes provided
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl addService
-    INFO: Adding Event Admin service to plugin "DeepaMehta 4 Tagging"
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager activatePlugin
-    INFO: ----- Activating plugin "DeepaMehta 4 Tagging" -----
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl createPluginTopicIfNotExists
-    INFO: Installing plugin "DeepaMehta 4 Tagging" in the database
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runPluginMigrations
-    INFO: Running 1 migrations for plugin "DeepaMehta 4 Tagging" (migrationNr=0, requiredMigrationNr=1)
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager$MigrationInfo readMigrationConfigFile
-    INFO: Reading migration config file "/migrations/migration1.properties" ABORTED -- file does not exist
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runMigration
-    INFO: Running migration 1 of plugin "DeepaMehta 4 Tagging" (runMode=ALWAYS, isCleanInstall=true)
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.util.DeepaMehtaUtils readMigrationFile
+    May 29, 2020 4:26:17 PM systems.dmx.core.osgi.PluginActivator start
+    INFO: ========== Starting plugin "DMX Tagging" ==========
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginImpl readConfigFile
+    INFO: Reading config file "/plugin.properties" for plugin "DMX Tagging"
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginImpl pluginDependencies
+    INFO: Tracking 1 plugins for plugin "DMX Tagging" [systems.dmx.webclient]
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginImpl createInjectedServiceTrackers
+    INFO: Tracking services for plugin "DMX Tagging" SKIPPED -- no services consumed
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginImpl addService
+    INFO: Adding DMX core service to plugin "DMX Tagging"
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginImpl publishWebResources
+    INFO: Publishing web resources of plugin "DMX Tagging" SKIPPED -- no web resources provided
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginImpl publishRestResources
+    INFO: Publishing REST resources of plugin "DMX Tagging" SKIPPED -- no REST resources provided
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginImpl publishRestResources
+    INFO: Registering provider classes of plugin "DMX Tagging" SKIPPED -- no provider classes found
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginImpl addService
+    INFO: Adding Event Admin service to plugin "DMX Tagging"
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginImpl activate
+    INFO: ----- Activating plugin "DMX Tagging" -----
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginImpl createPluginTopicIfNotExists
+    INFO: Installing plugin "DMX Tagging" in the database
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.MigrationManager runPluginMigrations
+    INFO: Running 1 migrations for plugin "DMX Tagging" (installed model: version 0, required model: version 1)
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.MigrationManager$MigrationInfo readMigrationConfigFile
+    INFO: Reading migration config file "/migrations/migration1.properties" SKIPPED -- file does not exist
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.MigrationManager _runMigration
+    INFO: Running migration 1 of plugin "DMX Tagging" (runMode=ALWAYS, isCleanInstall=true)
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.MigrationManager readMigrationFile
     INFO: Reading migration file "/migrations/migration1.json"
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runMigration
-    INFO: Completing migration 1 of plugin "DeepaMehta 4 Tagging"
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runMigration
-    INFO: Updating migration number (1)
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerListeners
-    INFO: Registering listeners of plugin "DeepaMehta 4 Tagging" at DeepaMehta 4 core service ABORTED -- no listeners implemented
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerPluginService
-    INFO: Registering OSGi service of plugin "DeepaMehta 4 Tagging" ABORTED -- no OSGi service provided
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager activatePlugin
-    INFO: ----- Activation of plugin "DeepaMehta 4 Tagging" complete -----
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager checkAllPluginsActivated
-    INFO: ### Bundles total: 33, DeepaMehta plugins: 17, Activated: 17
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager activatePlugin
-    INFO: ########## All Plugins Activated ##########
-    Apr 6, 2013 11:38:40 PM de.deepamehta.plugins.webclient.WebclientPlugin allPluginsActive
-    INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclient/") ABORTED -- already launched
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.MigrationManager updateVersionNumber
+    INFO: Updating installed model: version 1
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.DMXObjectModelImpl update
+    INFO: Updating topic 3681 (typeUri="dmx.core.plugin")
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.DMXObjectModelImpl delete
+    INFO: Deleting association 3689 (typeUri="dmx.core.instantiation")
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.DMXObjectModelImpl delete
+    INFO: Deleting association 3688 (typeUri="dmx.core.composition")
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginImpl registerListeners
+    INFO: Registering event listeners of plugin "DMX Tagging" SKIPPED -- no event listeners implemented
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginImpl registerProvidedService
+    INFO: Registering OSGi service of plugin "DMX Tagging" SKIPPED -- no OSGi service provided
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginImpl activate
+    INFO: ----- Activation of plugin "DMX Tagging" complete -----
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginManager checkAllPluginsActivated
+    INFO: ### Bundles total: 38, DMX plugins: 18, Activated: 18
+    May 29, 2020 4:26:17 PM systems.dmx.core.impl.PluginManager activatePlugin
+    INFO: ########## All DMX plugins active ##########
+    May 29, 2020 4:26:17 PM systems.dmx.webclient.WebclientPlugin allPluginsActive
+    INFO: ### Launching DMX Webclient (http://localhost:8080/systems.dmx.webclient/) SKIPPED -- already launched
     ...
 
 When you type again ``lb`` in the DMX terminal you'll see the *DMX Tagging* plugin now appears in the list of activated bundles:
@@ -476,11 +480,11 @@ When you type again ``lb`` in the DMX terminal you'll see the *DMX Tagging* plug
 
     START LEVEL 6
        ID|State      |Level|Name
-        0|Active     |    0|System Bundle (3.2.1)
+        0|Active     |    0|System Bundle (4.4.1)
        ...
-       30|Active     |    5|DeepaMehta 4 File Manager (4.1.1.SNAPSHOT)
-       31|Active     |    5|DeepaMehta 4 Icon Picker (4.1.1.SNAPSHOT)
-       32|Active     |    5|DeepaMehta 4 Tagging (0.1.0.SNAPSHOT)
+       35|Active     |    5|DMX Config (5.0.0.SNAPSHOT)
+       36|Active     |    5|DMX Webclient (5.0.0.SNAPSHOT)
+       37|Active     |    5|DMX Tagging (0.1.0.SNAPSHOT)
 
 Try out the plugin
 ==================
