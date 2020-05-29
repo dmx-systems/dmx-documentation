@@ -347,12 +347,14 @@ You'll see a lot of information logged, cumulating with:
 .. code-block:: text
 
     ...
-    Apr 6, 2013 11:21:20 PM de.deepamehta.core.impl.PluginManager checkAllPluginsActivated
-    INFO: ### Bundles total: 32, DeepaMehta plugins: 16, Activated: 16
-    Apr 6, 2013 11:21:20 PM de.deepamehta.core.impl.PluginManager activatePlugin
-    INFO: ########## All Plugins Activated ##########
-    Apr 6, 2013 11:21:20 PM de.deepamehta.plugins.webclient.WebclientPlugin allPluginsActive
-    INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclient/")
+    May 29, 2020 3:37:06 PM systems.dmx.core.impl.PluginManager checkAllPluginsActivated
+    INFO: ### Bundles total: 37, DMX plugins: 17, Activated: 17
+    May 29, 2020 3:37:06 PM systems.dmx.core.impl.PluginManager activatePlugin
+    INFO: ########## All DMX plugins active ##########
+    May 29, 2020 3:37:06 PM systems.dmx.webclient.WebclientPlugin allPluginsActive
+    INFO: DMX platform started in 5.711 sec
+    May 29, 2020 3:37:06 PM systems.dmx.webclient.WebclientPlugin allPluginsActive
+    INFO: ### Launching DMX Webclient: http://localhost:8080/systems.dmx.webclient/
     ...
 
 Then a browser windows opens automatically and displays the DMX Webclient.
@@ -371,26 +373,27 @@ The output  looks like this:
 
     START LEVEL 6
        ID|State      |Level|Name
-        0|Active     |    0|System Bundle (3.2.1)
+        0|Active     |    0|System Bundle (4.4.1)
        ...
-       14|Active     |    5|DeepaMehta 4 Help (4.1.1.SNAPSHOT)
-       15|Active     |    5|DeepaMehta 4 Topicmaps (4.1.1.SNAPSHOT)
-       16|Active     |    5|DeepaMehta 4 Webservice (4.1.1.SNAPSHOT)
-       17|Active     |    5|DeepaMehta 4 Files (4.1.1.SNAPSHOT)
-       18|Active     |    5|DeepaMehta 4 Geomaps (4.1.1.SNAPSHOT)
-       19|Active     |    5|DeepaMehta 4 Storage - Neo4j (4.1.1.SNAPSHOT)
-       20|Active     |    5|DeepaMehta 4 Core (4.1.1.SNAPSHOT)
-       21|Active     |    5|DeepaMehta 4 Access Control (4.1.1.SNAPSHOT)
-       22|Active     |    5|DeepaMehta 4 Webclient (4.1.1.SNAPSHOT)
-       23|Active     |    5|DeepaMehta 4 Webbrowser (4.1.1.SNAPSHOT)
-       24|Active     |    5|DeepaMehta 4 Type Search (4.1.1.SNAPSHOT)
-       25|Active     |    5|DeepaMehta 4 Workspaces (4.1.1.SNAPSHOT)
-       26|Active     |    5|DeepaMehta 4 Notes (4.1.1.SNAPSHOT)
-       27|Active     |    5|DeepaMehta 4 Type Editor (4.1.1.SNAPSHOT)
-       28|Active     |    5|DeepaMehta 4 Contacts (4.1.1.SNAPSHOT)
-       29|Active     |    5|DeepaMehta 4 Facets (4.1.1.SNAPSHOT)
-       30|Active     |    5|DeepaMehta 4 File Manager (4.1.1.SNAPSHOT)
-       31|Active     |    5|DeepaMehta 4 Icon Picker (4.1.1.SNAPSHOT)
+       18|Active     |    5|DMX Topicmaps (5.0.0.SNAPSHOT)
+       19|Active     |    5|DMX Caching (5.0.0.SNAPSHOT)
+       20|Active     |    5|DMX Date/Time (5.0.0.SNAPSHOT)
+       21|Active     |    5|DMX Timestamps (5.0.0.SNAPSHOT)
+       22|Active     |    5|DMX Bookmarks (5.0.0.SNAPSHOT)
+       23|Active     |    5|DMX Contacts (5.0.0.SNAPSHOT)
+       24|Active     |    5|DMX Notes (5.0.0.SNAPSHOT)
+       25|Active     |    5|DMX Webservice (5.0.0.SNAPSHOT)
+       26|Active     |    5|DMX Base (5.0.0.SNAPSHOT)
+       27|Active     |    5|DMX Events (5.0.0.SNAPSHOT)
+       28|Active     |    5|DMX Tags (5.0.0.SNAPSHOT)
+       29|Active     |    5|DMX Access Control (5.0.0.SNAPSHOT)
+       30|Active     |    5|DMX Files (5.0.0.SNAPSHOT)
+       31|Resolved   |    5|DMX Storage - Neo4j (5.0.0.SNAPSHOT)
+       32|Active     |    5|DMX Facets (5.0.0.SNAPSHOT)
+       33|Active     |    5|DMX Workspaces (5.0.0.SNAPSHOT)
+       34|Active     |    5|DMX Core (5.0.0.SNAPSHOT)
+       35|Active     |    5|DMX Config (5.0.0.SNAPSHOT)
+       36|Active     |    5|DMX Webclient (5.0.0.SNAPSHOT)
 
 The *DMX Tagging* plugin does not yet appear in that list as it is not yet build.
 
