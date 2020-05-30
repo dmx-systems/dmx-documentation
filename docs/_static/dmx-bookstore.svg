@@ -1,4 +1,4 @@
-<svg viewBox="0 0 270 190" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+<svg viewBox="0 0 275 200" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
   <defs>
     <bx:grid x="0" y="0" width="5" height="5"></bx:grid>
     <style bx:fonts="Lato">
@@ -24,39 +24,39 @@
       <circle style="fill: url(#color-0);" cx="2.5" cy="2.5" r="2.5"></circle>
     </marker>
   </defs>
-  <rect width="420" height="230" style="fill: rgb(255, 255, 255);" y="255"></rect>
-  <line style="fill: rgb(184, 184, 184); stroke: url(#color-0); stroke-width: 2px; marker-start: url(#aux-node);" x1="198.4" y1="105.4" x2="175.1" y2="57.8"></line>
-  <line style="fill: rgb(184, 184, 184); stroke: url(#color-0); stroke-width: 2px;" x1="119.6" y1="24.7" x2="174.2" y2="57.6"></line>
-  <line style="fill: rgb(184, 184, 184); stroke-width: 2px; marker-end: url(#aux-node); stroke: url(#color-0);" x1="79.9" y1="148.1" x2="90.4" y2="92.2"></line>
-  <line style="fill: rgb(184, 184, 184); stroke-width: 2px; marker-end: url(#aux-node); stroke: url(#color-0);" x1="34.9" y1="88.1" x2="139.1" y2="95.6"></line>
-  <line style="fill: rgb(184, 184, 184); stroke-width: 2px; marker-end: url(#aux-node); stroke: url(#color-0);" x1="159.9" y1="173.1" x2="119.5" y2="24.6"></line>
-  <line style="fill: rgb(184, 184, 184); stroke: url(#color-0); stroke-width: 2px;" x1="159.9" y1="172.1" x2="237.9" y2="37.1"></line>
-  <line style="fill: rgb(184, 184, 184); stroke: url(#color-0); stroke-width: 2px;" x1="59.9" y1="18.1" x2="237.9" y2="37.1"></line>
-  <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="73" x="124" transform="matrix(0.99357, 0.11325, -0.11325, 0.99357, 35.2924, -64.17149)">Customer</text>
-  <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="73" x="124" transform="matrix(0.26217, 0.96502, -0.96502, 0.26217, 183.13904, -44.35459)">Order</text>
-  <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="73" x="124" transform="matrix(0.49996, -0.86605, 0.86605, 0.49996, 82.33746, 183.9689)">Stock</text>
-  <g transform="matrix(1, 0, 0, 1, -35, -5)">
-    <rect x="75" width="40" height="15" style="fill: url(#color-1);" y="15"></rect>
-    <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="25" x="95">Person</text>
+  <rect width="275" height="200" style="fill: rgb(255, 255, 255);"></rect>
+  <line style="fill: rgb(184, 184, 184); stroke: url(#color-0); stroke-width: 2px; marker-start: url(#aux-node);" x1="198.4" y1="110.4" x2="175.1" y2="62.8" bx:origin="-1.721031 0.781513"></line>
+  <line style="fill: rgb(184, 184, 184); stroke: url(#color-0); stroke-width: 2px;" x1="119.7" y1="30.9" x2="174.7" y2="60.6" bx:origin="0.278182 2.326599"></line>
+  <line style="fill: rgb(184, 184, 184); stroke-width: 2px; marker-end: url(#aux-node); stroke: url(#color-0);" x1="79.9" y1="153.1" x2="91.1" y2="96" bx:origin="4.919644 0.070053"></line>
+  <line style="fill: rgb(184, 184, 184); stroke-width: 2px; marker-end: url(#aux-node); stroke: url(#color-0);" x1="35.4" y1="90.3" x2="138.7" y2="100.6" bx:origin="0.964182 0.941748"></line>
+  <line style="fill: rgb(184, 184, 184); stroke-width: 2px; marker-end: url(#aux-node); stroke: url(#color-0);" x1="159.9" y1="178.1" x2="119.7" y2="30.8" bx:origin="0.380597 0.46979"></line>
+  <line style="fill: rgb(184, 184, 184); stroke: url(#color-0); stroke-width: 2px;" x1="159.9" y1="177.1" x2="237.9" y2="42.1" bx:origin="-0.319231 0.428889"></line>
+  <line style="fill: rgb(184, 184, 184); stroke: url(#color-0); stroke-width: 2px;" x1="57" y1="24.7" x2="237.9" y2="42.1" bx:origin="0.431177 4.327587"></line>
+  <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="73" x="124" transform="matrix(0.99452, 0.10458, -0.10458, 0.99452, 34.57159, -58.16192)" bx:origin="0.306515 7.699631">Customer</text>
+  <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="73" x="124" transform="matrix(0.26217, 0.96502, -0.96502, 0.26217, 183.13904, -39.35459)" bx:origin="0.411514 1.755981">Order</text>
+  <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="73" x="124" transform="matrix(0.49996, -0.86605, 0.86605, 0.49996, 82.33746, 188.9689)" bx:origin="-0.434599 -5.870218">Stock</text>
+  <g transform="matrix(1, 0, 0, 1, -35, 0)" bx:origin="2.222222 4.25">
+    <ellipse style="fill: url(#color-1);" cx="92.5" cy="25" rx="22.5" ry="10"></ellipse>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="28.1" x="92.8">Person</text>
   </g>
-  <g transform="matrix(1, 0, 0, 1, 10, -75)">
-    <rect x="210" width="35" height="25" style="fill: url(#color-1);" y="100"></rect>
-    <text style="font-family: Lato; font-size: 9px; white-space: pre;" y="110" x="195" transform="matrix(1, 0, 0, 1, 20, 0)">Legal<tspan x="195" dy="1.1em">​</tspan>Entity</text>
+  <g transform="matrix(1, 0, 0, 1, 10, -70)" bx:origin="-2 2.5">
+    <ellipse style="fill: url(#color-1);" cx="227.5" cy="110" rx="22.5" ry="15"></ellipse>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="110" x="195" transform="matrix(1, 0, 0, 1, 32, -2)">Legal<tspan x="195" dy="1.1em">​</tspan>Entity</text>
   </g>
-  <g transform="matrix(1, 0, 0, 1, 65, 150)">
-    <rect x="75" width="40" height="15" style="fill: url(#color-1);" y="15"></rect>
-    <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="25" x="95">Book</text>
+  <g transform="matrix(1, 0, 0, 1, 65, 155)" bx:origin="-0.125 -3.25">
+    <ellipse style="fill: url(#color-1);" cx="95" cy="20" rx="20" ry="10"></ellipse>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="23" x="95">Book</text>
   </g>
-  <g transform="matrix(1, 0, 0, 1, 80.00001, 34.99999)">
-    <rect x="75" width="40" height="15" style="fill: url(#color-1);" y="15"></rect>
-    <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="25" x="95">Points</text>
+  <g transform="matrix(1, 0, 0, 1, 80.00001, 39.99999)" bx:origin="-0.5 2.500001">
+    <ellipse style="fill: url(#color-1);" cx="95" cy="20" rx="20" ry="10"></ellipse>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="23" x="95">Points</text>
   </g>
-  <g transform="matrix(1, 0, 0, 1, -60, 65)">
-    <rect x="75" width="40" height="15" style="fill: url(#color-1);" y="15"></rect>
+  <g transform="matrix(1, 0, 0, 1, -60, 67.6)" bx:origin="3 1">
+    <ellipse style="fill: url(#color-1);" cx="95" cy="22.4" rx="20" ry="10"></ellipse>
     <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="25" x="95">Date</text>
   </g>
-  <g transform="matrix(1, 0, 0, 1, -15, 125)">
-    <rect x="75" width="40" height="15" style="fill: url(#color-1);" y="15"></rect>
-    <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="25" x="95">Price</text>
+  <g transform="matrix(1, 0, 0, 1, -15, 130)" bx:origin="1.875 -2.25">
+    <ellipse style="fill: url(#color-1);" cx="95" cy="25" rx="20" ry="10"></ellipse>
+    <text style="font-family: Lato; font-size: 9px; white-space: pre; text-anchor: middle;" y="28" x="95">Price</text>
   </g>
 </svg>

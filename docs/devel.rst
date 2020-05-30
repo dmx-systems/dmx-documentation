@@ -78,7 +78,7 @@ Entities on the other hand are mutable. An entity topic's child hierarchy may ch
 Associative Model of Data
 -------------------------
 
-So far the DMX storage model looks like the *graph* model: *nodes* and *edges*. Actually DMX is based on the *Associative Model of Data*, an substantial extension of the graph model.
+The above images suggest the DMX storage model is *graph* based: *nodes* and *edges*. Actually DMX is based on the *Associative Model of Data*, an substantial extension of the graph model.
 
 .. figure:: _static/dmx-assoc-data-model.svg
    :width: 240px
@@ -86,25 +86,29 @@ So far the DMX storage model looks like the *graph* model: *nodes* and *edges*. 
 
 While in a graph an edge is always a connection between 2 *nodes*, in the Associative Model of Data an edge can connect *edges* too. That is an edge connects either 2 nodes (as traditionally, see A1), or a node and an edge (A2), or 2 edges (A3).
 
+Basically DMX makes associations objects of discourse too. Associations can be associated with other topics/associations, just like topics. This results in expressive high-connected structures at both levels, model and content.
+
 .. figure:: _static/dmx-bookstore.svg
-   :width: 420px
+   :width: 440px
    :align: left
 
-A bookstore as an associative data model. Note that "Customer", "Order", and "Stock" are modeled as associations (not topics), e.g. "Customer" being a relationship between "Person" and "Legal Entity". It is a customer who issues orders (not a plain person). So "Order" is an relationship between "Customer" and "Book".
+As an example lets see an associative data model for a "bookstore" application. Note that "Customer", "Order", and "Stock" are modeled as *associations*, not as topics, e.g. "Customer" is a relationship between "Person" and "Legal Entity". It is a *customer* who place orders (not a plain person). So "Order" is a relationship between the *association* "Customer" and "Book". An order has a date and a price. With every purchase the customer's "Points" account grows. For every book in stock the store keeps the information with how many points its purchase is rewarded.
 
-To learn about the advantages of the Associative Model of Data see:
+.. hint::
 
-| Joseph V. Homan, Paul J. Kovacs -- A Comparison Of The Relational Database Model And The Associative Database Model (6 page article)
-| *Issues in Information Systems*, Volume X, No. 1, 2009
-| http://iacis.org/iis/2009/P2009_1301.pdf
+    To learn more about the advantages of the Associative Model of Data see:
 
-| Simon Williams -- The Associative Model Of Data (24 page article)
-| *Journal of Database Marketing*, Volume 8, 4, 2001
-| https://link.springer.com/content/pdf/10.1057/palgrave.jdm.3240049.pdf
+    | Joseph V. Homan, Paul J. Kovacs -- A Comparison Of The Relational Database Model And The Associative Database Model (6 page article)
+    | *Issues in Information Systems*, Volume X, No. 1, 2009
+    | http://iacis.org/iis/2009/P2009_1301.pdf
 
-| Simon Williams -- The Associative Model Of Data (book, 284 pages)
-| *Lazy Software*, 2nd edition, 2002
-| http://www.sentences.com/docs/other_docs/AMD.pdf
+    | Simon Williams -- The Associative Model Of Data (24 page article)
+    | *Journal of Database Marketing*, Volume 8, 4, 2001
+    | https://link.springer.com/content/pdf/10.1057/palgrave.jdm.3240049.pdf
+
+    | Simon Williams -- The Associative Model Of Data (book, 284 pages)
+    | *Lazy Software*, 2nd edition, 2002
+    | http://www.sentences.com/docs/other_docs/AMD.pdf
 
 Writing a DMX plugin
 ====================
