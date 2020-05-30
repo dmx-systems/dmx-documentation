@@ -78,11 +78,19 @@ Entities on the other hand are mutable. An entity topic's child hierarchy may ch
 Associative Model of Data
 -------------------------
 
+So far the DMX storage model looks like the *graph* model: *nodes* and *edges*. Actually DMX is based on the *Associative Model of Data*, an substantial extension of the graph model.
+
 .. figure:: _static/dmx-assoc-data-model.svg
    :width: 240px
    :align: left
 
-So far the DMX storage model looks like the *graph* model: *nodes* and *edges*. Actually DMX is based on the *Associative Model of Data*, an substantial extension of the graph model. While in a graph an edge is always a connection between 2 *nodes*, in the Associative Model of Data an edge can connect *edges* too. That is an edge connects either 2 nodes (as traditionally, see A1), or a node and an edge (see A2), or 2 edges (see A3).
+While in a graph an edge is always a connection between 2 *nodes*, in the Associative Model of Data an edge can connect *edges* too. That is an edge connects either 2 nodes (as traditionally, see A1), or a node and an edge (A2), or 2 edges (A3).
+
+.. figure:: _static/dmx-bookstore.svg
+   :width: 420px
+   :align: left
+
+A bookstore as an associative data model. Note that "Customer", "Order", and "Stock" are modeled as associations (not topics), e.g. "Customer" being a relationship between "Person" and "Legal Entity". It is a customer who issues orders (not a plain person). So "Order" is an relationship between "Customer" and "Book".
 
 To learn about the advantages of the Associative Model of Data see:
 
