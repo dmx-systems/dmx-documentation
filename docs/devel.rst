@@ -86,17 +86,19 @@ The above images suggest the DMX storage model is *graph* based: *nodes* and *ed
 
 While in a graph an edge is always a connection between 2 *nodes*, in the Associative Model of Data an edge can connect *edges* too. That is an edge connects either 2 nodes (as traditionally, see A1), or a node and an edge (A2), or 2 edges (A3).
 
-Basically DMX makes associations objects of discourse too. Associations can be associated with other topics/associations, just like topics. This results in expressive high-connected structures at both levels, model and content.
+Basically DMX makes associations objects of discourse too. Associations can be associated with other topics/associations, just like topics. This results in expressive highly-connected structures at both levels, data model and content (= *instances*).
 
 .. figure:: _static/dmx-bookstore.svg
    :width: 440px
    :align: left
 
-As an example lets see an associative data model for a "bookstore" application. Note that "Customer", "Order", and "Stock" are modeled as *associations*, not as topics, e.g. "Customer" is a relationship between "Person" and "Legal Entity". It is a *customer* who place orders (not a plain person). So "Order" is a relationship between the *association* "Customer" and "Book". An order has a date and a price. With every purchase the customer's "Points" account grows. For every book in stock the store keeps the information with how many points its purchase is rewarded.
+Here an associative data model for a "bookstore" application is shown. Note that "Customer", "Order", and "Stock" are modeled as *associations* (not as topics). That is a "Customer" *instance* is an *association* (not a topic), e.g. between "Michael Peters" (a "Person") and "Bookpages" (a "Legal Entity").
+
+Furthermore note that "Order" is an association between "Customer" and "Book", that is an association between a topic and an association. An order has a date and a price. With every purchase the customer's "Points" account grows. For every book in stock the store keeps the information with how many points its purchase is rewarded.
 
 .. hint::
 
-    To learn more about the advantages of the Associative Model of Data see:
+    Learn more about the Associative Model of Data:
 
     | Joseph V. Homan, Paul J. Kovacs -- A Comparison Of The Relational Database Model And The Associative Database Model (6 page article)
     | *Issues in Information Systems*, Volume X, No. 1, 2009
@@ -109,6 +111,9 @@ As an example lets see an associative data model for a "bookstore" application. 
     | Simon Williams -- The Associative Model Of Data (book, 284 pages)
     | *Lazy Software*, 2nd edition, 2002
     | http://www.sentences.com/docs/other_docs/AMD.pdf
+
+Hot code replacement
+====================
 
 Writing a DMX plugin
 ====================
