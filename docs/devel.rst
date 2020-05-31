@@ -56,13 +56,13 @@ Example: an Address topic is shared between many Person topics, the semantics be
 
 To solve the problem of side effects, in DMX values are *immutable*, they never change. Only the associations forming the composite values do.
 
-When issuing the move-person request the DMX Core creates a *new* Address topic and associates it to the person moved. Not quite: actually DMX will first look if such an address exists already, that is an Address topic with exactly the 3 particular children ("Petersburger Straße 101", "10247", "Berlin"), and if so associate that one.
+When issuing the move-person request the DMX Core creates a *new* Address topic and associates it to the person moved. Not quite: actually DMX will first look if such an address exists already, that is an Address topic with exactly the 4 particular children ("Petersburger Straße 101", "10247", "Berlin", "Germany"), and if so associate that one.
 
 When updating a composite topic you never maintain the hierarchy associations manually. You just give a (fragment of the) new value hierarchy, and the Core will maintain the associations. This Core responsibility is called *Value Integration*. This works for arbitrary hierarchy depth.
 
 .. figure:: _static/dmx-person-example-2.svg
 
-    After one person has moved the 2 persons do not share a common Address topic anymore; the City topic "Berlin" is still shared between the 2 Address topics though.
+    After one person has moved the 2 persons do not share a common Address topic anymore; the City topic "Berlin" and Country topic "Germany" are still shared between the 2 Address topics though.
 
 Value vs. Entity
 ----------------
@@ -114,6 +114,8 @@ Furthermore note that "Order" is an association between "Customer" and "Book", t
 
 Hot code replacement
 ====================
+
+TODO
 
 Writing a DMX plugin
 ====================
@@ -214,9 +216,9 @@ TODO: where to put?
 
 Technically the DMX platform is a Java/OSGi based application server. OSGi is a service oriented component architecture to support modularity. A DMX plugin is also an *OSGi Bundle*. A DMX application consists of one or more plugins. Plugins provide services consumable by other plugins, and exposed via a REST API. Plugins can be installed/updated/uninstalled without restarting the server (Hot Deployment). When a service becomes unavailable all plugins depending on that service shutdown. When the service becomes available again, all depending plugins are activated again. This has great advantages for both administration and development.
 
-******************************
-Build DMX platform from source
-******************************
+*********************************
+Building DMX platform from source
+*********************************
 
 Requirements:
 
@@ -1262,7 +1264,7 @@ To feed the HTTP request body into a service method you must:
 * Implement a provider class for the type of the entity parameter, resp. make sure such a provider class already exists (as part of the DMX Core or one of the installed DMX plugins).
 
 *********************************
-Writing a DMX Webclient Extension
+Writing a DMX Webclient extension
 *********************************
 
 TODO
