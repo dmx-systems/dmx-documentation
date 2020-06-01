@@ -15,20 +15,23 @@ What a DMX plugin can do
 
 To give you an impression what a DMX plugin can do, these might be the effects once you install one:
 
-* The database contains additional *Types*. Some of them may appear in the menus of the DMX Webclient. E.g. the `dmx-notes <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-notes>`_ plugin creates the "Note" topic type. The type appears in the Webclient search/create dialog, so the user can create/edit/search notes now.
-* Customized detail renderings. E.g. the `dmx-datetime <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-datetime>`_ plugin provides formatters/editors for date and time values.
-* An additional *Topicmap Type* becomes available in the Webclient search/create dialog. E.g. once `dmx-geomaps <https://git.dmx.systems/dmx-plugins/dmx-geomaps>`_ plugin is installed the user can create geo maps (besides normal topicmaps).
-* New commands appear in the Webclient context menu. E.g. the `dmx-dita <https://git.dmx.systems/dmx-plugins/dmx-dita>`_ plugin defines a topic type "DITA Processor", and adds a "Run" command to the context menu of DITA Processor topics.
-* A new URL becomes available which launches a custom web front-end, completely independent from DMX Webclient. E.g. once the `dmx-mobile <https://git.dmx.systems/dmx-plugins/dmx-mobile>`_ plugin is installed you can launch its front-end via `http://localhost:8080/systems.dmx.mobile/`.
-* An additional OSGi back-end service becomes available to be consumable by other plugins. E.g. a plugin can call the  ``createWorkspace()`` method of the `Workspaces Service` (as provided by the `dmx-workspaces <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-workspaces>`_ plugin).
-* An additional REST service becomes available at a dedicated namespace URI. E.g. when the `dmx-topicmaps <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-topicmaps>`_ plugin is installed its REST service is available under `http://localhost:8080/topicmaps`. So you can create/manipulate topicmaps regardless of which programming language you use.
+* The database contains an additional **data model** resp. existing data models are changed/extended. In DMX a data model consists basically of *Topic Types* and *Association Types*. Some of the types may appear in the DMX Webclient menus. E.g. the `dmx-notes <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-notes>`_ plugin creates the "Note" data model and let the "Note" topic type appear in the DMX Webclient search/create dialog, allowing the user to create/edit/search notes.
+* The **DMX Webclient** is customized:
+
+    * Customized topic/association **detail renderings**. E.g. the `dmx-datetime <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-datetime>`_ plugin provides formatters/editors for date and time values.
+    * Customized **topicmap renderings**. An additional *Topicmap Type* becomes available in the search/create dialog. E.g. once `dmx-geomaps <https://git.dmx.systems/dmx-plugins/dmx-geomaps>`_ plugin is installed the user can create geo maps (besides normal topicmaps).
+    * New commands appear in the topic/association **context menu**. E.g. the `dmx-dita <https://git.dmx.systems/dmx-plugins/dmx-dita>`_ plugin defines a topic type "DITA Processor", and adds a "Run" command to the context menu of DITA Processor topics.
+
+* A **custom web front-end**, completely independent from DMX Webclient, becomes available at a dedicated URL. E.g. once the `dmx-mobile <https://git.dmx.systems/dmx-plugins/dmx-mobile>`_ plugin is installed you can launch its front-end via `http://localhost:8080/systems.dmx.mobile/`.
+* At back-end an additional **OSGi service** becomes available, consumable by other plugins. A plugin can consume e.g. the `Workspaces Service` (as provided by the `dmx-workspaces <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-workspaces>`_ plugin) and call its ``createWorkspace()`` method.
+* An additional **RESTful service** (with an underlying OSGi service) becomes available at a dedicated namespace URI. E.g. when the `dmx-topicmaps <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-topicmaps>`_ plugin is installed its RESTful service for creating/manipulating topicmaps becomes available under ``http://localhost:8080/topicmaps``. A RESTful service is accessible by any DMX plugin front-end as well as by external applications, regardless of programming language. E.g. there is a DMX-CLI written in Python: `py4dmx <https://git.dmx.systems/dmx-contrib/py4dmx>`_.
 
 A DMX plugin contains one or more of these effects, in an arbitrary combination.
 
 In every case a plugin is a single ``.jar`` file prefixed by ``dmx-``, e.g. ``dmx-geomaps-0.1.jar``. A plugin is hot-deployed/stopped/updated at runtime by (re)moving that .jar file to/from ``bundle-deploy/``.
 
-About the DMX platform
-======================
+The DMX platform
+================
 
 The DMX platform is a web application server written in Java.
 It provides a framework for application developers.
