@@ -22,13 +22,19 @@ To give you an impression what a DMX plugin can do, these might be the effects o
     * Customized **topicmap renderings**. An additional *Topicmap Type* becomes available in the search/create dialog. E.g. once `dmx-geomaps <https://git.dmx.systems/dmx-plugins/dmx-geomaps>`_ plugin is installed the user can create geo maps (besides normal topicmaps).
     * New commands appear in the topic/association **context menu**. E.g. the `dmx-dita <https://git.dmx.systems/dmx-plugins/dmx-dita>`_ plugin defines a topic type "DITA Processor", and adds a "Run" command to the context menu of DITA Processor topics.
 
-* A **custom web front-end**, completely independent from DMX Webclient, becomes available at a dedicated URL. E.g. once the `dmx-mobile <https://git.dmx.systems/dmx-plugins/dmx-mobile>`_ plugin is installed you can launch its front-end via `http://localhost:8080/systems.dmx.mobile/`.
-* At back-end an additional **OSGi service** becomes available, consumable by other plugins. A plugin can consume e.g. the `Workspaces Service` (as provided by the `dmx-workspaces <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-workspaces>`_ plugin) and call its ``createWorkspace()`` method.
-* An additional **RESTful service** (with an underlying OSGi service) becomes available at a dedicated namespace URI. E.g. when the `dmx-topicmaps <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-topicmaps>`_ plugin is installed its RESTful service for creating/manipulating topicmaps becomes available under ``http://localhost:8080/topicmaps``. A RESTful service is accessible by any DMX plugin front-end as well as by external applications, regardless of programming language. E.g. there is a DMX-CLI written in Python: `py4dmx <https://git.dmx.systems/dmx-contrib/py4dmx>`_.
+* A **custom web front-end**, completely independent from DMX Webclient, becomes available at a dedicated URL. E.g. once the `dmx-mobile <https://git.dmx.systems/dmx-plugins/dmx-mobile>`_ plugin is installed you can launch its front-end via ``http://localhost:8080/systems.dmx.mobile/``. You might recognize that some front-end widgets are recycled from the DMX Webclient, e.g. the detail/form renderer and the search/create dialog.
+* At back-end an additional **OSGi service** becomes available, consumable by other plugins. E.g. the `dmx-workspaces <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-workspaces>`_ plugin provides the `WorkspacesService <https://apidocs.dmx.systems/index.html?systems/dmx/workspaces/WorkspacesService.html>`_. Any plugin can consume it and call e.g. its ``createWorkspace()`` method in order to programmatically create a workspace.
+* An additional **RESTful service** (with an underlying OSGi service) becomes available at a dedicated namespace URI. E.g. when the `dmx-topicmaps <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-topicmaps>`_ plugin is installed its RESTful service for creating/manipulating topicmaps becomes available under ``http://localhost:8080/topicmaps``. A RESTful service is accessible by any DMX front-end as well as by any external application, regardless of programming language. E.g. there is a DMX-CLI written in Python: `py4dmx <https://git.dmx.systems/dmx-contrib/py4dmx>`_.
 
 A DMX plugin contains one or more of these effects, in an arbitrary combination.
 
 In every case a plugin is a single ``.jar`` file prefixed by ``dmx-``, e.g. ``dmx-geomaps-0.1.jar``. A plugin is hot-deployed/stopped/updated at runtime by (re)moving that .jar file to/from ``bundle-deploy/``.
+
+.. hint::
+
+    The DMX platform itself is built from (about 20) plugins, e.g. `dmx-webclient <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-webclient>`_, `dmx-topicmaps <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-topicmaps>`_, `dmx-contacts <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-contacts>`_, `dmx-search <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-search>`_. These plugins are in no way different than the plugins you're developing. Furthermore there are various external plugins available (via separate download), e.g. `dmx-geomaps <https://git.dmx.systems/dmx-plugins/dmx-geomaps>`_, `dmx-mobile <https://git.dmx.systems/dmx-plugins/dmx-mobile>`_.
+
+    Whenever this guide mentions a plugin it links to its source code. This provides you a great learning resource as you can explore how "real" DMX plugins are made.
 
 The DMX platform
 ================
@@ -43,7 +49,7 @@ Traditionally a web application consists of 3 parts: *data model*, *business log
 
 In its back-end portion (see P1) a plugin can define a data model (creating *Types* and their relationships), and/or provide business logic in form of a service (consumable by other plugins or through a REST API). In its client-side portion a plugin either *creates* a front-end (see P2, P3), or *extends* an existing front-end (see P4).
 
-All installed plugins operate on the same semantic storage (with access restrictions applied). Operating on the semantic storage is possible exclusively through the *DMX Core Service* which is injected into every plugin.
+All installed plugins operate on the same semantic storage (with access restrictions applied). Operating on the semantic storage is possible exclusively through the *DMX Core Service* (`Java interface <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_) which is injected into every plugin.
 
 The heart of the platform is the *DMX Core*. The Core provides the runtime environment for DMX plugins. The Core a) loads plugins and manages their life-cycle, and b) governs all access to the semantic storage, and provides this duty as *DMX Core Service*.
 
@@ -151,10 +157,6 @@ To find out what type of plugin (see :ref:`P1-P4 <plugin-types>` illustration ab
     * Will it create a custom front-end
 
 Note: the "plugin type" is nothing explicit. You effectively change a plugin's type by adding/removing the respective portions/assets to/from it.
-
-.. hint::
-
-    The DMX platform itself is built from (about 20) plugins, e.g. `dmx-webclient <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-webclient>`_, `dmx-topicmaps <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-topicmaps>`_, `dmx-contacts <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-contacts>`_. These plugins are in no way different than the plugins you write. It is recommended to study them as a learning resource. Whenever this guide mentions a plugin it is a link to the plugin source code.
 
 The following list gives you an impression what it means when you're developing a DMX plugin of the respective type:
 
