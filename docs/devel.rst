@@ -380,7 +380,7 @@ Create the file ``plugin.properties``:
 Setup for Hot-Deployment
 ========================
 
-The easiest way to let DMX hot-deploy the plugin is to develop it within the ``bundle-dev/`` directory. To do so move the plugin directory on your hard disc into DMX's hot-deployment folder called ``bundle-dev/``. The next step is then to build your plugin.
+The easiest way to let DMX hot-deploy the plugin is to develop it within the ``modules-external/`` directory. To do so move the plugin directory on your hard disc into DMX's hot-deployment folder called ``modules-external/``. The next step is then to build your plugin.
 
 But lets first start DMX in development mode, that is with hot-deployment activated.
 
