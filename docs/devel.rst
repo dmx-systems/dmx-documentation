@@ -556,36 +556,34 @@ Once building is complete the changed plugin is redeployed automatically. You'll
 
 .. code-block:: text
 
-    Apr 8, 2013 1:10:40 AM de.deepamehta.core.osgi.PluginActivator stop
-    INFO: ========== Stopping plugin "DeepaMehta 4 Tagging" ==========
-    Apr 8, 2013 1:10:40 AM de.deepamehta.core.impl.PluginImpl removeService
-    INFO: Removing DeepaMehta 4 core service from plugin "DeepaMehta 4 Tagging"
-    Apr 8, 2013 1:10:40 AM de.deepamehta.core.impl.PluginImpl removeService
-    INFO: Removing Web Publishing service from plugin "DeepaMehta 4 Tagging"
-    Apr 8, 2013 1:10:40 AM de.deepamehta.core.impl.PluginImpl removeService
-    INFO: Removing Event Admin service from plugin "DeepaMehta 4 Tagging"
+    Jun 03, 2020 4:02:16 PM systems.dmx.core.osgi.PluginActivator stop
+    INFO: ========== Stopping plugin "DMX Bookstore" ==========
+    Jun 03, 2020 4:02:16 PM systems.dmx.core.impl.PluginImpl removeService
+    INFO: Removing DMX core service from plugin "DMX Bookstore"
+    Jun 03, 2020 4:02:16 PM systems.dmx.core.impl.PluginImpl removeService
+    INFO: Removing Event Admin service from plugin "DMX Bookstore"
     ...
     ...
-    Apr 8, 2013 1:10:44 AM de.deepamehta.core.osgi.PluginActivator start
-    INFO: ========== Starting plugin "DeepaMehta 4 Tagging" ==========
+    Jun 03, 2020 4:02:16 PM systems.dmx.core.osgi.PluginActivator start
+    INFO: ========== Starting plugin "DMX Bookstore" ==========
     ...
     ...
-    Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginManager activatePlugin
-    INFO: ----- Activating plugin "DeepaMehta 4 Tagging" -----
-    Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginImpl createPluginTopicIfNotExists
-    INFO: Installing plugin "DeepaMehta 4 Tagging" in the database ABORTED -- already installed
-    Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.MigrationManager runPluginMigrations
-    INFO: Running migrations for plugin "DeepaMehta 4 Tagging" ABORTED -- everything up-to-date (migrationNr=1)
+    Jun 03, 2020 4:02:16 PM systems.dmx.core.impl.PluginImpl activate
+    INFO: ----- Activating plugin "DMX Bookstore" -----
+    Jun 03, 2020 4:02:16 PM systems.dmx.core.impl.PluginImpl createPluginTopicIfNotExists
+    INFO: Installing plugin "DMX Bookstore" in the database SKIPPED -- already installed
+    Jun 03, 2020 4:02:16 PM systems.dmx.core.impl.MigrationManager runPluginMigrations
+    INFO: Running migrations for plugin "DMX Bookstore" SKIPPED -- installed model is up-to-date (version 1)
     ...
     ...
-    Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginManager activatePlugin
-    INFO: ----- Activation of plugin "DeepaMehta 4 Tagging" complete -----
-    Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginManager checkAllPluginsActivated
-    INFO: ### Bundles total: 33, DeepaMehta plugins: 17, Activated: 17
-    Apr 8, 2013 1:10:44 AM de.deepamehta.core.impl.PluginManager activatePlugin
-    INFO: ########## All Plugins Activated ##########
-    Apr 8, 2013 1:10:44 AM de.deepamehta.plugins.webclient.WebclientPlugin allPluginsActive
-    INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclient/") ABORTED -- already launched
+    Jun 03, 2020 4:02:16 PM systems.dmx.core.impl.PluginImpl activate
+    INFO: ----- Activation of plugin "DMX Bookstore" complete -----
+    Jun 03, 2020 4:02:16 PM systems.dmx.core.impl.PluginManager checkAllPluginsActivated
+    INFO: ### Bundles total: 38, DMX plugins: 18, Activated: 18
+    Jun 03, 2020 4:02:16 PM systems.dmx.core.impl.PluginManager activatePlugin
+    INFO: ########## All DMX plugins active ##########
+    Jun 03, 2020 4:02:16 PM systems.dmx.webclient.WebclientPlugin allPluginsActive
+    INFO: ### Launching DMX Webclient (http://localhost:8080/systems.dmx.webclient/) SKIPPED -- already launched
     ...
 
 In contrast to the initial build of the plugin you can recognize some differences in this log:
