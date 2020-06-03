@@ -240,16 +240,16 @@ This builds all components of the DMX platform and installs them in your local M
     [INFO] ------------------------------------------------------------------------
     [INFO] BUILD SUCCESS
     [INFO] ------------------------------------------------------------------------
-    [INFO] Total time: 03:07 min
+    [INFO] Total time: 02:41 min
     ...
 
 ****************************
 The plugin turn-around cycle
 ****************************
 
-This section illustrates how to begin a plugin project, how to build and how to deploy a plugin, and how to redeploy the plugin once you made changes in its source code. In other words, this section illustrates the plugin development turn-around cycle.
+This section illustrates how to begin a plugin project, how to build and how to deploy a plugin, and how to redeploy the plugin once you made changes in its source code.
 
-Let's start with a very simple plugin called *DMX Tagging*. This plugin will just create a new topic type called ``Tag``. Once the plugin is activated the topic type will appear in the DMX Webclient's *Create* menu, so you can create tag topics and associate them with arbitrary topics. And you will be able to fulltext search for tags.
+Let's start with a very simple plugin called *DMX Bookstore*. This plugin will just create a new topic type called ``Book``. Once the plugin is activated the topic type will appear in the DMX Webclient's *Create* menu, so you can create book topics and associate them with arbitrary topics. And you will be able to fulltext search for books. TODO: update
 
 Developing a plugin whose only purpose is to provide new topic type definitions requires no Java or JavaScript coding. All is declarative, mainly in JSON format.
 
@@ -263,15 +263,15 @@ Naming Conventions
 
 .. hint::
 
-    It is convention to have prefix ``dmx-`` when creating a Git repo for your DMX plugin, eg. ``dmx-tagging``.
+    It is convention to have prefix ``dmx-`` when creating a Git repo for your DMX plugin, eg. ``dmx-bookstore``.
 
 From the developer's view a DMX plugin is a directory on your hard disc. The directory can have an arbitrary name and exist at an arbitrary location. By convention the plugin directory begins with ``dmx-`` as it is aimed to the DMX platform. The directory content adheres to a certain directory structure and file name conventions. The files are text files (xml, json, properties, java, js, css) and resources like images.
 
-To create the *DMX Tagging* plugin setup a directory structure as follows:
+To create the *DMX Bookstore* plugin setup a directory structure as follows:
 
 .. code-block:: text
 
-    dmx-tagging/
+    dmx-bookstore/
         pom.xml
         src/
             main/
@@ -287,9 +287,9 @@ Create the file ``pom.xml`` with this content:
     <project>
         <modelVersion>4.0.0</modelVersion>
 
-        <name>DMX Tagging</name>
-        <groupId>org.mydomain</groupId>
-        <artifactId>dmx-tagging</artifactId>
+        <name>DMX Bookstore</name>
+        <groupId>my.domain</groupId>
+        <artifactId>dmx-bookstore</artifactId>
         <version>0.1-SNAPSHOT</version>
         <packaging>bundle</packaging>
 
@@ -298,52 +298,82 @@ Create the file ``pom.xml`` with this content:
             <artifactId>dmx-plugin</artifactId>
             <version>5.0-SNAPSHOT</version>
         </parent>
-
-        <build>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.felix</groupId>
-                    <artifactId>maven-bundle-plugin</artifactId>
-                    <configuration>
-                        <instructions>
-                            <Bundle-SymbolicName>
-                                org.mydomain.dmx-tagging
-                            </Bundle-SymbolicName>
-                        </instructions>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </build>
     </project>
 
 Create the file ``migration1.json``:
 
 .. code-block:: js
 
-    {
-        topic_types: [
-            {
-                value: "Tag",
-                uri: "domain.tagging.tag",
-                dataTypeUri: "dmx.core.text",
-                viewConfigTopics: [
-                    {
-                        typeUri: "dmx.webclient.view_config",
-                        children: {
-                            dmx.webclient.add_to_create_menu: true
-                        }
-                    }
-                ]
-            }
+    [
+      {
+        "assoc_types": [
+          {
+            "value":       "Author",
+            "uri":         "bookstore.author",
+            "dataTypeUri": "dmx.core.text",
+            "viewConfigTopics": [
+              {
+                "typeUri": "dmx.webclient.view_config",
+                "children": {
+                  "dmx.webclient.color": "hsl(60, 80%, 53%)",
+                  "dmx.webclient.color#dmx.webclient.background_color": "hsl(60, 80%, 96%)"
+                }
+              }
+            ]
+          },
+          {
+            "value":       "Publication",
+            "uri":         "bookstore.publication",
+            "dataTypeUri": "dmx.core.text"
+          }
         ]
-    }
+      },
+      {
+        "topic_types": [
+          {
+            "value":       "Book Title",
+            "uri":         "bookstore.book_title",
+            "dataTypeUri": "dmx.core.text"
+          },
+          {
+            "value":       "Book",
+            "uri":         "bookstore.book",
+            "dataTypeUri": "dmx.core.entity",
+            "compDefs": [
+              {
+                "childTypeUri":        "bookstore.book_title",
+                "childCardinalityUri": "dmx.core.one"
+              },
+              {
+                "childTypeUri":        "dmx.contacts.person",
+                "childCardinalityUri": "dmx.core.many",
+                "customAssocTypeUri":  "bookstore.author"
+               },
+              {
+                "childTypeUri":        "dmx.datetime.year",
+                "childCardinalityUri": "dmx.core.one",
+                "customAssocTypeUri":  "bookstore.publication"
+              }
+            ],
+            "viewConfigTopics": [
+              {
+                "typeUri": "dmx.webclient.view_config",
+                "children": {
+                  "dmx.webclient.icon": "\uf02d"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
 
 Create the file ``plugin.properties``:
 
 .. code-block:: text
 
     dmx.plugin.model_version = 1
-    dmx.plugin.dependencies = systems.dmx.webclient
+    dmx.plugin.dependencies = systems.dmx.webclient, systems.dmx.contacts, systems.dmx.datetime
 
 Setup for Hot-Deployment
 ========================
@@ -408,7 +438,7 @@ The output  looks like this:
        30|Active     |    5|DeepaMehta 4 File Manager (4.1.1.SNAPSHOT)
        31|Active     |    5|DeepaMehta 4 Icon Picker (4.1.1.SNAPSHOT)
 
-The *DMX Tagging* plugin does not yet appear in that list as it is not yet build.
+The *DMX Bookstore* plugin does not yet appear in that list as it is not yet build.
 
 Build the plugin
 ================
@@ -417,7 +447,7 @@ In another terminal:
 
 .. code-block:: bash
 
-    $ cd dmx-tagging
+    $ cd dmx-bookstore
     $ mvn clean package
 
 This builds the plugin. After some seconds you'll see:
@@ -483,7 +513,7 @@ Once build, DMX hot-deploys the plugin automatically. In the terminal where you'
     INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclient/") ABORTED -- already launched
     ...
 
-When you type again ``lb`` in the DMX terminal you'll see the *DMX Tagging* plugin now appears in the list of activated bundles:
+When you type again ``lb`` in the DMX terminal you'll see the *DMX Bookstore* plugin now appears in the list of activated bundles:
 
 .. code-block:: text
 
@@ -498,9 +528,9 @@ When you type again ``lb`` in the DMX terminal you'll see the *DMX Tagging* plug
 Try out the plugin
 ==================
 
-Now you can try out the plugin. In the DMX Webclient login as user "admin" and leave the password field empty. The *Create* menu appears and when you open it you'll see the new type *Tag* listed. Thus, you can create tags now. Additionally you can associate tags to your content topics, search for tags, and navigate along the tag associations, just as you do with other topics.
+Now you can try out the plugin. In the DMX Webclient login as user "admin" and leave the password field empty. The *Create* menu appears and when you open it you'll see the new type *Book* listed. Thus, you can create tags now. Additionally you can associate tags to your content topics, search for tags, and navigate along the tag associations, just as you do with other topics. TODO: update
 
-The result so far: the *DMX Tagging* plugin provides a new topic type definition or, in other words: a data model. All the active operations on the other hand like create, edit, search, delete, associate, and navigate are provided by the DMX Webclient at a generic level, and are applicable to your new topic type as well.
+The result so far: the *DMX Bookstore* plugin provides a new topic type definition or, in other words: a data model. All the active operations on the other hand like create, edit, search, delete, associate, and navigate are provided by the DMX Webclient at a generic level, and are applicable to your new topic type as well.
 
 Redeploy the plugin
 ===================
@@ -655,13 +685,11 @@ Example:
         src/
             main/
                 java/
-                    org/
-                        mydomain/
-                            dmx/
-                                myplugin/
-                                    migrations/
-                                        Migration2.java
-                                        Migration5.java
+                    mydomain/
+                        myplugin/
+                            migrations/
+                                Migration2.java
+                                Migration5.java
                 resources/
                     migrations/
                         migration1.json
@@ -801,27 +829,25 @@ Example:
 
 .. code-block:: text
 
-    dmx-mycoolplugin/
+    dmx-myplugin/
         src/
             main/
                 java/
-                    org/
-                        mydomain/
-                            dmx/
-                                mycoolplugin/
-                                    MyCoolPlugin.java
+                    mydomain/
+                        myplugin/
+                            MyPlugin.java
 
-Here the plugin package is ``org.mydomain.dmx.mycoolplugin`` and the plugin main class is ``MyCoolPlugin``.
+Here the plugin package is ``mydomain.myplugin`` and the plugin main class is ``MyPlugin``.
 
 A plugin main file is a Java class that is derived from ``systems.dmx.core.osgi.PluginActivator``. The smallest possible plugin main file looks like this:
 
 .. code-block:: java
 
-    package org.mydomain.dmx.mycoolplugin;
+    package mydomain.myplugin;
 
     import systems.dmx.core.osgi.PluginActivator;
 
-    public class MyCoolPlugin extends PluginActivator {
+    public class MyPlugin extends PluginActivator {
     }
 
 3 things are illustrated here:
@@ -840,9 +866,9 @@ Furthermore when writing a plugin main file you must add 2 entries in the plugin
     <project>
         <modelVersion>4.0.0</modelVersion>
 
-        <name>My Cool Plugin</name>
-        <groupId>org.mydomain</groupId>
-        <artifactId>dmx-mycoolplugin</artifactId>
+        <name>My Plugin</name>
+        <groupId>my.domain</groupId>
+        <artifactId>dmx-myplugin</artifactId>
         <version>0.1-SNAPSHOT</version>
         <packaging>bundle</packaging>
 
@@ -859,11 +885,8 @@ Furthermore when writing a plugin main file you must add 2 entries in the plugin
                     <artifactId>maven-bundle-plugin</artifactId>
                     <configuration>
                         <instructions>
-                            <Bundle-SymbolicName>
-                                org.mydomain.dmx-mycoolplugin
-                            </Bundle-SymbolicName>
                             <Bundle-Activator>
-                                org.mydomain.dmx.mycoolplugin.MyCoolPlugin
+                                mydomain.myplugin.MyPlugin
                             </Bundle-Activator>
                         </instructions>
                     </configuration>
@@ -895,7 +918,7 @@ Example:
 
 .. code-block:: java
 
-    package org.mydomain.dmx.mycoolplugin;
+    package mydomain.myplugin;
 
     import systems.dmx.core.Topic;
     import systems.dmx.core.model.TopicModel;
@@ -908,7 +931,7 @@ Example:
 
 
 
-    public class MyCoolPlugin extends PluginActivator implements PostCreateTopic, PostUpdateTopic {
+    public class MyPlugin extends PluginActivator implements PostCreateTopic, PostUpdateTopic {
 
         private Logger log = Logger.getLogger(getClass().getName());
 
