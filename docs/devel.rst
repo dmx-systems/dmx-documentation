@@ -284,7 +284,9 @@ Create the file ``pom.xml`` with this content:
 
 .. code-block:: xml
 
-    <project>
+    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
         <modelVersion>4.0.0</modelVersion>
 
         <name>DMX Bookstore</name>
@@ -393,12 +395,14 @@ You'll see a lot of information logged, cumulating with:
 .. code-block:: text
 
     ...
-    Apr 6, 2013 11:21:20 PM de.deepamehta.core.impl.PluginManager checkAllPluginsActivated
-    INFO: ### Bundles total: 32, DeepaMehta plugins: 16, Activated: 16
-    Apr 6, 2013 11:21:20 PM de.deepamehta.core.impl.PluginManager activatePlugin
-    INFO: ########## All Plugins Activated ##########
-    Apr 6, 2013 11:21:20 PM de.deepamehta.plugins.webclient.WebclientPlugin allPluginsActive
-    INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclient/")
+    Jun 03, 2020 3:18:53 PM systems.dmx.core.impl.PluginManager checkAllPluginsActivated
+    INFO: ### Bundles total: 37, DMX plugins: 17, Activated: 17
+    Jun 03, 2020 3:18:53 PM systems.dmx.core.impl.PluginManager activatePlugin
+    INFO: ########## All DMX plugins active ##########
+    Jun 03, 2020 3:18:53 PM systems.dmx.webclient.WebclientPlugin allPluginsActive
+    INFO: DMX platform started in 1.48 sec
+    Jun 03, 2020 3:18:53 PM systems.dmx.webclient.WebclientPlugin allPluginsActive
+    INFO: ### Launching DMX Webclient: http://localhost:8080/systems.dmx.webclient/
     ...
 
 Then a browser windows opens automatically and displays the DMX Webclient.
@@ -417,26 +421,27 @@ The output  looks like this:
 
     START LEVEL 6
        ID|State      |Level|Name
-        0|Active     |    0|System Bundle (3.2.1)
+        0|Active     |    0|System Bundle (4.4.1)
        ...
-       14|Active     |    5|DeepaMehta 4 Help (4.1.1.SNAPSHOT)
-       15|Active     |    5|DeepaMehta 4 Topicmaps (4.1.1.SNAPSHOT)
-       16|Active     |    5|DeepaMehta 4 Webservice (4.1.1.SNAPSHOT)
-       17|Active     |    5|DeepaMehta 4 Files (4.1.1.SNAPSHOT)
-       18|Active     |    5|DeepaMehta 4 Geomaps (4.1.1.SNAPSHOT)
-       19|Active     |    5|DeepaMehta 4 Storage - Neo4j (4.1.1.SNAPSHOT)
-       20|Active     |    5|DeepaMehta 4 Core (4.1.1.SNAPSHOT)
-       21|Active     |    5|DeepaMehta 4 Access Control (4.1.1.SNAPSHOT)
-       22|Active     |    5|DeepaMehta 4 Webclient (4.1.1.SNAPSHOT)
-       23|Active     |    5|DeepaMehta 4 Webbrowser (4.1.1.SNAPSHOT)
-       24|Active     |    5|DeepaMehta 4 Type Search (4.1.1.SNAPSHOT)
-       25|Active     |    5|DeepaMehta 4 Workspaces (4.1.1.SNAPSHOT)
-       26|Active     |    5|DeepaMehta 4 Notes (4.1.1.SNAPSHOT)
-       27|Active     |    5|DeepaMehta 4 Type Editor (4.1.1.SNAPSHOT)
-       28|Active     |    5|DeepaMehta 4 Contacts (4.1.1.SNAPSHOT)
-       29|Active     |    5|DeepaMehta 4 Facets (4.1.1.SNAPSHOT)
-       30|Active     |    5|DeepaMehta 4 File Manager (4.1.1.SNAPSHOT)
-       31|Active     |    5|DeepaMehta 4 Icon Picker (4.1.1.SNAPSHOT)
+       18|Active     |    5|DMX Facets (5.0.0.SNAPSHOT)
+       19|Resolved   |    5|DMX Storage - Neo4j (5.0.0.SNAPSHOT)
+       20|Active     |    5|DMX Webservice (5.0.0.SNAPSHOT)
+       21|Active     |    5|DMX Events (5.0.0.SNAPSHOT)
+       22|Active     |    5|DMX Core (5.0.0.SNAPSHOT)
+       23|Active     |    5|DMX Workspaces (5.0.0.SNAPSHOT)
+       24|Active     |    5|DMX Contacts (5.0.0.SNAPSHOT)
+       25|Active     |    5|DMX Base (5.0.0.SNAPSHOT)
+       26|Active     |    5|DMX Files (5.0.0.SNAPSHOT)
+       27|Active     |    5|DMX Bookmarks (5.0.0.SNAPSHOT)
+       28|Active     |    5|DMX Webclient (5.0.0.SNAPSHOT)
+       29|Active     |    5|DMX Caching (5.0.0.SNAPSHOT)
+       30|Active     |    5|DMX Notes (5.0.0.SNAPSHOT)
+       31|Active     |    5|DMX Topicmaps (5.0.0.SNAPSHOT)
+       32|Active     |    5|DMX Date/Time (5.0.0.SNAPSHOT)
+       33|Active     |    5|DMX Access Control (5.0.0.SNAPSHOT)
+       34|Active     |    5|DMX Config (5.0.0.SNAPSHOT)
+       35|Active     |    5|DMX Tags (5.0.0.SNAPSHOT)
+       36|Active     |    5|DMX Timestamps (5.0.0.SNAPSHOT)
 
 The *DMX Bookstore* plugin does not yet appear in that list as it is not yet build.
 
@@ -458,59 +463,63 @@ This builds the plugin. After some seconds you'll see:
     [INFO] ------------------------------------------------------------------------
     [INFO] BUILD SUCCESS
     [INFO] ------------------------------------------------------------------------
-    [INFO] Total time: 3.988s
+    [INFO] Total time: 4.276s
     ...
 
 Once build, DMX hot-deploys the plugin automatically. In the terminal where you've started DMX the logging informs you about plugin activation:
 
 .. code-block:: text
 
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl readConfigFile
-    INFO: Reading config file "/plugin.properties" for plugin "DeepaMehta 4 Tagging"
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.osgi.PluginActivator start
-    INFO: ========== Starting plugin "DeepaMehta 4 Tagging" ==========
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl createPluginServiceTrackers
-    INFO: Tracking plugin services for plugin "DeepaMehta 4 Tagging" ABORTED -- no consumed services declared
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl addService
-    INFO: Adding DeepaMehta 4 core service to plugin "DeepaMehta 4 Tagging"
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl addService
-    INFO: Adding Web Publishing service to plugin "DeepaMehta 4 Tagging"
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerWebResources
-    INFO: Registering Web resources of plugin "DeepaMehta 4 Tagging" ABORTED -- no Web resources provided
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerRestResources
-    INFO: Registering REST resources of plugin "DeepaMehta 4 Tagging" ABORTED -- no REST resources provided
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerRestResources
-    INFO: Registering provider classes of plugin "DeepaMehta 4 Tagging" ABORTED -- no provider classes provided
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl addService
-    INFO: Adding Event Admin service to plugin "DeepaMehta 4 Tagging"
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager activatePlugin
-    INFO: ----- Activating plugin "DeepaMehta 4 Tagging" -----
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl createPluginTopicIfNotExists
-    INFO: Installing plugin "DeepaMehta 4 Tagging" in the database
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runPluginMigrations
-    INFO: Running 1 migrations for plugin "DeepaMehta 4 Tagging" (migrationNr=0, requiredMigrationNr=1)
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager$MigrationInfo readMigrationConfigFile
-    INFO: Reading migration config file "/migrations/migration1.properties" ABORTED -- file does not exist
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runMigration
-    INFO: Running migration 1 of plugin "DeepaMehta 4 Tagging" (runMode=ALWAYS, isCleanInstall=true)
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.util.DeepaMehtaUtils readMigrationFile
+    Jun 03, 2020 3:40:28 PM systems.dmx.core.osgi.PluginActivator start
+    INFO: ========== Starting plugin "DMX Bookstore" ==========
+    Jun 03, 2020 3:40:28 PM systems.dmx.core.impl.PluginImpl readConfigFile
+    INFO: Reading config file "/plugin.properties" for plugin "DMX Bookstore"
+    Jun 03, 2020 3:40:28 PM systems.dmx.core.impl.PluginImpl pluginDependencies
+    INFO: Tracking 3 plugins for plugin "DMX Bookstore" [systems.dmx.webclient, systems.dmx.contacts, systems.dmx.datetime]
+    Jun 03, 2020 3:40:28 PM systems.dmx.core.impl.PluginImpl createInjectedServiceTrackers
+    INFO: Tracking services for plugin "DMX Bookstore" SKIPPED -- no services consumed
+    Jun 03, 2020 3:40:28 PM systems.dmx.core.impl.PluginImpl addService
+    INFO: Adding DMX core service to plugin "DMX Bookstore"
+    Jun 03, 2020 3:40:28 PM systems.dmx.core.impl.PluginImpl publishWebResources
+    INFO: Publishing web resources of plugin "DMX Bookstore" SKIPPED -- no web resources provided
+    Jun 03, 2020 3:40:28 PM systems.dmx.core.impl.PluginImpl publishRestResources
+    INFO: Publishing REST resources of plugin "DMX Bookstore" SKIPPED -- no REST resources provided
+    Jun 03, 2020 3:40:28 PM systems.dmx.core.impl.PluginImpl publishRestResources
+    INFO: Registering provider classes of plugin "DMX Bookstore" SKIPPED -- no provider classes found
+    Jun 03, 2020 3:40:28 PM systems.dmx.core.impl.PluginImpl addService
+    INFO: Adding Event Admin service to plugin "DMX Bookstore"
+    Jun 03, 2020 3:40:28 PM systems.dmx.core.impl.PluginImpl activate
+    INFO: ----- Activating plugin "DMX Bookstore" -----
+    Jun 03, 2020 3:40:28 PM systems.dmx.core.impl.PluginImpl createPluginTopicIfNotExists
+    INFO: Installing plugin "DMX Bookstore" in the database
+    Jun 03, 2020 3:40:29 PM systems.dmx.core.impl.MigrationManager runPluginMigrations
+    INFO: Running 1 migrations for plugin "DMX Bookstore" (installed model: version 0, required model: version 1)
+    Jun 03, 2020 3:40:29 PM systems.dmx.core.impl.MigrationManager$MigrationInfo readMigrationConfigFile
+    INFO: Reading migration config file "/migrations/migration1.properties" SKIPPED -- file does not exist
+    Jun 03, 2020 3:40:29 PM systems.dmx.core.impl.MigrationManager _runMigration
+    INFO: Running migration 1 of plugin "DMX Bookstore" (runMode=ALWAYS, isCleanInstall=true)
+    Jun 03, 2020 3:40:29 PM systems.dmx.core.impl.MigrationManager readMigrationFile
     INFO: Reading migration file "/migrations/migration1.json"
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runMigration
-    INFO: Completing migration 1 of plugin "DeepaMehta 4 Tagging"
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.MigrationManager runMigration
-    INFO: Updating migration number (1)
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerListeners
-    INFO: Registering listeners of plugin "DeepaMehta 4 Tagging" at DeepaMehta 4 core service ABORTED -- no listeners implemented
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginImpl registerPluginService
-    INFO: Registering OSGi service of plugin "DeepaMehta 4 Tagging" ABORTED -- no OSGi service provided
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager activatePlugin
-    INFO: ----- Activation of plugin "DeepaMehta 4 Tagging" complete -----
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager checkAllPluginsActivated
-    INFO: ### Bundles total: 33, DeepaMehta plugins: 17, Activated: 17
-    Apr 6, 2013 11:38:40 PM de.deepamehta.core.impl.PluginManager activatePlugin
-    INFO: ########## All Plugins Activated ##########
-    Apr 6, 2013 11:38:40 PM de.deepamehta.plugins.webclient.WebclientPlugin allPluginsActive
-    INFO: ### Launching webclient (url="http://localhost:8080/de.deepamehta.webclient/") ABORTED -- already launched
+    Jun 03, 2020 3:40:30 PM systems.dmx.core.impl.MigrationManager updateVersionNumber
+    INFO: Updating installed model: version 1
+    Jun 03, 2020 3:40:30 PM systems.dmx.core.impl.DMXObjectModelImpl update
+    INFO: Updating topic 4358 (typeUri="dmx.core.plugin")
+    Jun 03, 2020 3:40:30 PM systems.dmx.core.impl.DMXObjectModelImpl delete
+    INFO: Deleting association 4366 (typeUri="dmx.core.instantiation")
+    Jun 03, 2020 3:40:30 PM systems.dmx.core.impl.DMXObjectModelImpl delete
+    INFO: Deleting association 4365 (typeUri="dmx.core.composition")
+    Jun 03, 2020 3:40:30 PM systems.dmx.core.impl.PluginImpl registerListeners
+    INFO: Registering event listeners of plugin "DMX Bookstore" SKIPPED -- no event listeners implemented
+    Jun 03, 2020 3:40:30 PM systems.dmx.core.impl.PluginImpl registerProvidedService
+    INFO: Registering OSGi service of plugin "DMX Bookstore" SKIPPED -- no OSGi service provided
+    Jun 03, 2020 3:40:30 PM systems.dmx.core.impl.PluginImpl activate
+    INFO: ----- Activation of plugin "DMX Bookstore" complete -----
+    Jun 03, 2020 3:40:30 PM systems.dmx.core.impl.PluginManager checkAllPluginsActivated
+    INFO: ### Bundles total: 38, DMX plugins: 18, Activated: 18
+    Jun 03, 2020 3:40:30 PM systems.dmx.core.impl.PluginManager activatePlugin
+    INFO: ########## All DMX plugins active ##########
+    Jun 03, 2020 3:40:30 PM systems.dmx.webclient.WebclientPlugin allPluginsActive
+    INFO: ### Launching DMX Webclient (http://localhost:8080/systems.dmx.webclient/) SKIPPED -- already launched
     ...
 
 When you type again ``lb`` in the DMX terminal you'll see the *DMX Bookstore* plugin now appears in the list of activated bundles:
@@ -519,11 +528,13 @@ When you type again ``lb`` in the DMX terminal you'll see the *DMX Bookstore* pl
 
     START LEVEL 6
        ID|State      |Level|Name
-        0|Active     |    0|System Bundle (3.2.1)
+        0|Active     |    0|System Bundle (4.4.1)
        ...
-       30|Active     |    5|DeepaMehta 4 File Manager (4.1.1.SNAPSHOT)
-       31|Active     |    5|DeepaMehta 4 Icon Picker (4.1.1.SNAPSHOT)
-       32|Active     |    5|DeepaMehta 4 Tagging (0.1.0.SNAPSHOT)
+       33|Active     |    5|DMX Access Control (5.0.0.SNAPSHOT)
+       34|Active     |    5|DMX Config (5.0.0.SNAPSHOT)
+       35|Active     |    5|DMX Tags (5.0.0.SNAPSHOT)
+       36|Active     |    5|DMX Timestamps (5.0.0.SNAPSHOT)
+       37|Active     |    5|DMX Bookstore (0.1.0.SNAPSHOT)
 
 Try out the plugin
 ==================
