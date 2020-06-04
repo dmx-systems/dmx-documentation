@@ -148,7 +148,7 @@ Technically the DMX platform is a Java/OSGi based application server. OSGi is a 
 The 4 plugin archetypes
 =======================
 
-To find out what type of plugin (see :ref:`P1-P4 <plugin-types>` illustration above) you're about to develop, ask yourself these questions:
+To find out what type of plugin (see :ref:`P1-P4 <plugin-types>` figure above) you're about to develop, ask yourself these questions:
 
 * Will it have a back-end portion?
 * Will it have a front-end portion? If yes:
@@ -247,13 +247,11 @@ This builds all components of the DMX platform and installs them in your local M
 The plugin turn-around cycle
 ****************************
 
-This section illustrates how to begin a plugin project, how to build and how to deploy a plugin, and how to redeploy the plugin once you made changes in its source code.
+This chapter illustrates how to set up a plugin project, how to build and deploy a plugin, and how to redeploy it once you change the code. We develop a very simple plugin called "DMX Bookstore" from scratch. According to the above :ref:`P1-P4 <plugin-types>` figure the Bookstore plugin is of type *back-end-only* (P1). It has no logic (no Java or JavaScript code). The only thing the Bookstore plugin does is defining the "Book" data model. Mainly JSON is in use. So this type of plugin is quite easy to create, even for non-programmers.
 
-Let's start with a very simple plugin called *DMX Bookstore*. This plugin will just create a new topic type called ``Book``. Once the plugin is activated the topic type will appear in the DMX Webclient's *Create* menu, so you can create book topics and associate them with arbitrary topics. And you will be able to fulltext search for books. TODO: update
+On the other hand in conjunction with the DMX Webclient installing a data-model-only plugin like DMX Bookstore has quite an impact. You can instantly create/edit Book topics. Yo do so via forms which are auto-generated from the data model. All the generic features like search, delete, hide, navigate, associate are there immediately. Basically this means: data model goes in, basis of a bookstore CMS comes out.
 
-Developing a plugin whose only purpose is to provide new topic type definitions requires no Java or JavaScript coding. All is declarative, mainly in JSON format.
-
-Of course the topic type could be created interactively as well, by using the DMX Webclient's type editor. However, being packaged as a plugin means you can distribute it. When other DMX users install your plugin they can use your type definitions.
+Instead of creating a plugin you could, of course, create the "Book" topic type interactively in the DMX Webclient. The result would be the same. However, if a data model is packaged as a plugin this means you can *distribute* it. Other DMX users can install your plugin and use your data models.
 
 Begin a plugin project
 ======================
