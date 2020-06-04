@@ -249,9 +249,11 @@ The plugin turn-around cycle
 
 This chapter illustrates how to set up a plugin project, how to build and deploy a plugin, and how to redeploy it once you change the code. We develop a very simple plugin called "DMX Bookstore" from scratch. According to the above :ref:`P1-P4 <plugin-types>` figure the Bookstore plugin is of type *back-end-only* (P1). It has no logic (no Java or JavaScript code). The only thing the Bookstore plugin does is defining the "Book" data model. Mainly JSON is in use. So this type of plugin is quite easy to create, even for non-programmers.
 
-On the other hand in conjunction with the DMX Webclient installing a data-model-only plugin like DMX Bookstore has quite an impact. You can instantly create/edit Book topics. Yo do so via forms which are auto-generated from the data model. All the generic features like search, delete, hide, navigate, associate are there immediately. Basically this means: data model goes in, basis of a bookstore CMS comes out.
+On the other hand in conjunction with the DMX Webclient installing even a data-model-only plugin like DMX Bookstore has quite an impact. You can instantly create/edit Book topics. You do so via forms which are auto-generated from the data model. All the generic features like search, delete, hide, navigate, associate are there immediately. Basically this means: data model goes in, basis of a bookstore CMS comes out.
 
-Instead of creating a plugin you could, of course, create the "Book" topic type interactively in the DMX Webclient. The result would be the same. However, if a data model is packaged as a plugin this means you can *distribute* it. Other DMX users can install your plugin and use your data models.
+.. hint::
+
+    Instead of creating a plugin you could, of course, create the "Book" topic type interactively in the DMX Webclient. The result would be the same. However, if a data model is packaged as a plugin this means you can *distribute* it. Other DMX users can install your plugin and make use of your data model.
 
 Begin a plugin project
 ======================
