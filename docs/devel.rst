@@ -247,7 +247,9 @@ This builds all components of the DMX platform and installs them in your local M
 The plugin turn-around cycle
 ****************************
 
-This chapter illustrates how to set up a plugin project, how to build and deploy a plugin, and how to redeploy it once you change the code. We develop a very simple plugin called "DMX Bookstore" from scratch. According to the above :ref:`P1-P4 <plugin-types>` figure the Bookstore plugin is of type *back-end-only* (P1). It has no logic (no Java or JavaScript code). The only thing the Bookstore plugin does is defining the "Book" data model. Mainly JSON is in use. So this type of plugin is quite easy to create, even for non-programmers.
+This chapter illustrates how to set up a plugin project, how to build and deploy a plugin, and how to redeploy it once you've modified the plugin code.
+
+We develop a very simple plugin from scratch called "DMX Bookstore". According to the above :ref:`P1-P4 <plugin-types>` figure the Bookstore plugin is of type *back-end-only* (P1). It has no logic (no Java or JavaScript code). The only thing the Bookstore plugin does is defining the "Book" data model. Mainly JSON is in use. So this type of plugin is quite easy to create, even for non-programmers.
 
 On the other hand in conjunction with the DMX Webclient installing even a data-model-only plugin like DMX Bookstore has quite an impact. You can instantly create/edit Book topics. You do so via forms which are auto-generated from the data model. All the generic features like search, delete, hide, navigate, associate are there immediately. Basically this means: data model goes in, basis of a bookstore CMS comes out.
 
@@ -255,17 +257,10 @@ On the other hand in conjunction with the DMX Webclient installing even a data-m
 
     Instead of creating a plugin you could, of course, create the "Book" topic type interactively in the DMX Webclient. The result would be the same. However, if a data model is packaged as a plugin this means you can *distribute* it. Other DMX users can install your plugin and make use of your data model.
 
-Begin a plugin project
-======================
+Develop the "Bookstore" plugin
+==============================
 
-Naming Conventions
-------------------
-
-.. hint::
-
-    It is convention to have prefix ``dmx-`` when creating a Git repo for your DMX plugin, eg. ``dmx-bookstore``.
-
-From the developer's view a DMX plugin is a directory on your hard disc. The directory can have an arbitrary name and exist at an arbitrary location. By convention the plugin directory begins with ``dmx-`` as it is aimed to the DMX platform. The directory content adheres to a certain directory structure and file name conventions. The files are text files (xml, json, properties, java, js, css) and resources like images.
+Inside DMX's ``modules-external/`` directory create a ``dmx-bookstore/`` directory. Plugin directories have a ``dmx-`` prefix by convention. The directory content follows a certain file structure and naming standard. The files are text files (xml, json, properties, java, js, css) and resources like images.
 
 To create the *DMX Bookstore* plugin setup a directory structure as follows:
 
@@ -377,14 +372,16 @@ Create the file ``plugin.properties``:
     dmx.plugin.model_version = 1
     dmx.plugin.dependencies = systems.dmx.webclient, systems.dmx.contacts, systems.dmx.datetime
 
-Setup for Hot-Deployment
-========================
+.. hint::
 
-The easiest way to let DMX hot-deploy the plugin is to develop it within the ``modules-external/`` directory. To do so move the plugin directory on your hard disc into DMX's hot-deployment folder called ``modules-external/``. The next step is then to build your plugin.
+    when creating a Git repo for your DMX plugin it is convention its name is prefixed with ``dmx-``, eg. ``dmx-bookstore``.
 
-But lets first start DMX in development mode, that is with hot-deployment activated.
+Starting the DMX server
+=======================
 
-In the home directory ``dmx-platform``:
+Before building and hot-deploying the Bookstore plugin let's start the DMX server.
+
+In home directory ``dmx-platform/``:
 
 .. code-block:: bash
 
@@ -543,10 +540,10 @@ Now you can try out the plugin. In the DMX Webclient login as user "admin" and l
 
 The result so far: the *DMX Bookstore* plugin provides a new topic type definition or, in other words: a data model. All the active operations on the other hand like create, edit, search, delete, associate, and navigate are provided by the DMX Webclient at a generic level, and are applicable to your new topic type as well.
 
-Redeploy the plugin
-===================
+Modify the plugin and redeploy
+==============================
 
-Once you've made any changes to the plugin files, you have to build the plugin again. Just like before in the plugin terminal:
+Once you've modified the plugin you have to build the plugin again (TODO: only required for back-end development). Just like before in the plugin terminal:
 
 .. code-block:: bash
 
