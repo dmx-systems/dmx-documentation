@@ -165,7 +165,7 @@ Back-end-only (P1)
 
     * Defines a **data model**: creating *Topic Types*, *Association Types*, *Role Types*, and default instances. Your data model can build upon, and even change, the data models provided by the platform or by other plugins. To do so in a controlled manner the platform provides a migration facility that runs the migrations provided by a plugin.
 
-      A purely passive plugin that doesn't do anything but defining a data model is nothing unusual. Often in this case no Java code is required at all; you define a data model declaratively, in JSON.
+      A purely passive plugin that has no logic but solely defines a data model is nothing unusual. Often in this case no Java code is required at all; you define a data model declaratively in JSON.
 
       Examples are basically the `dmx-base <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-base>`_, `dmx-bookmarks <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-bookmarks>`_, `dmx-contacts <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-contacts>`_, `dmx-datetime <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-datetime>`_, `dmx-events <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-events>`_, `dmx-notes <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-notes>`_, and the `dmx-tags <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-tags>`_ plugins. These effectively create the included DMX applications (*Note Taking*, *Contact Management*, *Bookmark Management*, and *Calendar*), just by providing data models. All the functionality on the other hand (e.g. create, search, edit, navigate, share, delete) is generic platform functionality.
 
@@ -247,7 +247,7 @@ This builds all components of the DMX platform and installs them in your local M
 The plugin turn-around cycle
 ****************************
 
-This chapter illustrates how to set up a plugin project, how to build and deploy a plugin, and how to redeploy it once you've modified the plugin code.
+This chapter illustrates how to set up a plugin project, how to build and deploy a plugin, and how to redeploy it once you've made changes.
 
 We develop a very simple plugin from scratch called "DMX Bookstore". According to the above :ref:`P1-P4 <plugin-types>` figure the Bookstore plugin is of type *back-end-only* (P1). It has no logic (no Java or JavaScript code). The only thing the Bookstore plugin does is defining the "Book" data model. Mainly JSON is in use. So this type of plugin is quite easy to create, even for non-programmers.
 
@@ -260,7 +260,7 @@ On the other hand in conjunction with the DMX Webclient installing even a data-m
 Develop the "Bookstore" plugin
 ==============================
 
-Inside DMX's ``modules-external/`` directory create a ``dmx-bookstore/`` directory. Plugin directories have a ``dmx-`` prefix by convention. The directory content follows a certain file structure and naming standard. The files are text files (xml, json, properties, java, js, css) and resources like images.
+Create a ``dmx-bookstore/`` directory inside DMX's ``modules-external/`` directory. Plugin directories have a ``dmx-`` prefix by convention. The directory content follows a certain file structure and naming standard. The files are text files (xml, json, properties, java, js, css) and resources like images.
 
 To create the *DMX Bookstore* plugin setup a directory structure as follows:
 
@@ -543,7 +543,7 @@ The result so far: the *DMX Bookstore* plugin provides a new topic type definiti
 Modify the plugin and redeploy
 ==============================
 
-Once you've modified the plugin you have to build the plugin again (TODO: only required for back-end development). Just like before in the plugin terminal:
+Once you've modified the plugin you have to build it again (TODO: only required for back-end development). Just like before in the plugin terminal:
 
 .. code-block:: bash
 
