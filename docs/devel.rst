@@ -75,7 +75,7 @@ Semantic Storage
 
 .. hint::
 
-    This guide refers to the *Semantic Storage* by "database" as well.
+    This guide refers to the *Semantic Storage* just by "database" as well.
 
 Immutability
 ------------
@@ -816,7 +816,7 @@ Here a **Composition Definition** is added to the *Topicmap* type subsequently.
 Back-end: writing Java logic
 ****************************
 
-In the previous section you've seen how to manipulate a data model with Java code. Were you wondering what these ``dmx`` and ``mf`` objects are? Well they are instances of `systems.dmx.core.service.CoreService <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_ and `systems.dmx.core.service.ModelFactory <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/ModelFactory.html>`_ respectively. But let's continue more systematically.
+In the previous section you've seen how to manipulate a data model with Java code. Were you wondering what these ``dmx`` and ``mf`` objects are? Well they are instances of `systems.dmx.core.service.CoreService <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_ and `systems.dmx.core.service.ModelFactory <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/ModelFactory.html>`_ respectively.
 
 What, besides manipulating a data model, a DMX plugin can do with Java at the back-end:
 
@@ -912,11 +912,11 @@ Using the DMX Core Service
 
 The DMX *Core Service* (`Java interface <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_) provides generic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
 
-TODO
+First let's take a look at the DMX Core API, that is package `systems.dmx.core <https://apidocs.dmx.systems/index.html?systems/dmx/core/package-summary.html>`_:
 
 .. figure:: _static/dmx-core-classes.svg
 
-    Central interfaces of the `systems.dmx.core <https://apidocs.dmx.systems/index.html?systems/dmx/core/package-summary.html>`_ package.
+    Interfaces of the ``systems.dmx.core`` package. Note that both ``Topic`` and ``Assoc`` have a common base class: ``DMXObject``. Both are typed, are addressable by-id and by-uri, and have a value, be it simple (``SimpleValue``) or composite (``ChildTopics``).
 
 Listen to DMX Core events
 =========================
