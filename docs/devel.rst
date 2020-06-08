@@ -47,9 +47,9 @@ Traditionally a web application consists of 3 parts: *data model*, *business log
 .. _plugin-types:
 .. figure:: _static/dmx-plugin-types.svg
 
-In its back-end portion (see P1) a plugin can define a data model (creating *Types* and their relationships), and/or provide business logic in form of a service (consumable by other plugins or through a REST API). In its client-side portion a plugin either *creates* a front-end (see P2, P3), or *extends* an existing front-end (see P4).
+In its back-end portion (P1) a plugin can a) define a data model (creating *Types* and their relationships), and/or b) provide business logic in form of an OSGi service (consumable by other plugins or through a REST API). In its client-side portion a plugin either *creates* a front-end (P2, P3), or *extends* an existing front-end (P4).
 
-All installed plugins operate on the same semantic storage (with access restrictions applied). Operating on the semantic storage is possible exclusively through the *DMX Core Service* (`Java interface <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_) which is injected into every plugin.
+All installed plugins operate on the same semantic storage. The platform features a 5-level access control system (`private`, `confidential`, `collaborative`, `public`, `common`). Every storage operation is controlled on the basis of the current HTTP request's authorization. Plugins can operate on the semantic storage exclusively by using the *DMX Core Service* (`Java interface <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_).
 
 The heart of the platform is the *DMX Core*. The Core provides the runtime environment for DMX plugins. The Core a) loads plugins and manages their life-cycle, and b) governs all access to the semantic storage, and provides this duty as *DMX Core Service*.
 
@@ -72,6 +72,10 @@ Semantic Storage
 .. figure:: _static/dmx-person-example.svg
 
     2 persons live at the same place. The corresponding Address topic is shared between 2 Person topics. "Person" and "Address" are composite types, at the leaves are values of simple types. Below each topic its type URI is shown.
+
+.. hint::
+
+    This guide refers to the *Semantic Storage* by "database" as well.
 
 Immutability
 ------------
@@ -670,7 +674,7 @@ As you've already learned, migrations serve different (but related) purposes: so
 
   With a declarative migration you can only create new things. You can't modify existing things. All you do with a declarative migration you could achieve with an imperative migration as well, but as long as you just want create new things, it is more convenient to do it declaratively.
 
-* An **Imperative Migration** is a Java class that has access to the *DMX Core Service*. Thus, you can perform arbitrary database operations like creation, retrieval, update, deletion. Use an imperative migration when (a later version of) your plugin needs to modify existing type definitions and/or transform existing database content.
+* An **Imperative Migration** is a Java class that has access to the *DMX Core Service* (`Java interface <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_). Thus, you can perform arbitrary database operations like creation, retrieval, update, deletion. Use an imperative migration when (a later version of) your plugin needs to modify existing type definitions and/or transform existing database content.
 
 The developer can equip a plugin with an arbitrary number of both, declarative migrations and imperative migrations.
 
@@ -784,7 +788,7 @@ Writing an imperative migration
 
 An imperative migration is a Java class that is derived from ``systems.dmx.core.service.Migration`` and that overrides the ``run()`` method. The ``run()`` method is called by DMX to run the migration.
 
-Within the migration you have access to the DMX *Core Service* through the ``dmx`` object. By the means of the Core Service you can perform arbitrary database operations. Typically this involves importing further objects from the ``systems.dmx.core`` API.
+Within the migration you have access to the *DMX Core Service* through the ``dmx`` object. By the means of the Core Service you can perform arbitrary database operations. Typically this involves importing further objects from the `systems.dmx.core <https://apidocs.dmx.systems/index.html?systems/dmx/core/package-summary.html>`_ API.
 
 As an example see a migration that comes with the *DMX Topicmaps* plugin:
 
@@ -808,19 +812,21 @@ As an example see a migration that comes with the *DMX Topicmaps* plugin:
 
 Here a **Composition Definition** is added to the *Topicmap* type subsequently.
 
-*******************
-The plugin back-end
-*******************
+****************************
+Back-end: writing Java logic
+****************************
 
-What a DMX plugin can do at back-end:
+In the previous section you've seen how to manipulate a data model with Java code. Were you wondering what these ``dmx`` and ``mf`` objects are? Well they are instances of `systems.dmx.core.service.CoreService <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_ and `systems.dmx.core.service.ModelFactory <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/ModelFactory.html>`_ respectively. But let's continue more systematically.
 
-* **Listen to DMX Core events**. In particular situations the DMX Core fires events, e.g. before and after it creates a new topic in the database. Your plugin can listen to these events and react in its own way. Thus, the *DMX Workspaces* plugin e.g. ensures that each new topic is assigned to a workspace.
+What, besides manipulating a data model, a DMX plugin can do with Java at the back-end:
 
-* **Access the DMX Core Service**. The DMX *Core Service* provides the basic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: Topics, Associations, Topic Types, Association Types.
+* **Use the DMX Core Service**. The DMX *Core Service* provides generic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
 
-* **Providing a service**. Your plugin can make its business logic, that is its service methods, accessible by other plugins (via OSGi) and/or by external applications (via HTTP/REST). Example: the service provided by the *DMX Topicmaps* plugin includes methods to add a topic to a topicmap or to change the topic's coordinates within a topicmap.
+* **Listen to DMX Core events**. In particular situations the DMX Core fires events, e.g. before and after it creates a new topic in the database. Your plugin can listen to these events and react in its own way. Thus, the *DMX Workspaces* plugin e.g. ensures that each new topic is assigned to a workspace. TODO: custom events
 
-* **Consuming services provided by other plugins**. Example: in order to investigate a topic's workspace assignments and the current user's memberships the *DMX Access Control* plugin consumes the service provided by the *DMX Workspaces* plugin.
+* **Provide a service**. Your plugin can make its business logic, that is its service methods, accessible by other plugins (via OSGi) and/or by external applications (via HTTP/REST). Example: the service provided by the *DMX Topicmaps* plugin includes methods to add a topic to a topicmap or to change the topic's coordinates within a topicmap.
+
+* **Consume services provided by other plugins**. Example: in order to investigate a topic's workspace assignments and the current user's memberships the *DMX Access Control* plugin consumes the service provided by the *DMX Workspaces* plugin.
 
 Whether a DMX plugin has a back-end part depends on the the plugin's purpose. Plugins without a back-end part include those which e.g. just define a data model or just provide a custom (JavaScript) renderer.
 
@@ -903,6 +909,8 @@ Furthermore when writing a plugin main file you must add 2 entries in the plugin
 
 Using the DMX Core Service
 ==========================
+
+The DMX *Core Service* (`Java interface <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_) provides generic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
 
 TODO
 
@@ -1293,9 +1301,9 @@ To feed the HTTP request body into a service method you must:
 
 * Implement a provider class for the type of the entity parameter, resp. make sure such a provider class already exists (as part of the DMX Core or one of the installed DMX plugins).
 
-*********************************
-Writing a DMX Webclient extension
-*********************************
+**************************************
+Front-end: extending the DMX Webclient
+**************************************
 
 TODO
 
