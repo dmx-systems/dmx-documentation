@@ -810,17 +810,17 @@ As an example see a migration that comes with the *DMX Topicmaps* plugin:
         }
     }
 
-Here a **Composition Definition** is added to the *Topicmap* type subsequently.
+Here a *Composition Definition* is added to the *Topicmap* type subsequently.
 
-****************************
-Back-end: writing Java logic
-****************************
+***************************
+Back-end: writing Java code
+***************************
 
-In the previous section you've seen how to manipulate a data model with Java code. Were you wondering what these ``dmx`` and ``mf`` objects are? Well they are instances of `systems.dmx.core.service.CoreService <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_ and `systems.dmx.core.service.ModelFactory <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/ModelFactory.html>`_ respectively.
+In the previous section you've seen how to manipulate a DMX data model with Java code. Were you wondering what these ``dmx`` and ``mf`` objects are? Well these are instances of `CoreService <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_ and `ModelFactory <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/ModelFactory.html>`_ respectively. But first things first.
 
-What, besides manipulating a data model, a DMX plugin can do with Java at the back-end:
+What, besides manipulating a data model, can a DMX plugin do with Java code at the back-end:
 
-* **Use the DMX Core Service**. The DMX *Core Service* provides generic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
+* **Use the DMX Core Service**. The DMX *Core Service* provides generic database operations to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
 
 * **Listen to DMX Core events**. In particular situations the DMX Core fires events, e.g. before and after it creates a new topic in the database. Your plugin can listen to these events and react in its own way. Thus, the *DMX Workspaces* plugin e.g. ensures that each new topic is assigned to a workspace. TODO: custom events
 
@@ -828,14 +828,14 @@ What, besides manipulating a data model, a DMX plugin can do with Java at the ba
 
 * **Consume services provided by other plugins**. Example: in order to investigate a topic's workspace assignments and the current user's memberships the *DMX Access Control* plugin consumes the service provided by the *DMX Workspaces* plugin.
 
-Whether a DMX plugin has a back-end part depends on the the plugin's purpose. Plugins without a back-end part include those which e.g. just define a data model or just provide a custom (JavaScript) renderer.
+Whether a DMX plugin has Java code at all depends on the plugin's purpose. Plugins without Java code include those who e.g. solely define a data model or provide (JavaScript) front-end code.
 
-The plugin main file
-====================
+The Java plugin main file
+=========================
 
-You must write a *plugin main file* if your plugin needs to a) listen to DMX Core events and/or b) provide a service. The plugin main file contains the event handlers resp. the service implementation then.
+In case you want add Java code to your plugin you must begin by writing the *Java plugin main file* as a frame.
 
-The plugin main file must be located directly in the plugin's ``src/main/java/<your plugin package>/`` directory. By convention the plugin main class ends with ``Plugin``.
+The Java plugin main file must be located directly in the plugin's ``src/main/java/<your plugin package>/`` directory. By convention the plugin main class ends with ``Plugin``.
 
 Example:
 
@@ -851,7 +851,7 @@ Example:
 
 Here the plugin package is ``mydomain.myplugin`` and the plugin main class is ``MyPlugin``.
 
-A plugin main file is a Java class that is derived from ``systems.dmx.core.osgi.PluginActivator``. The smallest possible plugin main file looks like this:
+A Java plugin main file is a Java class that is derived from ``systems.dmx.core.osgi.PluginActivator``. The smallest possible Java plugin main file looks like this:
 
 .. code-block:: java
 
@@ -868,9 +868,9 @@ A plugin main file is a Java class that is derived from ``systems.dmx.core.osgi.
 * The ``PluginActivator`` class needs to be imported.
 * The plugin main class must be derived from ``PluginActivator`` and must be public.
 
-Furthermore when writing a plugin main file you must add 2 entries in the plugin's ``pom.xml``:
+Furthermore when writing a Java plugin main file you must add 2 entries in the plugin's ``pom.xml``:
 
-1. a <parent> element to declare the artifactId ``dmx-plugin``. This brings you necessary dependenies and the ``PluginActivator`` class.
+1. a <parent> element to declare the artifactId ``dmx-plugin``. This brings you necessary dependencies and the ``PluginActivator`` class.
 2. a <build> element to configure the Maven Bundle Plugin. It needs to know what your plugin main class is. You must specify the fully-qualified class name.
 
 .. code-block:: xml
@@ -1049,7 +1049,7 @@ You see the Topicmaps service consist of methods to create topicmaps, retrieve t
 Implementing the service
 ------------------------
 
-After defining the plugin's service interface you must implement the actual service methods. Implementation takes place in the plugin main file.
+After defining the plugin's service interface you must implement the actual service methods. Implementation takes place in the Java plugin main file.
 
 The plugin main class must declare that it implements the plugin's service interface. (So you need to import the service interface.) Each service method implementation must be ``public``. Annotate each service method implementation with ``@Override``.
 
