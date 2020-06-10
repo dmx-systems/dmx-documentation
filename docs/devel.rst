@@ -906,13 +906,6 @@ When writing a plugin main class you must adapt your plugin's ``pom.xml`` accord
         </build>
     </project>
 
-Using the DMX Core Service
-==========================
-
-The DMX *Core Service* (`CoreService API <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_) provides generic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
-
-TODO
-
 DMX Core API
 ============
 
@@ -921,6 +914,121 @@ Overview of DMX Core API, package `systems.dmx.core <https://apidocs.dmx.systems
 .. figure:: _static/dmx-core-classes.svg
 
     Interfaces of the ``systems.dmx.core`` package. Note that both ``Topic`` and ``Assoc`` have a common base class: ``DMXObject``. Both are typed, are addressable by-id and by-uri, and have a value, be it simple (``SimpleValue``) or composite (``ChildTopics``).
+
+Using the DMX Core Service
+==========================
+
+The DMX *Core Service* (`CoreService API <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_) provides generic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
+
+Topics
+------
+
+.. code-block:: java
+
+    Topic getTopic(long topicId);
+
+    Topic getTopicByUri(String uri);
+
+    List<Topic> getTopicsByType(String topicTypeUri);
+
+    Topic getTopicByValue(String typeUri, SimpleValue value);
+
+    List<Topic> getTopicsByValue(String typeUri, SimpleValue value);
+
+    List<Topic> queryTopics(String typeUri, SimpleValue value);
+
+    QueryResult queryTopicsFulltext(String query, String topicTypeUri, boolean searchChildTopics);
+
+    Iterable<Topic> getAllTopics();
+
+.. code-block:: java
+
+    Topic createTopic(TopicModel model);
+
+    void updateTopic(TopicModel updateModel);
+
+    void deleteTopic(long topicId);
+
+Associations
+------------
+
+.. code-block:: java
+
+    Assoc getAssoc(long assocId);
+
+    Assoc getAssocByValue(String typeUri, SimpleValue value);
+
+    List<Assoc> queryAssocs(String typeUri, SimpleValue value);
+
+    Assoc getAssocBetweenTopicAndTopic(String assocTypeUri, long topic1Id, long topic2Id, String roleTypeUri1,
+                                       String roleTypeUri2);
+
+    Assoc getAssocBetweenTopicAndAssoc(String assocTypeUri, long topicId, long assocId, String topicRoleTypeUri,
+                                       String assocRoleTypeUri);
+
+.. code-block:: java
+
+    List<Assoc> getAssocsByType(String assocTypeUri);
+
+    List<Assoc> getAssocs(long topic1Id, long topic2Id);
+
+    List<Assoc> getAssocs(long topic1Id, long topic2Id, String assocTypeUri);
+
+.. code-block:: java
+
+    Iterable<Assoc> getAllAssocs();
+
+    List<PlayerModel> getPlayerModels(long assocId);
+
+.. code-block:: java
+
+    Assoc createAssoc(AssocModel model);
+
+    void updateAssoc(AssocModel updateModel);
+
+    void deleteAssoc(long assocId);
+
+Topic Types
+-----------
+
+.. code-block:: java
+
+    TopicType getTopicType(String topicTypeUri);
+
+    TopicType getTopicTypeImplicitly(long topicId);
+
+.. code-block:: java
+
+    List<TopicType> getAllTopicTypes();
+
+.. code-block:: java
+
+    TopicType createTopicType(TopicTypeModel model);
+
+    void updateTopicType(TopicTypeModel updateModel);
+
+    void deleteTopicType(String topicTypeUri);
+
+Association Types
+-----------------
+
+.. code-block:: java
+
+    AssocType getAssocType(String assocTypeUri);
+
+    AssocType getAssocTypeImplicitly(long assocId);
+
+.. code-block:: java
+
+    List<AssocType> getAllAssocTypes();
+
+.. code-block:: java
+
+    AssocType createAssocType(AssocTypeModel model);
+
+    void updateAssocType(AssocTypeModel updateModel);
+
+    void deleteAssocType(String assocTypeUri);
 
 Listen to DMX Core events
 =========================
