@@ -830,12 +830,14 @@ What, besides manipulating a data model, can a DMX plugin do with Java code at t
 
 Whether a DMX plugin has Java code at all depends on the plugin's purpose. Plugins without Java code include those who e.g. solely define a data model or provide (JavaScript) front-end code.
 
-The Java plugin main file
-=========================
+.. _the-plugin-main-class:
 
-In case you want add Java code to your plugin you must begin by writing the *Java plugin main file* as a frame.
+The plugin main class
+=====================
 
-The Java plugin main file must be located directly in the plugin's ``src/main/java/<your plugin package>/`` directory. By convention the plugin main class ends with ``Plugin``.
+In case you want add Java code to your plugin you must write a *plugin main class* as the starting point.
+
+By convention the plugin main class ends with ``Plugin``. The corresponding ``.java`` file must be located in the plugin's ``src/main/java/<your plugin package>/`` directory.
 
 Example:
 
@@ -851,7 +853,7 @@ Example:
 
 Here the plugin package is ``mydomain.myplugin`` and the plugin main class is ``MyPlugin``.
 
-A Java plugin main file is a Java class that is derived from ``systems.dmx.core.osgi.PluginActivator``. The smallest possible Java plugin main file looks like this:
+The plugin main class must be derived from ``systems.dmx.core.osgi.PluginActivator``:
 
 .. code-block:: java
 
@@ -864,14 +866,13 @@ A Java plugin main file is a Java class that is derived from ``systems.dmx.core.
 
 3 things are illustrated here:
 
-* The plugin should be packaged in an unique namespace.
-* The ``PluginActivator`` class needs to be imported.
+* The plugin's package name should relate to a domain under your control.
+* The class ``PluginActivator`` needs to be imported.
 * The plugin main class must be derived from ``PluginActivator`` and must be public.
 
-Furthermore when writing a Java plugin main file you must add 2 entries in the plugin's ``pom.xml``:
+When writing a plugin main class you must adapt your plugin's ``pom.xml`` accordingly:
 
-1. a <parent> element to declare the artifactId ``dmx-plugin``. This brings you necessary dependencies and the ``PluginActivator`` class.
-2. a <build> element to configure the Maven Bundle Plugin. It needs to know what your plugin main class is. You must specify the fully-qualified class name.
+* Add a ``<build>`` element to tell the *Maven Bundle Plugin* what your plugin main class is. Specify the fully-qualified class name. (DMX uses the *Maven Bundle Plugin* for packaging your plugin as a ``.jar`` bundle.)
 
 .. code-block:: xml
 
@@ -897,9 +898,7 @@ Furthermore when writing a Java plugin main file you must add 2 entries in the p
                     <artifactId>maven-bundle-plugin</artifactId>
                     <configuration>
                         <instructions>
-                            <Bundle-Activator>
-                                mydomain.myplugin.MyPlugin
-                            </Bundle-Activator>
+                            <Bundle-Activator>mydomain.myplugin.MyPlugin</Bundle-Activator>
                         </instructions>
                     </configuration>
                 </plugin>
@@ -982,9 +981,9 @@ The service interface
 
 For a plugin to provide a service you must define a *service interface*. The service interface contains all the method signatures that make up the service. When other plugins consume your plugin's service they do so via the service interface.
 
-To be recogbized the service interface *must* by convention end its name on ``...Service``. The service interface must be declared ``public`` and is a regular Java interface.
+To be recognized the service interface *must* end its name by ``...Service``. The service interface must be declared ``public`` and is a regular Java interface.
 
-A DMX plugin can define *one* service interface at most. More than one service interface is not supported.
+A DMX plugin can define *one* service interface at most.
 
 As an example see the *Topicmaps* plugin (part of the DMX platform):
 
@@ -1049,9 +1048,9 @@ You see the Topicmaps service consist of methods to create topicmaps, retrieve t
 Implementing the service
 ------------------------
 
-After defining the plugin's service interface you must implement the actual service methods. Implementation takes place in the Java plugin main file.
+After defining the plugin's service interface you must implement the actual service methods. Implementation takes place in the plugin main class.
 
-The plugin main class must declare that it implements the plugin's service interface. (So you need to import the service interface.) Each service method implementation must be ``public``. Annotate each service method implementation with ``@Override``.
+:ref:`the-plugin-main-class` must declare that it implements the plugin's service interface. (So you need to import the service interface.) Each service method implementation must be ``public``. Annotate each service method implementation with ``@Override``.
 
 As an example see the implementation of the *Topicmaps* service:
 
