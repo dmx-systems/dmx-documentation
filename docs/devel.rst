@@ -911,7 +911,12 @@ Using the DMX Core Service
 
 The DMX *Core Service* (`CoreService API <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_) provides generic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
 
-First let's take a look at the DMX Core API, that is package `systems.dmx.core <https://apidocs.dmx.systems/index.html?systems/dmx/core/package-summary.html>`_:
+TODO
+
+DMX Core API
+============
+
+Overview of DMX Core API, package `systems.dmx.core <https://apidocs.dmx.systems/index.html?systems/dmx/core/package-summary.html>`_:
 
 .. figure:: _static/dmx-core-classes.svg
 
