@@ -49,7 +49,7 @@ Traditionally a web application consists of 3 parts: *data model*, *business log
 
 In its back-end portion (P1) a plugin can a) define a data model (creating *Types* and their relationships), and/or b) provide business logic in form of an OSGi service (consumable by other plugins or through a REST API). In its client-side portion a plugin either *creates* a front-end (P2, P3), or *extends* an existing front-end (P4).
 
-All installed plugins operate on the same semantic storage. The platform features a 5-level access control system (`private`, `confidential`, `collaborative`, `public`, `common`). Every storage operation is controlled on the basis of the current HTTP request's authorization. Plugins can operate on the semantic storage exclusively by using the *DMX Core Service* (`Java interface <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_).
+All installed plugins operate on the same semantic storage. The platform features a 5-level access control system (`private`, `confidential`, `collaborative`, `public`, `common`). Every storage operation is controlled on the basis of the current HTTP request's authorization. Plugins can operate on the semantic storage exclusively by using the *DMX Core Service* (`CoreService API <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_).
 
 The heart of the platform is the *DMX Core*. The Core provides the runtime environment for DMX plugins. The Core a) loads plugins and manages their life-cycle, and b) governs all access to the semantic storage, and provides this duty as *DMX Core Service*.
 
@@ -169,11 +169,11 @@ Back-end-only (P1)
 
     * Defines a **data model**: creating *Topic Types*, *Association Types*, *Role Types*, and default instances. Your data model can build upon, and even change, the data models provided by the platform or by other plugins. To do so in a controlled manner the platform provides a migration facility that runs the migrations provided by a plugin.
 
-      A purely passive plugin that has no program logic but solely defines a data model is nothing unusual. Often in this case no Java code is required at all; you define a data model declaratively in JSON.
+      A purely passive plugin that has no program logic but solely defines a data model is nothing unusual. Often in this case no custom Java code is required at all; you define a data model declaratively in JSON.
 
       Examples are basically the `dmx-base <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-base>`_, `dmx-bookmarks <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-bookmarks>`_, `dmx-contacts <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-contacts>`_, `dmx-datetime <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-datetime>`_, `dmx-events <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-events>`_, `dmx-notes <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-notes>`_, and the `dmx-tags <https://git.dmx.systems/dmx-platform/dmx-platform/-/tree/master/modules/dmx-tags>`_ plugins. These effectively create the included DMX applications (*Note Taking*, *Contact Management*, *Bookmark Management*, and *Calendar*), just by providing data models. All the functionality on the other hand (e.g. create, search, edit, navigate, share, delete) is generic platform functionality.
 
-    * Has Java code:
+    * Has custom Java code:
 
         * Provides **business logic** as **OSGi service**. A service method can be made RESTful just by adding JAX-RS annotations. JAX-RS knowledge is useful.
         * Consumes OSGi services provided by other plugins, or by the platform.
@@ -674,7 +674,7 @@ As you've already learned, migrations serve different (but related) purposes: so
 
   With a declarative migration you can only create new things. You can't modify existing things. All you do with a declarative migration you could achieve with an imperative migration as well, but as long as you just want create new things, it is more convenient to do it declaratively.
 
-* An **Imperative Migration** is a Java class that has access to the *DMX Core Service* (`Java interface <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_). Thus, you can perform arbitrary database operations like creation, retrieval, update, deletion. Use an imperative migration when (a later version of) your plugin needs to modify existing type definitions and/or transform existing database content.
+* An **Imperative Migration** is a Java class that has access to the *DMX Core Service* (`CoreService API <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_). Thus, you can perform arbitrary database operations like creation, retrieval, update, deletion. Use an imperative migration when (a later version of) your plugin needs to modify existing type definitions and/or transform existing database content.
 
 The developer can equip a plugin with an arbitrary number of both, declarative migrations and imperative migrations.
 
@@ -812,13 +812,13 @@ As an example see a migration that comes with the *DMX Topicmaps* plugin:
 
 Here a *Composition Definition* is added to the *Topicmap* type subsequently.
 
-***************************
-Back-end: writing Java code
-***************************
+**********************************
+Back-end: writing custom Java code
+**********************************
 
 In the previous section you've seen how to manipulate a DMX data model with Java code. Were you wondering what these ``dmx`` and ``mf`` objects are? Well these are instances of `CoreService <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_ and `ModelFactory <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/ModelFactory.html>`_ respectively. But first things first.
 
-What, besides manipulating a data model, can a DMX plugin do with Java code at the back-end:
+What, besides manipulating a data model, can a DMX plugin do with custom Java code at the back-end:
 
 * **Use the DMX Core Service**. The DMX *Core Service* provides generic database operations to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
 
@@ -828,14 +828,14 @@ What, besides manipulating a data model, can a DMX plugin do with Java code at t
 
 * **Consume services provided by other plugins**. Example: in order to investigate a topic's workspace assignments and the current user's memberships the *DMX Access Control* plugin consumes the service provided by the *DMX Workspaces* plugin.
 
-Whether a DMX plugin has Java code at all depends on the plugin's purpose. Plugins without Java code include those who e.g. solely define a data model or provide (JavaScript) front-end code.
+Whether you need to add custom Java code to a DMX plugin at all depends on the purpose of the plugin. Plugins without custom Java code include those who e.g. solely define a data model or provide (JavaScript) front-end code only.
 
 .. _the-plugin-main-class:
 
 The plugin main class
 =====================
 
-In case you want add Java code to your plugin you must write a *plugin main class* as the starting point.
+In case you want add custom Java code to your plugin you must first write a *plugin main class*.
 
 By convention the plugin main class ends with ``Plugin``. The corresponding ``.java`` file must be located in the plugin's ``src/main/java/<your plugin package>/`` directory.
 
@@ -872,7 +872,7 @@ The plugin main class must be derived from ``systems.dmx.core.osgi.PluginActivat
 
 When writing a plugin main class you must adapt your plugin's ``pom.xml`` accordingly:
 
-* Add a ``<build>`` element to tell the *Maven Bundle Plugin* what your plugin main class is. Specify the fully-qualified class name. (DMX uses the *Maven Bundle Plugin* for packaging your plugin as a ``.jar`` bundle.)
+* Add a ``<build>`` element to tell the *Maven Bundle Plugin* what your plugin main class is. Specify the fully-qualified class name. (DMX uses the Maven Bundle Plugin for packaging your plugin as a ``.jar`` bundle.)
 
 .. code-block:: xml
 
@@ -909,7 +909,7 @@ When writing a plugin main class you must adapt your plugin's ``pom.xml`` accord
 Using the DMX Core Service
 ==========================
 
-The DMX *Core Service* (`Java interface <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_) provides generic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
+The DMX *Core Service* (`CoreService API <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_) provides generic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
 
 First let's take a look at the DMX Core API, that is package `systems.dmx.core <https://apidocs.dmx.systems/index.html?systems/dmx/core/package-summary.html>`_:
 
