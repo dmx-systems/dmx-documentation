@@ -907,31 +907,35 @@ When writing a plugin main class you must adapt your plugin's ``pom.xml`` accord
     </project>
 
 DMX Java API
-================
+============
 
-The DMX Java API consists of the ``systems.dmx`` package hierarchy. Most central is the `systems.dmx.core <https://apidocs.dmx.systems/index.html?systems/dmx/core/package-summary.html>`_ package and its sub-packages as they contain the basic DMX objects (`Topic <https://apidocs.dmx.systems/index.html?systems/dmx/core/Topic.html>`_, `Assoc <https://apidocs.dmx.systems/index.html?systems/dmx/core/Assoc.html>`_, `TopicType <https://apidocs.dmx.systems/index.html?systems/dmx/core/TopicType.html>`_, `AssocType <https://apidocs.dmx.systems/index.html?systems/dmx/core/AssocType.html>`_, ...) and services (most notably the `CoreService <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_).
+The DMX Java API consists of the ``systems.dmx`` package hierarchy. Most central is the `systems.dmx.core <https://apidocs.dmx.systems/index.html?systems/dmx/core/package-summary.html>`_ package and its sub-packages. These contain the basic DMX objects (`Topic <https://apidocs.dmx.systems/index.html?systems/dmx/core/Topic.html>`_, `Assoc <https://apidocs.dmx.systems/index.html?systems/dmx/core/Assoc.html>`_, `TopicType <https://apidocs.dmx.systems/index.html?systems/dmx/core/TopicType.html>`_, `AssocType <https://apidocs.dmx.systems/index.html?systems/dmx/core/AssocType.html>`_, ...) and services (most notably the `CoreService <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_).
 
-Overview of package `systems.dmx.core <https://apidocs.dmx.systems/index.html?systems/dmx/core/package-summary.html>`_:
+Overview of the interfaces in package `systems.dmx.core <https://apidocs.dmx.systems/index.html?systems/dmx/core/package-summary.html>`_:
 
 .. figure:: _static/dmx-core-classes.svg
 
-Note that both ``Topic`` and ``Assoc`` have a common base class: ``DMXObject``. This means both topics and associations a) are typed, b) are addressable by-id and by-uri, and, in particular c) are a *value holder*, be it a simple one (`SimpleValue <https://apidocs.dmx.systems/index.html?systems/dmx/core/model/SimpleValue.html>`_) or a composite one (`ChildTopics <https://apidocs.dmx.systems/index.html?systems/dmx/core/ChildTopics.html>`_). Also note that ``DMXType`` is derived from ``Topic``.
+Note that both ``Topic`` and ``Assoc`` have a common base class: ``DMXObject``. This means both topics and associations a) are typed, b) are addressable by-id and by-uri, and, in particular c) are a *value holder*, be it a simple one (`SimpleValue <https://apidocs.dmx.systems/index.html?systems/dmx/core/model/SimpleValue.html>`_) or a composite one (`ChildTopics <https://apidocs.dmx.systems/index.html?systems/dmx/core/ChildTopics.html>`_). Also note that ``DMXType`` is derived from ``Topic`` and inherits the "uri" field from ``DMXObject``.
 
-Let's have a closer look at the 5 ``DMXObject`` properties:
+Let's have a closer look at the 5 ``DMXObject`` fields:
 
-============  =====================================================  ===============
-Property      Meaning                                                Type
-============  =====================================================  ===============
-``id``        unique per DMX instance                                long
-``uri``       globally unique, can be refer to a public vocabulary,  String
-              mandatory for types, often not used for instances
-``typeUri``   URI of type of topic/assoc                             String
-``value``     | for simple topic/assoc: the immutable value          ``SimpleValue``
-              | for composite topic/assoc: the calculated label
-``children``  for composite topic/assoc: hierarchy of child topics   ``ChildTopics``
-============  =====================================================  ===============
+===============  =====================================================  ===============
+Field            Meaning                                                Type
+===============  =====================================================  ===============
+``id``           unique per DMX instance                                long
+``uri``          globally unique, can be refer to a public vocabulary,  String
+                 mandatory for types, often not used for instances
+``typeUri``      URI of type of topic/assoc                             String
+``value``        | for simple topic/assoc: the immutable value          ``SimpleValue``
+                 | for composite topic/assoc: the calculated label
+``childTopics``  for composite topic/assoc: hierarchy of child topics   ``ChildTopics``
+===============  =====================================================  ===============
 
-Note that the 1st column shows the names of JSON properties, not Java properties. The Java properties are accessible only through the `DMXObject` getters (``getId()``, ``getUri()``, ...).
+The fields are accessible only through the `DMXObject` getters (``getId()``, ``getUri()``, ...).
+
+.. hint::
+
+    The DMX Java API documentation is available at https://apidocs.dmx.systems.
 
 Using the DMX Core Service
 ==========================
