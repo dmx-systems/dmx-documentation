@@ -47,17 +47,20 @@
   <line style="stroke: rgb(163, 163, 163);" x1="515" y1="345.2" x2="515" y2="330.2"></line>
   <line style="stroke: rgb(163, 163, 163); marker-start: url(#arrow-empty);" x1="155" y1="289" x2="155" y2="375"></line>
   <line style="stroke: rgb(163, 163, 163); marker-start: url(#arrow-empty);" x1="305" y1="319" x2="305" y2="375"></line>
-  <line style="marker-start: url(#arrow-empty); stroke: rgb(163, 163, 163);" x1="416" y1="163" x2="380" y2="163"></line>
-  <line style="stroke: rgb(163, 163, 163); marker-start: url(#arrow-empty);" x1="470" y1="189" x2="470" y2="265"></line>
+  <line style="marker-start: url(#arrow-empty); stroke: rgb(163, 163, 163);" x1="416" y1="200" x2="380" y2="200"></line>
+  <line style="stroke: rgb(163, 163, 163); marker-start: url(#arrow-empty);" x1="470" y1="227" x2="470" y2="265"></line>
   <line style="stroke: rgb(163, 163, 163); marker-start: url(#composition);" x1="187" y1="403" x2="240" y2="403"></line>
   <line style="stroke: rgb(163, 163, 163); marker-start: url(#arrow-empty);" x1="105" y1="189" x2="105" y2="330"></line>
   <line style="marker-start: url(#arrow-empty); stroke: rgb(163, 163, 163);" x1="221" y1="163" x2="195" y2="163"></line>
   <line style="stroke: rgb(163, 163, 163); marker-start: url(#arrow-empty);" x1="270" y1="319" x2="270" y2="330"></line>
   <line style="stroke: rgb(163, 163, 163); marker-start: url(#composition);" x1="305" y1="88" x2="305" y2="60"></line>
-  <line style="stroke: rgb(163, 163, 163);" x1="85" y1="38" x2="85" y2="330"></line>
-  <line style="stroke: rgb(163, 163, 163); marker-start: url(#composition);" x1="128" y1="38" x2="85" y2="38"></line>
+  <line style="stroke: rgb(163, 163, 163);" x1="85" y1="45" x2="85" y2="330"></line>
+  <line style="stroke: rgb(163, 163, 163); marker-start: url(#composition);" x1="128" y1="45" x2="85" y2="45"></line>
   <line style="stroke: rgb(163, 163, 163); marker-start: url(#arrow-empty);" x1="125" y1="289" x2="125" y2="330"></line>
   <line style="stroke: rgb(163, 163, 163);" x1="230" y1="330" x2="230" y2="315"></line>
+  <line style="marker-start: url(#arrow-empty); stroke: rgb(163, 163, 163);" x1="135" y1="23" x2="104" y2="23" transform="matrix(-1, 0, 0, -1, 239, 46)"></line>
+  <line style="stroke: rgb(163, 163, 163); marker-start: url(#arrow-empty);" x1="55" y1="39" x2="55" y2="375"></line>
+  <line style="stroke: rgb(163, 163, 163); marker-end: url(#composition);" x1="430" y1="133" x2="387" y2="133"></line>
   <path d="M 230 315 L 158.5 315 C 158.3 309.5 151.5 309.4 151.3 315 L 128.6 315 C 128.2 309.9 121.6 309.7 121.1 315 L 105 315" style="stroke: rgb(163, 163, 163); fill: none;"></path>
   <g transform="matrix(1, 0, 0, 1, 105, 80)">
     <rect x="125" width="150" height="15" style="fill: rgb(252, 249, 227); stroke: url(#color-2);" y="15"></rect>
@@ -81,7 +84,7 @@
     <rect x="125" width="60" height="15" style="fill: url(#color-5); stroke: url(#color-2);" y="10"></rect>
     <text style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 9px; font-weight: 700; text-anchor: middle; white-space: pre;" x="155.2" y="20">TopicType</text>
   </g>
-  <g transform="matrix(1, 0, 0, 1, -20.00001, 455)">
+  <g transform="matrix(1, 0, 0, 1, -20.00001, 455)" style="">
     <rect x="125" width="60" height="15" style="fill: url(#color-5); stroke: url(#color-2);" y="10"></rect>
     <text style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 9px; font-weight: 700; text-anchor: middle; white-space: pre;" x="155.2" y="20">AssocType</text>
   </g>
@@ -115,7 +118,7 @@
     <rect x="125" width="130" height="75" style="fill: url(#color-4); stroke: url(#color-2);" y="25"></rect>
     <text transform="matrix(1, 0, 0, 1, -22.6875, 2)" style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 8px; white-space: pre;" x="153.6999969482422" y="35.099998474121094">String getCompDefUri()<tspan x="153.6999969482422" dy="1.4em">​</tspan>String getParentTypeUri()<tspan x="153.6999969482422" dy="1.4em">​</tspan>String getChildTypeUri()<tspan x="153.6999969482422" dy="1.4em">​</tspan>String getCustomAssocTypeUri()<tspan x="153.6999969482422" dy="1.4em">​</tspan>String getChildCardinalityUri()<tspan x="153.6999969482422" dy="1.4em">​</tspan>ViewConfig getViewConfig()<tspan x="153.6999969482422" dy="1.4em">​</tspan></text>
   </g>
-  <g transform="matrix(1, 0, 0, 1, 300, 135)">
+  <g transform="matrix(1, 0, 0, 1, 300, 173)">
     <rect x="125" width="90" height="15" style="fill: url(#color-5); stroke: url(#color-2);" y="10"></rect>
     <text style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 9px; font-weight: 700; text-anchor: middle; white-space: pre;" x="170.2" y="20">JSONEnabled</text>
     <rect x="125" width="90" height="20" style="fill: url(#color-4); stroke: url(#color-2);" y="25"></rect>
@@ -140,5 +143,13 @@
   <g transform="matrix(1, 0, 0, 1, 95, 320)">
     <rect x="120" width="70" height="15" style="fill: url(#color-5); stroke: url(#color-2);" y="10"></rect>
     <text style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 9px; font-weight: 700; text-anchor: middle; white-space: pre;" x="155.2" y="20">RelatedAssoc</text>
+  </g>
+  <g transform="matrix(1.0596, 0, 0, 1, -98.69508, 5)">
+    <rect x="107.3" width="75.5" height="15" style="fill: url(#color-5); stroke: url(#color-2);" y="10"></rect>
+    <text style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 9px; font-weight: 700; text-anchor: middle; white-space: pre;" x="145.2" y="20">Iterable&lt;String&gt;</text>
+  </g>
+  <g transform="matrix(1.0596, 0, 0, 1, 316.30511, 116)">
+    <rect x="107.3" width="75.5" height="15" style="fill: url(#color-5); stroke: url(#color-2);" y="10"></rect>
+    <text style="fill: rgb(51, 51, 51); font-family: Lato; font-size: 9px; font-weight: 700; text-anchor: middle; white-space: pre;" x="145.2" y="20">SimpleValue</text>
   </g>
 </svg>
