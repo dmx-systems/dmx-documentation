@@ -1442,7 +1442,7 @@ And there is the association type you built with a few selectable roles.
 On the right side you see the actual content, the instances.
 To continue working with a less crowded map, you might want to :ref:`bulk select and hide<user-hiding-multiple-items>` the data model.
 
-.. image:: _static/topic-map-with-own-assoc-and-instances.jpg
+.. image:: _static/topic-map-with-own-assoc-and-instances.png
 
 .. _user-custom-association-types:
 
