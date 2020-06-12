@@ -1068,7 +1068,7 @@ Open the :ref:`Search/Create Dialog <user-the-search-create-dialog>`, enter your
 .. image:: _static/user-account.png
 
 Click it to open the :ref:`in-map details <user-in-map-details>` and investigate it:
-The user account is a composite consisting of a user name and a password.
+The user account is a :ref:`composite <user-composites-and-composition-definitions>` consisting of a user name and a password.
 The password is not visible in clear text but it is hashed for more security.
 
 .. image:: _static/user-account-details.png
@@ -1194,6 +1194,12 @@ If you want to dive deeper into this concept, we recommend the following sources
 * Joseph V. Homan, Paul J. Kovacs: `A Comparison Of The Relational Database Model And The Associative Database Model <http://iacis.org/iis/2009/P2009_1301.pdf>`_, in: Issues in Information Systems, Volume X, No. 1, 2009 (6 page article)
 * Simon Williams: `The Associative Model Of Data <https://link.springer.com/content/pdf/10.1057/palgrave.jdm.3240049.pdf>`_, in: Journal of Database Marketing, Volume 8, 4, 2001 (24 page article)
 * Simon Williams: The `Associative Model Of Data <http://www.sentences.com/docs/other_docs/AMD.pdf>`_, Lazy Software, 2nd edition, 2002 (book, 284 pages)
+
+It depends on your use case how you build your data model.
+In most cases, there is more than one possible way of achieving what you need.
+None of them is right or wrong, but one of them might be more suitable.
+We therefore recommend to consider the possibilities before implementing a data model.
+To show you what we mean by this, we will discuss different ways of modeling below.
 
 .. _user-types-versus-instances:
 
@@ -1369,7 +1375,7 @@ By default, a new topic type has the simple data type "Text".
 Creating a composite topic type
 ===============================
 
-To create your own composite topic type with a few properties here is how to proceed.
+To create your own :ref:`composite <user-composites-and-composition-definitions>` topic type with a few properties here is how to proceed.
 Let's say you want to add a topic type "publication".
 Each publication shall have a title and a year.
 
@@ -1411,45 +1417,26 @@ Creating an association type
 ============================
 
 One of the strengths of DMX is that you can build your own association types in the same user interface.
-Let's say you want to express the relationship between persons and publications.
-A person can be the author, the publisher, the reader, or even the subject of a publication.
+Association types represent different relationships between items.
+In their simplest form, associations are "lines" between things without any deeper meaning embedded in the line.
+Their association type is called "Association".
+For semantic authoring more complex associations are needed to qualify relationships.
 
-* Create a topic type "Publication".
-* Create an association type and give it a name, e.g. "Relationship publication - person".
-* Select "Composite" as a data type.
-
-.. image:: _static/create-machine-readable-association.jpg
-
-* Create a topic type, name it "Role referring to publication" or anything that suits you. Its data type is "Text".
-* Create an association between the topic type and the association type and edit the newly created association between them. Click onto the "View" tab and then "Edit" to edit its configuration.
-* Open the "Widget" setting and select "Select". This will allow you to select roles from a predefined list when adding content later.
-* There are two more checkboxes called "clearable" and "customizable". It only makes sense to use them in connection with  "Widget: Select". Both have an effect on editing association types later on. Here is what they do: "Clearable" decides whether you allow instances of this association type to *only* have the values you explicitly defined or whether it shall be possible to clear the field to leave it empty. In this case, there will be a little cross icon for clearing it. "Customizable" decides whether you allow to enter values on the fly by just typing in something different that was not predefined by you. If both checkboxes are left empty, one of your predefined values *has* to be selected. The value cannot be empty and there will be no possibility of typing into the field.
-
-.. image:: _static/selectable-role.jpg
-
-* Create a topic "Author" that has the topic type "Role referring to publication" which is selectable from the create menu. If you want to have more roles, add them likewise.
-* Create a person.
-* Create a publication.
-* Create an association between the person and the publication and edit the association. Open the drop-down menu under "Association Type" and select "Relationship publication - person". Hit the save button and the edit button again. There is a new drop-down menu that lets you select the role the person shall have related to the publication.
-
-.. image:: _static/select-role.jpg
-
-You now have a map like this.
-On the left side you see the data model.
-There is your topic type "Publication" with a title and a year.
-And there is the association type you built with a few selectable roles.
-
-On the right side you see the actual content, the instances.
-To continue working with a less crowded map, you might want to :ref:`bulk select and hide<user-hiding-multiple-items>` the data model.
+In this section, we will discuss **different ways** of modeling associations for the same use case:
+The goal is to express the relationship between persons and publications.
 
 .. image:: _static/topic-map-with-own-assoc-and-instances.png
+=======
+* A person can be the author, the publisher, the reader, or even the subject of a publication.
+* The same person can be in more than one of these roles.
+* The persons have already been saved in the database and they are used in other contexts resp. topicmaps. So they shall not exist only as "properties" (child elements) of a publication but the existing entries shall be linked to the publications.
 
 .. _user-custom-association-types:
 
 Custom Association Types
 ------------------------
 
-Custom Association Types are a different way of modeling associations.
+Custom Association Types are one way of modeling associations.
 They are a powerful, semantic authoring tool that is unique to DMX.
 Custom Association Types are used to represent parent-child relationships when you create instances.
 Their semantics are carried over to all instances without you creating associations manually in each instance.
@@ -1461,10 +1448,7 @@ At the same time you benefit from DMX's model-driven form generator: The form yo
     #. If your data model contains a clear parent-child relationship Custom Association Types are the recommended way of modeling these relationships. This is the case when you need a child type to describe the whole entity. (For example you want publications to have authors, and authors are persons.) Create a Composition Definition between parent type and child type and add a Custom Association Type to it as described below.
     #. If your data model does not have a such clear parent-child relationship we recommend to create associations manually.
 
-The same context as shown above can be modeled using a Custom Association Type.
-
 * Create the topic types "Publication" (data type "identity") and "Publication Title" (text).
-* Reveal the built-in topic type "Year".
 * Reveal the built-in topic type "Person".
 * Create an association type called "Author".
 * Create an association between the topic type Person and the topic type Publication. Edit it and open the drop-down menu "Custom Association Type". Select "Author" and click save.
@@ -1485,15 +1469,60 @@ Use this model to create an instance:
 * Create a person or reveal an existing one.
 * Create a new publication by entering a title into the search/create dialog and selecting the topic type publication.
 * Edit the publication.
-* In the form you now have fields for the year and the author (first name, last name).
-* When typing in a name, DMX's autocompletion offers you existing person names that you can select. If the author you enter does not yet exist in the database, DMX creates a new person and directly adds the custom association "Author" between this person and the publication.
+* In the form you now have fields for the author (first name, last name).
+* When typing in a name, DMX's autocompletion offers you existing person names that you can select. **If the author you enter does not yet exist in the database, DMX creates a new person and directly adds the custom association "Author" between this person and the publication.**
 
 .. image:: _static/custom-association-instance.png
+
+
+Manual Creation of Association Types
+------------------------------------
+
+From the semantics point of view, you can achieve the same via a different way of modeling.
+The main difference is how you enter data.
+
+
+* Create a topic type "Publication".
+* Create an association type and give it a name, e.g. "Relationship publication - person".
+* Select "Composite" as a data type.
+
+.. image:: _static/create-machine-readable-association.jpg
+
+* Create a topic type, name it "Role referring to publication" or anything that suits you. Its data type is "Text".
+* Create an association between the topic type and the association type and edit the newly created association between them. Click onto the "View" tab and then "Edit" to edit its configuration.
+* Open the "Widget" setting and select "Select". This will allow you to select roles from a predefined list when adding content later.
+* There are two more checkboxes called "clearable" and "customizable". It only makes sense to use them in connection with  "Widget: Select". Both have an effect on editing association types later on. Here is what they do: "Clearable" decides whether you allow instances of this association type to *only* have the values you explicitly defined or whether it shall be possible to clear the field to leave it empty. In this case, there will be a little cross icon for clearing it. "Customizable" decides whether you allow to enter values on the fly by just typing in something different that was not predefined by you. If both checkboxes are left empty, one of your predefined values *has* to be selected. The value cannot be empty and there will be no possibility of typing into the field.
+
+.. image:: _static/selectable-role.jpg
+
+* Create a topic "Author" that has the topic type "Role referring to publication" which is selectable from the create menu. If you want to have more roles, add them likewise.
+* Create a person.
+* Create a publication with a title as above.
+* Create an association between the person and the publication and edit the association. Open the drop-down menu under "Association Type" and select "Relationship publication - person". Hit the save button and the edit button again. There is a new drop-down menu that lets you select the role the person shall have related to the publication.
+
+.. image:: _static/select-role.jpg
+
+You now have a map like this.
+On the left side you see the data model.
+There is your topic type "Publication" with a title.
+And there is the association type you built with a few selectable roles.
+
+On the right side you see the actual content, the instances.
+To continue working with a less crowded map, you might want to :ref:`bulk select and hide<user-hiding-multiple-items>` the data model.
+
+.. image:: _static/topic-map-with-own-assoc-and-instances.png
+
+
+.. note:: DMX supports autotyping. This means that every time an association between a person and a publication is created, it would automatically be transformed into the association type you want. However, this is not configurable via the web client, it requires programming skills. Please see the Developer Guide to learn how to achieve this.
+
+A third way (but the worst) way: Publication with properties: Title, Author (text) oder Person (ready.made). Im Formular fehlt dann die Angabe, was das überhaupt für ein Name ist.
 
 .. _user-creating-a-role-type:
 
 Creating a role type
 ====================
+
+.. note:: You can investigate this example on our Demo Server, in the `Workspace "DMX User Guide Data Model", Topicmap "1 Persons and Organizations" <https://demo.dmx.systems/systems.dmx.webclient/#/topicmap/8532>`_
 
 Oftentimes when you create associations it is clear which of the two connected players is in which role:
 In the example above, the publication is the parent type and the title is the child type.
