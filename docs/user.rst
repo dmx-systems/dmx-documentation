@@ -1285,28 +1285,28 @@ By doing so you define the parent-child relations, the cardinality of properties
 This kind of association type is called a composition definition.
 
 For associations there is just *one* composite data type which is obviously called composite.
-For topic types DMX has both composite types: **value** and **identity**.
+For topic types DMX has both composite types: **value** and **entity**.
 
 These terms exist to clarify what you are referring to when changes occur.
 Think of real-world contexts and how people are able to understand what changed.
 If a person has a new address this could mean they moved, but it could also mean the street was renamed.
-You can model these two different case by using the data types "identity" and "value".
+You can model these two different case by using the data types "entity" and "value".
 
-The composite type "identity"
+The composite type "entity"
 -----------------------------
 
-In DMX, identity is used when you want to refer to the same thing as before even if something changes.
+In DMX, entity is used when you want to refer to the same thing as before even if something changes.
 If an address changes because the street is renamed you would still mean the same house at the same geolocation.
 If you save a bookmark to refer to an article and the URL of that article changes, the article and its description would be the same as before.
 If you edit a person's details in your address book the person itself stays the same, even if their phone number changes.
 
-.. image:: _static/composite-identity.png
+.. image:: _static/composite-entity.png
 
 The composite type "value"
 --------------------------
 
 The composite data type "value" is used whenever you want to refer to something different upon a change.
-While the topic type *person* is a composite of the data type "identity", the topic type *person name* is a composite of the data type "value":
+While the topic type *person* is a composite of the data type "entity", the topic type *person name* is a composite of the data type "value":
 
 .. image:: _static/composite-value.png
 
@@ -1380,7 +1380,7 @@ Let's say you want to add a topic type "publication".
 Each publication shall have a title and a year.
 
 - Open the search field. Enter "Publication", select "Topic Type" and press "create".
-- Go into editing mode via the context menu. **Change the data type from "Text" to "Identity"** and hit "Save". Click somewhere into your map to close the detail panel.
+- Go into editing mode via the context menu. **Change the data type from "Text" to "Entity"** and hit "Save". Click somewhere into your map to close the detail panel.
 - Open the search field and enter "Title". You will find that two entries already exist. They come from the default topics types "Event" and "Note" which also have titles. Create a new topic type, e.g. "Title of Publication".
 - Create an association between the title item and the publication item. DMX will display what you just created:
 
@@ -1395,7 +1395,7 @@ Each publication shall have a title and a year.
 
 .. note:: **Identity Attributes**
 
-    For a composite with the data type "identity" you should define at least one identity attribute. The identity attribute is the item's unique identifier - the information that makes it unique. If needed, you can define more than one identity attribute. When modeling a composite it is important that you **add the identity attribute as the first child to the parent**. This is how you tell DMX to fill in *this* field with what you enter into the Search/Create Dialog.
+    For a composite with the data type "entity" you should define at least one identity attribute. The identity attribute is the item's unique identifier - the information that makes it unique. If needed, you can define more than one identity attribute. When modeling a composite it is important that you **add the identity attribute as the first child to the parent**. This is how you tell DMX to fill in *this* field with what you enter into the Search/Create Dialog.
 
 - Add an identity attribute. In our example the title shall be the unique identifier of the publication. You thus edit the association you just created between the title and the publication. Tick the checkbox "Identity Attribute". (In real life, you would maybe use the ISBN number as the identity attribute or as one of several identity attributes.)
 
@@ -1491,7 +1491,7 @@ To grasp the power of Custom Association Types, it is important to consider the 
 
 Here is an example:
 
-* Create the topic types "Publication" (data type "identity") and "Publication Title" (text).
+* Create the topic types "Publication" (data type "entity") and "Publication Title" (text).
 * Reveal the built-in topic type "Person".
 * Create an association type called "Author".
 * Create an association between the topic type Person and the topic type Publication. Edit it and open the drop-down menu "Custom Association Type". Select "Author" and click save.
@@ -1631,12 +1631,12 @@ Among other properties, they shall have a blooming period.
 Here is how to proceed:
 
 Create a topic type "Tree".
-Edit it and change its data type to "identity".
+Edit it and change its data type to "entity".
 
-.. note:: **The data type "identity"**
+.. note:: **The data type "entity"**
 
     #. Your tree is more complex than just a text field or a number: You want to add properties to it. You thus do not need a simple but a :ref:`composite data type<user-composites-and-composition-definitions>`.
-    #. You choose "identity" (not "value") because upon a change of properties you still mean the same tree. You want to add, remove, or change properties, the number of properties might grow over time. By choosing the data type "identity" you tell DMX that regardless of those changes you will mean the same thing.
+    #. You choose "entity" (not "value") because upon a change of properties you still mean the same tree. You want to add, remove, or change properties, the number of properties might grow over time. By choosing the data type "entity" you tell DMX that regardless of those changes you will mean the same thing.
 
 Create a topic type "Tree name".
 It can keep the default data type "text". 
@@ -1650,7 +1650,7 @@ Create an association between the topic type "Blooming period" and the topic typ
 .. note:: **The data type "value"**
 
     #. Your blooming period is also more complex than a number. Even a single date (instead of a period with a beginning and an end) consists of more than a number, e.g. a day, a month, and a year. So you need a :ref:`composite data type<user-composites-and-composition-definitions>` here, too.
-    #. You choose "value" (not "identity") because your data will just *not* stay identical when you change it. The blooming periods "April to June" and "June to July" are different blooming periods (even if they change for the same plant).
+    #. You choose "value" (not "entity") because your data will just *not* stay identical when you change it. The blooming periods "April to June" and "June to July" are different blooming periods (even if they change for the same plant).
 
 To add dates to your topic type "Blooming period", just use the predefined date topic type:
 Search for it and reveal it on the topicmap.
@@ -1696,7 +1696,7 @@ The form in the detail panel of a plant shall include all necessary details abou
 You want each image to have a title, an attribution, and the image itself (whether embedded or uploaded).
 
 Create a topic type "Tree".
-Edit it and change its data type to "identity".
+Edit it and change its data type to "entity".
 
 Create a topic type "Tree Image".
 Change its data type to "value".
