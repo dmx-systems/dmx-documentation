@@ -1413,8 +1413,10 @@ You are now ready to use this data model you just built to add content.
 - The title is automatically filled in from the search field.
 - Edit your new publication and add a year.
 
-Creating an association type
-============================
+.. _user-creating-association-types:
+
+Creating association types
+==========================
 
 One of the strengths of DMX is that you can build your own association types in the same user interface.
 Association types represent different relationships between items.
@@ -1422,31 +1424,72 @@ In their simplest form, associations are "lines" between things without any deep
 Their association type is called "Association".
 For semantic authoring more complex associations are needed to qualify relationships.
 
-In this section, we will discuss **different ways** of modeling associations for the same use case:
-The goal is to express the relationship between persons and publications.
+.. _user-simple-association-types:
 
-.. image:: _static/topic-map-with-own-assoc-and-instances.png
-=======
-* A person can be the author, the publisher, the reader, or even the subject of a publication.
-* The same person can be in more than one of these roles.
-* The persons have already been saved in the database and they are used in other contexts resp. topicmaps. So they shall not exist only as "properties" (child elements) of a publication but the existing entries shall be linked to the publications.
+Creating a simple association type
+----------------------------------
+
+To create a simple association type open the Search/Create Dialog and enter the name of the association.
+Select "Association Type" from the Topic Type menu and click "Create".
+
+.. image:: _static/simple-assoc-type.png
+
+The data type of a simple association type is "Text".
+To use the Association Type in your instances create an association between two topics and edit it:
+
+.. image:: _static/use-simple-assoc-type.png
+
+.. _user-composite-association-types:
+
+Creating a composite association type
+-------------------------------------
+
+Just like Topic Types, Association Types can be composites.
+You can make them as complex as you need.
+The Association Type "Organization Involvement" that comes with the DMX standard distribution is an example for a composite association type.
+
+Have a look at the details:
+The association type includes a composition definition to model the different roles a person can have in an organization.
+
+.. image:: _static/organization-involvement.png
+
+"Organizational Role" is a simple topic type (data type: text).
+The actual roles (like "member" or "founder") are instances of the topic type "Organizational Role".
+They are not part of the data model.
+
+For modeling, the composition definition between "Organization Involvement" and "Organizational Role" is important.
+It has a special view configuration that you can investigate on the view tab of the detail panel:
+
+* The "Widget" setting is set to "Select". This allows you to select roles from a predefined list of instances when adding content ("member", "founder").
+* The two other checkboxes called "clearable" and "customizable" are ticked. It only makes sense to use them in connection with  "Widget: Select". "Clearable" decides whether you allow instances of this association type to *only* have the values you explicitly defined or whether it shall be possible to clear the field to leave it empty. In this case, there will be a little cross icon for clearing it. "Customizable" decides whether you allow to enter values on the fly by just typing in something different that was not predefined by you. If both checkboxes are left empty, one of your predefined values *has* to be selected. The value cannot be empty and there will be no possibility of typing into the field.
+
+.. image:: _static/view-configuration.png
+
+On the left side of this screenshot you can see the essentials of this data model.
+On the right side there are instances of "Organization", "Person", "Organization Involvement" and "Organizational Role".
+
+.. image:: _static/composite-assoc-type.png
 
 .. _user-custom-association-types:
 
 Custom Association Types
 ------------------------
 
-Custom Association Types are one way of modeling associations.
+Custom Association Types are a different way of modeling associations.
 They are a powerful, semantic authoring tool that is unique to DMX.
-Custom Association Types are used to represent parent-child relationships when you create instances.
-Their semantics are carried over to all instances without you creating associations manually in each instance.
-At the same time you benefit from DMX's model-driven form generator: The form you edit parent instances with will contain fields for all identity attributes of child instances. You thus get a form with all properties you want to add.
 
+In short, they work like this:
 
-.. note:: **When to use Custom Association Types?**
+* You create an association type.
+* You create a composite topic type.
+* At least one child topic type in the composition definition is linked to the parent type through your newly created association type.
 
-    #. If your data model contains a clear parent-child relationship Custom Association Types are the recommended way of modeling these relationships. This is the case when you need a child type to describe the whole entity. (For example you want publications to have authors, and authors are persons.) Create a Composition Definition between parent type and child type and add a Custom Association Type to it as described below.
-    #. If your data model does not have a such clear parent-child relationship we recommend to create associations manually.
+To grasp the power of Custom Association Types, it is important to consider the consequences of such a model:
+
+* Custom Association Types are used in composition definitions.
+* You can benefit from DMX's model-driven form generator: When you create instances of the composite you defined, the editing form contains fields for all identity attributes of child instances. You thus get a form with all properties you want to add. The child instances linked to the parent by a Custom Association Type are also part of the form. When you fill in those fields, the semantics of the Custom Association type are carried over to the instance. You do not have to drag associations but they are added for you through the form resp. your data model.
+
+Here is an example:
 
 * Create the topic types "Publication" (data type "identity") and "Publication Title" (text).
 * Reveal the built-in topic type "Person".
@@ -1464,58 +1507,20 @@ This is your data model:
 
 .. image:: _static/data-model-with-custom-assoc-type.png
 
-Use this model to create an instance:
+Use this model to create an instance and see how the semantics of the Custom Association Type are carried over to the instances:
 
-* Create a person or reveal an existing one.
 * Create a new publication by entering a title into the search/create dialog and selecting the topic type publication.
 * Edit the publication.
-* In the form you now have fields for the author (first name, last name).
-* When typing in a name, DMX's autocompletion offers you existing person names that you can select. **If the author you enter does not yet exist in the database, DMX creates a new person and directly adds the custom association "Author" between this person and the publication.**
+* In the autogenerated editing form you now have fields for the author (first name, last name).
+* When typing in a name, DMX's autocompletion offers you existing person names that you can select.
+* **If the author you enter does not yet exist in the database, DMX creates a new person and directly adds the custom association "Author" between this person and the publication.**
 
 .. image:: _static/custom-association-instance.png
 
+.. note:: **When to use Custom Association Types?**
 
-Manual Creation of Association Types
-------------------------------------
-
-From the semantics point of view, you can achieve the same via a different way of modeling.
-The main difference is how you enter data.
-
-
-* Create a topic type "Publication".
-* Create an association type and give it a name, e.g. "Relationship publication - person".
-* Select "Composite" as a data type.
-
-.. image:: _static/create-machine-readable-association.jpg
-
-* Create a topic type, name it "Role referring to publication" or anything that suits you. Its data type is "Text".
-* Create an association between the topic type and the association type and edit the newly created association between them. Click onto the "View" tab and then "Edit" to edit its configuration.
-* Open the "Widget" setting and select "Select". This will allow you to select roles from a predefined list when adding content later.
-* There are two more checkboxes called "clearable" and "customizable". It only makes sense to use them in connection with  "Widget: Select". Both have an effect on editing association types later on. Here is what they do: "Clearable" decides whether you allow instances of this association type to *only* have the values you explicitly defined or whether it shall be possible to clear the field to leave it empty. In this case, there will be a little cross icon for clearing it. "Customizable" decides whether you allow to enter values on the fly by just typing in something different that was not predefined by you. If both checkboxes are left empty, one of your predefined values *has* to be selected. The value cannot be empty and there will be no possibility of typing into the field.
-
-.. image:: _static/selectable-role.jpg
-
-* Create a topic "Author" that has the topic type "Role referring to publication" which is selectable from the create menu. If you want to have more roles, add them likewise.
-* Create a person.
-* Create a publication with a title as above.
-* Create an association between the person and the publication and edit the association. Open the drop-down menu under "Association Type" and select "Relationship publication - person". Hit the save button and the edit button again. There is a new drop-down menu that lets you select the role the person shall have related to the publication.
-
-.. image:: _static/select-role.jpg
-
-You now have a map like this.
-On the left side you see the data model.
-There is your topic type "Publication" with a title.
-And there is the association type you built with a few selectable roles.
-
-On the right side you see the actual content, the instances.
-To continue working with a less crowded map, you might want to :ref:`bulk select and hide<user-hiding-multiple-items>` the data model.
-
-.. image:: _static/topic-map-with-own-assoc-and-instances.png
-
-
-.. note:: DMX supports autotyping. This means that every time an association between a person and a publication is created, it would automatically be transformed into the association type you want. However, this is not configurable via the web client, it requires programming skills. Please see the Developer Guide to learn how to achieve this.
-
-A third way (but the worst) way: Publication with properties: Title, Author (text) oder Person (ready.made). Im Formular fehlt dann die Angabe, was das überhaupt für ein Name ist.
+    #. If your data model contains a clear parent-child relationship Custom Association Types are the recommended way of modeling these relationships. This is the case when you need a child type to describe the whole entity. (For example you want publications to have authors, and authors are persons.) Create a Composition Definition between parent type and child type and add a Custom Association Type to it as described below.
+    #. If your data model does not have a such clear parent-child relationship we recommend to create associations manually.
 
 .. _user-creating-a-role-type:
 
@@ -1523,6 +1528,9 @@ Creating a role type
 ====================
 
 .. note:: You can investigate this example on our Demo Server, in the `Workspace "DMX User Guide Data Model", Topicmap "1 Persons and Organizations" <https://demo.dmx.systems/systems.dmx.webclient/#/topicmap/8532>`_
+
+Role types refer to the players connected by associations.
+They are important when creating associations but they are used at the end points of associations.
 
 Oftentimes when you create associations it is clear which of the two connected players is in which role:
 In the example above, the publication is the parent type and the title is the child type.
