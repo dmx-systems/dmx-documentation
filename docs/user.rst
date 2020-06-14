@@ -1424,6 +1424,14 @@ In their simplest form, associations are "lines" between things without any deep
 Their association type is called "Association".
 For semantic authoring more complex associations are needed to qualify relationships.
 
+Please keep in mind that the different ways of modeling associations shown below are *options*.
+Often, there is more than one way to do it.
+None of the different ways is right or wrong but one might suit your use case better than the others.
+You can achieve the same meaning via different data models, but they differ in the following respects:
+
+* how you enter data on the level of instances and
+* how search results are presented.
+
 .. _user-simple-association-types:
 
 Creating a simple association type
@@ -1438,6 +1446,10 @@ The data type of a simple association type is "Text".
 To use the Association Type in your instances create an association between two topics and edit it:
 
 .. image:: _static/use-simple-assoc-type.png
+
+The direct search for associations is still a planned feature. When you search for one of two connected players, and you sort the results by association type, you get a list of all instances this player is connected to via that association type.
+
+.. image:: _static/search-results-simple-assoc.png 
 
 .. _user-composite-association-types:
 
@@ -1470,6 +1482,16 @@ On the right side there are instances of "Organization", "Person", "Organization
 
 .. image:: _static/composite-assoc-type.png
 
+Search results are presented differently according to your sort mode:
+When you search for an organization and you open the "Related" tab in the detail panel you can either sort by Topic Type and get a list of all related persons. Their roles are then displayed as well.
+
+.. image:: _static/search-results-composite-assoc.png
+
+Sort the same list by association type.
+As the association is "Organization Involvement" you get the list of persons, too, but their roles are omitted here.
+
+.. image:: _static/search-results-composite-assoc2.png
+
 .. _user-custom-association-types:
 
 Custom Association Types
@@ -1483,6 +1505,7 @@ In short, they work like this:
 * You create an association type.
 * You create a composite topic type.
 * At least one child topic type in the composition definition is linked to the parent type through your newly created association type.
+* When you create instances of the parent type, the according child instances are created and connected with your Custom Association Type automatically.
 
 To grasp the power of Custom Association Types, it is important to consider the consequences of such a model:
 
@@ -1516,6 +1539,8 @@ Use this model to create an instance and see how the semantics of the Custom Ass
 * **If the author you enter does not yet exist in the database, DMX creates a new person and directly adds the custom association "Author" between this person and the publication.**
 
 .. image:: _static/custom-association-instance.png
+
+When you now search for a publication, the person (the author) cannot be found in the "Related" tab, but in the "Info" tab as it is a direct child topic of the publication.
 
 .. note:: **When to use Custom Association Types?**
 
