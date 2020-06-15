@@ -915,7 +915,7 @@ Overview of the interfaces in package `systems.dmx.core <https://apidocs.dmx.sys
 
 .. figure:: _static/dmx-core-classes.svg
 
-Note that both ``Topic`` and ``Assoc`` have a common base class: ``DMXObject``. This means both topics and associations a) are typed, b) are addressable by-id and by-uri, and, in particular c) are a *value holder*, be it a simple one (`SimpleValue <https://apidocs.dmx.systems/index.html?systems/dmx/core/model/SimpleValue.html>`_) or a composite one (`ChildTopics <https://apidocs.dmx.systems/index.html?systems/dmx/core/ChildTopics.html>`_). Also note that ``DMXType`` is derived from ``Topic`` and inherits the "uri" field from ``DMXObject``.
+Note that both ``Topic`` and ``Assoc`` have a common base class: ``DMXObject``. The commonalities include a) both are typed (``getTypeUri()``), b) both are referable by-id and by-uri, and, in particular c) both are *value holders*, be it a simple one (`SimpleValue <https://apidocs.dmx.systems/index.html?systems/dmx/core/model/SimpleValue.html>`_ (green), from `systems.dmx.core.model <https://apidocs.dmx.systems/index.html?systems/dmx/core/model/package-summary.html>`_ package) or a composite one (`ChildTopics <https://apidocs.dmx.systems/index.html?systems/dmx/core/ChildTopics.html>`_). Furthermore there are common traversal (``getAssocs()``, ``getRelatedTopics()``, ``getRelatedAssocs()``) and manipulation (``update()``, ``delete()``) methods.
 
 Let's have a closer look at the 5 ``DMXObject`` fields:
 
@@ -936,6 +936,11 @@ The fields are accessible only through the `DMXObject` getters (``getId()``, ``g
 .. hint::
 
     The DMX Java API documentation is available at https://apidocs.dmx.systems.
+
+DMXType
+-------
+
+``DMXType`` is derived from ``Topic`` and inherits the ``uri`` field from ``DMXObject``. Furhermore ``DMXType`` is an ``Iterable<String>``: it iterates over the type's ``compDefUri`` s.
 
 Using the DMX Core Service
 ==========================
