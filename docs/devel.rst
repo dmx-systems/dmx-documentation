@@ -942,6 +942,12 @@ DMXType
 
 ``DMXType`` is derived from ``Topic`` and inherits the ``uri`` field from ``DMXObject``. Furhermore ``DMXType`` is an ``Iterable<String>``: it iterates over the type's ``compDefUri`` s.
 
+The "Model" hierarchy
+---------------------
+
+.. figure:: _static/dmx-model-classes.svg
+   :width: 240px
+
 Using the DMX Core Service
 ==========================
 
