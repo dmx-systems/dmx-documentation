@@ -913,6 +913,7 @@ The DMX Java API consists of the ``systems.dmx`` package hierarchy. Most central
 
 Overview of the interfaces in package `systems.dmx.core <https://apidocs.dmx.systems/index.html?systems/dmx/core/package-summary.html>`_:
 
+.. _dmx-core-classes:
 .. figure:: _static/dmx-core-classes.svg
 
 Note that both ``Topic`` and ``Assoc`` have a common base class: ``DMXObject``. The commonalities include a) both are typed (``getTypeUri()``), b) both are referable by-id and by-uri, and, in particular c) both are *value holders*, be it a simple one (`SimpleValue <https://apidocs.dmx.systems/index.html?systems/dmx/core/model/SimpleValue.html>`_ (green), from `systems.dmx.core.model <https://apidocs.dmx.systems/index.html?systems/dmx/core/model/package-summary.html>`_ package) or a composite one (`ChildTopics <https://apidocs.dmx.systems/index.html?systems/dmx/core/ChildTopics.html>`_). Furthermore there are common traversal (``getAssocs()``, ``getRelatedTopics()``, ``getRelatedAssocs()``) and manipulation (``update()``, ``delete()``) methods.
@@ -947,6 +948,15 @@ The "Model" hierarchy
 
 .. figure:: _static/dmx-model-classes.svg
    :width: 240px
+   :align: left
+
+A peculiarity of the DMX Java API is that for the :ref:`hierarchy of Core classes <dmx-core-classes>` (see yellow boxes) an isomorph hierarchy of "Model" classes exists in the `systems.dmx.core.model <https://apidocs.dmx.systems/index.html?systems/dmx/core/model/package-summary.html>`_ package. That is e.g. for *Core class* ``Topic`` the corresponding *Model class* is ``TopicModel``.
+
+Every *Core instance* (e.g. a ``Topic`` object) is associated (in the OO-sense) with a corresponding *Model instance*. While the core instance represents the "real thing" -- a database-attached object you can perform operations like ``update()`` and ``delete()`` on -- a model instance represents just the underlying (serializable) data of that object. When you call e.g. ``getId()`` on a ``Topic`` object, DMX actually delegates to the topic's model instance.
+
+Why does the Core/Model duality exists in the first place? Consider a *create* operation. To create something you'll use the :ref:`DMX Core Service <using_the_dmx_core_service>` (see next section). The DMX Core Service allows you to create a complex composite structure in a single e.g. ``createTopic()`` call (which can be also be remote-triggered, by a single POST request to ``/core/topic``). The passed data basically has the same structure as a topic retrieved from DB. (The same basically applies to an *update* operation.) So you need a way to convey *topic data* independent from a topic itself. The vehicle for that is a ``TopicModel`` instance. (Note that *data* and *model* is used synonymously here.)
+
+.. _using_the_dmx_core_service:
 
 Using the DMX Core Service
 ==========================
