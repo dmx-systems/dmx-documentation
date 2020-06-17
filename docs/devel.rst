@@ -253,13 +253,13 @@ The plugin turn-around cycle
 
 This chapter illustrates how to set up a plugin project, how to build and deploy a plugin, and how to redeploy it once you've made changes.
 
-We develop a very simple plugin from scratch called "DMX Bookstore". According to the above :ref:`P1-P4 <plugin-types>` figure the Bookstore plugin is of type *back-end-only* (P1). It has no logic (no Java or JavaScript code). The only thing the Bookstore plugin does is defining the "Book" data model. Mainly JSON is in use. So this type of plugin is quite easy to create, even for non-programmers.
+We develop a very simple plugin from scratch called "DMX Bookstore". According to the above :ref:`P1-P4 <plugin-types>` figure the Bookstore plugin is of type *back-end-only* (P1). It has no logic (no Java or JavaScript code). The only thing the Bookstore plugin does is defining a 1st version of the "Bookstore" data model. Mainly JSON is in use. So this type of plugin is quite easy to create, even for non-programmers.
 
 On the other hand in conjunction with the DMX Webclient installing even a data-model-only plugin like DMX Bookstore has quite an impact. You can instantly create/edit Book topics. You do so via forms which are auto-generated from the data model. All the generic features like search, delete, hide, navigate, associate are there immediately. Basically this means: data model goes in, basis of a bookstore CMS comes out.
 
 .. hint::
 
-    Instead of creating a plugin you could, of course, create the "Book" topic type interactively in the DMX Webclient. The result would be the same. However, if a data model is packaged as a plugin this means you can *distribute* it. Other DMX users can install your plugin and make use of your data model.
+    Instead of creating a plugin you could, of course, create the "Bookstore" data model interactively in the DMX Webclient. The result would be the same. However, if a data model is packaged as a plugin this means you can *distribute* it. Other DMX users can install your plugin and make use of your data model.
 
 Develop the "Bookstore" plugin
 ==============================
@@ -303,6 +303,7 @@ Create the file ``pom.xml`` with this content:
 
 Create the file ``migration1.json``:
 
+.. _bookstore_data_model:
 .. code-block:: js
 
     [
@@ -783,6 +784,8 @@ As an example see the (simplified) migration that defines the *Note* topic type.
 
 As you see, this migration defines 3 topic types (and no other things): *Title* and *Text* are 2 simple types, and *Note* is a composite type. A Note is composed of one Title and one Text.
 
+.. _writing_an_imperative_migration:
+
 Writing an imperative migration
 ===============================
 
@@ -955,6 +958,31 @@ A peculiarity of the DMX Java API is that for the :ref:`hierarchy of Core classe
 Every *Core instance* (e.g. a ``Topic`` object) is associated (in the OO-sense) with a corresponding *Model instance*. While the core instance represents the "real thing" -- a database-attached object you can perform operations like ``update()`` and ``delete()`` on -- a model instance represents just the underlying (serializable) data of that object. When you call e.g. ``getId()`` on a ``Topic`` object, DMX actually delegates to the topic's model instance.
 
 Why does the Core/Model duality exists in the first place? Consider a *create* operation. To create something you'll use the :ref:`DMX Core Service <using_the_dmx_core_service>` (see next section). The DMX Core Service allows you to create a complex composite structure in a single e.g. ``createTopic()`` call (which can be also be remote-triggered, by a single POST request to ``/core/topic``). The passed data basically has the same structure as a topic retrieved from DB. (The same basically applies to an *update* operation.) So you need a way to convey *topic data* independent from a topic itself. The vehicle for that is a ``TopicModel`` instance. (Note that *data* and *model* is used synonymously here.)
+
+Every time you want *create* or *update* a Core instance (e.g. a ``Topic`` object) you have to construct a corresponding Model instance first (e.g. a ``TopicModel`` object) that holds the topic data. To create a Model instance you'll use the `ModelFactory <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/ModelFactory.html>`_ provided by the DMX Core. Within your plugin a ``ModelFactory`` instance is available as the ``mf`` object, which is available automatically in both the :ref:`plugin main class <the-plugin-main-class>`, and in an :ref:`imperative migration <writing_an_imperative_migration>` (through the `PluginActivator <https://apidocs.dmx.systems/index.html?systems/dmx/core/osgi/PluginActivator.html>`_ and `Migration <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/Migration.html>`_ base classes respectively).
+
+This example constructs a Model instance usable for creating a "Book" topic according to the :ref:`"Bookstore" data model <bookstore_data_model>`:
+
+.. code-block:: java
+
+    import systems.dmx.core.model.TopicModel;
+    ...
+    TopicModel book1 = mf.newTopicModel("bookstore.book", mf.newChildTopicsModel()
+        .set("bookstore.book_title", "Understanding Computers and Cognition")
+        .add("dmx.contacts.person#bookstore.author", mf.newChildTopicsModel()
+            .set("dmx.contacts.person_name", mf.newChildTopicsModel()
+                .set("dmx.contacts.first_name", "Terry")
+                .set("dmx.contacts.last_name", "Winograd")
+            )
+        )
+        .add("dmx.contacts.person#bookstore.author", mf.newChildTopicsModel()
+            .set("dmx.contacts.person_name", mf.newChildTopicsModel()
+                .set("dmx.contacts.first_name", "Fernando")
+                .set("dmx.contacts.last_name", "Flores")
+            )
+        )
+        .set("dmx.datetime.year#bookstore.publication", 1986)
+    )
 
 .. _using_the_dmx_core_service:
 
