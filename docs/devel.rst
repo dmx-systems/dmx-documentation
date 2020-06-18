@@ -815,15 +815,15 @@ As an example see a migration that comes with the *DMX Topicmaps* plugin:
 
 Here a *Composition Definition* is added to the *Topicmap* type subsequently.
 
-**********************************
-Back-end: writing custom Java code
-**********************************
+************************
+Writing custom Java code
+************************
 
 In the previous section you've seen how to manipulate a DMX data model with Java code. Were you wondering what these ``dmx`` and ``mf`` objects are? Well these are instances of `CoreService <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_ and `ModelFactory <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/ModelFactory.html>`_ respectively. But first things first.
 
 What, besides manipulating a data model, can a DMX plugin do with custom Java code at the back-end:
 
-* **Use the DMX Core Service**. The DMX *Core Service* provides generic database operations to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
+* **Use the DMX Core Service**. The *DMX Core Service* provides generic database operations to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
 
 * **Listen to DMX Core events**. In particular situations the DMX Core fires events, e.g. before and after it creates a new topic in the database. Your plugin can listen to these events and react in its own way. Thus, the *DMX Workspaces* plugin e.g. ensures that each new topic is assigned to a workspace. TODO: custom events
 
@@ -989,7 +989,11 @@ This example constructs a Model instance usable for creating a "Book" topic acco
 Using the DMX Core Service
 ==========================
 
-The DMX *Core Service* (`CoreService API <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_) provides generic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
+The *DMX Core Service* provides generic database operations (create, retrieve, update, delete) to deal with the DMX Core objects: *Topics*, *Associations*, *Topic Types*, *Association Types*.
+
+Within your plugin you'll use the Core Service through the ``dmx`` object, which is an instance of `CoreService <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_ (API). The ``dmx`` object is available automatically in both the :ref:`plugin main class <the-plugin-main-class>`, and in an :ref:`imperative migration <writing_an_imperative_migration>` (through the `PluginActivator <https://apidocs.dmx.systems/index.html?systems/dmx/core/osgi/PluginActivator.html>`_ and `Migration <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/Migration.html>`_ base classes respectively).
+
+The following provides an overview of the available Core Service methods.
 
 Topics
 ------
@@ -1002,6 +1006,10 @@ Topics
 
     List<Topic> getTopicsByType(String topicTypeUri);
 
+    Iterable<Topic> getAllTopics();
+
+.. code-block:: java
+
     Topic getTopicByValue(String typeUri, SimpleValue value);
 
     List<Topic> getTopicsByValue(String typeUri, SimpleValue value);
@@ -1009,8 +1017,6 @@ Topics
     List<Topic> queryTopics(String typeUri, SimpleValue value);
 
     QueryResult queryTopicsFulltext(String query, String topicTypeUri, boolean searchChildTopics);
-
-    Iterable<Topic> getAllTopics();
 
 .. code-block:: java
 
@@ -1027,29 +1033,25 @@ Associations
 
     Assoc getAssoc(long assocId);
 
-    Assoc getAssocByValue(String typeUri, SimpleValue value);
-
-    List<Assoc> queryAssocs(String typeUri, SimpleValue value);
-
-    Assoc getAssocBetweenTopicAndTopic(String assocTypeUri, long topic1Id, long topic2Id, String roleTypeUri1,
-                                       String roleTypeUri2);
-
-    Assoc getAssocBetweenTopicAndAssoc(String assocTypeUri, long topicId, long assocId, String topicRoleTypeUri,
-                                       String assocRoleTypeUri);
-
-.. code-block:: java
-
     List<Assoc> getAssocsByType(String assocTypeUri);
 
     List<Assoc> getAssocs(long topic1Id, long topic2Id);
 
     List<Assoc> getAssocs(long topic1Id, long topic2Id, String assocTypeUri);
 
-.. code-block:: java
+    Assoc getAssocBetweenTopicAndTopic(String assocTypeUri, long topic1Id, long topic2Id,
+                                       String roleTypeUri1, String roleTypeUri2);
+
+    Assoc getAssocBetweenTopicAndAssoc(String assocTypeUri, long topicId, long assocId,
+                                       String topicRoleTypeUri, String assocRoleTypeUri);
 
     Iterable<Assoc> getAllAssocs();
 
-    List<PlayerModel> getPlayerModels(long assocId);
+.. code-block:: java
+
+    Assoc getAssocByValue(String typeUri, SimpleValue value);
+
+    List<Assoc> queryAssocs(String typeUri, SimpleValue value);
 
 .. code-block:: java
 
@@ -1065,10 +1067,6 @@ Topic Types
 .. code-block:: java
 
     TopicType getTopicType(String topicTypeUri);
-
-    TopicType getTopicTypeImplicitly(long topicId);
-
-.. code-block:: java
 
     List<TopicType> getAllTopicTypes();
 
@@ -1086,10 +1084,6 @@ Association Types
 .. code-block:: java
 
     AssocType getAssocType(String assocTypeUri);
-
-    AssocType getAssocTypeImplicitly(long assocId);
-
-.. code-block:: java
 
     List<AssocType> getAllAssocTypes();
 
@@ -1484,9 +1478,9 @@ To feed the HTTP request body into a service method you must:
 
 * Implement a provider class for the type of the entity parameter, resp. make sure such a provider class already exists (as part of the DMX Core or one of the installed DMX plugins).
 
-**************************************
-Front-end: extending the DMX Webclient
-**************************************
+***************************
+Extending the DMX Webclient
+***************************
 
 TODO
 
