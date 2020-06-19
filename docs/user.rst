@@ -13,10 +13,10 @@ The DMX User Interface
 The Toolbar
 ===========
 
-The upper toolbar contains the crucial steering tools for DMX: The workspace selector, the topicmap selector and the user menu.
+The upper toolbar contains the crucial steering tools for DMX: The Workspace selector, the topicmap selector and the user menu.
 
 .. figure:: _static/upper-toolbar.png
-    :alt: Tool bar with workspace and topicmap selector
+    :alt: Tool bar with Workspace and topicmap selector
 
 .. _user-the-workspace-selector:
 
@@ -26,26 +26,26 @@ The Workspace Selector
 .. figure:: _static/upper-toolbar-workspace-selector.png
     :alt: Tool bar with highlighted workspace selector
 
-The *Workspace Selector* is part of the upper toolbar and lets you select your current workspace.
+The *Workspace Selector* is part of the upper toolbar and lets you select your current Workspace.
 **Workspaces are the highest level of content organization in DMX.**
-You can think of a workspace as a context in which you organize your work.
-Items can be connected across different workspaces.
+You can think of a Workspace as a context in which you organize your work.
+Items can be connected across different Workspaces.
 
-Everything you create is automatically assigned to the workspace selected in this menu.
-**Every item in DMX is assigned to exactly one workspace.**
+Everything you create is automatically assigned to the Workspace selected in this menu.
+**Every item in DMX is assigned to exactly one Workspace.**
 
-.. tip:: Look at how we recommend to use workspaces on our `Demo Server <https://demo.dmx.systems/>`_.
+.. tip:: Look at how we recommend to use Workspaces on our `Demo Server <https://demo.dmx.systems/>`_.
 
-In DMX read and write permissions of users are tied to workspace memberships:
-Every user can create, edit and delete their own workspaces.
-If you create a new workspace you become its *owner* and you can invite users as members to share the workspace with.
-If a user has read or write permission for an item depends on whether the user has read or write permission for the workspace the item is assigned to.
+In DMX read and write permissions of users are tied to Workspace memberships:
+Every user can create, edit and delete their own Workspaces.
+If you create a new Workspace you become its *owner* and you can invite users as members to share the Workspace with.
+If a user has read or write permission for an item depends on whether the user has read or write permission for the Workspace the item is assigned to.
 DMX's permissions concept is called **sharing modes**.
 You can read more about the five sharing modes in the section :ref:`user-introduction-to-workspaces-and-sharing-modes`.
 
-The DMX Standard Distribution comes with the following pre-installed workspaces: *System*, *Administration* and *DMX*.
-Additionally, each user has a *private workspace*.
-Content in a private workspace cannot be read by anyone other than the workspace owner.
+The DMX Standard Distribution comes with the following pre-installed Workspaces: *System*, *Administration* and *DMX*.
+Additionally, each user has a *private Workspace*.
+Content in a private Workspace cannot be read by anyone other than the Workspace owner.
 
 .. image:: _static/workspace-selector.png
 
@@ -60,12 +60,12 @@ The Topicmap Selector
     :alt: Tool bar with highlighted topicmap selector
 
 The *Topicmap Selector* is the second drop-down menu in the upper toolbar.
-It lets you switch between all views in a workspace.
-**A topicmap represents an individual working situation in the larger context of the selected workspace.**
+It lets you switch between all views in a Workspace.
+**A topicmap represents an individual working situation in the larger context of the selected Workspace.**
 On a topicmap you can visualize content that is relevant to the current context.
 It shows a situation-based view of selected content from the database.
 
-.. hint:: Go to our `Demo Server <https://demo.dmx.systems/>`_, navigate through the workspaces and have a look at the different topicmaps. They all show specific views on parts of the same underlying database.
+.. hint:: Go to our `Demo Server <https://demo.dmx.systems/>`_, navigate through the Workspaces and have a look at the different topicmaps. They all show specific views on parts of the same underlying database.
 
 
 For the moment, three types of topicmaps are supported: *Topicmaps*, *Geomaps* and *Tableviews*.
@@ -133,7 +133,7 @@ The Topicmap Panel
 
 The Topicmap Panel is the main area of the DMX user interface.
 It displays the currently chosen view.
-The topicmap panel is as wide as your browser window unless you open the :ref:`detail panel<user-the-detail-panel>`.
+The topicmap panel is as wide as your browser window unless you open the :ref:`Detail Panel<user-the-detail-panel>`.
 
 .. image:: _static/topic-map-panel.png
 
@@ -170,7 +170,7 @@ In-map Details
 
 When you select an item on a topicmap, a rectangle opens up displaying details about the selected item.
 This box is called the in-map details.
-They only show up if the detail panel is not visible.
+They only show up if the Detail Panel is not visible.
 
 .. image:: _static/in-map-details.jpg
 
@@ -197,31 +197,31 @@ It has four tabs, "Info", "Related", "Meta", and "View" described below.
 
 .. image:: _static/detail-panel.png
 
-The detail panel allows DMX to display more information than the :ref:`in-map details <user-in-map-details>`.
+The Detail Panel allows DMX to display more information than the :ref:`in-map details <user-in-map-details>`.
 It is also used for editing data.
 
-The detail panel can only be opened if you have selected an item on the map.
+The Detail Panel can only be opened if you have selected an item on the map.
 Once opened, it stays open as long as you have selected an item.
-When you unselect an item by clicking somewhere onto your topicmap the detail panel closes.
+When you unselect an item by clicking somewhere onto your topicmap the Detail Panel closes.
 
-DMX avoids to display redundant information by not opening both the detail panel and the in-map details at the same time *unless* you explicitly :ref:`pin<user-pinning-things>` one of them:
+DMX avoids to display redundant information by not opening both the Detail Panel and the in-map details at the same time *unless* you explicitly :ref:`pin<user-pinning-things>` one of them:
 To show selected "In-map Details" while the "Detail Panel" is open you can :ref:`pin<user-pinning-things>` the in-map details to your map.
 Pinning shows "In-map Details" in a topicmap, no matter what.
 Vice-versa you can also pin the "Detail Panel" by clicking the little pin icon in its upper right corner.
-Using the same button you can un-pin and close the detail panel.
+Using the same button you can un-pin and close the Detail Panel.
 
 .. image:: _static/pin-detail-panel.png
 
-Note that the detail panel only displays details of a single selected item, not when you :ref:`bulk select<user-bulk-selection>` several items.
+Note that the Detail Panel only displays details of a single selected item, not when you :ref:`bulk select<user-bulk-selection>` several items.
 
 .. _user-detail-panel-the-info-tab:
 
 The "Info" tab
 --------------
 
-The "Info" tab is the first section of the :ref:`detail panel<user-the-detail-panel>`.
+The "Info" tab is the first section of the :ref:`Detail Panel<user-the-detail-panel>`.
 It is named after the type of your current selection, e.g. a topic of type "Person" or "Event".
-You can go to the info tab directly by choosing *Details* from the :ref:`context menu<user-the-context-menu>` or by selecting the first tab in the detail panel.
+You can go to the info tab directly by choosing *Details* from the :ref:`context menu<user-the-context-menu>` or by selecting the first tab in the Detail Panel.
 
 In **display mode** it shows the direct child topics of what is currently selected as this is the most commonly wanted information.
 It only shows child topics with a value assigned, that is fields containing data.
@@ -242,9 +242,9 @@ The form is generated using the type definition representing the content (for mo
 The "Related" tab
 -----------------
 
-The "Related" tab is the second tab of the :ref:`detail panel<user-the-detail-panel>`.
+The "Related" tab is the second tab of the :ref:`Detail Panel<user-the-detail-panel>`.
 It is designed for navigating along existing associations.
-You can jump directly into the "Related" tab from within the topicmap using the :ref:`context menu<user-the-context-menu>` or - if the detail panel is already open - by choosing the second tab.
+You can jump directly into the "Related" tab from within the topicmap using the :ref:`context menu<user-the-context-menu>` or - if the Detail Panel is already open - by choosing the second tab.
 First you see the number of related items and the selected sort mode.
 
 The tab's content is a sorted list of all items directly related to your current selection *except* its direct child topics.
@@ -262,7 +262,7 @@ The Related Tab has got three sort modes:
 .. hint:: Go play with `sample data <https://demo.dmx.systems/systems.dmx.webclient/#/topicmap/15730/topic/8567/related>`_ on our Demo Server. Change the sort order to see what it does.
 
 By default the list of related items is grouped by "Topic Type":
-In the example below you can see that the selected organization is related to a city, a note, and to persons but also to the current topicmap and to the workspace you are in.
+In the example below you can see that the selected organization is related to a city, a note, and to persons but also to the current topicmap and to the Workspace you are in.
 This means that **you can navigate your content and your data model in the same place.**
 (You can learn more about these concepts in the section about :ref:`Modeling<user-modeling>`.)
 Additionally, every list item contains information about the association type between the selected person and the other items, e.g. person's involvement with the organization, or that this organisation is an instance of the topic type organization.
@@ -306,7 +306,7 @@ The "Meta" tab in the "Detail Panel" is the third tab and displays a summary of 
 * the Uniform Resource Identifier (see `Wikipedia: URI <https://en.wikipedia.org/wiki/Uniform_Resource_Identifier>`_)
 * the creation date and the author's user name
 * the date of the last modification and the respective author's user name
-* the *Workspace* this item resides in as well as the workspace owner's name
+* the *Workspace* this item resides in as well as the Workspace owner's name
 * the *Type* of the item (DMXType)
 * all *Topicmaps* the item is *visible* (not hidden) on
 
@@ -453,14 +453,14 @@ Editing content
 
 .. _user-editing-in-the-detail-panel:
 
-Editing in the detail panel
+Editing in the Detail Panel
 ---------------------------
 
 To start adding details to a topic you can use the *Edit* command from the :ref:`context menu<user-the-context-menu>` of an item.
-The detail panel opens, with the "Info" tab selected and in "Edit" mode.
-Now you have the topicmap on the left side of your screen and the detail panel on the right side.
+The Detail Panel opens, with the "Info" tab selected and in "Edit" mode.
+Now you have the topicmap on the left side of your screen and the Detail Panel on the right side.
 
-Here is what an item looks like in "Edit" mode in the first tab of the detail panel.
+Here is what an item looks like in "Edit" mode in the first tab of the Detail Panel.
 
 .. image:: _static/detail-panel-edit-intro.png
 
@@ -472,7 +472,7 @@ Press it to get a new field.
 .. image:: _static/editing-field-with-cardinality-many.png
 
 When finished editing the item, press the "Save" button at the very bottom of the tab.
-There is an in-depth explanation of the four detail panel tabs above, in the section about the :ref:`Detail Panel <user-the-detail-panel>`.
+There is an in-depth explanation of the four Detail Panel tabs above, in the section about the :ref:`Detail Panel <user-the-detail-panel>`.
 
 .. _user-inline-editing:
 
@@ -635,7 +635,7 @@ Long-click onto it and select "Edit" from the context menu.
 
 .. image:: _static/rename-topicmap2.png
 
-The detail panel opens and lets you change the name.
+The Detail Panel opens and lets you change the name.
 
 .. image:: _static/rename-topicmap3.png
 
@@ -772,7 +772,7 @@ You can assign icons from the Font Awesome collection to your topic types.
 Let's say you have a topic type "Publication" and you want all publications to have a book icon.
 
 - You are about to modify the general concept of all your publications, not an existing instance of it. Click onto the topic type "Publication", *not* onto an individual publication.
-- Open the detail panel by selecting "Details" from the context menu.
+- Open the Detail Panel by selecting "Details" from the context menu.
 - Go to the fourth tab called "View". Here you can view and edit the configuration of the topic type. Click "Edit".
 - Click into the white field labeled "Icon".
 
@@ -804,7 +804,7 @@ Assigning colors to association types
 -------------------------------------
 
 You can assign colors to association types just as you can assign icons to topic types.
-Select the association type on your map, open the detail panel and open the fourth tab "View".
+Select the association type on your map, open the Detail Panel and open the fourth tab "View".
 Choose a color for your association type and save it.
 
 .. image:: _static/new-assoc-color.png
@@ -952,7 +952,7 @@ Associative navigation
 
 As DMX is made to work like a human brain you can navigate in an associative way.
 To navigate across topics along associations use the '*Related* command in the :ref:`context menu<user-the-context-menu>` of any item.
-This opens the "Related" tab of the :ref:`detail panel<user-the-detail-panel>`.
+This opens the "Related" tab of the :ref:`Detail Panel<user-the-detail-panel>`.
 
 .. image:: _static/related.png
 
@@ -969,10 +969,10 @@ If you reveal the topicmaps themselves in a topicmap you can jump to different t
 
 .. image:: _static/revealed-topic-maps.png
 
-Switching between workspaces
+Switching between Workspaces
 ============================
 
-Use the workspace selector to switch between workspaces.
+Use the Workspace selector to switch between Workspaces.
 
 .. image:: _static/workspace-selector.png
 
@@ -989,7 +989,7 @@ The ID of the currently selected item is appended to the URL.
 
 .. image:: _static/deep-link-topic-map-with-topic.jpg
 
-The state of the detail panel is reflected in the URL, too:
+The state of the Detail Panel is reflected in the URL, too:
 It changes depending on the tab you have opened.
 
 .. image:: _static/deep-link-topic-map-with-topic-in-edit-mode.jpg
@@ -1049,10 +1049,10 @@ Investigate the newly created user name via the "Related" button.
 The user name is associated with some information:
 
 * disk quota: how much space the user can use on the computer
-* what type of sharing modes the account owner can select when creating new workspaces
+* what type of sharing modes the account owner can select when creating new Workspaces
 * if the account owner is allowed to log in at all
 
-It is important that every user account is tied to the "System" workspace (see below). In short, this allows others to read their user name (only the name) to share content.
+It is important that every user account is tied to the "System" Workspace (see below). In short, this allows others to read their user name (only the name) to share content.
 
 .. image:: _static/user-name-related.jpg
     :width: 400
@@ -1077,7 +1077,7 @@ Use the context menu to edit the user account.
 
 .. image:: _static/edit-user-account.png
 
-Edit the password field in the :ref:`detail panel<user-the-detail-panel>`.
+Edit the password field in the :ref:`Detail Panel<user-the-detail-panel>`.
 Enter the clear text password - DMX will hash it for you when you press "save".
 
 .. image:: _static/change-password.png
@@ -1086,87 +1086,87 @@ The admin password can be changed in the same way.
 
 .. _user-introduction-to-workspaces-and-sharing-modes:
 
-Introduction to workspaces and sharing modes
+Introduction to Workspaces and Sharing Modes
 ============================================
 
-In DMX workspaces are the highest level content is organized in.
+In DMX, Workspaces are the highest level content is organized in.
 Workspaces can be compared to folders containing everything related to a working area, a project, or an area of life.
-**Each topic and association is tied to exactly *one* workspace but you can display them in many topicmaps.**
-A workspace can have one or many members who have access to its content.
-**Read and write permissions are tied to workspaces.**
-This feature makes workspaces the basis of collaboration and the key to the configuration of access control:
+**Each topic and association is tied to exactly *one* Workspace but you can display them in many topicmaps.**
+A Workspace can have one or many members who have access to its content.
+**Read and write permissions are tied to Workspaces.**
+This feature makes Workspaces the basis of collaboration and the key to the configuration of access control:
 
 DMX has five sharing modes:
 
-* **private**: In a private workspace just the owner of the workspace can read and write.
-* **confidential**: In a confidential workspace the owner can read and write. Workspace members can read, but not change anything.
-* **collaborative**: A collaborative workspace can be read and edited by the owner and by all workspace members.
-* **public**: A public workspace is world-readable. It can be read and edited by the owner and by all workspace members. The default "DMX" workspace is an example of a public workspace.
-* **common**: For common workspaces, you can configure the behaviour in the configuration file ``config.properties``. You can decide whether you want to allow reading and/or writing for non-logged in users. If configured accordingly, a common workspace on a DMX instance connected to the internet can be readable and writable to *everyone* on the internet. See our :ref:`Admin Documentation<admin-request-filters>` for more details.
+* **private**: In a private Workspace just the owner of the Workspace can read and write.
+* **confidential**: In a confidential Workspace the owner can read and write. Workspace members can read, but not change anything.
+* **collaborative**: A collaborative Workspace can be read and edited by the owner and by all Workspace members.
+* **public**: A public Workspace is world-readable. It can be read and edited by the owner and by all Workspace members. The default "DMX" Workspace is an example of a public Workspace.
+* **common**: For common Workspaces, you can configure the behaviour in the configuration file ``config.properties``. You can decide whether you want to allow reading and/or writing for non-logged in users. If configured accordingly, a common Workspace on a DMX instance connected to the internet can be readable and writable to *everyone* on the internet. See our :ref:`Admin Documentation<admin-request-filters>` for more details.
 
-Every workspace has an owner, usually the creator, and optional members.
-When you are logged in you can access the different workspaces via the :ref:`workspace selector<user-the-workspace-selector>` in the upper left corner.
-Once you log out DMX will switch back to a public (world-readable) workspace like the default workspace called "DMX".
+Every Workspace has an owner, usually the creator, and optional members.
+When you are logged in you can access the different Workspaces via the :ref:`Workspace selector<user-the-workspace-selector>` in the upper left corner.
+Once you log out DMX will switch back to a public (world-readable) Workspace like the default Workspace called "DMX".
 All items that are publicly readable stay visible, the rest disappears from the view.
-In a public workspace you are no longer able to edit but you still have a customizable view of the topicmap, which means that you can move items and reveal other world-readable items.
+In a public Workspace you are no longer able to edit but you still have a customizable view of the topicmap, which means that you can move items and reveal other world-readable items.
 If you explicitly do not want or need any of the five sharing modes, you can disable them via :ref:`configuration<admin-workspace-sharing-modes>`.
 
 .. image:: _static/workspace-selector.png
 
-DMX comes with four default workspaces with the following sharing modes:
+DMX comes with four default Workspaces with the following sharing modes:
 
-* **DMX**: This workspace is public. It is displayed publicly when people come to the site.
-* **Private Workspace**: This is the private workspace of the respective logged in user. Only this user can see and and edit their items as the workspace is private.
-* **Administration**: Only the admin or members can view and edit items in this workspace. Unprivileged user accounts do not have this entry in the menu.
-* **System**: The System workspace is readable by everyone who is logged in. It contains all user names that exist in this DMX installation. The user names are readable to all users. This is needed for sharing content with others as you will see below.
+* **DMX**: This Workspace is public. It is displayed publicly when people come to the site.
+* **Private Workspace**: This is the private Workspace of the respective logged in user. Only this user can see and and edit their items as the Workspace is private.
+* **Administration**: Only the admin or members can view and edit items in this Workspace. Unprivileged user accounts do not have this entry in the menu.
+* **System**: The System Workspace is readable by everyone who is logged in. It contains all user names that exist in this DMX installation. The user names are readable to all users. This is needed for sharing content with others as you will see below.
 
 .. image:: _static/system-workspace.png
 
 .. _user-sharing-a-workspace:
 
-Sharing a workspace
+Sharing a Workspace
 ===================
 
-Here is how creating a shared workspace works:
+Here is how creating a shared Workspace works:
 
-* Log in as an unprivileged user and go to your private workspace where you can edit.
-* Open the search field and **create a workspace**. Make it a collaborative workspace to give others write permission.
+* Log in as an unprivileged user and go to your private Workspace where you can edit.
+* Open the search field and **create a Workspace**. Make it a collaborative Workspace to give others write permission.
 
 .. image:: _static/workspace-creation.png
 
-* The new workspace automatically opens. Click onto the blue information icon next to the workspace selector to reveal the workspace topic itself on the topicmap.
-* To add members to the workspace you can just search for their user names and click them to reveal them on the map. As mentioned above, all user names are visible to all other logged in users. In DMX, membership is tied to user names.
-* If you don't know their user names you search for the topic type "Username" and navigate its "Related" tab to see the existing user names in the detail panel. Reveal those you want to give access.
-* Now that you have the workspace itself and a user name on your topicmap you can just **create an association between the user name and the workspace**.
+* The new Workspace automatically opens. Click onto the blue information icon next to the Workspace selector to reveal the Workspace topic itself on the topicmap.
+* To add members to the Workspace you can just search for their user names and click them to reveal them on the map. As mentioned above, all user names are visible to all other logged in users. In DMX, membership is tied to user names.
+* If you don't know their user names you search for the topic type "Username" and navigate its "Related" tab to see the existing user names in the Detail Panel. Reveal those you want to give access.
+* Now that you have the Workspace itself and a user name on your topicmap you can just **create an association between the user name and the Workspace**.
 * Next you have to qualify this association as a membership: Edit the association.
 
 .. image:: _static/edit-ws-assoc.png
 
-* In the detail panel you can now select the association type "Membership". You are done!
+* In the Detail Panel you can now select the association type "Membership". You are done!
 
 .. image:: _static/edit-ws-assoc2.png
 
-* Here are the details of the workspace membership association.
+* Here are the details of the Workspace membership association.
 
 .. image:: _static/view-ws-assoc.png
 
-* The user you shared your workspace with can now log in, select your collaborative workspace and add something, e.g. a note. This note is now accessible to all members of the workspace. It will appear on the selected topicmap, visible to all workspace members looking at the same topicmap.
+* The user you shared your Workspace with can now log in, select your collaborative Workspace and add something, e.g. a note. This note is now accessible to all members of the Workspace. It will appear on the selected topicmap, visible to all Workspace members looking at the same topicmap.
 
-.. note:: You can create membership associations to every workspace that you have write permission in.
+.. note:: You can create membership associations to every Workspace that you have write permission in.
 
 .. _user-moving-objects-to-a-different-workspace:
 
-Moving objects to a different workspace
+Moving objects to a different Workspace
 =======================================
 
-As of DMX version 5.0-beta-7 it is possible to assign existing objects to a different workspace.
-For this, you must have write permission on both the selected object and the target workspace.
+As of DMX version 5.0-beta-7 it is possible to assign existing objects to a different Workspace.
+For this, you must have write permission on both the selected object and the target Workspace.
 
-An example use case: You have a contact, a "Person" object, in your private workspace that you want to share with some other user.
+An example use case: You have a contact, a "Person" object, in your private Workspace that you want to share with some other user.
 
-Select the object and open the "Meta" tab in the :ref:`detail panel<user-the-detail-panel>`.
+Select the object and open the "Meta" tab in the :ref:`Detail Panel<user-the-detail-panel>`.
 Hover over the Workspace field with your mouse pointer and click the edit button.
-You can now select the target workspace from the drop-down menu and hit "Save".
+You can now select the target Workspace from the drop-down menu and hit "Save".
 
 .. image:: _static/assign-to-different-ws.png
 
@@ -1380,7 +1380,7 @@ Let's say you want to add a topic type "publication".
 Each publication shall have a title and a year.
 
 - Open the search field. Enter "Publication", select "Topic Type" and press "create".
-- Go into editing mode via the context menu. **Change the data type from "Text" to "Entity"** and hit "Save". Click somewhere into your map to close the detail panel.
+- Go into editing mode via the context menu. **Change the data type from "Text" to "Entity"** and hit "Save". Click somewhere into your map to close the Detail Panel.
 - Open the search field and enter "Title". You will find that two entries already exist. They come from the default topics types "Event" and "Note" which also have titles. Create a new topic type, e.g. "Title of Publication".
 - Create an association between the title item and the publication item. DMX will display what you just created:
 
@@ -1401,7 +1401,7 @@ Each publication shall have a title and a year.
 
 .. image:: _static/select-identity-attribute.png
 
-- Right below that checkbox there is another one called "Include in Label". Tick it for the information that should be used in the item's name. It determines which attribute is shown on the topicmap and on top in the detail panel. In this example we want the book title to appear there.
+- Right below that checkbox there is another one called "Include in Label". Tick it for the information that should be used in the item's name. It determines which attribute is shown on the topicmap and on top in the Detail Panel. In this example we want the book title to appear there.
 
 .. image:: _static/include-in-label.png
 
@@ -1470,7 +1470,7 @@ The actual roles (like "member" or "founder") are instances of the topic type "O
 They are not part of the data model.
 
 For modeling, the composition definition between "Organization Involvement" and "Organizational Role" is important.
-It has a special view configuration that you can investigate on the view tab of the detail panel:
+It has a special view configuration that you can investigate on the view tab of the Detail Panel:
 
 * The "Widget" setting is set to "Select". This allows you to select roles from a predefined list of instances when adding content ("member", "founder").
 * The two other checkboxes called "clearable" and "customizable" are ticked. It only makes sense to use them in connection with  "Widget: Select". "Clearable" decides whether you allow instances of this association type to *only* have the values you explicitly defined or whether it shall be possible to clear the field to leave it empty. In this case, there will be a little cross icon for clearing it. "Customizable" decides whether you allow to enter values on the fly by just typing in something different that was not predefined by you. If both checkboxes are left empty, one of your predefined values *has* to be selected. The value cannot be empty and there will be no possibility of typing into the field.
@@ -1483,7 +1483,7 @@ On the right side there are instances of "Organization", "Person", "Organization
 .. image:: _static/composite-assoc-type.png
 
 Search results are presented differently according to your sort mode:
-When you search for an organization and you open the "Related" tab in the detail panel you can either sort by Topic Type and get a list of all related persons. Their roles are then displayed as well.
+When you search for an organization and you open the "Related" tab in the Detail Panel you can either sort by Topic Type and get a list of all related persons. Their roles are then displayed as well.
 
 .. image:: _static/search-results-composite-assoc.png
 
@@ -1552,7 +1552,7 @@ When you now search for a publication, the person (the author) cannot be found i
 Creating a role type
 ====================
 
-.. note:: You can investigate this example on our Demo Server, in the `Workspace "DMX User Guide Data Model", Topicmap "1 Persons and Organizations" <https://demo.dmx.systems/systems.dmx.webclient/#/topicmap/8532>`_
+.. note:: You can investigate this example on our Demo Server, in the `Workspace "DMX User Guide Data Model", Topicmap "1 Persons and Organizations" <https://demo.dmx.systems/systems.dmx.webclient/#/topicmap/8532>`_.
 
 Role types refer to the players connected by associations.
 They are important when creating associations but they are used at the end points of associations.
@@ -1600,7 +1600,7 @@ To look at the data model of a person, click onto an instance, e.g. a person you
 .. image:: _static/person-related.png
     :width: 220
 
-The :ref:`detail panel<user-the-detail-panel>` on the right side will open.
+The :ref:`Detail Panel<user-the-detail-panel>` on the right side will open.
 You are now looking at the :ref:`Related tab<user-detail-panel-the-related-tab>`.
 It displays a list of all items that are logically related to this concrete person:
 
@@ -1608,7 +1608,7 @@ It displays a list of all items that are logically related to this concrete pers
 - the name of the person (because so far this is the only information you added to the person)
 - the topic type "person". Your concrete person is an instance of the general idea of persons, so it is linked to this general idea, the topic type.
 - the topicmap this topic is associated with
-- the workspace the topic is in
+- the Workspace the topic is in
 
 You can now click on each of the list items and they will appear on the topicmap.
 Click onto the topic type "person".
@@ -1717,7 +1717,7 @@ How to model a composite with a related composite?
 
 Let's stick with the example of modeling plants.
 For each plant you want to have the possibility to add images.
-The form in the detail panel of a plant shall include all necessary details about an image:
+The form in the Detail Panel of a plant shall include all necessary details about an image:
 You want each image to have a title, an attribution, and the image itself (whether embedded or uploaded).
 
 Create a topic type "Tree".
@@ -1758,7 +1758,7 @@ The model is ready to use: Create an instance of "Tree". Your edit form now has 
 
 .. image:: _static/detail-panel-with-included-composite-edit-mode.png
 
-When you save the details, the detail panel hides the empty fields.
+When you save the details, the Detail Panel hides the empty fields.
 
 .. image:: _static/detail-panel-with-included-composite.png
 
@@ -1783,7 +1783,7 @@ Edit that composite.
 
 .. image:: _static/change-field-order2.png
 
-In the detail panel you can now drag the child types into the right order with your mouse.
+In the Detail Panel you can now drag the child types into the right order with your mouse.
 
 .. image:: _static/change-field-order3.png
 
@@ -1797,8 +1797,8 @@ When you have created many topic types for building composites you will notice t
 .. image:: _static/cluttered-create-menu.png
 
 To clean up, reveal a topic type you want to hide from the create menu on your topicmap.
-Open the detail panel by selecting "Details" from the context menu.
-In the detail panel switch to the fourth tab, the "View" tab and edit the View Configuration.
+Open the Detail Panel by selecting "Details" from the context menu.
+In the Detail Panel switch to the fourth tab, the "View" tab and edit the View Configuration.
 Untick the "Add to Create Menu" checkbox and save the change.
 
 .. image:: _static/remove-from-create-menu.png
