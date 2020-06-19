@@ -1663,7 +1663,7 @@ Edit it and change its data type to "entity".
 .. note:: **The data type "entity"**
 
     #. Your tree is more complex than just a text field or a number: You want to add properties to it. You thus do not need a simple but a :ref:`composite data type<user-composites-and-composition-definitions>`.
-    #. You choose "entity" (not "value") because upon a change of properties you still mean the same tree. You want to add, remove, or change properties, the number of properties might grow over time. By choosing the data type "entity" you tell DMX that regardless of those changes you will mean the same thing.
+    #. You choose "entity" (not "value") because upon a change of properties you still mean the same type of tree. You want to add, remove, or change properties, the number of properties might grow over time. By choosing the data type "entity" you tell DMX that regardless of those changes you will mean the same thing.
 
 Create a topic type "Tree name".
 It can keep the default data type "text". 
@@ -1677,9 +1677,9 @@ Create an association between the topic type "Blooming period" and the topic typ
 .. note:: **The data type "value"**
 
     #. Your blooming period is also more complex than a number. Even a single date (instead of a period with a beginning and an end) consists of more than a number, e.g. a day, a month, and a year. So you need a :ref:`composite data type<user-composites-and-composition-definitions>` here, too.
-    #. You choose "value" (not "entity") because your data will just *not* stay identical when you change it. The blooming periods "April to June" and "June to July" are different blooming periods (even if they change for the same plant).
+    #. You choose "value" (not "entity") because your data will *not* stay identical when you change it. The blooming periods "April to June" and "June to July" are different blooming periods (even if they change for the same type of plant).
 
-To add dates to your topic type "Blooming period", just use the predefined date topic type:
+To add dates to your topic type "Blooming period", use the predefined date topic type:
 Search for it and reveal it on the Topicmap.
 
 .. image:: _static/search-results-date.png
@@ -1698,6 +1698,7 @@ The start date and the end date.
 Create the first association between the topic type "Date" and the topic type "Blooming period".
 Edit the association and open the drop-down menu called "Custom Association Type".
 Select "From".
+This is a predefined Custom Association Type.
 
 .. image:: _static/custom-association-type-from.png
 
