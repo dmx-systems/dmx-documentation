@@ -57,7 +57,7 @@ It represents a person with the name you just entered and it states that this is
 
 .. image:: _static/person-in-map-details.png
 
-If you enter a person's given name *and* surname into the search/create dialog, DMX interprets both as first name:
+If you enter a person's given name *and* surname into the Search/Create Dialog, DMX interprets both as first name:
 The result would look like this:
 
 .. image:: _static/person-wrong-first-name.png
