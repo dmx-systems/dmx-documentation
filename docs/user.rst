@@ -1613,10 +1613,12 @@ It displays a list of all items that are logically related to this concrete pers
 You can now click on each of the list items and they will appear on the Topicmap.
 Click onto the topic type "person".
 The topic type "person" is displayed with an association to the instance "Cathy Jones".
-The link between both has a different color and you can again click onto the link, show what is related and you can see that this association is an "instantiation":
-The topic is one instance of the topic type.
+The link between both has a different color.
+You can click onto the link again, show what is related and you can see that this association is an "instantiation":
+The topic is an instance of the topic type.
 To see if there are more instances (more persons), show the "Related" tab of the topic type "person".
-Among other information about how the topic type is integrated into the rest of the context you can see all existing persons you entered so far.
+Among other information about how the topic type is integrated into the rest of the context you can see all existing persons entered so far.
+(Or more precisely: All existing instances you have read access to.)
 
 Here you are looking at your data and at a part of the data model it is based upon.
 Again, you can hide what you do not want to see in your map when you are done exploring.
@@ -1639,7 +1641,7 @@ Let's return to the example of a publication and its author:
 The authorship is a qualified description of the association between a person and a publication.
 If you look at the "Related" tab of such a qualified association you can see the connection between the association and and the association type: 
 
-.. image:: _static/edge-connection.jpg
+.. image:: _static/edge-connection.png
 
 .. _user-modeling-patterns-and-pitfalls:
 
