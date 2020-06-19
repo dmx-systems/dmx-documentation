@@ -21,13 +21,13 @@ When you first look at a new DMX instance, this is what you see:
     :alt: Tool bar with workspace and topicmap selection
 
 * In the **upper right** corner there is a "Login" button. Log in with the user name "admin" and no password.
-* In the **upper left** corner there is the :ref:`Workspace <user-the-workspace-selector>` selector. You can use this to switch between workspaces. By default the "DMX" workspace is selected.
+* In the **upper left** corner there is the :ref:`Workspace <user-the-workspace-selector>` selector. You can use this to switch between Workspaces. By default the "DMX" Workspace is selected.
 * Next to it there is another drop-down menu. This is the :ref:`Topicmap <user-the-topic-map-selector>` selector. By default it shows a Topicmap called "untitled".
 
 Both drop-down menus have a context information button "i" next to them.
 Click it to reveal detail about the selected Topicmap or Workspace.
 
-.. For the moment the most interesting information is the access control. **The first default workspace and the default Topicmap are in SharingMode "public" that is: They are not private, but world-readable.** This is important to keep in mind if you are trying DMX on our public demo site or if you installed it on a server that is connected to the internet. You can find out more about access control in the section about :ref:`Collaboration and Sharing<user-collaboration-and-sharing>`.
+.. For the moment the most interesting information is the access control. **The first default Workspace and the default Topicmap are in SharingMode "public" that is: They are not private, but world-readable.** This is important to keep in mind if you are trying DMX on our public demo site or if you installed it on a server that is connected to the internet. You can find out more about access control in the section about :ref:`Collaboration and Sharing<user-collaboration-and-sharing>`.
 
 For more information visit our detailed guide to the :ref:`user interface<user-the-dmx-user-interface>`.
 
