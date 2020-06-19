@@ -27,7 +27,7 @@ When you first look at a new DMX instance, this is what you see:
 Both drop-down menus have a context information button "i" next to them.
 Click it to reveal detail about the selected Topicmap or Workspace.
 
-.. For the moment the most interesting information is the access control. **The first default workspace and the default topicmap are in SharingMode "public" that is: They are not private, but world-readable.** This is important to keep in mind if you are trying DMX on our public demo site or if you installed it on a server that is connected to the internet. You can find out more about access control in the section about :ref:`Collaboration and Sharing<user-collaboration-and-sharing>`.
+.. For the moment the most interesting information is the access control. **The first default workspace and the default Topicmap are in SharingMode "public" that is: They are not private, but world-readable.** This is important to keep in mind if you are trying DMX on our public demo site or if you installed it on a server that is connected to the internet. You can find out more about access control in the section about :ref:`Collaboration and Sharing<user-collaboration-and-sharing>`.
 
 For more information visit our detailed guide to the :ref:`user interface<user-the-dmx-user-interface>`.
 
@@ -37,7 +37,7 @@ For more information visit our detailed guide to the :ref:`user interface<user-t
 Adding your first topic
 ***********************
 
-Right-click somewhere into the topicmap.
+Right-click somewhere into the Topicmap.
 A dialog appears that lets you search all your content.
 This is the :ref:`Search/Create Dialog<user-the-search-create-dialog>`.
 
@@ -52,7 +52,7 @@ Select "Person" in the "Create" section on the right from the Topic Types menu a
 
 .. image:: _static/create-person.png
 
-You will see a rectangle appear on the topicmap.
+You will see a rectangle appear on the Topicmap.
 It represents a person with the name you just entered and it states that this is the person's first name.
 
 .. image:: _static/person-in-map-details.png
@@ -105,7 +105,7 @@ Then drop the association on the "Notes for the interview" item and release your
 The association will be created and a rectangle appears.
 These are the :ref:`in-map details <user-in-map-details>` of the newly created association.
 They tell you that this is association is of type "Association" which is the most generic form of association in DMX.
-Click somewhere onto the topicmap to close the in-map details of the association.
+Click somewhere onto the Topicmap to close the in-map details of the association.
 
 ****************************************************
 A glimpse into Personal Information Management (PIM)
