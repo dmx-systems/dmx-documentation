@@ -67,7 +67,6 @@ It shows a situation-based view of selected content from the database.
 
 .. hint:: Go to our `Demo Server <https://demo.dmx.systems/>`_, navigate through the Workspaces and have a look at the different Topicmaps. They all show specific views on parts of the same underlying database.
 
-
 For the moment, three types of Topicmaps are supported: *Topicmaps*, *Geomaps* and *Tableviews*.
 Geomaps and Tableviews both are :ref:`plugins <admin-plugin-installation>` that have to be installed separately.
 
@@ -78,7 +77,8 @@ The layout of the Topicmap is persisted over working sessions.
 Edits to a Topicmap are instantly mirrored to other connected users.
 The size of a Topicmap can be well beyond the size of your screen. You can move it with your mouse.
 
-Find out more about working with :ref:`Topicmaps <user-creating-a-topicmap>`, :ref:`Geomaps <user-geodata>` and :ref:`Tableviews<user-tableview>` in the section on :ref:`Organizing the working context<user-organizing-the-working-context>`.
+Find out more about working with Topicmaps in the section on :ref:`Organizing the working context<user-organizing-the-working-context>`.
+:ref:`Geomaps <plugins-geodata>` and :ref:`Tableviews <plugins-tableview>` are documented in the chapter about plugins.
 
 .. _user-the-fit-button:
 
@@ -615,7 +615,7 @@ Enter the name of the new Topicmap, select *Topicmap* from the "Create" menu and
 .. image:: _static/create-topic-map.png
 
 For Topicmaps, the creation dialog has an additional drop-down menu.
-If you have the :ref:`Geomaps <user-geodata>` plugin installed, you can choose between a regular Topicmap and a Geomap.
+If you have the :ref:`Geomaps <plugins-geodata>` plugin installed, you can choose between a regular Topicmap and a Geomap.
 Without the plugin, you don't have to choose anything.
 
 Once created, the new Topicmap is opened.
@@ -643,94 +643,6 @@ After saving the change the new name appears in the Topicmap Selector.
 You can :ref:`hide <user-hiding-items>` the Topicmap topic from the map via the context menu.
 
 .. image:: _static/rename-topicmap4.png
-
-.. _user-geodata:
-
-Displaying Geodata
-------------------
-
-.. note:: As of DMX 5.0-beta-7 the `geomap plugin <https://download.dmx.systems/plugins/dmx-geomaps/>`_ has to be installed separately as described in our :ref:`Admin Documentation <admin-plugin-installation>`.
-
-DMX offers a plugin to support geodata.
-Every topic with an address can be shown on a geographical map.
-The so-called geomaps are a special type of Topicmap in DMX.
-Geomaps are based on `openstreetmap.org <https://www.openstreetmap.org>`_.
-Here is an example of how to create and populate them:
-Edit a person or an organization and add an address.
-
-.. image:: _static/add-address.png
-    :width: 800
-
-Open the search and create dialog.
-Enter a name for the new Topicmap, e.g. "Our Geomap".
-In the topic type selector choose "Topicmap".
-Underneath it you can now choose the type of Topicmap you want to add.
-Select "Geomap" and press "Create".
-
-.. image:: _static/add-geomap.jpg
-
-Open the Topicmap selector in the upper toolbar and select your newly created geomap.
-The map is displayed with all items you assigned an address to.
-
-.. image:: _static/topic-map-selection.jpg
-
-If you click onto an item the in-map details show you what is there.
-
-.. image:: _static/display-map-item.jpg
-    :width: 400
-
-You return to the other Topicmaps via the :ref:`Topicmap Selector<user-the-topic-map-selector>`.
-
-.. _user-tableview:
-
-Displaying Tables
------------------
-
-.. note:: The `Tableview plugin <https://download.dmx.systems/plugins/dmx-tableview/>`_ has to be installed separately as described in our :ref:`Admin Documentation <admin-plugin-installation>`.
-
-To display your data in a table, create a Tableview map.
-
-* Enter a name for the map into the Search/Create Dialog and select "Tableview" from the Topic Type menu.
-* Choose the topic type of the instances you want to see in the first column. This makes most sense for :ref:`composites <user-composites-and-composition-definitions>`.
-
-.. image:: _static/create-tableview-map.png
-
-* The Tableview Topicmap opens automatically. It shows you every topic type that is part of the :ref:`composite <user-composites-and-composition-definitions>` you selected as a column. The columns are in the same order as they are in the composition definition.
-* At the top there is a search field to filter the table view.
-* Next to the search field there is a button that allows you to download the displayed data as a csv file.
-* In addition, every column can be filtered and sorted via the little arrow buttons.
-* In front of the first column there is an eye icon. It lets you reveal the topic on a Topicmap of your choice.
-* The last column shows you which Topicmaps the topic is currently revealed on. You can jump to that Topicmap with a click.
-
-.. image:: _static/tableview-topicmap.png
-
-**The number and the order of the table columns are configurable:**
-Each column is modeled as an association between the Tableview Topicmap itself and the topic type to be displayed.
-The according association type "Table Column" is a composite that contains a numerical child type "Position".
-This position determines the position of the column in the table.
-
-.. image:: _static/tableview-position-of-column.png
-
-To **remove a column** proceed as follows:
-
-* Search for the name of the Tableview Topicmap and open the Related tab.
-* Sort the related item by association type and reveal the table column you want to remove.
-* Delete the association between the column and the Tableview Topicmap. You will be asked to confirm the action.
-* Reload the Tableview Topicmap to update the view.
-
-.. image:: _static/tableview-delete-column.png
-
-To **add a column**, reveal the missing topic type and create an association to the Tableview Topicmap.
-Edit the association and select "Table Column" as an association type.
-Per default, the position field is left empty and the new column becomes the first column.
-You **control the order of the columns** by editing the number in the "Position" field of the association.
-
-* Check out the positions of the neighboring columns.
-* Edit the newly created association and add a value for the position that lies between the numbers of the neighbors.
-
-.. image:: _static/tableview-order-columns.png
-
-.. note:: Our Demo Server has a `Tableview Topicmap <https://demo.dmx.systems/systems.dmx.webclient/#/topicmap/37272>`_ to play with.
 
 .. _user-moving-things-around:
 

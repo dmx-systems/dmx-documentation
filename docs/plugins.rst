@@ -36,31 +36,100 @@ dmx-tags (`source code <https://git.dmx.systems/dmx-plugins/dmx-tags>`_)        
 dmx-entity-mapper                                                                                                                                                                 Mapping database fields related to concepts across IT systems                                proprietary
 ================================================================================================================================================================================  ===========================================================================================  ===========
 
+.. _plugins-geodata:
+
+******************
+The Geomaps Plugin
+******************
+
+DMX offers a plugin to support geodata.
+Every topic with an address can be shown on a geographical map.
+The so-called geomaps are a special type of Topicmap in DMX.
+Geomaps are based on `openstreetmap.org <https://www.openstreetmap.org>`_.
+Here is an example of how to create and populate them:
+Edit a person or an organization and add an address.
+
+.. image:: _static/add-address.png
+    :width: 800
+
+Open the search and create dialog.
+Enter a name for the new Topicmap, e.g. "Our Geomap".
+In the topic type selector choose "Topicmap".
+Underneath it you can now choose the type of Topicmap you want to add.
+Select "Geomap" and press "Create".
+
+.. image:: _static/add-geomap.jpg
+
+Open the Topicmap selector in the upper toolbar and select your newly created geomap.
+The map is displayed with all items you assigned an address to.
+
+.. image:: _static/topic-map-selection.jpg
+
+If you click onto an item the in-map details show you what is there.
+
+.. image:: _static/display-map-item.jpg
+    :width: 400
+
+You return to the other Topicmaps via the :ref:`Topicmap Selector<user-the-topic-map-selector>`.
+
+.. _plugins-tableview:
+
 ********************
 The Tableview Plugin
 ********************
 
 The Tableview Plugin allows to display data in a table.
 
+.. plugins-creating-a-tableview-topicmap
+
 Creating a Tableview Topicmap
 =============================
 
-To create a Tableview Topicmap, choose "Tableview" from the Topic Type menu in the Search/Create Dialog.
+* Enter a name for the map into the Search/Create Dialog and select "Tableview" from the Topic Type menu.
+* Choose the topic type of the instances you want to see in the first column. This makes most sense for :ref:`composites <user-composites-and-composition-definitions>`.
 
 .. image:: _static/create-tableview-map.png
 
-A new drop-down menu appears where you can select the Topic Type you want to see.
+* The Tableview Topicmap opens automatically. It shows you every topic type that is part of the :ref:`composite <user-composites-and-composition-definitions>` you selected as a column. The columns are in the same order as they are in the composition definition.
+* At the top there is a search field to filter the table view.
+* Next to the search field there is a button that allows you to download the displayed data as a csv file.
+* In addition, every column can be filtered and sorted via the little arrow buttons.
+* In front of the first column there is an eye icon. It lets you reveal the topic on a Topicmap of your choice.
+* The last column shows you which Topicmaps the topic is currently revealed on. You can jump to that Topicmap with a click.
+* The Topicmap Selector brings you back to the other Topicmaps.
 
-.. image:: _static/select-table-topic-type.png
+.. image:: _static/tableview-topicmap.png
 
-This is what a Tableview Topicmap looks like:
-The Topic Type you selected when creating the Tableview is displayed in the first column.
-In the very right column you can see on which Topicmap(s) the topic is revealed and you can jump there by clicking it.
-You can also click the eye icon at the very left of each row and select a Topicmap to reveal the Topic on.
-If the Topic Type you selected is a composite (e.g. "Person"), you see all Topic Types that are part of the composition definition in the other columns.
-If you selected a simple data type, all you see is the Topicmap(s) the instances are revealed on.
+Modifying the number and order of columns
+=========================================
 
-Switch back to the other Topicmaps using the Topicmap Selector.
+**The number and the order of the table columns are configurable:**
+Each column is modeled as an association between the Tableview Topicmap itself and the topic type to be displayed.
+The according association type "Table Column" is a composite that contains a numerical child type "Position".
+This position determines the position of the column in the table.
+
+.. image:: _static/tableview-position-of-column.png
+
+To **remove a column** proceed as follows:
+
+* Search for the name of the Tableview Topicmap and open the Related tab.
+* Sort the related item by association type and reveal the table column you want to remove.
+* Delete the association between the column and the Tableview Topicmap. You will be asked to confirm the action.
+* Reload the Tableview Topicmap to update the view.
+
+.. image:: _static/tableview-delete-column.png
+
+To **add a column**, reveal the missing topic type and create an association to the Tableview Topicmap.
+Edit the association and select "Table Column" as an association type.
+Per default, the position field is left empty and the new column becomes the first column.
+You **control the order of the columns** by editing the number in the "Position" field of the association.
+
+* Check out the positions of the neighboring columns.
+* Edit the newly created association and add a value for the position that lies between the numbers of the neighbors.
+
+.. image:: _static/tableview-order-columns.png
+
+.. note:: Our Demo Server has a `Tableview Topicmap <https://demo.dmx.systems/systems.dmx.webclient/#/topicmap/37272>`_ to play with.
 
 CSV Export
 ==========
