@@ -528,17 +528,9 @@ Deleting things
 
 .. warning:: There is an important difference between hiding items and deleting them. **If you delete items they are removed from the database forever.** If you hide them, they are just no longer visible on the Topicmap but you can bring them back by revealing them.
 
-You delete things via the context menu on the Topicmap.
-
-Until DMX 5.0-beta-7 keep the *Alt* key pressed and left-click onto the item you want to delete.
-To delete drag your mouse anywhere into the red area.
-To abort let go of both the "Alt" key and the mouse button while the cursor is in the middle of the circle.
+You delete things via the "Delete" command in the context menu.
 
 .. image:: _static/delete-item.png
-
-As of DMX 5.0 the "Delete" command is integrated directly into the context menu.
-
-.. image:: _static/delete-item-new.png
 
 When you select "Delete" a dialog window opens.
 It informs you about the number of items you are about to delete.
@@ -558,13 +550,7 @@ To delete several items in one go select all of them by clicking them with the C
 Then proceed as above:
 Left- or right-click onto the item and drag your mouse onto the *Delete* command.
 
-.. figure:: _static/bulk-delete-2.png
-    :alt: Bulk deletion until DMX 5.0-beta-7
-
-
-.. figure:: _static/bulk-delete-2-new.png
-    :alt: Bulk deletion as of DMX 5.0
-
+.. image:: _static/bulk-delete-2.png
 
 When you select *Delete* a confirmation dialog window opens to inform you about the number of items you are about to delete.
 You can confirm or cancel the deletion.
@@ -1122,7 +1108,7 @@ Here is how creating a shared Workspace works:
 Moving objects to a different Workspace
 =======================================
 
-As of DMX version 5.0-beta-7 it is possible to assign existing objects to a different Workspace.
+It is possible to assign existing objects to a different Workspace.
 For this, you must have write permission on both the selected object and the target Workspace.
 
 An example use case: You have a contact, a "Person" object, in your private Workspace that you want to share with some other user.
