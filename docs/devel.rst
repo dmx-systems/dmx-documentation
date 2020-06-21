@@ -63,8 +63,8 @@ Semantic Storage
 ================
 
 * The *Semantic Storage* holds a network of topics and associations. Unconnected subnetworks can exist. Topics and associations together are referred to as *DMX Objects*.
-* In DMX there are no properties. Every thing/concept that exists in the world is represented in DMX as an independent object which exists for itself, not solely as a property of another thing/concept. So in DMX the meaning of a thing/concept is represented not in its properties but in its relationships.
-* Both, topics and associations are *value holders*. A value is either simple or composite. A *simple value* has a data type (text, number, boolean, html). A *composite value* is represented as a topic tree. The root is either a topic or an association, the children are always topics.
+* In DMX there are no properties. Every thing/concept that exists in the world is represented as an independent object, not as a property of another object. Objects have relationships to other objects. DMX represents *meaning* not as properties but as relationships.
+* Both, topics and associations are *value holders*. A value is either simple or composite. A *simple value* has a data type (text, number, boolean, html). A *composite value* is represented as a tree made from topics and associations. The root is either a topic or an association, the children are topics.
 * Both, topics and associations are semantically typed. A type is identified by its URI. Examples for type URIs are ``dmx.contacts.person`` and ``dmx.core.composition``, denoting a topic type and an association type respectively.
 * Type URIs are mappable to public vocabularies like Dublin Core or schema.org.
 * Uniqueness: everything that exists in reality only once exists in DMX only once as well, e.g. a city, a person, or a postal address. E.g. the city "Berlin" exists exactly once and is shared between all postal addresses within Berlin.
