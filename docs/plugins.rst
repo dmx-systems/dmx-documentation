@@ -136,3 +136,86 @@ CSV Export
 
 You can export data from Tableview Topicmaps to a csv file by clicking the "Download CSV" button in the upper right corner of a Tableview.
 If you limit the data set with a search filter next to the button the selected subset is exported.
+
+.. _plugins-upload-dialog:
+
+************************
+The Upload Dialog Plugin
+************************
+
+The Upload Dialog plugin adds a file upload button to the DMX webclient.
+You can find it in the toolbar:
+
+.. image :: _static/upload-dialog-button.png
+
+Once you click the button you see three actions: "Select file", "Upload to server" and "Cancel".
+Select one or more files from your computer first.
+The list of selected files is displayed.
+You can remove individual files from the list by hovering onto it with your mouse and clicking the little cross.
+
+.. image:: _static/upload-dialog-filelist.png
+
+Once your list is complete, click "Upload to server".
+
+An instance of the Topic Type "File" is created and its details are displayed to you in the in-map details.
+
+Configuration
+=============
+
+The Upload Dialog plugin has two settings that you configure in the DMX settings file ``conf/config.properties``:
+
+With the ``dmx.filerepo.path`` you configure the folder on your harddisk in which you want the uploaded files to be saved. It has to be an existing folder.
+
+.. code:: bash
+
+    dmx.filerepo.path = /var/lib/dmx/dmx-filedir
+
+With the ``dmx.filerepo.per_workspace`` you choose whether all uploaded files shall be saved directly in the filerepo path or whether DMX shall create subfolders per Workspace.
+This setting has an **impact on access control**:
+Per default all users have access to one big file repository folder you configure.
+If you want to put the file repository under access control, set this setting to ``true``.
+Each Workspace then gets its own subfolder so that files can be accessed according to the sharing mode of the Workspace.
+
+.. code:: bash
+
+    dmx.filerepo.per_workspace = true
+
+
+
+************
+CSV Importer
+************
+
+.. note:: The :ref:`Upload Dialog plugin <plugins-upload-dialog>` should be installed to ease the csv import workflow.
+
+The CSV Importer plugin lets you import basic csv files to DMX.
+It can import and update simple topics and their first level child topics.
+Right now, only the data type "Text" is supported.
+
+Your csv file *has* to use the pipe ``|`` character as a delimiter.
+Here is an example file:
+
+.. code:: bash
+
+    deep.web | dmx.base.url                  	| dmx.bookmarks.description
+    site     | https://www.dmx.berlin        	| <h1>DMX </h1><p class="slogan">Cope With Complexity</p>
+    demo     | https://demo.dmx.systems      	| <h1>Demo Server</h1><p>try it now</p>
+    ci       | https://downloads.dmx.systems/ci | <h1>Continuous Integration</h1><p>fresh nightly builds</p>
+    apidocs  | https://apidocs.dmx.systems   	| <h1>API Documentation</h1><p>Javadocs built from the sources</p>
+    forum    | https://forum.dmx.systems        | <h1>DMX Forum</h1><p>Place to ask questions or to show & tell others about your use of DMX</p>
+
+* Upload the csv file via the :ref:`Upload Dialog <plugins-upload-dialog>`.
+* Reveal the target topic type topic. In this example that is the "Bookmark" topic type.
+* Create an association from the csv file to the topic type and edit the association.
+
+.. image:: _static/file-import-create-assoc.png
+
+* Select the **association type "File Import"** and save the edit.
+
+.. image:: _static/file-import-edit-assoc.png
+
+.. image:: _static/file-import-assoc-type.png
+
+* Open the context menu and pull your mouse pointer onto "Import CSV".
+
+.. image:: _static/file-import-trigger.png
