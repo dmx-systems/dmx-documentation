@@ -64,7 +64,7 @@ Semantic Storage
 
 * The *Semantic Storage* holds a network of topics and associations. Unconnected subnetworks can exist. Topics and associations together are referred to as *DMX Objects*.
 * In DMX there are no properties. Every thing/concept that exists in the world is represented as an independent object, not as a property of another object. Objects have relationships to other objects. DMX represents *meaning* not as properties but as relationships.
-* Both, topics and associations are *value holders*. A value is either simple or composite. A *simple value* has a data type (text, number, boolean, html). A *composite value* is represented as a tree made from topics and associations. The root is either a topic or an association, the children are topics.
+* Both, topics and associations are *value holders*. A value is either simple or composite. A *simple value* has a data type (text, number, boolean, html). A *composite value* is represented as a tree made of topics and associations. The root is either a topic or an association, the children are topics.
 * Both, topics and associations are semantically typed. A type is identified by its URI. Examples for type URIs are ``dmx.contacts.person`` and ``dmx.core.composition``, denoting a topic type and an association type respectively.
 * Type URIs are mappable to public vocabularies like Dublin Core or schema.org.
 * Uniqueness: everything that exists in reality only once exists in DMX only once as well, e.g. a city, a person, or a postal address. E.g. the city "Berlin" exists exactly once and is shared between all postal addresses within Berlin.
@@ -920,7 +920,7 @@ Overview of the interfaces in package `systems.dmx.core <https://apidocs.dmx.sys
 .. _dmx-core-classes:
 .. figure:: _static/dmx-core-classes.svg
 
-Note that both ``Topic`` and ``Assoc`` have a common base class: ``DMXObject``. The commonalities include a) both are typed (``getTypeUri()``), b) both are referable by-id and by-uri, and, in particular c) both are *value holders*, be it a simple one (`SimpleValue <https://apidocs.dmx.systems/index.html?systems/dmx/core/model/SimpleValue.html>`_ (green), from `systems.dmx.core.model <https://apidocs.dmx.systems/index.html?systems/dmx/core/model/package-summary.html>`_ package) or a composite one (`ChildTopics <https://apidocs.dmx.systems/index.html?systems/dmx/core/ChildTopics.html>`_). Furthermore there are common traversal (``getAssocs()``, ``getRelatedTopics()``, ``getRelatedAssocs()``) and manipulation (``update()``, ``delete()``) methods.
+Note that both ``Topic`` and ``Assoc`` have a common base class: ``DMXObject``. The commonalities include a) both are typed (``getTypeUri()``), b) both are referable by-ID and by-URI, and, in particular c) both are *value holders*, be it a simple one (`SimpleValue <https://apidocs.dmx.systems/index.html?systems/dmx/core/model/SimpleValue.html>`_ (green), from `systems.dmx.core.model <https://apidocs.dmx.systems/index.html?systems/dmx/core/model/package-summary.html>`_ package) or a composite one (`ChildTopics <https://apidocs.dmx.systems/index.html?systems/dmx/core/ChildTopics.html>`_). Furthermore there are common traversal (``getAssocs()``, ``getRelatedTopics()``, ``getRelatedAssocs()``) and manipulation (``update()``, ``delete()``) methods.
 
 Let's have a closer look at the 5 ``DMXObject`` fields:
 
@@ -946,6 +946,8 @@ DMXType
 -------
 
 ``DMXType`` is derived from ``Topic`` and inherits the ``uri`` field from ``DMXObject``. Furhermore ``DMXType`` is an ``Iterable<String>``: it iterates over the type's ``compDefUri`` s.
+
+.. _the-model-hierarchy:
 
 The "Model" hierarchy
 ---------------------
@@ -1009,15 +1011,19 @@ Topics
 
     Iterable<Topic> getAllTopics();
 
+You can retrieve topics by-ID, by-URI, or by-type. You can also retrieve *all* topics.
+
 .. code-block:: java
 
     Topic getTopicByValue(String typeUri, SimpleValue value);
 
     List<Topic> getTopicsByValue(String typeUri, SimpleValue value);
 
-    List<Topic> queryTopics(String typeUri, SimpleValue value);
+    List<Topic> queryTopics(String typeUri, String query);
 
-    QueryResult queryTopicsFulltext(String query, String topicTypeUri, boolean searchChildTopics);
+    QueryResult queryTopicsFulltext(String query, String typeUri, boolean searchChildTopics);
+
+You can retrieve topics by-value. Use the singular ``getTopicByValue`` method for retrieving by *unique* value; it throws an exception if more than one topic is found. The ``query...`` methods support Lucene query syntax: most notably *wildcards* (``*`` and ``?`` for matching arbitrary characters or a single character respectively), *phrase search* (``"..."``), combination of search terms (``AND`` and ``OR``), and *escaping* (``\``). The ``queryTopicsFulltext`` method searches for matching words in entire (HTML) text values; furthermore this methods can search in composite values (topic trees). For details see the `CoreService API <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_.
 
 .. code-block:: java
 
@@ -1026,6 +1032,12 @@ Topics
     void updateTopic(TopicModel updateModel);
 
     void deleteTopic(long topicId);
+
+To *create* a topic you need to construct a ``TopicModel`` object first to hold all the topic data needed. Typically you'll specify the topic's type and value. In case of a simple value you'll provide a ``SimpleValue`` object, in case of a composite value (that is a topic tree) you'll build a hierarchy of ``ChildTopicsModel`` objects. For how to construct a Model object see above section :ref:`the-model-hierarchy`.
+
+Also for *updating* a topic you need to construct a ``TopicModel`` object first to hold the new topic data. *Partial updates* are supported: you're free to specify only data that actually change. If e.g. a composite topic's type and some child topics stay unchanged you're not required to specify these in the update model.
+
+All these DMX Core Service methods are callable via DMX REST API as well.
 
 Associations
 ------------
@@ -1052,7 +1064,7 @@ Associations
 
     Assoc getAssocByValue(String typeUri, SimpleValue value);
 
-    List<Assoc> queryAssocs(String typeUri, SimpleValue value);
+    List<Assoc> queryAssocs(String typeUri, String query);
 
 .. code-block:: java
 
