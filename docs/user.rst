@@ -763,14 +763,11 @@ Choose a color for your association type and save it.
 
 .. _user-navigation:
 
-***************
-Searching items
-***************
+*********************
+Searching the storage
+*********************
 
 .. _user-searching-the-database:
-
-Searching the storage
-=====================
 
 To search in DMX open the :ref:`Search/Create Dialog <user-the-search-create-dialog>` with a right-click on a Topicmap.
 Start typing what you are looking for.
@@ -785,7 +782,7 @@ Your actual content is displayed as well as topic types, Topicmaps, association 
 .. _user-advanced-search-filter-types:
 
 \... \ using the Type Filter
-------------------------------------
+============================
 
 The :ref:`Search/Create Dialog <user-the-search-create-dialog>` has two checkboxes right under the search field.
 They narrow down your search results to certain topic types according to your filter.
@@ -822,7 +819,7 @@ This lets you find all persons with an address in Berlin.
 .. _user-advanced-search-lucene:
 
 \... \ using Query Syntax
--------------------------
+=========================
 
 The search in DMX is run by the powerful Lucene search engine.
 You can run simple queries by just entering a search term.
@@ -896,9 +893,9 @@ If you escape the special character and you add a wild card to the end of the st
 
 .. note:: Advanced search along associations is not yet supported.
 
-**********
-Navigation
-**********
+************************
+Navigating
+************************
 
 .. _user-associative-navigation:
 
@@ -1144,9 +1141,9 @@ In a public Workspace you are no longer able to edit when logged out, but you ca
 
 .. _user-modeling:
 
-*********
-Modeling
-*********
+********************
+Modeling the storage
+********************
 
 A data model is an abstract model that defines all elements needed to represent items, their properties and their relationships.
 DMX enables users to create their own data models.
