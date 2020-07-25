@@ -2,7 +2,7 @@
 DMX User Guide
 ##############
 
-DMX is still under development and we appreciate your feedback and - if you experience any errors or issues with your installation - if you could report them with a meaningful error message in the `DMX Community Forum <https://forum.dmx.systems>` or using `Github Issues <https://github.com/dmx-systems/dmx-platform>`.
+We appreciate your feedback on DMX and - if you experience any errors or issues with your installation - would be very glad if you could report them with a meaningful error message in our forum.dmx.systems or on github.com/dmx-systems/dmx-platform.
 
 DMX is a highly extensible web application server composed of a semantic storage managed by the DMX Core and a variety of DMX Plugins which extend the DMX Core to create real world applications. One of the more prominent plugins is the user-facing DMX Webclient. The following guide aims to get you ready for self-organized usage of the DMX Webclient, be this in a single- or multi-user setup.
 
