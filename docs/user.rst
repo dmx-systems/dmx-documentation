@@ -1079,7 +1079,7 @@ Here is how creating a shared Workspace works:
 Workspace Sharing Modes
 =======================
 
-In DMX, which user can use (requires **read** permission) or edit items (requires **write** permission) is determined by the *Sharing Mode* of the *Workspace* the item is in. Therefore, each topic and association is assigned to exactly *one* Workspace at a time.
+In DMX, which user can **use** items (requires **read** permission) or **edit** items (requires **write** permission) is determined by the *Sharing Mode* of the *Workspace* the item resides in. Therefore, each topic and association is related to exactly *one* Workspace at a time.
 
 This makes *Workspaces* the core concept for sharing items and the key to fine-grained configuration of access control. To make this easier for users, DMX comes with five sharing modes and users are able to move items in between workspaces. The rule therefore is, each Workspace is of exaxctly one *Sharing Mode*. The creator of a workspace can change the Sharing Mode of a workspace at any time.
 
