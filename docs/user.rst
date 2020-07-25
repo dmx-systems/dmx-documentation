@@ -2,11 +2,20 @@
 DMX User Guide
 ##############
 
+DMX is still under development and we appreciate your feedback and - if you experience any errors or issues with your installation - if you could report them with a meaningful error message in the `DMX Community Forum <https://forum.dmx.systems>` or using `Github Issues <https://github.com/dmx-systems/dmx-platform>`.
+
+DMX is a highly extensible web application server composed of a semantic storage managed by the DMX Core and a variety of DMX Plugins which extend the DMX Core to create real world applications. One of the more prominent plugins is the user-facing DMX Webclient. The following guide aims to get you ready for self-organized usage of the DMX Webclient, be this in a single- or multi-user setup.
+
+
 .. _user-the-dmx-user-interface:
 
 **********************
-The DMX User Interface
+The User Interface
 **********************
+
+The DMX Webclient plugin is a generic and highly-extensible browser-based user interface (UI) for DMX. The Webclient is part of the DMX Standard Distribution but is also highly-extensible and extended depending on which DMX Plugins you install.
+
+The DMX Webclient is what most users see first when they start using DMX as it is part of the standard distribution when you download DMX. It enables users to manage *Topics* and *Associations* and to collaborate using *Topicmaps*, *Geomaps* or *Tables* which visualize and organize the contents in your knowledge base.
 
 .. _user-the-toolbar:
 
