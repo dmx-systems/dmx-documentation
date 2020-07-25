@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = u'DMX'
-copyright = u'2018 DMX Systems, https://dmx.berlin, Author: Silke Meyer <silke@dmx.berlin>, License: Creative Commons Attribution-ShareAlike 4.0 International (https://creativecommons.org/licenses/by-sa/4.0/)'
-author = "Silke Meyer <silke@dmx.berlin>"
+copyright = u'2018 DMX Systems, https://dmx.berlin, Authors: Silke Meyer <silke@dmx.berlin>, Jörg Richter <jri@dmx.berlin>, Malte Reißig <malte.reissig@dmx.berlin>, License: Creative Commons Attribution-ShareAlike 4.0 International (https://creativecommons.org/licenses/by-sa/4.0/)'
+author = "Silke Meyer <silke@dmx.berlin>, Joerg Richter <jri@dmx.berlin>, Malte Reissig <malte.reissig@dmx.berlin>"
 
 # The short X.Y version
 version = u''
@@ -112,7 +112,7 @@ html_context = {
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Sphinx-Testdoc'
+htmlhelp_basename = 'DMX - The Context Machine'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -120,11 +120,11 @@ htmlhelp_basename = 'Sphinx-Testdoc'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    # 'papersize': 'letterpaper',
+    'papersize': 'a4paper',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
-    # 'pointsize': '10pt',
+    'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
     #
@@ -139,7 +139,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Sphinx-Test.tex', u'Sphinx-Test Documentation',
+    (master_doc, 'dmx.tex', u'DMX - The Context Machine',
      u'silke', 'manual'),
 ]
 
@@ -149,7 +149,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'sphinx-test', u'Sphinx-Test Documentation',
+    (master_doc, 'dmx', u'DMX - The Context Machine',
      [author], 1)
 ]
 
@@ -160,8 +160,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'Sphinx-Test', u'Sphinx-Test Documentation',
-     author, 'Sphinx-Test', 'One line description of project.',
+    (master_doc, 'DMX', u'DMX - The Context Machine',
+     author, 'Silke Meyer', 'DMX is a platform for knowledge management and collaboration.',
      'Miscellaneous'),
 ]
 

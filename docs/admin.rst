@@ -97,10 +97,14 @@ To allow global access enable the subnet filter like so:
 
     dmx.security.subnet_filter = 0.0.0.0/0
 
+.. _admin-user-accounts-and-admin-password:
+
 User Accounts and Admin Password
 ================================
 
 In the section about user accounts you can set the initial password for the admin account.
+It is only evaluated when the database is initialized for the first time, after that it is saved in the database.
+The admin password can be changed via the web client just like :ref:`user passwords<user-changing-a-password>`.
 
 .. warning:: By default, the admin password is empty! Please do not forget to change it if you are planning to give others access to your instance.
    
@@ -119,21 +123,80 @@ You can control whether you want to enable new user accounts right away or not.
    # If false user accounts must be manually enabled by an administrator (using the web client).
    dmx.security.new_accounts_are_enabled = true
 
+.. _admin-ldap-configuration:
 
-DM5 does currently not support an LDAP backend, yet.
-You can thus ignore the section in the settings file.
-In future releases you will be able to use it.
+LDAP Configuration
+==================
+
+You can use an existing LDAP or Active Directory backend to manage DMX users.
+The configuration file contains a section with the following options.
+Just leave them empty if you do not have any such backend.
+
+Specify your LDAP/AD server and port.
+The following protocols are supported:
+
+1. StartTLS ``ldap://<hostname>:389``. The default port is 389.
+2. LDAPS ``ldaps://<hostname>:636``. The default port is 636.
+3. LDAP ``ldap://<hostname>:389``. The default port is 389.
 
 .. code:: bash
 
-   # LDAP
    dmx.ldap.server = 127.0.0.1
    dmx.ldap.port = 389
-   dmx.ldap.manager = 
-   dmx.ldap.password = 
-   dmx.ldap.user_base = 
-   dmx.ldap.user_attribute = 
-   dmx.ldap.filter = 
+
+For an unencrypted connection the ``dmx.ldap.server`` can be a fully-qualified domain name or an IP address. For an encrypted connection ``dmx.ldap.server`` must contain the hostname that is specified in the CN of the certificate. The IP address is not sufficient.
+
+There are two additional settings for self-signed certificates used with the Java keystore.
+The first one is the path to your keystore file.
+The second one is the keystore password.
+
+.. code:: bash
+
+   javax.net.ssl.trustStore = /path/to/keystore.jks
+   javax.net.ssl.trustStorePassword = changeit
+
+The manager and password are your LDAP bind account and bind password.
+
+.. code:: bash
+
+   dmx.ldap.manager = cn=admin,dc=example,dc=org
+   dmx.ldap.password = secret
+
+Configure where DMX shall start the search for users in the LDAP/AD tree, e.g.
+
+.. code:: bash
+
+   dmx.ldap.user_base = ou=users,dc=example,dc=com
+
+Which attribute is used to identify a user, e.g.
+
+.. code:: bash
+
+   dmx.ldap.user_attribute = uid
+
+In the user filter you can add an additional filter to verify if the user is authorized to log in to DMX via LDAP, e.g.
+
+.. code:: bash
+
+   dmx.ldap.user_filter = (&(objectclass=inetOrgPerson)(memberof=cn=dmxusers,ou=groups,dc=example,dc=com))
+
+The member group option is only needed if the DMX LDAP plugin is used to *create* new users.
+In that case, new users can be automatically added to a group.
+This is usually the group that is also used in the ``dmx.ldap.filter``, e.g.
+
+.. code:: bash
+
+   dmx.ldap.user_member_group = cn=dmxusers,ou=groups,dc=example,dc=com
+
+The last option specifies DMX's loglevel for everything related to the LDAP plugin.
+Currently two loglevels are supported:
+
+1.  ``INFO`` (default): Only warnings and errors are logged including possible misconfigurations.
+2.  ``DEBUG``: Hints, warning and errors are extensively logged during configuration and runtime phase.
+
+.. code:: bash
+
+   dmx.ldap.logging = INFO
 
 .. _admin-workspace-sharing-modes:
 
@@ -436,7 +499,7 @@ Java files                  ``/usr/share/dmx/``
 DMX database and file repo  ``/var/lib/dmx/``
 Log files                   ``/var/log/dmx/``
 Bundle cache                ``/var/cache/dmx/``
-Examples                    ``/usr/share/docs/dmx/``
+Examples                    ``/usr/share/doc/dmx/``
 Systemd unit file           ``/etc/systemd/system/dmx.service``
 ==========================  ===================================
 
@@ -539,3 +602,11 @@ Here is what the log tells you when you do so:
     Jul 19, 2019 1:47:12 PM systems.dmx.accesscontrol.AccessControlPlugin unregisterAuthorizationMethod
     INFO: Unregistering authorization method "LDAP"
 
+Plugin Troubleshooting
+======================
+
+You may get Java error messages if you try to deploy a plugin and you are running DMX from the ``./dmx-linux.sh`` start script on a Linux computer with a GNOME desktop and you have ``openjdk-8-jre-headless`` installed. Edit the file ``/etc/java-8-openjdk/accessibility.properties`` with root privileges and comment out the following line:
+
+.. code:: bash
+
+    #assistive_technologies=org.GNOME.Accessibility.AtkWrapper
