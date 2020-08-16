@@ -423,7 +423,6 @@ Your ``conf/config.properties`` file would then look like this:
    org.apache.felix.http.enable = true
    # HTTPS is handled by Apache2 beforehand:
    org.apache.felix.https.enable = false
-   dmx.websockets.port = 8081
    # the external websocket url must be 'wss' for ssl encrypted connections
    dmx.websockets.url = wss://dmx.example.org
    # the IP address your internal traffic comes from via Apache2:
