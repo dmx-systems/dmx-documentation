@@ -39,7 +39,7 @@ Here you configure the ports DMX will be listening on.
    # WebSockets
    
    # The URL the WebSocket clients use to connect to the WebSocket server
-   dmx.websockets.url = ws://localhost:8080
+   dmx.websockets.url = ws://localhost:8080/websocket
    
 .. _admin-request-filters:
    
@@ -424,7 +424,7 @@ Your ``conf/config.properties`` file would then look like this:
    # HTTPS is handled by Apache2 beforehand:
    org.apache.felix.https.enable = false
    # the external websocket url must be 'wss' for ssl encrypted connections
-   dmx.websockets.url = wss://dmx.example.org
+   dmx.websockets.url = wss://dmx.example.org/websocket
    # the IP address your internal traffic comes from via Apache2:
    dmx.security.subnet_filter = 127.0.0.1/32
    dmx.host.url = https://dmx.example.org/
