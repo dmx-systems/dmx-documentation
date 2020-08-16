@@ -38,11 +38,8 @@ Here you configure the ports DMX will be listening on.
    
    # WebSockets
    
-   # The port the WebSocket server opens for accepting connections
-   dmx.websockets.port = 8081
-   
    # The URL the WebSocket clients use to connect to the WebSocket server
-   dmx.websockets.url = ws://localhost:8081
+   dmx.websockets.url = ws://localhost:8080
    
 .. _admin-request-filters:
    
@@ -406,7 +403,7 @@ The web server handles SSL.
        RewriteEngine On
        RewriteCond %{HTTP:Upgrade} =websocket
        # the internal IP address
-       RewriteRule /(.*)           ws://127.0.0.1:8081/$1 [NE,P,L]
+       RewriteRule /(.*)           ws://127.0.0.1:8080/$1 [NE,P,L]
        
        # This is the default rewrite for the webclient
        RewriteRule ^/$ https://%{HTTP_HOST}/systems.dmx.webclient/ [R,L]
