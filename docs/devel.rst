@@ -1491,9 +1491,77 @@ To feed the HTTP request body into a service method you must:
 
 * Implement a provider class for the type of the entity parameter, resp. make sure such a provider class already exists (as part of the DMX Core or one of the installed DMX plugins).
 
+Transactions
+============
+
+TODO
+
+Client-Sync
+===========
+
+TODO
+
 ***************************
 Extending the DMX Webclient
 ***************************
+
+The plugin.js file
+==================
+
+TODO
+
+Mounting Vue components
+=======================
+
+TODO
+
+Providing detail renderers
+==========================
+
+TODO
+
+Object renderers
+----------------
+
+TODO
+
+Value renderers
+---------------
+
+TODO
+
+Providing icon renderers
+========================
+
+TODO
+
+Adding context menu commands
+============================
+
+TODO
+
+Adding create menu items
+========================
+
+TODO
+
+Providing a Vuex store module
+=============================
+
+TODO
+
+Providing store watchers
+========================
+
+TODO
+
+Implementing a Topicmap Type
+============================
+
+TODO
+
+Demanding extra Element UI components
+=====================================
 
 TODO
 
