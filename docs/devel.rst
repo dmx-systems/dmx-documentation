@@ -1491,6 +1491,41 @@ To feed the HTTP request body into a service method you must:
 
 * Implement a provider class for the type of the entity parameter, resp. make sure such a provider class already exists (as part of the DMX Core or one of the installed DMX plugins).
 
+Using the platform services
+===========================
+
+TODO
+
+Topicmaps Service
+-----------------
+
+TODO
+
+Workspaces Service
+------------------
+
+TODO
+
+Access Control Service
+----------------------
+
+TODO
+
+Facets Service
+--------------
+
+TODO
+
+Files Service
+------------
+
+TODO
+
+Config Service
+--------------
+
+TODO
+
 Transactions
 ============
 
