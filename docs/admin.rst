@@ -496,7 +496,7 @@ DMX database and file repo  ``/var/lib/dmx/``
 Log files                   ``/var/log/dmx/``
 Bundle cache                ``/var/cache/dmx/``
 Examples                    ``/usr/share/doc/dmx/``
-Systemd unit file           ``/etc/systemd/system/dmx.service``
+Systemd unit file           ``/lib/systemd/system/dmx.service``
 ==========================  ===================================
 
 .. _admin-plugin-installation:
