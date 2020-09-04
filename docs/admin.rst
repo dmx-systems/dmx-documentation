@@ -339,6 +339,17 @@ OSGi Runtime
    org.osgi.framework.storage = bundle-cache
    felix.auto.deploy.action = install,start
 
+************
+Updating DMX
+************
+
+Update an existing DMX instance by running these steps:
+
+* `Download <https://download.dmx.systems/>`_ the new ``.zip`` file to your computer and extract it. Please see the :ref:`installation guide <installation>` for more details.
+* Stop the running previous version of DMX by typing ``stop 0`` into the terminal window and pressing ENTER.
+* Copy the database folder ``dmx-db`` from the folder of the old version into the folder where you extracted the new version.
+* Start DMX from inside the new version's folder. See the :ref:`installation guide <installation>` for details.
+
 
 ******************************************
 Running DMX behind an Apache Reverse Proxy
