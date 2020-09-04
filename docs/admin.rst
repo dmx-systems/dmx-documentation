@@ -1,8 +1,8 @@
 .. _admin:
 
-#######################
-DMX Admin Documentation
-#######################
+###############
+DMX Admin Guide
+###############
 
 *****************
 The Settings File

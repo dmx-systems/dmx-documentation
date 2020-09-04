@@ -15,7 +15,7 @@ There is a variety of existing plugins.
 Some of them are Free Software (see the table below).
 Some freely available plugins can already be found in our `download section <https://download.dmx.systems/plugins/>`_, the others will follow soon.
 Their source code is available in our the `plugin repositories <https://git.dmx.systems/dmx-plugins>`_.
-The installation of plugins is explained in our :ref:`Admin Documentation <admin-plugin-installation>`.
+The installation of plugins is explained in our :ref:`Admin Guide <admin-plugin-installation>`.
 
 Some plugins are licensed under a proprietary license and can be purchased from us.
 

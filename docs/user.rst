@@ -348,7 +348,7 @@ To use the user name and password from your organization select the "LDAP" metho
 
 .. image:: _static/ldap-login.png
 
-.. note:: You can learn how to install the LDAP plugin in our :ref:`Admin Documentation <admin-plugin-installation>`.
+.. note:: You can learn how to install the LDAP plugin in our :ref:`Admin Guide <admin-plugin-installation>`.
 
 .. _user-content-authoring:
 
@@ -980,7 +980,7 @@ Collaboration and Sharing
 Creating user accounts
 ======================
 
-.. note:: If you have existing users in an LDAP directory we recommend you to use our `LDAP plugin <https://download.dmx.systems/plugins/dmx-ldap/>`_. Learn how to install it in our :ref:`Admin Documentation<admin-plugin-installation>`.
+.. note:: If you have existing users in an LDAP directory we recommend you to use our `LDAP plugin <https://download.dmx.systems/plugins/dmx-ldap/>`_. Learn how to install it in our :ref:`Admin Guide<admin-plugin-installation>`.
 
 In DMX, you create user accounts just the way you create everything else, too:
 Enter a user name into the search field.
@@ -1051,7 +1051,7 @@ DMX has five sharing modes:
 * **confidential**: In a confidential Workspace the owner can read and write. Workspace members can read, but not change anything.
 * **collaborative**: A collaborative Workspace can be read and edited by the owner and by all Workspace members.
 * **public**: A public Workspace is world-readable. It can be read and edited by the owner and by all Workspace members. The default "DMX" Workspace is an example of a public Workspace.
-* **common**: For common Workspaces, you can configure the behaviour in the configuration file ``config.properties``. You can decide whether you want to allow reading and/or writing for non-logged in users. If configured accordingly, a common Workspace on a DMX instance connected to the internet can be readable and writable to *everyone* on the internet. See our :ref:`Admin Documentation<admin-request-filters>` for more details.
+* **common**: For common Workspaces, you can configure the behaviour in the configuration file ``config.properties``. You can decide whether you want to allow reading and/or writing for non-logged in users. If configured accordingly, a common Workspace on a DMX instance connected to the internet can be readable and writable to *everyone* on the internet. See our :ref:`Admin Guide<admin-request-filters>` for more details.
 
 Every Workspace has an owner, usually the creator, and optional members.
 When you are logged in you can access the different Workspaces via the :ref:`Workspace selector<user-the-workspace-selector>` in the upper left corner.

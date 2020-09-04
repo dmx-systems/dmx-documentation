@@ -237,7 +237,7 @@ It adds the repository, installs DMX from it, prompts the user for the DMX admin
 Configuring DMX
 ---------------
 
-For apt-based installations we will soon provide more instructions on advanced configuration in the :ref:`Admin Documentation <admin>`.
+For apt-based installations we will soon provide more instructions on advanced configuration in the :ref:`Admin Guide <admin>`.
 By default, DMX listens on port 8080.
 The main configuration file is located in ``/etc/dmx/config.properties``.
 For configuration changes to take effect DMX needs to be restarted (see Stopping and Starting DMX).
