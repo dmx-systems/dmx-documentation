@@ -1087,15 +1087,7 @@ Here is how creating a shared Workspace works:
 * To add members to the Workspace you can just search for their user names and click them to reveal them on the map. As mentioned above, all user names are visible to all other logged in users. In DMX, membership is tied to user names.
 * If you don't know their user names you search for the topic type "Username" and navigate its "Related" tab to see the existing user names in the Detail Panel. Reveal those you want to give access.
 * Now that you have the Workspace itself and a user name on your Topicmap you can just **create an association between the user name and the Workspace**.
-* Next you have to qualify this association as a membership: Edit the association.
-
-.. image:: _static/edit-ws-assoc.png
-
-* In the Detail Panel you can now select the association type "Membership". You are done!
-
-.. image:: _static/edit-ws-assoc2.png
-
-* Here are the details of the Workspace membership association.
+* This association is automatically saved as a membership association:
 
 .. image:: _static/view-ws-assoc.png
 
