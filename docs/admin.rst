@@ -350,6 +350,17 @@ Update an existing DMX instance by running these steps:
 * Copy the database folder ``dmx-db`` from the folder of the old version into the folder where you extracted the new version.
 * Start DMX from inside the new version's folder. See the :ref:`installation guide <installation>` for details.
 
+**********************
+Resetting the Database
+**********************
+
+.. warning:: If you delete your database everything you entered will be lost! You can *move* the database folder to keep a backup of the old state.
+
+To restart your work with a fresh database, proceed like so:
+
+* Stop DMX by typing ``stop 0`` into the terminal window and pressing ENTER.
+* Delete or move the database folder ``dmx-db``.
+* Start DMX. A new ``dmx-db`` folder is created for you.
 
 ******************************************
 Running DMX behind an Apache Reverse Proxy
