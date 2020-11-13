@@ -1221,7 +1221,7 @@ There are six different data types in DMX.
 Four of them are so-called **simple** types:
 
 * **text:** This is the default data type and it contains a text string.
-* **number:** An example is "year".
+* **number:** An example is "1984".
 * **boolean:** yes/no resp. true/false
 * **html:** HTML
 
