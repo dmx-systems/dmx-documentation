@@ -1134,7 +1134,7 @@ If you want to dive deeper into this concept, we recommend the following sources
 
 * Joseph V. Homan, Paul J. Kovacs: `A Comparison Of The Relational Database Model And The Associative Database Model <http://iacis.org/iis/2009/P2009_1301.pdf>`_, in: Issues in Information Systems, Volume X, No. 1, 2009 (6 page article)
 * Simon Williams: `The Associative Model Of Data <https://link.springer.com/content/pdf/10.1057/palgrave.jdm.3240049.pdf>`_, in: Journal of Database Marketing, Volume 8, 4, 2001 (24 page article)
-* Simon Williams: The `Associative Model Of Data <http://www.sentences.com/docs/other_docs/AMD.pdf>`_, Lazy Software, 2nd edition, 2002 (book, 284 pages)
+* Simon Williams: The `Associative Model Of Data <https://web.archive.org/web/20181219134621/http://sentences.com/docs/amd.pdf>`_, Lazy Software, 2nd edition, 2002 (book, 284 pages)
 
 It depends on your use case how you build your data model.
 In most cases, there is more than one possible way of achieving what you need.
