@@ -69,6 +69,8 @@ If you click onto an item the in-map details show you what is there.
 .. image:: _static/display-map-item.jpg
     :width: 400
 
+.. note:: It is recommended to install the plugin before entering addresses! If you enter addresses while the Geomaps plugin is not installed, the addresses are not assigned any geo coordinates unless they are reedited and saved again while the plugin is installed.
+
 You return to the other Topicmaps via the :ref:`Topicmap Selector<user-the-topic-map-selector>`.
 
 .. _plugins-tableview:

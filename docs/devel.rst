@@ -141,7 +141,7 @@ Furthermore note that "Order" is an association between "Customer" and "Book", t
 
     | Simon Williams -- The Associative Model Of Data (book, 284 pages)
     | *Lazy Software*, 2nd edition, 2002
-    | http://www.sentences.com/docs/other_docs/AMD.pdf
+    | https://web.archive.org/web/20181219134621/http://sentences.com/docs/amd.pdf
 
 Hot code replacement
 ====================

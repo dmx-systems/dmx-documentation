@@ -322,15 +322,30 @@ The "View" tab
 The fourth tab "View" gives you access to what is called a "View Configuration".
 With view configurations you can control the *visual appearance* of topics and associations of a specific type.
 So, editing a view configuration influences how items are rendered across all Topicmaps.
-At the moment, DMX allows you to perform the following customizations for topic and association types:
+At the moment, DMX allows you to perform the following customizations:
 
-* Topic Types: *Icon, Font Color, Background Color*
-* Association Types: *Association Color*
+- with Topic Types:
 
-If you need any further assistance for editing "View Configurations", the sections about :ref:`assigning icons to topic types<user-topic-type-icons>` and :ref:`assigning colors to association types<user-assigning-colors-to-association-types>` cover that.
+  * :ref:`assign an icon <user-topic-type-icons>` to be shown in all instances of the Topic Type,
+  * choose a font color for the display on Topicmaps,
+  * choose a background color for the boxes the instances are displayed in on Topicmaps
+  * add the Topic Type to or remove it from the Create Menu
 
-For the moment view configurations are only available on a per-type base (which is why the "View" tab is grayed out on any item which does not represent a *Type Definition*).
+- with Association Types:
+
+  * :ref:`assign an association color <user-topic-type-icons>` used in all instances of the Association Type
+
+- with Composition Definitions: 
+
+  * add or remove a drop-down menu with the available values
+  * specify if users can add more values on the fly
+  * specify if the field can be left empty
+
+For the moment view configurations are only available on a per-type base.
+This is why the "View" tab is grayed out on any item which does not represent a *Type Definition*.
 You can learn more about working with type definitions in the section about :ref:`Modeling<user-modeling>`.
+
+.. note:: Note that at the moment the View tab always offers all of the above settings, even if they are not applicable for a given type. This shall be improved in a future version of DMX.
 
 The Login Dialog
 ================
@@ -1134,7 +1149,7 @@ If you want to dive deeper into this concept, we recommend the following sources
 
 * Joseph V. Homan, Paul J. Kovacs: `A Comparison Of The Relational Database Model And The Associative Database Model <http://iacis.org/iis/2009/P2009_1301.pdf>`_, in: Issues in Information Systems, Volume X, No. 1, 2009 (6 page article)
 * Simon Williams: `The Associative Model Of Data <https://link.springer.com/content/pdf/10.1057/palgrave.jdm.3240049.pdf>`_, in: Journal of Database Marketing, Volume 8, 4, 2001 (24 page article)
-* Simon Williams: The `Associative Model Of Data <http://www.sentences.com/docs/other_docs/AMD.pdf>`_, Lazy Software, 2nd edition, 2002 (book, 284 pages)
+* Simon Williams: The `Associative Model Of Data <https://web.archive.org/web/20181219134621/http://sentences.com/docs/amd.pdf>`_, Lazy Software, 2nd edition, 2002 (book, 284 pages)
 
 It depends on your use case how you build your data model.
 In most cases, there is more than one possible way of achieving what you need.
@@ -1206,7 +1221,7 @@ There are six different data types in DMX.
 Four of them are so-called **simple** types:
 
 * **text:** This is the default data type and it contains a text string.
-* **number:** An example is "year".
+* **number:** An example is "1984".
 * **boolean:** yes/no resp. true/false
 * **html:** HTML
 
@@ -1226,7 +1241,7 @@ By doing so you define the parent-child relations, the cardinality of properties
 This kind of association type is called a composition definition.
 
 For associations there is just *one* composite data type which is obviously called composite.
-For topic types DMX has both composite types: **value** and **entity**.
+For topic types DMX has two composite types: **value** and **entity**.
 
 These terms exist to clarify what you are referring to when changes occur.
 Think of real-world contexts and how people are able to understand what changed.
