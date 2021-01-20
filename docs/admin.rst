@@ -1,8 +1,8 @@
 .. _admin:
 
-#######################
-DMX Admin Documentation
-#######################
+###############
+DMX Admin Guide
+###############
 
 *****************
 The Settings File
@@ -38,11 +38,8 @@ Here you configure the ports DMX will be listening on.
    
    # WebSockets
    
-   # The port the WebSocket server opens for accepting connections
-   dmx.websockets.port = 8081
-   
    # The URL the WebSocket clients use to connect to the WebSocket server
-   dmx.websockets.url = ws://localhost:8081
+   dmx.websockets.url = ws://localhost:8080/websocket
    
 .. _admin-request-filters:
    
@@ -342,6 +339,28 @@ OSGi Runtime
    org.osgi.framework.storage = bundle-cache
    felix.auto.deploy.action = install,start
 
+************
+Updating DMX
+************
+
+Update an existing DMX instance by running these steps:
+
+* `Download <https://download.dmx.systems/>`_ the new ``.zip`` file to your computer and extract it. Please see the :ref:`installation guide <installation>` for more details.
+* Stop the running previous version of DMX by typing ``stop 0`` into the terminal window and pressing ENTER.
+* Copy the database folder ``dmx-db`` from the folder of the old version into the folder where you extracted the new version.
+* Start DMX from inside the new version's folder. See the :ref:`installation guide <installation>` for details.
+
+**********************
+Resetting the Database
+**********************
+
+.. warning:: If you delete your database everything you entered will be lost! You can *move* the database folder to keep a backup of the old state.
+
+To restart your work with a fresh database, proceed like so:
+
+* Stop DMX by typing ``stop 0`` into the terminal window and pressing ENTER.
+* Delete or move the database folder ``dmx-db``.
+* Start DMX. A new ``dmx-db`` folder is created for you.
 
 ******************************************
 Running DMX behind an Apache Reverse Proxy
@@ -406,7 +425,7 @@ The web server handles SSL.
        RewriteEngine On
        RewriteCond %{HTTP:Upgrade} =websocket
        # the internal IP address
-       RewriteRule /(.*)           ws://127.0.0.1:8081/$1 [NE,P,L]
+       RewriteRule /(.*)           ws://127.0.0.1:8080/$1 [NE,P,L]
        
        # This is the default rewrite for the webclient
        RewriteRule ^/$ https://%{HTTP_HOST}/systems.dmx.webclient/ [R,L]
@@ -426,9 +445,8 @@ Your ``conf/config.properties`` file would then look like this:
    org.apache.felix.http.enable = true
    # HTTPS is handled by Apache2 beforehand:
    org.apache.felix.https.enable = false
-   dmx.websockets.port = 8081
    # the external websocket url must be 'wss' for ssl encrypted connections
-   dmx.websockets.url = wss://dmx.example.org
+   dmx.websockets.url = wss://dmx.example.org/websocket
    # the IP address your internal traffic comes from via Apache2:
    dmx.security.subnet_filter = 127.0.0.1/32
    dmx.host.url = https://dmx.example.org/
@@ -500,7 +518,7 @@ DMX database and file repo  ``/var/lib/dmx/``
 Log files                   ``/var/log/dmx/``
 Bundle cache                ``/var/cache/dmx/``
 Examples                    ``/usr/share/doc/dmx/``
-Systemd unit file           ``/etc/systemd/system/dmx.service``
+Systemd unit file           ``/lib/systemd/system/dmx.service``
 ==========================  ===================================
 
 .. _admin-plugin-installation:

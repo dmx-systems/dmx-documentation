@@ -161,7 +161,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'DMX', u'DMX - The Context Machine',
-     author, 'Silke Meyer', 'DMX is a platform for knowledge management and collaboration.',
+     author, 'Silke Meyer', 'DMX is a knowledge building platform.',
      'Miscellaneous'),
 ]
 

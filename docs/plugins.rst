@@ -15,7 +15,7 @@ There is a variety of existing plugins.
 Some of them are Free Software (see the table below).
 Some freely available plugins can already be found in our `download section <https://download.dmx.systems/plugins/>`_, the others will follow soon.
 Their source code is available in our the `plugin repositories <https://git.dmx.systems/dmx-plugins>`_.
-The installation of plugins is explained in our :ref:`Admin Documentation <admin-plugin-installation>`.
+The installation of plugins is explained in our :ref:`Admin Guide <admin-plugin-installation>`.
 
 Some plugins are licensed under a proprietary license and can be purchased from us.
 
@@ -52,23 +52,24 @@ Edit a person or an organization and add an address.
 .. image:: _static/add-address.png
     :width: 800
 
-Open the search and create dialog.
+Open the :ref:`Search/Create dialog <user-the-search-create-dialog>`.
 Enter a name for the new Topicmap, e.g. "Our Geomap".
-In the topic type selector choose "Topicmap".
-Underneath it you can now choose the type of Topicmap you want to add.
-Select "Geomap" and press "Create".
+In the topic type selector scroll down to the "View" section, select "Geomap" and press "Create".
+Note that the choice of views depends on the plugins you have installed.
 
-.. image:: _static/add-geomap.jpg
+.. image:: _static/add-geomap.png
 
-Open the Topicmap selector in the upper toolbar and select your newly created geomap.
+Open the :ref:`Topicmap selector <user-the-topic-map-selector>` in the upper toolbar and select your newly created geomap.
 The map is displayed with all items you assigned an address to.
 
-.. image:: _static/topic-map-selection.jpg
+.. image:: _static/topic-map-selection.png
 
 If you click onto an item the in-map details show you what is there.
 
 .. image:: _static/display-map-item.jpg
     :width: 400
+
+.. note:: It is recommended to install the plugin before entering addresses! If you enter addresses while the Geomaps plugin is not installed, the addresses are not assigned any geo coordinates unless they are reedited and saved again while the plugin is installed.
 
 You return to the other Topicmaps via the :ref:`Topicmap Selector<user-the-topic-map-selector>`.
 
