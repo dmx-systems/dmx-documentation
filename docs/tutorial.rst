@@ -48,7 +48,7 @@ That's why you enter whatever you want to create into the search field.
 Let's assume you want to enter all persons and organizations involved in a project.
 Enter a person's first name.
 DMX will answer "No match".
-Select "Person" in the "Create" section on the right from the Topic Types menu and click "Create".
+Select "Person" in the "Create" section on the right from the Topic Type menu and click "Create".
 
 .. image:: _static/create-person.png
 
