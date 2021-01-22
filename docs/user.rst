@@ -778,9 +778,9 @@ Choose a color for your association type and save it.
 
 .. _user-navigation:
 
-*********************
-Searching the storage
-*********************
+*********
+Searching
+*********
 
 .. _user-searching-the-database:
 
@@ -908,9 +908,9 @@ If you escape the special character and you add a wild card to the end of the st
 
 .. note:: Advanced search along associations is not yet supported.
 
-************************
+**********
 Navigating
-************************
+**********
 
 .. _user-associative-navigation:
 
@@ -1181,9 +1181,9 @@ This is to support a so called "kiosk mode" in which users can search, explore a
 
 .. _user-modeling:
 
-********************
-Modeling the storage
-********************
+********
+Modeling
+********
 
 A data model is an abstract model that defines all elements needed to represent items, their properties and their relationships.
 DMX enables users to create their own data models.
