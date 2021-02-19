@@ -1030,7 +1030,8 @@ Changing a password
 -------------------
 
 Users can change their own password by searching for it and editing it.
-Open the :ref:`Search/Create Dialog <user-the-search-create-dialog>`, enter your user name and click it to reveal it on the Topicmap.
+Open the :ref:`Search/Create Dialog <user-the-search-create-dialog>`, enter your user name and search for the according user account topic.
+Reveal it on the Topicmap.
 
 .. image:: _static/user-account.png
 
