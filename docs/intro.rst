@@ -1,7 +1,7 @@
 .. _intro:
 
 ############
-Introduction
+What is DMX?
 ############
 
 DMX is a knowledge building platform.

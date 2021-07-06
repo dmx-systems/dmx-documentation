@@ -1,4 +1,4 @@
-# dmx-documentation
+# DMX Documentation
 
 Documentation for the DMX platform, as available at https://docs.dmx.systems/.
 
