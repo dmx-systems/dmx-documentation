@@ -26,3 +26,9 @@ One specialty of the DMX data model is that associations can not only connect to
 DMX can't store **knowledge** though. No machine or software ever can. Knowledge exists in heads.
 
 Specialty: the DMX UI is explicitly designed around the user's *situatedness* and supports knowledge building, memorization, and retrieval.
+
+.. hint::
+
+    This is a documentation rewrite project for DMX 5.2. It is work in progress.
+
+    For a more complete documentation see DMX 5.0. Click in the bottom/left corner and under Versions choose ``stable``.
