@@ -21,7 +21,7 @@
 
 project = u'DMX'
 copyright = u'2021 DMX Systems, https://dmx.berlin, Author: Jörg Richter <jri@dmx.berlin>, License: Creative Commons Attribution-ShareAlike 4.0 International (https://creativecommons.org/licenses/by-sa/4.0/)'
-author = "Jörg Richter <jri@dmx.berlin>"
+author = u'Jörg Richter <jri@dmx.berlin>'
 
 # The short X.Y version
 version = u''
@@ -110,7 +110,7 @@ html_context = {
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'DMX - The Context Machine'
+htmlhelp_basename = 'DMX'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -137,8 +137,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'dmx.tex', u'DMX - The Context Machine',
-     u'silke', 'manual'),
+    (master_doc, 'dmx.tex', u'DMX', author, 'manual'),
 ]
 
 
@@ -147,8 +146,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'dmx', u'DMX - The Context Machine',
-     [author], 1)
+    (master_doc, 'dmx', u'DMX', [author], 1)
 ]
 
 
@@ -158,9 +156,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'DMX', u'DMX - The Context Machine',
-     author, 'Silke Meyer', 'DMX is a knowledge building platform.',
-     'Miscellaneous'),
+    (master_doc, 'DMX', u'DMX', author, 'DMX', 'DMX is a knowledge building platform.', 'Miscellaneous'),
 ]
 
 
