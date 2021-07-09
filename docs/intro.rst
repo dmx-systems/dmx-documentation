@@ -44,9 +44,9 @@ Semantic Storage, Immutability, Value Integration
 User Interface
 **************
 
-DMX can't store or display **knowledge**. No machine or software ever can. Knowledge is created in heads, in heads of living creatures who constantly make sense of the situation around, driven by intent, mood, preconceptions etc. Knowledge creation is an *individual* process first of all -- and the design of the DMX UI accomodates that.
+DMX can't store or display **knowledge**. No machine or software ever can. Knowledge is created in heads, in heads of human beings (and other creatures) who constantly make sense of the situation around, driven by intent, mood, preconceptions etc. First of all knowledge creation is an *individual* process -- and the design of the DMX UI accomodates that. The DMX UI handles **information** in a way that *supports* the individual users with knowledge building, memorization, and retrieval.
 
-The DMX UI handles **information** in a way that *supports* the individual users with knowledge building, memorization, and retrieval.
+.. figure:: _static/detail-panel.png
 
 .. hint::
 
