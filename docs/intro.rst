@@ -10,7 +10,7 @@ What is DMX?
 
 DMX is a knowledge building platform for individuals and work groups.
 
-DMX can't store or display **knowledge**. No machine or software ever can. Knowledge is created in heads, in heads of human beings (and other creatures) who constantly make sense of the situation around, driven by intent, mood, preconceptions etc. First of all knowledge creation is an *individual* process -- and the design of the DMX UI accommodates that.
+DMX can't store or display **knowledge**. No machine or software ever can. Knowledge is created in heads. In the heads of human beings (and other creatures) who constantly make sense of the situation around, driven by intent, mood, preconceptions etc. First of all knowledge creation is an *individual* process -- and the design of the DMX UI accommodates that.
 
 One DMX specialty is the Topic Maps based user interface which puts the user in direct contact with the objects of discourse -- instead with applications and windows, and the borders they create. The DMX UI allows the user to handle **information** in a way that *supports* her individual knowledge building, memorization, and retrieval. DMX strives to become a work environment for knowledge workers e.g. students, authors, journalists, researchers, archivists.
 
@@ -28,7 +28,7 @@ In DMX **information** is represented as *things* and *relationships* between th
 
     A person, a organization, and a note, connected by relationships.
 
-Things in DMX are called *Topics*, and relationships are basically *Associations*. A topic can represent e.g. a person, an organization, a file, a book, or a planet. Also an idea or an emotion can be stored as a topic.
+Things in DMX are called *Topics*, and relationships are called *Associations*. A topic can represent e.g. a person, an organization, a file, a book, or a planet. Also an idea or an emotion can be stored as a topic.
 
 One specialty of the DMX data model is that associations can not only connect topics, but associations as well! This is an association can be treated as a *things* too: besides its connectivity trait they can be an object of discourse themselves.
 
@@ -46,7 +46,17 @@ User Interface
 
 .. figure:: _static/detail-panel.png
 
-    The typical DMX user interface presents a *Topic Map*: objects of discourse as well as their relationships are are represented by *topics* and *associations*. Different *types* of topics are differentiated by icon. Different *types* of associations are differentiated by color.
+    The typical DMX user interface presents a **Topic Map**: objects of discourse as well as their relationships are represented by **Topics** and **Associations**. Different **types** of topics are differentiated by icon. Different types of associations are differentiated by color.
+
+Of course there is more to a topic than just an icon and a label. Their is *detail* information behind it. To see it just click the topic. Its details are displayed in-map:
+
+.. figure:: _static/in-map-details-pinning.png
+
+And yes, associations also have detail information. To see them in-map just click the association. Now we can see: the green ones are of type "Organization Involvement". A certain person is involved in a certain organization.
+
+.. figure:: _static/create-organization-association.png
+
+     A selected association (thicker line) and its detail information displayed in-map. Details comprise the association's type and value (not shown), the 2 player topics the association connects, each one qualified by a **Role Type**.
 
 .. hint::
 
