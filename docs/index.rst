@@ -9,7 +9,8 @@ DMX
 .. toctree::
    :maxdepth: 2
 
-   intro
+   preface
+   overview
    devel
 
 
