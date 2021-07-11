@@ -22,13 +22,17 @@ Driven by ... DMX follows special approaches at every level: data model, user in
 Data Model
 **********
 
-In DMX **information** is represented as *things* and *relationships* between things.
+In DMX information is represented as *topics* and *associations*:
 
 .. figure:: _static/organization-association.png
 
-    A person, a organization, and a note, connected by relationships.
+    3 topics connected by 2 associations. The topics represent a person, an organization, and a note respectively. One of the 2 associations is distinguished by color and label.
 
-Things in DMX are called *Topics*, and relationships are called *Associations*. A topic can represent e.g. a person, an organization, a file, a book, or a planet. Also an idea or an emotion can be stored as a topic.
+A topic can represent any *thing*. This example involves topics of type "Person", "Organization", and "Note". Other *topic types* could be e.g. "Person", "Organization", "File", "Book", or "Planet". Also an idea or an emotion can be expressed as a topic.
+
+An association represents a meaningful relationship between two things. What that meaning is can be expressed by a) the association's *type*, and b) the attached value. Both is optional. A generic association still expresses *some* relationship between the 2 things.
+
+DMX comes with a type collection pre-installed, suitable for basic Personal Information Management tasks. More types can be created interactively, or by installing plugins.
 
 One specialty of the DMX data model is that associations can not only connect topics, but associations as well! This is an association can be treated as a *things* too: besides its connectivity trait they can be an object of discourse themselves.
 
@@ -38,7 +42,7 @@ One specialty of the DMX data model is that associations can not only connect to
 
 ... and yes, an association can also connect 2 associations. Not shown here.
 
-Semantic Storage, Immutability, Value Integration
+Role Types, Semantic Storage, Immutability, Value Integration
 
 **************
 User Interface
