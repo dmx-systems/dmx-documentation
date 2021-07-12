@@ -28,19 +28,26 @@ In DMX information is represented as *topics* and *associations*:
 
     3 topics connected by 2 associations. The topics represent a person, an organization, and a note respectively. One of the 2 associations is distinguished by color and label.
 
-A topic can represent any *thing*. This example involves topics of type "Person", "Organization", and "Note". Other *topic types* could be e.g. "Person", "Organization", "File", "Book", or "Planet". Also an idea or an emotion can be expressed as a topic.
+A topic can represent any kind *object*. This example involves topics of type "Person", "Organization", and "Note". Other *topic types* could be e.g. "Person", "Organization", "File", "Book", or "Planet". Also an idea or an emotion can be expressed as a topic.
 
-An association represents a meaningful relationship between two things. What that meaning is can be expressed by a) the association's *type*, and b) the attached value. Both is optional. A generic association still expresses *some* relationship between the 2 things.
+An association represents a meaningful relationship between two objects. What that meaning is can be expressed by the association's *type* and *value*. Both are optional. A generic association still expresses *some* relationship between 2 objects.
 
 DMX comes with a type collection pre-installed, suitable for basic Personal Information Management tasks. More types can be created interactively, or by installing plugins.
 
-One specialty of the DMX data model is that associations can not only connect topics, but associations as well! This is an association can be treated as a *things* too: besides its connectivity trait they can be an object of discourse themselves.
+One specialty of the DMX data model is that associations can not only connect topics, but associations as well! This is an association can be treated as a *objects* too: besides its connectivity trait they can be an object of discourse themselves.
 
 .. figure:: _static/create-assoc-with-assoc.png
 
     2 notes, one is connected to a topic, and one to an association. The dark gray association connects a topic with an association. You can immediately say what the author want to express here, can't you?
 
 ... and yes, an association can also connect 2 associations. Not shown here.
+
+Types
+=====
+
+.. figure:: _static/person-model.png
+
+
 
 Role Types, Semantic Storage, Immutability, Value Integration
 
