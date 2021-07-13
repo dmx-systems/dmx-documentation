@@ -22,7 +22,7 @@ Driven by ... DMX follows special approaches at every level: data model, user in
 Topics and Associations
 ***********************
 
-In DMX information is represented as *topics* and *associations*:
+DMX represents information as *topics* and *associations*:
 
 .. figure:: _static/organization-association.png
 
@@ -34,13 +34,29 @@ An association represents a relationship between two objects. The relationship's
 
 DMX comes with a collection of basic types for Personal Information Management.
 
-One specialty of the DMX data model is that associations can not only connect topics, but associations as well! This is an association can be treated as a *objects* too: besides its connectivity trait they can be an object of discourse themselves.
+*************************
+Associative Model of Data
+*************************
+
+The above image suggests the DMX storage model is *graph* based: *nodes* and *edges*. Actually DMX is based on an extension of the graph model: the *Associative Model of Data*.
+
+.. figure:: _static/dmx-assoc-data-model.svg
+   :width: 240px
+   :align: left
+
+While in the graph model an edge always connects 2 *nodes*, in the Associative Model of Data an edge can connect *edges* too. Either at one end (A2), or both (A3).
+
+Basically DMX makes associations objects of discourse too. Associations can be associated with other topics/associations, just like topics. This results in expressive highly-connected structures at both levels, data model and content (= *instances*).
 
 .. figure:: _static/create-assoc-with-assoc.png
 
     2 notes, one is connected to a topic, and one to an association. The dark gray association connects a topic with an association. You can immediately say what the author want to express here, can't you?
 
 ... and yes, an association can also connect 2 associations. Not shown here.
+
+.. hint::
+
+    Find out more about the `Associative Model of Data <devel.html#associative-model-of-data>`_ in the DMX Developer Guide.
 
 *****
 Types
