@@ -28,11 +28,28 @@ DMX represents information as *topics* and *associations*:
 
     3 topics connected by 2 associations. The topics represent a person, an organization, and a note respectively. One of the 2 associations is distinguished by color and label.
 
-A topic can represent *any* type of object. What object types are available is decided by the DMX user. A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins.
+A **Topic** can represent *any* type of object. What object types are available is decided by the DMX user. A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins.
 
-An association represents a relationship between two objects. The relationship's *meaning* can be expressed by the association's *type* and *value*. Both are optional. A generic association still expresses *some* relationship between 2 objects.
+An **Association** represents a relationship between two objects. The relationship's *meaning* can be expressed by the association's *type* and *value*. Both are optional. A generic association still expresses *some* relationship between 2 objects.
 
 DMX comes with a collection of basic types for Personal Information Management.
+
+**********
+Role Types
+**********
+
+At this point you may wonder: "Are associations directed?" Answer: "More than that!"
+
+In DMX the 2 ends of an association are not just attributable by "source" and "target", but by *arbitrary* roles, e.g. "parent", "child", "trainer", "trainee", or "trigger" etc.
+
+Each of the 2 ends of a DMX association is defined by:
+
+- The *Player Object*, either a Topic, or an Association
+- A *Role Type*
+
+The **Role Type** expresses what role the player plays in the association.
+
+You can use role type "default" at both ends to express undirectedness.
 
 *************************
 Associative Model of Data
