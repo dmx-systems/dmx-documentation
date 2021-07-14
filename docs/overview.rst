@@ -40,7 +40,7 @@ Role Types
 
 At this point you may wonder: "Are associations directed?" Answer: "More than that!"
 
-In DMX the 2 ends of an association are not just attributable by "source" and "target", but by *arbitrary* roles, e.g. "parent", "child", "trainer", "trainee", or "trigger" etc.
+In DMX the 2 ends of an association are not just attributable by "source" and "target", but by *arbitrary* role types, e.g. "parent", "child", "trainer", "trainee", or "trigger" etc.
 
 Each of the 2 ends of a DMX association is defined by:
 
