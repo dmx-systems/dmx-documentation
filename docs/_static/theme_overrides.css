@@ -11,3 +11,17 @@
       overflow: visible !important;
    }
 }
+
+blockquote {
+   margin-left: 0 !important;
+   padding: 1em;
+   background-color: rgb(219, 250, 244);
+}
+
+blockquote p {
+   margin-bottom: 0;
+}
+
+blockquote p + p {
+   margin-top: 24px;
+}

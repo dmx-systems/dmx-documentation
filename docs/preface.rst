@@ -20,14 +20,14 @@ Actually the DMX system design, and in particular the DMX user interface, began 
 
     *Knowledge* is not the same as *Information*
 
-Information is reassembled to knowledge again and again, based on the *individual*'s current situation. Information becomes knowledge only by individual assessment. Knowledge is created in heads.
+Information is reassembled to knowledge in ever changing constellations, based on the *individual*'s current situation. Information becomes knowledge only by individual assessment. Knowledge is created in heads.
 
     Knowledge is information connected in a *meaningful* way.
 
 What that meaning is depends on:
 
-    * the situative context
-    * the intended purpose
-    * subjective factors (mood, preconceptions etc.)
+* the situative context
+* the intended purpose
+* subjective factors (mood, preconceptions etc.)
 
-At this point it is clear that machines do not store knowledge. They never will.
+At this point it becomes clear that machines do not store knowledge. They never will.
