@@ -115,4 +115,4 @@ And yes, associations also have detail information. To see them in-map just clic
 
     This DMX documentation rewrite effort is very young. It started with the advent of DMX 5.2.
 
-    In contrast the DMX 5.0 documentation is much more complete. Click the bottom/left corner and choose version ``stable``.
+    For a more complete documentation see the `DMX 5.0 docs <https://dmx.readthedocs.io/en/stable/>`_.
