@@ -23,7 +23,7 @@ DMX provides 4 things:
     - Modeling
     - Presentation
 
-3. An application model that is suitable for Domain Driven Design in combination with a **Plugin Development Framework** for the development of full-stack plugins.
+3. An application model that is suitable for Domain Driven Design, in combination with a **Plugin Development Framework** for the development of full-stack plugins.
 4. A pre-installed ontology (contacts, notes, web links, events) for basic information management needs.
 
 Technically DMX is a web application server written in Java. Its service-oriented architecture is OSGi-based (Apache Felix); DMX application developers need no OSGi knowledge; JAX-RS knowledge is recommended though. DMX comes with web server (Jetty), database (Neo4j), the "DMX Webclient" (built in Vue.js, Vuex, Element UI) included, and offers a plugin development framework. DMX plugins are full-stack (from data model to front end) and hot deployable. A DMX default installation is *single-user*; its web server will reject any request not from localhost. From 5.0-beta-1 (Jan 30, 2019) on to current 5.2 the size of the DMX download zip file is unchanged at 7.5 MB -- much less than the competing Jakarta EE servers.
@@ -50,18 +50,18 @@ DMX comes with a collection of basic types for Personal Information Management.
 Role Types
 **********
 
-At this point you may wonder: "Are associations directed?" Answer: "More than that!"
+At this point you may wonder: "Are associations directed?" Answer: "More than that."
 
-In DMX the 2 ends of an association are not just attributable by "source" and "target", but by *arbitrary* role types, e.g. "parent", "child", "trainer", "trainee", or "trigger" etc.
+In DMX the 2 ends of an association are not just qualified by "source" and "target", but can be qualified by *arbitrary* role types, e.g. "parent", "child", "cause", "effect", "trainer", "trainee" etc. One or both ends can still be unqualified (expressed by role type "default"). Undirected associations are expressed by role type "default" at both ends.
 
-Each of the 2 ends of a DMX association is defined by:
+Each of the 2 ends of an association is defined by:
 
 - The *Player Object*, either a Topic, or an Association
 - A *Role Type*
 
-The **Role Type** expresses what role the player plays in the association.
+The **Role Type** expresses what role the player object plays in the association.
 
-You can use role type "default" at both ends to express undirectedness.
+A DMX user can create new types interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins.
 
 *************************
 Associative Model of Data
