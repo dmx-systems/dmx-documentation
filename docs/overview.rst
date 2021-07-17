@@ -52,16 +52,21 @@ Role Types
 
 At this point you may wonder: "Are associations directed?" Answer: "More than that."
 
-In DMX the 2 ends of an association are not just qualified by "source" and "target", but can be qualified by *arbitrary* role types, e.g. "parent", "child", "cause", "effect", "trainer", "trainee" etc. One or both ends can still be unqualified (expressed by role type "default"). Undirected associations are expressed by role type "default" at both ends.
+In DMX the 2 ends of an association are not solely qualified by "source" and "target", but can be qualified by arbitrary *role types*, e.g. "Parent", "Child", "Cause", "Effect", "Trainer", "Trainee" etc.
 
-Each of the 2 ends of an association is defined by:
+.. figure:: _static/role-types.png
 
-- The *Player Object*, either a Topic, or an Association
-- A *Role Type*
+    Plato is the Trainee in one association and the Trainer in another one.
+    The pink associations are of type "Apprenticeship".
 
-The **Role Type** expresses what role the player object plays in the association.
+In DMX each of the 2 ends of an association is defined by:
 
-A DMX user can create new types interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins.
+- The *Player Object*: either a Topic, or an Association.
+- A **Role Type** expresses what role the player object plays in the association.
+
+One or both ends can still be unqualified (expressed by role type "Default"). Nondirectional associations are expressed by role type "Default" at both ends.
+
+A DMX user can create new role types interactively in the DMX Webclient. Another way of obtaining new role types is by installing DMX plugins.
 
 *************************
 Associative Model of Data
