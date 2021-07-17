@@ -9,18 +9,26 @@ What is DMX?
 ************
 
 DMX is a knowledge building platform for individuals and work groups.
-With DMX you handle information in a way that supports individual knowledge building, memorization, retrieval, and presentation.
-The design of the DMX platform is based on the insight that machines do not store *knowledge* but *information* (see :ref:`preface`).
-DMX strives to become the work environment of choice for knowledge workers of all kind, e.g. students, authors, journalists, researchers, archivists.
+The design of DMX is guided by the insight that machines do not store *knowledge* but *information* (see :ref:`preface`).
+The DMX UI allows you to handle information in a way that supports knowledge building, memorization, and retrieval. It does so by putting you in direct contact with linked information -- instead of with applications and windows, and the borders this creates.
+DMX strives to become a popular work environment for knowledge workers of all kind, e.g. students, authors, journalists, researchers, archivists.
 
-DMX provides you 4 things:
+DMX provides 4 things:
 
-1. A **corporate storage** serves as a accumulated body of data, information, and knowledge*) created in the course of an individual's or an organization's life.
-2. One DMX specialty is the **user interface** which puts the user in direct contact with the objects of discourse -- instead with applications and windows, and the borders they create.
-3. An **application development framework**.
-4. A pre-installed ontology for basic information management tasks (contacts, notes, bookmarks, events).
+1. A **Corporate Memory** that serves as an accumulated body of data, information, and knowledge*) created in the course of an individual's or an organization's life.
+2. An unified **User Interface** suitable for all areas:
+
+    - Investigation
+    - Authoring
+    - Modeling
+    - Presentation
+
+3. An application model that is suitable for Domain Driven Design in combination with a **Plugin Development Framework** for the development of full-stack plugins.
+4. A pre-installed ontology (contacts, notes, web links, events) for basic information management needs.
 
 Technically DMX is a web application server written in Java. Its service-oriented architecture is OSGi-based (Apache Felix); DMX application developers need no OSGi knowledge; JAX-RS knowledge is recommended though. DMX comes with web server (Jetty), database (Neo4j), the "DMX Webclient" (built in Vue.js, Vuex, Element UI) included, and offers a plugin development framework. DMX plugins are full-stack (from data model to front end) and hot deployable. A DMX default installation is *single-user*; its web server will reject any request not from localhost. From 5.0-beta-1 (Jan 30, 2019) on to current 5.2 the size of the DMX download zip file is unchanged at 7.5 MB -- much less than the competing Jakarta EE servers.
+
+DMX is dual licensed Open Source software. The Community Edition is licensed under the GNU Affero General Public License (GNU AGPLv3).
 
 ***********************
 Topics and Associations
