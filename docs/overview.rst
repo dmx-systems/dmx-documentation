@@ -21,6 +21,7 @@ DMX provides 4 things:
     - Investigation
     - Authoring
     - Modeling
+    - Collaboration
     - Presentation
 
 3. An application model that is suitable for Domain Driven Design, in combination with a **Plugin Development Framework** for the development of full-stack plugins.
@@ -40,15 +41,14 @@ DMX represents information as *topics* and *associations*:
 
     3 topics connected by 2 associations. The topics represent a person, an organization, and a note respectively. One of the 2 associations is distinguished by color and label.
 
-A **Topic** can represent *any* type of object. What object types are available is decided by the DMX user. A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins.
+A **Topic** can represent any type of object, e.g. a person, an organization, a note, a contract, a project, a date, a planet name, a molecule, a review, or a book. Also an idea or an emotion can be expressed as a topic.
+
+What object types are available is actually decided by the DMX user. A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins.
 
 An **Association** represents a relationship between two objects. The relationship's *meaning* can be expressed by the association's *type* and *value*. Both are optional. A generic association still expresses *some* relationship between 2 objects.
 
-DMX comes with a collection of basic types for Personal Information Management.
-
-**********
 Role Types
-**********
+==========
 
 At this point you may wonder: "Are associations directed?" Answer: "More than that."
 
@@ -96,15 +96,13 @@ Basically DMX makes associations objects of discourse too. Associations can be a
 Types
 *****
 
-The above examples show topics of type "Person", "Organization", and "Note". Other *topic types* could be e.g. "Person", "Organization", "File", "Book", or "Planet". Also an idea or an emotion can be expressed as a topic.
+The above examples show topics of type "Person", "Organization", and "Note". Other *topic types* could be e.g. "Contract", "Project", "Date", "Planet Name", "Molecule", "Review", or "Book".
 
-DMX comes with a type collection pre-installed, suitable for basic Personal Information Management tasks. More types can be created interactively, or by installing plugins.
+DMX comes with a collection of pre-installed types ("Person", "Organization", "Note", "Bookmark", "Event", "Address", "Email Address" etc.) for basic information management needs.
 
 .. figure:: _static/person-model.png
 
-
-
-Role Types, Semantic Storage, Immutability, Value Integration
+A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins.
 
 **************
 User Interface
