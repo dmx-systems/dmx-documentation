@@ -45,7 +45,7 @@ A **Topic** can represent any type of object, e.g. a person, an organization, a 
 
 What object types are available is actually decided by the DMX user. A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins. A fresh DMX installation provides some basic types for information management (contacts, notes, web links, events).
 
-An **Association** represents a relationship between two objects. The relationship's *meaning* can be expressed by the association's *type* and *value*. Both are optional. A generic association still expresses *some* relationship between 2 objects.
+An **Association** represents a relationship between two objects. The relationship's *meaning* is expressed by both, the association's *type* and *value*. Both are optional. A generic association still expresses *some* relationship between 2 objects.
 
 Role Types
 ==========
@@ -88,6 +88,23 @@ Basically DMX makes associations objects of discourse too. Associations can be a
 .. hint::
 
     Find out more about the `Associative Model of Data <devel.html#associative-model-of-data>`_ in the DMX Developer Guide.
+
+******
+Values
+******
+
+So far topics were depicted solely as *icon* plus *label*. But there is more to a person than a name, isn't it? Actually a value of type "Person" is an entire *value hierarchy*, for example: the Person has a name and an Address, the Address has a Postal Code, and the Postal Code is the string "SO36".
+
+"Person" and "Address" in this example are *composite* values, and "Postal Code" is a *simple* value. And this is exactly how values are stored in the Corporate Memory: as an hierarchy of typed topics:
+
+.. figure:: _static/person-value.png
+
+DMX has the specialty that not only topics represent values, but association too. In this regard there is no difference between topics and associations:
+
+- both are typed
+- both have a value
+
+The type determines the structure of the value.
 
 *****
 Types
