@@ -43,7 +43,7 @@ DMX represents information as *topics* and *associations*:
 
 A **Topic** can represent any type of object, e.g. a person, an organization, a note, a contract, a project, a date, a planet name, a molecule, a review, or a book. Also an idea or an emotion can be expressed as a topic.
 
-What object types are available is actually decided by the DMX user. A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins.
+What object types are available is actually decided by the DMX user. A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins. A fresh DMX installation provides some basic types for information management (contacts, notes, web links, events).
 
 An **Association** represents a relationship between two objects. The relationship's *meaning* can be expressed by the association's *type* and *value*. Both are optional. A generic association still expresses *some* relationship between 2 objects.
 
@@ -68,11 +68,10 @@ One or both ends can still be unqualified (expressed by role type "Default"). No
 
 A DMX user can create new role types interactively in the DMX Webclient. Another way of obtaining new role types is by installing DMX plugins.
 
-*************************
 Associative Model of Data
-*************************
+=========================
 
-The above image suggests the DMX storage model is *graph* based: *nodes* and *edges*. Actually DMX is based on an extension of the graph model: the *Associative Model of Data*.
+The above images suggest the DMX storage model is *graph* based: *nodes* and *edges*. Actually DMX is based on an extension of the graph model: the *Associative Model of Data*.
 
 .. figure:: _static/dmx-assoc-data-model.svg
    :width: 240px
@@ -86,8 +85,6 @@ Basically DMX makes associations objects of discourse too. Associations can be a
 
     2 notes, one is connected to a topic, and one to an association. The dark gray association connects a topic with an association. You can immediately say what the author want to express here, can't you?
 
-... and yes, an association can also connect 2 associations. Not shown here.
-
 .. hint::
 
     Find out more about the `Associative Model of Data <devel.html#associative-model-of-data>`_ in the DMX Developer Guide.
@@ -98,7 +95,7 @@ Types
 
 The above examples show topics of type "Person", "Organization", and "Note". Other *topic types* could be e.g. "Contract", "Project", "Date", "Planet Name", "Molecule", "Review", or "Book".
 
-DMX comes with a collection of pre-installed types ("Person", "Organization", "Note", "Bookmark", "Event", "Address", "Email Address" etc.) for basic information management needs.
+A fresh DMX installation provides some basic types for information management ("Person", "Organization", "Note", "Bookmark", "Event", "Address", "Email Address" etc.).
 
 .. figure:: _static/person-model.png
 
