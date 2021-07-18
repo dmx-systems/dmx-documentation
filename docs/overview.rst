@@ -99,7 +99,9 @@ So far topics were depicted solely as *icon* plus *label*. But there is more to 
 
 .. figure:: _static/person-value.png
 
-DMX has the specialty that not only topics represent values, but association too. In this regard there is no difference between topics and associations:
+    A value of type "Person" as stored in the Corporate Memory. The value "Cathy Jones" is composed of a "Person Name" value and an "Address" value, which is composed of a "Street" value, a "Postal Code" value etc. The red associations are of type "Composition" and form the topic hierarchy. They are directed from "Parent" to "Child". The leaf-nodes are the *simple* values. Some values have their corresponding type topic revealed. The cyan associations are of type "Instantiation" and are directed from "Instance" to "Type".
+
+DMX has the specialty that not only topics represent values, but associations too. In this regard there is no difference between topics and associations:
 
 - both are typed
 - both have a value
