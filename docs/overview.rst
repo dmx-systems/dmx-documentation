@@ -133,13 +133,13 @@ A fresh DMX installation provides some basic types for information management ("
 
 A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins.
 
-**************
-User Interface
-**************
+**********
+Topic Maps
+**********
 
 .. figure:: _static/detail-panel.png
 
-    The typical DMX user interface presents a **Topic Map**: objects of discourse as well as their relationships are represented by **Topics** and **Associations**. Different **types** of topics are differentiated by icon. Different types of associations are differentiated by color.
+    The typical DMX user interface presents a **Topic Map** consisting of **Topics** and **Associations**. The topic's type is represented by icon. Association types are differentiated by color.
 
 .. hint::
 
