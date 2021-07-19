@@ -11,7 +11,13 @@ DMX
 
    preface
    overview
+   install
+   tutorial
+   user
    devel
+   admin
+   plugins
+   support
 
 
 Indices and tables
