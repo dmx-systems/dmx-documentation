@@ -111,15 +111,20 @@ The type determines the structure of the value.
 Detail Rendering
 ================
 
-The above image shows how values are *stored* in DMX. But this is not necessarily a suitable way to *present* information or to *interact* with it. For every topic and association DMX provides a *detail* rendering. To see it just click the topic:
+The above image shows how values are *stored* in DMX. But this is not necessarily a suitable way to *present* information or to *interact* with it. For every topic/association DMX provides a default *detail rendering*. It renders a composite value in a linear and compact form.
+
+At any time a topic's/association's detail information is one click away, and once clicked, it is displayed in-place:
 
 .. figure:: _static/in-map-details-pinning.png
 
-... or click the association. The green associations by the way are of type "Organization Involvement" and express that a Person is involved in an Organization, and in what way.
+    Topic detail information displayed in-place once a topic is clicked.
+    The green associations are of type "Organization Involvement" and express that a Person is involved in an Organization, and in what way.
 
 .. figure:: _static/create-organization-association.png
 
-     A selected association (thicker line) and its detail information. Details comprise the association's type and value (not shown), the 2 player topics the association connects, each one qualified by a **Role Type**.
+     A selected association (thicker line) and its detail information. Details comprise the association's type and value (not shown), and the 2 player topics, each one qualified by **Role Type**.
+
+The detail rendering is driven by the topic's/association's type definition.
 
 *****
 Types
