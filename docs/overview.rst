@@ -126,6 +126,15 @@ At any time a topic's/association's detail information is one click away, and on
 
 The detail rendering is driven by the topic's/association's type definition.
 
+Custom Renderers
+================
+
+The detail rendering is customizable on a per-type basis.
+
+A standard DMX installation provides custom renderers for the following types: "Topic Type", "Association Type", "File", "Folder", "Date", "Time" (composite), "URL", "Email Address", "File Size" (simple).
+
+Further custom detail renderers can be obtained by installing DMX plugins.
+
 *****
 Types
 *****
