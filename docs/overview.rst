@@ -108,6 +108,19 @@ DMX has the specialty that not only topics represent values, but associations to
 
 The type determines the structure of the value.
 
+Detail Rendering
+================
+
+The above image shows how values are *stored* in DMX. But this is not necessarily a suitable way to *present* information or to *interact* with it. For every topic and association DMX provides a *detail* rendering. To see it just click the topic:
+
+.. figure:: _static/in-map-details-pinning.png
+
+... or click the association. The green associations by the way are of type "Organization Involvement" and express that a Person is involved in an Organization, and in what way.
+
+.. figure:: _static/create-organization-association.png
+
+     A selected association (thicker line) and its detail information. Details comprise the association's type and value (not shown), the 2 player topics the association connects, each one qualified by a **Role Type**.
+
 *****
 Types
 *****
@@ -127,16 +140,6 @@ User Interface
 .. figure:: _static/detail-panel.png
 
     The typical DMX user interface presents a **Topic Map**: objects of discourse as well as their relationships are represented by **Topics** and **Associations**. Different **types** of topics are differentiated by icon. Different types of associations are differentiated by color.
-
-Of course there is more to a topic than just an icon and a label. Their is *detail* information behind it. To see it just click the topic. Its details are displayed in-map:
-
-.. figure:: _static/in-map-details-pinning.png
-
-And yes, associations also have detail information. To see them in-map just click the association. Now we can see: the green ones are of type "Organization Involvement". A certain person is involved in a certain organization.
-
-.. figure:: _static/create-organization-association.png
-
-     A selected association (thicker line) and its detail information displayed in-map. Details comprise the association's type and value (not shown), the 2 player topics the association connects, each one qualified by a **Role Type**.
 
 .. hint::
 
