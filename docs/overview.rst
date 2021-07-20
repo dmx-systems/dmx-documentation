@@ -153,4 +153,4 @@ Topic Maps
 
 .. figure:: _static/detail-panel.png
 
-    The typical DMX user interface presents a **Topic Map** consisting of **Topics** and **Associations**. The topic's type is represented by icon. Association types are differentiated by color.
+    The typical DMX user interface presents a **Topic Map** consisting of topics and associations. The topic's type is represented by icon. Association types are differentiated by color.

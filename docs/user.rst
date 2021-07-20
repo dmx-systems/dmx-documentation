@@ -1179,12 +1179,17 @@ Items that are publicly readable stay visible in a topicmap, the rest disappears
 In a public Workspace you are no longer able to edit when logged out, but you can still control the viewport of the Topicmap.
 This is to support a so called "kiosk mode" in which users can search, explore and navigate along all world-readable items in your knowledge base.
 
-
 .. _user-modeling:
 
 ********
 Modeling
 ********
+
+.. attention::
+
+    This chaper is flawed. See `#29 <https://git.dmx.systems/dmx-platform/dmx-documentation/-/issues/29>`_ and `#30 <https://git.dmx.systems/dmx-platform/dmx-documentation/-/issues/30>`_.
+
+    If you have questions, please use the `DMX Forum <https://forum.dmx.systems>`_.
 
 A data model is an abstract model that defines all elements needed to represent items, their properties and their relationships.
 DMX enables users to create their own data models.
