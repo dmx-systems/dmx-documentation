@@ -17,7 +17,7 @@ A default DMX installation is a *local* installation.
 
 The DMX server opens port ``8080``. Your computer is still safe though. The DMX server comes with a request filter and by default it accepts requests only from localhost.
 
-.. hint::
+.. warning::
 
     | DMX requires **Java 8**.
     | DMX is not yet adapted to Java 9 or later.
@@ -25,11 +25,17 @@ The DMX server opens port ``8080``. Your computer is still safe though. The DMX 
     | In case you intend a *networked* DMX installation: Java is only required at server side then.
     | A Java browser plugin is *not* required.
 
+.. hint::
+
+    **Linux users**: if your Linux distribution is apt-based (like Debian/Ubuntu) you can install DMX via apt. Skip to section :ref:`installation-linux-apt`.
+
+    Alternatively you can run the generic zip based DMX installation. Just read on.
+
 *****************************
 Installation and first launch
 *****************************
 
-Although DMX is a client-server application, installation and first launch of the DMX Webclient, is as easy as buttering a toast:
+Although DMX is a client-server application, installation and first launch is as easy as buttering a toast:
 
 1. Download `dmx-5.2.zip <https://download.dmx.systems/dmx-5.2.zip>`_
 2. Unzip it. Result is a folder ``dmx-5.2``
@@ -65,3 +71,38 @@ Stopping the DMX Server
 ***********************
 
 To shutdown the DMX server, in the DMX terminal window enter ``stop 0`` and press ``Return``. While shutting down a lot of information is logged.
+
+.. _installation-linux-apt:
+
+************************************
+Installation from our APT repository
+************************************
+
+For apt-based Linux distributions (like Debian/Ubuntu) we provide a repository.
+It is intended for installations on servers but can obviously be used on Debian/Ubuntu laptops as well.
+The package has a built-in dependency to ``default-jre``.
+
+Here is how to download and execute our install script.
+It adds the repository, installs DMX from it, prompts the user for the DMX admin passphrase and starts DMX as a daemon.
+
+.. code:: bash
+
+    $ curl -sS https://download.dmx.systems/repos/dmx-install.sh | sudo bash
+
+Starting the DMX Server
+=======================
+
+Invoke this command to start the daemon:
+
+.. code::
+
+    systemctl start dmx
+
+Stopping the DMX Server
+=======================
+
+Stop the daemon by running
+
+.. code::
+
+    systemctl stop dmx
