@@ -4,9 +4,18 @@
 Installation
 ############
 
-DMX is a web application. It comes with a web server and database included. The *DMX Webclient* acts as the user interface. It runs in a regular web browser.
+DMX is a web application. The **DMX server** is a (Jetty based) web server. The *DMX Webclient* acts as the user interface. It runs in a regular web browser.
 
-The default DMX installation is a *single-user* installation. Web server and web browser are running on the same machine.
+The DMX server is written in Java. It can be installed on any platform that supports Java, in particular Windows, macOS, and Linux.
+
+There are 2 DMX installation types:
+
+- *local* -- DMX client and server run on *same* machine. Single-user.
+- *networked* -- DMX clients and server run on *different* machines. Multi-user.
+
+A default DMX installation is a *local* installation.
+
+The DMX server opens port ``8080``. Your computer is still safe though. The web server comes with a request filter and by default it accepts requests only from localhost.
 
 .. hint::
 
@@ -22,33 +31,18 @@ Installation and first launch
 
 Although DMX is a client-server application, installation and launching the DMX Webclient for the first time, is as easy as buttering a toast:
 
-1. `Download <https://dmx.berlin/download/>`_ the distribution zip file from DMX website
-2. Unzip it. Result is a folder named ``dmx-5.2``
-3. Open the folder and run the respective starter script for your platform:
+1. Download `dmx-5.2.zip <https://download.dmx.systems/dmx-5.2.zip>`_
+2. Unzip it. Result is a folder ``dmx-5.2``
+3. Open the DMX folder and run the starter script suitable for your platform:
 
    .. figure:: _static/starter-scripts.png
 
-   The starter script runs without any user interaction. The DMX server is launched, a lot of information is logged, and finally a browser window opens, presenting the *DMX Webclient*:
+   The starter script runs without user interaction. The DMX server is launched, a lot of information is logged in a terminal window, and finally a browser window opens, presenting the *DMX Webclient*:
 
    .. figure:: _static/webclient-launch.png
 
-      The pristine DMX Webclient when launched for the 1st time. The actual UI takes the back seat and gives way to your content. At this moment you have none though -- you start with a clean slate.
+      A pristine DMX Webclient when launched for the 1st time. The actual UI takes the back seat and gives way to your content. At this moment you have none though -- you start with a clean slate.
 
-At this moment you've possibly some questions:
+   At 1st run the starter script creates an empty Corporate Memory: a folder ``dmx-db`` now exists inside the DMX folder.
 
-What is installed on my computer?
-    DMX does not install any files on your computer. Everything needed exists in the DMX folder, and stays there.
-
-    At 1st run the starter script creates an empty Corporate Memory: a folder ``dmx-db`` now exists inside the DMX folder.
-
-Are any ports open?
-    Yes, the DMX web server now listens on port 8080. Your computer is still safe though. The web server comes with a request filter and by default it accepts requests only from localhost.
-
-What is the default DMX installation type?
-    There are 2 DMX installation types:
-
-    - *local* -- DMX client and server on *same* machine. Single-user.
-    - *networked* -- DMX clients and server on *different* machines. Multi-user.
-
-    | A DMX default installation is a *local* installation.
-    | The web server request filter accepts requests only from localhost.
+DMX does not install any files on your computer. Everything needed, including the database, exists in the DMX folder, and stays there.
