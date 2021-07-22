@@ -11,7 +11,7 @@ DMX
 
    preface
    overview
-   install
+   installation
    tutorial
    user
    devel
