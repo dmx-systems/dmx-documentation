@@ -10,13 +10,13 @@ What is DMX?
 
 DMX is a knowledge building platform for individuals and work groups.
 The design of DMX is guided by the insight that machines do not store *knowledge* but *information* (see :ref:`preface`).
-The DMX UI allows you to handle information in a way that supports knowledge building, memorization, and retrieval. It does so by putting you in direct contact with linked information -- instead of with applications and windows, and the borders this creates.
+The DMX UI allows you to handle information in a way that supports knowledge building, memorization, and retrieval.
 DMX strives to become a popular work environment for knowledge workers of all kind, e.g. students, authors, journalists, researchers, archivists.
 
 DMX provides 4 things:
 
 1. A **Corporate Memory** that serves as an accumulated body of data, information, and knowledge*) created in the course of an individual's or an organization's life.
-2. An unified **User Interface** suitable for all areas:
+2. An **User Interface** that puts you in contact with linked information -- instead of with applications and windows. The unified DMX user interface is suitable for all areas:
 
     - Investigation
     - Authoring
