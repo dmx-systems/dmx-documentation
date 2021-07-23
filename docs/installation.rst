@@ -4,6 +4,10 @@
 Installation
 ############
 
+**********************
+DMX installation types
+**********************
+
 DMX is a web application. The **DMX Server** is a (Jetty based) web server. The **DMX Webclient** acts as the user interface. It runs in a regular web browser.
 
 The DMX server is written in Java. It can be installed on any platform which supports Java, in particular Windows, macOS, and Linux.
@@ -83,7 +87,7 @@ It is intended for installations on servers but can obviously be used on Debian/
 The package has a built-in dependency to ``default-jre``.
 
 Here is how to download and execute our install script.
-It adds the repository, installs DMX from it, prompts the user for the DMX admin passphrase and starts DMX as a daemon.
+It adds the repository, installs DMX from it, prompts the user for the DMX admin passphrase and starts DMX as a daemon:
 
 .. code:: bash
 
@@ -101,7 +105,7 @@ Invoke this command to start the daemon:
 Stopping the DMX Server
 =======================
 
-Stop the daemon by running
+Stop the daemon by running:
 
 .. code::
 

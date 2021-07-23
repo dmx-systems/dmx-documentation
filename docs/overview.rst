@@ -31,6 +31,8 @@ Technically DMX is a web application server written in Java. Its service-oriente
 
 DMX is dual licensed Open Source software. The Community Edition is licensed under the GNU Affero General Public License (GNU AGPLv3).
 
+The remainder of this "Overview" chapter is a concept-level introduction to DMX.
+
 ***********************
 Topics and Associations
 ***********************

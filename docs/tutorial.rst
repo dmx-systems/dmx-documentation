@@ -4,7 +4,7 @@
 Your first DMX experience
 #########################
 
-To make your first experience with DMX you can:
+To make your first DMX experience you can:
 
 * Visit the `DMX Demo Installation <https://demo.dmx.systems/systems.dmx.webclient/#/topicmap/8551>`_ and play with it. You can explore and search. To *edit* or *create* anything you need to login. See the information there.
 * Install and run DMX on your computer. See :ref:`installation`.
