@@ -43,7 +43,7 @@ Although DMX is a client-server application, installation and first launch is as
 
 1. Download `dmx-5.2.zip <https://download.dmx.systems/dmx-5.2.zip>`_
 2. Unzip it. Result is a folder ``dmx-5.2``
-3. Open the DMX folder and run the starter script suitable for your platform:
+3. Open the DMX Folder and run the starter script suitable for your platform:
 
    .. figure:: _static/starter-scripts.png
 
@@ -53,9 +53,9 @@ Although DMX is a client-server application, installation and first launch is as
 
       A pristine DMX Webclient when launched for the 1st time. The actual UI takes the back seat and gives way to your content. At this moment you have none though -- you start with a clean slate.
 
-   At 1st run the starter script creates an empty Corporate Memory: a folder ``dmx-db`` now exists inside the DMX folder.
+   At 1st run the starter script creates an empty Corporate Memory: a folder ``dmx-db`` now exists inside the DMX Folder.
 
-DMX does not install any files on your computer. Everything needed, including the database, exists in the DMX folder, and stays there.
+DMX does not install any files on your computer. Everything needed, including the database, exists in the DMX Folder, and stays there.
 
 ***********************
 Starting the DMX Server
@@ -64,7 +64,7 @@ Starting the DMX Server
 In case this is your first launch the DMX server is started already.
 Otherwise start it exactly like first launch:
 
-Open the DMX folder and run the starter script suitable for your platform:
+Open the DMX Folder and run the starter script suitable for your platform:
 
 .. figure:: _static/starter-scripts.png
 
@@ -82,6 +82,25 @@ Opening the DMX Webclient
 
 To open the DMX Webclient point your browser to `http://localhost:8080/systems.dmx.webclient/`.
 The DMX Server must be running.
+
+****************
+Uninstalling DMX
+****************
+
+To uninstall DMX:
+
+1. Stop the DMX Server
+2. Delete the DMX Folder
+
+This deletes DMX completely from your computer, including the database.
+
+The Java Runtime Environment needs to be uninstalled separately.
+
+.. warning::
+
+    Your Corporate Memory will be lost.
+
+    To keep it make a copy of the ``dmx-db`` folder before deleting the DMX Folder.
 
 .. _installation-linux-apt:
 
