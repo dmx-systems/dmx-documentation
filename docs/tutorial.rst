@@ -1,21 +1,21 @@
-.. _user-beginners-tutorial:
+.. _tutorial:
 
-###################
-Beginner's Tutorial
-###################
+#########################
+Your first DMX experience
+#########################
 
-To get started with DMX you can
+To make your first experience with DMX you can:
 
-* visit our `public demo site <https://demo.dmx.systems>`_ and play with DMX. Do not enter any private or sensitive information on the demo site!
-* run DMX on your computer. Visit our :ref:`installation guide <installation>` to learn how.
+* Visit the `DMX Demo Installation <https://demo.dmx.systems/systems.dmx.webclient/#/topicmap/8551>`_ and play with it. You can explore and search. To *edit* or *create* anything you need to login. See the information there.
+* Install and run DMX on your computer. See :ref:`installation`.
 
 .. _tutorial-a-first-look-at-dmx:
 
-*******************
-A first look at DMX
-*******************
+***********
+The toolbar
+***********
 
-When you first look at a new DMX instance, this is what you see:
+Always visible at the Webclient's top is the toolbar:
 
 .. figure:: _static/upper-toolbar.png
     :alt: Tool bar with workspace and topicmap selection
@@ -27,15 +27,13 @@ When you first look at a new DMX instance, this is what you see:
 Both drop-down menus have a context information button "i" next to them.
 Click it to reveal detail about the selected Topicmap or Workspace.
 
-.. For the moment the most interesting information is the access control. **The first default Workspace and the default Topicmap are in SharingMode "public" that is: They are not private, but world-readable.** This is important to keep in mind if you are trying DMX on our public demo site or if you installed it on a server that is connected to the internet. You can find out more about access control in the section about :ref:`Collaboration and Sharing<user-collaboration-and-sharing>`.
-
 For more information visit our detailed guide to the :ref:`user interface<user-the-dmx-user-interface>`.
 
 .. _tutorial-adding-your-first-topic:
 
-***********************
-Adding your first topic
-***********************
+**************
+Create a topic
+**************
 
 Right-click somewhere into the Topicmap.
 A dialog appears that lets you search all your content.
@@ -86,9 +84,9 @@ The next section is about the relations between the topics.
 
 .. _tutorial-adding-your-first-association:
 
-*****************************
-Adding your first association
-*****************************
+*********************
+Create an association
+*********************
 
 To create an :ref:`association <user-creating-an-association>` between two topics you grab the little dot at the upper border of one of the two topics.
 If the dot is not visible, hover over the topic with your mouse.
@@ -107,9 +105,9 @@ These are the :ref:`in-map details <user-in-map-details>` of the newly created a
 They tell you that this is association is of type "Association" which is the most generic form of association in DMX.
 Click somewhere onto the Topicmap to close the in-map details of the association.
 
-****************************************************
-A glimpse into Personal Information Management (PIM)
-****************************************************
+*************************************
+A glimpse into information management
+*************************************
 
 DMX comes with some predefined topic types that you saw in the topic type menu of the Search/Create dialog:
 
