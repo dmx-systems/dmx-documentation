@@ -1,35 +1,15 @@
 .. _tutorial:
 
-#########################
-Your first DMX experience
-#########################
+#################
+Hands-On Tutorial
+#################
 
-To make your first DMX experience you can:
+To try out DMX you have 2 possibilities: one is easy and immediate, the other is easy:
 
 * Visit the `DMX Demo Installation <https://demo.dmx.systems/systems.dmx.webclient/#/topicmap/8551>`_ and play with it. You can explore and search. To *edit* or *create* anything you need to login. See the information there.
 * Install and run DMX on your computer. See :ref:`installation`.
 
-.. _tutorial-a-first-look-at-dmx:
-
-***********
-The toolbar
-***********
-
-Always visible at the Webclient's top is the toolbar:
-
-.. figure:: _static/upper-toolbar.png
-    :alt: Tool bar with workspace and topicmap selection
-
-* In the **upper right** corner there is a "Login" button. Log in with the user name "admin" and no password.
-* In the **upper left** corner there is the :ref:`Workspace <user-the-workspace-selector>` selector. You can use this to switch between Workspaces. By default the "DMX" Workspace is selected.
-* Next to it there is another drop-down menu. This is the :ref:`Topicmap <user-the-topic-map-selector>` selector. By default it shows a Topicmap called "untitled".
-
-Both drop-down menus have a context information button "i" next to them.
-Click it to reveal detail about the selected Topicmap or Workspace.
-
-For more information visit our detailed guide to the :ref:`user interface<user-the-dmx-user-interface>`.
-
-.. _tutorial-adding-your-first-topic:
+.. _tutorial-create-topic:
 
 **************
 Create a topic
@@ -82,7 +62,7 @@ This is just a short walkthrough to help you create your first topics in DMX.
 :ref:`Content Authoring<user-content-authoring>` is described in-depth in the DMX User Guide.
 The next section is about the relations between the topics.
 
-.. _tutorial-adding-your-first-association:
+.. _tutorial-create-association:
 
 *********************
 Create an association
@@ -104,6 +84,26 @@ The association will be created and a rectangle appears.
 These are the :ref:`in-map details <user-in-map-details>` of the newly created association.
 They tell you that this is association is of type "Association" which is the most generic form of association in DMX.
 Click somewhere onto the Topicmap to close the in-map details of the association.
+
+.. _tutorial-toolbar:
+
+***********
+The toolbar
+***********
+
+Always visible at the Webclient's top is the toolbar:
+
+.. figure:: _static/upper-toolbar.png
+    :alt: Tool bar with workspace and topicmap selection
+
+* In the **upper right** corner there is a "Login" button. Log in with the user name "admin" and no password.
+* In the **upper left** corner there is the :ref:`Workspace <user-the-workspace-selector>` selector. You can use this to switch between Workspaces. By default the "DMX" Workspace is selected.
+* Next to it there is another drop-down menu. This is the :ref:`Topicmap <user-the-topic-map-selector>` selector. By default it shows a Topicmap called "untitled".
+
+Both drop-down menus have a context information button "i" next to them.
+Click it to reveal detail about the selected Topicmap or Workspace.
+
+For more information visit our detailed guide to the :ref:`user interface<user-the-dmx-user-interface>`.
 
 *************************************
 A glimpse into information management

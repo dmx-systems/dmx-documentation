@@ -83,25 +83,6 @@ Opening the DMX Webclient
 To open the DMX Webclient point your browser to `http://localhost:8080/systems.dmx.webclient/`.
 The DMX Server must be running.
 
-****************
-Uninstalling DMX
-****************
-
-To uninstall DMX:
-
-1. Stop the DMX Server
-2. Delete the DMX Folder
-
-This deletes DMX completely from your computer, including the database.
-
-The Java Runtime Environment needs to be uninstalled separately.
-
-.. warning::
-
-    Your Corporate Memory will be lost.
-
-    To keep it make a copy of the ``dmx-db`` folder before deleting the DMX Folder.
-
 .. _installation-linux-apt:
 
 ************************************
@@ -136,3 +117,22 @@ Stop the daemon by running:
 .. code::
 
     systemctl stop dmx
+
+****************
+Uninstalling DMX
+****************
+
+To uninstall DMX:
+
+1. Stop the DMX Server
+2. Delete the DMX Folder
+
+This deletes DMX completely from your computer, including the database.
+
+The Java Runtime Environment needs to be uninstalled separately.
+
+.. warning::
+
+    Your Corporate Memory will be lost.
+
+    To keep it make a copy of the ``dmx-db`` folder before deleting the DMX Folder.
