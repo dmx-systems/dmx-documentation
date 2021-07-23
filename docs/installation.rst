@@ -76,6 +76,13 @@ Stopping the DMX Server
 
 To shutdown the DMX server, in the DMX terminal window enter ``stop 0`` and press ``Return``. While shutting down a lot of information is logged.
 
+*************************
+Opening the DMX Webclient
+*************************
+
+To open the DMX Webclient point your browser to `http://localhost:8080/systems.dmx.webclient/`.
+The DMX Server must be running.
+
 .. _installation-linux-apt:
 
 ************************************
