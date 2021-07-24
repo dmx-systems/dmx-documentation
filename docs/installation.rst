@@ -10,7 +10,7 @@ DMX installation types
 
 DMX is a web application. The **DMX Server** is a (Jetty based) web server. The **DMX Webclient** acts as the user interface. It runs in a regular web browser.
 
-The DMX server is written in Java. It can be installed on any platform which supports Java, in particular Windows, macOS, and Linux.
+The DMX Server is written in Java. It can be installed on any platform which supports Java, in particular Windows, macOS, and Linux.
 
 There are 2 DMX installation types:
 
@@ -19,7 +19,7 @@ There are 2 DMX installation types:
 
 A default DMX installation is a *local* installation.
 
-The DMX server opens port ``8080``. Your computer is still safe though. The DMX server comes with a request filter and by default it accepts requests only from localhost.
+The DMX Server opens port ``8080``. Your computer is still safe though. The DMX Server comes with a request filter and by default it accepts requests only from localhost.
 
 .. warning::
 
@@ -31,7 +31,7 @@ The DMX server opens port ``8080``. Your computer is still safe though. The DMX 
 
 .. hint::
 
-    **Linux users**: if your Linux distribution is apt-based (like Debian/Ubuntu) you can install DMX via apt. Skip to section :ref:`installation-linux-apt`.
+    **Linux users**: if your Linux distribution is APT-based (like Debian/Ubuntu) you can install DMX via apt. Skip to section :ref:`installation-linux-apt`.
 
     Alternatively you can run the generic zip based DMX installation. Just read on.
 
@@ -47,40 +47,51 @@ Although DMX is a client-server application, installation and first launch is as
 
    .. figure:: _static/starter-scripts.png
 
-   The starter script runs without user interaction. The DMX server is launched, a lot of information is logged in a terminal window, and finally a browser window opens, presenting the *DMX Webclient*:
+   The starter script runs without user interaction. The DMX Server is started, a lot of information is logged to the DMX terminal window, and finally a browser window opens, showing the *DMX Webclient*:
 
    .. figure:: _static/webclient-launch.png
 
-      A pristine DMX Webclient when launched for the 1st time. The actual UI takes the back seat and gives way to your content. At this moment you have none though -- you start with a clean slate.
+      A pristine DMX Webclient when launched for the 1st time. The actual UI takes the back seat and gives way to your content. But at this moment you have none -- you're starting with a clean slate.
 
-   At 1st run the starter script creates an empty Corporate Memory: a folder ``dmx-db`` now exists inside the DMX Folder.
+At 1st run the starter script creates an empty Corporate Memory: a folder ``dmx-db`` now exists inside the DMX Folder.
 
-DMX does not install any files on your computer. Everything needed, including the database, exists in the DMX Folder, and stays there.
+DMX does not install any files on your computer. Everything needed, including the database, exists inside the DMX Folder, and stays there.
+
+.. _start-server:
 
 ***********************
 Starting the DMX Server
 ***********************
 
-In case this is your first launch the DMX server is started already.
-Otherwise start it exactly like first launch:
+.. hint::
 
-Open the DMX Folder and run the starter script suitable for your platform:
+    Do not try starting the DMX Server if it is running already.
+
+    In case you've (accidentally) closed the DMX Webclient window/tab (while the DMX Server is still running): proceed with :ref:`open-webclient`.
+
+    In case you've changed DMX's config and want to restart the server: :ref:`stop the server <stop-server>` first, and start it again.
+
+To start the DMX Server, open the DMX Folder and run the starter script suitable for your platform:
 
 .. figure:: _static/starter-scripts.png
 
-The starter script runs without user interaction. While the DMX server is launched a lot of information is logged in a terminal window. Finally a browser window opens, presenting the *DMX Webclient*.
+The starter script runs without user interaction. While the DMX Server is started a lot of information is logged to the DMX terminal window. Finally a browser window opens, showing the *DMX Webclient*.
+
+.. _stop-server:
 
 ***********************
 Stopping the DMX Server
 ***********************
 
-To shutdown the DMX server, in the DMX terminal window enter ``stop 0`` and press ``Return``. While shutting down a lot of information is logged.
+To shutdown the DMX Server, in the DMX terminal window enter ``stop 0`` and press ``Return``. While shutting down a lot of information is logged.
+
+.. _open-webclient:
 
 *************************
 Opening the DMX Webclient
 *************************
 
-To open the DMX Webclient point your browser to `http://localhost:8080/systems.dmx.webclient/`.
+To open the DMX Webclient point your browser to ``http://localhost:8080/systems.dmx.webclient/``.
 The DMX Server must be running.
 
 .. _installation-linux-apt:
@@ -89,8 +100,8 @@ The DMX Server must be running.
 Installation from our APT repository
 ************************************
 
-For apt-based Linux distributions (like Debian/Ubuntu) we provide a repository.
-It is intended for installations on servers but can obviously be used on Debian/Ubuntu laptops as well.
+For APT-based Linux distributions (like Debian/Ubuntu) we provide an APT repository.
+It is mainly intended for installing DMX on a server machine, but can obviously be used on private Debian/Ubuntu machines as well.
 The package has a built-in dependency to ``default-jre``.
 
 Here is how to download and execute our install script.
