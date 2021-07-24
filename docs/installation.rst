@@ -4,6 +4,8 @@
 Installation
 ############
 
+.. _installation-types:
+
 **********************
 DMX installation types
 **********************
@@ -101,7 +103,7 @@ Installation from our APT repository
 ************************************
 
 For APT-based Linux distributions (like Debian/Ubuntu) we provide an APT repository.
-It is mainly intended for installing DMX on a server machine, but can obviously be used on private Debian/Ubuntu machines as well.
+It is mainly intended for setting up a *networked* DMX installation on a server machine, but can be used for setting up a *local* DMX installation on a private machine as well (see :ref:`installation-types`).
 The package has a built-in dependency to ``default-jre``.
 
 Here is how to download and execute our install script.
@@ -138,7 +140,7 @@ To uninstall DMX:
 1. Stop the DMX Server
 2. Delete the DMX Folder
 
-This deletes DMX completely from your computer, including the database.
+This removes DMX completely from your computer, including the database.
 
 The Java Runtime Environment needs to be uninstalled separately.
 
