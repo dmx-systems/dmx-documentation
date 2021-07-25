@@ -71,7 +71,7 @@ By default the DMX Server listens on port ``8080``.
 To change the port edit ``org.osgi.service.http.port`` in file ``dmx-5.2/conf/config.properties``.
 For the change to take effect, the DMX Server needs to be restarted, that is :ref:`stopped <stop-server>` and :ref:`started <start-server>` in turn.
 
-Further configuration options are described in the :ref:`Admin Guide <admin>`.
+Further configuration options are described in the :ref:`DMX Admin Guide <admin>`.
 
 .. _start-server:
 
@@ -144,6 +144,18 @@ It adds the repository, installs DMX from it, prompts the user for the DMX admin
 
     $ curl -sS https://download.dmx.systems/repos/dmx-install.sh | sudo bash
 
+Configuration
+=============
+
+By default the DMX Server listens on port ``8080``.
+
+To change the port edit ``org.osgi.service.http.port`` in file ``/etc/dmx/config.properties``.
+For the change to take effect, the DMX Server needs to be restarted, that is :ref:`stopped <linux-stop-server>` and :ref:`started <linux-start-server>` in turn.
+
+Further configuration options are described in the :ref:`DMX Admin Guide <admin>`.
+
+.. _linux-start-server:
+
 Starting the DMX Server
 =======================
 
@@ -152,6 +164,8 @@ Invoke this command to start the daemon:
 .. code::
 
     systemctl start dmx
+
+.. _linux-stop-server:
 
 Stopping the DMX Server
 =======================
