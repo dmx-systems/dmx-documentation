@@ -104,7 +104,8 @@ To shutdown the DMX Server, in the DMX terminal window enter ``stop 0`` and pres
 Opening the DMX Webclient
 =========================
 
-To open the DMX Webclient point your browser to ``http://localhost:8080/systems.dmx.webclient/``.
+To open the DMX Webclient point your browser to ``http://localhost:8080/systems.dmx.webclient/``. Note the ``/`` at end.
+
 The DMX Server must be running.
 
 .. _uninstall-dmx:
@@ -175,3 +176,12 @@ Stop the daemon by running:
 .. code::
 
     systemctl stop dmx
+
+.. _linux-open-webclient:
+
+Opening the DMX Webclient
+=========================
+
+To open the DMX Webclient point your browser to ``http://localhost:8080/systems.dmx.webclient/``. Note the ``/`` at end.
+
+The DMX Server must be running.
