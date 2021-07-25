@@ -59,11 +59,14 @@ At 1st run the starter script creates an empty Corporate Memory: a folder ``dmx-
 
 DMX does not install any files on your computer. Everything needed, including the database, exists inside the DMX Folder, and stays there.
 
+*****************************
+Operate your DMX installation
+*****************************
+
 .. _start-server:
 
-***********************
 Starting the DMX Server
-***********************
+=======================
 
 .. hint::
 
@@ -71,7 +74,7 @@ Starting the DMX Server
 
     In case you've (accidentally) closed the DMX Webclient window/tab (while the DMX Server is still running): proceed with :ref:`open-webclient`.
 
-    In case you've changed DMX's config and want to restart the server: :ref:`stop the server <stop-server>` first, and start it again.
+    In case you've changed DMX's config and want restart the server: :ref:`stop the server <stop-server>` first, and start it again.
 
 To start the DMX Server, open the DMX Folder and run the starter script suitable for your platform:
 
@@ -81,20 +84,38 @@ The starter script runs without user interaction. While the DMX Server is starte
 
 .. _stop-server:
 
-***********************
 Stopping the DMX Server
-***********************
+=======================
 
 To shutdown the DMX Server, in the DMX terminal window enter ``stop 0`` and press ``Return``. While shutting down a lot of information is logged.
 
 .. _open-webclient:
 
-*************************
 Opening the DMX Webclient
-*************************
+=========================
 
 To open the DMX Webclient point your browser to ``http://localhost:8080/systems.dmx.webclient/``.
 The DMX Server must be running.
+
+.. _uninstall-dmx:
+
+Uninstalling DMX
+================
+
+To uninstall DMX:
+
+1. Stop the DMX Server
+2. Delete the DMX Folder
+
+This removes DMX completely from your computer, including the database.
+
+The Java Runtime Environment needs to be uninstalled separately.
+
+.. warning::
+
+    Your Corporate Memory will be lost.
+
+    To keep it make a copy of the ``dmx-db`` folder before deleting the DMX Folder.
 
 .. _installation-linux-apt:
 
@@ -130,22 +151,3 @@ Stop the daemon by running:
 .. code::
 
     systemctl stop dmx
-
-****************
-Uninstalling DMX
-****************
-
-To uninstall DMX:
-
-1. Stop the DMX Server
-2. Delete the DMX Folder
-
-This removes DMX completely from your computer, including the database.
-
-The Java Runtime Environment needs to be uninstalled separately.
-
-.. warning::
-
-    Your Corporate Memory will be lost.
-
-    To keep it make a copy of the ``dmx-db`` folder before deleting the DMX Folder.
