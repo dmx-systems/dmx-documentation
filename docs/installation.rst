@@ -4,15 +4,25 @@
 Installation
 ############
 
+************
+Requirements
+************
+
+DMX is a web application. The *DMX Server* is a web application server written in **Java**. It can run on any platform which supports Java, e.g. Windows, macOS, or Linux.
+
+.. warning::
+
+    | DMX requires **Java 8**.
+    | DMX is not yet adapted to Java 9 or later.
+
+| The *DMX Webclient* acts as the user interface. It runs in **a regular web browser**.
+| A Java browser plugin is *not* required.
+
 .. _installation-types:
 
 **********************
 DMX installation types
 **********************
-
-DMX is a web application. The **DMX Server** is a (Jetty based) web server. The **DMX Webclient** acts as the user interface. It runs in a regular web browser.
-
-The DMX Server is written in Java. It can be installed on any platform which supports Java, in particular Windows, macOS, and Linux.
 
 There are 2 DMX installation types:
 
@@ -22,14 +32,6 @@ There are 2 DMX installation types:
 A default DMX installation is a *local* installation.
 
 The DMX Server opens port ``8080``. Your computer is still safe though. The DMX Server comes with a request filter and by default it accepts requests only from localhost.
-
-.. warning::
-
-    | DMX requires **Java 8**.
-    | DMX is not yet adapted to Java 9 or later.
-
-    | In case you intend a *networked* DMX installation: Java is only required at server side then.
-    | A Java browser plugin is *not* required.
 
 .. hint::
 
