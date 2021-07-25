@@ -8,14 +8,14 @@ Installation
 Requirements
 ************
 
-DMX is a web application. The *DMX Server* is a web application server written in **Java**. It can run on any platform which supports Java, e.g. Windows, macOS, or Linux.
+DMX is a web application. The *DMX Server* can run on any platform which supports **Java**, e.g. Windows, macOS, or Linux.
 
 .. warning::
 
     | DMX requires **Java 8**.
     | DMX is not yet adapted to Java 9 or later.
 
-| The *DMX Webclient* acts as the user interface. It runs in **a regular web browser**.
+| The *DMX Webclient* can run in **any modern web browser**.
 | A Java browser plugin is *not* required.
 
 .. _installation-types:
@@ -26,8 +26,8 @@ DMX installation types
 
 There are 2 DMX installation types:
 
-- *local* -- DMX client and server run on *same* machine. Single-user.
-- *networked* -- DMX clients and server run on *different* machines. Multi-user.
+- *local* -- DMX Server and DMX Webclient run on *same* machine. Single-user.
+- *networked* -- DMX Server and DMX Webclients run on *different* machines. Multi-user.
 
 A default DMX installation is a *local* installation.
 
@@ -56,6 +56,10 @@ Although DMX is a client-server application, installation and first launch is as
    .. figure:: _static/webclient-launch.png
 
       A pristine DMX Webclient when launched for the 1st time. The actual UI takes the back seat and gives way to your content. But at this moment you have none -- you're starting with a clean slate.
+
+      .. hint::
+
+         **Windows users**: The Windows Defender Firewall might ask you whether to grant network access to Java applications. Choose *"Private networks, such as my home or work network"*.
 
 At 1st run the starter script creates an empty Corporate Memory: a folder ``dmx-db`` now exists inside the DMX Folder.
 
