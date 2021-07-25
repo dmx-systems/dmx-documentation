@@ -59,9 +59,19 @@ At 1st run the starter script creates an empty Corporate Memory: a folder ``dmx-
 
 DMX does not install any files on your computer. Everything needed, including the database, exists inside the DMX Folder, and stays there.
 
-*****************************
-Operate your DMX installation
-*****************************
+*************************
+Operate your installation
+*************************
+
+Configuration
+=============
+
+By default the DMX Server listens on port ``8080``.
+
+To change the port edit ``org.osgi.service.http.port`` in file ``dmx-5.2/conf/config.properties``.
+For the change to take effect, the DMX Server needs to be restarted, that is :ref:`stopped <stop-server>` and :ref:`started <start-server>` in turn.
+
+Further configuration options are described in the :ref:`Admin Guide <admin>`.
 
 .. _start-server:
 
@@ -99,8 +109,8 @@ The DMX Server must be running.
 
 .. _uninstall-dmx:
 
-Uninstalling DMX
-================
+Uninstall
+=========
 
 To uninstall DMX:
 

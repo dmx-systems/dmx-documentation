@@ -1,8 +1,8 @@
 .. _overview:
 
-############
-DMX Overview
-############
+###############
+Overview of DMX
+###############
 
 ************
 What is DMX?
