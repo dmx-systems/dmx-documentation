@@ -4,246 +4,167 @@
 Installation
 ############
 
-DMX is built on the Java Platform which can be installed on most operating systems.
-On this page we have covered how to run DMX on :ref:`Windows <installation-windows>`, :ref:`Mac OS <installation-macos>` and :ref:`Linux <installation-linux>`.
+************
+Requirements
+************
 
-DMX is a web application consisting of a client and a server.
-When you run DMX, a web server is started (see Starting DMX) making the DMX web client accessible in your web browser (see Opening the Web Client).
+DMX is a web application. The *DMX Server* can run on any platform which supports **Java**, e.g. Windows, macOS, or Linux.
 
-.. _installation-windows:
+.. warning::
+
+    | DMX requires **Java 8**.
+    | DMX is not yet adapted to Java 9 or later.
+
+| The *DMX Webclient* can run in **any modern web browser**.
+| A Java browser plugin is *not* required.
+
+.. _installation-types:
 
 **********************
-Running DMX on Windows
+DMX installation types
 **********************
 
-Installing Java
-===============
+There are 2 DMX installation types:
 
-DMX runs out of the box with Java versions 6 to 8.
-To run DMX we recommend you use **Java 8**.
-If Java 8 is not already installed you can download it from the `AdoptOpenJDK <https://adoptopenjdk.net/>`_ or `Oracle's Java <https://java.com/en/download/>`_ website.
-Double-click the downloaded file and click through the installer.
+- *local* -- DMX Server and DMX Webclient run on *same* machine. Single-user.
+- *networked* -- DMX Server and DMX Webclients run on *different* machines. Multi-user.
 
-Downloading DMX
-===============
+A default DMX installation is a *local* installation.
 
-The latest stable release is the `DMX 5.1 release <https://download.dmx.systems/dmx-5.1.zip>`_.
-Previous versions of DMX are available for download on https://download.dmx.systems/.
+The DMX Server opens port ``8080``. Your computer is still safe though. The DMX Server comes with a request filter and by default it accepts requests only from localhost.
 
-Save the according file to a location of your choice.
-Extract the ``.zip`` archive.
+.. hint::
 
-.. image:: _static/windows-extract-zip.png
+    **Linux users**: if your Linux distribution is APT-based (like Debian/Ubuntu) you can install DMX via apt. Skip to section :ref:`installation-linux-apt`.
 
-.. image:: _static/windows-choose-destination.png
+    Alternatively you can run the generic zip based DMX installation. Just read on.
 
-A new folder is created and the folder has the name of the ``.zip`` file.
-This is your DMX home directory and you can now start DMX.
+*****************************
+Installation and first launch
+*****************************
 
-Starting DMX
-============
+Although DMX is a client-server application, installation and first launch is as easy as buttering a toast:
 
-Enter the folder that was created when you unpacked the zip archive.
-Double-click the file ``dmx-windows.bat``.
-If your Explorer does not display file extensions, you only see ``dmx-windows`` as a file name.
-That is the same file.
+1. Download `dmx-5.2.zip <https://download.dmx.systems/dmx-5.2.zip>`_
+2. Unzip it. Result is a folder ``dmx-5.2``
+3. Open the DMX Folder and run the starter script suitable for your platform:
 
-A black terminal window opens to display what is happening.
-Just leave it there.
-The Windows Defender Firewall might ask you to allow Java access.
-Choose "Private networks, such as my home or work network".
+   .. figure:: _static/starter-scripts.png
 
-When started, DMX tries to open the DMX web client automatically for you (at http://localhost:8080/systems.dmx.webclient/) using your default web browser.
+   The starter script runs without user interaction. The DMX Server is started, a lot of information is logged to the DMX terminal window, and finally a browser window opens, showing the *DMX Webclient*:
 
-.. hint:: Log in as "admin" without a password.
+   .. figure:: _static/webclient-launch.png
 
-Opening the Web Client
-======================
+      A pristine DMX Webclient when launched for the 1st time. The actual UI takes the back seat and gives way to your content. But at this moment you have none -- you're starting with a clean slate.
 
-To open the DMX web client point your browser to the full address http://localhost:8080/systems.dmx.webclient/.
-Without the path (``systems.dmx.webclient/``) your browser cannot open the DMX web client.
-The DMX server must be running (see Starting DMX) for the web client to be accessible in your browser.
+      .. hint::
 
-Stopping DMX
-============
+         **Windows users**: The Windows Defender Firewall might ask you whether to grant network access to Java applications. Choose *"Private networks, such as my home or work network"*.
 
-To stop the DMX server, bring the black terminal window to the foreground.
-Type ``stop 0`` into the terminal and press ENTER.
-The DMX server is shut down.
+At 1st run the starter script creates an empty Corporate Memory: a folder ``dmx-db`` now exists inside the DMX Folder.
 
-Removing DMX
-============
+DMX does not install any files on your computer. Everything needed, including the database, exists inside the DMX Folder, and stays there.
 
-You can get rid of DMX by deleting the whole folder that got created when you unpacked the zip file, e.g. dmx-5.1.
-The Java Runtime Environment has to be uninstalled separately.
+*************************
+Operate your installation
+*************************
 
-.. _installation-macos:
+Configuration
+=============
 
-*********************
-Running DMX on Mac OS
-*********************
+By default the DMX Server listens on port ``8080``.
 
-On most current Mac OS versions Java 8 is already installed.
-If Java 8 is not installed you can download it from the `AdoptOpenJDK <https://adoptopenjdk.net/>`_ or `Oracle's Java <https://java.com/en/download/>`_ website.
+To change the port edit ``org.osgi.service.http.port`` in file ``dmx-5.2/conf/config.properties``.
+For the change to take effect, the DMX Server needs to be restarted, that is :ref:`stopped <stop-server>` and :ref:`started <start-server>` in turn.
 
-Your Mac automatically uses the newest Java version. If your default Java version is higher than Java 8 and you installed Java 8 in addition you have to disable the newer version.
+Further configuration options are described in the :ref:`DMX Admin Guide <admin>`.
 
-1. Find out which Java version is active. Open the Terminal and type ``java -version``.
-2. If it is higher than 8 open Macintosh HD and go to Library - Java - JavaVirtualMachines. Find the newer version.
-3. Rename that version's ``Contents/info.plist`` file to ``Contents/info.plist.disabled``.
+.. _start-server:
 
-Double-click the downloaded file and click through the installer.
+Starting the DMX Server
+=======================
 
-Downloading DMX
-===============
+.. hint::
 
-The latest stable release is the `DMX 5.1 release <https://download.dmx.systems/dmx-5.1.zip>`_. Previous versions of DMX are available for download on https://download.dmx.systems/.
+    Do not try starting the DMX Server if it is running already.
 
-Save the according file to a location of your choice.
-Extract the ``.zip`` archive.
+    In case you've (accidentally) closed the DMX Webclient window/tab (while the DMX Server is still running): proceed with :ref:`open-webclient`.
 
-A new folder is created.
-It has the name of the ``.zip`` file.
-This is your DMX home directory and you can now start DMX.
+    In case you've changed DMX's config and want restart the server: :ref:`stop the server <stop-server>` first, and start it again.
 
-Starting DMX
-============
+To start the DMX Server, open the DMX Folder and run the starter script suitable for your platform:
 
-Enter the folder that was created when you unpacked the zip archive.
-Double-click the file ``dmx-macosx.command``.
-A terminal window opens to display what is happening.
-Just leave it there.
+.. figure:: _static/starter-scripts.png
 
-When started, DMX tries to open the DMX web client automatically for you (at http://localhost:8080/systems.dmx.webclient/) using your default web browser.
+The starter script runs without user interaction. While the DMX Server is started a lot of information is logged to the DMX terminal window. Finally a browser window opens, showing the *DMX Webclient*.
 
-.. hint:: Log in as "admin" without a password.
+.. _stop-server:
 
-Opening the Web Client
-======================
+Stopping the DMX Server
+=======================
 
-To open the DMX web client point your browser to the full address http://localhost:8080/systems.dmx.webclient/.
-Without the path (``systems.dmx.webclient/``) your browser cannot open the DMX web client.
-The DMX server must be running (see Starting DMX) for the web client to be accessible in your browser.
+To shutdown the DMX Server, in the DMX terminal window enter ``stop 0`` and press ``Return``. While shutting down a lot of information is logged.
 
-Stopping DMX
-============
+.. _open-webclient:
 
-To stop the DMX server, type ``stop 0`` into the terminal window and press ENTER.
-DMX is shut down.
+Opening the DMX Webclient
+=========================
 
-Removing DMX
-============
+To open the DMX Webclient point your browser to ``http://localhost:8080/systems.dmx.webclient/``. Note the ``/`` at end.
 
-You can get rid of DMX by deleting the whole folder that got created when you unpacked the zip file, e.g. dmx-5.1.
-The Java Runtime Environment has to be uninstalled separately.
+The DMX Server must be running.
 
-.. _installation-linux:
+.. _uninstall-dmx:
 
-********************
-Running DMX on Linux
-********************
+Uninstall
+=========
 
-Installing Java
-===============
+To uninstall DMX:
 
-Use your package manager to install Java 8 for your Linux distribution.
+1. Stop the DMX Server
+2. Delete the DMX Folder
 
-For example, on Debian / Ubuntu, you would run the command
+This removes DMX completely from your computer, including the database.
 
-.. code:: bash
+The Java Runtime Environment needs to be uninstalled separately.
 
-    sudo apt install openjdk-8-jre
+.. warning::
 
-to install OpenJDK/JRE. Make sure that Java 8 (not 11) is used by running
+    Your Corporate Memory will be lost.
 
-.. code:: bash
-
-    sudo update-alternatives --config java
-
-and selecting the right version interactively.
-
-.. _installation-linux-zip:
-
-Running DMX from a zip archive
-==============================
-
-Downloading DMX
----------------
-
-Currently we recommend you to download the `DMX 5.1 release <https://download.dmx.systems/dmx-5.1.zip>`_.
-
-Save the according file to a location of your choice, e.g. your "Downloads" folder.
-Open a terminal and go to that location.
-Extract the zip archive.
-
-.. code:: bash
-
-    ~ $ cd Downloads
-    # to get the 5.1 release:
-    ~/Downloads $ wget https://download.dmx.systems/dmx-5.1.zip
-    ~/Downloads $ unzip dmx-5.1.zip
-
-Starting DMX
-------------
-
-Go into the newly created folder (in this example "dmx-5.1") and run the start script ``./dmx-linux.sh``.
-
-.. code:: bash
-
-    ~/Downloads $ cd dmx-5.1
-    ~/Downloads/cd dmx-5.1 $ ./dmx-linux.sh
-
-DMX tries to open the DMX web client automatically for you (at http://localhost:8080/systems.dmx.webclient/) using your default web browser. 
-
-.. hint:: Log in as "admin" without a password.
-
-Opening the Web Client
-======================
-
-To open the DMX web client point your browser to the full address http://localhost:8080/systems.dmx.webclient/.
-Without the path (``systems.dmx.webclient/``) your browser cannot open the DMX web client.
-The DMX server must be running (see Starting DMX) for the web client to be accessible in your browser.
-
-Stopping DMX
-------------
-
-To stop DMX, type `stop 0` into the terminal window and press ENTER.
-DMX is shut down.
-
-Removing DMX
-------------
-
-You can get rid of DMX by deleting the whole folder that got created when you unpacked the zip file, e.g. dmx-5.1.
-The Java Runtime Environment has to be uninstalled separately.
+    To keep it make a copy of the ``dmx-db`` folder before deleting the DMX Folder.
 
 .. _installation-linux-apt:
 
-Installing DMX from our APT repository
-======================================
+************************************
+Installation from our APT repository
+************************************
 
-For apt-based Linux distributions (like Debian / Ubuntu) we provide a repository.
-It is intended for installations on servers but can obviously be used on Debian/Ubuntu laptops as well.
+For APT-based Linux distributions (like Debian/Ubuntu) we provide an APT repository.
+It is mainly intended for setting up a *networked* DMX installation on a server machine, but can be used for setting up a *local* DMX installation on a private machine as well (see :ref:`installation-types`).
 The package has a built-in dependency to ``default-jre``.
 
-.. warning:: If your Java Runtime Environment is newer than Java 8, you cannot use the repository for the moment. Check your version by running the command ``java -version``.
-
 Here is how to download and execute our install script.
-It adds the repository, installs DMX from it, prompts the user for the DMX admin passphrase and starts DMX as a daemon.
+It adds the repository, installs DMX from it, prompts the user for the DMX admin passphrase and starts DMX as a daemon:
 
 .. code:: bash
 
     $ curl -sS https://download.dmx.systems/repos/dmx-install.sh | sudo bash
 
-Configuring DMX
----------------
+Configuration
+=============
 
-For apt-based installations we will soon provide more instructions on advanced configuration in the :ref:`Admin Guide <admin>`.
-By default, DMX listens on port 8080.
-The main configuration file is located in ``/etc/dmx/config.properties``.
-For configuration changes to take effect DMX needs to be restarted (see Stopping and Starting DMX).
+By default the DMX Server listens on port ``8080``.
 
-Starting DMX
-------------
+To change the port edit ``org.osgi.service.http.port`` in file ``/etc/dmx/config.properties``.
+For the change to take effect, the DMX Server needs to be restarted, that is :ref:`stopped <linux-stop-server>` and :ref:`started <linux-start-server>` in turn.
+
+Further configuration options are described in the :ref:`DMX Admin Guide <admin>`.
+
+.. _linux-start-server:
+
+Starting the DMX Server
+=======================
 
 Invoke this command to start the daemon:
 
@@ -251,11 +172,22 @@ Invoke this command to start the daemon:
 
     systemctl start dmx
 
-Stopping DMX
-------------
+.. _linux-stop-server:
 
-Stop the daemon by running
+Stopping the DMX Server
+=======================
+
+Stop the daemon by running:
 
 .. code::
 
     systemctl stop dmx
+
+.. _linux-open-webclient:
+
+Opening the DMX Webclient
+=========================
+
+To open the DMX Webclient point your browser to ``http://localhost:8080/systems.dmx.webclient/``. Note the ``/`` at end.
+
+The DMX Server must be running.
