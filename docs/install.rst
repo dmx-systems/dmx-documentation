@@ -136,9 +136,9 @@ The Java Runtime Environment needs to be uninstalled separately.
 
 .. _installation-linux-apt:
 
-************************************
-Installation from our APT repository
-************************************
+****************************
+APT-based Linux Installation
+****************************
 
 For APT-based Linux distributions (like Debian/Ubuntu) we provide an APT repository.
 It is mainly intended for setting up a *networked* DMX installation on a server machine, but can be used for setting up a *local* DMX installation on a private machine as well (see :ref:`installation-types`).
