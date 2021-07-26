@@ -1,6 +1,6 @@
-###########
-DMX Plugins
-###########
+####################
+Plugin Documentation
+####################
 
 The functionalities of DMX can be extended through plugins.
 Below you find an overview.
