@@ -1,83 +1,158 @@
-.. _intro:
+.. _overview:
 
-############
-Introduction
-############
+###############
+Overview of DMX
+###############
 
-DMX is a knowledge building platform.
-It is developed by `DMX Systems <https://dmx.berlin>`_.
-DMX is a web application.
-It comes with a built-in Jetty web server and a default web client that brings the application to your browser.
+************
+What is DMX?
+************
 
+DMX is a knowledge building platform for individuals and work groups.
+The design of DMX is guided by the insight that machines do not store *knowledge* but *information* (see :ref:`preface`).
+The DMX UI allows you to handle information in a way that supports knowledge building, memorization, and retrieval.
+DMX strives to become a popular work environment for knowledge workers of all kind, e.g. students, authors, journalists, researchers, archivists.
 
-.. _intro-license:
+DMX provides 4 things:
 
-********************
-DMX is Free Software
-********************
+1. A **Corporate Memory** that serves as an accumulated body of data, information, and knowledge*) created in the course of an individual's or an organization's life.
+2. An **User Interface** that puts you in contact with linked information -- instead of with applications and windows. The unified DMX user interface is suitable for all areas:
 
-DMX is dual licensed:
+    - Investigation
+    - Authoring
+    - Modeling
+    - Collaboration
+    - Presentation
 
-#.  The Community Edition is licensed under the `GNU Affero General Public License (GNU AGPLv3) <https://www.gnu.org/licenses/agpl-3.0.en.html>`_. In short, this means that you are allowed to run the software for any purpose, to study and modify the source code, and to distribute copies or modified copies of the code. Note that you have to publish all modifications you make under the same license. Visit `git.dmx.systems <https://git.dmx.systems/explore>`_ to get the source code. 
-#.  The Enterprise Edition is licensed under a proprietary license. With the Enterprise Edition you are entitled to develop or use proprietary plugins or other modifications of the software.
+3. An application model that is suitable for Domain Driven Design, in combination with a **Plugin Development Framework** for the development of full-stack plugins.
+4. A pre-installed ontology (contacts, notes, web links, events) for basic information management needs.
 
-.. _intro-data-sovereignty:
+Technically DMX is a web application server written in Java. Its service-oriented architecture is OSGi-based (Apache Felix); DMX application developers need no OSGi knowledge; JAX-RS knowledge is recommended though. DMX comes with web server (Jetty), database (Neo4j), the "DMX Webclient" (built in Vue.js, Vuex, Element UI) included, and offers a plugin development framework. DMX plugins are full-stack (from data model to front end) and hot deployable. A DMX default installation is *single-user*; its web server will reject any request not from localhost. From 5.0-beta-1 (Jan 30, 2019) on to current 5.2 the size of the DMX download zip file is unchanged at 7.5 MB -- much less than the competing Jakarta EE servers.
 
-****************
-Data Sovereignty
-****************
+DMX is dual licensed Open Source software. The Community Edition is licensed under the GNU Affero General Public License (GNU AGPLv3).
 
-DMX lets you keep control of your data.
-All data is stored in the DMX database.
-Where this database is stored depends on the way you decided to run DMX.
+The remainder of this "Overview" chapter is a concept-level introduction to DMX.
 
-DMX on your local computer
-==========================
+***********************
+Topics and Associations
+***********************
 
-If you download and start DMX on your local computer, the database is stored on that same computer.
-It does not leave it unless you copy it elsewhere.
-After the initial download of the software, you can use DMX locally and without an internet connection unless you use the :ref:`Geomaps <plugins-geodata>` plugin.
-Geomaps are rendered in DMX with the help of `OpenStreetMap <https://www.openstreetmap.org>`_.
-OpenStreetMap is also used to transform addresses into geographical coordinates.
-Those features require an internet connection to work.
+DMX represents information as *topics* and *associations*:
 
-DMX as a self-hosted service
-============================
+.. figure:: _static/organization-association.png
 
-If you are running DMX on your own server or if someone shares their self-hosted instance with you, your data is stored on that person's server.
-To work with DMX on a remote server you need an internet connection to communicate with the server.
+    3 topics connected by 2 associations. The topics represent a person, an organization, and a note respectively. One of the 2 associations is distinguished by color and label.
 
-DMX as a service hosted by us
-=============================
+A **Topic** can represent any type of object, e.g. a person, an organization, a note, a contract, a project, a date, a planet name, a molecule, a review, or a book. Also an idea or an emotion can be expressed as a topic.
 
-If you use DMX on one of our demo sites or if you have a hosting contract with DMX Systems your data is stored on our server.
-In this case you also need an internet connection to work with it.
+What object types are available is actually decided by the DMX user. A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins. A fresh DMX installation provides some basic types for information management (contacts, notes, web links, events).
 
-.. _intro-entensibility-though-plugins:
+An **Association** represents a relationship between two objects. The relationship's *meaning* is expressed by both, the association's *type* and *value*. Both are optional. A generic association still expresses *some* relationship between 2 objects.
 
-*****************************
-Extensibility through Plugins
-*****************************
+Role Types
+==========
 
-The functionalities of DMX can be extended through plugins.
-That can happen in different ways:
+At this point you may wonder: "Are associations directed?" Answer: "More than that."
 
-#. A plugin can extend the default :ref:`data model <user-modeling>` of a DMX installation by defining specific topic types and association types for your needs. If your data model is implemented in a plugin you can easily install it in new DMX installations and have your own topic types and association types ready for use.
-#. A plugin can add new functionalities to the DMX web client that is to the web interface you see.
-#. A plugin can also add functionalities to the DMX core part.
+In DMX the 2 ends of an association are not solely qualified by "source" and "target", but can be qualified by arbitrary *role types*, e.g. "Parent", "Child", "Cause", "Effect", "Trainer", "Trainee" etc.
 
-Find out more about our existing plugins in the :ref:`Plugin section <plugins-overview-of-plugins>`.
+.. figure:: _static/role-types.png
 
-Of course, you are free to develop your own DMX plugins.
-For more details on this, please see our :ref:`Developer Guide <developer-guide>`.
-To get started we recommend you to start with our `Plugin Template <https://git.dmx.systems/dmx-plugins/dmx-plugin-template>`_.
+    Plato is the Trainee in one association and the Trainer in another one.
+    The pink associations are of type "Apprenticeship".
 
-*****************************
-About this documentation site
-*****************************
+In DMX each of the 2 ends of an association is defined by:
 
-This documentation is hosted by `Read the Docs <https://readthedocs.org/>`_.
-As Read the Docs offers free hosting of documentation they kindly ask users to allow ads to be displayed at the bottom of the left sidebar. You can read more about it `here <https://docs.readthedocs.io/en/latest/advertising/ethical-advertising.html>`_.
+- The *Player Object*: either a Topic, or an Association.
+- A **Role Type** expresses what role the player object plays in the association.
 
+One or both ends can still be unqualified (expressed by role type "Default"). Nondirectional associations are expressed by role type "Default" at both ends.
 
+A DMX user can create new role types interactively in the DMX Webclient. Another way of obtaining new role types is by installing DMX plugins.
 
+Associative Model of Data
+=========================
+
+The above images suggest the DMX storage model is *graph* based: *nodes* and *edges*. Actually DMX is based on an extension of the graph model: the *Associative Model of Data*.
+
+.. figure:: _static/dmx-assoc-data-model.svg
+   :width: 240px
+   :align: left
+
+While in the graph model an edge always connects 2 *nodes*, in the Associative Model of Data an edge can connect *edges* too. Either at one end (A2), or both (A3).
+
+Basically DMX makes associations objects of discourse too. Associations can be associated with other topics/associations, just like topics. This results in expressive highly-connected structures at both levels, data model and content (= *instances*).
+
+.. figure:: _static/create-assoc-with-assoc.png
+
+    2 notes, one is connected to a topic, and one to an association. The dark gray association connects a topic with an association. You can immediately say what the author want to express here, can't you?
+
+.. hint::
+
+    Find out more about the `Associative Model of Data <devel.html#associative-model-of-data>`_ in the DMX Developer Guide.
+
+******
+Values
+******
+
+So far topics were depicted solely as *icon* plus *label*. But there is more to a person than a name, isn't it? Actually a value of type "Person" is an entire *value hierarchy*, for example: the Person has a name and an Address, the Address has a Postal Code, and the Postal Code is the string "SO36".
+
+"Person" and "Address" in this example are *composite* values, and "Postal Code" is a *simple* value. And this is exactly how values are stored in the Corporate Memory: as an hierarchy of typed topics:
+
+.. figure:: _static/person-value.png
+
+    A value of type "Person" as stored in the Corporate Memory. The value "Cathy Jones" is composed of a "Person Name" value and an "Address" value, which is composed of a "Street" value, a "Postal Code" value etc. The red associations are of type "Composition" and form the topic hierarchy. They are directed from "Parent" to "Child". The leaf-nodes are the *simple* values. Some values have their corresponding type topic revealed. The cyan associations are of type "Instantiation" and are directed from "Instance" to "Type".
+
+DMX has the specialty that not only topics represent values, but associations too. In this regard there is no difference between topics and associations:
+
+- both are typed
+- both have a value
+
+The type determines the structure of the value.
+
+Detail Rendering
+================
+
+The above image shows how values are *stored* in DMX. But this is not necessarily a suitable way to *present* information or to *interact* with it. For every topic/association DMX provides a default *detail rendering*. It renders a composite value in a linear and compact form.
+
+At any time a topic's/association's detail information is one click away, and once clicked, it is displayed in-place:
+
+.. figure:: _static/in-map-details-pinning.png
+
+    Topic detail information displayed in-place once a topic is clicked.
+    The green associations are of type "Organization Involvement" and express that a Person is involved in an Organization, and in what way.
+
+.. figure:: _static/create-organization-association.png
+
+     A selected association (thicker line) and its detail information. Details comprise the association's type and value (not shown), and the 2 player topics, each one qualified by **Role Type**.
+
+The detail rendering is driven by the topic's/association's type definition.
+
+Custom Renderers
+================
+
+The detail rendering is customizable on a per-type basis.
+
+A standard DMX installation provides custom renderers for the following types: "Topic Type", "Association Type", "File", "Folder", "Date", "Time" (composite), "URL", "Email Address", "File Size" (simple).
+
+Further custom detail renderers can be obtained by installing DMX plugins.
+
+*****
+Types
+*****
+
+The above examples show topics of type "Person", "Organization", and "Note". Other *topic types* could be e.g. "Contract", "Project", "Date", "Planet Name", "Molecule", "Review", or "Book".
+
+A fresh DMX installation provides some basic types for information management ("Person", "Organization", "Note", "Bookmark", "Event", "Address", "Email Address" etc.).
+
+.. figure:: _static/person-model.png
+
+A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins.
+
+**********
+Topic Maps
+**********
+
+.. figure:: _static/detail-panel.png
+
+    The typical DMX user interface presents a **Topic Map** consisting of topics and associations. The topic's type is represented by icon. Association types are differentiated by color.

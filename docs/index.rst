@@ -10,7 +10,7 @@ DMX
    :maxdepth: 2
 
    preface
-   overview
+   intro
    install
    tutorial
    user
