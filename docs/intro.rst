@@ -36,7 +36,7 @@ DMX on your local computer
 
 If you download and start DMX on your local computer, the database is stored on that same computer.
 It does not leave it unless you copy it elsewhere.
-After the initial download of the software, you can use DMX locally and without an internet connection unless you use the :ref:`Geomaps<user-geodata>` plugin.
+After the initial download of the software, you can use DMX locally and without an internet connection unless you use the :ref:`Geomaps <plugins-geodata>` plugin.
 Geomaps are rendered in DMX with the help of `OpenStreetMap <https://www.openstreetmap.org>`_.
 OpenStreetMap is also used to transform addresses into geographical coordinates.
 Those features require an internet connection to work.
