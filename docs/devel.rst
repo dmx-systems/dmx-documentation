@@ -816,9 +816,9 @@ As an example see a migration that comes with the *DMX Topicmaps* plugin:
 
 Here a *Composition Definition* is added to the *Topicmap* type subsequently.
 
-************************
-Writing custom Java code
-************************
+****************************
+Writing back-end code (Java)
+****************************
 
 In the previous section you've seen how to manipulate a DMX data model with Java code. Were you wondering what these ``dmx`` and ``mf`` objects are? Well these are instances of `CoreService <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/CoreService.html>`_ and `ModelFactory <https://apidocs.dmx.systems/index.html?systems/dmx/core/service/ModelFactory.html>`_ respectively. But first things first.
 
@@ -1536,9 +1536,9 @@ Client-Sync
 
 TODO
 
-***************************
-Extending the DMX Webclient
-***************************
+*****************************
+Customizing the DMX Webclient
+*****************************
 
 The plugin.js file
 ==================
