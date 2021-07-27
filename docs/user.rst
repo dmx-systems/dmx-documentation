@@ -4,9 +4,9 @@ DMX User Guide
 
 .. _user-the-dmx-user-interface:
 
-**********************
+**************
 User Interface
-**********************
+**************
 
 .. _user-the-toolbar:
 
@@ -54,7 +54,7 @@ Content in a private Workspace cannot be read by anyone other than the Workspace
 Your choice in the Workspace Selector has direct influence on the available contents in the next menu, the *Topicmap Selector*.
 
 The Topicmap Selector
-----------------------
+---------------------
 
 .. figure:: _static/upper-toolbar-topicmap-selector.png
     :alt: Tool bar with highlighted topicmap selector
@@ -1197,16 +1197,7 @@ DMX enables users to create their own data models.
 .. _user-introduction-to-data-modeling:
 
 Introduction to Data Modeling
-==============================
-
-DMX is built upon the so-called Associative Model of Data.
-It uses a suitable database model which can be considered opposed to the widely used Relational Database Management Systems.
-
-If you want to dive deeper into this concept, we recommend the following sources:
-
-* Joseph V. Homan, Paul J. Kovacs: `A Comparison Of The Relational Database Model And The Associative Database Model <http://iacis.org/iis/2009/P2009_1301.pdf>`_, in: Issues in Information Systems, Volume X, No. 1, 2009 (6 page article)
-* Simon Williams: `The Associative Model Of Data <https://link.springer.com/content/pdf/10.1057/palgrave.jdm.3240049.pdf>`_, in: Journal of Database Marketing, Volume 8, 4, 2001 (24 page article)
-* Simon Williams: The `Associative Model Of Data <https://web.archive.org/web/20181219134621/http://sentences.com/docs/amd.pdf>`_, Lazy Software, 2nd edition, 2002 (book, 284 pages)
+=============================
 
 It depends on your use case how you build your data model.
 In most cases, there is more than one possible way of achieving what you need.
@@ -1306,7 +1297,7 @@ If a person has a new address this could mean they moved, but it could also mean
 You can model these two different case by using the data types "entity" and "value".
 
 The composite type "entity"
------------------------------
+---------------------------
 
 In DMX, entity is used when you want to refer to the same thing as before even if something changes.
 If an address changes because the street is renamed you would still mean the same house at the same geolocation.
