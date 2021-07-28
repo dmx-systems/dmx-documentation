@@ -141,13 +141,15 @@ Further custom detail renderers can be obtained by installing DMX plugins.
 Types
 *****
 
-The above examples show topics of type "Person", "Organization", and "Note". Other *topic types* could be e.g. "Contract", "Project", "Date", "Planet Name", "Molecule", "Review", or "Book".
+The above examples show topics of type "Person", "Organization", "Note", and associations e.g. of type "Organization Involvement", "Apprenticeship".
+
+What *Topic Types* and *Association Types* are available is actually decided by the DMX user. A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient.
+
+Another way of obtaining new types is by installing DMX plugins.
 
 A fresh DMX installation provides some basic types for information management ("Person", "Organization", "Note", "Bookmark", "Event", "Address", "Email Address" etc.).
 
 .. figure:: _static/person-model.png
-
-A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient. Another way of obtaining new types is by installing DMX plugins.
 
 **********
 Topic Maps
