@@ -1187,17 +1187,17 @@ Modeling
 
 .. attention::
 
-    This chaper is flawed. See `#29 <https://git.dmx.systems/dmx-platform/dmx-documentation/-/issues/29>`_ and `#30 <https://git.dmx.systems/dmx-platform/dmx-documentation/-/issues/30>`_.
+    The "Modeling" chaper is flawed. See `#29 <https://git.dmx.systems/dmx-platform/dmx-documentation/-/issues/29>`_ and `#30 <https://git.dmx.systems/dmx-platform/dmx-documentation/-/issues/30>`_.
 
     If you have questions, please use the `DMX Forum <https://forum.dmx.systems>`_.
-
-A data model is an abstract model that defines all elements needed to represent items, their properties and their relationships.
-DMX enables users to create their own data models.
 
 .. _user-introduction-to-data-modeling:
 
 Introduction to Data Modeling
 =============================
+
+A data model is an abstract model that defines all elements needed to represent items, their properties and their relationships.
+DMX enables users to create their own data models.
 
 It depends on your use case how you build your data model.
 In most cases, there is more than one possible way of achieving what you need.
