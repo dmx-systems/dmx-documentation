@@ -141,6 +141,13 @@ Further custom detail renderers can be obtained by installing DMX plugins.
 Types
 *****
 
+What we know about types so far:
+
+- Topics/Associations are typed
+- Topics/Associations have a value (simple or composite)
+- A Topic/Association's meaning is expressed by both, its type and its value
+- A Topic/Association's type determines the structure of its value
+
 The above examples show topics of type "Person", "Organization", "Note", and associations e.g. of type "Organization Involvement", "Apprenticeship".
 
 What *Topic Types* and *Association Types* are available is actually decided by the DMX user. A DMX user can create new types, as well as modify existing ones, interactively in the DMX Webclient.
