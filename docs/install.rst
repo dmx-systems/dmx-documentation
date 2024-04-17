@@ -45,8 +45,8 @@ Installation and first launch
 
 Although DMX is a client-server application, installation and first launch is as easy as buttering a toast:
 
-1. Download `dmx-5.2.zip <https://download.dmx.systems/dmx-5.2.zip>`_
-2. Unzip it. Result is a folder ``dmx-5.2``
+1. Download `dmx-5.3.4.zip <https://download.dmx.systems/dmx-5.3.4.zip>`_
+2. Unzip it. Result is a folder ``dmx-5.3.4``
 3. Open the DMX Folder and run the starter script suitable for your platform:
 
    .. figure:: _static/starter-scripts.png
@@ -74,7 +74,7 @@ Configuration
 
 By default the DMX Server listens on port ``8080``.
 
-To change the port edit ``org.osgi.service.http.port`` in file ``dmx-5.2/conf/config.properties``.
+To change the port edit ``org.osgi.service.http.port`` in file ``dmx-5.3.4/conf/config.properties``.
 For the change to take effect, the DMX Server needs to be restarted, that is :ref:`stopped <stop-server>` and :ref:`started <start-server>` in turn.
 
 Further configuration options are described in the :ref:`DMX Admin Guide <admin>`.
